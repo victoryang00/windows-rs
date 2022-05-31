@@ -6,17 +6,17 @@ extern "system" {
     pub fn AllocateUserPhysicalPages(hprocess: ::win32_foundation_sys::HANDLE, numberofpages: *mut usize, pagearray: *mut usize) -> ::win32_foundation_sys::BOOL;
     pub fn AllocateUserPhysicalPages2(objecthandle: ::win32_foundation_sys::HANDLE, numberofpages: *mut usize, pagearray: *mut usize, extendedparameters: *mut MEM_EXTENDED_PARAMETER, extendedparametercount: u32) -> ::win32_foundation_sys::BOOL;
     pub fn AllocateUserPhysicalPagesNuma(hprocess: ::win32_foundation_sys::HANDLE, numberofpages: *mut usize, pagearray: *mut usize, nndpreferred: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateFileMapping2(file: ::win32_foundation_sys::HANDLE, securityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, desiredaccess: u32, pageprotection: PAGE_PROTECTION_FLAGS, allocationattributes: u32, maximumsize: u64, name: ::windows_core_sys::PCWSTR, extendedparameters: *mut MEM_EXTENDED_PARAMETER, parametercount: u32) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateFileMappingA(hfile: ::win32_foundation_sys::HANDLE, lpfilemappingattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, flprotect: PAGE_PROTECTION_FLAGS, dwmaximumsizehigh: u32, dwmaximumsizelow: u32, lpname: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateFileMappingFromApp(hfile: ::win32_foundation_sys::HANDLE, securityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, pageprotection: PAGE_PROTECTION_FLAGS, maximumsize: u64, name: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateFileMappingNumaA(hfile: ::win32_foundation_sys::HANDLE, lpfilemappingattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, flprotect: PAGE_PROTECTION_FLAGS, dwmaximumsizehigh: u32, dwmaximumsizelow: u32, lpname: ::windows_core_sys::PCSTR, nndpreferred: u32) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateFileMappingNumaW(hfile: ::win32_foundation_sys::HANDLE, lpfilemappingattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, flprotect: PAGE_PROTECTION_FLAGS, dwmaximumsizehigh: u32, dwmaximumsizelow: u32, lpname: ::windows_core_sys::PCWSTR, nndpreferred: u32) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateFileMappingW(hfile: ::win32_foundation_sys::HANDLE, lpfilemappingattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, flprotect: PAGE_PROTECTION_FLAGS, dwmaximumsizehigh: u32, dwmaximumsizelow: u32, lpname: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HANDLE;
     pub fn CreateMemoryResourceNotification(notificationtype: MEMORY_RESOURCE_NOTIFICATION_TYPE) -> ::win32_foundation_sys::HANDLE;
     pub fn DiscardVirtualMemory(virtualaddress: *mut ::core::ffi::c_void, size: usize) -> u32;

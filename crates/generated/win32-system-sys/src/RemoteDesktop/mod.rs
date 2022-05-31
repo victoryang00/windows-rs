@@ -25,9 +25,9 @@ extern "system" {
     pub fn WTSFreeMemoryExW(wtstypeclass: WTS_TYPE_CLASS, pmemory: *const ::core::ffi::c_void, numberofentries: u32) -> ::win32_foundation_sys::BOOL;
     pub fn WTSGetActiveConsoleSessionId() -> u32;
     pub fn WTSGetChildSessionId(psessionid: *mut u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn WTSGetListenerSecurityA(hserver: ::win32_foundation_sys::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCSTR, securityinformation: u32, psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR, nlength: u32, lpnlengthneeded: *mut u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn WTSGetListenerSecurityW(hserver: ::win32_foundation_sys::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCWSTR, securityinformation: u32, psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR, nlength: u32, lpnlengthneeded: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn WTSIsChildSessionsEnabled(pbenabled: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     pub fn WTSLogoffSession(hserver: ::win32_foundation_sys::HANDLE, sessionid: u32, bwait: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
@@ -44,13 +44,13 @@ extern "system" {
     pub fn WTSQueryUserToken(sessionid: u32, phtoken: *mut ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn WTSRegisterSessionNotification(hwnd: ::win32_foundation_sys::HWND, dwflags: u32) -> ::win32_foundation_sys::BOOL;
     pub fn WTSRegisterSessionNotificationEx(hserver: ::win32_foundation_sys::HANDLE, hwnd: ::win32_foundation_sys::HWND, dwflags: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn WTSSendMessageA(hserver: ::win32_foundation_sys::HANDLE, sessionid: u32, ptitle: ::windows_core_sys::PCSTR, titlelength: u32, pmessage: ::windows_core_sys::PCSTR, messagelength: u32, style: ::win32_ui_sys::WindowsAndMessaging::MESSAGEBOX_STYLE, timeout: u32, presponse: *mut ::win32_ui_sys::WindowsAndMessaging::MESSAGEBOX_RESULT, bwait: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn WTSSendMessageW(hserver: ::win32_foundation_sys::HANDLE, sessionid: u32, ptitle: ::windows_core_sys::PCWSTR, titlelength: u32, pmessage: ::windows_core_sys::PCWSTR, messagelength: u32, style: ::win32_ui_sys::WindowsAndMessaging::MESSAGEBOX_STYLE, timeout: u32, presponse: *mut ::win32_ui_sys::WindowsAndMessaging::MESSAGEBOX_RESULT, bwait: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn WTSSetListenerSecurityA(hserver: ::win32_foundation_sys::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCSTR, securityinformation: u32, psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn WTSSetListenerSecurityW(hserver: ::win32_foundation_sys::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCWSTR, securityinformation: u32, psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR) -> ::win32_foundation_sys::BOOL;
     pub fn WTSSetRenderHint(prenderhintid: *mut u64, hwndowner: ::win32_foundation_sys::HWND, renderhinttype: u32, cbhintdatalength: u32, phintdata: *const u8) -> ::windows_core_sys::HRESULT;
     pub fn WTSSetUserConfigA(pservername: ::windows_core_sys::PCSTR, pusername: ::windows_core_sys::PCSTR, wtsconfigclass: WTS_CONFIG_CLASS, pbuffer: ::windows_core_sys::PCSTR, datalength: u32) -> ::win32_foundation_sys::BOOL;

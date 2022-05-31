@@ -12,9 +12,9 @@ pub struct IXboxLiveDeviceAddress_Vtbl {
     pub SnapshotChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveSnapshotChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub GetSnapshotAsBase64: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub GetSnapshotAsBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     GetSnapshotAsBuffer: usize,
     pub GetSnapshotAsBytes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, buffer_array_size: u32, buffer: *mut u8, byteswritten: *mut u32) -> ::windows_core::HRESULT,
     pub Compare: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, otherdeviceaddress: ::windows_core::RawPtr, result__: *mut i32) -> ::windows_core::HRESULT,
@@ -34,9 +34,9 @@ unsafe impl ::windows_core::Interface for IXboxLiveDeviceAddressStatics {
 pub struct IXboxLiveDeviceAddressStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub CreateFromSnapshotBase64: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, base64: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateFromSnapshotBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, buffer: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateFromSnapshotBuffer: usize,
     pub CreateFromSnapshotBytes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, buffer_array_size: u32, buffer: *const u8, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetLocal: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -133,9 +133,9 @@ pub struct IXboxLiveEndpointPairTemplate_Vtbl {
     pub InitiatorBoundPortRangeUpper: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u16) -> ::windows_core::HRESULT,
     pub AcceptorBoundPortRangeLower: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u16) -> ::windows_core::HRESULT,
     pub AcceptorBoundPortRangeUpper: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub EndpointPairs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     EndpointPairs: usize,
 }
 #[doc(hidden)]
@@ -150,9 +150,9 @@ unsafe impl ::windows_core::Interface for IXboxLiveEndpointPairTemplateStatics {
 pub struct IXboxLiveEndpointPairTemplateStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub GetTemplateByName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Templates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Templates: usize,
 }
 #[doc(hidden)]
@@ -180,23 +180,23 @@ unsafe impl ::windows_core::Interface for IXboxLiveQualityOfServiceMeasurement {
 pub struct IXboxLiveQualityOfServiceMeasurement_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub MeasureAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetMetricResultsForDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceaddress: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetMetricResultsForDevice: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetMetricResultsForMetric: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, metric: XboxLiveQualityOfServiceMetric, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetMetricResultsForMetric: usize,
     pub GetMetricResult: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceaddress: ::windows_core::RawPtr, metric: XboxLiveQualityOfServiceMetric, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetPrivatePayloadResult: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceaddress: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Metrics: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Metrics: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub DeviceAddresses: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     DeviceAddresses: usize,
     pub ShouldRequestPrivatePayloads: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetShouldRequestPrivatePayloads: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -205,13 +205,13 @@ pub struct IXboxLiveQualityOfServiceMeasurement_Vtbl {
     pub NumberOfProbesToAttempt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub SetNumberOfProbesToAttempt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
     pub NumberOfResultsPending: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub MetricResults: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     MetricResults: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub PrivatePayloadResults: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     PrivatePayloadResults: usize,
 }
 #[doc(hidden)]
@@ -233,13 +233,13 @@ pub struct IXboxLiveQualityOfServiceMeasurementStatics_Vtbl {
     pub SetIsSystemOutboundBandwidthConstrained: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub IsSystemInboundBandwidthConstrained: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetIsSystemInboundBandwidthConstrained: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub PublishedPrivatePayload: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     PublishedPrivatePayload: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub SetPublishedPrivatePayload: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SetPublishedPrivatePayload: usize,
     pub MaxPrivatePayloadSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
 }
@@ -272,9 +272,9 @@ pub struct IXboxLiveQualityOfServicePrivatePayloadResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut XboxLiveQualityOfServiceMeasurementStatus) -> ::windows_core::HRESULT,
     pub DeviceAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub Value: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Value: usize,
 }
 #[repr(transparent)]
@@ -298,7 +298,7 @@ impl XboxLiveDeviceAddress {
             (::windows_core::Interface::vtable(this).GetSnapshotAsBase64)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetSnapshotAsBuffer(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
@@ -344,7 +344,7 @@ impl XboxLiveDeviceAddress {
             (::windows_core::Interface::vtable(this).CreateFromSnapshotBase64)(::windows_core::Interface::as_raw(this), base64.into_param().abi(), result__.as_mut_ptr()).from_abi::<XboxLiveDeviceAddress>(result__)
         })
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFromSnapshotBuffer<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(buffer: Param0) -> ::windows_core::Result<XboxLiveDeviceAddress> {
         Self::IXboxLiveDeviceAddressStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1030,7 +1030,7 @@ impl XboxLiveEndpointPairTemplate {
             (::windows_core::Interface::vtable(this).AcceptorBoundPortRangeUpper)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u16>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn EndpointPairs(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<XboxLiveEndpointPair>> {
         let this = self;
         unsafe {
@@ -1044,7 +1044,7 @@ impl XboxLiveEndpointPairTemplate {
             (::windows_core::Interface::vtable(this).GetTemplateByName)(::windows_core::Interface::as_raw(this), name.into_param().abi(), result__.as_mut_ptr()).from_abi::<XboxLiveEndpointPairTemplate>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Templates() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<XboxLiveEndpointPairTemplate>> {
         Self::IXboxLiveEndpointPairTemplateStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1262,7 +1262,7 @@ impl XboxLiveQualityOfServiceMeasurement {
             (::windows_core::Interface::vtable(this).MeasureAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetMetricResultsForDevice<'a, Param0: ::windows_core::IntoParam<'a, XboxLiveDeviceAddress>>(&self, deviceaddress: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<XboxLiveQualityOfServiceMetricResult>> {
         let this = self;
         unsafe {
@@ -1270,7 +1270,7 @@ impl XboxLiveQualityOfServiceMeasurement {
             (::windows_core::Interface::vtable(this).GetMetricResultsForDevice)(::windows_core::Interface::as_raw(this), deviceaddress.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<XboxLiveQualityOfServiceMetricResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetMetricResultsForMetric(&self, metric: XboxLiveQualityOfServiceMetric) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<XboxLiveQualityOfServiceMetricResult>> {
         let this = self;
         unsafe {
@@ -1292,7 +1292,7 @@ impl XboxLiveQualityOfServiceMeasurement {
             (::windows_core::Interface::vtable(this).GetPrivatePayloadResult)(::windows_core::Interface::as_raw(this), deviceaddress.into_param().abi(), result__.as_mut_ptr()).from_abi::<XboxLiveQualityOfServicePrivatePayloadResult>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Metrics(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<XboxLiveQualityOfServiceMetric>> {
         let this = self;
         unsafe {
@@ -1300,7 +1300,7 @@ impl XboxLiveQualityOfServiceMeasurement {
             (::windows_core::Interface::vtable(this).Metrics)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<XboxLiveQualityOfServiceMetric>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn DeviceAddresses(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<XboxLiveDeviceAddress>> {
         let this = self;
         unsafe {
@@ -1348,7 +1348,7 @@ impl XboxLiveQualityOfServiceMeasurement {
             (::windows_core::Interface::vtable(this).NumberOfResultsPending)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn MetricResults(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<XboxLiveQualityOfServiceMetricResult>> {
         let this = self;
         unsafe {
@@ -1356,7 +1356,7 @@ impl XboxLiveQualityOfServiceMeasurement {
             (::windows_core::Interface::vtable(this).MetricResults)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<XboxLiveQualityOfServiceMetricResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn PrivatePayloadResults(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<XboxLiveQualityOfServicePrivatePayloadResult>> {
         let this = self;
         unsafe {
@@ -1397,14 +1397,14 @@ impl XboxLiveQualityOfServiceMeasurement {
     pub fn SetIsSystemInboundBandwidthConstrained(value: bool) -> ::windows_core::Result<()> {
         Self::IXboxLiveQualityOfServiceMeasurementStatics(|this| unsafe { (::windows_core::Interface::vtable(this).SetIsSystemInboundBandwidthConstrained)(::windows_core::Interface::as_raw(this), value).ok() })
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn PublishedPrivatePayload() -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         Self::IXboxLiveQualityOfServiceMeasurementStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).PublishedPrivatePayload)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         })
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SetPublishedPrivatePayload<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(value: Param0) -> ::windows_core::Result<()> {
         Self::IXboxLiveQualityOfServiceMeasurementStatics(|this| unsafe { (::windows_core::Interface::vtable(this).SetPublishedPrivatePayload)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() })
     }
@@ -1695,7 +1695,7 @@ impl XboxLiveQualityOfServicePrivatePayloadResult {
             (::windows_core::Interface::vtable(this).DeviceAddress)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<XboxLiveDeviceAddress>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Value(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {

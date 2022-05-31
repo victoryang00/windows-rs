@@ -1,7 +1,7 @@
 #[repr(transparent)]
 pub struct BufferProtectUnprotectResult(::windows_core::IUnknown);
 impl BufferProtectUnprotectResult {
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Buffer(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
@@ -181,42 +181,42 @@ unsafe impl ::core::marker::Send for DataProtectionInfo {}
 unsafe impl ::core::marker::Sync for DataProtectionInfo {}
 pub struct DataProtectionManager;
 impl DataProtectionManager {
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ProtectAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(data: Param0, identity: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<BufferProtectUnprotectResult>> {
         Self::IDataProtectionManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).ProtectAsync)(::windows_core::Interface::as_raw(this), data.into_param().abi(), identity.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<BufferProtectUnprotectResult>>(result__)
         })
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn UnprotectAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(data: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<BufferProtectUnprotectResult>> {
         Self::IDataProtectionManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).UnprotectAsync)(::windows_core::Interface::as_raw(this), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<BufferProtectUnprotectResult>>(result__)
         })
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ProtectStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IInputStream>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream>>(unprotectedstream: Param0, identity: Param1, protectedstream: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<DataProtectionInfo>> {
         Self::IDataProtectionManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).ProtectStreamAsync)(::windows_core::Interface::as_raw(this), unprotectedstream.into_param().abi(), identity.into_param().abi(), protectedstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<DataProtectionInfo>>(result__)
         })
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn UnprotectStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IInputStream>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream>>(protectedstream: Param0, unprotectedstream: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<DataProtectionInfo>> {
         Self::IDataProtectionManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).UnprotectStreamAsync)(::windows_core::Interface::as_raw(this), protectedstream.into_param().abi(), unprotectedstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<DataProtectionInfo>>(result__)
         })
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetProtectionInfoAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(protecteddata: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<DataProtectionInfo>> {
         Self::IDataProtectionManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetProtectionInfoAsync)(::windows_core::Interface::as_raw(this), protecteddata.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<DataProtectionInfo>>(result__)
         })
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetStreamProtectionInfoAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IInputStream>>(protectedstream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<DataProtectionInfo>> {
         Self::IDataProtectionManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -409,84 +409,84 @@ unsafe impl ::core::marker::Send for FileProtectionInfo {}
 unsafe impl ::core::marker::Sync for FileProtectionInfo {}
 pub struct FileProtectionManager;
 impl FileProtectionManager {
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ProtectAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageItem>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(target: Param0, identity: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<FileProtectionInfo>> {
         Self::IFileProtectionManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).ProtectAsync)(::windows_core::Interface::as_raw(this), target.into_param().abi(), identity.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<FileProtectionInfo>>(result__)
         })
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CopyProtectionAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageItem>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageItem>>(source: Param0, target: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::IFileProtectionManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CopyProtectionAsync)(::windows_core::Interface::as_raw(this), source.into_param().abi(), target.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetProtectionInfoAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageItem>>(source: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<FileProtectionInfo>> {
         Self::IFileProtectionManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetProtectionInfoAsync)(::windows_core::Interface::as_raw(this), source.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<FileProtectionInfo>>(result__)
         })
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SaveFileAsContainerAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(protectedfile: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ProtectedContainerExportResult>> {
         Self::IFileProtectionManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).SaveFileAsContainerAsync)(::windows_core::Interface::as_raw(this), protectedfile.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ProtectedContainerExportResult>>(result__)
         })
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn LoadFileFromContainerAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(containerfile: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ProtectedContainerImportResult>> {
         Self::IFileProtectionManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).LoadFileFromContainerAsync)(::windows_core::Interface::as_raw(this), containerfile.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ProtectedContainerImportResult>>(result__)
         })
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn LoadFileFromContainerWithTargetAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageItem>>(containerfile: Param0, target: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ProtectedContainerImportResult>> {
         Self::IFileProtectionManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).LoadFileFromContainerWithTargetAsync)(::windows_core::Interface::as_raw(this), containerfile.into_param().abi(), target.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ProtectedContainerImportResult>>(result__)
         })
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateProtectedAndOpenAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFolder>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(parentfolder: Param0, desiredname: Param1, identity: Param2, collisionoption: ::winrt_storage::CreationCollisionOption) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ProtectedFileCreateResult>> {
         Self::IFileProtectionManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateProtectedAndOpenAsync)(::windows_core::Interface::as_raw(this), parentfolder.into_param().abi(), desiredname.into_param().abi(), identity.into_param().abi(), collisionoption, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ProtectedFileCreateResult>>(result__)
         })
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn IsContainerAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(file: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::IFileProtectionManagerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).IsContainerAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn LoadFileFromContainerWithTargetAndNameCollisionOptionAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageItem>>(containerfile: Param0, target: Param1, collisionoption: ::winrt_storage::NameCollisionOption) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ProtectedContainerImportResult>> {
         Self::IFileProtectionManagerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).LoadFileFromContainerWithTargetAndNameCollisionOptionAsync)(::windows_core::Interface::as_raw(this), containerfile.into_param().abi(), target.into_param().abi(), collisionoption, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ProtectedContainerImportResult>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub fn SaveFileAsContainerWithSharingAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(protectedfile: Param0, sharedwithidentities: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ProtectedContainerExportResult>> {
         Self::IFileProtectionManagerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).SaveFileAsContainerWithSharingAsync)(::windows_core::Interface::as_raw(this), protectedfile.into_param().abi(), sharedwithidentities.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ProtectedContainerExportResult>>(result__)
         })
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn UnprotectAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageItem>>(target: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<FileProtectionInfo>> {
         Self::IFileProtectionManagerStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).UnprotectAsync)(::windows_core::Interface::as_raw(this), target.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<FileProtectionInfo>>(result__)
         })
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn UnprotectWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageItem>, Param1: ::windows_core::IntoParam<'a, FileUnprotectOptions>>(target: Param0, options: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<FileProtectionInfo>> {
         Self::IFileProtectionManagerStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -552,42 +552,42 @@ unsafe impl ::windows_core::RuntimeType for FileProtectionStatus {
         Ok(*from)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 pub struct FileRevocationManager;
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl FileRevocationManager {
-    #[cfg(all(feature = "Storage", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-"))]
     pub fn ProtectAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageItem>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(storageitem: Param0, enterpriseidentity: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<FileProtectionStatus>> {
         Self::IFileRevocationManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).ProtectAsync)(::windows_core::Interface::as_raw(this), storageitem.into_param().abi(), enterpriseidentity.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<FileProtectionStatus>>(result__)
         })
     }
-    #[cfg(all(feature = "Storage", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-"))]
     pub fn CopyProtectionAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageItem>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageItem>>(sourcestorageitem: Param0, targetstorageitem: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::IFileRevocationManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CopyProtectionAsync)(::windows_core::Interface::as_raw(this), sourcestorageitem.into_param().abi(), targetstorageitem.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn Revoke<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(enterpriseidentity: Param0) -> ::windows_core::Result<()> {
         Self::IFileRevocationManagerStatics(|this| unsafe { (::windows_core::Interface::vtable(this).Revoke)(::windows_core::Interface::as_raw(this), enterpriseidentity.into_param().abi()).ok() })
     }
-    #[cfg(all(feature = "Storage", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-"))]
     pub fn GetStatusAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageItem>>(storageitem: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<FileProtectionStatus>> {
         Self::IFileRevocationManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetStatusAsync)(::windows_core::Interface::as_raw(this), storageitem.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<FileProtectionStatus>>(result__)
         })
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn IFileRevocationManagerStatics<R, F: FnOnce(&IFileRevocationManagerStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
         static mut SHARED: ::windows_core::FactoryCache<FileRevocationManager, IFileRevocationManagerStatics> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::windows_core::RuntimeName for FileRevocationManager {
     const NAME: &'static str = "Windows.Security.EnterpriseData.FileRevocationManager";
 }
@@ -699,9 +699,9 @@ unsafe impl ::windows_core::Interface for IBufferProtectUnprotectResult {
 #[doc(hidden)]
 pub struct IBufferProtectUnprotectResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub Buffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Buffer: usize,
     pub ProtectionInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -730,29 +730,29 @@ unsafe impl ::windows_core::Interface for IDataProtectionManagerStatics {
 #[doc(hidden)]
 pub struct IDataProtectionManagerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub ProtectAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, data: ::windows_core::RawPtr, identity: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     ProtectAsync: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub UnprotectAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, data: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     UnprotectAsync: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub ProtectStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unprotectedstream: ::windows_core::RawPtr, identity: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, protectedstream: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     ProtectStreamAsync: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub UnprotectStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, protectedstream: ::windows_core::RawPtr, unprotectedstream: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     UnprotectStreamAsync: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub GetProtectionInfoAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, protecteddata: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     GetProtectionInfoAsync: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub GetStreamProtectionInfoAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, protectedstream: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     GetStreamProtectionInfoAsync: usize,
 }
 #[doc(hidden)]
@@ -794,33 +794,33 @@ unsafe impl ::windows_core::Interface for IFileProtectionManagerStatics {
 #[doc(hidden)]
 pub struct IFileProtectionManagerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub ProtectAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, target: ::windows_core::RawPtr, identity: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     ProtectAsync: usize,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub CopyProtectionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, source: ::windows_core::RawPtr, target: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CopyProtectionAsync: usize,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub GetProtectionInfoAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, source: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     GetProtectionInfoAsync: usize,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub SaveFileAsContainerAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, protectedfile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SaveFileAsContainerAsync: usize,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub LoadFileFromContainerAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, containerfile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     LoadFileFromContainerAsync: usize,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub LoadFileFromContainerWithTargetAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, containerfile: ::windows_core::RawPtr, target: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     LoadFileFromContainerWithTargetAsync: usize,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateProtectedAndOpenAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, parentfolder: ::windows_core::RawPtr, desiredname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, identity: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, collisionoption: ::winrt_storage::CreationCollisionOption, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateProtectedAndOpenAsync: usize,
 }
 #[doc(hidden)]
@@ -834,17 +834,17 @@ unsafe impl ::windows_core::Interface for IFileProtectionManagerStatics2 {
 #[doc(hidden)]
 pub struct IFileProtectionManagerStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub IsContainerAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     IsContainerAsync: usize,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub LoadFileFromContainerWithTargetAndNameCollisionOptionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, containerfile: ::windows_core::RawPtr, target: ::windows_core::RawPtr, collisionoption: ::winrt_storage::NameCollisionOption, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     LoadFileFromContainerWithTargetAndNameCollisionOptionAsync: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub SaveFileAsContainerWithSharingAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, protectedfile: ::windows_core::RawPtr, sharedwithidentities: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-storage")))]
     SaveFileAsContainerWithSharingAsync: usize,
 }
 #[doc(hidden)]
@@ -858,44 +858,44 @@ unsafe impl ::windows_core::Interface for IFileProtectionManagerStatics3 {
 #[doc(hidden)]
 pub struct IFileProtectionManagerStatics3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub UnprotectAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, target: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     UnprotectAsync: usize,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub UnprotectWithOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, target: ::windows_core::RawPtr, options: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     UnprotectWithOptionsAsync: usize,
 }
 #[doc(hidden)]
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct IFileRevocationManagerStatics(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for IFileRevocationManagerStatics {
     type Vtable = IFileRevocationManagerStatics_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x256bbc3d_1c5d_4260_8c75_9144cfb78ba9);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFileRevocationManagerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Storage", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-"))]
     pub ProtectAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, storageitem: ::windows_core::RawPtr, enterpriseidentity: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Storage", feature = "deprecated")))]
+    #[cfg(not(all(feature = "winrt-storage", feature = "winrt-")))]
     ProtectAsync: usize,
-    #[cfg(all(feature = "Storage", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-"))]
     pub CopyProtectionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sourcestorageitem: ::windows_core::RawPtr, targetstorageitem: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Storage", feature = "deprecated")))]
+    #[cfg(not(all(feature = "winrt-storage", feature = "winrt-")))]
     CopyProtectionAsync: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub Revoke: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, enterpriseidentity: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     Revoke: usize,
-    #[cfg(all(feature = "Storage", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-"))]
     pub GetStatusAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, storageitem: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Storage", feature = "deprecated")))]
+    #[cfg(not(all(feature = "winrt-storage", feature = "winrt-")))]
     GetStatusAsync: usize,
 }
 #[doc(hidden)]
@@ -936,9 +936,9 @@ unsafe impl ::windows_core::Interface for IProtectedAccessResumedEventArgs {
 #[doc(hidden)]
 pub struct IProtectedAccessResumedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Identities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Identities: usize,
 }
 #[doc(hidden)]
@@ -952,9 +952,9 @@ unsafe impl ::windows_core::Interface for IProtectedAccessSuspendingEventArgs {
 #[doc(hidden)]
 pub struct IProtectedAccessSuspendingEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Identities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Identities: usize,
     pub Deadline: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -971,9 +971,9 @@ unsafe impl ::windows_core::Interface for IProtectedContainerExportResult {
 pub struct IProtectedContainerExportResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ProtectedImportExportStatus) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub File: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     File: usize,
 }
 #[doc(hidden)]
@@ -988,9 +988,9 @@ unsafe impl ::windows_core::Interface for IProtectedContainerImportResult {
 pub struct IProtectedContainerImportResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ProtectedImportExportStatus) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub File: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     File: usize,
 }
 #[doc(hidden)]
@@ -1004,9 +1004,9 @@ unsafe impl ::windows_core::Interface for IProtectedContentRevokedEventArgs {
 #[doc(hidden)]
 pub struct IProtectedContentRevokedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Identities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Identities: usize,
 }
 #[doc(hidden)]
@@ -1020,13 +1020,13 @@ unsafe impl ::windows_core::Interface for IProtectedFileCreateResult {
 #[doc(hidden)]
 pub struct IProtectedFileCreateResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub File: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     File: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub Stream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Stream: usize,
     pub ProtectionInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -1107,9 +1107,9 @@ pub struct IProtectionPolicyManagerStatics_Vtbl {
     pub TryApplyProcessUIPolicy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, identity: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut bool) -> ::windows_core::HRESULT,
     pub ClearProcessUIPolicy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub CreateCurrentThreadNetworkContext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, identity: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Networking")]
+    #[cfg(feature = "winrt-networking")]
     pub GetPrimaryManagedIdentityForNetworkEndpointAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, endpointhost: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking"))]
+    #[cfg(not(feature = "winrt-networking"))]
     GetPrimaryManagedIdentityForNetworkEndpointAsync: usize,
     pub RevokeContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, identity: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetForCurrentView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -1174,29 +1174,29 @@ pub struct IProtectionPolicyManagerStatics4_Vtbl {
     pub IsRoamableProtectionEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, identity: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut bool) -> ::windows_core::HRESULT,
     pub RequestAccessWithBehaviorAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sourceidentity: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, targetidentity: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, auditinfo: ::windows_core::RawPtr, messagefromapp: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, behavior: ProtectionPolicyRequestAccessBehavior, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RequestAccessForAppWithBehaviorAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sourceidentity: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, apppackagefamilyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, auditinfo: ::windows_core::RawPtr, messagefromapp: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, behavior: ProtectionPolicyRequestAccessBehavior, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub RequestAccessToFilesForAppAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sourceitemlist: ::windows_core::RawPtr, apppackagefamilyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, auditinfo: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-storage")))]
     RequestAccessToFilesForAppAsync: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub RequestAccessToFilesForAppWithMessageAndBehaviorAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sourceitemlist: ::windows_core::RawPtr, apppackagefamilyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, auditinfo: ::windows_core::RawPtr, messagefromapp: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, behavior: ProtectionPolicyRequestAccessBehavior, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-storage")))]
     RequestAccessToFilesForAppWithMessageAndBehaviorAsync: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub RequestAccessToFilesForProcessAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sourceitemlist: ::windows_core::RawPtr, processid: u32, auditinfo: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-storage")))]
     RequestAccessToFilesForProcessAsync: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub RequestAccessToFilesForProcessWithMessageAndBehaviorAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sourceitemlist: ::windows_core::RawPtr, processid: u32, auditinfo: ::windows_core::RawPtr, messagefromapp: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, behavior: ProtectionPolicyRequestAccessBehavior, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-storage")))]
     RequestAccessToFilesForProcessWithMessageAndBehaviorAsync: usize,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub IsFileProtectionRequiredAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, target: ::windows_core::RawPtr, identity: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     IsFileProtectionRequiredAsync: usize,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub IsFileProtectionRequiredForNewFileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, parentfolder: ::windows_core::RawPtr, identity: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, desiredname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     IsFileProtectionRequiredForNewFileAsync: usize,
     pub PrimaryManagedIdentity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetPrimaryManagedIdentityForIdentity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, identity: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -1216,7 +1216,7 @@ pub struct IThreadNetworkContext_Vtbl {
 #[repr(transparent)]
 pub struct ProtectedAccessResumedEventArgs(::windows_core::IUnknown);
 impl ProtectedAccessResumedEventArgs {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Identities(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -1300,7 +1300,7 @@ unsafe impl ::core::marker::Sync for ProtectedAccessResumedEventArgs {}
 #[repr(transparent)]
 pub struct ProtectedAccessSuspendingEventArgs(::windows_core::IUnknown);
 impl ProtectedAccessSuspendingEventArgs {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Identities(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -1405,7 +1405,7 @@ impl ProtectedContainerExportResult {
             (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ProtectedImportExportStatus>(result__)
         }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn File(&self) -> ::windows_core::Result<::winrt_storage::StorageFile> {
         let this = self;
         unsafe {
@@ -1496,7 +1496,7 @@ impl ProtectedContainerImportResult {
             (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ProtectedImportExportStatus>(result__)
         }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn File(&self) -> ::windows_core::Result<::winrt_storage::StorageFile> {
         let this = self;
         unsafe {
@@ -1580,7 +1580,7 @@ unsafe impl ::core::marker::Sync for ProtectedContainerImportResult {}
 #[repr(transparent)]
 pub struct ProtectedContentRevokedEventArgs(::windows_core::IUnknown);
 impl ProtectedContentRevokedEventArgs {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Identities(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -1664,7 +1664,7 @@ unsafe impl ::core::marker::Sync for ProtectedContentRevokedEventArgs {}
 #[repr(transparent)]
 pub struct ProtectedFileCreateResult(::windows_core::IUnknown);
 impl ProtectedFileCreateResult {
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn File(&self) -> ::windows_core::Result<::winrt_storage::StorageFile> {
         let this = self;
         unsafe {
@@ -1672,7 +1672,7 @@ impl ProtectedFileCreateResult {
             (::windows_core::Interface::vtable(this).File)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::StorageFile>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Stream(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStream> {
         let this = self;
         unsafe {
@@ -2050,7 +2050,7 @@ impl ProtectionPolicyManager {
             (::windows_core::Interface::vtable(this).CreateCurrentThreadNetworkContext)(::windows_core::Interface::as_raw(this), identity.into_param().abi(), result__.as_mut_ptr()).from_abi::<ThreadNetworkContext>(result__)
         })
     }
-    #[cfg(feature = "Networking")]
+    #[cfg(feature = "winrt-networking")]
     pub fn GetPrimaryManagedIdentityForNetworkEndpointAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_networking::HostName>>(endpointhost: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::IProtectionPolicyManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -2201,42 +2201,42 @@ impl ProtectionPolicyManager {
             (::windows_core::Interface::vtable(this).RequestAccessForAppWithBehaviorAsync)(::windows_core::Interface::as_raw(this), sourceidentity.into_param().abi(), apppackagefamilyname.into_param().abi(), auditinfo.into_param().abi(), messagefromapp.into_param().abi(), behavior, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ProtectionPolicyEvaluationResult>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub fn RequestAccessToFilesForAppAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_storage::IStorageItem>>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ProtectionPolicyAuditInfo>>(sourceitemlist: Param0, apppackagefamilyname: Param1, auditinfo: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ProtectionPolicyEvaluationResult>> {
         Self::IProtectionPolicyManagerStatics4(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).RequestAccessToFilesForAppAsync)(::windows_core::Interface::as_raw(this), sourceitemlist.into_param().abi(), apppackagefamilyname.into_param().abi(), auditinfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ProtectionPolicyEvaluationResult>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub fn RequestAccessToFilesForAppWithMessageAndBehaviorAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_storage::IStorageItem>>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ProtectionPolicyAuditInfo>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(sourceitemlist: Param0, apppackagefamilyname: Param1, auditinfo: Param2, messagefromapp: Param3, behavior: ProtectionPolicyRequestAccessBehavior) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ProtectionPolicyEvaluationResult>> {
         Self::IProtectionPolicyManagerStatics4(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).RequestAccessToFilesForAppWithMessageAndBehaviorAsync)(::windows_core::Interface::as_raw(this), sourceitemlist.into_param().abi(), apppackagefamilyname.into_param().abi(), auditinfo.into_param().abi(), messagefromapp.into_param().abi(), behavior, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ProtectionPolicyEvaluationResult>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub fn RequestAccessToFilesForProcessAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_storage::IStorageItem>>, Param2: ::windows_core::IntoParam<'a, ProtectionPolicyAuditInfo>>(sourceitemlist: Param0, processid: u32, auditinfo: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ProtectionPolicyEvaluationResult>> {
         Self::IProtectionPolicyManagerStatics4(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).RequestAccessToFilesForProcessAsync)(::windows_core::Interface::as_raw(this), sourceitemlist.into_param().abi(), processid, auditinfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ProtectionPolicyEvaluationResult>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub fn RequestAccessToFilesForProcessWithMessageAndBehaviorAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_storage::IStorageItem>>, Param2: ::windows_core::IntoParam<'a, ProtectionPolicyAuditInfo>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(sourceitemlist: Param0, processid: u32, auditinfo: Param2, messagefromapp: Param3, behavior: ProtectionPolicyRequestAccessBehavior) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ProtectionPolicyEvaluationResult>> {
         Self::IProtectionPolicyManagerStatics4(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).RequestAccessToFilesForProcessWithMessageAndBehaviorAsync)(::windows_core::Interface::as_raw(this), sourceitemlist.into_param().abi(), processid, auditinfo.into_param().abi(), messagefromapp.into_param().abi(), behavior, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ProtectionPolicyEvaluationResult>>(result__)
         })
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn IsFileProtectionRequiredAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageItem>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(target: Param0, identity: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::IProtectionPolicyManagerStatics4(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).IsFileProtectionRequiredAsync)(::windows_core::Interface::as_raw(this), target.into_param().abi(), identity.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn IsFileProtectionRequiredForNewFileAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFolder>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(parentfolder: Param0, identity: Param1, desiredname: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::IProtectionPolicyManagerStatics4(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();

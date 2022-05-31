@@ -1,7 +1,7 @@
 #[repr(transparent)]
 pub struct IDisplayDeviceInterop(::windows_core::IUnknown);
 impl IDisplayDeviceInterop {
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security")]
     pub unsafe fn CreateSharedHandle<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, pobject: Param0, psecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, access: u32, name: Param3) -> ::windows_core::Result<::win32_foundation::HANDLE> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::HANDLE>::zeroed();
         (::windows_core::Interface::vtable(self).CreateSharedHandle)(::windows_core::Interface::as_raw(self), pobject.into_param().abi(), ::core::mem::transmute(psecurityattributes), ::core::mem::transmute(access), name.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::HANDLE>(result__)
@@ -55,9 +55,9 @@ unsafe impl ::windows_core::Interface for IDisplayDeviceInterop {
 #[doc(hidden)]
 pub struct IDisplayDeviceInterop_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security")]
     pub CreateSharedHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pobject: *mut ::core::ffi::c_void, psecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, access: u32, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, phandle: *mut ::win32_foundation::HANDLE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Security"))]
+    #[cfg(not(feature = "win32-security"))]
     CreateSharedHandle: usize,
     pub OpenSharedHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, nthandle: ::win32_foundation::HANDLE, riid: ::windows_core::GUID, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }

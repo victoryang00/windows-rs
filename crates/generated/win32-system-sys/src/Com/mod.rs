@@ -53,14 +53,14 @@ extern "system" {
     pub fn CoGetObject(pszname: ::windows_core_sys::PCWSTR, pbindoptions: *const BIND_OPTS, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn CoGetObjectContext(riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn CoGetPSClsid(riid: *const ::windows_core_sys::GUID, pclsid: *mut ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CoGetSystemSecurityPermissions(comsdtype: COMSD, ppsd: *mut ::win32_security_sys::PSECURITY_DESCRIPTOR) -> ::windows_core_sys::HRESULT;
     pub fn CoGetTreatAsClass(clsidold: *const ::windows_core_sys::GUID, pclsidnew: *mut ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
     pub fn CoImpersonateClient() -> ::windows_core_sys::HRESULT;
     pub fn CoIncrementMTAUsage(pcookie: *mut CO_MTA_USAGE_COOKIE) -> ::windows_core_sys::HRESULT;
     pub fn CoInitialize(pvreserved: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn CoInitializeEx(pvreserved: *const ::core::ffi::c_void, dwcoinit: COINIT) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CoInitializeSecurity(psecdesc: ::win32_security_sys::PSECURITY_DESCRIPTOR, cauthsvc: i32, asauthsvc: *const SOLE_AUTHENTICATION_SERVICE, preserved1: *const ::core::ffi::c_void, dwauthnlevel: RPC_C_AUTHN_LEVEL, dwimplevel: RPC_C_IMP_LEVEL, pauthlist: *const ::core::ffi::c_void, dwcapabilities: EOLE_AUTHENTICATION_CAPABILITIES, preserved3: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn CoInstall(pbc: IBindCtx, dwflags: u32, pclassspec: *const uCLSSPEC, pquery: *const QUERYCONTEXT, pszcodebase: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn CoInvalidateRemoteMachineBindings(pszmachinename: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
@@ -189,7 +189,7 @@ pub type AsyncIPipeDouble = *mut ::core::ffi::c_void;
 pub type AsyncIPipeLong = *mut ::core::ffi::c_void;
 pub type AsyncIUnknown = *mut ::core::ffi::c_void;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys", feature = "win32-system-sys"))]
 pub struct BINDINFO {
     pub cbSize: u32,
     pub szExtraInfo: ::windows_core_sys::PWSTR,
@@ -206,9 +206,9 @@ pub struct BINDINFO {
     pub pUnk: ::windows_core_sys::IUnknown,
     pub dwReserved: u32,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for BINDINFO {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for BINDINFO {
     fn clone(&self) -> Self {
         *self
@@ -218,15 +218,15 @@ pub type BINDINFOF = i32;
 pub const BINDINFOF_URLENCODESTGMEDDATA: BINDINFOF = 1i32;
 pub const BINDINFOF_URLENCODEDEXTRAINFO: BINDINFOF = 2i32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 pub union BINDPTR {
     pub lpfuncdesc: *mut FUNCDESC,
     pub lpvardesc: *mut VARDESC,
     pub lptcomp: ITypeComp,
 }
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for BINDPTR {}
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for BINDPTR {
     fn clone(&self) -> Self {
         *self
@@ -484,28 +484,28 @@ impl ::core::clone::Clone for CSPLATFORM {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 pub struct CUSTDATA {
     pub cCustData: u32,
     pub prgCustData: *mut CUSTDATAITEM,
 }
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for CUSTDATA {}
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for CUSTDATA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 pub struct CUSTDATAITEM {
     pub guid: ::windows_core_sys::GUID,
     pub varValue: VARIANT,
 }
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for CUSTDATAITEM {}
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for CUSTDATAITEM {
     fn clone(&self) -> Self {
         *self
@@ -571,16 +571,16 @@ pub const DESCKIND_TYPECOMP: DESCKIND = 3i32;
 pub const DESCKIND_IMPLICITAPPOBJ: DESCKIND = 4i32;
 pub const DESCKIND_MAX: DESCKIND = 5i32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 pub struct DISPPARAMS {
     pub rgvarg: *mut VARIANT,
     pub rgdispidNamedArgs: *mut i32,
     pub cArgs: u32,
     pub cNamedArgs: u32,
 }
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for DISPPARAMS {}
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for DISPPARAMS {
     fn clone(&self) -> Self {
         *self
@@ -619,28 +619,28 @@ impl ::core::clone::Clone for DWORD_BLOB {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 pub struct ELEMDESC {
     pub tdesc: TYPEDESC,
     pub Anonymous: ELEMDESC_0,
 }
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for ELEMDESC {}
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for ELEMDESC {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 pub union ELEMDESC_0 {
     pub idldesc: IDLDESC,
     pub paramdesc: super::Ole::PARAMDESC,
 }
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for ELEMDESC_0 {}
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for ELEMDESC_0 {
     fn clone(&self) -> Self {
         *self
@@ -710,15 +710,15 @@ impl ::core::clone::Clone for FLAGGED_WORD_BLOB {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
 pub struct FLAG_STGMEDIUM {
     pub ContextFlags: i32,
     pub fPassOwnership: i32,
     pub Stgmed: STGMEDIUM,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for FLAG_STGMEDIUM {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for FLAG_STGMEDIUM {
     fn clone(&self) -> Self {
         *self
@@ -739,7 +739,7 @@ impl ::core::clone::Clone for FORMATETC {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 pub struct FUNCDESC {
     pub memid: i32,
     pub lprgscode: *mut i32,
@@ -754,9 +754,9 @@ pub struct FUNCDESC {
     pub elemdescFunc: ELEMDESC,
     pub wFuncFlags: u16,
 }
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for FUNCDESC {}
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for FUNCDESC {
     fn clone(&self) -> Self {
         *self
@@ -769,29 +769,29 @@ pub const FUNC_NONVIRTUAL: FUNCKIND = 2i32;
 pub const FUNC_STATIC: FUNCKIND = 3i32;
 pub const FUNC_DISPATCH: FUNCKIND = 4i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_SystemServices"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
 pub struct GDI_OBJECT {
     pub ObjectType: u32,
     pub u: GDI_OBJECT_0,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_SystemServices"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for GDI_OBJECT {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_SystemServices"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for GDI_OBJECT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_SystemServices"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
 pub union GDI_OBJECT_0 {
     pub hBitmap: *mut super::SystemServices::userHBITMAP,
     pub hPalette: *mut super::SystemServices::userHPALETTE,
     pub hGeneric: *mut super::SystemServices::userHGLOBAL,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_SystemServices"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for GDI_OBJECT_0 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_SystemServices"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for GDI_OBJECT_0 {
     fn clone(&self) -> Self {
         *self
@@ -1272,22 +1272,22 @@ pub const STGC_ONLYIFCURRENT: STGC = 2u32;
 pub const STGC_DANGEROUSLYCOMMITMERELYTODISKCACHE: STGC = 4u32;
 pub const STGC_CONSOLIDATE: STGC = 8u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
 pub struct STGMEDIUM {
     pub tymed: u32,
     pub Anonymous: STGMEDIUM_0,
     pub pUnkForRelease: ::windows_core_sys::IUnknown,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for STGMEDIUM {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for STGMEDIUM {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
 pub union STGMEDIUM_0 {
     pub hBitmap: ::win32_graphics_sys::Gdi::HBITMAP,
     pub hMetaFilePict: *mut ::core::ffi::c_void,
@@ -1297,9 +1297,9 @@ pub union STGMEDIUM_0 {
     pub pstm: IStream,
     pub pstg: StructuredStorage::IStorage,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for STGMEDIUM_0 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for STGMEDIUM_0 {
     fn clone(&self) -> Self {
         *self
@@ -1367,7 +1367,7 @@ pub const TYMED_MFPICT: TYMED = 32i32;
 pub const TYMED_ENHMF: TYMED = 64i32;
 pub const TYMED_NULL: TYMED = 0i32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 pub struct TYPEATTR {
     pub guid: ::windows_core_sys::GUID,
     pub lcid: u32,
@@ -1388,38 +1388,38 @@ pub struct TYPEATTR {
     pub tdescAlias: TYPEDESC,
     pub idldescType: IDLDESC,
 }
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for TYPEATTR {}
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for TYPEATTR {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 pub struct TYPEDESC {
     pub Anonymous: TYPEDESC_0,
     pub vt: u16,
 }
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for TYPEDESC {}
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for TYPEDESC {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 pub union TYPEDESC_0 {
     pub lptdesc: *mut TYPEDESC,
     pub lpadesc: *mut super::Ole::ARRAYDESC,
     pub hreftype: u32,
 }
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for TYPEDESC_0 {}
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for TYPEDESC_0 {
     fn clone(&self) -> Self {
         *self
@@ -1487,7 +1487,7 @@ pub const Uri_PROPERTY_SCHEME: Uri_PROPERTY = 17i32;
 pub const Uri_PROPERTY_ZONE: Uri_PROPERTY = 18i32;
 pub const Uri_PROPERTY_DWORD_LAST: Uri_PROPERTY = 18i32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 pub struct VARDESC {
     pub memid: i32,
     pub lpstrSchema: ::windows_core_sys::PWSTR,
@@ -1496,57 +1496,57 @@ pub struct VARDESC {
     pub wVarFlags: u16,
     pub varkind: VARKIND,
 }
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for VARDESC {}
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for VARDESC {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 pub union VARDESC_0 {
     pub oInst: u32,
     pub lpvarValue: *mut VARIANT,
 }
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for VARDESC_0 {}
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for VARDESC_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 pub struct VARIANT {
     pub Anonymous: VARIANT_0,
 }
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for VARIANT {}
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for VARIANT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 pub union VARIANT_0 {
     pub Anonymous: VARIANT_0_0,
     pub decVal: ::win32_foundation_sys::DECIMAL,
 }
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for VARIANT_0 {}
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for VARIANT_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 pub struct VARIANT_0_0 {
     pub vt: u16,
     pub wReserved1: u16,
@@ -1554,16 +1554,16 @@ pub struct VARIANT_0_0 {
     pub wReserved3: u16,
     pub Anonymous: VARIANT_0_0_0,
 }
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for VARIANT_0_0 {}
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for VARIANT_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 pub union VARIANT_0_0_0 {
     pub llVal: i64,
     pub lVal: i32,
@@ -1612,23 +1612,23 @@ pub union VARIANT_0_0_0 {
     pub puintVal: *mut u32,
     pub Anonymous: VARIANT_0_0_0_0,
 }
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for VARIANT_0_0_0 {}
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for VARIANT_0_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 pub struct VARIANT_0_0_0_0 {
     pub pvRecord: *mut ::core::ffi::c_void,
     pub pRecInfo: super::Ole::IRecordInfo,
 }
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for VARIANT_0_0_0_0 {}
-#[cfg(feature = "Win32_System_Ole")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for VARIANT_0_0_0_0 {
     fn clone(&self) -> Self {
         *self
@@ -1723,21 +1723,21 @@ impl ::core::clone::Clone for userSTGMEDIUM {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_SystemServices"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
 pub struct userSTGMEDIUM_0 {
     pub tymed: u32,
     pub u: userSTGMEDIUM_0_0,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_SystemServices"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for userSTGMEDIUM_0 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_SystemServices"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for userSTGMEDIUM_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_SystemServices"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
 pub union userSTGMEDIUM_0_0 {
     pub hMetaFilePict: *mut super::SystemServices::userHMETAFILEPICT,
     pub hHEnhMetaFile: *mut super::SystemServices::userHENHMETAFILE,
@@ -1747,9 +1747,9 @@ pub union userSTGMEDIUM_0_0 {
     pub pstm: *mut BYTE_BLOB,
     pub pstg: *mut BYTE_BLOB,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_SystemServices"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for userSTGMEDIUM_0_0 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_SystemServices"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for userSTGMEDIUM_0_0 {
     fn clone(&self) -> Self {
         *self

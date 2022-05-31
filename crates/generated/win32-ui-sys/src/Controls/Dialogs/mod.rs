@@ -2,9 +2,9 @@
 extern "system" {
     pub fn ChooseColorA(param0: *mut CHOOSECOLORA) -> ::win32_foundation_sys::BOOL;
     pub fn ChooseColorW(param0: *mut CHOOSECOLORW) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ChooseFontA(param0: *mut CHOOSEFONTA) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ChooseFontW(param0: *mut CHOOSEFONTW) -> ::win32_foundation_sys::BOOL;
     pub fn CommDlgExtendedError() -> COMMON_DLG_ERRORS;
     pub fn FindTextA(param0: *mut FINDREPLACEA) -> ::win32_foundation_sys::HWND;
@@ -17,13 +17,13 @@ extern "system" {
     pub fn GetSaveFileNameW(param0: *mut OPENFILENAMEW) -> ::win32_foundation_sys::BOOL;
     pub fn PageSetupDlgA(param0: *mut PAGESETUPDLGA) -> ::win32_foundation_sys::BOOL;
     pub fn PageSetupDlgW(param0: *mut PAGESETUPDLGW) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn PrintDlgA(ppd: *mut PRINTDLGA) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn PrintDlgExA(ppd: *mut PRINTDLGEXA) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn PrintDlgExW(ppd: *mut PRINTDLGEXW) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn PrintDlgW(ppd: *mut PRINTDLGW) -> ::win32_foundation_sys::BOOL;
     pub fn ReplaceTextA(param0: *mut FINDREPLACEA) -> ::win32_foundation_sys::HWND;
     pub fn ReplaceTextW(param0: *mut FINDREPLACEW) -> ::win32_foundation_sys::HWND;
@@ -127,7 +127,7 @@ impl ::core::clone::Clone for CHOOSECOLORW {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct CHOOSEFONTA {
     pub lStructSize: u32,
     pub hwndOwner: ::win32_foundation_sys::HWND,
@@ -147,10 +147,10 @@ pub struct CHOOSEFONTA {
     pub nSizeMax: i32,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for CHOOSEFONTA {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for CHOOSEFONTA {
     fn clone(&self) -> Self {
         *self
@@ -158,7 +158,7 @@ impl ::core::clone::Clone for CHOOSEFONTA {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct CHOOSEFONTA {
     pub lStructSize: u32,
     pub hwndOwner: ::win32_foundation_sys::HWND,
@@ -178,10 +178,10 @@ pub struct CHOOSEFONTA {
     pub nSizeMax: i32,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for CHOOSEFONTA {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for CHOOSEFONTA {
     fn clone(&self) -> Self {
         *self
@@ -189,7 +189,7 @@ impl ::core::clone::Clone for CHOOSEFONTA {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct CHOOSEFONTW {
     pub lStructSize: u32,
     pub hwndOwner: ::win32_foundation_sys::HWND,
@@ -209,10 +209,10 @@ pub struct CHOOSEFONTW {
     pub nSizeMax: i32,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for CHOOSEFONTW {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for CHOOSEFONTW {
     fn clone(&self) -> Self {
         *self
@@ -220,7 +220,7 @@ impl ::core::clone::Clone for CHOOSEFONTW {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct CHOOSEFONTW {
     pub lStructSize: u32,
     pub hwndOwner: ::win32_foundation_sys::HWND,
@@ -240,10 +240,10 @@ pub struct CHOOSEFONTW {
     pub nSizeMax: i32,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for CHOOSEFONTW {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for CHOOSEFONTW {
     fn clone(&self) -> Self {
         *self
@@ -1087,7 +1087,7 @@ pub const PD_RESULT_CANCEL: u32 = 0u32;
 pub const PD_RESULT_PRINT: u32 = 1u32;
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct PRINTDLGA {
     pub lStructSize: u32,
     pub hwndOwner: ::win32_foundation_sys::HWND,
@@ -1110,10 +1110,10 @@ pub struct PRINTDLGA {
     pub hSetupTemplate: isize,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for PRINTDLGA {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for PRINTDLGA {
     fn clone(&self) -> Self {
         *self
@@ -1121,7 +1121,7 @@ impl ::core::clone::Clone for PRINTDLGA {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct PRINTDLGA {
     pub lStructSize: u32,
     pub hwndOwner: ::win32_foundation_sys::HWND,
@@ -1144,10 +1144,10 @@ pub struct PRINTDLGA {
     pub hSetupTemplate: isize,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for PRINTDLGA {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for PRINTDLGA {
     fn clone(&self) -> Self {
         *self
@@ -1155,7 +1155,7 @@ impl ::core::clone::Clone for PRINTDLGA {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct PRINTDLGEXA {
     pub lStructSize: u32,
     pub hwndOwner: ::win32_foundation_sys::HWND,
@@ -1180,10 +1180,10 @@ pub struct PRINTDLGEXA {
     pub dwResultAction: u32,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for PRINTDLGEXA {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for PRINTDLGEXA {
     fn clone(&self) -> Self {
         *self
@@ -1191,7 +1191,7 @@ impl ::core::clone::Clone for PRINTDLGEXA {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct PRINTDLGEXA {
     pub lStructSize: u32,
     pub hwndOwner: ::win32_foundation_sys::HWND,
@@ -1216,10 +1216,10 @@ pub struct PRINTDLGEXA {
     pub dwResultAction: u32,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for PRINTDLGEXA {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for PRINTDLGEXA {
     fn clone(&self) -> Self {
         *self
@@ -1227,7 +1227,7 @@ impl ::core::clone::Clone for PRINTDLGEXA {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct PRINTDLGEXW {
     pub lStructSize: u32,
     pub hwndOwner: ::win32_foundation_sys::HWND,
@@ -1252,10 +1252,10 @@ pub struct PRINTDLGEXW {
     pub dwResultAction: u32,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for PRINTDLGEXW {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for PRINTDLGEXW {
     fn clone(&self) -> Self {
         *self
@@ -1263,7 +1263,7 @@ impl ::core::clone::Clone for PRINTDLGEXW {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct PRINTDLGEXW {
     pub lStructSize: u32,
     pub hwndOwner: ::win32_foundation_sys::HWND,
@@ -1288,10 +1288,10 @@ pub struct PRINTDLGEXW {
     pub dwResultAction: u32,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for PRINTDLGEXW {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for PRINTDLGEXW {
     fn clone(&self) -> Self {
         *self
@@ -1328,7 +1328,7 @@ pub const PD_PRINTSETUP: PRINTDLGEX_FLAGS = 64u32;
 pub const PD_SHOWHELP: PRINTDLGEX_FLAGS = 2048u32;
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct PRINTDLGW {
     pub lStructSize: u32,
     pub hwndOwner: ::win32_foundation_sys::HWND,
@@ -1351,10 +1351,10 @@ pub struct PRINTDLGW {
     pub hSetupTemplate: isize,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for PRINTDLGW {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for PRINTDLGW {
     fn clone(&self) -> Self {
         *self
@@ -1362,7 +1362,7 @@ impl ::core::clone::Clone for PRINTDLGW {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct PRINTDLGW {
     pub lStructSize: u32,
     pub hwndOwner: ::win32_foundation_sys::HWND,
@@ -1385,10 +1385,10 @@ pub struct PRINTDLGW {
     pub hSetupTemplate: isize,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for PRINTDLGW {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for PRINTDLGW {
     fn clone(&self) -> Self {
         *self

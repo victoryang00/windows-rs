@@ -433,7 +433,7 @@ impl ButtonBase {
             (::windows_core::Interface::vtable(this).IsPressed)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Command(&self) -> ::windows_core::Result<super::super::Input::ICommand> {
         let this = self;
         unsafe {
@@ -441,7 +441,7 @@ impl ButtonBase {
             (::windows_core::Interface::vtable(this).Command)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Input::ICommand>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetCommand<'a, Param0: ::windows_core::IntoParam<'a, super::super::Input::ICommand>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCommand)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -573,53 +573,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a But
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ButtonBase> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: ButtonBase) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ButtonBase> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &ButtonBase) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for ButtonBase {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &ButtonBase {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ButtonBase> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: ButtonBase) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ButtonBase> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &ButtonBase) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for ButtonBase {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &ButtonBase {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -808,53 +808,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Cal
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<CalendarPanel> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: CalendarPanel) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&CalendarPanel> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &CalendarPanel) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for CalendarPanel {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &CalendarPanel {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<CalendarPanel> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: CalendarPanel) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&CalendarPanel> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &CalendarPanel) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for CalendarPanel {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &CalendarPanel {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -1333,7 +1333,7 @@ impl CarouselPanel {
         let this = &::windows_core::Interface::cast::<IScrollSnapPointsInfo>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveVerticalSnapPointsChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetIrregularSnapPoints(&self, orientation: super::Orientation, alignment: SnapPointsAlignment) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<f32>> {
         let this = &::windows_core::Interface::cast::<IScrollSnapPointsInfo>(self)?;
         unsafe {
@@ -1423,27 +1423,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Car
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<CarouselPanel> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: CarouselPanel) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&CarouselPanel> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &CarouselPanel) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for CarouselPanel {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &CarouselPanel {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -1471,27 +1471,27 @@ impl<'a> ::windows_core::IntoParam<'a, IScrollSnapPointsInfo> for &CarouselPanel
         ::core::convert::TryInto::<IScrollSnapPointsInfo>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<CarouselPanel> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: CarouselPanel) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&CarouselPanel> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &CarouselPanel) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for CarouselPanel {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &CarouselPanel {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -1711,53 +1711,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Col
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ColorPickerSlider> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: ColorPickerSlider) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ColorPickerSlider> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &ColorPickerSlider) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for ColorPickerSlider {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &ColorPickerSlider {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ColorPickerSlider> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: ColorPickerSlider) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ColorPickerSlider> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &ColorPickerSlider) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for ColorPickerSlider {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &ColorPickerSlider {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -1899,7 +1899,7 @@ impl ColorSpectrum {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn HsvColor(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector4> {
         let this = self;
         unsafe {
@@ -1907,7 +1907,7 @@ impl ColorSpectrum {
             (::windows_core::Interface::vtable(this).HsvColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector4>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetHsvColor<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetHsvColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -2163,53 +2163,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Col
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ColorSpectrum> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: ColorSpectrum) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ColorSpectrum> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &ColorSpectrum) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for ColorSpectrum {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &ColorSpectrum {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ColorSpectrum> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: ColorSpectrum) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ColorSpectrum> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &ColorSpectrum) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for ColorSpectrum {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &ColorSpectrum {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -2526,53 +2526,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Com
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<CommandBarFlyoutCommandBar> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: CommandBarFlyoutCommandBar) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&CommandBarFlyoutCommandBar> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &CommandBarFlyoutCommandBar) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for CommandBarFlyoutCommandBar {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &CommandBarFlyoutCommandBar {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<CommandBarFlyoutCommandBar> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: CommandBarFlyoutCommandBar) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&CommandBarFlyoutCommandBar> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &CommandBarFlyoutCommandBar) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for CommandBarFlyoutCommandBar {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &CommandBarFlyoutCommandBar {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -3969,7 +3969,7 @@ impl FlyoutBase {
         let this = &::windows_core::Interface::cast::<IFlyoutBase3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOverlayInputPassThroughElement)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn TryInvokeKeyboardAccelerator<'a, Param0: ::windows_core::IntoParam<'a, super::super::Input::ProcessKeyboardAcceleratorEventArgs>>(&self, args: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IFlyoutBase4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).TryInvokeKeyboardAccelerator)(::windows_core::Interface::as_raw(this), args.into_param().abi()).ok() }
@@ -4720,7 +4720,7 @@ impl GridViewItemPresenter {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectionCheckMarkVisualEnabled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CheckHintBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -4728,12 +4728,12 @@ impl GridViewItemPresenter {
             (::windows_core::Interface::vtable(this).CheckHintBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetCheckHintBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCheckHintBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CheckSelectingBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -4741,12 +4741,12 @@ impl GridViewItemPresenter {
             (::windows_core::Interface::vtable(this).CheckSelectingBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetCheckSelectingBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCheckSelectingBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CheckBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -4754,12 +4754,12 @@ impl GridViewItemPresenter {
             (::windows_core::Interface::vtable(this).CheckBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetCheckBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCheckBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn DragBackground(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -4767,12 +4767,12 @@ impl GridViewItemPresenter {
             (::windows_core::Interface::vtable(this).DragBackground)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetDragBackground<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDragBackground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn DragForeground(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -4780,12 +4780,12 @@ impl GridViewItemPresenter {
             (::windows_core::Interface::vtable(this).DragForeground)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetDragForeground<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDragForeground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn FocusBorderBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -4793,12 +4793,12 @@ impl GridViewItemPresenter {
             (::windows_core::Interface::vtable(this).FocusBorderBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetFocusBorderBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFocusBorderBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn PlaceholderBackground(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -4806,12 +4806,12 @@ impl GridViewItemPresenter {
             (::windows_core::Interface::vtable(this).PlaceholderBackground)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetPlaceholderBackground<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPlaceholderBackground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn PointerOverBackground(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -4819,12 +4819,12 @@ impl GridViewItemPresenter {
             (::windows_core::Interface::vtable(this).PointerOverBackground)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetPointerOverBackground<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPointerOverBackground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SelectedBackground(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -4832,12 +4832,12 @@ impl GridViewItemPresenter {
             (::windows_core::Interface::vtable(this).SelectedBackground)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetSelectedBackground<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectedBackground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SelectedForeground(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -4845,12 +4845,12 @@ impl GridViewItemPresenter {
             (::windows_core::Interface::vtable(this).SelectedForeground)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetSelectedForeground<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectedForeground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SelectedPointerOverBackground(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -4858,12 +4858,12 @@ impl GridViewItemPresenter {
             (::windows_core::Interface::vtable(this).SelectedPointerOverBackground)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetSelectedPointerOverBackground<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectedPointerOverBackground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SelectedPointerOverBorderBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -4871,7 +4871,7 @@ impl GridViewItemPresenter {
             (::windows_core::Interface::vtable(this).SelectedPointerOverBorderBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetSelectedPointerOverBorderBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectedPointerOverBorderBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -4920,7 +4920,7 @@ impl GridViewItemPresenter {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetReorderHintOffset)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn GridViewItemPresenterHorizontalContentAlignment(&self) -> ::windows_core::Result<super::super::HorizontalAlignment> {
         let this = self;
         unsafe {
@@ -4928,12 +4928,12 @@ impl GridViewItemPresenter {
             (::windows_core::Interface::vtable(this).GridViewItemPresenterHorizontalContentAlignment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::HorizontalAlignment>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn SetGridViewItemPresenterHorizontalContentAlignment(&self, value: super::super::HorizontalAlignment) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetGridViewItemPresenterHorizontalContentAlignment)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn GridViewItemPresenterVerticalContentAlignment(&self) -> ::windows_core::Result<super::super::VerticalAlignment> {
         let this = self;
         unsafe {
@@ -4941,12 +4941,12 @@ impl GridViewItemPresenter {
             (::windows_core::Interface::vtable(this).GridViewItemPresenterVerticalContentAlignment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::VerticalAlignment>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn SetGridViewItemPresenterVerticalContentAlignment(&self, value: super::super::VerticalAlignment) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetGridViewItemPresenterVerticalContentAlignment)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn GridViewItemPresenterPadding(&self) -> ::windows_core::Result<super::super::Thickness> {
         let this = self;
         unsafe {
@@ -4954,7 +4954,7 @@ impl GridViewItemPresenter {
             (::windows_core::Interface::vtable(this).GridViewItemPresenterPadding)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Thickness>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn SetGridViewItemPresenterPadding<'a, Param0: ::windows_core::IntoParam<'a, super::super::Thickness>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetGridViewItemPresenterPadding)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -5096,21 +5096,21 @@ impl GridViewItemPresenter {
             (::windows_core::Interface::vtable(this).ReorderHintOffsetProperty)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::DependencyProperty>(result__)
         })
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn GridViewItemPresenterHorizontalContentAlignmentProperty() -> ::windows_core::Result<super::super::DependencyProperty> {
         Self::IGridViewItemPresenterStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GridViewItemPresenterHorizontalContentAlignmentProperty)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::DependencyProperty>(result__)
         })
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn GridViewItemPresenterVerticalContentAlignmentProperty() -> ::windows_core::Result<super::super::DependencyProperty> {
         Self::IGridViewItemPresenterStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GridViewItemPresenterVerticalContentAlignmentProperty)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::DependencyProperty>(result__)
         })
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn GridViewItemPresenterPaddingProperty() -> ::windows_core::Result<super::super::DependencyProperty> {
         Self::IGridViewItemPresenterStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -5208,53 +5208,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Gri
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<GridViewItemPresenter> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: GridViewItemPresenter) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&GridViewItemPresenter> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &GridViewItemPresenter) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for GridViewItemPresenter {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &GridViewItemPresenter {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<GridViewItemPresenter> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: GridViewItemPresenter) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&GridViewItemPresenter> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &GridViewItemPresenter) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for GridViewItemPresenter {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &GridViewItemPresenter {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -5553,13 +5553,13 @@ pub struct IButtonBase_Vtbl {
     pub SetClickMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::ClickMode) -> ::windows_core::HRESULT,
     pub IsPointerOver: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsPressed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub Command: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Command: usize,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub SetCommand: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetCommand: usize,
     pub CommandParameter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub SetCommandParameter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -5740,13 +5740,13 @@ pub struct IColorSpectrum_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Color: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Color) -> ::windows_core::HRESULT,
     pub SetColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::Color) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub HsvColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector4) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     HsvColor: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetHsvColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector4) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetHsvColor: usize,
     pub MinHue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
     pub SetMinHue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: i32) -> ::windows_core::HRESULT,
@@ -6101,9 +6101,9 @@ unsafe impl ::windows_core::Interface for IFlyoutBase4 {
 #[doc(hidden)]
 pub struct IFlyoutBase4_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub TryInvokeKeyboardAccelerator: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, args: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     TryInvokeKeyboardAccelerator: usize,
 }
 #[doc(hidden)]
@@ -6193,9 +6193,9 @@ unsafe impl ::windows_core::Interface for IFlyoutBaseOverrides4 {
 #[doc(hidden)]
 pub struct IFlyoutBaseOverrides4_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub OnProcessKeyboardAccelerators: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, args: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     OnProcessKeyboardAccelerators: usize,
 }
 #[doc(hidden)]
@@ -6345,101 +6345,101 @@ pub struct IGridViewItemPresenter_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub SelectionCheckMarkVisualEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetSelectionCheckMarkVisualEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub CheckHintBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CheckHintBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetCheckHintBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetCheckHintBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub CheckSelectingBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CheckSelectingBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetCheckSelectingBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetCheckSelectingBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub CheckBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CheckBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetCheckBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetCheckBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub DragBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     DragBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetDragBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetDragBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub DragForeground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     DragForeground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetDragForeground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetDragForeground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub FocusBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     FocusBorderBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetFocusBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetFocusBorderBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub PlaceholderBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     PlaceholderBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetPlaceholderBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetPlaceholderBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub PointerOverBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     PointerOverBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetPointerOverBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetPointerOverBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SelectedBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SelectedBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetSelectedBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetSelectedBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SelectedForeground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SelectedForeground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetSelectedForeground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetSelectedForeground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SelectedPointerOverBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SelectedPointerOverBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetSelectedPointerOverBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetSelectedPointerOverBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SelectedPointerOverBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SelectedPointerOverBorderBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetSelectedPointerOverBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetSelectedPointerOverBorderBrush: usize,
     pub SelectedBorderThickness: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Thickness) -> ::windows_core::HRESULT,
     pub SetSelectedBorderThickness: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Thickness) -> ::windows_core::HRESULT,
@@ -6449,29 +6449,29 @@ pub struct IGridViewItemPresenter_Vtbl {
     pub SetDragOpacity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
     pub ReorderHintOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetReorderHintOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub GridViewItemPresenterHorizontalContentAlignment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::HorizontalAlignment) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     GridViewItemPresenterHorizontalContentAlignment: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub SetGridViewItemPresenterHorizontalContentAlignment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::HorizontalAlignment) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     SetGridViewItemPresenterHorizontalContentAlignment: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub GridViewItemPresenterVerticalContentAlignment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::VerticalAlignment) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     GridViewItemPresenterVerticalContentAlignment: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub SetGridViewItemPresenterVerticalContentAlignment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::VerticalAlignment) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     SetGridViewItemPresenterVerticalContentAlignment: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub GridViewItemPresenterPadding: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Thickness) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     GridViewItemPresenterPadding: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub SetGridViewItemPresenterPadding: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Thickness) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     SetGridViewItemPresenterPadding: usize,
     pub PointerOverBackgroundMargin: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Thickness) -> ::windows_core::HRESULT,
     pub SetPointerOverBackgroundMargin: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Thickness) -> ::windows_core::HRESULT,
@@ -6519,17 +6519,17 @@ pub struct IGridViewItemPresenterStatics_Vtbl {
     pub DisabledOpacityProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub DragOpacityProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ReorderHintOffsetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub GridViewItemPresenterHorizontalContentAlignmentProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     GridViewItemPresenterHorizontalContentAlignmentProperty: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub GridViewItemPresenterVerticalContentAlignmentProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     GridViewItemPresenterVerticalContentAlignmentProperty: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub GridViewItemPresenterPaddingProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     GridViewItemPresenterPaddingProperty: usize,
     pub PointerOverBackgroundMarginProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ContentMarginProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -6575,21 +6575,21 @@ unsafe impl ::windows_core::Interface for IJumpListItemBackgroundConverter {
 #[doc(hidden)]
 pub struct IJumpListItemBackgroundConverter_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub Enabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Enabled: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetEnabled: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub Disabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Disabled: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetDisabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetDisabled: usize,
 }
 #[doc(hidden)]
@@ -6617,21 +6617,21 @@ unsafe impl ::windows_core::Interface for IJumpListItemForegroundConverter {
 #[doc(hidden)]
 pub struct IJumpListItemForegroundConverter_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub Enabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Enabled: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetEnabled: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub Disabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Disabled: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetDisabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetDisabled: usize,
 }
 #[doc(hidden)]
@@ -6700,101 +6700,101 @@ pub struct IListViewItemPresenter_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub SelectionCheckMarkVisualEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetSelectionCheckMarkVisualEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub CheckHintBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CheckHintBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetCheckHintBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetCheckHintBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub CheckSelectingBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CheckSelectingBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetCheckSelectingBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetCheckSelectingBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub CheckBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CheckBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetCheckBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetCheckBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub DragBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     DragBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetDragBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetDragBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub DragForeground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     DragForeground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetDragForeground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetDragForeground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub FocusBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     FocusBorderBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetFocusBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetFocusBorderBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub PlaceholderBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     PlaceholderBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetPlaceholderBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetPlaceholderBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub PointerOverBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     PointerOverBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetPointerOverBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetPointerOverBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SelectedBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SelectedBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetSelectedBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetSelectedBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SelectedForeground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SelectedForeground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetSelectedForeground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetSelectedForeground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SelectedPointerOverBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SelectedPointerOverBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetSelectedPointerOverBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetSelectedPointerOverBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SelectedPointerOverBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SelectedPointerOverBorderBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetSelectedPointerOverBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetSelectedPointerOverBorderBrush: usize,
     pub SelectedBorderThickness: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Thickness) -> ::windows_core::HRESULT,
     pub SetSelectedBorderThickness: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Thickness) -> ::windows_core::HRESULT,
@@ -6804,29 +6804,29 @@ pub struct IListViewItemPresenter_Vtbl {
     pub SetDragOpacity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
     pub ReorderHintOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetReorderHintOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub ListViewItemPresenterHorizontalContentAlignment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::HorizontalAlignment) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     ListViewItemPresenterHorizontalContentAlignment: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub SetListViewItemPresenterHorizontalContentAlignment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::HorizontalAlignment) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     SetListViewItemPresenterHorizontalContentAlignment: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub ListViewItemPresenterVerticalContentAlignment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::VerticalAlignment) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     ListViewItemPresenterVerticalContentAlignment: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub SetListViewItemPresenterVerticalContentAlignment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::VerticalAlignment) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     SetListViewItemPresenterVerticalContentAlignment: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub ListViewItemPresenterPadding: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Thickness) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     ListViewItemPresenterPadding: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub SetListViewItemPresenterPadding: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Thickness) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     SetListViewItemPresenterPadding: usize,
     pub PointerOverBackgroundMargin: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Thickness) -> ::windows_core::HRESULT,
     pub SetPointerOverBackgroundMargin: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Thickness) -> ::windows_core::HRESULT,
@@ -6844,47 +6844,47 @@ unsafe impl ::windows_core::Interface for IListViewItemPresenter2 {
 #[doc(hidden)]
 pub struct IListViewItemPresenter2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SelectedPressedBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SelectedPressedBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetSelectedPressedBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetSelectedPressedBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub PressedBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     PressedBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetPressedBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetPressedBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub CheckBoxBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CheckBoxBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetCheckBoxBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetCheckBoxBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub FocusSecondaryBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     FocusSecondaryBorderBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetFocusSecondaryBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetFocusSecondaryBorderBrush: usize,
     pub CheckMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ListViewItemPresenterCheckMode) -> ::windows_core::HRESULT,
     pub SetCheckMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ListViewItemPresenterCheckMode) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub PointerOverForeground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     PointerOverForeground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetPointerOverForeground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetPointerOverForeground: usize,
 }
 #[doc(hidden)]
@@ -6898,21 +6898,21 @@ unsafe impl ::windows_core::Interface for IListViewItemPresenter3 {
 #[doc(hidden)]
 pub struct IListViewItemPresenter3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub RevealBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     RevealBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetRevealBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetRevealBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub RevealBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     RevealBorderBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetRevealBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetRevealBorderBrush: usize,
     pub RevealBorderThickness: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Thickness) -> ::windows_core::HRESULT,
     pub SetRevealBorderThickness: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Thickness) -> ::windows_core::HRESULT,
@@ -6930,117 +6930,117 @@ unsafe impl ::windows_core::Interface for IListViewItemPresenter4 {
 #[doc(hidden)]
 pub struct IListViewItemPresenter4_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SelectedDisabledBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SelectedDisabledBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetSelectedDisabledBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetSelectedDisabledBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub CheckPressedBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CheckPressedBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetCheckPressedBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetCheckPressedBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub CheckDisabledBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CheckDisabledBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetCheckDisabledBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetCheckDisabledBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub CheckBoxPointerOverBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CheckBoxPointerOverBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetCheckBoxPointerOverBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetCheckBoxPointerOverBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub CheckBoxPressedBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CheckBoxPressedBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetCheckBoxPressedBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetCheckBoxPressedBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub CheckBoxDisabledBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CheckBoxDisabledBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetCheckBoxDisabledBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetCheckBoxDisabledBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub CheckBoxSelectedBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CheckBoxSelectedBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetCheckBoxSelectedBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetCheckBoxSelectedBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub CheckBoxSelectedPointerOverBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CheckBoxSelectedPointerOverBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetCheckBoxSelectedPointerOverBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetCheckBoxSelectedPointerOverBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub CheckBoxSelectedPressedBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CheckBoxSelectedPressedBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetCheckBoxSelectedPressedBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetCheckBoxSelectedPressedBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub CheckBoxSelectedDisabledBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CheckBoxSelectedDisabledBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetCheckBoxSelectedDisabledBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetCheckBoxSelectedDisabledBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub CheckBoxBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CheckBoxBorderBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetCheckBoxBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetCheckBoxBorderBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub CheckBoxPointerOverBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CheckBoxPointerOverBorderBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetCheckBoxPointerOverBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetCheckBoxPointerOverBorderBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub CheckBoxPressedBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CheckBoxPressedBorderBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetCheckBoxPressedBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetCheckBoxPressedBorderBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub CheckBoxDisabledBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CheckBoxDisabledBorderBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetCheckBoxDisabledBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetCheckBoxDisabledBorderBrush: usize,
     pub CheckBoxCornerRadius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::CornerRadius) -> ::windows_core::HRESULT,
     pub SetCheckBoxCornerRadius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::CornerRadius) -> ::windows_core::HRESULT,
@@ -7050,77 +7050,77 @@ pub struct IListViewItemPresenter4_Vtbl {
     pub SetSelectionIndicatorVisualEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub SelectionIndicatorMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ListViewItemPresenterSelectionIndicatorMode) -> ::windows_core::HRESULT,
     pub SetSelectionIndicatorMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ListViewItemPresenterSelectionIndicatorMode) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SelectionIndicatorBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SelectionIndicatorBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetSelectionIndicatorBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetSelectionIndicatorBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SelectionIndicatorPointerOverBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SelectionIndicatorPointerOverBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetSelectionIndicatorPointerOverBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetSelectionIndicatorPointerOverBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SelectionIndicatorPressedBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SelectionIndicatorPressedBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetSelectionIndicatorPressedBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetSelectionIndicatorPressedBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SelectionIndicatorDisabledBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SelectionIndicatorDisabledBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetSelectionIndicatorDisabledBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetSelectionIndicatorDisabledBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SelectedBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SelectedBorderBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetSelectedBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetSelectedBorderBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SelectedPressedBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SelectedPressedBorderBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetSelectedPressedBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetSelectedPressedBorderBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SelectedDisabledBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SelectedDisabledBorderBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetSelectedDisabledBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetSelectedDisabledBorderBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SelectedInnerBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SelectedInnerBorderBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetSelectedInnerBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetSelectedInnerBorderBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub PointerOverBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     PointerOverBorderBrush: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetPointerOverBorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetPointerOverBorderBrush: usize,
 }
 #[doc(hidden)]
@@ -7164,17 +7164,17 @@ pub struct IListViewItemPresenterStatics_Vtbl {
     pub DisabledOpacityProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub DragOpacityProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ReorderHintOffsetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub ListViewItemPresenterHorizontalContentAlignmentProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     ListViewItemPresenterHorizontalContentAlignmentProperty: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub ListViewItemPresenterVerticalContentAlignmentProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     ListViewItemPresenterVerticalContentAlignmentProperty: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub ListViewItemPresenterPaddingProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     ListViewItemPresenterPaddingProperty: usize,
     pub PointerOverBackgroundMarginProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ContentMarginProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -7278,13 +7278,13 @@ pub struct ILoopingSelector_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ShouldLoop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetShouldLoop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Items: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Items: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetItems: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetItems: usize,
     pub SelectedIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
     pub SetSelectedIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: i32) -> ::windows_core::HRESULT,
@@ -7581,13 +7581,13 @@ pub struct IPopup_Vtbl {
     pub SetHorizontalOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
     pub VerticalOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetVerticalOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media_Animation"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub ChildTransitions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media_Animation")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-ui")))]
     ChildTransitions: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media_Animation"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub SetChildTransitions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media_Animation")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-ui")))]
     SetChildTransitions: usize,
     pub IsLightDismissEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetIsLightDismissEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -7937,7 +7937,7 @@ impl IScrollSnapPointsInfo {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveVerticalSnapPointsChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetIrregularSnapPoints(&self, orientation: super::Orientation, alignment: SnapPointsAlignment) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<f32>> {
         let this = self;
         unsafe {
@@ -8030,9 +8030,9 @@ pub struct IScrollSnapPointsInfo_Vtbl {
     pub RemoveHorizontalSnapPointsChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub VerticalSnapPointsChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveVerticalSnapPointsChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetIrregularSnapPoints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, orientation: super::Orientation, alignment: SnapPointsAlignment, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetIrregularSnapPoints: usize,
     pub GetRegularSnapPoints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, orientation: super::Orientation, alignment: SnapPointsAlignment, offset: *mut f32, result__: *mut f32) -> ::windows_core::HRESULT,
 }
@@ -8141,26 +8141,26 @@ unsafe impl ::windows_core::Interface for ISettingsFlyoutTemplateSettings {
 #[doc(hidden)]
 pub struct ISettingsFlyoutTemplateSettings_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub HeaderBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     HeaderBackground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub HeaderForeground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     HeaderForeground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub BorderBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     BorderBrush: usize,
     pub BorderThickness: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Thickness) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub IconSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     IconSource: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media_Animation"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub ContentTransitions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media_Animation")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-ui")))]
     ContentTransitions: usize,
 }
 #[doc(hidden)]
@@ -8225,13 +8225,13 @@ unsafe impl ::windows_core::Interface for ITickBar {
 #[doc(hidden)]
 pub struct ITickBar_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub Fill: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Fill: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetFill: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetFill: usize,
 }
 #[doc(hidden)]
@@ -8547,7 +8547,7 @@ impl JumpListItemBackgroundConverter {
         static mut SHARED: ::windows_core::FactoryCache<JumpListItemBackgroundConverter, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Enabled(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -8555,12 +8555,12 @@ impl JumpListItemBackgroundConverter {
             (::windows_core::Interface::vtable(this).Enabled)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetEnabled<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetEnabled)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Disabled(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -8568,7 +8568,7 @@ impl JumpListItemBackgroundConverter {
             (::windows_core::Interface::vtable(this).Disabled)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetDisabled<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDisabled)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -8585,7 +8585,7 @@ impl JumpListItemBackgroundConverter {
             (::windows_core::Interface::vtable(this).DisabledProperty)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::DependencyProperty>(result__)
         })
     }
-    #[cfg(all(feature = "UI_Xaml_Data", feature = "UI_Xaml_Interop"))]
+    #[cfg(all(feature = "winrt-ui", feature = "winrt-ui"))]
     pub fn Convert<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, super::super::Interop::TypeName>, Param2: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0, targettype: Param1, parameter: Param2, language: Param3) -> ::windows_core::Result<::windows_core::IInspectable> {
         let this = &::windows_core::Interface::cast::<super::super::Data::IValueConverter>(self)?;
         unsafe {
@@ -8593,7 +8593,7 @@ impl JumpListItemBackgroundConverter {
             (::windows_core::Interface::vtable(this).Convert)(::windows_core::Interface::as_raw(this), value.into_param().abi(), targettype.into_param().abi(), parameter.into_param().abi(), language.into_param().abi(), result__.as_mut_ptr()).from_abi::<::windows_core::IInspectable>(result__)
         }
     }
-    #[cfg(all(feature = "UI_Xaml_Data", feature = "UI_Xaml_Interop"))]
+    #[cfg(all(feature = "winrt-ui", feature = "winrt-ui"))]
     pub fn ConvertBack<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, super::super::Interop::TypeName>, Param2: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0, targettype: Param1, parameter: Param2, language: Param3) -> ::windows_core::Result<::windows_core::IInspectable> {
         let this = &::windows_core::Interface::cast::<super::super::Data::IValueConverter>(self)?;
         unsafe {
@@ -8676,27 +8676,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Jum
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Data")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<JumpListItemBackgroundConverter> for super::super::Data::IValueConverter {
     type Error = ::windows_core::Error;
     fn try_from(value: JumpListItemBackgroundConverter) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Data")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&JumpListItemBackgroundConverter> for super::super::Data::IValueConverter {
     type Error = ::windows_core::Error;
     fn try_from(value: &JumpListItemBackgroundConverter) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Data")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Data::IValueConverter> for JumpListItemBackgroundConverter {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Data::IValueConverter> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Data")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Data::IValueConverter> for &JumpListItemBackgroundConverter {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Data::IValueConverter> {
         ::core::convert::TryInto::<super::super::Data::IValueConverter>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -8734,7 +8734,7 @@ impl JumpListItemForegroundConverter {
         static mut SHARED: ::windows_core::FactoryCache<JumpListItemForegroundConverter, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Enabled(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -8742,12 +8742,12 @@ impl JumpListItemForegroundConverter {
             (::windows_core::Interface::vtable(this).Enabled)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetEnabled<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetEnabled)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Disabled(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -8755,7 +8755,7 @@ impl JumpListItemForegroundConverter {
             (::windows_core::Interface::vtable(this).Disabled)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetDisabled<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDisabled)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -8772,7 +8772,7 @@ impl JumpListItemForegroundConverter {
             (::windows_core::Interface::vtable(this).DisabledProperty)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::DependencyProperty>(result__)
         })
     }
-    #[cfg(all(feature = "UI_Xaml_Data", feature = "UI_Xaml_Interop"))]
+    #[cfg(all(feature = "winrt-ui", feature = "winrt-ui"))]
     pub fn Convert<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, super::super::Interop::TypeName>, Param2: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0, targettype: Param1, parameter: Param2, language: Param3) -> ::windows_core::Result<::windows_core::IInspectable> {
         let this = &::windows_core::Interface::cast::<super::super::Data::IValueConverter>(self)?;
         unsafe {
@@ -8780,7 +8780,7 @@ impl JumpListItemForegroundConverter {
             (::windows_core::Interface::vtable(this).Convert)(::windows_core::Interface::as_raw(this), value.into_param().abi(), targettype.into_param().abi(), parameter.into_param().abi(), language.into_param().abi(), result__.as_mut_ptr()).from_abi::<::windows_core::IInspectable>(result__)
         }
     }
-    #[cfg(all(feature = "UI_Xaml_Data", feature = "UI_Xaml_Interop"))]
+    #[cfg(all(feature = "winrt-ui", feature = "winrt-ui"))]
     pub fn ConvertBack<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, super::super::Interop::TypeName>, Param2: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0, targettype: Param1, parameter: Param2, language: Param3) -> ::windows_core::Result<::windows_core::IInspectable> {
         let this = &::windows_core::Interface::cast::<super::super::Data::IValueConverter>(self)?;
         unsafe {
@@ -8863,27 +8863,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Jum
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Data")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<JumpListItemForegroundConverter> for super::super::Data::IValueConverter {
     type Error = ::windows_core::Error;
     fn try_from(value: JumpListItemForegroundConverter) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Data")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&JumpListItemForegroundConverter> for super::super::Data::IValueConverter {
     type Error = ::windows_core::Error;
     fn try_from(value: &JumpListItemForegroundConverter) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Data")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Data::IValueConverter> for JumpListItemForegroundConverter {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Data::IValueConverter> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Data")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Data::IValueConverter> for &JumpListItemForegroundConverter {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Data::IValueConverter> {
         ::core::convert::TryInto::<super::super::Data::IValueConverter>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -9027,7 +9027,7 @@ impl ListViewItemPresenter {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectionCheckMarkVisualEnabled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CheckHintBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -9035,12 +9035,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).CheckHintBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetCheckHintBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCheckHintBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CheckSelectingBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -9048,12 +9048,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).CheckSelectingBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetCheckSelectingBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCheckSelectingBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CheckBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -9061,12 +9061,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).CheckBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetCheckBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCheckBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn DragBackground(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -9074,12 +9074,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).DragBackground)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetDragBackground<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDragBackground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn DragForeground(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -9087,12 +9087,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).DragForeground)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetDragForeground<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDragForeground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn FocusBorderBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -9100,12 +9100,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).FocusBorderBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetFocusBorderBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFocusBorderBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn PlaceholderBackground(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -9113,12 +9113,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).PlaceholderBackground)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetPlaceholderBackground<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPlaceholderBackground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn PointerOverBackground(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -9126,12 +9126,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).PointerOverBackground)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetPointerOverBackground<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPointerOverBackground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SelectedBackground(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -9139,12 +9139,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).SelectedBackground)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetSelectedBackground<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectedBackground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SelectedForeground(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -9152,12 +9152,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).SelectedForeground)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetSelectedForeground<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectedForeground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SelectedPointerOverBackground(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -9165,12 +9165,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).SelectedPointerOverBackground)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetSelectedPointerOverBackground<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectedPointerOverBackground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SelectedPointerOverBorderBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -9178,7 +9178,7 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).SelectedPointerOverBorderBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetSelectedPointerOverBorderBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectedPointerOverBorderBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -9227,7 +9227,7 @@ impl ListViewItemPresenter {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetReorderHintOffset)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn ListViewItemPresenterHorizontalContentAlignment(&self) -> ::windows_core::Result<super::super::HorizontalAlignment> {
         let this = self;
         unsafe {
@@ -9235,12 +9235,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).ListViewItemPresenterHorizontalContentAlignment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::HorizontalAlignment>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn SetListViewItemPresenterHorizontalContentAlignment(&self, value: super::super::HorizontalAlignment) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetListViewItemPresenterHorizontalContentAlignment)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn ListViewItemPresenterVerticalContentAlignment(&self) -> ::windows_core::Result<super::super::VerticalAlignment> {
         let this = self;
         unsafe {
@@ -9248,12 +9248,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).ListViewItemPresenterVerticalContentAlignment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::VerticalAlignment>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn SetListViewItemPresenterVerticalContentAlignment(&self, value: super::super::VerticalAlignment) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetListViewItemPresenterVerticalContentAlignment)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn ListViewItemPresenterPadding(&self) -> ::windows_core::Result<super::super::Thickness> {
         let this = self;
         unsafe {
@@ -9261,7 +9261,7 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).ListViewItemPresenterPadding)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Thickness>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn SetListViewItemPresenterPadding<'a, Param0: ::windows_core::IntoParam<'a, super::super::Thickness>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetListViewItemPresenterPadding)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -9288,7 +9288,7 @@ impl ListViewItemPresenter {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetContentMargin)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SelectedPressedBackground(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter2>(self)?;
         unsafe {
@@ -9296,12 +9296,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).SelectedPressedBackground)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetSelectedPressedBackground<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectedPressedBackground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn PressedBackground(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter2>(self)?;
         unsafe {
@@ -9309,12 +9309,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).PressedBackground)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetPressedBackground<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetPressedBackground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CheckBoxBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter2>(self)?;
         unsafe {
@@ -9322,12 +9322,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).CheckBoxBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetCheckBoxBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCheckBoxBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn FocusSecondaryBorderBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter2>(self)?;
         unsafe {
@@ -9335,7 +9335,7 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).FocusSecondaryBorderBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetFocusSecondaryBorderBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetFocusSecondaryBorderBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -9351,7 +9351,7 @@ impl ListViewItemPresenter {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCheckMode)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn PointerOverForeground(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter2>(self)?;
         unsafe {
@@ -9359,12 +9359,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).PointerOverForeground)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetPointerOverForeground<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetPointerOverForeground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn RevealBackground(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter3>(self)?;
         unsafe {
@@ -9372,12 +9372,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).RevealBackground)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetRevealBackground<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRevealBackground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn RevealBorderBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter3>(self)?;
         unsafe {
@@ -9385,7 +9385,7 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).RevealBorderBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetRevealBorderBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRevealBorderBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -9412,7 +9412,7 @@ impl ListViewItemPresenter {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRevealBackgroundShowsAboveContent)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SelectedDisabledBackground(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe {
@@ -9420,12 +9420,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).SelectedDisabledBackground)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetSelectedDisabledBackground<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectedDisabledBackground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CheckPressedBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe {
@@ -9433,12 +9433,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).CheckPressedBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetCheckPressedBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCheckPressedBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CheckDisabledBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe {
@@ -9446,12 +9446,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).CheckDisabledBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetCheckDisabledBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCheckDisabledBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CheckBoxPointerOverBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe {
@@ -9459,12 +9459,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).CheckBoxPointerOverBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetCheckBoxPointerOverBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCheckBoxPointerOverBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CheckBoxPressedBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe {
@@ -9472,12 +9472,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).CheckBoxPressedBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetCheckBoxPressedBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCheckBoxPressedBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CheckBoxDisabledBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe {
@@ -9485,12 +9485,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).CheckBoxDisabledBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetCheckBoxDisabledBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCheckBoxDisabledBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CheckBoxSelectedBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe {
@@ -9498,12 +9498,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).CheckBoxSelectedBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetCheckBoxSelectedBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCheckBoxSelectedBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CheckBoxSelectedPointerOverBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe {
@@ -9511,12 +9511,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).CheckBoxSelectedPointerOverBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetCheckBoxSelectedPointerOverBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCheckBoxSelectedPointerOverBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CheckBoxSelectedPressedBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe {
@@ -9524,12 +9524,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).CheckBoxSelectedPressedBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetCheckBoxSelectedPressedBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCheckBoxSelectedPressedBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CheckBoxSelectedDisabledBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe {
@@ -9537,12 +9537,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).CheckBoxSelectedDisabledBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetCheckBoxSelectedDisabledBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCheckBoxSelectedDisabledBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CheckBoxBorderBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe {
@@ -9550,12 +9550,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).CheckBoxBorderBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetCheckBoxBorderBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCheckBoxBorderBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CheckBoxPointerOverBorderBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe {
@@ -9563,12 +9563,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).CheckBoxPointerOverBorderBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetCheckBoxPointerOverBorderBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCheckBoxPointerOverBorderBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CheckBoxPressedBorderBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe {
@@ -9576,12 +9576,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).CheckBoxPressedBorderBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetCheckBoxPressedBorderBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCheckBoxPressedBorderBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CheckBoxDisabledBorderBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe {
@@ -9589,7 +9589,7 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).CheckBoxDisabledBorderBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetCheckBoxDisabledBorderBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCheckBoxDisabledBorderBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -9638,7 +9638,7 @@ impl ListViewItemPresenter {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectionIndicatorMode)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SelectionIndicatorBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe {
@@ -9646,12 +9646,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).SelectionIndicatorBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetSelectionIndicatorBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectionIndicatorBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SelectionIndicatorPointerOverBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe {
@@ -9659,12 +9659,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).SelectionIndicatorPointerOverBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetSelectionIndicatorPointerOverBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectionIndicatorPointerOverBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SelectionIndicatorPressedBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe {
@@ -9672,12 +9672,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).SelectionIndicatorPressedBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetSelectionIndicatorPressedBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectionIndicatorPressedBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SelectionIndicatorDisabledBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe {
@@ -9685,12 +9685,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).SelectionIndicatorDisabledBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetSelectionIndicatorDisabledBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectionIndicatorDisabledBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SelectedBorderBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe {
@@ -9698,12 +9698,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).SelectedBorderBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetSelectedBorderBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectedBorderBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SelectedPressedBorderBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe {
@@ -9711,12 +9711,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).SelectedPressedBorderBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetSelectedPressedBorderBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectedPressedBorderBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SelectedDisabledBorderBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe {
@@ -9724,12 +9724,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).SelectedDisabledBorderBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetSelectedDisabledBorderBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectedDisabledBorderBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SelectedInnerBorderBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe {
@@ -9737,12 +9737,12 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).SelectedInnerBorderBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetSelectedInnerBorderBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectedInnerBorderBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn PointerOverBorderBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe {
@@ -9750,7 +9750,7 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).PointerOverBorderBrush)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetPointerOverBorderBrush<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IListViewItemPresenter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetPointerOverBorderBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -9870,21 +9870,21 @@ impl ListViewItemPresenter {
             (::windows_core::Interface::vtable(this).ReorderHintOffsetProperty)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::DependencyProperty>(result__)
         })
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn ListViewItemPresenterHorizontalContentAlignmentProperty() -> ::windows_core::Result<super::super::DependencyProperty> {
         Self::IListViewItemPresenterStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).ListViewItemPresenterHorizontalContentAlignmentProperty)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::DependencyProperty>(result__)
         })
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn ListViewItemPresenterVerticalContentAlignmentProperty() -> ::windows_core::Result<super::super::DependencyProperty> {
         Self::IListViewItemPresenterStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).ListViewItemPresenterVerticalContentAlignmentProperty)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::DependencyProperty>(result__)
         })
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn ListViewItemPresenterPaddingProperty() -> ::windows_core::Result<super::super::DependencyProperty> {
         Self::IListViewItemPresenterStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -10216,53 +10216,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Lis
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ListViewItemPresenter> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: ListViewItemPresenter) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ListViewItemPresenter> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &ListViewItemPresenter) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for ListViewItemPresenter {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &ListViewItemPresenter {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ListViewItemPresenter> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: ListViewItemPresenter) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ListViewItemPresenter> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &ListViewItemPresenter) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for ListViewItemPresenter {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &ListViewItemPresenter {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -10533,7 +10533,7 @@ impl LoopingSelector {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetShouldLoop)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::IInspectable>> {
         let this = self;
         unsafe {
@@ -10541,7 +10541,7 @@ impl LoopingSelector {
             (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::IInspectable>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetItems<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<::windows_core::IInspectable>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetItems)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -10729,53 +10729,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Loo
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<LoopingSelector> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: LoopingSelector) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&LoopingSelector> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &LoopingSelector) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for LoopingSelector {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &LoopingSelector {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<LoopingSelector> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: LoopingSelector) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&LoopingSelector> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &LoopingSelector) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for LoopingSelector {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &LoopingSelector {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -10936,53 +10936,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Loo
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<LoopingSelectorItem> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: LoopingSelectorItem) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&LoopingSelectorItem> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &LoopingSelectorItem) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for LoopingSelectorItem {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &LoopingSelectorItem {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<LoopingSelectorItem> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: LoopingSelectorItem) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&LoopingSelectorItem> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &LoopingSelectorItem) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for LoopingSelectorItem {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &LoopingSelectorItem {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -11129,7 +11129,7 @@ impl LoopingSelectorPanel {
         let this = &::windows_core::Interface::cast::<IScrollSnapPointsInfo>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveVerticalSnapPointsChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetIrregularSnapPoints(&self, orientation: super::Orientation, alignment: SnapPointsAlignment) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<f32>> {
         let this = &::windows_core::Interface::cast::<IScrollSnapPointsInfo>(self)?;
         unsafe {
@@ -11215,27 +11215,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Loo
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<LoopingSelectorPanel> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: LoopingSelectorPanel) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&LoopingSelectorPanel> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &LoopingSelectorPanel) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for LoopingSelectorPanel {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &LoopingSelectorPanel {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -11263,27 +11263,27 @@ impl<'a> ::windows_core::IntoParam<'a, IScrollSnapPointsInfo> for &LoopingSelect
         ::core::convert::TryInto::<IScrollSnapPointsInfo>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<LoopingSelectorPanel> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: LoopingSelectorPanel) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&LoopingSelectorPanel> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &LoopingSelectorPanel) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for LoopingSelectorPanel {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &LoopingSelectorPanel {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -11709,53 +11709,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Nav
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<NavigationViewItemPresenter> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: NavigationViewItemPresenter) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&NavigationViewItemPresenter> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &NavigationViewItemPresenter) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for NavigationViewItemPresenter {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &NavigationViewItemPresenter {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<NavigationViewItemPresenter> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: NavigationViewItemPresenter) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&NavigationViewItemPresenter> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &NavigationViewItemPresenter) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for NavigationViewItemPresenter {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &NavigationViewItemPresenter {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -12044,7 +12044,7 @@ impl OrientedVirtualizingPanel {
         let this = &::windows_core::Interface::cast::<IScrollSnapPointsInfo>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveVerticalSnapPointsChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetIrregularSnapPoints(&self, orientation: super::Orientation, alignment: SnapPointsAlignment) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<f32>> {
         let this = &::windows_core::Interface::cast::<IScrollSnapPointsInfo>(self)?;
         unsafe {
@@ -12130,27 +12130,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ori
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<OrientedVirtualizingPanel> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: OrientedVirtualizingPanel) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&OrientedVirtualizingPanel> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &OrientedVirtualizingPanel) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for OrientedVirtualizingPanel {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &OrientedVirtualizingPanel {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -12200,27 +12200,27 @@ impl<'a> ::windows_core::IntoParam<'a, IScrollSnapPointsInfo> for &OrientedVirtu
         ::core::convert::TryInto::<IScrollSnapPointsInfo>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<OrientedVirtualizingPanel> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: OrientedVirtualizingPanel) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&OrientedVirtualizingPanel> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &OrientedVirtualizingPanel) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for OrientedVirtualizingPanel {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &OrientedVirtualizingPanel {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -12554,53 +12554,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Piv
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<PivotHeaderItem> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: PivotHeaderItem) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&PivotHeaderItem> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &PivotHeaderItem) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for PivotHeaderItem {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &PivotHeaderItem {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<PivotHeaderItem> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: PivotHeaderItem) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&PivotHeaderItem> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &PivotHeaderItem) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for PivotHeaderItem {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &PivotHeaderItem {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -12789,53 +12789,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Piv
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<PivotHeaderPanel> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: PivotHeaderPanel) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&PivotHeaderPanel> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &PivotHeaderPanel) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for PivotHeaderPanel {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &PivotHeaderPanel {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<PivotHeaderPanel> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: PivotHeaderPanel) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&PivotHeaderPanel> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &PivotHeaderPanel) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for PivotHeaderPanel {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &PivotHeaderPanel {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -12989,7 +12989,7 @@ impl PivotPanel {
         let this = &::windows_core::Interface::cast::<IScrollSnapPointsInfo>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveVerticalSnapPointsChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetIrregularSnapPoints(&self, orientation: super::Orientation, alignment: SnapPointsAlignment) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<f32>> {
         let this = &::windows_core::Interface::cast::<IScrollSnapPointsInfo>(self)?;
         unsafe {
@@ -13075,27 +13075,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Piv
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<PivotPanel> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: PivotPanel) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&PivotPanel> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &PivotPanel) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for PivotPanel {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &PivotPanel {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -13123,27 +13123,27 @@ impl<'a> ::windows_core::IntoParam<'a, IScrollSnapPointsInfo> for &PivotPanel {
         ::core::convert::TryInto::<IScrollSnapPointsInfo>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<PivotPanel> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: PivotPanel) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&PivotPanel> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &PivotPanel) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for PivotPanel {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &PivotPanel {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -13321,7 +13321,7 @@ impl Popup {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetVerticalOffset)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media_Animation"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub fn ChildTransitions(&self) -> ::windows_core::Result<super::super::Media::Animation::TransitionCollection> {
         let this = self;
         unsafe {
@@ -13329,7 +13329,7 @@ impl Popup {
             (::windows_core::Interface::vtable(this).ChildTransitions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Animation::TransitionCollection>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media_Animation"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub fn SetChildTransitions<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Animation::TransitionCollection>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetChildTransitions)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -13583,53 +13583,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Pop
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<Popup> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: Popup) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&Popup> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &Popup) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for Popup {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &Popup {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<Popup> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: Popup) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&Popup> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &Popup) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for Popup {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &Popup {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -14177,53 +14177,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ran
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<RangeBase> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: RangeBase) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&RangeBase> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &RangeBase) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for RangeBase {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &RangeBase {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<RangeBase> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: RangeBase) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&RangeBase> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &RangeBase) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for RangeBase {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &RangeBase {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -14623,53 +14623,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Rep
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<RepeatButton> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: RepeatButton) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&RepeatButton> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &RepeatButton) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for RepeatButton {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &RepeatButton {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<RepeatButton> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: RepeatButton) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&RepeatButton> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &RepeatButton) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for RepeatButton {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &RepeatButton {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -14944,53 +14944,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Scr
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ScrollBar> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: ScrollBar) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ScrollBar> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &ScrollBar) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for ScrollBar {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &ScrollBar {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ScrollBar> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: ScrollBar) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ScrollBar> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &ScrollBar) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for ScrollBar {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &ScrollBar {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -15552,27 +15552,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Sel
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<Selector> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: Selector) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&Selector> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &Selector) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for Selector {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &Selector {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -15600,27 +15600,27 @@ impl<'a> ::windows_core::IntoParam<'a, super::IItemContainerMapping> for &Select
         ::core::convert::TryInto::<super::IItemContainerMapping>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<Selector> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: Selector) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&Selector> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &Selector) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for Selector {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &Selector {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -15823,53 +15823,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Sel
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<SelectorItem> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: SelectorItem) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&SelectorItem> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &SelectorItem) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for SelectorItem {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &SelectorItem {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<SelectorItem> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: SelectorItem) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&SelectorItem> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &SelectorItem) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for SelectorItem {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &SelectorItem {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -15980,7 +15980,7 @@ unsafe impl ::core::marker::Sync for SelectorItem {}
 #[repr(transparent)]
 pub struct SettingsFlyoutTemplateSettings(::windows_core::IUnknown);
 impl SettingsFlyoutTemplateSettings {
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn HeaderBackground(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -15988,7 +15988,7 @@ impl SettingsFlyoutTemplateSettings {
             (::windows_core::Interface::vtable(this).HeaderBackground)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn HeaderForeground(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -15996,7 +15996,7 @@ impl SettingsFlyoutTemplateSettings {
             (::windows_core::Interface::vtable(this).HeaderForeground)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn BorderBrush(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -16011,7 +16011,7 @@ impl SettingsFlyoutTemplateSettings {
             (::windows_core::Interface::vtable(this).BorderThickness)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Thickness>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn IconSource(&self) -> ::windows_core::Result<super::super::Media::ImageSource> {
         let this = self;
         unsafe {
@@ -16019,7 +16019,7 @@ impl SettingsFlyoutTemplateSettings {
             (::windows_core::Interface::vtable(this).IconSource)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::ImageSource>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media_Animation"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub fn ContentTransitions(&self) -> ::windows_core::Result<super::super::Media::Animation::TransitionCollection> {
         let this = self;
         unsafe {
@@ -16460,53 +16460,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Thu
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<Thumb> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: Thumb) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&Thumb> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &Thumb) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for Thumb {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &Thumb {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<Thumb> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: Thumb) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&Thumb> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &Thumb) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for Thumb {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &Thumb {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -16604,7 +16604,7 @@ impl TickBar {
         static mut SHARED: ::windows_core::FactoryCache<TickBar, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Fill(&self) -> ::windows_core::Result<super::super::Media::Brush> {
         let this = self;
         unsafe {
@@ -16612,7 +16612,7 @@ impl TickBar {
             (::windows_core::Interface::vtable(this).Fill)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetFill<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFill)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -16698,53 +16698,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Tic
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<TickBar> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: TickBar) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&TickBar> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &TickBar) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for TickBar {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &TickBar {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<TickBar> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: TickBar) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&TickBar> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &TickBar) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for TickBar {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &TickBar {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -17010,53 +17010,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Tog
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ToggleButton> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: ToggleButton) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ToggleButton> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &ToggleButton) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for ToggleButton {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &ToggleButton {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ToggleButton> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: ToggleButton) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ToggleButton> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &ToggleButton) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for ToggleButton {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &ToggleButton {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)

@@ -1,9 +1,9 @@
 #[link(name = "windows")]
 extern "system" {
     pub fn AssignProcessToJobObject(hjob: ::win32_foundation_sys::HANDLE, hprocess: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateJobObjectA(lpjobattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, lpname: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateJobObjectW(lpjobattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, lpname: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HANDLE;
     pub fn CreateJobSet(numjob: u32, userjobset: *const JOB_SET_ARRAY, flags: u32) -> ::win32_foundation_sys::BOOL;
     pub fn FreeMemoryJobObject(buffer: *const ::core::ffi::c_void);
@@ -95,14 +95,14 @@ impl ::core::clone::Clone for JOBOBJECT_BASIC_ACCOUNTING_INFORMATION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system-sys")]
 pub struct JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION {
     pub BasicInfo: JOBOBJECT_BASIC_ACCOUNTING_INFORMATION,
     pub IoInfo: super::Threading::IO_COUNTERS,
 }
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION {}
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION {
     fn clone(&self) -> Self {
         *self
@@ -193,7 +193,7 @@ impl ::core::clone::Clone for JOBOBJECT_END_OF_JOB_TIME_INFORMATION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system-sys")]
 pub struct JOBOBJECT_EXTENDED_LIMIT_INFORMATION {
     pub BasicLimitInformation: JOBOBJECT_BASIC_LIMIT_INFORMATION,
     pub IoInfo: super::Threading::IO_COUNTERS,
@@ -202,9 +202,9 @@ pub struct JOBOBJECT_EXTENDED_LIMIT_INFORMATION {
     pub PeakProcessMemoryUsed: usize,
     pub PeakJobMemoryUsed: usize,
 }
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for JOBOBJECT_EXTENDED_LIMIT_INFORMATION {}
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for JOBOBJECT_EXTENDED_LIMIT_INFORMATION {
     fn clone(&self) -> Self {
         *self
@@ -501,7 +501,7 @@ pub const ToleranceIntervalShort: JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL = 1i
 pub const ToleranceIntervalMedium: JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL = 2i32;
 pub const ToleranceIntervalLong: JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL = 3i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct JOBOBJECT_SECURITY_LIMIT_INFORMATION {
     pub SecurityLimitFlags: JOB_OBJECT_SECURITY,
     pub JobToken: ::win32_foundation_sys::HANDLE,
@@ -509,9 +509,9 @@ pub struct JOBOBJECT_SECURITY_LIMIT_INFORMATION {
     pub PrivilegesToDelete: *mut ::win32_security_sys::TOKEN_PRIVILEGES,
     pub RestrictedSids: *mut ::win32_security_sys::TOKEN_GROUPS,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for JOBOBJECT_SECURITY_LIMIT_INFORMATION {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for JOBOBJECT_SECURITY_LIMIT_INFORMATION {
     fn clone(&self) -> Self {
         *self

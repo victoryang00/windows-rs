@@ -4,7 +4,7 @@ extern "system" {
     pub fn NdfCloseIncident(handle: *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn NdfCreateConnectivityIncident(handle: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn NdfCreateDNSIncident(hostname: ::windows_core_sys::PCWSTR, querytype: u16, handle: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn NdfCreateGroupingIncident(cloudname: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR, identity: ::windows_core_sys::PCWSTR, invitation: ::windows_core_sys::PCWSTR, addresses: *const ::win32_networking_sys::WinSock::SOCKET_ADDRESS_LIST, appid: ::windows_core_sys::PCWSTR, handle: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn NdfCreateIncident(helperclassname: ::windows_core_sys::PCWSTR, celt: u32, attributes: *const HELPER_ATTRIBUTE, handle: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn NdfCreateNetConnectionIncident(handle: *mut *mut ::core::ffi::c_void, id: ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
@@ -12,7 +12,7 @@ extern "system" {
     pub fn NdfCreateSharingIncident(uncpath: ::windows_core_sys::PCWSTR, handle: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn NdfCreateWebIncident(url: ::windows_core_sys::PCWSTR, handle: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn NdfCreateWebIncidentEx(url: ::windows_core_sys::PCWSTR, usewinhttp: ::win32_foundation_sys::BOOL, modulename: ::windows_core_sys::PCWSTR, handle: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security"))]
+    #[cfg(all(feature = "win32-networking-sys", feature = "win32-security-sys"))]
     pub fn NdfCreateWinSockIncident(sock: ::win32_networking_sys::WinSock::SOCKET, host: ::windows_core_sys::PCWSTR, port: u16, appid: ::windows_core_sys::PCWSTR, userid: *const ::win32_security_sys::SID, handle: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn NdfDiagnoseIncident(handle: *const ::core::ffi::c_void, rootcausecount: *mut u32, rootcauses: *mut *mut RootCauseInfo, dwwait: u32, dwflags: u32) -> ::windows_core_sys::HRESULT;
     pub fn NdfExecuteDiagnosis(handle: *const ::core::ffi::c_void, hwnd: ::win32_foundation_sys::HWND) -> ::windows_core_sys::HRESULT;

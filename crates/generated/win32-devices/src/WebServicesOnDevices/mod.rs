@@ -1254,7 +1254,7 @@ pub struct IWSDOutboundAttachment_Vtbl {
 #[repr(transparent)]
 pub struct IWSDSSLClientCertificate(::windows_core::IUnknown);
 impl IWSDSSLClientCertificate {
-    #[cfg(feature = "Win32_Security_Cryptography")]
+    #[cfg(feature = "win32-security")]
     pub unsafe fn GetClientCertificate(&self) -> ::windows_core::Result<*mut ::win32_security::Cryptography::CERT_CONTEXT> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_security::Cryptography::CERT_CONTEXT>::zeroed();
         (::windows_core::Interface::vtable(self).GetClientCertificate)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_security::Cryptography::CERT_CONTEXT>(result__)
@@ -1308,9 +1308,9 @@ unsafe impl ::windows_core::Interface for IWSDSSLClientCertificate {
 #[doc(hidden)]
 pub struct IWSDSSLClientCertificate_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Security_Cryptography")]
+    #[cfg(feature = "win32-security")]
     pub GetClientCertificate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppcertcontext: *mut *mut ::win32_security::Cryptography::CERT_CONTEXT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Security_Cryptography"))]
+    #[cfg(not(feature = "win32-security"))]
     GetClientCertificate: usize,
     pub GetMappedAccessToken: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phtoken: *mut ::win32_foundation::HANDLE) -> ::windows_core::HRESULT,
 }
@@ -1903,11 +1903,11 @@ impl IWSDUdpAddress {
     pub unsafe fn SetTransportAddress<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszaddress: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetTransportAddress)(::windows_core::Interface::as_raw(self), pszaddress.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking")]
     pub unsafe fn SetSockaddr(&self, psockaddr: *const ::win32_networking::WinSock::SOCKADDR_STORAGE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSockaddr)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(psockaddr)).ok()
     }
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking")]
     pub unsafe fn GetSockaddr(&self) -> ::windows_core::Result<::win32_networking::WinSock::SOCKADDR_STORAGE> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_networking::WinSock::SOCKADDR_STORAGE>::zeroed();
         (::windows_core::Interface::vtable(self).GetSockaddr)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_networking::WinSock::SOCKADDR_STORAGE>(result__)
@@ -2024,13 +2024,13 @@ unsafe impl ::windows_core::Interface for IWSDUdpAddress {
 #[doc(hidden)]
 pub struct IWSDUdpAddress_Vtbl {
     pub base__: IWSDTransportAddress_Vtbl,
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking")]
     pub SetSockaddr: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psockaddr: *const ::win32_networking::WinSock::SOCKADDR_STORAGE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Networking_WinSock"))]
+    #[cfg(not(feature = "win32-networking"))]
     SetSockaddr: usize,
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking")]
     pub GetSockaddr: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psockaddr: *mut ::win32_networking::WinSock::SOCKADDR_STORAGE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Networking_WinSock"))]
+    #[cfg(not(feature = "win32-networking"))]
     GetSockaddr: usize,
     pub SetExclusive: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fexclusive: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetExclusive: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -5019,7 +5019,7 @@ impl ::core::default::Default for WSD_SCOPES {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 pub struct WSD_SECURITY_CERT_VALIDATION {
     pub certMatchArray: *mut *mut ::win32_security::Cryptography::CERT_CONTEXT,
     pub dwCertMatchArrayCount: u32,
@@ -5030,40 +5030,40 @@ pub struct WSD_SECURITY_CERT_VALIDATION {
     pub pbCertHash: *mut u8,
     pub dwCertHashSize: u32,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for WSD_SECURITY_CERT_VALIDATION {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for WSD_SECURITY_CERT_VALIDATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for WSD_SECURITY_CERT_VALIDATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WSD_SECURITY_CERT_VALIDATION").field("certMatchArray", &self.certMatchArray).field("dwCertMatchArrayCount", &self.dwCertMatchArrayCount).field("hCertMatchStore", &self.hCertMatchStore).field("hCertIssuerStore", &self.hCertIssuerStore).field("dwCertCheckOptions", &self.dwCertCheckOptions).field("pszCNGHashAlgId", &self.pszCNGHashAlgId).field("pbCertHash", &self.pbCertHash).field("dwCertHashSize", &self.dwCertHashSize).finish()
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for WSD_SECURITY_CERT_VALIDATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for WSD_SECURITY_CERT_VALIDATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WSD_SECURITY_CERT_VALIDATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for WSD_SECURITY_CERT_VALIDATION {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for WSD_SECURITY_CERT_VALIDATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 pub struct WSD_SECURITY_CERT_VALIDATION_V1 {
     pub certMatchArray: *mut *mut ::win32_security::Cryptography::CERT_CONTEXT,
     pub dwCertMatchArrayCount: u32,
@@ -5071,33 +5071,33 @@ pub struct WSD_SECURITY_CERT_VALIDATION_V1 {
     pub hCertIssuerStore: ::win32_security::Cryptography::HCERTSTORE,
     pub dwCertCheckOptions: u32,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for WSD_SECURITY_CERT_VALIDATION_V1 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for WSD_SECURITY_CERT_VALIDATION_V1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for WSD_SECURITY_CERT_VALIDATION_V1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WSD_SECURITY_CERT_VALIDATION_V1").field("certMatchArray", &self.certMatchArray).field("dwCertMatchArrayCount", &self.dwCertMatchArrayCount).field("hCertMatchStore", &self.hCertMatchStore).field("hCertIssuerStore", &self.hCertIssuerStore).field("dwCertCheckOptions", &self.dwCertCheckOptions).finish()
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for WSD_SECURITY_CERT_VALIDATION_V1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for WSD_SECURITY_CERT_VALIDATION_V1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WSD_SECURITY_CERT_VALIDATION_V1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for WSD_SECURITY_CERT_VALIDATION_V1 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for WSD_SECURITY_CERT_VALIDATION_V1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5106,40 +5106,40 @@ impl ::core::default::Default for WSD_SECURITY_CERT_VALIDATION_V1 {
 pub const WSD_SECURITY_HTTP_AUTH_SCHEME_NEGOTIATE: u32 = 1u32;
 pub const WSD_SECURITY_HTTP_AUTH_SCHEME_NTLM: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 pub struct WSD_SECURITY_SIGNATURE_VALIDATION {
     pub signingCertArray: *mut *mut ::win32_security::Cryptography::CERT_CONTEXT,
     pub dwSigningCertArrayCount: u32,
     pub hSigningCertStore: ::win32_security::Cryptography::HCERTSTORE,
     pub dwFlags: u32,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for WSD_SECURITY_SIGNATURE_VALIDATION {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for WSD_SECURITY_SIGNATURE_VALIDATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for WSD_SECURITY_SIGNATURE_VALIDATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WSD_SECURITY_SIGNATURE_VALIDATION").field("signingCertArray", &self.signingCertArray).field("dwSigningCertArrayCount", &self.dwSigningCertArrayCount).field("hSigningCertStore", &self.hSigningCertStore).field("dwFlags", &self.dwFlags).finish()
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for WSD_SECURITY_SIGNATURE_VALIDATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for WSD_SECURITY_SIGNATURE_VALIDATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WSD_SECURITY_SIGNATURE_VALIDATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for WSD_SECURITY_SIGNATURE_VALIDATION {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for WSD_SECURITY_SIGNATURE_VALIDATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

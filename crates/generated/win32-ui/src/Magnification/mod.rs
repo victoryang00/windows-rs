@@ -134,7 +134,7 @@ pub unsafe fn MagGetFullscreenTransform(pmaglevel: *mut f32, pxoffset: *mut i32,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn MagGetImageScalingCallback<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0) -> MagImageScalingCallback {
     #[cfg(windows)]
@@ -200,7 +200,7 @@ pub unsafe fn MagGetWindowTransform<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub type MagImageScalingCallback = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation::HWND, srcdata: *mut ::core::ffi::c_void, srcheader: MAGIMAGEHEADER, destdata: *mut ::core::ffi::c_void, destheader: MAGIMAGEHEADER, unclipped: ::win32_foundation::RECT, clipped: ::win32_foundation::RECT, dirty: ::win32_graphics::Gdi::HRGN) -> ::win32_foundation::BOOL>;
 #[inline]
 pub unsafe fn MagInitialize() -> ::win32_foundation::BOOL {
@@ -254,7 +254,7 @@ pub unsafe fn MagSetFullscreenTransform(maglevel: f32, xoffset: i32, yoffset: i3
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn MagSetImageScalingCallback<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0, callback: MagImageScalingCallback) -> ::win32_foundation::BOOL {
     #[cfg(windows)]

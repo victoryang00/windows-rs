@@ -152,7 +152,7 @@ impl BatteryReport {
             (::windows_core::Interface::vtable(this).RemainingCapacityInMilliwattHours)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<i32>>(result__)
         }
     }
-    #[cfg(feature = "System_Power")]
+    #[cfg(feature = "winrt-system")]
     pub fn Status(&self) -> ::windows_core::Result<::winrt_system::Power::BatteryStatus> {
         let this = self;
         unsafe {
@@ -264,9 +264,9 @@ pub struct IBatteryReport_Vtbl {
     pub DesignCapacityInMilliwattHours: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub FullChargeCapacityInMilliwattHours: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RemainingCapacityInMilliwattHours: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "System_Power")]
+    #[cfg(feature = "winrt-system")]
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_system::Power::BatteryStatus) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System_Power"))]
+    #[cfg(not(feature = "winrt-system"))]
     Status: usize,
 }
 #[doc(hidden)]

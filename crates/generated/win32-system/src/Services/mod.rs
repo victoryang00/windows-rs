@@ -1,5 +1,5 @@
 pub const CUSTOM_SYSTEM_STATE_CHANGE_EVENT_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2d7a2816_0c5e_45fc_9ce7_570e5ecde9c9);
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn ChangeServiceConfig2A<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hservice: Param0, dwinfolevel: SERVICE_CONFIG, lpinfo: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -13,7 +13,7 @@ pub unsafe fn ChangeServiceConfig2A<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn ChangeServiceConfig2W<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hservice: Param0, dwinfolevel: SERVICE_CONFIG, lpinfo: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -27,7 +27,7 @@ pub unsafe fn ChangeServiceConfig2W<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn ChangeServiceConfigA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param7: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param8: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param9: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param10: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hservice: Param0, dwservicetype: u32, dwstarttype: SERVICE_START_TYPE, dwerrorcontrol: SERVICE_ERROR, lpbinarypathname: Param4, lploadordergroup: Param5, lpdwtagid: *mut u32, lpdependencies: Param7, lpservicestartname: Param8, lppassword: Param9, lpdisplayname: Param10) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -41,7 +41,7 @@ pub unsafe fn ChangeServiceConfigA<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn ChangeServiceConfigW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param7: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param8: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param9: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param10: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hservice: Param0, dwservicetype: u32, dwstarttype: SERVICE_START_TYPE, dwerrorcontrol: SERVICE_ERROR, lpbinarypathname: Param4, lploadordergroup: Param5, lpdwtagid: *mut u32, lpdependencies: Param7, lpservicestartname: Param8, lppassword: Param9, lpdisplayname: Param10) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -55,7 +55,7 @@ pub unsafe fn ChangeServiceConfigW<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CloseServiceHandle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hscobject: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -69,7 +69,7 @@ pub unsafe fn CloseServiceHandle<'a, Param0: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn ControlService<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hservice: Param0, dwcontrol: u32, lpservicestatus: *mut SERVICE_STATUS) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -83,7 +83,7 @@ pub unsafe fn ControlService<'a, Param0: ::windows_core::IntoParam<'a, ::win32_s
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn ControlServiceExA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hservice: Param0, dwcontrol: u32, dwinfolevel: u32, pcontrolparams: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -97,7 +97,7 @@ pub unsafe fn ControlServiceExA<'a, Param0: ::windows_core::IntoParam<'a, ::win3
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn ControlServiceExW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hservice: Param0, dwcontrol: u32, dwinfolevel: u32, pcontrolparams: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -111,7 +111,7 @@ pub unsafe fn ControlServiceExW<'a, Param0: ::windows_core::IntoParam<'a, ::win3
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateServiceA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param7: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param8: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param10: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param11: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param12: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(
     hscmanager: Param0,
@@ -140,7 +140,7 @@ pub unsafe fn CreateServiceA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_s
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateServiceW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param7: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param8: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param10: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param11: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param12: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(
     hscmanager: Param0,
@@ -171,7 +171,7 @@ pub unsafe fn CreateServiceW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_s
 }
 pub const DOMAIN_JOIN_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1ce20aba_9851_4421_9430_1ddeb766e809);
 pub const DOMAIN_LEAVE_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xddaf516e_58c2_4866_9574_c3b615d42ea1);
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn DeleteService<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hservice: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -394,7 +394,7 @@ impl ::core::ops::Not for ENUM_SERVICE_TYPE {
         Self(self.0.not())
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn EnumDependentServicesA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hservice: Param0, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut ENUM_SERVICE_STATUSA, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -408,7 +408,7 @@ pub unsafe fn EnumDependentServicesA<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn EnumDependentServicesW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hservice: Param0, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut ENUM_SERVICE_STATUSW, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -422,7 +422,7 @@ pub unsafe fn EnumDependentServicesW<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn EnumServicesStatusA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hscmanager: Param0, dwservicetype: ENUM_SERVICE_TYPE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut ENUM_SERVICE_STATUSA, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32, lpresumehandle: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -436,7 +436,7 @@ pub unsafe fn EnumServicesStatusA<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn EnumServicesStatusExA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>, Param9: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hscmanager: Param0, infolevel: SC_ENUM_TYPE, dwservicetype: ENUM_SERVICE_TYPE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32, lpresumehandle: *mut u32, pszgroupname: Param9) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -450,7 +450,7 @@ pub unsafe fn EnumServicesStatusExA<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn EnumServicesStatusExW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>, Param9: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hscmanager: Param0, infolevel: SC_ENUM_TYPE, dwservicetype: ENUM_SERVICE_TYPE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32, lpresumehandle: *mut u32, pszgroupname: Param9) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -464,7 +464,7 @@ pub unsafe fn EnumServicesStatusExW<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn EnumServicesStatusW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hscmanager: Param0, dwservicetype: ENUM_SERVICE_TYPE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut ENUM_SERVICE_STATUSW, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32, lpresumehandle: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -493,7 +493,7 @@ pub unsafe fn GetServiceDirectory<'a, Param0: ::windows_core::IntoParam<'a, SERV
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn GetServiceDisplayNameA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hscmanager: Param0, lpservicename: Param1, lpdisplayname: ::windows_core::PSTR, lpcchbuffer: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -507,7 +507,7 @@ pub unsafe fn GetServiceDisplayNameA<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn GetServiceDisplayNameW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hscmanager: Param0, lpservicename: Param1, lpdisplayname: ::windows_core::PWSTR, lpcchbuffer: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -521,7 +521,7 @@ pub unsafe fn GetServiceDisplayNameW<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn GetServiceKeyNameA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hscmanager: Param0, lpdisplayname: Param1, lpservicename: ::windows_core::PSTR, lpcchbuffer: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -535,7 +535,7 @@ pub unsafe fn GetServiceKeyNameA<'a, Param0: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn GetServiceKeyNameW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hscmanager: Param0, lpdisplayname: Param1, lpservicename: ::windows_core::PWSTR, lpcchbuffer: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -549,7 +549,7 @@ pub unsafe fn GetServiceKeyNameW<'a, Param0: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn GetServiceRegistryStateKey<'a, Param0: ::windows_core::IntoParam<'a, SERVICE_STATUS_HANDLE>>(servicestatushandle: Param0, statetype: SERVICE_REGISTRY_STATE_TYPE, accessmask: u32, servicestatekey: *mut super::Registry::HKEY) -> u32 {
     #[cfg(windows)]
@@ -563,7 +563,7 @@ pub unsafe fn GetServiceRegistryStateKey<'a, Param0: ::windows_core::IntoParam<'
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn GetSharedServiceDirectory<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(servicehandle: Param0, directorytype: SERVICE_SHARED_DIRECTORY_TYPE, pathbuffer: &mut [u16], requiredbufferlength: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -577,7 +577,7 @@ pub unsafe fn GetSharedServiceDirectory<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Security", feature = "Win32_System_Registry"))]
+#[cfg(all(feature = "win32-security", feature = "win32-system"))]
 #[inline]
 pub unsafe fn GetSharedServiceRegistryStateKey<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(servicehandle: Param0, statetype: SERVICE_SHARED_REGISTRY_STATE_TYPE, accessmask: u32, servicestatekey: *mut super::Registry::HKEY) -> u32 {
     #[cfg(windows)]
@@ -597,7 +597,7 @@ pub type LPHANDLER_FUNCTION = ::core::option::Option<unsafe extern "system" fn(d
 pub type LPHANDLER_FUNCTION_EX = ::core::option::Option<unsafe extern "system" fn(dwcontrol: u32, dweventtype: u32, lpeventdata: *mut ::core::ffi::c_void, lpcontext: *mut ::core::ffi::c_void) -> u32>;
 pub type LPSERVICE_MAIN_FUNCTIONA = ::core::option::Option<unsafe extern "system" fn(dwnumservicesargs: u32, lpserviceargvectors: *mut ::windows_core::PSTR)>;
 pub type LPSERVICE_MAIN_FUNCTIONW = ::core::option::Option<unsafe extern "system" fn(dwnumservicesargs: u32, lpserviceargvectors: *mut ::windows_core::PWSTR)>;
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn LockServiceDatabase<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hscmanager: Param0) -> *mut ::core::ffi::c_void {
     #[cfg(windows)]
@@ -628,7 +628,7 @@ pub unsafe fn NotifyBootConfigStatus<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn NotifyServiceStatusChangeA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hservice: Param0, dwnotifymask: SERVICE_NOTIFY, pnotifybuffer: *const SERVICE_NOTIFY_2A) -> u32 {
     #[cfg(windows)]
@@ -642,7 +642,7 @@ pub unsafe fn NotifyServiceStatusChangeA<'a, Param0: ::windows_core::IntoParam<'
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn NotifyServiceStatusChangeW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hservice: Param0, dwnotifymask: SERVICE_NOTIFY, pnotifybuffer: *const SERVICE_NOTIFY_2W) -> u32 {
     #[cfg(windows)]
@@ -656,7 +656,7 @@ pub unsafe fn NotifyServiceStatusChangeW<'a, Param0: ::windows_core::IntoParam<'
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn OpenSCManagerA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpmachinename: Param0, lpdatabasename: Param1, dwdesiredaccess: u32) -> ::windows_core::Result<::win32_security::SC_HANDLE> {
     #[cfg(windows)]
@@ -671,7 +671,7 @@ pub unsafe fn OpenSCManagerA<'a, Param0: ::windows_core::IntoParam<'a, ::windows
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn OpenSCManagerW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpmachinename: Param0, lpdatabasename: Param1, dwdesiredaccess: u32) -> ::windows_core::Result<::win32_security::SC_HANDLE> {
     #[cfg(windows)]
@@ -686,7 +686,7 @@ pub unsafe fn OpenSCManagerW<'a, Param0: ::windows_core::IntoParam<'a, ::windows
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn OpenServiceA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hscmanager: Param0, lpservicename: Param1, dwdesiredaccess: u32) -> ::windows_core::Result<::win32_security::SC_HANDLE> {
     #[cfg(windows)]
@@ -701,7 +701,7 @@ pub unsafe fn OpenServiceA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_sec
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn OpenServiceW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hscmanager: Param0, lpservicename: Param1, dwdesiredaccess: u32) -> ::windows_core::Result<::win32_security::SC_HANDLE> {
     #[cfg(windows)]
@@ -854,7 +854,7 @@ impl ::core::default::Default for QUERY_SERVICE_LOCK_STATUSW {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn QueryServiceConfig2A<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hservice: Param0, dwinfolevel: SERVICE_CONFIG, lpbuffer: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -868,7 +868,7 @@ pub unsafe fn QueryServiceConfig2A<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn QueryServiceConfig2W<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hservice: Param0, dwinfolevel: SERVICE_CONFIG, lpbuffer: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -882,7 +882,7 @@ pub unsafe fn QueryServiceConfig2W<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn QueryServiceConfigA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hservice: Param0, lpserviceconfig: *mut QUERY_SERVICE_CONFIGA, cbbufsize: u32, pcbbytesneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -896,7 +896,7 @@ pub unsafe fn QueryServiceConfigA<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn QueryServiceConfigW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hservice: Param0, lpserviceconfig: *mut QUERY_SERVICE_CONFIGW, cbbufsize: u32, pcbbytesneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -923,7 +923,7 @@ pub unsafe fn QueryServiceDynamicInformation<'a, Param0: ::windows_core::IntoPar
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn QueryServiceLockStatusA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hscmanager: Param0, lplockstatus: *mut QUERY_SERVICE_LOCK_STATUSA, cbbufsize: u32, pcbbytesneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -937,7 +937,7 @@ pub unsafe fn QueryServiceLockStatusA<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn QueryServiceLockStatusW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hscmanager: Param0, lplockstatus: *mut QUERY_SERVICE_LOCK_STATUSW, cbbufsize: u32, pcbbytesneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -951,7 +951,7 @@ pub unsafe fn QueryServiceLockStatusW<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn QueryServiceObjectSecurity<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hservice: Param0, dwsecurityinformation: u32, lpsecuritydescriptor: ::win32_security::PSECURITY_DESCRIPTOR, cbbufsize: u32, pcbbytesneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -965,7 +965,7 @@ pub unsafe fn QueryServiceObjectSecurity<'a, Param0: ::windows_core::IntoParam<'
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn QueryServiceStatus<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hservice: Param0, lpservicestatus: *mut SERVICE_STATUS) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -979,7 +979,7 @@ pub unsafe fn QueryServiceStatus<'a, Param0: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn QueryServiceStatusEx<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hservice: Param0, infolevel: SC_STATUS_TYPE, lpbuffer: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -2629,7 +2629,7 @@ pub unsafe fn SetServiceBits<'a, Param0: ::windows_core::IntoParam<'a, SERVICE_S
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn SetServiceObjectSecurity<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(hservice: Param0, dwsecurityinformation: ::win32_security::OBJECT_SECURITY_INFORMATION, lpsecuritydescriptor: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -2656,7 +2656,7 @@ pub unsafe fn SetServiceStatus<'a, Param0: ::windows_core::IntoParam<'a, SERVICE
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn StartServiceA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hservice: Param0, lpserviceargvectors: &[::windows_core::PSTR]) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -2696,7 +2696,7 @@ pub unsafe fn StartServiceCtrlDispatcherW(lpservicestarttable: *const SERVICE_TA
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn StartServiceW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>>(hservice: Param0, lpserviceargvectors: &[::windows_core::PWSTR]) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -2724,7 +2724,7 @@ pub unsafe fn UnlockServiceDatabase(sclock: *const ::core::ffi::c_void) -> ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn WaitServiceState<'a, Param0: ::windows_core::IntoParam<'a, ::win32_security::SC_HANDLE>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hservice: Param0, dwnotify: u32, dwtimeout: u32, hcancelevent: Param3) -> u32 {
     #[cfg(windows)]

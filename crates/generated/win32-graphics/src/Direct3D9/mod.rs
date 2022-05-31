@@ -2682,7 +2682,7 @@ pub const D3DISSUE_END: u32 = 1u32;
 pub const D3DKEYEXCHANGE_DXVA: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x43d3775c_38e5_4924_8d86_d3fccf153e9b);
 pub const D3DKEYEXCHANGE_RSAES_OAEP: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc1949895_d72a_4a1d_8e5d_ed857d171520);
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics")]
 pub struct D3DLIGHT9 {
     pub Type: D3DLIGHTTYPE,
     pub Diffuse: D3DCOLORVALUE,
@@ -2698,33 +2698,33 @@ pub struct D3DLIGHT9 {
     pub Theta: f32,
     pub Phi: f32,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for D3DLIGHT9 {}
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for D3DLIGHT9 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for D3DLIGHT9 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("D3DLIGHT9").field("Type", &self.Type).field("Diffuse", &self.Diffuse).field("Specular", &self.Specular).field("Ambient", &self.Ambient).field("Position", &self.Position).field("Direction", &self.Direction).field("Range", &self.Range).field("Falloff", &self.Falloff).field("Attenuation0", &self.Attenuation0).field("Attenuation1", &self.Attenuation1).field("Attenuation2", &self.Attenuation2).field("Theta", &self.Theta).field("Phi", &self.Phi).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for D3DLIGHT9 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for D3DLIGHT9 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D3DLIGHT9>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for D3DLIGHT9 {}
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for D3DLIGHT9 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5017,7 +5017,7 @@ impl IDirect3D9 {
     pub unsafe fn GetDeviceCaps(&self, adapter: u32, devicetype: D3DDEVTYPE, pcaps: *mut D3DCAPS9) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetDeviceCaps)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(adapter), ::core::mem::transmute(devicetype), ::core::mem::transmute(pcaps)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetAdapterMonitor(&self, adapter: u32) -> super::Gdi::HMONITOR {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).GetAdapterMonitor)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(adapter)))
     }
@@ -5081,9 +5081,9 @@ pub struct IDirect3D9_Vtbl {
     pub CheckDepthStencilMatch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, adapter: u32, devicetype: D3DDEVTYPE, adapterformat: D3DFORMAT, rendertargetformat: D3DFORMAT, depthstencilformat: D3DFORMAT) -> ::windows_core::HRESULT,
     pub CheckDeviceFormatConversion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, adapter: u32, devicetype: D3DDEVTYPE, sourceformat: D3DFORMAT, targetformat: D3DFORMAT) -> ::windows_core::HRESULT,
     pub GetDeviceCaps: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, adapter: u32, devicetype: D3DDEVTYPE, pcaps: *mut D3DCAPS9) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub GetAdapterMonitor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, adapter: u32) -> super::Gdi::HMONITOR,
-    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetAdapterMonitor: usize,
     pub CreateDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, adapter: u32, devicetype: D3DDEVTYPE, hfocuswindow: ::win32_foundation::HWND, behaviorflags: u32, ppresentationparameters: *mut D3DPRESENT_PARAMETERS, ppreturneddeviceinterface: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -5126,7 +5126,7 @@ impl IDirect3D9Ex {
     pub unsafe fn GetDeviceCaps(&self, adapter: u32, devicetype: D3DDEVTYPE, pcaps: *mut D3DCAPS9) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetDeviceCaps)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(adapter), ::core::mem::transmute(devicetype), ::core::mem::transmute(pcaps)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetAdapterMonitor(&self, adapter: u32) -> super::Gdi::HMONITOR {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).base__.GetAdapterMonitor)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(adapter)))
     }
@@ -5537,7 +5537,7 @@ impl IDirect3DDevice9 {
     pub unsafe fn Reset(&self, ppresentationparameters: *mut D3DPRESENT_PARAMETERS) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Reset)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppresentationparameters)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn Present<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, psourcerect: *const ::win32_foundation::RECT, pdestrect: *const ::win32_foundation::RECT, hdestwindowoverride: Param2, pdirtyregion: *const super::Gdi::RGNDATA) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Present)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(psourcerect), ::core::mem::transmute(pdestrect), hdestwindowoverride.into_param().abi(), ::core::mem::transmute(pdirtyregion)).ok()
     }
@@ -5622,15 +5622,15 @@ impl IDirect3DDevice9 {
     pub unsafe fn Clear(&self, count: u32, prects: *const D3DRECT, flags: u32, color: u32, z: f32, stencil: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Clear)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(count), ::core::mem::transmute(prects), ::core::mem::transmute(flags), ::core::mem::transmute(color), ::core::mem::transmute(z), ::core::mem::transmute(stencil)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetTransform(&self, state: D3DTRANSFORMSTATETYPE, pmatrix: *const super::Direct3D::D3DMATRIX) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetTransform)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(state), ::core::mem::transmute(pmatrix)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetTransform(&self, state: D3DTRANSFORMSTATETYPE, pmatrix: *mut super::Direct3D::D3DMATRIX) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetTransform)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(state), ::core::mem::transmute(pmatrix)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn MultiplyTransform(&self, param0: D3DTRANSFORMSTATETYPE, param1: *const super::Direct3D::D3DMATRIX) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).MultiplyTransform)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(param0), ::core::mem::transmute(param1)).ok()
     }
@@ -5646,11 +5646,11 @@ impl IDirect3DDevice9 {
     pub unsafe fn GetMaterial(&self, pmaterial: *mut D3DMATERIAL9) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetMaterial)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pmaterial)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetLight(&self, index: u32, param1: *const D3DLIGHT9) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetLight)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), ::core::mem::transmute(param1)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetLight(&self, index: u32, param1: *mut D3DLIGHT9) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetLight)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), ::core::mem::transmute(param1)).ok()
     }
@@ -5711,11 +5711,11 @@ impl IDirect3DDevice9 {
     pub unsafe fn ValidateDevice(&self, pnumpasses: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ValidateDevice)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pnumpasses)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetPaletteEntries(&self, palettenumber: u32, pentries: *const super::Gdi::PALETTEENTRY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetPaletteEntries)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(palettenumber), ::core::mem::transmute(pentries)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetPaletteEntries(&self, palettenumber: u32, pentries: *mut super::Gdi::PALETTEENTRY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetPaletteEntries)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(palettenumber), ::core::mem::transmute(pentries)).ok()
     }
@@ -5924,9 +5924,9 @@ pub struct IDirect3DDevice9_Vtbl {
     pub GetSwapChain: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, iswapchain: u32, pswapchain: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetNumberOfSwapChains: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> u32,
     pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppresentationparameters: *mut D3DPRESENT_PARAMETERS) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub Present: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psourcerect: *const ::win32_foundation::RECT, pdestrect: *const ::win32_foundation::RECT, hdestwindowoverride: ::win32_foundation::HWND, pdirtyregion: *const super::Gdi::RGNDATA) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    #[cfg(not(feature = "win32-graphics"))]
     Present: usize,
     pub GetBackBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, iswapchain: u32, ibackbuffer: u32, r#type: D3DBACKBUFFER_TYPE, ppbackbuffer: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetRasterStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, iswapchain: u32, prasterstatus: *mut D3DRASTER_STATUS) -> ::windows_core::HRESULT,
@@ -5954,29 +5954,29 @@ pub struct IDirect3DDevice9_Vtbl {
     pub BeginScene: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub EndScene: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Clear: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, count: u32, prects: *const D3DRECT, flags: u32, color: u32, z: f32, stencil: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub SetTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, state: D3DTRANSFORMSTATETYPE, pmatrix: *const super::Direct3D::D3DMATRIX) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct3D"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetTransform: usize,
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub GetTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, state: D3DTRANSFORMSTATETYPE, pmatrix: *mut super::Direct3D::D3DMATRIX) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct3D"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetTransform: usize,
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub MultiplyTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, param0: D3DTRANSFORMSTATETYPE, param1: *const super::Direct3D::D3DMATRIX) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct3D"))]
+    #[cfg(not(feature = "win32-graphics"))]
     MultiplyTransform: usize,
     pub SetViewport: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pviewport: *const D3DVIEWPORT9) -> ::windows_core::HRESULT,
     pub GetViewport: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pviewport: *mut D3DVIEWPORT9) -> ::windows_core::HRESULT,
     pub SetMaterial: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pmaterial: *const D3DMATERIAL9) -> ::windows_core::HRESULT,
     pub GetMaterial: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pmaterial: *mut D3DMATERIAL9) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub SetLight: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32, param1: *const D3DLIGHT9) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct3D"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetLight: usize,
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub GetLight: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32, param1: *mut D3DLIGHT9) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct3D"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetLight: usize,
     pub LightEnable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32, enable: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetLightEnable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32, penable: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
@@ -5996,13 +5996,13 @@ pub struct IDirect3DDevice9_Vtbl {
     pub GetSamplerState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sampler: u32, r#type: D3DSAMPLERSTATETYPE, pvalue: *mut u32) -> ::windows_core::HRESULT,
     pub SetSamplerState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sampler: u32, r#type: D3DSAMPLERSTATETYPE, value: u32) -> ::windows_core::HRESULT,
     pub ValidateDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pnumpasses: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub SetPaletteEntries: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, palettenumber: u32, pentries: *const super::Gdi::PALETTEENTRY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetPaletteEntries: usize,
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub GetPaletteEntries: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, palettenumber: u32, pentries: *mut super::Gdi::PALETTEENTRY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetPaletteEntries: usize,
     pub SetCurrentTexturePalette: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, palettenumber: u32) -> ::windows_core::HRESULT,
     pub GetCurrentTexturePalette: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, palettenumber: *mut u32) -> ::windows_core::HRESULT,
@@ -6098,7 +6098,7 @@ impl IDirect3DDevice9Ex {
     pub unsafe fn Reset(&self, ppresentationparameters: *mut D3DPRESENT_PARAMETERS) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Reset)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppresentationparameters)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn Present<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, psourcerect: *const ::win32_foundation::RECT, pdestrect: *const ::win32_foundation::RECT, hdestwindowoverride: Param2, pdirtyregion: *const super::Gdi::RGNDATA) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Present)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(psourcerect), ::core::mem::transmute(pdestrect), hdestwindowoverride.into_param().abi(), ::core::mem::transmute(pdirtyregion)).ok()
     }
@@ -6183,15 +6183,15 @@ impl IDirect3DDevice9Ex {
     pub unsafe fn Clear(&self, count: u32, prects: *const D3DRECT, flags: u32, color: u32, z: f32, stencil: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Clear)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(count), ::core::mem::transmute(prects), ::core::mem::transmute(flags), ::core::mem::transmute(color), ::core::mem::transmute(z), ::core::mem::transmute(stencil)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetTransform(&self, state: D3DTRANSFORMSTATETYPE, pmatrix: *const super::Direct3D::D3DMATRIX) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetTransform)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(state), ::core::mem::transmute(pmatrix)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetTransform(&self, state: D3DTRANSFORMSTATETYPE, pmatrix: *mut super::Direct3D::D3DMATRIX) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetTransform)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(state), ::core::mem::transmute(pmatrix)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn MultiplyTransform(&self, param0: D3DTRANSFORMSTATETYPE, param1: *const super::Direct3D::D3DMATRIX) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.MultiplyTransform)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(param0), ::core::mem::transmute(param1)).ok()
     }
@@ -6207,11 +6207,11 @@ impl IDirect3DDevice9Ex {
     pub unsafe fn GetMaterial(&self, pmaterial: *mut D3DMATERIAL9) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetMaterial)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pmaterial)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetLight(&self, index: u32, param1: *const D3DLIGHT9) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetLight)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), ::core::mem::transmute(param1)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetLight(&self, index: u32, param1: *mut D3DLIGHT9) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetLight)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), ::core::mem::transmute(param1)).ok()
     }
@@ -6272,11 +6272,11 @@ impl IDirect3DDevice9Ex {
     pub unsafe fn ValidateDevice(&self, pnumpasses: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.ValidateDevice)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pnumpasses)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetPaletteEntries(&self, palettenumber: u32, pentries: *const super::Gdi::PALETTEENTRY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetPaletteEntries)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(palettenumber), ::core::mem::transmute(pentries)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetPaletteEntries(&self, palettenumber: u32, pentries: *mut super::Gdi::PALETTEENTRY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetPaletteEntries)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(palettenumber), ::core::mem::transmute(pentries)).ok()
     }
@@ -6432,7 +6432,7 @@ impl IDirect3DDevice9Ex {
     pub unsafe fn ComposeRects<'a, Param0: ::windows_core::IntoParam<'a, IDirect3DSurface9>, Param1: ::windows_core::IntoParam<'a, IDirect3DSurface9>, Param2: ::windows_core::IntoParam<'a, IDirect3DVertexBuffer9>, Param4: ::windows_core::IntoParam<'a, IDirect3DVertexBuffer9>>(&self, psrc: Param0, pdst: Param1, psrcrectdescs: Param2, numrects: u32, pdstrectdescs: Param4, operation: D3DCOMPOSERECTSOP, xoffset: i32, yoffset: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ComposeRects)(::windows_core::Interface::as_raw(self), psrc.into_param().abi(), pdst.into_param().abi(), psrcrectdescs.into_param().abi(), ::core::mem::transmute(numrects), pdstrectdescs.into_param().abi(), ::core::mem::transmute(operation), ::core::mem::transmute(xoffset), ::core::mem::transmute(yoffset)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn PresentEx<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, psourcerect: *const ::win32_foundation::RECT, pdestrect: *const ::win32_foundation::RECT, hdestwindowoverride: Param2, pdirtyregion: *const super::Gdi::RGNDATA, dwflags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).PresentEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(psourcerect), ::core::mem::transmute(pdestrect), hdestwindowoverride.into_param().abi(), ::core::mem::transmute(pdirtyregion), ::core::mem::transmute(dwflags)).ok()
     }
@@ -6539,9 +6539,9 @@ pub struct IDirect3DDevice9Ex_Vtbl {
     pub base__: IDirect3DDevice9_Vtbl,
     pub SetConvolutionMonoKernel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, width: u32, height: u32, rows: *mut f32, columns: *mut f32) -> ::windows_core::HRESULT,
     pub ComposeRects: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psrc: ::windows_core::RawPtr, pdst: ::windows_core::RawPtr, psrcrectdescs: ::windows_core::RawPtr, numrects: u32, pdstrectdescs: ::windows_core::RawPtr, operation: D3DCOMPOSERECTSOP, xoffset: i32, yoffset: i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub PresentEx: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psourcerect: *const ::win32_foundation::RECT, pdestrect: *const ::win32_foundation::RECT, hdestwindowoverride: ::win32_foundation::HWND, pdirtyregion: *const super::Gdi::RGNDATA, dwflags: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    #[cfg(not(feature = "win32-graphics"))]
     PresentEx: usize,
     pub GetGPUThreadPriority: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppriority: *mut i32) -> ::windows_core::HRESULT,
     pub SetGPUThreadPriority: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, priority: i32) -> ::windows_core::HRESULT,
@@ -6974,11 +6974,11 @@ impl IDirect3DSurface9 {
     pub unsafe fn UnlockRect(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).UnlockRect)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetDC(&self, phdc: *mut super::Gdi::HDC) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetDC)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(phdc)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn ReleaseDC<'a, Param0: ::windows_core::IntoParam<'a, super::Gdi::HDC>>(&self, hdc: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ReleaseDC)(::windows_core::Interface::as_raw(self), hdc.into_param().abi()).ok()
     }
@@ -7051,19 +7051,19 @@ pub struct IDirect3DSurface9_Vtbl {
     pub GetDesc: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdesc: *mut D3DSURFACE_DESC) -> ::windows_core::HRESULT,
     pub LockRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plockedrect: *mut D3DLOCKED_RECT, prect: *const ::win32_foundation::RECT, flags: u32) -> ::windows_core::HRESULT,
     pub UnlockRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub GetDC: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phdc: *mut super::Gdi::HDC) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetDC: usize,
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub ReleaseDC: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hdc: super::Gdi::HDC) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    #[cfg(not(feature = "win32-graphics"))]
     ReleaseDC: usize,
 }
 #[repr(transparent)]
 pub struct IDirect3DSwapChain9(::windows_core::IUnknown);
 impl IDirect3DSwapChain9 {
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn Present<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, psourcerect: *const ::win32_foundation::RECT, pdestrect: *const ::win32_foundation::RECT, hdestwindowoverride: Param2, pdirtyregion: *const super::Gdi::RGNDATA, dwflags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Present)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(psourcerect), ::core::mem::transmute(pdestrect), hdestwindowoverride.into_param().abi(), ::core::mem::transmute(pdirtyregion), ::core::mem::transmute(dwflags)).ok()
     }
@@ -7132,9 +7132,9 @@ unsafe impl ::windows_core::Interface for IDirect3DSwapChain9 {
 #[doc(hidden)]
 pub struct IDirect3DSwapChain9_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub Present: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psourcerect: *const ::win32_foundation::RECT, pdestrect: *const ::win32_foundation::RECT, hdestwindowoverride: ::win32_foundation::HWND, pdirtyregion: *const super::Gdi::RGNDATA, dwflags: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    #[cfg(not(feature = "win32-graphics"))]
     Present: usize,
     pub GetFrontBufferData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdestsurface: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetBackBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ibackbuffer: u32, r#type: D3DBACKBUFFER_TYPE, ppbackbuffer: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -7146,7 +7146,7 @@ pub struct IDirect3DSwapChain9_Vtbl {
 #[repr(transparent)]
 pub struct IDirect3DSwapChain9Ex(::windows_core::IUnknown);
 impl IDirect3DSwapChain9Ex {
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn Present<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, psourcerect: *const ::win32_foundation::RECT, pdestrect: *const ::win32_foundation::RECT, hdestwindowoverride: Param2, pdirtyregion: *const super::Gdi::RGNDATA, dwflags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Present)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(psourcerect), ::core::mem::transmute(pdestrect), hdestwindowoverride.into_param().abi(), ::core::mem::transmute(pdirtyregion), ::core::mem::transmute(dwflags)).ok()
     }

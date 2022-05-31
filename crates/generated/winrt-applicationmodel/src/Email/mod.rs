@@ -21,7 +21,7 @@ impl EmailAttachment {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFileName)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Data(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStreamReference> {
         let this = self;
         unsafe {
@@ -29,7 +29,7 @@ impl EmailAttachment {
             (::windows_core::Interface::vtable(this).Data)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IRandomAccessStreamReference>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SetData<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetData)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -114,14 +114,14 @@ impl EmailAttachment {
         let this = &::windows_core::Interface::cast::<IEmailAttachment2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMimeType)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>>(filename: Param0, data: Param1) -> ::windows_core::Result<EmailAttachment> {
         Self::IEmailAttachmentFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), filename.into_param().abi(), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<EmailAttachment>(result__)
         })
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(filename: Param0, data: Param1, mimetype: Param2) -> ::windows_core::Result<EmailAttachment> {
         Self::IEmailAttachmentFactory2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -414,7 +414,7 @@ impl EmailConversation {
             (::windows_core::Interface::vtable(this).UnreadMessageCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn FindMessagesAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<EmailMessage>>> {
         let this = self;
         unsafe {
@@ -422,7 +422,7 @@ impl EmailConversation {
             (::windows_core::Interface::vtable(this).FindMessagesAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<EmailMessage>>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn FindMessagesWithCountAsync(&self, count: u32) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<EmailMessage>>> {
         let this = self;
         unsafe {
@@ -506,7 +506,7 @@ unsafe impl ::core::marker::Sync for EmailConversation {}
 #[repr(transparent)]
 pub struct EmailConversationBatch(::windows_core::IUnknown);
 impl EmailConversationBatch {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Conversations(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<EmailConversation>> {
         let this = self;
         unsafe {
@@ -801,7 +801,7 @@ impl EmailFolder {
             (::windows_core::Interface::vtable(this).DeleteAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn FindChildFoldersAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<EmailFolder>>> {
         let this = self;
         unsafe {
@@ -1501,7 +1501,7 @@ impl EmailMailbox {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetMailAddress)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn MailAddressAliases(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -1734,7 +1734,7 @@ impl EmailMailbox {
             (::windows_core::Interface::vtable(this).TryUpdateMeetingResponseAsync)(::windows_core::Interface::as_raw(this), meeting.into_param().abi(), response, subject.into_param().abi(), comment.into_param().abi(), sendupdate, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TryForwardMeetingAsync<'a, Param0: ::windows_core::IntoParam<'a, EmailMessage>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<EmailRecipient>>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param4: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param5: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, meeting: Param0, recipients: Param1, subject: Param2, forwardheadertype: EmailMessageBodyKind, forwardheader: Param4, comment: Param5) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
@@ -1802,7 +1802,7 @@ impl EmailMailbox {
             (::windows_core::Interface::vtable(this).NetworkId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ResolveRecipientsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, recipients: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<EmailRecipientResolutionResult>>> {
         let this = &::windows_core::Interface::cast::<IEmailMailbox3>(self)?;
         unsafe {
@@ -1810,7 +1810,7 @@ impl EmailMailbox {
             (::windows_core::Interface::vtable(this).ResolveRecipientsAsync)(::windows_core::Interface::as_raw(this), recipients.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<EmailRecipientResolutionResult>>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn ValidateCertificatesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_security::Cryptography::Certificates::Certificate>>>(&self, certificates: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<EmailCertificateValidationStatus>>> {
         let this = &::windows_core::Interface::cast::<IEmailMailbox3>(self)?;
         unsafe {
@@ -2611,7 +2611,7 @@ impl EmailMailboxChange {
             (::windows_core::Interface::vtable(this).ChangeType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<EmailMailboxChangeType>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn MailboxActions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<EmailMailboxAction>> {
         let this = self;
         unsafe {
@@ -2717,7 +2717,7 @@ impl EmailMailboxChangeReader {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).AcceptChangesThrough)(::windows_core::Interface::as_raw(this), lastchangetoacknowledge.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ReadBatchAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<EmailMailboxChange>>> {
         let this = self;
         unsafe {
@@ -3758,7 +3758,7 @@ impl EmailManager {
             (::windows_core::Interface::vtable(this).RequestStoreAsync)(::windows_core::Interface::as_raw(this), accesstype, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<EmailStore>>(result__)
         })
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn GetForUser<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>>(user: Param0) -> ::windows_core::Result<EmailManagerForUser> {
         Self::IEmailManagerStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -3798,7 +3798,7 @@ impl EmailManagerForUser {
             (::windows_core::Interface::vtable(this).RequestStoreAsync)(::windows_core::Interface::as_raw(this), accesstype, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<EmailStore>>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = self;
         unsafe {
@@ -3999,7 +3999,7 @@ impl EmailMeetingInfo {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetRecurrenceStartTime)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "ApplicationModel_Appointments")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn Recurrence(&self) -> ::windows_core::Result<super::Appointments::AppointmentRecurrence> {
         let this = self;
         unsafe {
@@ -4007,7 +4007,7 @@ impl EmailMeetingInfo {
             (::windows_core::Interface::vtable(this).Recurrence)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Appointments::AppointmentRecurrence>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Appointments")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn SetRecurrence<'a, Param0: ::windows_core::IntoParam<'a, super::Appointments::AppointmentRecurrence>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetRecurrence)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -4180,7 +4180,7 @@ impl EmailMessage {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetBody)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn To(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<EmailRecipient>> {
         let this = self;
         unsafe {
@@ -4188,7 +4188,7 @@ impl EmailMessage {
             (::windows_core::Interface::vtable(this).To)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<EmailRecipient>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CC(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<EmailRecipient>> {
         let this = self;
         unsafe {
@@ -4196,7 +4196,7 @@ impl EmailMessage {
             (::windows_core::Interface::vtable(this).CC)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<EmailRecipient>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Bcc(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<EmailRecipient>> {
         let this = self;
         unsafe {
@@ -4204,7 +4204,7 @@ impl EmailMessage {
             (::windows_core::Interface::vtable(this).Bcc)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<EmailRecipient>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Attachments(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<EmailAttachment>> {
         let this = self;
         unsafe {
@@ -4465,7 +4465,7 @@ impl EmailMessage {
         let this = &::windows_core::Interface::cast::<IEmailMessage2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMeetingInfo)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetBodyStream(&self, r#type: EmailMessageBodyKind) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStreamReference> {
         let this = &::windows_core::Interface::cast::<IEmailMessage2>(self)?;
         unsafe {
@@ -4473,12 +4473,12 @@ impl EmailMessage {
             (::windows_core::Interface::vtable(this).GetBodyStream)(::windows_core::Interface::as_raw(this), r#type, result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IRandomAccessStreamReference>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SetBodyStream<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>>(&self, r#type: EmailMessageBodyKind, stream: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IEmailMessage2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetBodyStream)(::windows_core::Interface::as_raw(this), r#type, stream.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SmimeData(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStreamReference> {
         let this = &::windows_core::Interface::cast::<IEmailMessage3>(self)?;
         unsafe {
@@ -4486,7 +4486,7 @@ impl EmailMessage {
             (::windows_core::Interface::vtable(this).SmimeData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IRandomAccessStreamReference>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SetSmimeData<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IEmailMessage3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSmimeData)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -4502,7 +4502,7 @@ impl EmailMessage {
         let this = &::windows_core::Interface::cast::<IEmailMessage3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSmimeKind)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ReplyTo(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<EmailRecipient>> {
         let this = &::windows_core::Interface::cast::<IEmailMessage4>(self)?;
         unsafe {
@@ -4597,7 +4597,7 @@ unsafe impl ::core::marker::Sync for EmailMessage {}
 #[repr(transparent)]
 pub struct EmailMessageBatch(::windows_core::IUnknown);
 impl EmailMessageBatch {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Messages(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<EmailMessage>> {
         let this = self;
         unsafe {
@@ -4993,7 +4993,7 @@ impl EmailQueryOptions {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetKind)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn FolderIds(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -5500,7 +5500,7 @@ impl EmailRecipientResolutionResult {
             (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<EmailRecipientResolutionStatus>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn PublicKeys(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::Certificate>> {
         let this = self;
         unsafe {
@@ -5512,7 +5512,7 @@ impl EmailRecipientResolutionResult {
         let this = &::windows_core::Interface::cast::<IEmailRecipientResolutionResult2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetStatus)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn SetPublicKeys<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_security::Cryptography::Certificates::Certificate>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IEmailRecipientResolutionResult2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetPublicKeys)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -5670,7 +5670,7 @@ unsafe impl ::windows_core::RuntimeType for EmailSpecialFolderKind {
 #[repr(transparent)]
 pub struct EmailStore(::windows_core::IUnknown);
 impl EmailStore {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn FindMailboxesAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<EmailMailbox>>> {
         let this = self;
         unsafe {
@@ -5942,13 +5942,13 @@ pub struct IEmailAttachment_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub FileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub Data: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Data: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub SetData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SetData: usize,
 }
 #[doc(hidden)]
@@ -5988,9 +5988,9 @@ unsafe impl ::windows_core::Interface for IEmailAttachmentFactory {
 #[doc(hidden)]
 pub struct IEmailAttachmentFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, data: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Create: usize,
 }
 #[doc(hidden)]
@@ -6004,9 +6004,9 @@ unsafe impl ::windows_core::Interface for IEmailAttachmentFactory2 {
 #[doc(hidden)]
 pub struct IEmailAttachmentFactory2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, data: ::windows_core::RawPtr, mimetype: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Create: usize,
 }
 #[doc(hidden)]
@@ -6033,13 +6033,13 @@ pub struct IEmailConversation_Vtbl {
     pub LatestSender: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Subject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub UnreadMessageCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub FindMessagesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     FindMessagesAsync: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub FindMessagesWithCountAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, count: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     FindMessagesWithCountAsync: usize,
 }
 #[doc(hidden)]
@@ -6053,9 +6053,9 @@ unsafe impl ::windows_core::Interface for IEmailConversationBatch {
 #[doc(hidden)]
 pub struct IEmailConversationBatch_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Conversations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Conversations: usize,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut EmailBatchStatus) -> ::windows_core::HRESULT,
 }
@@ -6097,9 +6097,9 @@ pub struct IEmailFolder_Vtbl {
     pub Kind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut EmailSpecialFolderKind) -> ::windows_core::HRESULT,
     pub CreateFolderAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub DeleteAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub FindChildFoldersAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     FindChildFoldersAsync: usize,
     pub GetConversationReader: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetConversationReaderWithOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -6228,9 +6228,9 @@ pub struct IEmailMailbox_Vtbl {
     pub IsDataEncryptedUnderLock: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub MailAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetMailAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub MailAddressAliases: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     MailAddressAliases: usize,
     pub OtherAppReadAccess: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut EmailMailboxOtherAppReadAccess) -> ::windows_core::HRESULT,
     pub SetOtherAppReadAccess: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: EmailMailboxOtherAppReadAccess) -> ::windows_core::HRESULT,
@@ -6265,9 +6265,9 @@ pub struct IEmailMailbox_Vtbl {
     pub DownloadAttachmentAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, attachmentid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateResponseMessageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, messageid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, responsetype: EmailMessageResponseKind, subject: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, responseheadertype: EmailMessageBodyKind, responseheader: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub TryUpdateMeetingResponseAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, meeting: ::windows_core::RawPtr, response: EmailMeetingResponseType, subject: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, comment: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, sendupdate: bool, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub TryForwardMeetingAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, meeting: ::windows_core::RawPtr, recipients: ::windows_core::RawPtr, subject: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, forwardheadertype: EmailMessageBodyKind, forwardheader: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, comment: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TryForwardMeetingAsync: usize,
     pub TryProposeNewTimeForMeetingAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, meeting: ::windows_core::RawPtr, newstarttime: ::winrt_foundation::DateTime, newduration: ::winrt_foundation::TimeSpan, subject: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, comment: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub MailboxChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phandler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -6302,13 +6302,13 @@ unsafe impl ::windows_core::Interface for IEmailMailbox3 {
 #[doc(hidden)]
 pub struct IEmailMailbox3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub ResolveRecipientsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, recipients: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ResolveRecipientsAsync: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub ValidateCertificatesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, certificates: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security")))]
     ValidateCertificatesAsync: usize,
     pub TryEmptyFolderAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, folderid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub TryCreateFolderAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, parentfolderid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -6469,9 +6469,9 @@ unsafe impl ::windows_core::Interface for IEmailMailboxChange {
 pub struct IEmailMailboxChange_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ChangeType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut EmailMailboxChangeType) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub MailboxActions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     MailboxActions: usize,
     pub Message: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Folder: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -6489,9 +6489,9 @@ pub struct IEmailMailboxChangeReader_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub AcceptChanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub AcceptChangesThrough: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lastchangetoacknowledge: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub ReadBatchAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ReadBatchAsync: usize,
 }
 #[doc(hidden)]
@@ -6644,9 +6644,9 @@ pub struct IEmailManagerForUser_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ShowComposeNewEmailAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, message: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RequestStoreAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, accesstype: EmailStoreAccessType, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub User: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     User: usize,
 }
 #[doc(hidden)]
@@ -6686,9 +6686,9 @@ unsafe impl ::windows_core::Interface for IEmailManagerStatics3 {
 #[doc(hidden)]
 pub struct IEmailManagerStatics3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub GetForUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     GetForUser: usize,
 }
 #[doc(hidden)]
@@ -6722,13 +6722,13 @@ pub struct IEmailMeetingInfo_Vtbl {
     pub SetProposedDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, duration: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RecurrenceStartTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetRecurrenceStartTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "ApplicationModel_Appointments")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub Recurrence: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Appointments"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     Recurrence: usize,
-    #[cfg(feature = "ApplicationModel_Appointments")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub SetRecurrence: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Appointments"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     SetRecurrence: usize,
     pub RemoteChangeNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u64) -> ::windows_core::HRESULT,
     pub SetRemoteChangeNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u64) -> ::windows_core::HRESULT,
@@ -6763,21 +6763,21 @@ pub struct IEmailMessage_Vtbl {
     pub SetSubject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Body: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetBody: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub To: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     To: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub CC: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CC: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Bcc: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Bcc: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Attachments: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Attachments: usize,
 }
 #[doc(hidden)]
@@ -6834,13 +6834,13 @@ pub struct IEmailMessage2_Vtbl {
     pub SetSentTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub MeetingInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetMeetingInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub GetBodyStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: EmailMessageBodyKind, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     GetBodyStream: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub SetBodyStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: EmailMessageBodyKind, stream: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SetBodyStream: usize,
 }
 #[doc(hidden)]
@@ -6854,13 +6854,13 @@ unsafe impl ::windows_core::Interface for IEmailMessage3 {
 #[doc(hidden)]
 pub struct IEmailMessage3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub SmimeData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SmimeData: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub SetSmimeData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SetSmimeData: usize,
     pub SmimeKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut EmailMessageSmimeKind) -> ::windows_core::HRESULT,
     pub SetSmimeKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: EmailMessageSmimeKind) -> ::windows_core::HRESULT,
@@ -6876,9 +6876,9 @@ unsafe impl ::windows_core::Interface for IEmailMessage4 {
 #[doc(hidden)]
 pub struct IEmailMessage4_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub ReplyTo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ReplyTo: usize,
     pub SentRepresenting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetSentRepresenting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -6894,9 +6894,9 @@ unsafe impl ::windows_core::Interface for IEmailMessageBatch {
 #[doc(hidden)]
 pub struct IEmailMessageBatch_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Messages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Messages: usize,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut EmailBatchStatus) -> ::windows_core::HRESULT,
 }
@@ -6931,9 +6931,9 @@ pub struct IEmailQueryOptions_Vtbl {
     pub SetSortProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: EmailQuerySortProperty) -> ::windows_core::HRESULT,
     pub Kind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut EmailQueryKind) -> ::windows_core::HRESULT,
     pub SetKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: EmailQueryKind) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub FolderIds: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     FolderIds: usize,
 }
 #[doc(hidden)]
@@ -7010,9 +7010,9 @@ unsafe impl ::windows_core::Interface for IEmailRecipientResolutionResult {
 pub struct IEmailRecipientResolutionResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut EmailRecipientResolutionStatus) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub PublicKeys: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security")))]
     PublicKeys: usize,
 }
 #[doc(hidden)]
@@ -7027,9 +7027,9 @@ unsafe impl ::windows_core::Interface for IEmailRecipientResolutionResult2 {
 pub struct IEmailRecipientResolutionResult2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub SetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: EmailRecipientResolutionStatus) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub SetPublicKeys: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security")))]
     SetPublicKeys: usize,
 }
 #[doc(hidden)]
@@ -7043,9 +7043,9 @@ unsafe impl ::windows_core::Interface for IEmailStore {
 #[doc(hidden)]
 pub struct IEmailStore_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub FindMailboxesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     FindMailboxesAsync: usize,
     pub GetConversationReader: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetConversationReaderWithOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,

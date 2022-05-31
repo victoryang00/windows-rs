@@ -1,4 +1,4 @@
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn BindIFilterFromStorage<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IStorage>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(pstg: Param0, punkouter: Param1, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -12,7 +12,7 @@ pub unsafe fn BindIFilterFromStorage<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn BindIFilterFromStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(pstm: Param0, punkouter: Param1, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -467,32 +467,32 @@ pub const FILTER_S_LAST_TEXT: ::windows_core::HRESULT = ::windows_core::HRESULT(
 pub const FILTER_S_LAST_VALUES: ::windows_core::HRESULT = ::windows_core::HRESULT(268042i32);
 pub const FILTER_W_MONIKER_CLIPPED: ::windows_core::HRESULT = ::windows_core::HRESULT(268036i32);
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 pub struct FULLPROPSPEC {
     pub guidPropSet: ::windows_core::GUID,
     pub psProperty: ::win32_system::Com::StructuredStorage::PROPSPEC,
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for FULLPROPSPEC {}
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for FULLPROPSPEC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for FULLPROPSPEC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for FULLPROPSPEC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FULLPROPSPEC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for FULLPROPSPEC {}
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for FULLPROPSPEC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -562,18 +562,18 @@ impl ::core::fmt::Debug for IFILTER_INIT {
 #[repr(transparent)]
 pub struct IFilter(::windows_core::IUnknown);
 impl IFilter {
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn Init(&self, grfflags: u32, aattributes: &[FULLPROPSPEC], pflags: *mut u32) -> i32 {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).Init)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(grfflags), aattributes.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(aattributes)), ::core::mem::transmute(pflags)))
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetChunk(&self, pstat: *mut STAT_CHUNK) -> i32 {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).GetChunk)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pstat)))
     }
     pub unsafe fn GetText(&self, pcwcbuffer: *mut u32, awcbuffer: ::windows_core::PWSTR) -> i32 {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).GetText)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pcwcbuffer), ::core::mem::transmute(awcbuffer)))
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetValue(&self, pppropvalue: *mut *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> i32 {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).GetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pppropvalue)))
     }
@@ -625,18 +625,18 @@ unsafe impl ::windows_core::Interface for IFilter {
 #[doc(hidden)]
 pub struct IFilter_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub Init: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, grfflags: u32, cattributes: u32, aattributes: *const FULLPROPSPEC, pflags: *mut u32) -> i32,
-    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(not(feature = "win32-system"))]
     Init: usize,
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub GetChunk: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstat: *mut STAT_CHUNK) -> i32,
-    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(not(feature = "win32-system"))]
     GetChunk: usize,
     pub GetText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcwcbuffer: *mut u32, awcbuffer: ::windows_core::PWSTR) -> i32,
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub GetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pppropvalue: *mut *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> i32,
-    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(not(feature = "win32-system"))]
     GetValue: usize,
     pub BindRegion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, origpos: FILTERREGION, riid: *const ::windows_core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> i32,
 }
@@ -766,7 +766,7 @@ pub const SCOPE_TYPE_VPATH: u32 = 512u32;
 pub const SCOPE_TYPE_WINPATH: u32 = 256u32;
 pub const STAT_BUSY: u32 = 0u32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 pub struct STAT_CHUNK {
     pub idChunk: u32,
     pub breakType: CHUNK_BREAKTYPE,
@@ -777,27 +777,27 @@ pub struct STAT_CHUNK {
     pub cwcStartSource: u32,
     pub cwcLenSource: u32,
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for STAT_CHUNK {}
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for STAT_CHUNK {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for STAT_CHUNK {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for STAT_CHUNK {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STAT_CHUNK>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for STAT_CHUNK {}
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for STAT_CHUNK {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

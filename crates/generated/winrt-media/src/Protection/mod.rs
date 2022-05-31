@@ -497,9 +497,9 @@ pub struct IMediaProtectionManager_Vtbl {
     pub RemoveRebootNeeded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub ComponentLoadFailed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveComponentLoadFailed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Properties: usize,
 }
 #[doc(hidden)]
@@ -513,9 +513,9 @@ unsafe impl ::windows_core::Interface for IMediaProtectionPMPServer {
 #[doc(hidden)]
 pub struct IMediaProtectionPMPServer_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Properties: usize,
 }
 #[doc(hidden)]
@@ -529,9 +529,9 @@ unsafe impl ::windows_core::Interface for IMediaProtectionPMPServerFactory {
 #[doc(hidden)]
 pub struct IMediaProtectionPMPServerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub CreatePMPServer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pproperties: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CreatePMPServer: usize,
 }
 #[doc(hidden)]
@@ -663,9 +663,9 @@ unsafe impl ::windows_core::Interface for IRevocationAndRenewalInformation {
 #[doc(hidden)]
 pub struct IRevocationAndRenewalInformation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Items: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Items: usize,
 }
 #[doc(hidden)]
@@ -710,9 +710,9 @@ unsafe impl ::windows_core::Interface for IServiceRequestedEventArgs2 {
 #[doc(hidden)]
 pub struct IServiceRequestedEventArgs2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Media_Playback")]
+    #[cfg(feature = "winrt-media")]
     pub MediaPlaybackItem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Playback"))]
+    #[cfg(not(feature = "winrt-media"))]
     MediaPlaybackItem: usize,
 }
 #[repr(transparent)]
@@ -758,7 +758,7 @@ impl MediaProtectionManager {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveComponentLoadFailed)(::windows_core::Interface::as_raw(this), cookie.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IPropertySet> {
         let this = self;
         unsafe {
@@ -842,7 +842,7 @@ unsafe impl ::core::marker::Sync for MediaProtectionManager {}
 #[repr(transparent)]
 pub struct MediaProtectionPMPServer(::windows_core::IUnknown);
 impl MediaProtectionPMPServer {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IPropertySet> {
         let this = self;
         unsafe {
@@ -850,7 +850,7 @@ impl MediaProtectionPMPServer {
             (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IPropertySet>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CreatePMPServer<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IPropertySet>>(pproperties: Param0) -> ::windows_core::Result<MediaProtectionPMPServer> {
         Self::IMediaProtectionPMPServerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1260,7 +1260,7 @@ unsafe impl ::windows_core::RuntimeType for RenewalStatus {
 #[repr(transparent)]
 pub struct RevocationAndRenewalInformation(::windows_core::IUnknown);
 impl RevocationAndRenewalInformation {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<RevocationAndRenewalItem>> {
         let this = self;
         unsafe {
@@ -1543,7 +1543,7 @@ impl ServiceRequestedEventArgs {
             (::windows_core::Interface::vtable(this).Completion)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaProtectionServiceCompletion>(result__)
         }
     }
-    #[cfg(feature = "Media_Playback")]
+    #[cfg(feature = "winrt-media")]
     pub fn MediaPlaybackItem(&self) -> ::windows_core::Result<super::Playback::MediaPlaybackItem> {
         let this = &::windows_core::Interface::cast::<IServiceRequestedEventArgs2>(self)?;
         unsafe {

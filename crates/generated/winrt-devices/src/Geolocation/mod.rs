@@ -241,21 +241,21 @@ impl GeoboundingBox {
             (::windows_core::Interface::vtable(this).CreateWithAltitudeReferenceAndSpatialReference)(::windows_core::Interface::as_raw(this), northwestcorner.into_param().abi(), southeastcorner.into_param().abi(), altitudereferencesystem, spatialreferenceid, result__.as_mut_ptr()).from_abi::<GeoboundingBox>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TryCompute<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0) -> ::windows_core::Result<GeoboundingBox> {
         Self::IGeoboundingBoxStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).TryCompute)(::windows_core::Interface::as_raw(this), positions.into_param().abi(), result__.as_mut_ptr()).from_abi::<GeoboundingBox>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TryComputeWithAltitudeReference<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0, altituderefsystem: AltitudeReferenceSystem) -> ::windows_core::Result<GeoboundingBox> {
         Self::IGeoboundingBoxStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).TryComputeWithAltitudeReference)(::windows_core::Interface::as_raw(this), positions.into_param().abi(), altituderefsystem, result__.as_mut_ptr()).from_abi::<GeoboundingBox>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TryComputeWithAltitudeReferenceAndSpatialReference<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0, altituderefsystem: AltitudeReferenceSystem, spatialreferenceid: u32) -> ::windows_core::Result<GeoboundingBox> {
         Self::IGeoboundingBoxStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -544,7 +544,7 @@ unsafe impl ::core::marker::Sync for Geocircle {}
 #[repr(transparent)]
 pub struct Geocoordinate(::windows_core::IUnknown);
 impl Geocoordinate {
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn Latitude(&self) -> ::windows_core::Result<f64> {
         let this = self;
         unsafe {
@@ -552,7 +552,7 @@ impl Geocoordinate {
             (::windows_core::Interface::vtable(this).Latitude)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn Longitude(&self) -> ::windows_core::Result<f64> {
         let this = self;
         unsafe {
@@ -560,7 +560,7 @@ impl Geocoordinate {
             (::windows_core::Interface::vtable(this).Longitude)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn Altitude(&self) -> ::windows_core::Result<::winrt_foundation::IReference<f64>> {
         let this = self;
         unsafe {
@@ -952,14 +952,14 @@ impl Geolocator {
             (::windows_core::Interface::vtable(this).RequestAccessAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GeolocationAccessStatus>>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetGeopositionHistoryAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(starttime: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<Geoposition>>> {
         Self::IGeolocatorStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetGeopositionHistoryAsync)(::windows_core::Interface::as_raw(this), starttime.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<Geoposition>>>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetGeopositionHistoryWithDurationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(starttime: Param0, duration: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<Geoposition>>> {
         Self::IGeolocatorStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1076,7 +1076,7 @@ unsafe impl ::core::marker::Sync for Geolocator {}
 #[repr(transparent)]
 pub struct Geopath(::windows_core::IUnknown);
 impl Geopath {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Positions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<BasicGeoposition>> {
         let this = self;
         unsafe {
@@ -1084,21 +1084,21 @@ impl Geopath {
             (::windows_core::Interface::vtable(this).Positions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<BasicGeoposition>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0) -> ::windows_core::Result<Geopath> {
         Self::IGeopathFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), positions.into_param().abi(), result__.as_mut_ptr()).from_abi::<Geopath>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CreateWithAltitudeReference<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0, altitudereferencesystem: AltitudeReferenceSystem) -> ::windows_core::Result<Geopath> {
         Self::IGeopathFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateWithAltitudeReference)(::windows_core::Interface::as_raw(this), positions.into_param().abi(), altitudereferencesystem, result__.as_mut_ptr()).from_abi::<Geopath>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CreateWithAltitudeReferenceAndSpatialReference<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0, altitudereferencesystem: AltitudeReferenceSystem, spatialreferenceid: u32) -> ::windows_core::Result<Geopath> {
         Self::IGeopathFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1807,7 +1807,7 @@ unsafe impl ::core::marker::Sync for GeovisitStateChangedEventArgs {}
 #[repr(transparent)]
 pub struct GeovisitTriggerDetails(::windows_core::IUnknown);
 impl GeovisitTriggerDetails {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ReadReports(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<Geovisit>> {
         let this = self;
         unsafe {
@@ -1948,17 +1948,17 @@ unsafe impl ::windows_core::Interface for IGeoboundingBoxStatics {
 #[doc(hidden)]
 pub struct IGeoboundingBoxStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub TryCompute: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, positions: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TryCompute: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub TryComputeWithAltitudeReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, positions: ::windows_core::RawPtr, altituderefsystem: AltitudeReferenceSystem, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TryComputeWithAltitudeReference: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub TryComputeWithAltitudeReferenceAndSpatialReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, positions: ::windows_core::RawPtr, altituderefsystem: AltitudeReferenceSystem, spatialreferenceid: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TryComputeWithAltitudeReferenceAndSpatialReference: usize,
 }
 #[doc(hidden)]
@@ -2001,17 +2001,17 @@ unsafe impl ::windows_core::Interface for IGeocoordinate {
 #[doc(hidden)]
 pub struct IGeocoordinate_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub Latitude: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     Latitude: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub Longitude: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     Longitude: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub Altitude: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     Altitude: usize,
     pub Accuracy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub AltitudeAccuracy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -2151,13 +2151,13 @@ unsafe impl ::windows_core::Interface for IGeolocatorStatics {
 pub struct IGeolocatorStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub RequestAccessAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetGeopositionHistoryAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: ::winrt_foundation::DateTime, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetGeopositionHistoryAsync: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetGeopositionHistoryWithDurationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: ::winrt_foundation::DateTime, duration: ::winrt_foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetGeopositionHistoryWithDurationAsync: usize,
 }
 #[doc(hidden)]
@@ -2200,9 +2200,9 @@ unsafe impl ::windows_core::Interface for IGeopath {
 #[doc(hidden)]
 pub struct IGeopath_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Positions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Positions: usize,
 }
 #[doc(hidden)]
@@ -2216,17 +2216,17 @@ unsafe impl ::windows_core::Interface for IGeopathFactory {
 #[doc(hidden)]
 pub struct IGeopathFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, positions: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Create: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub CreateWithAltitudeReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, positions: ::windows_core::RawPtr, altitudereferencesystem: AltitudeReferenceSystem, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CreateWithAltitudeReference: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub CreateWithAltitudeReferenceAndSpatialReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, positions: ::windows_core::RawPtr, altitudereferencesystem: AltitudeReferenceSystem, spatialreferenceid: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CreateWithAltitudeReferenceAndSpatialReference: usize,
 }
 #[doc(hidden)]
@@ -2453,9 +2453,9 @@ unsafe impl ::windows_core::Interface for IGeovisitTriggerDetails {
 #[doc(hidden)]
 pub struct IGeovisitTriggerDetails_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub ReadReports: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ReadReports: usize,
 }
 #[doc(hidden)]

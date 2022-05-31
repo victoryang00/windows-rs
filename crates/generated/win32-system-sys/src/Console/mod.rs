@@ -5,7 +5,7 @@ extern "system" {
     pub fn AllocConsole() -> ::win32_foundation_sys::BOOL;
     pub fn AttachConsole(dwprocessid: u32) -> ::win32_foundation_sys::BOOL;
     pub fn ClosePseudoConsole(hpc: HPCON);
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateConsoleScreenBuffer(dwdesiredaccess: u32, dwsharemode: u32, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, dwflags: u32, lpscreenbufferdata: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::HANDLE;
     pub fn CreatePseudoConsole(size: COORD, hinput: ::win32_foundation_sys::HANDLE, houtput: ::win32_foundation_sys::HANDLE, dwflags: u32, phpc: *mut HPCON) -> ::windows_core_sys::HRESULT;
     pub fn ExpungeConsoleCommandHistoryA(exename: ::windows_core_sys::PCSTR);

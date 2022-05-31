@@ -117,7 +117,7 @@ impl HolographicCamera {
             (::windows_core::Interface::vtable(this).MaxQuadLayerCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn QuadLayers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<HolographicQuadLayer>> {
         let this = &::windows_core::Interface::cast::<IHolographicCamera3>(self)?;
         unsafe {
@@ -247,7 +247,7 @@ impl HolographicCameraPose {
             (::windows_core::Interface::vtable(this).Viewport)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub fn TryGetViewTransform<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>>(&self, coordinatesystem: Param0) -> ::windows_core::Result<::winrt_foundation::IReference<HolographicStereoTransform>> {
         let this = self;
         unsafe {
@@ -255,7 +255,7 @@ impl HolographicCameraPose {
             (::windows_core::Interface::vtable(this).TryGetViewTransform)(::windows_core::Interface::as_raw(this), coordinatesystem.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<HolographicStereoTransform>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ProjectionTransform(&self) -> ::windows_core::Result<HolographicStereoTransform> {
         let this = self;
         unsafe {
@@ -263,7 +263,7 @@ impl HolographicCameraPose {
             (::windows_core::Interface::vtable(this).ProjectionTransform)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<HolographicStereoTransform>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub fn TryGetCullingFrustum<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>>(&self, coordinatesystem: Param0) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_perception::Spatial::SpatialBoundingFrustum>> {
         let this = self;
         unsafe {
@@ -271,7 +271,7 @@ impl HolographicCameraPose {
             (::windows_core::Interface::vtable(this).TryGetCullingFrustum)(::windows_core::Interface::as_raw(this), coordinatesystem.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_perception::Spatial::SpatialBoundingFrustum>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub fn TryGetVisibleFrustum<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>>(&self, coordinatesystem: Param0) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_perception::Spatial::SpatialBoundingFrustum>> {
         let this = self;
         unsafe {
@@ -293,12 +293,12 @@ impl HolographicCameraPose {
             (::windows_core::Interface::vtable(this).FarPlaneDistance)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub fn OverrideViewTransform<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>, Param1: ::windows_core::IntoParam<'a, HolographicStereoTransform>>(&self, coordinatesystem: Param0, coordinatesystemtoviewtransform: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IHolographicCameraPose2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).OverrideViewTransform)(::windows_core::Interface::as_raw(this), coordinatesystem.into_param().abi(), coordinatesystemtoviewtransform.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn OverrideProjectionTransform<'a, Param0: ::windows_core::IntoParam<'a, HolographicStereoTransform>>(&self, projectiontransform: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IHolographicCameraPose2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).OverrideProjectionTransform)(::windows_core::Interface::as_raw(this), projectiontransform.into_param().abi()).ok() }
@@ -383,22 +383,22 @@ unsafe impl ::core::marker::Sync for HolographicCameraPose {}
 #[repr(transparent)]
 pub struct HolographicCameraRenderingParameters(::windows_core::IUnknown);
 impl HolographicCameraRenderingParameters {
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub fn SetFocusPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, coordinatesystem: Param0, position: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFocusPoint)(::windows_core::Interface::as_raw(this), coordinatesystem.into_param().abi(), position.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub fn SetFocusPointWithNormal<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, coordinatesystem: Param0, position: Param1, normal: Param2) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFocusPointWithNormal)(::windows_core::Interface::as_raw(this), coordinatesystem.into_param().abi(), position.into_param().abi(), normal.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub fn SetFocusPointWithNormalLinearVelocity<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>, Param3: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, coordinatesystem: Param0, position: Param1, normal: Param2, linearvelocity: Param3) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFocusPointWithNormalLinearVelocity)(::windows_core::Interface::as_raw(this), coordinatesystem.into_param().abi(), position.into_param().abi(), normal.into_param().abi(), linearvelocity.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn Direct3D11Device(&self) -> ::windows_core::Result<super::DirectX::Direct3D11::IDirect3DDevice> {
         let this = self;
         unsafe {
@@ -406,7 +406,7 @@ impl HolographicCameraRenderingParameters {
             (::windows_core::Interface::vtable(this).Direct3D11Device)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::DirectX::Direct3D11::IDirect3DDevice>(result__)
         }
     }
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn Direct3D11BackBuffer(&self) -> ::windows_core::Result<super::DirectX::Direct3D11::IDirect3DSurface> {
         let this = self;
         unsafe {
@@ -425,7 +425,7 @@ impl HolographicCameraRenderingParameters {
         let this = &::windows_core::Interface::cast::<IHolographicCameraRenderingParameters2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetReprojectionMode)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn CommitDirect3D11DepthBuffer<'a, Param0: ::windows_core::IntoParam<'a, super::DirectX::Direct3D11::IDirect3DSurface>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IHolographicCameraRenderingParameters2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).CommitDirect3D11DepthBuffer)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -528,7 +528,7 @@ unsafe impl ::core::marker::Sync for HolographicCameraRenderingParameters {}
 #[repr(transparent)]
 pub struct HolographicCameraViewportParameters(::windows_core::IUnknown);
 impl HolographicCameraViewportParameters {
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn HiddenAreaMesh(&self) -> ::windows_core::Result<::windows_core::Array<::winrt_foundation::Numerics::Vector2>> {
         let this = self;
         unsafe {
@@ -536,7 +536,7 @@ impl HolographicCameraViewportParameters {
             (::windows_core::Interface::vtable(this).HiddenAreaMesh)(::windows_core::Interface::as_raw(this), ::windows_core::Array::<::winrt_foundation::Numerics::Vector2>::set_abi_len(result__.assume_init_mut()), result__.as_mut_ptr() as *mut _ as _).and_then(|| result__.assume_init())
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn VisibleAreaMesh(&self) -> ::windows_core::Result<::windows_core::Array<::winrt_foundation::Numerics::Vector2>> {
         let this = self;
         unsafe {
@@ -688,7 +688,7 @@ impl HolographicDisplay {
             (::windows_core::Interface::vtable(this).AdapterId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<HolographicAdapterId>(result__)
         }
     }
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub fn SpatialLocator(&self) -> ::windows_core::Result<::winrt_perception::Spatial::SpatialLocator> {
         let this = self;
         unsafe {
@@ -796,7 +796,7 @@ unsafe impl ::core::marker::Sync for HolographicDisplay {}
 #[repr(transparent)]
 pub struct HolographicFrame(::windows_core::IUnknown);
 impl HolographicFrame {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AddedCameras(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<HolographicCamera>> {
         let this = self;
         unsafe {
@@ -804,7 +804,7 @@ impl HolographicFrame {
             (::windows_core::Interface::vtable(this).AddedCameras)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<HolographicCamera>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemovedCameras(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<HolographicCamera>> {
         let this = self;
         unsafe {
@@ -981,7 +981,7 @@ impl ::core::default::Default for HolographicFrameId {
 #[repr(transparent)]
 pub struct HolographicFramePrediction(::windows_core::IUnknown);
 impl HolographicFramePrediction {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CameraPoses(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<HolographicCameraPose>> {
         let this = self;
         unsafe {
@@ -989,7 +989,7 @@ impl HolographicFramePrediction {
             (::windows_core::Interface::vtable(this).CameraPoses)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<HolographicCameraPose>>(result__)
         }
     }
-    #[cfg(feature = "Perception")]
+    #[cfg(feature = "winrt-perception")]
     pub fn Timestamp(&self) -> ::windows_core::Result<::winrt_perception::PerceptionTimestamp> {
         let this = self;
         unsafe {
@@ -1136,16 +1136,16 @@ unsafe impl ::windows_core::RuntimeType for HolographicFramePresentWaitBehavior 
         Ok(*from)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct HolographicFramePresentationMonitor(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl HolographicFramePresentationMonitor {
     pub fn Close(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-"))]
     pub fn ReadReports(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<HolographicFramePresentationReport>> {
         let this = self;
         unsafe {
@@ -1154,27 +1154,27 @@ impl HolographicFramePresentationMonitor {
         }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for HolographicFramePresentationMonitor {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::PartialEq for HolographicFramePresentationMonitor {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::Eq for HolographicFramePresentationMonitor {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::fmt::Debug for HolographicFramePresentationMonitor {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("HolographicFramePresentationMonitor").field(&self.0).finish()
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::RuntimeType for HolographicFramePresentationMonitor {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Holographic.HolographicFramePresentationMonitor;{ca87256c-6fae-428e-bb83-25dfee51136b})");
     type DefaultType = ::core::option::Option<Self>;
@@ -1182,99 +1182,99 @@ unsafe impl ::windows_core::RuntimeType for HolographicFramePresentationMonitor 
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for HolographicFramePresentationMonitor {
     type Vtable = IHolographicFramePresentationMonitor_Vtbl;
     const IID: ::windows_core::GUID = <IHolographicFramePresentationMonitor as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::windows_core::RuntimeName for HolographicFramePresentationMonitor {
     const NAME: &'static str = "Windows.Graphics.Holographic.HolographicFramePresentationMonitor";
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<HolographicFramePresentationMonitor> for ::windows_core::IUnknown {
     fn from(value: HolographicFramePresentationMonitor) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&HolographicFramePresentationMonitor> for ::windows_core::IUnknown {
     fn from(value: &HolographicFramePresentationMonitor) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for HolographicFramePresentationMonitor {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a HolographicFramePresentationMonitor {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<HolographicFramePresentationMonitor> for ::windows_core::IInspectable {
     fn from(value: HolographicFramePresentationMonitor) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&HolographicFramePresentationMonitor> for ::windows_core::IInspectable {
     fn from(value: &HolographicFramePresentationMonitor) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for HolographicFramePresentationMonitor {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a HolographicFramePresentationMonitor {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<HolographicFramePresentationMonitor> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: HolographicFramePresentationMonitor) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<&HolographicFramePresentationMonitor> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HolographicFramePresentationMonitor) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for HolographicFramePresentationMonitor {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &HolographicFramePresentationMonitor {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::core::marker::Send for HolographicFramePresentationMonitor {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::core::marker::Sync for HolographicFramePresentationMonitor {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct HolographicFramePresentationReport(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl HolographicFramePresentationReport {
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn CompositorGpuDuration(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
@@ -1282,7 +1282,7 @@ impl HolographicFramePresentationReport {
             (::windows_core::Interface::vtable(this).CompositorGpuDuration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn AppGpuDuration(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
@@ -1290,7 +1290,7 @@ impl HolographicFramePresentationReport {
             (::windows_core::Interface::vtable(this).AppGpuDuration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn AppGpuOverrun(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
@@ -1298,7 +1298,7 @@ impl HolographicFramePresentationReport {
             (::windows_core::Interface::vtable(this).AppGpuOverrun)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn MissedPresentationOpportunityCount(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -1306,7 +1306,7 @@ impl HolographicFramePresentationReport {
             (::windows_core::Interface::vtable(this).MissedPresentationOpportunityCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn PresentationCount(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -1315,27 +1315,27 @@ impl HolographicFramePresentationReport {
         }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for HolographicFramePresentationReport {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::PartialEq for HolographicFramePresentationReport {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::Eq for HolographicFramePresentationReport {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::fmt::Debug for HolographicFramePresentationReport {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("HolographicFramePresentationReport").field(&self.0).finish()
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::RuntimeType for HolographicFramePresentationReport {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Holographic.HolographicFramePresentationReport;{80baf614-f2f4-4c8a-8de3-065c78f6d5de})");
     type DefaultType = ::core::option::Option<Self>;
@@ -1343,66 +1343,66 @@ unsafe impl ::windows_core::RuntimeType for HolographicFramePresentationReport {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for HolographicFramePresentationReport {
     type Vtable = IHolographicFramePresentationReport_Vtbl;
     const IID: ::windows_core::GUID = <IHolographicFramePresentationReport as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::windows_core::RuntimeName for HolographicFramePresentationReport {
     const NAME: &'static str = "Windows.Graphics.Holographic.HolographicFramePresentationReport";
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<HolographicFramePresentationReport> for ::windows_core::IUnknown {
     fn from(value: HolographicFramePresentationReport) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&HolographicFramePresentationReport> for ::windows_core::IUnknown {
     fn from(value: &HolographicFramePresentationReport) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for HolographicFramePresentationReport {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a HolographicFramePresentationReport {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<HolographicFramePresentationReport> for ::windows_core::IInspectable {
     fn from(value: HolographicFramePresentationReport) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&HolographicFramePresentationReport> for ::windows_core::IInspectable {
     fn from(value: &HolographicFramePresentationReport) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for HolographicFramePresentationReport {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a HolographicFramePresentationReport {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::core::marker::Send for HolographicFramePresentationReport {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::core::marker::Sync for HolographicFramePresentationReport {}
 #[repr(transparent)]
 pub struct HolographicFrameRenderingReport(::windows_core::IUnknown);
@@ -1522,7 +1522,7 @@ impl HolographicFrameScanoutMonitor {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ReadReports(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<HolographicFrameScanoutReport>> {
         let this = self;
         unsafe {
@@ -1743,7 +1743,7 @@ impl HolographicQuadLayer {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn PixelFormat(&self) -> ::windows_core::Result<super::DirectX::DirectXPixelFormat> {
         let this = self;
         unsafe {
@@ -1764,7 +1764,7 @@ impl HolographicQuadLayer {
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), size.into_param().abi(), result__.as_mut_ptr()).from_abi::<HolographicQuadLayer>(result__)
         })
     }
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn CreateWithPixelFormat<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Size>>(size: Param0, pixelformat: super::DirectX::DirectXPixelFormat) -> ::windows_core::Result<HolographicQuadLayer> {
         Self::IHolographicQuadLayerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1873,7 +1873,7 @@ unsafe impl ::core::marker::Sync for HolographicQuadLayer {}
 #[repr(transparent)]
 pub struct HolographicQuadLayerUpdateParameters(::windows_core::IUnknown);
 impl HolographicQuadLayerUpdateParameters {
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn AcquireBufferToUpdateContent(&self) -> ::windows_core::Result<super::DirectX::Direct3D11::IDirect3DSurface> {
         let this = self;
         unsafe {
@@ -1889,17 +1889,17 @@ impl HolographicQuadLayerUpdateParameters {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).UpdateContentProtectionEnabled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn UpdateExtents<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).UpdateExtents)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub fn UpdateLocationWithStationaryMode<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, coordinatesystem: Param0, position: Param1, orientation: Param2) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).UpdateLocationWithStationaryMode)(::windows_core::Interface::as_raw(this), coordinatesystem.into_param().abi(), position.into_param().abi(), orientation.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn UpdateLocationWithDisplayRelativeMode<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, position: Param0, orientation: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).UpdateLocationWithDisplayRelativeMode)(::windows_core::Interface::as_raw(this), position.into_param().abi(), orientation.into_param().abi()).ok() }
@@ -1911,7 +1911,7 @@ impl HolographicQuadLayerUpdateParameters {
             (::windows_core::Interface::vtable(this).CanAcquireWithHardwareProtection)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn AcquireBufferToUpdateContentWithHardwareProtection(&self) -> ::windows_core::Result<super::DirectX::Direct3D11::IDirect3DSurface> {
         let this = &::windows_core::Interface::cast::<IHolographicQuadLayerUpdateParameters2>(self)?;
         unsafe {
@@ -2036,7 +2036,7 @@ impl HolographicSpace {
             (::windows_core::Interface::vtable(this).PrimaryAdapterId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<HolographicAdapterId>(result__)
         }
     }
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn SetDirect3D11Device<'a, Param0: ::windows_core::IntoParam<'a, super::DirectX::Direct3D11::IDirect3DDevice>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDirect3D11Device)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -2096,7 +2096,7 @@ impl HolographicSpace {
         let this = &::windows_core::Interface::cast::<IHolographicSpace2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).WaitForNextFrameReadyWithHeadStart)(::windows_core::Interface::as_raw(this), requestedheadstartduration.into_param().abi()).ok() }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn CreateFramePresentationMonitor(&self, maxqueuedreports: u32) -> ::windows_core::Result<HolographicFramePresentationMonitor> {
         let this = &::windows_core::Interface::cast::<IHolographicSpace2>(self)?;
         unsafe {
@@ -2111,7 +2111,7 @@ impl HolographicSpace {
             (::windows_core::Interface::vtable(this).CreateFrameScanoutMonitor)(::windows_core::Interface::as_raw(this), maxqueuedreports, result__.as_mut_ptr()).from_abi::<HolographicFrameScanoutMonitor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateForCoreWindow<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Core::CoreWindow>>(window: Param0) -> ::windows_core::Result<HolographicSpace> {
         Self::IHolographicSpaceStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -2438,30 +2438,30 @@ unsafe impl ::windows_core::RuntimeType for HolographicSpaceUserPresence {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 pub struct HolographicStereoTransform {
     pub Left: ::winrt_foundation::Numerics::Matrix4x4,
     pub Right: ::winrt_foundation::Numerics::Matrix4x4,
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::marker::Copy for HolographicStereoTransform {}
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::clone::Clone for HolographicStereoTransform {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::fmt::Debug for HolographicStereoTransform {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HolographicStereoTransform").field("Left", &self.Left).field("Right", &self.Right).finish()
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::Abi for HolographicStereoTransform {
     type Abi = Self;
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::RuntimeType for HolographicStereoTransform {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"struct(Windows.Graphics.Holographic.HolographicStereoTransform;struct(Windows.Foundation.Numerics.Matrix4x4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4);struct(Windows.Foundation.Numerics.Matrix4x4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4))");
     type DefaultType = Self;
@@ -2469,15 +2469,15 @@ unsafe impl ::windows_core::RuntimeType for HolographicStereoTransform {
         Ok(*from)
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::PartialEq for HolographicStereoTransform {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HolographicStereoTransform>()) == 0 }
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::Eq for HolographicStereoTransform {}
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::default::Default for HolographicStereoTransform {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2507,7 +2507,7 @@ impl HolographicViewConfiguration {
             (::windows_core::Interface::vtable(this).RequestRenderTargetSize)(::windows_core::Interface::as_raw(this), size.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Size>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Graphics_DirectX"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-graphics"))]
     pub fn SupportedPixelFormats(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<super::DirectX::DirectXPixelFormat>> {
         let this = self;
         unsafe {
@@ -2515,7 +2515,7 @@ impl HolographicViewConfiguration {
             (::windows_core::Interface::vtable(this).SupportedPixelFormats)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<super::DirectX::DirectXPixelFormat>>(result__)
         }
     }
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn PixelFormat(&self) -> ::windows_core::Result<super::DirectX::DirectXPixelFormat> {
         let this = self;
         unsafe {
@@ -2523,7 +2523,7 @@ impl HolographicViewConfiguration {
             (::windows_core::Interface::vtable(this).PixelFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::DirectX::DirectXPixelFormat>(result__)
         }
     }
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn SetPixelFormat(&self, value: super::DirectX::DirectXPixelFormat) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPixelFormat)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -2567,7 +2567,7 @@ impl HolographicViewConfiguration {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetIsEnabled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SupportedDepthReprojectionMethods(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<HolographicDepthReprojectionMethod>> {
         let this = &::windows_core::Interface::cast::<IHolographicViewConfiguration2>(self)?;
         unsafe {
@@ -2729,9 +2729,9 @@ pub struct IHolographicCamera3_Vtbl {
     pub IsPrimaryLayerEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetIsPrimaryLayerEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub MaxQuadLayerCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub QuadLayers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     QuadLayers: usize,
 }
 #[doc(hidden)]
@@ -2788,21 +2788,21 @@ pub struct IHolographicCameraPose_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub HolographicCamera: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Viewport: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub TryGetViewTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Numerics", feature = "Perception_Spatial")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-perception")))]
     TryGetViewTransform: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub ProjectionTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut HolographicStereoTransform) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ProjectionTransform: usize,
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub TryGetCullingFrustum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Numerics", feature = "Perception_Spatial")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-perception")))]
     TryGetCullingFrustum: usize,
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub TryGetVisibleFrustum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Numerics", feature = "Perception_Spatial")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-perception")))]
     TryGetVisibleFrustum: usize,
     pub NearPlaneDistance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub FarPlaneDistance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
@@ -2818,13 +2818,13 @@ unsafe impl ::windows_core::Interface for IHolographicCameraPose2 {
 #[doc(hidden)]
 pub struct IHolographicCameraPose2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub OverrideViewTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, coordinatesystemtoviewtransform: HolographicStereoTransform) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Numerics", feature = "Perception_Spatial")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-perception")))]
     OverrideViewTransform: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub OverrideProjectionTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, projectiontransform: HolographicStereoTransform) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     OverrideProjectionTransform: usize,
     pub OverrideViewport: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, leftviewport: ::winrt_foundation::Rect, rightviewport: ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
 }
@@ -2839,25 +2839,25 @@ unsafe impl ::windows_core::Interface for IHolographicCameraRenderingParameters 
 #[doc(hidden)]
 pub struct IHolographicCameraRenderingParameters_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub SetFocusPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, position: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Numerics", feature = "Perception_Spatial")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-perception")))]
     SetFocusPoint: usize,
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub SetFocusPointWithNormal: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, position: ::winrt_foundation::Numerics::Vector3, normal: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Numerics", feature = "Perception_Spatial")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-perception")))]
     SetFocusPointWithNormal: usize,
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub SetFocusPointWithNormalLinearVelocity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, position: ::winrt_foundation::Numerics::Vector3, normal: ::winrt_foundation::Numerics::Vector3, linearvelocity: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Numerics", feature = "Perception_Spatial")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-perception")))]
     SetFocusPointWithNormalLinearVelocity: usize,
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub Direct3D11Device: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX_Direct3D11"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     Direct3D11Device: usize,
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub Direct3D11BackBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX_Direct3D11"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     Direct3D11BackBuffer: usize,
 }
 #[doc(hidden)]
@@ -2873,9 +2873,9 @@ pub struct IHolographicCameraRenderingParameters2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ReprojectionMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut HolographicReprojectionMode) -> ::windows_core::HRESULT,
     pub SetReprojectionMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: HolographicReprojectionMode) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub CommitDirect3D11DepthBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX_Direct3D11"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     CommitDirect3D11DepthBuffer: usize,
 }
 #[doc(hidden)]
@@ -2917,13 +2917,13 @@ unsafe impl ::windows_core::Interface for IHolographicCameraViewportParameters {
 #[doc(hidden)]
 pub struct IHolographicCameraViewportParameters_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub HiddenAreaMesh: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result_size__: *mut u32, result__: *mut *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     HiddenAreaMesh: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub VisibleAreaMesh: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result_size__: *mut u32, result__: *mut *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     VisibleAreaMesh: usize,
 }
 #[doc(hidden)]
@@ -2942,9 +2942,9 @@ pub struct IHolographicDisplay_Vtbl {
     pub IsStereo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsOpaque: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub AdapterId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut HolographicAdapterId) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub SpatialLocator: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception_Spatial"))]
+    #[cfg(not(feature = "winrt-perception"))]
     SpatialLocator: usize,
 }
 #[doc(hidden)]
@@ -2997,13 +2997,13 @@ unsafe impl ::windows_core::Interface for IHolographicFrame {
 #[doc(hidden)]
 pub struct IHolographicFrame_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub AddedCameras: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     AddedCameras: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub RemovedCameras: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     RemovedCameras: usize,
     pub GetRenderingParameters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, camerapose: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Duration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
@@ -3050,67 +3050,67 @@ unsafe impl ::windows_core::Interface for IHolographicFramePrediction {
 #[doc(hidden)]
 pub struct IHolographicFramePrediction_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub CameraPoses: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CameraPoses: usize,
-    #[cfg(feature = "Perception")]
+    #[cfg(feature = "winrt-perception")]
     pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception"))]
+    #[cfg(not(feature = "winrt-perception"))]
     Timestamp: usize,
 }
 #[doc(hidden)]
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct IHolographicFramePresentationMonitor(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for IHolographicFramePresentationMonitor {
     type Vtable = IHolographicFramePresentationMonitor_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xca87256c_6fae_428e_bb83_25dfee51136b);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IHolographicFramePresentationMonitor_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-"))]
     pub ReadReports: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "deprecated")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-")))]
     ReadReports: usize,
 }
 #[doc(hidden)]
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct IHolographicFramePresentationReport(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for IHolographicFramePresentationReport {
     type Vtable = IHolographicFramePresentationReport_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x80baf614_f2f4_4c8a_8de3_065c78f6d5de);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IHolographicFramePresentationReport_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub CompositorGpuDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     CompositorGpuDuration: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub AppGpuDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     AppGpuDuration: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub AppGpuOverrun: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     AppGpuOverrun: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub MissedPresentationOpportunityCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     MissedPresentationOpportunityCount: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub PresentationCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     PresentationCount: usize,
 }
 #[doc(hidden)]
@@ -3141,9 +3141,9 @@ unsafe impl ::windows_core::Interface for IHolographicFrameScanoutMonitor {
 #[doc(hidden)]
 pub struct IHolographicFrameScanoutMonitor_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub ReadReports: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ReadReports: usize,
 }
 #[doc(hidden)]
@@ -3174,9 +3174,9 @@ unsafe impl ::windows_core::Interface for IHolographicQuadLayer {
 #[doc(hidden)]
 pub struct IHolographicQuadLayer_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub PixelFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::DirectX::DirectXPixelFormat) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     PixelFormat: usize,
     pub Size: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Size) -> ::windows_core::HRESULT,
 }
@@ -3192,9 +3192,9 @@ unsafe impl ::windows_core::Interface for IHolographicQuadLayerFactory {
 pub struct IHolographicQuadLayerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, size: ::winrt_foundation::Size, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub CreateWithPixelFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, size: ::winrt_foundation::Size, pixelformat: super::DirectX::DirectXPixelFormat, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     CreateWithPixelFormat: usize,
 }
 #[doc(hidden)]
@@ -3208,23 +3208,23 @@ unsafe impl ::windows_core::Interface for IHolographicQuadLayerUpdateParameters 
 #[doc(hidden)]
 pub struct IHolographicQuadLayerUpdateParameters_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub AcquireBufferToUpdateContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX_Direct3D11"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     AcquireBufferToUpdateContent: usize,
     pub UpdateViewport: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
     pub UpdateContentProtectionEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub UpdateExtents: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     UpdateExtents: usize,
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub UpdateLocationWithStationaryMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, position: ::winrt_foundation::Numerics::Vector3, orientation: ::winrt_foundation::Numerics::Quaternion) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Numerics", feature = "Perception_Spatial")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-perception")))]
     UpdateLocationWithStationaryMode: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub UpdateLocationWithDisplayRelativeMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, position: ::winrt_foundation::Numerics::Vector3, orientation: ::winrt_foundation::Numerics::Quaternion) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     UpdateLocationWithDisplayRelativeMode: usize,
 }
 #[doc(hidden)]
@@ -3239,9 +3239,9 @@ unsafe impl ::windows_core::Interface for IHolographicQuadLayerUpdateParameters2
 pub struct IHolographicQuadLayerUpdateParameters2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub CanAcquireWithHardwareProtection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub AcquireBufferToUpdateContentWithHardwareProtection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX_Direct3D11"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     AcquireBufferToUpdateContentWithHardwareProtection: usize,
 }
 #[doc(hidden)]
@@ -3256,9 +3256,9 @@ unsafe impl ::windows_core::Interface for IHolographicSpace {
 pub struct IHolographicSpace_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub PrimaryAdapterId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut HolographicAdapterId) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub SetDirect3D11Device: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX_Direct3D11"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     SetDirect3D11Device: usize,
     pub CameraAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveCameraAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -3282,9 +3282,9 @@ pub struct IHolographicSpace2_Vtbl {
     pub RemoveUserPresenceChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub WaitForNextFrameReady: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub WaitForNextFrameReadyWithHeadStart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, requestedheadstartduration: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub CreateFramePresentationMonitor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, maxqueuedreports: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     CreateFramePresentationMonitor: usize,
 }
 #[doc(hidden)]
@@ -3338,9 +3338,9 @@ unsafe impl ::windows_core::Interface for IHolographicSpaceStatics {
 #[doc(hidden)]
 pub struct IHolographicSpaceStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateForCoreWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, window: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Core"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateForCoreWindow: usize,
 }
 #[doc(hidden)]
@@ -3386,17 +3386,17 @@ pub struct IHolographicViewConfiguration_Vtbl {
     pub NativeRenderTargetSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Size) -> ::windows_core::HRESULT,
     pub RenderTargetSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Size) -> ::windows_core::HRESULT,
     pub RequestRenderTargetSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, size: ::winrt_foundation::Size, result__: *mut ::winrt_foundation::Size) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Graphics_DirectX"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-graphics"))]
     pub SupportedPixelFormats: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Graphics_DirectX")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-graphics")))]
     SupportedPixelFormats: usize,
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub PixelFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::DirectX::DirectXPixelFormat) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     PixelFormat: usize,
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub SetPixelFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::DirectX::DirectXPixelFormat) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     SetPixelFormat: usize,
     pub IsStereo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub RefreshRate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
@@ -3416,8 +3416,8 @@ unsafe impl ::windows_core::Interface for IHolographicViewConfiguration2 {
 #[doc(hidden)]
 pub struct IHolographicViewConfiguration2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SupportedDepthReprojectionMethods: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SupportedDepthReprojectionMethods: usize,
 }

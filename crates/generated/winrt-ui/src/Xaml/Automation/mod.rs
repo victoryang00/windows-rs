@@ -1060,14 +1060,14 @@ impl AutomationProperties {
             (::windows_core::Interface::vtable(this).LiveSettingProperty)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::DependencyProperty>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GetLiveSetting<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0) -> ::windows_core::Result<Peers::AutomationLiveSetting> {
         Self::IAutomationPropertiesStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<Peers::AutomationLiveSetting>::zeroed();
             (::windows_core::Interface::vtable(this).GetLiveSetting)(::windows_core::Interface::as_raw(this), element.into_param().abi(), result__.as_mut_ptr()).from_abi::<Peers::AutomationLiveSetting>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetLiveSetting<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0, value: Peers::AutomationLiveSetting) -> ::windows_core::Result<()> {
         Self::IAutomationPropertiesStatics(|this| unsafe { (::windows_core::Interface::vtable(this).SetLiveSetting)(::windows_core::Interface::as_raw(this), element.into_param().abi(), value).ok() })
     }
@@ -1077,14 +1077,14 @@ impl AutomationProperties {
             (::windows_core::Interface::vtable(this).AccessibilityViewProperty)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::DependencyProperty>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GetAccessibilityView<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0) -> ::windows_core::Result<Peers::AccessibilityView> {
         Self::IAutomationPropertiesStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<Peers::AccessibilityView>::zeroed();
             (::windows_core::Interface::vtable(this).GetAccessibilityView)(::windows_core::Interface::as_raw(this), element.into_param().abi(), result__.as_mut_ptr()).from_abi::<Peers::AccessibilityView>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetAccessibilityView<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0, value: Peers::AccessibilityView) -> ::windows_core::Result<()> {
         Self::IAutomationPropertiesStatics2(|this| unsafe { (::windows_core::Interface::vtable(this).SetAccessibilityView)(::windows_core::Interface::as_raw(this), element.into_param().abi(), value).ok() })
     }
@@ -1094,7 +1094,7 @@ impl AutomationProperties {
             (::windows_core::Interface::vtable(this).ControlledPeersProperty)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::DependencyProperty>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetControlledPeers<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::UIElement>> {
         Self::IAutomationPropertiesStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1152,7 +1152,7 @@ impl AutomationProperties {
             (::windows_core::Interface::vtable(this).AnnotationsProperty)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::DependencyProperty>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetAnnotations<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<AutomationAnnotation>> {
         Self::IAutomationPropertiesStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1165,14 +1165,14 @@ impl AutomationProperties {
             (::windows_core::Interface::vtable(this).LandmarkTypeProperty)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::DependencyProperty>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GetLandmarkType<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0) -> ::windows_core::Result<Peers::AutomationLandmarkType> {
         Self::IAutomationPropertiesStatics4(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<Peers::AutomationLandmarkType>::zeroed();
             (::windows_core::Interface::vtable(this).GetLandmarkType)(::windows_core::Interface::as_raw(this), element.into_param().abi(), result__.as_mut_ptr()).from_abi::<Peers::AutomationLandmarkType>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetLandmarkType<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0, value: Peers::AutomationLandmarkType) -> ::windows_core::Result<()> {
         Self::IAutomationPropertiesStatics4(|this| unsafe { (::windows_core::Interface::vtable(this).SetLandmarkType)(::windows_core::Interface::as_raw(this), element.into_param().abi(), value).ok() })
     }
@@ -1257,7 +1257,7 @@ impl AutomationProperties {
             (::windows_core::Interface::vtable(this).DescribedByProperty)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::DependencyProperty>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetDescribedBy<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::DependencyObject>> {
         Self::IAutomationPropertiesStatics5(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1270,7 +1270,7 @@ impl AutomationProperties {
             (::windows_core::Interface::vtable(this).FlowsToProperty)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::DependencyProperty>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetFlowsTo<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::DependencyObject>> {
         Self::IAutomationPropertiesStatics5(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1283,7 +1283,7 @@ impl AutomationProperties {
             (::windows_core::Interface::vtable(this).FlowsFromProperty)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::DependencyProperty>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetFlowsFrom<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::DependencyObject>> {
         Self::IAutomationPropertiesStatics5(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1311,14 +1311,14 @@ impl AutomationProperties {
             (::windows_core::Interface::vtable(this).HeadingLevelProperty)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::DependencyProperty>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GetHeadingLevel<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0) -> ::windows_core::Result<Peers::AutomationHeadingLevel> {
         Self::IAutomationPropertiesStatics7(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<Peers::AutomationHeadingLevel>::zeroed();
             (::windows_core::Interface::vtable(this).GetHeadingLevel)(::windows_core::Interface::as_raw(this), element.into_param().abi(), result__.as_mut_ptr()).from_abi::<Peers::AutomationHeadingLevel>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetHeadingLevel<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0, value: Peers::AutomationHeadingLevel) -> ::windows_core::Result<()> {
         Self::IAutomationPropertiesStatics7(|this| unsafe { (::windows_core::Interface::vtable(this).SetHeadingLevel)(::windows_core::Interface::as_raw(this), element.into_param().abi(), value).ok() })
     }
@@ -1343,14 +1343,14 @@ impl AutomationProperties {
             (::windows_core::Interface::vtable(this).AutomationControlTypeProperty)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::DependencyProperty>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GetAutomationControlType<'a, Param0: ::windows_core::IntoParam<'a, super::UIElement>>(element: Param0) -> ::windows_core::Result<Peers::AutomationControlType> {
         Self::IAutomationPropertiesStatics9(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<Peers::AutomationControlType>::zeroed();
             (::windows_core::Interface::vtable(this).GetAutomationControlType)(::windows_core::Interface::as_raw(this), element.into_param().abi(), result__.as_mut_ptr()).from_abi::<Peers::AutomationControlType>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetAutomationControlType<'a, Param0: ::windows_core::IntoParam<'a, super::UIElement>>(element: Param0, value: Peers::AutomationControlType) -> ::windows_core::Result<()> {
         Self::IAutomationPropertiesStatics9(|this| unsafe { (::windows_core::Interface::vtable(this).SetAutomationControlType)(::windows_core::Interface::as_raw(this), element.into_param().abi(), value).ok() })
     }
@@ -2582,13 +2582,13 @@ pub struct IAutomationPropertiesStatics_Vtbl {
     pub GetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub LiveSettingProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    #[cfg(feature = "winrt-ui")]
     pub GetLiveSetting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, result__: *mut Peers::AutomationLiveSetting) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Automation_Peers"))]
+    #[cfg(not(feature = "winrt-ui"))]
     GetLiveSetting: usize,
-    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    #[cfg(feature = "winrt-ui")]
     pub SetLiveSetting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, value: Peers::AutomationLiveSetting) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Automation_Peers"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetLiveSetting: usize,
 }
 #[doc(hidden)]
@@ -2603,18 +2603,18 @@ unsafe impl ::windows_core::Interface for IAutomationPropertiesStatics2 {
 pub struct IAutomationPropertiesStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub AccessibilityViewProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    #[cfg(feature = "winrt-ui")]
     pub GetAccessibilityView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, result__: *mut Peers::AccessibilityView) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Automation_Peers"))]
+    #[cfg(not(feature = "winrt-ui"))]
     GetAccessibilityView: usize,
-    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    #[cfg(feature = "winrt-ui")]
     pub SetAccessibilityView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, value: Peers::AccessibilityView) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Automation_Peers"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetAccessibilityView: usize,
     pub ControlledPeersProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetControlledPeers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetControlledPeers: usize,
 }
 #[doc(hidden)]
@@ -2638,9 +2638,9 @@ pub struct IAutomationPropertiesStatics3_Vtbl {
     pub GetLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, result__: *mut i32) -> ::windows_core::HRESULT,
     pub SetLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, value: i32) -> ::windows_core::HRESULT,
     pub AnnotationsProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetAnnotations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetAnnotations: usize,
 }
 #[doc(hidden)]
@@ -2655,13 +2655,13 @@ unsafe impl ::windows_core::Interface for IAutomationPropertiesStatics4 {
 pub struct IAutomationPropertiesStatics4_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub LandmarkTypeProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    #[cfg(feature = "winrt-ui")]
     pub GetLandmarkType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, result__: *mut Peers::AutomationLandmarkType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Automation_Peers"))]
+    #[cfg(not(feature = "winrt-ui"))]
     GetLandmarkType: usize,
-    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    #[cfg(feature = "winrt-ui")]
     pub SetLandmarkType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, value: Peers::AutomationLandmarkType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Automation_Peers"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetLandmarkType: usize,
     pub LocalizedLandmarkTypeProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetLocalizedLandmarkType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -2691,19 +2691,19 @@ pub struct IAutomationPropertiesStatics5_Vtbl {
     pub GetLocalizedControlType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetLocalizedControlType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub DescribedByProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetDescribedBy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetDescribedBy: usize,
     pub FlowsToProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetFlowsTo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetFlowsTo: usize,
     pub FlowsFromProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetFlowsFrom: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetFlowsFrom: usize,
 }
 #[doc(hidden)]
@@ -2733,13 +2733,13 @@ unsafe impl ::windows_core::Interface for IAutomationPropertiesStatics7 {
 pub struct IAutomationPropertiesStatics7_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub HeadingLevelProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    #[cfg(feature = "winrt-ui")]
     pub GetHeadingLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, result__: *mut Peers::AutomationHeadingLevel) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Automation_Peers"))]
+    #[cfg(not(feature = "winrt-ui"))]
     GetHeadingLevel: usize,
-    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    #[cfg(feature = "winrt-ui")]
     pub SetHeadingLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, value: Peers::AutomationHeadingLevel) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Automation_Peers"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetHeadingLevel: usize,
 }
 #[doc(hidden)]
@@ -2769,13 +2769,13 @@ unsafe impl ::windows_core::Interface for IAutomationPropertiesStatics9 {
 pub struct IAutomationPropertiesStatics9_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub AutomationControlTypeProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    #[cfg(feature = "winrt-ui")]
     pub GetAutomationControlType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, result__: *mut Peers::AutomationControlType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Automation_Peers"))]
+    #[cfg(not(feature = "winrt-ui"))]
     GetAutomationControlType: usize,
-    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    #[cfg(feature = "winrt-ui")]
     pub SetAutomationControlType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, value: Peers::AutomationControlType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Automation_Peers"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetAutomationControlType: usize,
 }
 #[doc(hidden)]

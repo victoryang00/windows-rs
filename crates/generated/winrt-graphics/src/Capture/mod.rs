@@ -5,7 +5,7 @@ impl Direct3D11CaptureFrame {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn Surface(&self) -> ::windows_core::Result<super::DirectX::Direct3D11::IDirect3DSurface> {
         let this = self;
         unsafe {
@@ -129,7 +129,7 @@ impl Direct3D11CaptureFramePool {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn Recreate<'a, Param0: ::windows_core::IntoParam<'a, super::DirectX::Direct3D11::IDirect3DDevice>, Param3: ::windows_core::IntoParam<'a, super::SizeInt32>>(&self, device: Param0, pixelformat: super::DirectX::DirectXPixelFormat, numberofbuffers: i32, size: Param3) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Recreate)(::windows_core::Interface::as_raw(this), device.into_param().abi(), pixelformat, numberofbuffers, size.into_param().abi()).ok() }
@@ -159,7 +159,7 @@ impl Direct3D11CaptureFramePool {
             (::windows_core::Interface::vtable(this).CreateCaptureSession)(::windows_core::Interface::as_raw(this), item.into_param().abi(), result__.as_mut_ptr()).from_abi::<GraphicsCaptureSession>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = self;
         unsafe {
@@ -167,14 +167,14 @@ impl Direct3D11CaptureFramePool {
             (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::DispatcherQueue>(result__)
         }
     }
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, super::DirectX::Direct3D11::IDirect3DDevice>, Param3: ::windows_core::IntoParam<'a, super::SizeInt32>>(device: Param0, pixelformat: super::DirectX::DirectXPixelFormat, numberofbuffers: i32, size: Param3) -> ::windows_core::Result<Direct3D11CaptureFramePool> {
         Self::IDirect3D11CaptureFramePoolStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), device.into_param().abi(), pixelformat, numberofbuffers, size.into_param().abi(), result__.as_mut_ptr()).from_abi::<Direct3D11CaptureFramePool>(result__)
         })
     }
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn CreateFreeThreaded<'a, Param0: ::windows_core::IntoParam<'a, super::DirectX::Direct3D11::IDirect3DDevice>, Param3: ::windows_core::IntoParam<'a, super::SizeInt32>>(device: Param0, pixelformat: super::DirectX::DirectXPixelFormat, numberofbuffers: i32, size: Param3) -> ::windows_core::Result<Direct3D11CaptureFramePool> {
         Self::IDirect3D11CaptureFramePoolStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -286,7 +286,7 @@ unsafe impl ::core::marker::Send for Direct3D11CaptureFramePool {}
 unsafe impl ::core::marker::Sync for Direct3D11CaptureFramePool {}
 pub struct GraphicsCaptureAccess;
 impl GraphicsCaptureAccess {
-    #[cfg(feature = "Security_Authorization_AppCapabilityAccess")]
+    #[cfg(feature = "winrt-security")]
     pub fn RequestAccessAsync(request: GraphicsCaptureAccessKind) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_security::Authorization::AppCapabilityAccess::AppCapabilityAccessStatus>> {
         Self::IGraphicsCaptureAccessStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -362,14 +362,14 @@ impl GraphicsCaptureItem {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveClosed)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateFromVisual<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Composition::Visual>>(visual: Param0) -> ::windows_core::Result<GraphicsCaptureItem> {
         Self::IGraphicsCaptureItemStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromVisual)(::windows_core::Interface::as_raw(this), visual.into_param().abi(), result__.as_mut_ptr()).from_abi::<GraphicsCaptureItem>(result__)
         })
     }
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub fn TryCreateFromWindowId<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::WindowId>>(windowid: Param0) -> ::windows_core::Result<GraphicsCaptureItem> {
         Self::IGraphicsCaptureItemStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -702,9 +702,9 @@ unsafe impl ::windows_core::Interface for IDirect3D11CaptureFrame {
 #[doc(hidden)]
 pub struct IDirect3D11CaptureFrame_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub Surface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX_Direct3D11"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     Surface: usize,
     pub SystemRelativeTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub ContentSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::SizeInt32) -> ::windows_core::HRESULT,
@@ -720,17 +720,17 @@ unsafe impl ::windows_core::Interface for IDirect3D11CaptureFramePool {
 #[doc(hidden)]
 pub struct IDirect3D11CaptureFramePool_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub Recreate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, device: ::windows_core::RawPtr, pixelformat: super::DirectX::DirectXPixelFormat, numberofbuffers: i32, size: super::SizeInt32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX_Direct3D11"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     Recreate: usize,
     pub TryGetNextFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub FrameArrived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveFrameArrived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub CreateCaptureSession: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, item: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub DispatcherQueue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     DispatcherQueue: usize,
 }
 #[doc(hidden)]
@@ -744,9 +744,9 @@ unsafe impl ::windows_core::Interface for IDirect3D11CaptureFramePoolStatics {
 #[doc(hidden)]
 pub struct IDirect3D11CaptureFramePoolStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, device: ::windows_core::RawPtr, pixelformat: super::DirectX::DirectXPixelFormat, numberofbuffers: i32, size: super::SizeInt32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX_Direct3D11"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     Create: usize,
 }
 #[doc(hidden)]
@@ -760,9 +760,9 @@ unsafe impl ::windows_core::Interface for IDirect3D11CaptureFramePoolStatics2 {
 #[doc(hidden)]
 pub struct IDirect3D11CaptureFramePoolStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub CreateFreeThreaded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, device: ::windows_core::RawPtr, pixelformat: super::DirectX::DirectXPixelFormat, numberofbuffers: i32, size: super::SizeInt32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX_Direct3D11"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     CreateFreeThreaded: usize,
 }
 #[doc(hidden)]
@@ -776,9 +776,9 @@ unsafe impl ::windows_core::Interface for IGraphicsCaptureAccessStatics {
 #[doc(hidden)]
 pub struct IGraphicsCaptureAccessStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Security_Authorization_AppCapabilityAccess")]
+    #[cfg(feature = "winrt-security")]
     pub RequestAccessAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, request: GraphicsCaptureAccessKind, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Authorization_AppCapabilityAccess"))]
+    #[cfg(not(feature = "winrt-security"))]
     RequestAccessAsync: usize,
 }
 #[doc(hidden)]
@@ -808,9 +808,9 @@ unsafe impl ::windows_core::Interface for IGraphicsCaptureItemStatics {
 #[doc(hidden)]
 pub struct IGraphicsCaptureItemStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateFromVisual: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, visual: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Composition"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateFromVisual: usize,
 }
 #[doc(hidden)]
@@ -824,9 +824,9 @@ unsafe impl ::windows_core::Interface for IGraphicsCaptureItemStatics2 {
 #[doc(hidden)]
 pub struct IGraphicsCaptureItemStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub TryCreateFromWindowId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, windowid: ::winrt_ui::WindowId, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI"))]
+    #[cfg(not(feature = "winrt-ui"))]
     TryCreateFromWindowId: usize,
     pub TryCreateFromDisplayId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, displayid: super::DisplayId, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }

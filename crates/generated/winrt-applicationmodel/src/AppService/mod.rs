@@ -1,6 +1,6 @@
 pub struct AppServiceCatalog;
 impl AppServiceCatalog {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn FindAppServiceProvidersAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(appservicename: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::AppInfo>>> {
         Self::IAppServiceCatalogStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -172,7 +172,7 @@ impl AppServiceConnection {
             (::windows_core::Interface::vtable(this).OpenAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AppServiceConnectionStatus>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SendMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::ValueSet>>(&self, message: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AppServiceResponse>> {
         let this = self;
         unsafe {
@@ -202,7 +202,7 @@ impl AppServiceConnection {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveServiceClosed)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System_RemoteSystems")]
+    #[cfg(feature = "winrt-system")]
     pub fn OpenRemoteAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::RemoteSystems::RemoteSystemConnectionRequest>>(&self, remotesystemconnectionrequest: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AppServiceConnectionStatus>> {
         let this = &::windows_core::Interface::cast::<IAppServiceConnection2>(self)?;
         unsafe {
@@ -210,7 +210,7 @@ impl AppServiceConnection {
             (::windows_core::Interface::vtable(this).OpenRemoteAsync)(::windows_core::Interface::as_raw(this), remotesystemconnectionrequest.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AppServiceConnectionStatus>>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IAppServiceConnection2>(self)?;
         unsafe {
@@ -218,12 +218,12 @@ impl AppServiceConnection {
             (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn SetUser<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAppServiceConnection2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetUser)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "System_RemoteSystems"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-system"))]
     pub fn SendStatelessMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, AppServiceConnection>, Param1: ::windows_core::IntoParam<'a, ::winrt_system::RemoteSystems::RemoteSystemConnectionRequest>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::ValueSet>>(connection: Param0, connectionrequest: Param1, message: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<StatelessAppServiceResponse>> {
         Self::IAppServiceConnectionStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -459,7 +459,7 @@ unsafe impl ::core::marker::Sync for AppServiceDeferral {}
 #[repr(transparent)]
 pub struct AppServiceRequest(::windows_core::IUnknown);
 impl AppServiceRequest {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Message(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = self;
         unsafe {
@@ -467,7 +467,7 @@ impl AppServiceRequest {
             (::windows_core::Interface::vtable(this).Message)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SendResponseAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::ValueSet>>(&self, message: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AppServiceResponseStatus>> {
         let this = self;
         unsafe {
@@ -641,7 +641,7 @@ unsafe impl ::core::marker::Sync for AppServiceRequestReceivedEventArgs {}
 #[repr(transparent)]
 pub struct AppServiceResponse(::windows_core::IUnknown);
 impl AppServiceResponse {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Message(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = self;
         unsafe {
@@ -900,9 +900,9 @@ unsafe impl ::windows_core::Interface for IAppServiceCatalogStatics {
 #[doc(hidden)]
 pub struct IAppServiceCatalogStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub FindAppServiceProvidersAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appservicename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     FindAppServiceProvidersAsync: usize,
 }
 #[doc(hidden)]
@@ -934,9 +934,9 @@ pub struct IAppServiceConnection_Vtbl {
     pub PackageFamilyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetPackageFamilyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub OpenAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SendMessageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, message: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SendMessageAsync: usize,
     pub RequestReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveRequestReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -954,17 +954,17 @@ unsafe impl ::windows_core::Interface for IAppServiceConnection2 {
 #[doc(hidden)]
 pub struct IAppServiceConnection2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "System_RemoteSystems")]
+    #[cfg(feature = "winrt-system")]
     pub OpenRemoteAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, remotesystemconnectionrequest: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System_RemoteSystems"))]
+    #[cfg(not(feature = "winrt-system"))]
     OpenRemoteAsync: usize,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub User: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     User: usize,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub SetUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     SetUser: usize,
 }
 #[doc(hidden)]
@@ -978,9 +978,9 @@ unsafe impl ::windows_core::Interface for IAppServiceConnectionStatics {
 #[doc(hidden)]
 pub struct IAppServiceConnectionStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "System_RemoteSystems"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-system"))]
     pub SendStatelessMessageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, connection: ::windows_core::RawPtr, connectionrequest: ::windows_core::RawPtr, message: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "System_RemoteSystems")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-system")))]
     SendStatelessMessageAsync: usize,
 }
 #[doc(hidden)]
@@ -1007,13 +1007,13 @@ unsafe impl ::windows_core::Interface for IAppServiceRequest {
 #[doc(hidden)]
 pub struct IAppServiceRequest_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Message: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Message: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SendResponseAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, message: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SendResponseAsync: usize,
 }
 #[doc(hidden)]
@@ -1041,9 +1041,9 @@ unsafe impl ::windows_core::Interface for IAppServiceResponse {
 #[doc(hidden)]
 pub struct IAppServiceResponse_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Message: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Message: usize,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut AppServiceResponseStatus) -> ::windows_core::HRESULT,
 }
@@ -1112,16 +1112,16 @@ unsafe impl ::windows_core::Interface for IStatelessAppServiceResponse {
 #[doc(hidden)]
 pub struct IStatelessAppServiceResponse_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Message: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Message: usize,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut StatelessAppServiceResponseStatus) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct StatelessAppServiceResponse(::windows_core::IUnknown);
 impl StatelessAppServiceResponse {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Message(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = self;
         unsafe {

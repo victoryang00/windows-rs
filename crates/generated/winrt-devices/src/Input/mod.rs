@@ -128,9 +128,9 @@ unsafe impl ::windows_core::Interface for IPenDevice2 {
 #[doc(hidden)]
 pub struct IPenDevice2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Haptics")]
+    #[cfg(feature = "winrt-devices")]
     pub SimpleHapticsController: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Haptics"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SimpleHapticsController: usize,
 }
 #[doc(hidden)]
@@ -254,9 +254,9 @@ pub struct IPointerDevice_Vtbl {
     pub MaxContacts: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub PhysicalDeviceRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
     pub ScreenRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SupportedUsages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SupportedUsages: usize,
 }
 #[doc(hidden)]
@@ -284,9 +284,9 @@ unsafe impl ::windows_core::Interface for IPointerDeviceStatics {
 pub struct IPointerDeviceStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub GetPointerDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pointerid: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetPointerDevices: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetPointerDevices: usize,
 }
 #[doc(hidden)]
@@ -871,7 +871,7 @@ impl PenDevice {
             (::windows_core::Interface::vtable(this).PenId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::GUID>(result__)
         }
     }
-    #[cfg(feature = "Devices_Haptics")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SimpleHapticsController(&self) -> ::windows_core::Result<super::Haptics::SimpleHapticsController> {
         let this = &::windows_core::Interface::cast::<IPenDevice2>(self)?;
         unsafe {
@@ -1501,7 +1501,7 @@ impl PointerDevice {
             (::windows_core::Interface::vtable(this).ScreenRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SupportedUsages(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<PointerDeviceUsage>> {
         let this = self;
         unsafe {
@@ -1522,7 +1522,7 @@ impl PointerDevice {
             (::windows_core::Interface::vtable(this).GetPointerDevice)(::windows_core::Interface::as_raw(this), pointerid, result__.as_mut_ptr()).from_abi::<PointerDevice>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetPointerDevices() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<PointerDevice>> {
         Self::IPointerDeviceStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();

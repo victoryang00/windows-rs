@@ -25,7 +25,7 @@ pub unsafe fn ApplicationRecoveryInProgress() -> ::windows_core::Result<::win32_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_WindowsProgramming")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn GetApplicationRecoveryCallback<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprocess: Param0, precoverycallback: *mut super::WindowsProgramming::APPLICATION_RECOVERY_CALLBACK, ppvparameter: *mut *mut ::core::ffi::c_void, pdwpinginterval: *mut u32, pdwflags: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -106,7 +106,7 @@ impl ::core::ops::Not for REGISTER_APPLICATION_RESTART_FLAGS {
         Self(self.0.not())
     }
 }
-#[cfg(feature = "Win32_System_WindowsProgramming")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn RegisterApplicationRecoveryCallback(precoveycallback: super::WindowsProgramming::APPLICATION_RECOVERY_CALLBACK, pvparameter: *const ::core::ffi::c_void, dwpinginterval: u32, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]

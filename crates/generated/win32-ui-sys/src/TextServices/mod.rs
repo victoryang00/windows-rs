@@ -662,14 +662,14 @@ pub const TF_PROFILE_TIGRINYA: ::windows_core_sys::GUID = ::windows_core_sys::GU
 pub const TF_PROFILE_WUBI: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2186873875, data2: 62685, data3: 17652, data4: [186, 29, 134, 103, 36, 111, 223, 142] };
 pub const TF_PROFILE_YI: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1083999094, data2: 123, data3: 17239, data4: [174, 142, 38, 49, 110, 227, 251, 13] };
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub struct TF_PROPERTYVAL {
     pub guidId: ::windows_core_sys::GUID,
     pub varValue: ::win32_system_sys::Com::VARIANT,
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for TF_PROPERTYVAL {}
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for TF_PROPERTYVAL {
     fn clone(&self) -> Self {
         *self
@@ -872,15 +872,15 @@ pub const TS_AS_SEL_CHANGE: u32 = 2u32;
 pub const TS_AS_STATUS_CHANGE: u32 = 16u32;
 pub const TS_AS_TEXT_CHANGE: u32 = 1u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub struct TS_ATTRVAL {
     pub idAttr: ::windows_core_sys::GUID,
     pub dwOverlapId: u32,
     pub varValue: ::win32_system_sys::Com::VARIANT,
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for TS_ATTRVAL {}
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for TS_ATTRVAL {
     fn clone(&self) -> Self {
         *self

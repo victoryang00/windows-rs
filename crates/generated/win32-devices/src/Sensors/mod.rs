@@ -79,7 +79,7 @@ impl ::core::fmt::Debug for AXIS {
         f.debug_tuple("AXIS").field(&self.0).finish()
     }
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn CollectionsListAllocateBufferAndSerialize(sourcecollection: *const SENSOR_COLLECTION_LIST, ptargetbuffersizeinbytes: *mut u32, ptargetbuffer: *mut *mut u8) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -93,7 +93,7 @@ pub unsafe fn CollectionsListAllocateBufferAndSerialize(sourcecollection: *const
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn CollectionsListCopyAndMarshall(target: *mut SENSOR_COLLECTION_LIST, source: *const SENSOR_COLLECTION_LIST) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -107,7 +107,7 @@ pub unsafe fn CollectionsListCopyAndMarshall(target: *mut SENSOR_COLLECTION_LIST
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn CollectionsListDeserializeFromBuffer(sourcebuffersizeinbytes: u32, sourcebuffer: *const u8, targetcollection: *mut SENSOR_COLLECTION_LIST) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -134,7 +134,7 @@ pub unsafe fn CollectionsListGetFillableCount(buffersizebytes: u32) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn CollectionsListGetMarshalledSize(collection: *const SENSOR_COLLECTION_LIST) -> u32 {
     #[cfg(windows)]
@@ -148,7 +148,7 @@ pub unsafe fn CollectionsListGetMarshalledSize(collection: *const SENSOR_COLLECT
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn CollectionsListGetMarshalledSizeWithoutSerialization(collection: *const SENSOR_COLLECTION_LIST) -> u32 {
     #[cfg(windows)]
@@ -162,7 +162,7 @@ pub unsafe fn CollectionsListGetMarshalledSizeWithoutSerialization(collection: *
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn CollectionsListGetSerializedSize(collection: *const SENSOR_COLLECTION_LIST) -> u32 {
     #[cfg(windows)]
@@ -176,7 +176,7 @@ pub unsafe fn CollectionsListGetSerializedSize(collection: *const SENSOR_COLLECT
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn CollectionsListMarshall(target: *mut SENSOR_COLLECTION_LIST) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -190,7 +190,7 @@ pub unsafe fn CollectionsListMarshall(target: *mut SENSOR_COLLECTION_LIST) -> ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn CollectionsListSerializeToBuffer(sourcecollection: *const SENSOR_COLLECTION_LIST, targetbuffersizeinbytes: u32, targetbuffer: *mut u8) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -204,7 +204,7 @@ pub unsafe fn CollectionsListSerializeToBuffer(sourcecollection: *const SENSOR_C
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn CollectionsListSortSubscribedActivitiesByConfidence(thresholds: *const SENSOR_COLLECTION_LIST, pcollection: *mut SENSOR_COLLECTION_LIST) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -218,7 +218,7 @@ pub unsafe fn CollectionsListSortSubscribedActivitiesByConfidence(thresholds: *c
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn CollectionsListUpdateMarshalledPointer(collection: *mut SENSOR_COLLECTION_LIST) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -259,7 +259,7 @@ impl ::core::fmt::Debug for ELEVATION_CHANGE_MODE {
         f.debug_tuple("ELEVATION_CHANGE_MODE").field(&self.0).finish()
     }
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn EvaluateActivityThresholds(newsample: *const SENSOR_COLLECTION_LIST, oldsample: *const SENSOR_COLLECTION_LIST, thresholds: *const SENSOR_COLLECTION_LIST) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
@@ -447,27 +447,27 @@ impl ISensor {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).GetFriendlyName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-ui"))]
     pub unsafe fn GetProperty(&self, key: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::StructuredStorage::PROPVARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).GetProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(key), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::StructuredStorage::PROPVARIANT>(result__)
     }
-    #[cfg(feature = "Win32_Devices_PortableDevices")]
+    #[cfg(feature = "win32-devices")]
     pub unsafe fn GetProperties<'a, Param0: ::windows_core::IntoParam<'a, super::PortableDevices::IPortableDeviceKeyCollection>>(&self, pkeys: Param0) -> ::windows_core::Result<super::PortableDevices::IPortableDeviceValues> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetProperties)(::windows_core::Interface::as_raw(self), pkeys.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::PortableDevices::IPortableDeviceValues>(result__)
     }
-    #[cfg(feature = "Win32_Devices_PortableDevices")]
+    #[cfg(feature = "win32-devices")]
     pub unsafe fn GetSupportedDataFields(&self) -> ::windows_core::Result<super::PortableDevices::IPortableDeviceKeyCollection> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetSupportedDataFields)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::PortableDevices::IPortableDeviceKeyCollection>(result__)
     }
-    #[cfg(feature = "Win32_Devices_PortableDevices")]
+    #[cfg(feature = "win32-devices")]
     pub unsafe fn SetProperties<'a, Param0: ::windows_core::IntoParam<'a, super::PortableDevices::IPortableDeviceValues>>(&self, pproperties: Param0) -> ::windows_core::Result<super::PortableDevices::IPortableDeviceValues> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).SetProperties)(::windows_core::Interface::as_raw(self), pproperties.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::PortableDevices::IPortableDeviceValues>(result__)
     }
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn SupportsDataField(&self, key: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_core::Result<i16> {
         let mut result__ = ::core::mem::MaybeUninit::<i16>::zeroed();
         (::windows_core::Interface::vtable(self).SupportsDataField)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(key), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i16>(result__)
@@ -542,25 +542,25 @@ pub struct ISensor_Vtbl {
     pub GetCategory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psensorcategory: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub GetType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psensortype: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub GetFriendlyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfriendlyname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-ui"))]
     pub GetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, pproperty: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-ui")))]
     GetProperty: usize,
-    #[cfg(feature = "Win32_Devices_PortableDevices")]
+    #[cfg(feature = "win32-devices")]
     pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pkeys: ::windows_core::RawPtr, ppproperties: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Devices_PortableDevices"))]
+    #[cfg(not(feature = "win32-devices"))]
     GetProperties: usize,
-    #[cfg(feature = "Win32_Devices_PortableDevices")]
+    #[cfg(feature = "win32-devices")]
     pub GetSupportedDataFields: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppdatafields: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Devices_PortableDevices"))]
+    #[cfg(not(feature = "win32-devices"))]
     GetSupportedDataFields: usize,
-    #[cfg(feature = "Win32_Devices_PortableDevices")]
+    #[cfg(feature = "win32-devices")]
     pub SetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pproperties: ::windows_core::RawPtr, ppresults: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Devices_PortableDevices"))]
+    #[cfg(not(feature = "win32-devices"))]
     SetProperties: usize,
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub SupportsDataField: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, pissupported: *mut i16) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    #[cfg(not(feature = "win32-ui"))]
     SupportsDataField: usize,
     pub GetState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstate: *mut SensorState) -> ::windows_core::HRESULT,
     pub GetData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppdatareport: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -651,12 +651,12 @@ impl ISensorDataReport {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::SYSTEMTIME>::zeroed();
         (::windows_core::Interface::vtable(self).GetTimestamp)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::SYSTEMTIME>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-ui"))]
     pub unsafe fn GetSensorValue(&self, pkey: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::StructuredStorage::PROPVARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).GetSensorValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pkey), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::StructuredStorage::PROPVARIANT>(result__)
     }
-    #[cfg(feature = "Win32_Devices_PortableDevices")]
+    #[cfg(feature = "win32-devices")]
     pub unsafe fn GetSensorValues<'a, Param0: ::windows_core::IntoParam<'a, super::PortableDevices::IPortableDeviceKeyCollection>>(&self, pkeys: Param0) -> ::windows_core::Result<super::PortableDevices::IPortableDeviceValues> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetSensorValues)(::windows_core::Interface::as_raw(self), pkeys.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::PortableDevices::IPortableDeviceValues>(result__)
@@ -707,13 +707,13 @@ unsafe impl ::windows_core::Interface for ISensorDataReport {
 pub struct ISensorDataReport_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptimestamp: *mut ::win32_foundation::SYSTEMTIME) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-ui"))]
     pub GetSensorValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pkey: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, pvalue: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-ui")))]
     GetSensorValue: usize,
-    #[cfg(feature = "Win32_Devices_PortableDevices")]
+    #[cfg(feature = "win32-devices")]
     pub GetSensorValues: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pkeys: ::windows_core::RawPtr, ppvalues: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Devices_PortableDevices"))]
+    #[cfg(not(feature = "win32-devices"))]
     GetSensorValues: usize,
 }
 #[repr(transparent)]
@@ -725,7 +725,7 @@ impl ISensorEvents {
     pub unsafe fn OnDataUpdated<'a, Param0: ::windows_core::IntoParam<'a, ISensor>, Param1: ::windows_core::IntoParam<'a, ISensorDataReport>>(&self, psensor: Param0, pnewdata: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnDataUpdated)(::windows_core::Interface::as_raw(self), psensor.into_param().abi(), pnewdata.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Devices_PortableDevices")]
+    #[cfg(feature = "win32-devices")]
     pub unsafe fn OnEvent<'a, Param0: ::windows_core::IntoParam<'a, ISensor>, Param2: ::windows_core::IntoParam<'a, super::PortableDevices::IPortableDeviceValues>>(&self, psensor: Param0, eventid: *const ::windows_core::GUID, peventdata: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnEvent)(::windows_core::Interface::as_raw(self), psensor.into_param().abi(), ::core::mem::transmute(eventid), peventdata.into_param().abi()).ok()
     }
@@ -779,9 +779,9 @@ pub struct ISensorEvents_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub OnStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psensor: ::windows_core::RawPtr, state: SensorState) -> ::windows_core::HRESULT,
     pub OnDataUpdated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psensor: ::windows_core::RawPtr, pnewdata: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Devices_PortableDevices")]
+    #[cfg(feature = "win32-devices")]
     pub OnEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psensor: ::windows_core::RawPtr, eventid: *const ::windows_core::GUID, peventdata: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Devices_PortableDevices"))]
+    #[cfg(not(feature = "win32-devices"))]
     OnEvent: usize,
     pub OnLeave: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
 }
@@ -910,7 +910,7 @@ pub struct ISensorManagerEvents_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub OnSensorEnter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psensor: ::windows_core::RawPtr, state: SensorState) -> ::windows_core::HRESULT,
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InitPropVariantFromCLSIDArray(members: &[::windows_core::GUID]) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -925,7 +925,7 @@ pub unsafe fn InitPropVariantFromCLSIDArray(members: &[::windows_core::GUID]) ->
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InitPropVariantFromFloat(fltval: f32) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -940,7 +940,7 @@ pub unsafe fn InitPropVariantFromFloat(fltval: f32) -> ::windows_core::Result<::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn IsCollectionListSame(lista: *const SENSOR_COLLECTION_LIST, listb: *const SENSOR_COLLECTION_LIST) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
@@ -967,7 +967,7 @@ pub unsafe fn IsGUIDPresentInList(guidarray: &[::windows_core::GUID], guidelem: 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn IsKeyPresentInCollectionList(plist: *const SENSOR_COLLECTION_LIST, pkey: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
@@ -981,7 +981,7 @@ pub unsafe fn IsKeyPresentInCollectionList(plist: *const SENSOR_COLLECTION_LIST,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn IsKeyPresentInPropertyList(plist: *const SENSOR_PROPERTY_LIST, pkey: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
@@ -995,7 +995,7 @@ pub unsafe fn IsKeyPresentInPropertyList(plist: *const SENSOR_PROPERTY_LIST, pke
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn IsSensorSubscribed<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(subscriptionlist: *const SENSOR_COLLECTION_LIST, currenttype: Param1) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
@@ -1305,7 +1305,7 @@ impl ::core::fmt::Debug for PROXIMITY_TYPE {
         f.debug_tuple("PROXIMITY_TYPE").field(&self.0).finish()
     }
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn PropKeyFindKeyGetBool(plist: *const SENSOR_COLLECTION_LIST, pkey: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, pretvalue: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1319,7 +1319,7 @@ pub unsafe fn PropKeyFindKeyGetBool(plist: *const SENSOR_COLLECTION_LIST, pkey: 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn PropKeyFindKeyGetDouble(plist: *const SENSOR_COLLECTION_LIST, pkey: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, pretvalue: *mut f64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1333,7 +1333,7 @@ pub unsafe fn PropKeyFindKeyGetDouble(plist: *const SENSOR_COLLECTION_LIST, pkey
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn PropKeyFindKeyGetFileTime(plist: *const SENSOR_COLLECTION_LIST, pkey: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, pretvalue: *mut ::win32_foundation::FILETIME) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1347,7 +1347,7 @@ pub unsafe fn PropKeyFindKeyGetFileTime(plist: *const SENSOR_COLLECTION_LIST, pk
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn PropKeyFindKeyGetFloat(plist: *const SENSOR_COLLECTION_LIST, pkey: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, pretvalue: *mut f32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1361,7 +1361,7 @@ pub unsafe fn PropKeyFindKeyGetFloat(plist: *const SENSOR_COLLECTION_LIST, pkey:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn PropKeyFindKeyGetGuid(plist: *const SENSOR_COLLECTION_LIST, pkey: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, pretvalue: *mut ::windows_core::GUID) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1375,7 +1375,7 @@ pub unsafe fn PropKeyFindKeyGetGuid(plist: *const SENSOR_COLLECTION_LIST, pkey: 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn PropKeyFindKeyGetInt32(plist: *const SENSOR_COLLECTION_LIST, pkey: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, pretvalue: *mut i32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1389,7 +1389,7 @@ pub unsafe fn PropKeyFindKeyGetInt32(plist: *const SENSOR_COLLECTION_LIST, pkey:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn PropKeyFindKeyGetInt64(plist: *const SENSOR_COLLECTION_LIST, pkey: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, pretvalue: *mut i64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1403,7 +1403,7 @@ pub unsafe fn PropKeyFindKeyGetInt64(plist: *const SENSOR_COLLECTION_LIST, pkey:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn PropKeyFindKeyGetNthInt64(plist: *const SENSOR_COLLECTION_LIST, pkey: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, occurrence: u32, pretvalue: *mut i64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1417,7 +1417,7 @@ pub unsafe fn PropKeyFindKeyGetNthInt64(plist: *const SENSOR_COLLECTION_LIST, pk
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn PropKeyFindKeyGetNthUlong(plist: *const SENSOR_COLLECTION_LIST, pkey: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, occurrence: u32, pretvalue: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1431,7 +1431,7 @@ pub unsafe fn PropKeyFindKeyGetNthUlong(plist: *const SENSOR_COLLECTION_LIST, pk
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn PropKeyFindKeyGetNthUshort(plist: *const SENSOR_COLLECTION_LIST, pkey: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, occurrence: u32, pretvalue: *mut u16) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1445,7 +1445,7 @@ pub unsafe fn PropKeyFindKeyGetNthUshort(plist: *const SENSOR_COLLECTION_LIST, p
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn PropKeyFindKeyGetPropVariant<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOLEAN>>(plist: *const SENSOR_COLLECTION_LIST, pkey: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, typecheck: Param2, pvalue: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1459,7 +1459,7 @@ pub unsafe fn PropKeyFindKeyGetPropVariant<'a, Param2: ::windows_core::IntoParam
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn PropKeyFindKeyGetUlong(plist: *const SENSOR_COLLECTION_LIST, pkey: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, pretvalue: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1473,7 +1473,7 @@ pub unsafe fn PropKeyFindKeyGetUlong(plist: *const SENSOR_COLLECTION_LIST, pkey:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn PropKeyFindKeyGetUshort(plist: *const SENSOR_COLLECTION_LIST, pkey: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, pretvalue: *mut u16) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1487,7 +1487,7 @@ pub unsafe fn PropKeyFindKeyGetUshort(plist: *const SENSOR_COLLECTION_LIST, pkey
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn PropKeyFindKeySetPropVariant<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOLEAN>>(plist: *mut SENSOR_COLLECTION_LIST, pkey: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, typecheck: Param2, pvalue: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1501,7 +1501,7 @@ pub unsafe fn PropKeyFindKeySetPropVariant<'a, Param2: ::windows_core::IntoParam
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantGetInformation(propvariantvalue: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, propvariantoffset: *mut u32, propvariantsize: *mut u32, propvariantpointer: *mut *mut ::core::ffi::c_void, remappedtype: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1515,7 +1515,7 @@ pub unsafe fn PropVariantGetInformation(propvariantvalue: *const ::win32_system:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn PropertiesListCopy(target: *mut SENSOR_PROPERTY_LIST, source: *const SENSOR_PROPERTY_LIST) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1587,31 +1587,31 @@ pub const SENSOR_CATEGORY_OTHER: ::windows_core::GUID = ::windows_core::GUID::fr
 pub const SENSOR_CATEGORY_SCANNER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb000e77e_f5b5_420f_815d_0270a726f270);
 pub const SENSOR_CATEGORY_UNSUPPORTED: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2beae7fa_19b0_48c5_a1f6_b5480dc206b0);
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 pub struct SENSOR_COLLECTION_LIST {
     pub AllocatedSizeInBytes: u32,
     pub Count: u32,
     pub List: [SENSOR_VALUE_PAIR; 1],
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 impl ::core::clone::Clone for SENSOR_COLLECTION_LIST {
     fn clone(&self) -> Self {
         Self { AllocatedSizeInBytes: self.AllocatedSizeInBytes, Count: self.Count, List: self.List.clone() }
     }
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 unsafe impl ::windows_core::Abi for SENSOR_COLLECTION_LIST {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 impl ::core::cmp::PartialEq for SENSOR_COLLECTION_LIST {
     fn eq(&self, other: &Self) -> bool {
         self.AllocatedSizeInBytes == other.AllocatedSizeInBytes && self.Count == other.Count && self.List == other.List
     }
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 impl ::core::cmp::Eq for SENSOR_COLLECTION_LIST {}
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 impl ::core::default::Default for SENSOR_COLLECTION_LIST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1642,378 +1642,378 @@ impl ::core::fmt::Debug for SENSOR_CONNECTION_TYPES {
         f.debug_tuple("SENSOR_CONNECTION_TYPES").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_ABSOLUTE_PRESSURE_PASCAL: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x38564a7c_f2f2_49bb_9b2b_ba60f66a58df), pid: 5u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_ACCELERATION_X_G: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x3f8a69a2_07c5_4e48_a965_cd797aab56d5), pid: 2u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_ACCELERATION_Y_G: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x3f8a69a2_07c5_4e48_a965_cd797aab56d5), pid: 3u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_ACCELERATION_Z_G: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x3f8a69a2_07c5_4e48_a965_cd797aab56d5), pid: 4u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_ADDRESS1: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 23u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_ADDRESS2: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 24u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_ALTITUDE_ANTENNA_SEALEVEL_METERS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 36u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_ALTITUDE_ELLIPSOID_ERROR_METERS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 29u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_ALTITUDE_ELLIPSOID_METERS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 5u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_ALTITUDE_SEALEVEL_ERROR_METERS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 30u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_ALTITUDE_SEALEVEL_METERS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 4u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_ANGULAR_ACCELERATION_X_DEGREES_PER_SECOND_SQUARED: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x3f8a69a2_07c5_4e48_a965_cd797aab56d5), pid: 5u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_ANGULAR_ACCELERATION_Y_DEGREES_PER_SECOND_SQUARED: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x3f8a69a2_07c5_4e48_a965_cd797aab56d5), pid: 6u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_ANGULAR_ACCELERATION_Z_DEGREES_PER_SECOND_SQUARED: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x3f8a69a2_07c5_4e48_a965_cd797aab56d5), pid: 7u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_ANGULAR_VELOCITY_X_DEGREES_PER_SECOND: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x3f8a69a2_07c5_4e48_a965_cd797aab56d5), pid: 10u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_ANGULAR_VELOCITY_Y_DEGREES_PER_SECOND: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x3f8a69a2_07c5_4e48_a965_cd797aab56d5), pid: 11u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_ANGULAR_VELOCITY_Z_DEGREES_PER_SECOND: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x3f8a69a2_07c5_4e48_a965_cd797aab56d5), pid: 12u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_ATMOSPHERIC_PRESSURE_BAR: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8b0aa2f1_2d57_42ee_8cc0_4d27622b46c4), pid: 4u32 };
 pub const SENSOR_DATA_TYPE_BIOMETRIC_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2299288a_6d9e_4b0b_b7ec_3528f89e40af);
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_BOOLEAN_SWITCH_ARRAY_STATES: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x38564a7c_f2f2_49bb_9b2b_ba60f66a58df), pid: 10u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_BOOLEAN_SWITCH_STATE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x38564a7c_f2f2_49bb_9b2b_ba60f66a58df), pid: 2u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CAPACITANCE_FARAD: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xbbb246d1_e242_4780_a2d3_cded84f35842), pid: 4u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CITY: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 25u32 };
 pub const SENSOR_DATA_TYPE_COMMON_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdb5e0cf2_cf1f_4c18_b46c_d86011d62150);
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_COUNTRY_REGION: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 28u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CURRENT_AMPS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xbbb246d1_e242_4780_a2d3_cded84f35842), pid: 3u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_BOOLEAN_ARRAY: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 6u32 };
 pub const SENSOR_DATA_TYPE_CUSTOM_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f);
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_USAGE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 5u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE1: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 7u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE10: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 16u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE11: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 17u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE12: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 18u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE13: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 19u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE14: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 20u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE15: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 21u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE16: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 22u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE17: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 23u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE18: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 24u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE19: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 25u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE2: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 8u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE20: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 26u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE21: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 27u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE22: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 28u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE23: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 29u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE24: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 30u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE25: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 31u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE26: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 32u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE27: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 33u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE28: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 34u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE3: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 9u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE4: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 10u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE5: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 11u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE6: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 12u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE7: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 13u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE8: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 14u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_CUSTOM_VALUE9: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xb14c764f_07cf_41e8_9d82_ebe3d0776a6f), pid: 15u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_DGPS_DATA_AGE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 35u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_DIFFERENTIAL_REFERENCE_STATION_ID: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 37u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_DISTANCE_X_METERS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1637d8a2_4248_4275_865d_558de84aedfd), pid: 8u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_DISTANCE_Y_METERS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1637d8a2_4248_4275_865d_558de84aedfd), pid: 9u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_DISTANCE_Z_METERS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1637d8a2_4248_4275_865d_558de84aedfd), pid: 10u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_ELECTRICAL_FREQUENCY_HERTZ: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xbbb246d1_e242_4780_a2d3_cded84f35842), pid: 9u32 };
 pub const SENSOR_DATA_TYPE_ELECTRICAL_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xbbb246d1_e242_4780_a2d3_cded84f35842);
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_ELECTRICAL_PERCENT_OF_RANGE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xbbb246d1_e242_4780_a2d3_cded84f35842), pid: 8u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_ELECTRICAL_POWER_WATTS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xbbb246d1_e242_4780_a2d3_cded84f35842), pid: 7u32 };
 pub const SENSOR_DATA_TYPE_ENVIRONMENTAL_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x8b0aa2f1_2d57_42ee_8cc0_4d27622b46c4);
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_ERROR_RADIUS_METERS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 22u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_FIX_QUALITY: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 10u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_FIX_TYPE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 11u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_FORCE_NEWTONS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x38564a7c_f2f2_49bb_9b2b_ba60f66a58df), pid: 4u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_GAUGE_PRESSURE_PASCAL: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x38564a7c_f2f2_49bb_9b2b_ba60f66a58df), pid: 6u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_GEOIDAL_SEPARATION: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 34u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_GPS_OPERATION_MODE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 32u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_GPS_SELECTION_MODE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 31u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_GPS_STATUS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 33u32 };
 pub const SENSOR_DATA_TYPE_GUID_MECHANICAL_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x38564a7c_f2f2_49bb_9b2b_ba60f66a58df);
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_HORIZONAL_DILUTION_OF_PRECISION: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 13u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_HUMAN_PRESENCE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x2299288a_6d9e_4b0b_b7ec_3528f89e40af), pid: 2u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_HUMAN_PROXIMITY_METERS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x2299288a_6d9e_4b0b_b7ec_3528f89e40af), pid: 3u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_INDUCTANCE_HENRY: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xbbb246d1_e242_4780_a2d3_cded84f35842), pid: 6u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_LATITUDE_DEGREES: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 2u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_LIGHT_CHROMACITY: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xe4c77ce2_dcb7_46e9_8439_4fec548833a6), pid: 4u32 };
 pub const SENSOR_DATA_TYPE_LIGHT_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe4c77ce2_dcb7_46e9_8439_4fec548833a6);
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_LIGHT_LEVEL_LUX: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xe4c77ce2_dcb7_46e9_8439_4fec548833a6), pid: 2u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_LIGHT_TEMPERATURE_KELVIN: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xe4c77ce2_dcb7_46e9_8439_4fec548833a6), pid: 3u32 };
 pub const SENSOR_DATA_TYPE_LOCATION_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4);
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_LOCATION_SOURCE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 40u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_LONGITUDE_DEGREES: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 3u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_MAGNETIC_FIELD_STRENGTH_X_MILLIGAUSS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1637d8a2_4248_4275_865d_558de84aedfd), pid: 19u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_MAGNETIC_FIELD_STRENGTH_Y_MILLIGAUSS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1637d8a2_4248_4275_865d_558de84aedfd), pid: 20u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_MAGNETIC_FIELD_STRENGTH_Z_MILLIGAUSS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1637d8a2_4248_4275_865d_558de84aedfd), pid: 21u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_MAGNETIC_HEADING_COMPENSATED_MAGNETIC_NORTH_DEGREES: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1637d8a2_4248_4275_865d_558de84aedfd), pid: 11u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_MAGNETIC_HEADING_COMPENSATED_TRUE_NORTH_DEGREES: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1637d8a2_4248_4275_865d_558de84aedfd), pid: 12u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_MAGNETIC_HEADING_DEGREES: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 8u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_MAGNETIC_HEADING_MAGNETIC_NORTH_DEGREES: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1637d8a2_4248_4275_865d_558de84aedfd), pid: 13u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_MAGNETIC_HEADING_TRUE_NORTH_DEGREES: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1637d8a2_4248_4275_865d_558de84aedfd), pid: 14u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_MAGNETIC_HEADING_X_DEGREES: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1637d8a2_4248_4275_865d_558de84aedfd), pid: 5u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_MAGNETIC_HEADING_Y_DEGREES: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1637d8a2_4248_4275_865d_558de84aedfd), pid: 6u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_MAGNETIC_HEADING_Z_DEGREES: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1637d8a2_4248_4275_865d_558de84aedfd), pid: 7u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_MAGNETIC_VARIATION: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 9u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_MAGNETOMETER_ACCURACY: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1637d8a2_4248_4275_865d_558de84aedfd), pid: 22u32 };
 pub const SENSOR_DATA_TYPE_MOTION_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x3f8a69a2_07c5_4e48_a965_cd797aab56d5);
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_MOTION_STATE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x3f8a69a2_07c5_4e48_a965_cd797aab56d5), pid: 9u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_MULTIVALUE_SWITCH_STATE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x38564a7c_f2f2_49bb_9b2b_ba60f66a58df), pid: 3u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_NMEA_SENTENCE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 38u32 };
 pub const SENSOR_DATA_TYPE_ORIENTATION_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1637d8a2_4248_4275_865d_558de84aedfd);
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_POSITION_DILUTION_OF_PRECISION: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 12u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_POSTALCODE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 27u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_QUADRANT_ANGLE_DEGREES: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1637d8a2_4248_4275_865d_558de84aedfd), pid: 15u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_QUATERNION: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1637d8a2_4248_4275_865d_558de84aedfd), pid: 17u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_RELATIVE_HUMIDITY_PERCENT: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8b0aa2f1_2d57_42ee_8cc0_4d27622b46c4), pid: 3u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_RESISTANCE_OHMS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xbbb246d1_e242_4780_a2d3_cded84f35842), pid: 5u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_RFID_TAG_40_BIT: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xd7a59a3c_3421_44ab_8d3a_9de8ab6c4cae), pid: 2u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_ROTATION_MATRIX: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1637d8a2_4248_4275_865d_558de84aedfd), pid: 16u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_SATELLITES_IN_VIEW: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 17u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_SATELLITES_IN_VIEW_AZIMUTH: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 20u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_SATELLITES_IN_VIEW_ELEVATION: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 19u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_SATELLITES_IN_VIEW_ID: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 39u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_SATELLITES_IN_VIEW_PRNS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 18u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_SATELLITES_IN_VIEW_STN_RATIO: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 21u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_SATELLITES_USED_COUNT: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 15u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_SATELLITES_USED_PRNS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 16u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_SATELLITES_USED_PRNS_AND_CONSTELLATIONS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 41u32 };
 pub const SENSOR_DATA_TYPE_SCANNER_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd7a59a3c_3421_44ab_8d3a_9de8ab6c4cae);
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_SIMPLE_DEVICE_ORIENTATION: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1637d8a2_4248_4275_865d_558de84aedfd), pid: 18u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_SPEED_KNOTS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 6u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_SPEED_METERS_PER_SECOND: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x3f8a69a2_07c5_4e48_a965_cd797aab56d5), pid: 8u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_STATE_PROVINCE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 26u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_STRAIN: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x38564a7c_f2f2_49bb_9b2b_ba60f66a58df), pid: 7u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_TEMPERATURE_CELSIUS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8b0aa2f1_2d57_42ee_8cc0_4d27622b46c4), pid: 2u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_TILT_X_DEGREES: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1637d8a2_4248_4275_865d_558de84aedfd), pid: 2u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_TILT_Y_DEGREES: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1637d8a2_4248_4275_865d_558de84aedfd), pid: 3u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_TILT_Z_DEGREES: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1637d8a2_4248_4275_865d_558de84aedfd), pid: 4u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_TIMESTAMP: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xdb5e0cf2_cf1f_4c18_b46c_d86011d62150), pid: 2u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_TOUCH_STATE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x2299288a_6d9e_4b0b_b7ec_3528f89e40af), pid: 4u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_TRUE_HEADING_DEGREES: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 7u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_VERTICAL_DILUTION_OF_PRECISION: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x055c74d8_ca6f_47d6_95c6_1ed3637a0ff4), pid: 14u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_VOLTAGE_VOLTS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xbbb246d1_e242_4780_a2d3_cded84f35842), pid: 2u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_WEIGHT_KILOGRAMS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x38564a7c_f2f2_49bb_9b2b_ba60f66a58df), pid: 8u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_WIND_DIRECTION_DEGREES_ANTICLOCKWISE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8b0aa2f1_2d57_42ee_8cc0_4d27622b46c4), pid: 5u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_DATA_TYPE_WIND_SPEED_METERS_PER_SECOND: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8b0aa2f1_2d57_42ee_8cc0_4d27622b46c4), pid: 6u32 };
 pub const SENSOR_ERROR_PARAMETER_COMMON_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x77112bcd_fce1_4f43_b8b8_a88256adb4b3);
 pub const SENSOR_EVENT_ACCELEROMETER_SHAKE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x825f5a94_0f48_4396_9ca0_6ecb5c99d915);
 pub const SENSOR_EVENT_DATA_UPDATED: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2ed0f2a4_0087_41d3_87db_6773370b3c88);
 pub const SENSOR_EVENT_PARAMETER_COMMON_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x64346e30_8728_4b34_bdf6_4f52442c5c28);
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_EVENT_PARAMETER_EVENT_ID: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x64346e30_8728_4b34_bdf6_4f52442c5c28), pid: 2u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_EVENT_PARAMETER_STATE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x64346e30_8728_4b34_bdf6_4f52442c5c28), pid: 3u32 };
 pub const SENSOR_EVENT_PROPERTY_CHANGED: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2358f099_84c9_4d3d_90df_c2421e2b2045);
 pub const SENSOR_EVENT_STATE_CHANGED: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xbfd96016_6bd7_4560_ad34_f2f6607e8f81);
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_PROPERTY_ACCURACY: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x7f8383ec_d3ec_495c_a8cf_b8bbe85c2920), pid: 17u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_PROPERTY_CHANGE_SENSITIVITY: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x7f8383ec_d3ec_495c_a8cf_b8bbe85c2920), pid: 14u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_PROPERTY_CLEAR_ASSISTANCE_DATA: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xe1e962f4_6e65_45f7_9c36_d487b7b1bd34), pid: 2u32 };
 pub const SENSOR_PROPERTY_COMMON_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7f8383ec_d3ec_495c_a8cf_b8bbe85c2920);
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_PROPERTY_CONNECTION_TYPE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x7f8383ec_d3ec_495c_a8cf_b8bbe85c2920), pid: 11u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_PROPERTY_CURRENT_REPORT_INTERVAL: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x7f8383ec_d3ec_495c_a8cf_b8bbe85c2920), pid: 13u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_PROPERTY_DESCRIPTION: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x7f8383ec_d3ec_495c_a8cf_b8bbe85c2920), pid: 10u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_PROPERTY_DEVICE_PATH: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x7f8383ec_d3ec_495c_a8cf_b8bbe85c2920), pid: 15u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_PROPERTY_FRIENDLY_NAME: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x7f8383ec_d3ec_495c_a8cf_b8bbe85c2920), pid: 9u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_PROPERTY_HID_USAGE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x7f8383ec_d3ec_495c_a8cf_b8bbe85c2920), pid: 22u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_PROPERTY_LIGHT_RESPONSE_CURVE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x7f8383ec_d3ec_495c_a8cf_b8bbe85c2920), pid: 16u32 };
 #[repr(C)]
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub struct SENSOR_PROPERTY_LIST {
     pub AllocatedSizeInBytes: u32,
     pub Count: u32,
     pub List: [::win32_ui::Shell::PropertiesSystem::PROPERTYKEY; 1],
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl ::core::marker::Copy for SENSOR_PROPERTY_LIST {}
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl ::core::clone::Clone for SENSOR_PROPERTY_LIST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl ::core::fmt::Debug for SENSOR_PROPERTY_LIST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SENSOR_PROPERTY_LIST").field("AllocatedSizeInBytes", &self.AllocatedSizeInBytes).field("Count", &self.Count).field("List", &self.List).finish()
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 unsafe impl ::windows_core::Abi for SENSOR_PROPERTY_LIST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl ::core::cmp::PartialEq for SENSOR_PROPERTY_LIST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SENSOR_PROPERTY_LIST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl ::core::cmp::Eq for SENSOR_PROPERTY_LIST {}
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl ::core::default::Default for SENSOR_PROPERTY_LIST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 pub const SENSOR_PROPERTY_LIST_HEADER_SIZE: u32 = 8u32;
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_PROPERTY_LOCATION_DESIRED_ACCURACY: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x7f8383ec_d3ec_495c_a8cf_b8bbe85c2920), pid: 19u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_PROPERTY_MANUFACTURER: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x7f8383ec_d3ec_495c_a8cf_b8bbe85c2920), pid: 6u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_PROPERTY_MIN_REPORT_INTERVAL: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x7f8383ec_d3ec_495c_a8cf_b8bbe85c2920), pid: 12u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_PROPERTY_MODEL: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x7f8383ec_d3ec_495c_a8cf_b8bbe85c2920), pid: 7u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_PROPERTY_PERSISTENT_UNIQUE_ID: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x7f8383ec_d3ec_495c_a8cf_b8bbe85c2920), pid: 5u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_PROPERTY_RADIO_STATE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x7f8383ec_d3ec_495c_a8cf_b8bbe85c2920), pid: 23u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_PROPERTY_RADIO_STATE_PREVIOUS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x7f8383ec_d3ec_495c_a8cf_b8bbe85c2920), pid: 24u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_PROPERTY_RANGE_MAXIMUM: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x7f8383ec_d3ec_495c_a8cf_b8bbe85c2920), pid: 21u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_PROPERTY_RANGE_MINIMUM: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x7f8383ec_d3ec_495c_a8cf_b8bbe85c2920), pid: 20u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_PROPERTY_RESOLUTION: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x7f8383ec_d3ec_495c_a8cf_b8bbe85c2920), pid: 18u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_PROPERTY_SERIAL_NUMBER: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x7f8383ec_d3ec_495c_a8cf_b8bbe85c2920), pid: 8u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_PROPERTY_STATE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x7f8383ec_d3ec_495c_a8cf_b8bbe85c2920), pid: 3u32 };
 pub const SENSOR_PROPERTY_TEST_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe1e962f4_6e65_45f7_9c36_d487b7b1bd34);
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_PROPERTY_TURN_ON_OFF_NMEA: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xe1e962f4_6e65_45f7_9c36_d487b7b1bd34), pid: 3u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const SENSOR_PROPERTY_TYPE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x7f8383ec_d3ec_495c_a8cf_b8bbe85c2920), pid: 2u32 };
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -2097,30 +2097,30 @@ pub const SENSOR_TYPE_TOUCH: ::windows_core::GUID = ::windows_core::GUID::from_u
 pub const SENSOR_TYPE_UNKNOWN: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x10ba83e3_ef4f_41ed_9885_a87d6435a8e1);
 pub const SENSOR_TYPE_VOLTAGE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc5484637_4fb7_4953_98b8_a56d8aa1fb1e);
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 pub struct SENSOR_VALUE_PAIR {
     pub Key: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY,
     pub Value: ::win32_system::Com::StructuredStorage::PROPVARIANT,
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 impl ::core::clone::Clone for SENSOR_VALUE_PAIR {
     fn clone(&self) -> Self {
         Self { Key: self.Key, Value: self.Value.clone() }
     }
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 unsafe impl ::windows_core::Abi for SENSOR_VALUE_PAIR {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 impl ::core::cmp::PartialEq for SENSOR_VALUE_PAIR {
     fn eq(&self, other: &Self) -> bool {
         self.Key == other.Key && self.Value == other.Value
     }
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 impl ::core::cmp::Eq for SENSOR_VALUE_PAIR {}
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 impl ::core::default::Default for SENSOR_VALUE_PAIR {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2156,7 +2156,7 @@ impl ::core::fmt::Debug for SIMPLE_DEVICE_ORIENTATION {
 }
 pub const Sensor: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe97ced00_523a_4133_bf6f_d3a2dae7f6ba);
 pub const SensorCollection: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x79c43adb_a429_469f_aa39_2f2b74b75937);
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn SensorCollectionGetAt(index: u32, psensorslist: *const SENSOR_COLLECTION_LIST, pkey: *mut ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, pvalue: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
     #[cfg(windows)]

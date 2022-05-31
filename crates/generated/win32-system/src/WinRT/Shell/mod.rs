@@ -26,7 +26,7 @@ impl ::core::fmt::Debug for CreateProcessMethod {
 #[repr(transparent)]
 pub struct IDDEInitializer(::windows_core::IUnknown);
 impl IDDEInitializer {
-    #[cfg(feature = "Win32_UI_Shell")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_ui::Shell::IShellItem>, Param4: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param7: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param8: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, fileextensionorprotocol: Param0, method: CreateProcessMethod, currentdirectory: Param2, exectarget: Param3, site: Param4, application: Param5, targetfile: Param6, arguments: Param7, verb: Param8) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Initialize)(::windows_core::Interface::as_raw(self), fileextensionorprotocol.into_param().abi(), ::core::mem::transmute(method), currentdirectory.into_param().abi(), exectarget.into_param().abi(), site.into_param().abi(), application.into_param().abi(), targetfile.into_param().abi(), arguments.into_param().abi(), verb.into_param().abi()).ok()
     }
@@ -75,8 +75,8 @@ unsafe impl ::windows_core::Interface for IDDEInitializer {
 #[doc(hidden)]
 pub struct IDDEInitializer_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_UI_Shell")]
+    #[cfg(feature = "win32-ui")]
     pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fileextensionorprotocol: ::windows_core::PCWSTR, method: CreateProcessMethod, currentdirectory: ::windows_core::PCWSTR, exectarget: ::windows_core::RawPtr, site: *mut ::core::ffi::c_void, application: ::windows_core::PCWSTR, targetfile: ::windows_core::PCWSTR, arguments: ::windows_core::PCWSTR, verb: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_UI_Shell"))]
+    #[cfg(not(feature = "win32-ui"))]
     Initialize: usize,
 }

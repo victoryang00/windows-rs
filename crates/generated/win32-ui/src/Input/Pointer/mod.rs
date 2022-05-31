@@ -24,7 +24,7 @@ pub unsafe fn GetPointerCursorId(pointerid: u32, cursorid: *mut u32) -> ::win32_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn GetPointerDevice<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(device: Param0, pointerdevice: *mut super::super::Controls::POINTER_DEVICE_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -38,7 +38,7 @@ pub unsafe fn GetPointerDevice<'a, Param0: ::windows_core::IntoParam<'a, ::win32
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_Controls")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn GetPointerDeviceCursors<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(device: Param0, cursorcount: *mut u32, devicecursors: *mut super::super::Controls::POINTER_DEVICE_CURSOR_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -52,7 +52,7 @@ pub unsafe fn GetPointerDeviceCursors<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_Controls")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn GetPointerDeviceProperties<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(device: Param0, propertycount: *mut u32, pointerproperties: *mut super::super::Controls::POINTER_DEVICE_PROPERTY) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -79,7 +79,7 @@ pub unsafe fn GetPointerDeviceRects<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn GetPointerDevices(devicecount: *mut u32, pointerdevices: *mut super::super::Controls::POINTER_DEVICE_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -93,7 +93,7 @@ pub unsafe fn GetPointerDevices(devicecount: *mut u32, pointerdevices: *mut supe
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn GetPointerFrameInfo(pointerid: u32, pointercount: *mut u32, pointerinfo: *mut POINTER_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -107,7 +107,7 @@ pub unsafe fn GetPointerFrameInfo(pointerid: u32, pointercount: *mut u32, pointe
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn GetPointerFrameInfoHistory(pointerid: u32, entriescount: *mut u32, pointercount: *mut u32, pointerinfo: *mut POINTER_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -121,7 +121,7 @@ pub unsafe fn GetPointerFrameInfoHistory(pointerid: u32, entriescount: *mut u32,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn GetPointerFramePenInfo(pointerid: u32, pointercount: *mut u32, peninfo: *mut POINTER_PEN_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -135,7 +135,7 @@ pub unsafe fn GetPointerFramePenInfo(pointerid: u32, pointercount: *mut u32, pen
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn GetPointerFramePenInfoHistory(pointerid: u32, entriescount: *mut u32, pointercount: *mut u32, peninfo: *mut POINTER_PEN_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -149,7 +149,7 @@ pub unsafe fn GetPointerFramePenInfoHistory(pointerid: u32, entriescount: *mut u
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn GetPointerFrameTouchInfo(pointerid: u32, pointercount: *mut u32, touchinfo: *mut POINTER_TOUCH_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -163,7 +163,7 @@ pub unsafe fn GetPointerFrameTouchInfo(pointerid: u32, pointercount: *mut u32, t
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn GetPointerFrameTouchInfoHistory(pointerid: u32, entriescount: *mut u32, pointercount: *mut u32, touchinfo: *mut POINTER_TOUCH_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -177,7 +177,7 @@ pub unsafe fn GetPointerFrameTouchInfoHistory(pointerid: u32, entriescount: *mut
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn GetPointerInfo(pointerid: u32, pointerinfo: *mut POINTER_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -191,7 +191,7 @@ pub unsafe fn GetPointerInfo(pointerid: u32, pointerinfo: *mut POINTER_INFO) -> 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn GetPointerInfoHistory(pointerid: u32, entriescount: *mut u32, pointerinfo: *mut POINTER_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -218,7 +218,7 @@ pub unsafe fn GetPointerInputTransform(pointerid: u32, inputtransform: &mut [INP
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn GetPointerPenInfo(pointerid: u32, peninfo: *mut POINTER_PEN_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -232,7 +232,7 @@ pub unsafe fn GetPointerPenInfo(pointerid: u32, peninfo: *mut POINTER_PEN_INFO) 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn GetPointerPenInfoHistory(pointerid: u32, entriescount: *mut u32, peninfo: *mut POINTER_PEN_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -246,7 +246,7 @@ pub unsafe fn GetPointerPenInfoHistory(pointerid: u32, entriescount: *mut u32, p
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn GetPointerTouchInfo(pointerid: u32, touchinfo: *mut POINTER_TOUCH_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -260,7 +260,7 @@ pub unsafe fn GetPointerTouchInfo(pointerid: u32, touchinfo: *mut POINTER_TOUCH_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn GetPointerTouchInfoHistory(pointerid: u32, entriescount: *mut u32, touchinfo: *mut POINTER_TOUCH_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -274,7 +274,7 @@ pub unsafe fn GetPointerTouchInfoHistory(pointerid: u32, entriescount: *mut u32,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn GetPointerType(pointerid: u32, pointertype: *mut super::super::WindowsAndMessaging::POINTER_INPUT_TYPE) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -288,7 +288,7 @@ pub unsafe fn GetPointerType(pointerid: u32, pointertype: *mut super::super::Win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_Controls")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn GetRawPointerDeviceData(pointerid: u32, historycount: u32, pproperties: &[super::super::Controls::POINTER_DEVICE_PROPERTY], pvalues: *mut i32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -453,7 +453,7 @@ pub unsafe fn InitializeTouchInjection(maxcount: u32, dwmode: TOUCH_FEEDBACK_MOD
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-ui", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn InjectSyntheticPointerInput<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::HSYNTHETICPOINTERDEVICE>>(device: Param0, pointerinfo: &[super::super::Controls::POINTER_TYPE_INFO]) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -467,7 +467,7 @@ pub unsafe fn InjectSyntheticPointerInput<'a, Param0: ::windows_core::IntoParam<
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn InjectTouchInput(contacts: &[POINTER_TOUCH_INFO]) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -597,7 +597,7 @@ impl ::core::ops::Not for POINTER_FLAGS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 pub struct POINTER_INFO {
     pub pointerType: super::super::WindowsAndMessaging::POINTER_INPUT_TYPE,
     pub pointerId: u32,
@@ -616,15 +616,15 @@ pub struct POINTER_INFO {
     pub PerformanceCount: u64,
     pub ButtonChangeType: POINTER_BUTTON_CHANGE_TYPE,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 impl ::core::marker::Copy for POINTER_INFO {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 impl ::core::clone::Clone for POINTER_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 impl ::core::fmt::Debug for POINTER_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("POINTER_INFO")
@@ -647,26 +647,26 @@ impl ::core::fmt::Debug for POINTER_INFO {
             .finish()
     }
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 unsafe impl ::windows_core::Abi for POINTER_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 impl ::core::cmp::PartialEq for POINTER_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POINTER_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 impl ::core::cmp::Eq for POINTER_INFO {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 impl ::core::default::Default for POINTER_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 pub struct POINTER_PEN_INFO {
     pub pointerInfo: POINTER_INFO,
     pub penFlags: u32,
@@ -676,40 +676,40 @@ pub struct POINTER_PEN_INFO {
     pub tiltX: i32,
     pub tiltY: i32,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 impl ::core::marker::Copy for POINTER_PEN_INFO {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 impl ::core::clone::Clone for POINTER_PEN_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 impl ::core::fmt::Debug for POINTER_PEN_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("POINTER_PEN_INFO").field("pointerInfo", &self.pointerInfo).field("penFlags", &self.penFlags).field("penMask", &self.penMask).field("pressure", &self.pressure).field("rotation", &self.rotation).field("tiltX", &self.tiltX).field("tiltY", &self.tiltY).finish()
     }
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 unsafe impl ::windows_core::Abi for POINTER_PEN_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 impl ::core::cmp::PartialEq for POINTER_PEN_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POINTER_PEN_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 impl ::core::cmp::Eq for POINTER_PEN_INFO {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 impl ::core::default::Default for POINTER_PEN_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 pub struct POINTER_TOUCH_INFO {
     pub pointerInfo: POINTER_INFO,
     pub touchFlags: u32,
@@ -719,33 +719,33 @@ pub struct POINTER_TOUCH_INFO {
     pub orientation: u32,
     pub pressure: u32,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 impl ::core::marker::Copy for POINTER_TOUCH_INFO {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 impl ::core::clone::Clone for POINTER_TOUCH_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 impl ::core::fmt::Debug for POINTER_TOUCH_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("POINTER_TOUCH_INFO").field("pointerInfo", &self.pointerInfo).field("touchFlags", &self.touchFlags).field("touchMask", &self.touchMask).field("rcContact", &self.rcContact).field("rcContactRaw", &self.rcContactRaw).field("orientation", &self.orientation).field("pressure", &self.pressure).finish()
     }
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 unsafe impl ::windows_core::Abi for POINTER_TOUCH_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 impl ::core::cmp::PartialEq for POINTER_TOUCH_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POINTER_TOUCH_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 impl ::core::cmp::Eq for POINTER_TOUCH_INFO {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 impl ::core::default::Default for POINTER_TOUCH_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

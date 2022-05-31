@@ -53,17 +53,17 @@ pub struct ITargetedContentCollection_Vtbl {
     pub ReportInteraction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, interaction: TargetedContentInteraction) -> ::windows_core::HRESULT,
     pub ReportCustomInteraction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, custominteractionname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Path: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Properties: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Collections: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Collections: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Items: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Items: usize,
 }
 #[doc(hidden)]
@@ -125,13 +125,13 @@ pub struct ITargetedContentItem_Vtbl {
     pub ReportInteraction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, interaction: TargetedContentInteraction) -> ::windows_core::HRESULT,
     pub ReportCustomInteraction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, custominteractionname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub State: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Properties: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Collections: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Collections: usize,
 }
 #[doc(hidden)]
@@ -211,13 +211,13 @@ pub struct ITargetedContentSubscriptionOptions_Vtbl {
     pub SubscriptionId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub AllowPartialContentAvailability: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetAllowPartialContentAvailability: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub CloudQueryParameters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CloudQueryParameters: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub LocalFilters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     LocalFilters: usize,
     pub Update: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -252,39 +252,39 @@ pub struct ITargetedContentValue_Vtbl {
     pub Uri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Number: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub Boolean: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub File: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     File: usize,
     pub ImageFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Action: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Strings: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Strings: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Uris: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Uris: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Numbers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Numbers: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Booleans: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Booleans: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub Files: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage_Streams")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-storage")))]
     Files: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub ImageFiles: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ImageFiles: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Actions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Actions: usize,
 }
 #[repr(transparent)]
@@ -636,7 +636,7 @@ impl TargetedContentCollection {
             (::windows_core::Interface::vtable(this).Path)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, TargetedContentValue>> {
         let this = self;
         unsafe {
@@ -644,7 +644,7 @@ impl TargetedContentCollection {
             (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, TargetedContentValue>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Collections(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<TargetedContentCollection>> {
         let this = self;
         unsafe {
@@ -652,7 +652,7 @@ impl TargetedContentCollection {
             (::windows_core::Interface::vtable(this).Collections)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<TargetedContentCollection>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<TargetedContentItem>> {
         let this = self;
         unsafe {
@@ -854,12 +854,12 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Tar
 }
 unsafe impl ::core::marker::Send for TargetedContentContainer {}
 unsafe impl ::core::marker::Sync for TargetedContentContainer {}
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 #[repr(transparent)]
 pub struct TargetedContentFile(::windows_core::IUnknown);
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl TargetedContentFile {
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn OpenReadAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IRandomAccessStreamWithContentType>> {
         let this = self;
         unsafe {
@@ -868,27 +868,27 @@ impl TargetedContentFile {
         }
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::clone::Clone for TargetedContentFile {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::cmp::PartialEq for TargetedContentFile {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::cmp::Eq for TargetedContentFile {}
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::fmt::Debug for TargetedContentFile {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("TargetedContentFile").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 unsafe impl ::windows_core::RuntimeType for TargetedContentFile {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Services.TargetedContent.TargetedContentFile;{33ee3134-1dd6-4e3a-8067-d1c162e8642b})");
     type DefaultType = ::core::option::Option<Self>;
@@ -896,97 +896,97 @@ unsafe impl ::windows_core::RuntimeType for TargetedContentFile {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 unsafe impl ::windows_core::Interface for TargetedContentFile {
     type Vtable = ::winrt_storage::Streams::IRandomAccessStreamReference_Vtbl;
     const IID: ::windows_core::GUID = <::winrt_storage::Streams::IRandomAccessStreamReference as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::windows_core::RuntimeName for TargetedContentFile {
     const NAME: &'static str = "Windows.Services.TargetedContent.TargetedContentFile";
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::From<TargetedContentFile> for ::windows_core::IUnknown {
     fn from(value: TargetedContentFile) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::From<&TargetedContentFile> for ::windows_core::IUnknown {
     fn from(value: &TargetedContentFile) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for TargetedContentFile {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a TargetedContentFile {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::From<TargetedContentFile> for ::windows_core::IInspectable {
     fn from(value: TargetedContentFile) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::From<&TargetedContentFile> for ::windows_core::IInspectable {
     fn from(value: &TargetedContentFile) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for TargetedContentFile {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a TargetedContentFile {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<TargetedContentFile> for ::winrt_storage::Streams::IRandomAccessStreamReference {
     type Error = ::windows_core::Error;
     fn try_from(value: TargetedContentFile) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<&TargetedContentFile> for ::winrt_storage::Streams::IRandomAccessStreamReference {
     type Error = ::windows_core::Error;
     fn try_from(value: &TargetedContentFile) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference> for TargetedContentFile {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_storage::Streams::IRandomAccessStreamReference> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference> for &TargetedContentFile {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_storage::Streams::IRandomAccessStreamReference> {
         ::core::convert::TryInto::<::winrt_storage::Streams::IRandomAccessStreamReference>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 unsafe impl ::core::marker::Send for TargetedContentFile {}
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 unsafe impl ::core::marker::Sync for TargetedContentFile {}
 #[repr(transparent)]
 pub struct TargetedContentImage(::windows_core::IUnknown);
 impl TargetedContentImage {
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn OpenReadAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IRandomAccessStreamWithContentType>> {
         let this = &::windows_core::Interface::cast::<::winrt_storage::Streams::IRandomAccessStreamReference>(self)?;
         unsafe {
@@ -1079,27 +1079,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Tar
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<TargetedContentImage> for ::winrt_storage::Streams::IRandomAccessStreamReference {
     type Error = ::windows_core::Error;
     fn try_from(value: TargetedContentImage) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<&TargetedContentImage> for ::winrt_storage::Streams::IRandomAccessStreamReference {
     type Error = ::windows_core::Error;
     fn try_from(value: &TargetedContentImage) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference> for TargetedContentImage {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_storage::Streams::IRandomAccessStreamReference> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference> for &TargetedContentImage {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_storage::Streams::IRandomAccessStreamReference> {
         ::core::convert::TryInto::<::winrt_storage::Streams::IRandomAccessStreamReference>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -1176,7 +1176,7 @@ impl TargetedContentItem {
             (::windows_core::Interface::vtable(this).State)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<TargetedContentItemState>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, TargetedContentValue>> {
         let this = self;
         unsafe {
@@ -1184,7 +1184,7 @@ impl TargetedContentItem {
             (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, TargetedContentValue>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Collections(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<TargetedContentCollection>> {
         let this = self;
         unsafe {
@@ -1736,7 +1736,7 @@ impl TargetedContentSubscriptionOptions {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetAllowPartialContentAvailability)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CloudQueryParameters(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -1744,7 +1744,7 @@ impl TargetedContentSubscriptionOptions {
             (::windows_core::Interface::vtable(this).CloudQueryParameters)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn LocalFilters(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -1874,7 +1874,7 @@ impl TargetedContentValue {
             (::windows_core::Interface::vtable(this).Boolean)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn File(&self) -> ::windows_core::Result<TargetedContentFile> {
         let this = self;
         unsafe {
@@ -1896,7 +1896,7 @@ impl TargetedContentValue {
             (::windows_core::Interface::vtable(this).Action)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<TargetedContentAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Strings(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -1904,7 +1904,7 @@ impl TargetedContentValue {
             (::windows_core::Interface::vtable(this).Strings)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Uris(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Uri>> {
         let this = self;
         unsafe {
@@ -1912,7 +1912,7 @@ impl TargetedContentValue {
             (::windows_core::Interface::vtable(this).Uris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Uri>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Numbers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<f64>> {
         let this = self;
         unsafe {
@@ -1920,7 +1920,7 @@ impl TargetedContentValue {
             (::windows_core::Interface::vtable(this).Numbers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<f64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Booleans(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<bool>> {
         let this = self;
         unsafe {
@@ -1928,7 +1928,7 @@ impl TargetedContentValue {
             (::windows_core::Interface::vtable(this).Booleans)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<bool>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub fn Files(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<TargetedContentFile>> {
         let this = self;
         unsafe {
@@ -1936,7 +1936,7 @@ impl TargetedContentValue {
             (::windows_core::Interface::vtable(this).Files)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<TargetedContentFile>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ImageFiles(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<TargetedContentImage>> {
         let this = self;
         unsafe {
@@ -1944,7 +1944,7 @@ impl TargetedContentValue {
             (::windows_core::Interface::vtable(this).ImageFiles)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<TargetedContentImage>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Actions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<TargetedContentAction>> {
         let this = self;
         unsafe {

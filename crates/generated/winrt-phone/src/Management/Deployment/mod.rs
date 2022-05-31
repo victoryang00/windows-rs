@@ -118,7 +118,7 @@ unsafe impl ::core::marker::Send for Enterprise {}
 unsafe impl ::core::marker::Sync for Enterprise {}
 pub struct EnterpriseEnrollmentManager;
 impl EnterpriseEnrollmentManager {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn EnrolledEnterprises() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<Enterprise>> {
         Self::IEnterpriseEnrollmentManager(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -343,9 +343,9 @@ unsafe impl ::windows_core::Interface for IEnterpriseEnrollmentManager {
 #[doc(hidden)]
 pub struct IEnterpriseEnrollmentManager_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub EnrolledEnterprises: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     EnrolledEnterprises: usize,
     pub CurrentEnterprise: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ValidateEnterprisesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -379,17 +379,17 @@ pub struct IInstallationManagerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub AddPackageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, title: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, sourcelocation: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub AddPackagePreloadedAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, title: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, sourcelocation: ::windows_core::RawPtr, instanceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, offerid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, license: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetPendingPackageInstalls: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetPendingPackageInstalls: usize,
-    #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-applicationmodel", feature = "winrt-foundation"))]
     pub FindPackagesForCurrentPublisher: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "ApplicationModel", feature = "Foundation_Collections")))]
+    #[cfg(not(all(feature = "winrt-applicationmodel", feature = "winrt-foundation")))]
     FindPackagesForCurrentPublisher: usize,
-    #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-applicationmodel", feature = "winrt-foundation"))]
     pub FindPackages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "ApplicationModel", feature = "Foundation_Collections")))]
+    #[cfg(not(all(feature = "winrt-applicationmodel", feature = "winrt-foundation")))]
     FindPackages: usize,
 }
 #[doc(hidden)]
@@ -403,17 +403,17 @@ unsafe impl ::windows_core::Interface for IInstallationManagerStatics2 {
 #[doc(hidden)]
 pub struct IInstallationManagerStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Management_Deployment")]
+    #[cfg(feature = "winrt-management")]
     pub RemovePackageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagefullname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, removaloptions: ::winrt_management::Deployment::RemovalOptions, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Management_Deployment"))]
+    #[cfg(not(feature = "winrt-management"))]
     RemovePackageAsync: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Management_Deployment"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-management"))]
     pub RegisterPackageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, manifesturi: ::windows_core::RawPtr, dependencypackageuris: ::windows_core::RawPtr, deploymentoptions: ::winrt_management::Deployment::DeploymentOptions, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Management_Deployment")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-management")))]
     RegisterPackageAsync: usize,
-    #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-applicationmodel", feature = "winrt-foundation"))]
     pub FindPackagesByNamePublisher: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, packagepublisher: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "ApplicationModel", feature = "Foundation_Collections")))]
+    #[cfg(not(all(feature = "winrt-applicationmodel", feature = "winrt-foundation")))]
     FindPackagesByNamePublisher: usize,
 }
 #[doc(hidden)]
@@ -428,9 +428,9 @@ unsafe impl ::windows_core::Interface for IPackageInstallResult {
 pub struct IPackageInstallResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ProductId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Management_Deployment")]
+    #[cfg(feature = "winrt-management")]
     pub InstallState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_management::Deployment::PackageInstallState) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Management_Deployment"))]
+    #[cfg(not(feature = "winrt-management"))]
     InstallState: usize,
 }
 #[doc(hidden)]
@@ -460,42 +460,42 @@ impl InstallationManager {
             (::windows_core::Interface::vtable(this).AddPackagePreloadedAsync)(::windows_core::Interface::as_raw(this), title.into_param().abi(), sourcelocation.into_param().abi(), instanceid.into_param().abi(), offerid.into_param().abi(), license.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<PackageInstallResult, u32>>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetPendingPackageInstalls() -> ::windows_core::Result<::winrt_foundation::Collections::IIterable<::winrt_foundation::IAsyncOperationWithProgress<PackageInstallResult, u32>>> {
         Self::IInstallationManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetPendingPackageInstalls)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterable<::winrt_foundation::IAsyncOperationWithProgress<PackageInstallResult, u32>>>(result__)
         })
     }
-    #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-applicationmodel", feature = "winrt-foundation"))]
     pub fn FindPackagesForCurrentPublisher() -> ::windows_core::Result<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>> {
         Self::IInstallationManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).FindPackagesForCurrentPublisher)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>>(result__)
         })
     }
-    #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-applicationmodel", feature = "winrt-foundation"))]
     pub fn FindPackages() -> ::windows_core::Result<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>> {
         Self::IInstallationManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).FindPackages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>>(result__)
         })
     }
-    #[cfg(feature = "Management_Deployment")]
+    #[cfg(feature = "winrt-management")]
     pub fn RemovePackageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(packagefullname: Param0, removaloptions: ::winrt_management::Deployment::RemovalOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<PackageInstallResult, u32>> {
         Self::IInstallationManagerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).RemovePackageAsync)(::windows_core::Interface::as_raw(this), packagefullname.into_param().abi(), removaloptions, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<PackageInstallResult, u32>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Management_Deployment"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-management"))]
     pub fn RegisterPackageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>>(manifesturi: Param0, dependencypackageuris: Param1, deploymentoptions: ::winrt_management::Deployment::DeploymentOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<PackageInstallResult, u32>> {
         Self::IInstallationManagerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).RegisterPackageAsync)(::windows_core::Interface::as_raw(this), manifesturi.into_param().abi(), dependencypackageuris.into_param().abi(), deploymentoptions, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<PackageInstallResult, u32>>(result__)
         })
     }
-    #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-applicationmodel", feature = "winrt-foundation"))]
     pub fn FindPackagesByNamePublisher<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(packagename: Param0, packagepublisher: Param1) -> ::windows_core::Result<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>> {
         Self::IInstallationManagerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -524,7 +524,7 @@ impl PackageInstallResult {
             (::windows_core::Interface::vtable(this).ProductId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Management_Deployment")]
+    #[cfg(feature = "winrt-management")]
     pub fn InstallState(&self) -> ::windows_core::Result<::winrt_management::Deployment::PackageInstallState> {
         let this = self;
         unsafe {

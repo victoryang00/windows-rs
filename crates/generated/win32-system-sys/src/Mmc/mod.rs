@@ -373,15 +373,15 @@ pub const MMC_SCOPE_ITEM_STATE_NORMAL: MMC_SCOPE_ITEM_STATE = 1i32;
 pub const MMC_SCOPE_ITEM_STATE_BOLD: MMC_SCOPE_ITEM_STATE = 2i32;
 pub const MMC_SCOPE_ITEM_STATE_EXPANDEDONCE: MMC_SCOPE_ITEM_STATE = 3i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub struct MMC_SNAPIN_PROPERTY {
     pub pszPropName: ::windows_core_sys::PCWSTR,
     pub varValue: super::Com::VARIANT,
     pub eAction: MMC_PROPERTY_ACTION,
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for MMC_SNAPIN_PROPERTY {}
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for MMC_SNAPIN_PROPERTY {
     fn clone(&self) -> Self {
         *self
@@ -690,14 +690,14 @@ pub const SDI_PREVIOUS: u32 = 268435456u32;
 pub const SDI_STATE: u32 = 16u32;
 pub const SDI_STR: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct SMMCDataObjects {
     pub count: u32,
     pub lpDataObject: [super::Com::IDataObject; 1],
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for SMMCDataObjects {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for SMMCDataObjects {
     fn clone(&self) -> Self {
         *self

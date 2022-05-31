@@ -303,14 +303,14 @@ impl<'a> Gen<'a> {
         if !self.doc {
             quote! {}
         } else {
-            let mut tokens = format!(r#"`\"{}\"`"#, to_feature(self.namespace));
+            let mut tokens = format!(r#"`\"{}\"`"#, self.to_feature(self.namespace));
 
             let mut features = self.compute_features(cfg);
             if self.windows_extern {
                 features = features.into_iter().filter(|f| !f.starts_with("Windows.")).collect();
             }
             for features in features {
-                write!(tokens, r#", `\"{}\"`"#, to_feature(features)).unwrap();
+                write!(tokens, r#", `\"{}\"`"#, self.to_feature(features)).unwrap();
             }
 
             format!(r#"#[doc = "*Required features: {}*"]"#, tokens).into()
@@ -340,11 +340,11 @@ impl<'a> Gen<'a> {
             let features = match features.len() {
                 0 => quote! {},
                 1 => {
-                    let features = features.iter().cloned().map(to_feature);
+                    let features = features.iter().cloned().map(|feature|self.to_feature(feature));
                     quote! { #[cfg(#(feature = #features)*)] }
                 }
                 _ => {
-                    let features = features.iter().cloned().map(to_feature);
+                    let features = features.iter().cloned().map(|feature|self.to_feature(feature));
                     quote! { #[cfg(all( #(feature = #features),* ))] }
                 }
             };
@@ -364,17 +364,16 @@ impl<'a> Gen<'a> {
             match features.len() {
                 0 => quote! {},
                 1 => {
-                    let features = features.iter().cloned().map(to_feature);
+                    let features = features.iter().cloned().map(|feature|self.to_feature(feature));
                     quote! { #[cfg(not(#(feature = #features)*))] }
                 }
                 _ => {
-                    let features = features.iter().cloned().map(to_feature);
+                    let features = features.iter().cloned().map(|feature|self.to_feature(feature));
                     quote! { #[cfg(not(all( #(feature = #features),* )))] }
                 }
             }
         }
     }
-
     fn compute_features(&self, cfg: &'a Cfg) -> Vec<&'a str> {
         let mut compact = Vec::<&'static str>::new();
         for feature in cfg.types.keys() {
@@ -393,6 +392,37 @@ impl<'a> Gen<'a> {
         }
         compact
     }
+    fn to_feature(&self, name: &str) -> String {
+        let mut feature = String::new();
+        if self.root.is_empty() {
+            for name in name.split('.').skip(1) {
+                feature.push_str(name);
+                feature.push('_');
+            }
+            if feature.is_empty() {
+                feature = name.to_string();
+            } else {
+                feature.truncate(feature.len() - 1);
+            }
+        } else {
+            let mut name = name.split('.').peekable();
+            name.next(); // Windows
+            if name.peek() == Some(&"Win32") {
+                name.next();
+                feature.push_str("win32-");
+            } else {
+                feature.push_str("winrt-");
+            }
+            if let Some(name) = name.next() {
+                feature.push_str(&name.to_lowercase());
+                if self.sys {
+                    feature.push_str("-sys");
+                }
+            }
+        }    
+        feature
+    }
+    
 
     //
     // Other helpers
@@ -1086,23 +1116,6 @@ fn mut_ptrs(pointers: usize) -> TokenStream {
 
 fn const_ptrs(pointers: usize) -> TokenStream {
     "*const ".repeat(pointers).into()
-}
-
-fn to_feature(name: &str) -> String {
-    let mut feature = String::new();
-
-    for name in name.split('.').skip(1) {
-        feature.push_str(name);
-        feature.push('_');
-    }
-
-    if feature.is_empty() {
-        feature = name.to_string();
-    } else {
-        feature.truncate(feature.len() - 1);
-    }
-
-    feature
 }
 
 fn starts_with(namespace: &str, feature: &str) -> bool {

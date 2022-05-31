@@ -11,13 +11,13 @@ pub struct IIndexedResourceCandidate_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Type: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut IndexedResourceType) -> ::windows_core::HRESULT,
     pub Uri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Metadata: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Metadata: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Qualifiers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Qualifiers: usize,
     pub ValueAsString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetQualifierValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, qualifiername: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -37,64 +37,64 @@ pub struct IIndexedResourceQualifier_Vtbl {
     pub QualifierValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct IResourceIndexer(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for IResourceIndexer {
     type Vtable = IResourceIndexer_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2d4cf9a5_e32f_4ab2_8748_96350a016da3);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IResourceIndexer_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub IndexFilePath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filepath: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     IndexFilePath: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-"))]
     pub IndexFileContentsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "deprecated")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-")))]
     IndexFileContentsAsync: usize,
 }
 #[doc(hidden)]
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct IResourceIndexerFactory(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for IResourceIndexerFactory {
     type Vtable = IResourceIndexerFactory_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb8de3f09_31cd_4d97_bd30_8d39f742bc61);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IResourceIndexerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub CreateResourceIndexer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, projectroot: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     CreateResourceIndexer: usize,
 }
 #[doc(hidden)]
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct IResourceIndexerFactory2(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for IResourceIndexerFactory2 {
     type Vtable = IResourceIndexerFactory2_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6040f18d_d5e5_4b60_9201_cd279cbcfed9);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IResourceIndexerFactory2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub CreateResourceIndexerWithExtension: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, projectroot: ::windows_core::RawPtr, extensiondllpath: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     CreateResourceIndexerWithExtension: usize,
 }
 #[repr(transparent)]
@@ -114,7 +114,7 @@ impl IndexedResourceCandidate {
             (::windows_core::Interface::vtable(this).Uri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Metadata(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -122,7 +122,7 @@ impl IndexedResourceCandidate {
             (::windows_core::Interface::vtable(this).Metadata)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Qualifiers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<IndexedResourceQualifier>> {
         let this = self;
         unsafe {
@@ -341,12 +341,12 @@ unsafe impl ::windows_core::RuntimeType for IndexedResourceType {
         Ok(*from)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct ResourceIndexer(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ResourceIndexer {
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn IndexFilePath<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, filepath: Param0) -> ::windows_core::Result<IndexedResourceCandidate> {
         let this = self;
         unsafe {
@@ -354,7 +354,7 @@ impl ResourceIndexer {
             (::windows_core::Interface::vtable(this).IndexFilePath)(::windows_core::Interface::as_raw(this), filepath.into_param().abi(), result__.as_mut_ptr()).from_abi::<IndexedResourceCandidate>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-"))]
     pub fn IndexFileContentsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, file: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<IndexedResourceCandidate>>> {
         let this = self;
         unsafe {
@@ -362,52 +362,52 @@ impl ResourceIndexer {
             (::windows_core::Interface::vtable(this).IndexFileContentsAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<IndexedResourceCandidate>>>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn CreateResourceIndexer<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(projectroot: Param0) -> ::windows_core::Result<ResourceIndexer> {
         Self::IResourceIndexerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateResourceIndexer)(::windows_core::Interface::as_raw(this), projectroot.into_param().abi(), result__.as_mut_ptr()).from_abi::<ResourceIndexer>(result__)
         })
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn CreateResourceIndexerWithExtension<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(projectroot: Param0, extensiondllpath: Param1) -> ::windows_core::Result<ResourceIndexer> {
         Self::IResourceIndexerFactory2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateResourceIndexerWithExtension)(::windows_core::Interface::as_raw(this), projectroot.into_param().abi(), extensiondllpath.into_param().abi(), result__.as_mut_ptr()).from_abi::<ResourceIndexer>(result__)
         })
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn IResourceIndexerFactory<R, F: FnOnce(&IResourceIndexerFactory) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
         static mut SHARED: ::windows_core::FactoryCache<ResourceIndexer, IResourceIndexerFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn IResourceIndexerFactory2<R, F: FnOnce(&IResourceIndexerFactory2) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
         static mut SHARED: ::windows_core::FactoryCache<ResourceIndexer, IResourceIndexerFactory2> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for ResourceIndexer {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::PartialEq for ResourceIndexer {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::Eq for ResourceIndexer {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::fmt::Debug for ResourceIndexer {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("ResourceIndexer").field(&self.0).finish()
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::RuntimeType for ResourceIndexer {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.ApplicationModel.Resources.Management.ResourceIndexer;{2d4cf9a5-e32f-4ab2-8748-96350a016da3})");
     type DefaultType = ::core::option::Option<Self>;
@@ -415,64 +415,64 @@ unsafe impl ::windows_core::RuntimeType for ResourceIndexer {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for ResourceIndexer {
     type Vtable = IResourceIndexer_Vtbl;
     const IID: ::windows_core::GUID = <IResourceIndexer as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::windows_core::RuntimeName for ResourceIndexer {
     const NAME: &'static str = "Windows.ApplicationModel.Resources.Management.ResourceIndexer";
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<ResourceIndexer> for ::windows_core::IUnknown {
     fn from(value: ResourceIndexer) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&ResourceIndexer> for ::windows_core::IUnknown {
     fn from(value: &ResourceIndexer) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for ResourceIndexer {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ResourceIndexer {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<ResourceIndexer> for ::windows_core::IInspectable {
     fn from(value: ResourceIndexer) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&ResourceIndexer> for ::windows_core::IInspectable {
     fn from(value: &ResourceIndexer) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for ResourceIndexer {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a ResourceIndexer {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::core::marker::Send for ResourceIndexer {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::core::marker::Sync for ResourceIndexer {}

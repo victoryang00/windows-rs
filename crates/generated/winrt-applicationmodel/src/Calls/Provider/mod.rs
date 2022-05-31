@@ -41,13 +41,13 @@ unsafe impl ::windows_core::Interface for IPhoneCallOrigin3 {
 #[doc(hidden)]
 pub struct IPhoneCallOrigin3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub DisplayPicture: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     DisplayPicture: usize,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub SetDisplayPicture: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SetDisplayPicture: usize,
 }
 #[doc(hidden)]
@@ -145,7 +145,7 @@ impl PhoneCallOrigin {
         let this = &::windows_core::Interface::cast::<IPhoneCallOrigin2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetDisplayName)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn DisplayPicture(&self) -> ::windows_core::Result<::winrt_storage::StorageFile> {
         let this = &::windows_core::Interface::cast::<IPhoneCallOrigin3>(self)?;
         unsafe {
@@ -153,7 +153,7 @@ impl PhoneCallOrigin {
             (::windows_core::Interface::vtable(this).DisplayPicture)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::StorageFile>(result__)
         }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SetDisplayPicture<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::StorageFile>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IPhoneCallOrigin3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetDisplayPicture)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }

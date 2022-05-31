@@ -22,7 +22,7 @@ impl ::core::fmt::Debug for HCS_CREATE_OPTIONS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct HCS_CREATE_OPTIONS_1 {
     pub Version: HCS_CREATE_OPTIONS,
     pub UserToken: ::win32_foundation::HANDLE,
@@ -31,33 +31,33 @@ pub struct HCS_CREATE_OPTIONS_1 {
     pub CallbackContext: *mut ::core::ffi::c_void,
     pub Callback: HCS_EVENT_CALLBACK,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for HCS_CREATE_OPTIONS_1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for HCS_CREATE_OPTIONS_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for HCS_CREATE_OPTIONS_1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HCS_CREATE_OPTIONS_1").field("Version", &self.Version).field("UserToken", &self.UserToken).field("SecurityDescriptor", &self.SecurityDescriptor).field("CallbackOptions", &self.CallbackOptions).field("CallbackContext", &self.CallbackContext).field("Callback", &self.Callback.map(|f| f as usize)).finish()
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for HCS_CREATE_OPTIONS_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for HCS_CREATE_OPTIONS_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HCS_CREATE_OPTIONS_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for HCS_CREATE_OPTIONS_1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for HCS_CREATE_OPTIONS_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -479,7 +479,7 @@ pub unsafe fn HcsCrashComputeSystem<'a, Param0: ::windows_core::IntoParam<'a, HC
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn HcsCreateComputeSystem<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, HCS_OPERATION>>(id: Param0, configuration: Param1, operation: Param2, securitydescriptor: *const ::win32_security::SECURITY_DESCRIPTOR) -> ::windows_core::Result<HCS_SYSTEM> {
     #[cfg(windows)]
@@ -547,7 +547,7 @@ pub unsafe fn HcsCreateOperation(context: *const ::core::ffi::c_void, callback: 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn HcsCreateProcess<'a, Param0: ::windows_core::IntoParam<'a, HCS_SYSTEM>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, HCS_OPERATION>>(computesystem: Param0, processparameters: Param1, operation: Param2, securitydescriptor: *const ::win32_security::SECURITY_DESCRIPTOR) -> ::windows_core::Result<HCS_PROCESS> {
     #[cfg(windows)]

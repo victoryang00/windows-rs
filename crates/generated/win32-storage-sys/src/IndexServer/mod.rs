@@ -1,8 +1,8 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn BindIFilterFromStorage(pstg: ::win32_system_sys::Com::StructuredStorage::IStorage, punkouter: ::windows_core_sys::IUnknown, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn BindIFilterFromStream(pstm: ::win32_system_sys::Com::IStream, punkouter: ::windows_core_sys::IUnknown, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn LoadIFilter(pwcspath: ::windows_core_sys::PCWSTR, punkouter: ::windows_core_sys::IUnknown, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn LoadIFilterEx(pwcspath: ::windows_core_sys::PCWSTR, dwflags: u32, riid: *const ::windows_core_sys::GUID, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
@@ -223,14 +223,14 @@ pub const FILTER_S_LAST_TEXT: ::windows_core_sys::HRESULT = 268041i32;
 pub const FILTER_S_LAST_VALUES: ::windows_core_sys::HRESULT = 268042i32;
 pub const FILTER_W_MONIKER_CLIPPED: ::windows_core_sys::HRESULT = 268036i32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system-sys")]
 pub struct FULLPROPSPEC {
     pub guidPropSet: ::windows_core_sys::GUID,
     pub psProperty: ::win32_system_sys::Com::StructuredStorage::PROPSPEC,
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for FULLPROPSPEC {}
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for FULLPROPSPEC {
     fn clone(&self) -> Self {
         *self
@@ -300,7 +300,7 @@ pub const SCOPE_TYPE_VPATH: u32 = 512u32;
 pub const SCOPE_TYPE_WINPATH: u32 = 256u32;
 pub const STAT_BUSY: u32 = 0u32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system-sys")]
 pub struct STAT_CHUNK {
     pub idChunk: u32,
     pub breakType: CHUNK_BREAKTYPE,
@@ -311,9 +311,9 @@ pub struct STAT_CHUNK {
     pub cwcStartSource: u32,
     pub cwcLenSource: u32,
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for STAT_CHUNK {}
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for STAT_CHUNK {
     fn clone(&self) -> Self {
         *self

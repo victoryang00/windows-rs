@@ -9,13 +9,13 @@ unsafe impl ::windows_core::Interface for IInjectedInputGamepadInfo {
 #[doc(hidden)]
 pub struct IInjectedInputGamepadInfo_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Gaming_Input")]
+    #[cfg(feature = "winrt-gaming")]
     pub Buttons: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_gaming::Input::GamepadButtons) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Gaming_Input"))]
+    #[cfg(not(feature = "winrt-gaming"))]
     Buttons: usize,
-    #[cfg(feature = "Gaming_Input")]
+    #[cfg(feature = "winrt-gaming")]
     pub SetButtons: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_gaming::Input::GamepadButtons) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Gaming_Input"))]
+    #[cfg(not(feature = "winrt-gaming"))]
     SetButtons: usize,
     pub LeftThumbstickX: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetLeftThumbstickX: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
@@ -41,9 +41,9 @@ unsafe impl ::windows_core::Interface for IInjectedInputGamepadInfoFactory {
 #[doc(hidden)]
 pub struct IInjectedInputGamepadInfoFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Gaming_Input")]
+    #[cfg(feature = "winrt-gaming")]
     pub CreateInstanceFromGamepadReading: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reading: ::winrt_gaming::Input::GamepadReading, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Gaming_Input"))]
+    #[cfg(not(feature = "winrt-gaming"))]
     CreateInstanceFromGamepadReading: usize,
 }
 #[doc(hidden)]
@@ -145,18 +145,18 @@ unsafe impl ::windows_core::Interface for IInputInjector {
 #[doc(hidden)]
 pub struct IInputInjector_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub InjectKeyboardInput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, input: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     InjectKeyboardInput: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub InjectMouseInput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, input: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     InjectMouseInput: usize,
     pub InitializeTouchInjection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, visualmode: InjectedInputVisualizationMode) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub InjectTouchInput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, input: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     InjectTouchInput: usize,
     pub UninitializeTouchInjection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub InitializePenInjection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, visualmode: InjectedInputVisualizationMode) -> ::windows_core::HRESULT,
@@ -257,7 +257,7 @@ impl InjectedInputGamepadInfo {
         static mut SHARED: ::windows_core::FactoryCache<InjectedInputGamepadInfo, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Gaming_Input")]
+    #[cfg(feature = "winrt-gaming")]
     pub fn Buttons(&self) -> ::windows_core::Result<::winrt_gaming::Input::GamepadButtons> {
         let this = self;
         unsafe {
@@ -265,7 +265,7 @@ impl InjectedInputGamepadInfo {
             (::windows_core::Interface::vtable(this).Buttons)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_gaming::Input::GamepadButtons>(result__)
         }
     }
-    #[cfg(feature = "Gaming_Input")]
+    #[cfg(feature = "winrt-gaming")]
     pub fn SetButtons(&self, value: ::winrt_gaming::Input::GamepadButtons) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetButtons)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -336,7 +336,7 @@ impl InjectedInputGamepadInfo {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetRightTrigger)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Gaming_Input")]
+    #[cfg(feature = "winrt-gaming")]
     pub fn CreateInstanceFromGamepadReading<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_gaming::Input::GamepadReading>>(reading: Param0) -> ::windows_core::Result<InjectedInputGamepadInfo> {
         Self::IInjectedInputGamepadInfoFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1549,12 +1549,12 @@ unsafe impl ::windows_core::RuntimeType for InjectedInputVisualizationMode {
 #[repr(transparent)]
 pub struct InputInjector(::windows_core::IUnknown);
 impl InputInjector {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InjectKeyboardInput<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<InjectedInputKeyboardInfo>>>(&self, input: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InjectKeyboardInput)(::windows_core::Interface::as_raw(this), input.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InjectMouseInput<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<InjectedInputMouseInfo>>>(&self, input: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InjectMouseInput)(::windows_core::Interface::as_raw(this), input.into_param().abi()).ok() }
@@ -1563,7 +1563,7 @@ impl InputInjector {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InitializeTouchInjection)(::windows_core::Interface::as_raw(this), visualmode).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InjectTouchInput<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<InjectedInputTouchInfo>>>(&self, input: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InjectTouchInput)(::windows_core::Interface::as_raw(this), input.into_param().abi()).ok() }

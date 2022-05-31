@@ -64,7 +64,7 @@ pub struct ISyndicationCategoryFactory_Vtbl {
 #[repr(transparent)]
 pub struct ISyndicationClient(::windows_core::IUnknown);
 impl ISyndicationClient {
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn ServerCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = self;
         unsafe {
@@ -72,12 +72,12 @@ impl ISyndicationClient {
             (::windows_core::Interface::vtable(this).ServerCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetServerCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetServerCredential)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn ProxyCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = self;
         unsafe {
@@ -85,7 +85,7 @@ impl ISyndicationClient {
             (::windows_core::Interface::vtable(this).ProxyCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetProxyCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetProxyCredential)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -206,21 +206,21 @@ unsafe impl ::windows_core::Interface for ISyndicationClient {
 #[doc(hidden)]
 pub struct ISyndicationClient_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub ServerCredential: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     ServerCredential: usize,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub SetServerCredential: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     SetServerCredential: usize,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub ProxyCredential: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     ProxyCredential: usize,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub SetProxyCredential: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     SetProxyCredential: usize,
     pub MaxResponseBufferSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub SetMaxResponseBufferSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
@@ -242,9 +242,9 @@ unsafe impl ::windows_core::Interface for ISyndicationClientFactory {
 #[doc(hidden)]
 pub struct ISyndicationClientFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub CreateSyndicationClient: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, servercredential: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     CreateSyndicationClient: usize,
 }
 #[doc(hidden)]
@@ -299,17 +299,17 @@ unsafe impl ::windows_core::Interface for ISyndicationFeed {
 #[doc(hidden)]
 pub struct ISyndicationFeed_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Authors: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Authors: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Categories: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Categories: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Contributors: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Contributors: usize,
     pub Generator: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetGenerator: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -317,15 +317,15 @@ pub struct ISyndicationFeed_Vtbl {
     pub SetIconUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Items: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Items: usize,
     pub LastUpdatedTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub SetLastUpdatedTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Links: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Links: usize,
     pub ImageUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetImageUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -341,9 +341,9 @@ pub struct ISyndicationFeed_Vtbl {
     pub PreviousUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SourceFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SyndicationFormat) -> ::windows_core::HRESULT,
     pub Load: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, feed: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub LoadFromXml: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, feeddocument: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     LoadFromXml: usize,
 }
 #[doc(hidden)]
@@ -401,17 +401,17 @@ unsafe impl ::windows_core::Interface for ISyndicationItem {
 #[doc(hidden)]
 pub struct ISyndicationItem_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Authors: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Authors: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Categories: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Categories: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Contributors: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Contributors: usize,
     pub Content: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -419,9 +419,9 @@ pub struct ISyndicationItem_Vtbl {
     pub SetId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub LastUpdatedTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub SetLastUpdatedTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Links: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Links: usize,
     pub PublishedDate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub SetPublishedDate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
@@ -440,9 +440,9 @@ pub struct ISyndicationItem_Vtbl {
     pub ETag: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub ItemUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Load: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, item: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub LoadFromXml: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, itemdocument: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     LoadFromXml: usize,
 }
 #[doc(hidden)]
@@ -554,7 +554,7 @@ impl ISyndicationNode {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetBaseUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AttributeExtensions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SyndicationAttribute>> {
         let this = self;
         unsafe {
@@ -562,7 +562,7 @@ impl ISyndicationNode {
             (::windows_core::Interface::vtable(this).AttributeExtensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<SyndicationAttribute>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ElementExtensions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<ISyndicationNode>> {
         let this = self;
         unsafe {
@@ -570,7 +570,7 @@ impl ISyndicationNode {
             (::windows_core::Interface::vtable(this).ElementExtensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<ISyndicationNode>>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn GetXmlDocument(&self, format: SyndicationFormat) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         let this = self;
         unsafe {
@@ -660,17 +660,17 @@ pub struct ISyndicationNode_Vtbl {
     pub SetLanguage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub BaseUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetBaseUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub AttributeExtensions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     AttributeExtensions: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub ElementExtensions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ElementExtensions: usize,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub GetXmlDocument: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: SyndicationFormat, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     GetXmlDocument: usize,
 }
 #[doc(hidden)]
@@ -743,7 +743,7 @@ impl ISyndicationText {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetType)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn Xml(&self) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         let this = self;
         unsafe {
@@ -751,7 +751,7 @@ impl ISyndicationText {
             (::windows_core::Interface::vtable(this).Xml)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_data::Xml::Dom::XmlDocument>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn SetXml<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_data::Xml::Dom::XmlDocument>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetXml)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -811,7 +811,7 @@ impl ISyndicationText {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetBaseUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AttributeExtensions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SyndicationAttribute>> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -819,7 +819,7 @@ impl ISyndicationText {
             (::windows_core::Interface::vtable(this).AttributeExtensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<SyndicationAttribute>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ElementExtensions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<ISyndicationNode>> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -827,7 +827,7 @@ impl ISyndicationText {
             (::windows_core::Interface::vtable(this).ElementExtensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<ISyndicationNode>>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn GetXmlDocument(&self, format: SyndicationFormat) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -933,13 +933,13 @@ pub struct ISyndicationText_Vtbl {
     pub SetText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Type: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub Xml: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     Xml: usize,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub SetXml: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     SetXml: usize,
 }
 #[doc(hidden)]
@@ -1229,7 +1229,7 @@ impl SyndicationCategory {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetBaseUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AttributeExtensions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SyndicationAttribute>> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -1237,7 +1237,7 @@ impl SyndicationCategory {
             (::windows_core::Interface::vtable(this).AttributeExtensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<SyndicationAttribute>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ElementExtensions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<ISyndicationNode>> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -1245,7 +1245,7 @@ impl SyndicationCategory {
             (::windows_core::Interface::vtable(this).ElementExtensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<ISyndicationNode>>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn GetXmlDocument(&self, format: SyndicationFormat) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -1362,7 +1362,7 @@ impl SyndicationClient {
         static mut SHARED: ::windows_core::FactoryCache<SyndicationClient, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn ServerCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = self;
         unsafe {
@@ -1370,12 +1370,12 @@ impl SyndicationClient {
             (::windows_core::Interface::vtable(this).ServerCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetServerCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetServerCredential)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn ProxyCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = self;
         unsafe {
@@ -1383,7 +1383,7 @@ impl SyndicationClient {
             (::windows_core::Interface::vtable(this).ProxyCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetProxyCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetProxyCredential)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -1432,7 +1432,7 @@ impl SyndicationClient {
             (::windows_core::Interface::vtable(this).RetrieveFeedAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress>>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn CreateSyndicationClient<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(servercredential: Param0) -> ::windows_core::Result<SyndicationClient> {
         Self::ISyndicationClientFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1626,7 +1626,7 @@ impl SyndicationContent {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetBaseUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AttributeExtensions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SyndicationAttribute>> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -1634,7 +1634,7 @@ impl SyndicationContent {
             (::windows_core::Interface::vtable(this).AttributeExtensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<SyndicationAttribute>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ElementExtensions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<ISyndicationNode>> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -1642,7 +1642,7 @@ impl SyndicationContent {
             (::windows_core::Interface::vtable(this).ElementExtensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<ISyndicationNode>>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn GetXmlDocument(&self, format: SyndicationFormat) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -1672,7 +1672,7 @@ impl SyndicationContent {
         let this = &::windows_core::Interface::cast::<ISyndicationText>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetType)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn Xml(&self) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         let this = &::windows_core::Interface::cast::<ISyndicationText>(self)?;
         unsafe {
@@ -1680,7 +1680,7 @@ impl SyndicationContent {
             (::windows_core::Interface::vtable(this).Xml)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_data::Xml::Dom::XmlDocument>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn SetXml<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_data::Xml::Dom::XmlDocument>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ISyndicationText>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetXml)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -1869,7 +1869,7 @@ impl SyndicationFeed {
         static mut SHARED: ::windows_core::FactoryCache<SyndicationFeed, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Authors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SyndicationPerson>> {
         let this = self;
         unsafe {
@@ -1877,7 +1877,7 @@ impl SyndicationFeed {
             (::windows_core::Interface::vtable(this).Authors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<SyndicationPerson>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Categories(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SyndicationCategory>> {
         let this = self;
         unsafe {
@@ -1885,7 +1885,7 @@ impl SyndicationFeed {
             (::windows_core::Interface::vtable(this).Categories)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<SyndicationCategory>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Contributors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SyndicationPerson>> {
         let this = self;
         unsafe {
@@ -1926,7 +1926,7 @@ impl SyndicationFeed {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetId)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SyndicationItem>> {
         let this = self;
         unsafe {
@@ -1945,7 +1945,7 @@ impl SyndicationFeed {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetLastUpdatedTime)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Links(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SyndicationLink>> {
         let this = self;
         unsafe {
@@ -2036,7 +2036,7 @@ impl SyndicationFeed {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Load)(::windows_core::Interface::as_raw(this), feed.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn LoadFromXml<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_data::Xml::Dom::XmlDocument>>(&self, feeddocument: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).LoadFromXml)(::windows_core::Interface::as_raw(this), feeddocument.into_param().abi()).ok() }
@@ -2102,7 +2102,7 @@ impl SyndicationFeed {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetBaseUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AttributeExtensions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SyndicationAttribute>> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -2110,7 +2110,7 @@ impl SyndicationFeed {
             (::windows_core::Interface::vtable(this).AttributeExtensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<SyndicationAttribute>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ElementExtensions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<ISyndicationNode>> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -2118,7 +2118,7 @@ impl SyndicationFeed {
             (::windows_core::Interface::vtable(this).ElementExtensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<ISyndicationNode>>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn GetXmlDocument(&self, format: SyndicationFormat) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -2366,7 +2366,7 @@ impl SyndicationGenerator {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetBaseUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AttributeExtensions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SyndicationAttribute>> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -2374,7 +2374,7 @@ impl SyndicationGenerator {
             (::windows_core::Interface::vtable(this).AttributeExtensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<SyndicationAttribute>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ElementExtensions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<ISyndicationNode>> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -2382,7 +2382,7 @@ impl SyndicationGenerator {
             (::windows_core::Interface::vtable(this).ElementExtensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<ISyndicationNode>>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn GetXmlDocument(&self, format: SyndicationFormat) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -2499,7 +2499,7 @@ impl SyndicationItem {
         static mut SHARED: ::windows_core::FactoryCache<SyndicationItem, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Authors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SyndicationPerson>> {
         let this = self;
         unsafe {
@@ -2507,7 +2507,7 @@ impl SyndicationItem {
             (::windows_core::Interface::vtable(this).Authors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<SyndicationPerson>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Categories(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SyndicationCategory>> {
         let this = self;
         unsafe {
@@ -2515,7 +2515,7 @@ impl SyndicationItem {
             (::windows_core::Interface::vtable(this).Categories)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<SyndicationCategory>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Contributors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SyndicationPerson>> {
         let this = self;
         unsafe {
@@ -2556,7 +2556,7 @@ impl SyndicationItem {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetLastUpdatedTime)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Links(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SyndicationLink>> {
         let this = self;
         unsafe {
@@ -2662,7 +2662,7 @@ impl SyndicationItem {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Load)(::windows_core::Interface::as_raw(this), item.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn LoadFromXml<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_data::Xml::Dom::XmlDocument>>(&self, itemdocument: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).LoadFromXml)(::windows_core::Interface::as_raw(this), itemdocument.into_param().abi()).ok() }
@@ -2728,7 +2728,7 @@ impl SyndicationItem {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetBaseUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AttributeExtensions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SyndicationAttribute>> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -2736,7 +2736,7 @@ impl SyndicationItem {
             (::windows_core::Interface::vtable(this).AttributeExtensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<SyndicationAttribute>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ElementExtensions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<ISyndicationNode>> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -2744,7 +2744,7 @@ impl SyndicationItem {
             (::windows_core::Interface::vtable(this).ElementExtensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<ISyndicationNode>>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn GetXmlDocument(&self, format: SyndicationFormat) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -2994,7 +2994,7 @@ impl SyndicationLink {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetBaseUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AttributeExtensions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SyndicationAttribute>> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -3002,7 +3002,7 @@ impl SyndicationLink {
             (::windows_core::Interface::vtable(this).AttributeExtensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<SyndicationAttribute>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ElementExtensions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<ISyndicationNode>> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -3010,7 +3010,7 @@ impl SyndicationLink {
             (::windows_core::Interface::vtable(this).ElementExtensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<ISyndicationNode>>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn GetXmlDocument(&self, format: SyndicationFormat) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -3182,7 +3182,7 @@ impl SyndicationNode {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetBaseUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AttributeExtensions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SyndicationAttribute>> {
         let this = self;
         unsafe {
@@ -3190,7 +3190,7 @@ impl SyndicationNode {
             (::windows_core::Interface::vtable(this).AttributeExtensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<SyndicationAttribute>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ElementExtensions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<ISyndicationNode>> {
         let this = self;
         unsafe {
@@ -3198,7 +3198,7 @@ impl SyndicationNode {
             (::windows_core::Interface::vtable(this).ElementExtensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<ISyndicationNode>>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn GetXmlDocument(&self, format: SyndicationFormat) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         let this = self;
         unsafe {
@@ -3376,7 +3376,7 @@ impl SyndicationPerson {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetBaseUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AttributeExtensions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SyndicationAttribute>> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -3384,7 +3384,7 @@ impl SyndicationPerson {
             (::windows_core::Interface::vtable(this).AttributeExtensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<SyndicationAttribute>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ElementExtensions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<ISyndicationNode>> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -3392,7 +3392,7 @@ impl SyndicationPerson {
             (::windows_core::Interface::vtable(this).ElementExtensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<ISyndicationNode>>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn GetXmlDocument(&self, format: SyndicationFormat) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -3609,7 +3609,7 @@ impl SyndicationText {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetBaseUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AttributeExtensions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SyndicationAttribute>> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -3617,7 +3617,7 @@ impl SyndicationText {
             (::windows_core::Interface::vtable(this).AttributeExtensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<SyndicationAttribute>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ElementExtensions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<ISyndicationNode>> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -3625,7 +3625,7 @@ impl SyndicationText {
             (::windows_core::Interface::vtable(this).ElementExtensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<ISyndicationNode>>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn GetXmlDocument(&self, format: SyndicationFormat) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         let this = &::windows_core::Interface::cast::<ISyndicationNode>(self)?;
         unsafe {
@@ -3655,7 +3655,7 @@ impl SyndicationText {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetType)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn Xml(&self) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         let this = self;
         unsafe {
@@ -3663,7 +3663,7 @@ impl SyndicationText {
             (::windows_core::Interface::vtable(this).Xml)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_data::Xml::Dom::XmlDocument>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn SetXml<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_data::Xml::Dom::XmlDocument>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetXml)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }

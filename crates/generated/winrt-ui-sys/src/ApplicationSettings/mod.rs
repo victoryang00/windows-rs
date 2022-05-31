@@ -4,17 +4,17 @@ pub type AccountsSettingsPaneEventDeferral = *mut ::core::ffi::c_void;
 pub type CredentialCommand = *mut ::core::ffi::c_void;
 pub type CredentialCommandCredentialDeletedHandler = *mut ::core::ffi::c_void;
 pub type SettingsCommand = *mut ::core::ffi::c_void;
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct SettingsEdgeLocation(pub i32);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl SettingsEdgeLocation {
     pub const Right: Self = Self(0i32);
     pub const Left: Self = Self(1i32);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::marker::Copy for SettingsEdgeLocation {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for SettingsEdgeLocation {
     fn clone(&self) -> Self {
         *self

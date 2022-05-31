@@ -1,10 +1,10 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn GetTnefStreamCodepage(lpstream: ::win32_system_sys::Com::IStream, lpulcodepage: *mut u32, lpulsubcodepage: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_System_AddressBook", feature = "Win32_System_Com"))]
+    #[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn OpenTnefStream(lpvsupport: *mut ::core::ffi::c_void, lpstream: ::win32_system_sys::Com::IStream, lpszstreamname: *const i8, ulflags: u32, lpmessage: ::win32_system_sys::AddressBook::IMessage, wkeyval: u16, lpptnef: *mut ITnef) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_System_AddressBook", feature = "Win32_System_Com"))]
+    #[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn OpenTnefStreamEx(lpvsupport: *mut ::core::ffi::c_void, lpstream: ::win32_system_sys::Com::IStream, lpszstreamname: *const i8, ulflags: u32, lpmessage: ::win32_system_sys::AddressBook::IMessage, wkeyval: u16, lpadressbook: ::win32_system_sys::AddressBook::IAddrBook, lpptnef: *mut ITnef) -> ::windows_core_sys::HRESULT;
     pub fn lineAccept(hcall: u32, lpsuseruserinfo: ::windows_core_sys::PCSTR, dwsize: u32) -> i32;
     pub fn lineAddProvider(lpszproviderfilename: ::windows_core_sys::PCSTR, hwndowner: ::win32_foundation_sys::HWND, lpdwpermanentproviderid: *mut u32) -> i32;
@@ -62,9 +62,9 @@ extern "system" {
     pub fn lineGetAgentCapsW(hlineapp: u32, dwdeviceid: u32, dwaddressid: u32, dwappapiversion: u32, lpagentcaps: *mut LINEAGENTCAPS) -> i32;
     pub fn lineGetAgentGroupListA(hline: u32, dwaddressid: u32, lpagentgrouplist: *mut LINEAGENTGROUPLIST) -> i32;
     pub fn lineGetAgentGroupListW(hline: u32, dwaddressid: u32, lpagentgrouplist: *mut LINEAGENTGROUPLIST) -> i32;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn lineGetAgentInfo(hline: u32, hagent: u32, lpagentinfo: *mut LINEAGENTINFO) -> i32;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn lineGetAgentSessionInfo(hline: u32, hagentsession: u32, lpagentsessioninfo: *mut LINEAGENTSESSIONINFO) -> i32;
     pub fn lineGetAgentSessionList(hline: u32, hagent: u32, lpagentsessionlist: *mut LINEAGENTSESSIONLIST) -> i32;
     pub fn lineGetAgentStatusA(hline: u32, dwaddressid: u32, lpagentstatus: *mut LINEAGENTSTATUS) -> i32;
@@ -142,7 +142,7 @@ extern "system" {
     pub fn linePrepareAddToConferenceA(hconfcall: u32, lphconsultcall: *mut u32, lpcallparams: *const LINECALLPARAMS) -> i32;
     pub fn linePrepareAddToConferenceW(hconfcall: u32, lphconsultcall: *mut u32, lpcallparams: *const LINECALLPARAMS) -> i32;
     pub fn lineProxyMessage(hline: u32, hcall: u32, dwmsg: u32, dwparam1: u32, dwparam2: u32, dwparam3: u32) -> i32;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn lineProxyResponse(hline: u32, lpproxyrequest: *mut LINEPROXYREQUEST, dwresult: u32) -> i32;
     pub fn lineRedirect(hcall: u32, lpszdestaddress: ::windows_core_sys::PCSTR, dwcountrycode: u32) -> i32;
     pub fn lineRedirectA(hcall: u32, lpszdestaddress: ::windows_core_sys::PCSTR, dwcountrycode: u32) -> i32;
@@ -1029,7 +1029,7 @@ impl ::core::clone::Clone for LINEAGENTGROUPLIST {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LINEAGENTINFO {
     pub dwTotalSize: u32,
     pub dwNeededSize: u32,
@@ -1045,9 +1045,9 @@ pub struct LINEAGENTINFO {
     pub dwTotalACDCallTime: u32,
     pub dwTotalACDWrapUpTime: u32,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LINEAGENTINFO {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LINEAGENTINFO {
     fn clone(&self) -> Self {
         *self
@@ -1082,7 +1082,7 @@ impl ::core::clone::Clone for LINEAGENTSESSIONENTRY {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LINEAGENTSESSIONINFO {
     pub dwTotalSize: u32,
     pub dwNeededSize: u32,
@@ -1102,9 +1102,9 @@ pub struct LINEAGENTSESSIONINFO {
     pub dwLongestTimeToAnswer: u32,
     pub dwAverageTimeToAnswer: u32,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LINEAGENTSESSIONINFO {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LINEAGENTSESSIONINFO {
     fn clone(&self) -> Self {
         *self
@@ -2183,7 +2183,7 @@ impl ::core::clone::Clone for LINEPROVIDERLIST {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LINEPROXYREQUEST {
     pub dwSize: u32,
     pub dwClientMachineNameSize: u32,
@@ -2194,16 +2194,16 @@ pub struct LINEPROXYREQUEST {
     pub dwRequestType: u32,
     pub Anonymous: LINEPROXYREQUEST_0,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LINEPROXYREQUEST {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LINEPROXYREQUEST {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub union LINEPROXYREQUEST_0 {
     pub SetAgentGroup: LINEPROXYREQUEST_0_14,
     pub SetAgentState: LINEPROXYREQUEST_0_18,
@@ -2226,32 +2226,32 @@ pub union LINEPROXYREQUEST_0 {
     pub GetQueueInfo: LINEPROXYREQUEST_0_11,
     pub GetGroupList: LINEPROXYREQUEST_0_10,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LINEPROXYREQUEST_0 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LINEPROXYREQUEST_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LINEPROXYREQUEST_0_0 {
     pub dwAddressID: u32,
     pub dwAgentExtensionIDIndex: u32,
     pub dwSize: u32,
     pub Params: [u8; 1],
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LINEPROXYREQUEST_0_0 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LINEPROXYREQUEST_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LINEPROXYREQUEST_0_1 {
     pub hAgentSession: u32,
     pub dwAgentPINSize: u32,
@@ -2260,16 +2260,16 @@ pub struct LINEPROXYREQUEST_0_1 {
     pub GroupID: ::windows_core_sys::GUID,
     pub dwWorkingAddressID: u32,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LINEPROXYREQUEST_0_1 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LINEPROXYREQUEST_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LINEPROXYREQUEST_0_2 {
     pub hAgent: u32,
     pub dwAgentIDSize: u32,
@@ -2277,249 +2277,249 @@ pub struct LINEPROXYREQUEST_0_2 {
     pub dwAgentPINSize: u32,
     pub dwAgentPINOffset: u32,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LINEPROXYREQUEST_0_2 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LINEPROXYREQUEST_0_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LINEPROXYREQUEST_0_3 {
     pub dwAddressID: u32,
     pub ActivityList: LINEAGENTACTIVITYLIST,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LINEPROXYREQUEST_0_3 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LINEPROXYREQUEST_0_3 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LINEPROXYREQUEST_0_4 {
     pub dwAddressID: u32,
     pub AgentCaps: LINEAGENTCAPS,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LINEPROXYREQUEST_0_4 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LINEPROXYREQUEST_0_4 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LINEPROXYREQUEST_0_5 {
     pub dwAddressID: u32,
     pub GroupList: LINEAGENTGROUPLIST,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LINEPROXYREQUEST_0_5 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LINEPROXYREQUEST_0_5 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LINEPROXYREQUEST_0_6 {
     pub hAgent: u32,
     pub AgentInfo: LINEAGENTINFO,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LINEPROXYREQUEST_0_6 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LINEPROXYREQUEST_0_6 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LINEPROXYREQUEST_0_7 {
     pub hAgentSession: u32,
     pub SessionInfo: LINEAGENTSESSIONINFO,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LINEPROXYREQUEST_0_7 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LINEPROXYREQUEST_0_7 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LINEPROXYREQUEST_0_8 {
     pub hAgent: u32,
     pub SessionList: LINEAGENTSESSIONLIST,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LINEPROXYREQUEST_0_8 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LINEPROXYREQUEST_0_8 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LINEPROXYREQUEST_0_9 {
     pub dwAddressID: u32,
     pub AgentStatus: LINEAGENTSTATUS,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LINEPROXYREQUEST_0_9 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LINEPROXYREQUEST_0_9 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LINEPROXYREQUEST_0_10 {
     pub GroupList: LINEAGENTGROUPLIST,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LINEPROXYREQUEST_0_10 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LINEPROXYREQUEST_0_10 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LINEPROXYREQUEST_0_11 {
     pub dwQueueID: u32,
     pub QueueInfo: LINEQUEUEINFO,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LINEPROXYREQUEST_0_11 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LINEPROXYREQUEST_0_11 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LINEPROXYREQUEST_0_12 {
     pub GroupID: ::windows_core_sys::GUID,
     pub QueueList: LINEQUEUELIST,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LINEPROXYREQUEST_0_12 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LINEPROXYREQUEST_0_12 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LINEPROXYREQUEST_0_13 {
     pub dwAddressID: u32,
     pub dwActivityID: u32,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LINEPROXYREQUEST_0_13 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LINEPROXYREQUEST_0_13 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LINEPROXYREQUEST_0_14 {
     pub dwAddressID: u32,
     pub GroupList: LINEAGENTGROUPLIST,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LINEPROXYREQUEST_0_14 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LINEPROXYREQUEST_0_14 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LINEPROXYREQUEST_0_15 {
     pub hAgent: u32,
     pub dwMeasurementPeriod: u32,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LINEPROXYREQUEST_0_15 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LINEPROXYREQUEST_0_15 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LINEPROXYREQUEST_0_16 {
     pub hAgentSession: u32,
     pub dwAgentSessionState: u32,
     pub dwNextAgentSessionState: u32,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LINEPROXYREQUEST_0_16 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LINEPROXYREQUEST_0_16 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LINEPROXYREQUEST_0_17 {
     pub hAgent: u32,
     pub dwAgentState: u32,
     pub dwNextAgentState: u32,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LINEPROXYREQUEST_0_17 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LINEPROXYREQUEST_0_17 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LINEPROXYREQUEST_0_18 {
     pub dwAddressID: u32,
     pub dwAgentState: u32,
     pub dwNextAgentState: u32,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LINEPROXYREQUEST_0_18 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LINEPROXYREQUEST_0_18 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LINEPROXYREQUEST_0_19 {
     pub dwQueueID: u32,
     pub dwMeasurementPeriod: u32,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LINEPROXYREQUEST_0_19 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LINEPROXYREQUEST_0_19 {
     fn clone(&self) -> Self {
         *self
@@ -2786,11 +2786,11 @@ pub const LINE_QUEUESTATUS: i32 = 28i32;
 pub const LINE_REMOVE: i32 = 25i32;
 pub const LINE_REPLY: i32 = 12i32;
 pub const LINE_REQUEST: i32 = 13i32;
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub type LPGETTNEFSTREAMCODEPAGE = ::core::option::Option<unsafe extern "system" fn(lpstream: ::win32_system_sys::Com::IStream, lpulcodepage: *mut u32, lpulsubcodepage: *mut u32) -> ::windows_core_sys::HRESULT>;
-#[cfg(all(feature = "Win32_System_AddressBook", feature = "Win32_System_Com"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub type LPOPENTNEFSTREAM = ::core::option::Option<unsafe extern "system" fn(lpvsupport: *mut ::core::ffi::c_void, lpstream: ::win32_system_sys::Com::IStream, lpszstreamname: *const i8, ulflags: u32, lpmessage: ::win32_system_sys::AddressBook::IMessage, wkeyval: u16, lpptnef: *mut ITnef) -> ::windows_core_sys::HRESULT>;
-#[cfg(all(feature = "Win32_System_AddressBook", feature = "Win32_System_Com"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub type LPOPENTNEFSTREAMEX = ::core::option::Option<unsafe extern "system" fn(lpvsupport: *mut ::core::ffi::c_void, lpstream: ::win32_system_sys::Com::IStream, lpszstreamname: *const i8, ulflags: u32, lpmessage: ::win32_system_sys::AddressBook::IMessage, wkeyval: u16, lpadressbook: ::win32_system_sys::AddressBook::IAddrBook, lpptnef: *mut ITnef) -> ::windows_core_sys::HRESULT>;
 pub type MSP_ADDRESS_EVENT = i32;
 pub const ADDRESS_TERMINAL_AVAILABLE: MSP_ADDRESS_EVENT = 0i32;
@@ -2821,23 +2821,23 @@ pub const ME_TTS_TERMINAL_EVENT: MSP_EVENT = 5i32;
 pub const ME_FILE_TERMINAL_EVENT: MSP_EVENT = 6i32;
 pub const ME_TONE_TERMINAL_EVENT: MSP_EVENT = 7i32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MSP_EVENT_INFO {
     pub dwSize: u32,
     pub Event: MSP_EVENT,
     pub hCall: *mut i32,
     pub Anonymous: MSP_EVENT_INFO_0,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MSP_EVENT_INFO {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MSP_EVENT_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub union MSP_EVENT_INFO_0 {
     pub MSP_ADDRESS_EVENT_INFO: MSP_EVENT_INFO_0_0,
     pub MSP_CALL_EVENT_INFO: MSP_EVENT_INFO_0_2,
@@ -2848,44 +2848,44 @@ pub union MSP_EVENT_INFO_0 {
     pub MSP_TTS_TERMINAL_EVENT_INFO: MSP_EVENT_INFO_0_7,
     pub MSP_TONE_TERMINAL_EVENT_INFO: MSP_EVENT_INFO_0_5,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MSP_EVENT_INFO_0 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MSP_EVENT_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MSP_EVENT_INFO_0_0 {
     pub Type: MSP_ADDRESS_EVENT,
     pub pTerminal: ITTerminal,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MSP_EVENT_INFO_0_0 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MSP_EVENT_INFO_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MSP_EVENT_INFO_0_1 {
     pub pASRTerminal: ITTerminal,
     pub hrErrorCode: ::windows_core_sys::HRESULT,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MSP_EVENT_INFO_0_1 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MSP_EVENT_INFO_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MSP_EVENT_INFO_0_2 {
     pub Type: MSP_CALL_EVENT,
     pub Cause: MSP_CALL_EVENT_CAUSE,
@@ -2893,16 +2893,16 @@ pub struct MSP_EVENT_INFO_0_2 {
     pub pTerminal: ITTerminal,
     pub hrError: ::windows_core_sys::HRESULT,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MSP_EVENT_INFO_0_2 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MSP_EVENT_INFO_0_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MSP_EVENT_INFO_0_3 {
     pub pParentFileTerminal: ITTerminal,
     pub pFileTrack: ITFileTrack,
@@ -2910,65 +2910,65 @@ pub struct MSP_EVENT_INFO_0_3 {
     pub ftecEventCause: FT_STATE_EVENT_CAUSE,
     pub hrErrorCode: ::windows_core_sys::HRESULT,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MSP_EVENT_INFO_0_3 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MSP_EVENT_INFO_0_3 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MSP_EVENT_INFO_0_4 {
     pub pEvent: ::win32_system_sys::Com::IDispatch,
     pub lEventCode: i32,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MSP_EVENT_INFO_0_4 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MSP_EVENT_INFO_0_4 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MSP_EVENT_INFO_0_5 {
     pub pToneTerminal: ITTerminal,
     pub hrErrorCode: ::windows_core_sys::HRESULT,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MSP_EVENT_INFO_0_5 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MSP_EVENT_INFO_0_5 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MSP_EVENT_INFO_0_6 {
     pub dwBufferSize: u32,
     pub pBuffer: [u8; 1],
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MSP_EVENT_INFO_0_6 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MSP_EVENT_INFO_0_6 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MSP_EVENT_INFO_0_7 {
     pub pTTSTerminal: ITTerminal,
     pub hrErrorCode: ::windows_core_sys::HRESULT,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MSP_EVENT_INFO_0_7 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MSP_EVENT_INFO_0_7 {
     fn clone(&self) -> Self {
         *self

@@ -255,7 +255,7 @@ impl ::core::fmt::Debug for FhBackupStopReason {
 }
 pub const FhConfigMgr: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xed43bb3c_09e9_498a_9df6_2177244c6db4);
 pub const FhReassociation: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d728e35_16fa_4320_9e8b_bfd7100a8846);
-#[cfg(feature = "Win32_System_WindowsProgramming")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn FhServiceBlockBackup<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::WindowsProgramming::FH_SERVICE_PIPE_HANDLE>>(pipe: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -269,7 +269,7 @@ pub unsafe fn FhServiceBlockBackup<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_WindowsProgramming")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn FhServiceClosePipe<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::WindowsProgramming::FH_SERVICE_PIPE_HANDLE>>(pipe: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -283,7 +283,7 @@ pub unsafe fn FhServiceClosePipe<'a, Param0: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_WindowsProgramming")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn FhServiceOpenPipe<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(startserviceifstopped: Param0) -> ::windows_core::Result<::win32_system::WindowsProgramming::FH_SERVICE_PIPE_HANDLE> {
     #[cfg(windows)]
@@ -298,7 +298,7 @@ pub unsafe fn FhServiceOpenPipe<'a, Param0: ::windows_core::IntoParam<'a, ::win3
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_WindowsProgramming")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn FhServiceReloadConfiguration<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::WindowsProgramming::FH_SERVICE_PIPE_HANDLE>>(pipe: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -312,7 +312,7 @@ pub unsafe fn FhServiceReloadConfiguration<'a, Param0: ::windows_core::IntoParam
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_WindowsProgramming")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn FhServiceStartBackup<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::WindowsProgramming::FH_SERVICE_PIPE_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(pipe: Param0, lowpriorityio: Param1) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -326,7 +326,7 @@ pub unsafe fn FhServiceStartBackup<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_WindowsProgramming")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn FhServiceStopBackup<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::WindowsProgramming::FH_SERVICE_PIPE_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(pipe: Param0, stoptracking: Param1) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -340,7 +340,7 @@ pub unsafe fn FhServiceStopBackup<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_WindowsProgramming")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn FhServiceUnblockBackup<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::WindowsProgramming::FH_SERVICE_PIPE_HANDLE>>(pipe: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]

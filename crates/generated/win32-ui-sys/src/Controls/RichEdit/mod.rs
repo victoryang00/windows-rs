@@ -45,14 +45,14 @@ pub const CARET_ITALIC: CARET_FLAGS = 32i32;
 pub const CARET_NULL: CARET_FLAGS = 64i32;
 pub const CARET_ROTATE90: CARET_FLAGS = 128i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub union CARET_INFO {
     pub hbitmap: ::win32_graphics_sys::Gdi::HBITMAP,
     pub caretFlags: CARET_FLAGS,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for CARET_INFO {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for CARET_INFO {
     fn clone(&self) -> Self {
         *self
@@ -655,7 +655,7 @@ impl ::core::clone::Clone for FINDTEXTW {
     }
 }
 #[repr(C, packed(4))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct FORMATRANGE {
     pub hdc: ::win32_graphics_sys::Gdi::HDC,
     pub hdcTarget: ::win32_graphics_sys::Gdi::HDC,
@@ -663,9 +663,9 @@ pub struct FORMATRANGE {
     pub rcPage: ::win32_foundation_sys::RECT,
     pub chrg: CHARRANGE,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for FORMATRANGE {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for FORMATRANGE {
     fn clone(&self) -> Self {
         *self
@@ -1050,7 +1050,7 @@ pub const RECO_DRAG: i32 = 4i32;
 pub const RECO_DROP: i32 = 1i32;
 pub const RECO_PASTE: i32 = 0i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub struct REOBJECT {
     pub cbStruct: u32,
     pub cp: i32,
@@ -1063,9 +1063,9 @@ pub struct REOBJECT {
     pub dwFlags: REOBJECT_FLAGS,
     pub dwUser: u32,
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for REOBJECT {}
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for REOBJECT {
     fn clone(&self) -> Self {
         *self
@@ -1094,14 +1094,14 @@ pub const REO_WRAPTEXTAROUND: REOBJECT_FLAGS = 512u32;
 pub const REO_NULL: i32 = 0i32;
 pub const REO_READWRITEMASK: i32 = 2047i32;
 #[repr(C, packed(4))]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct REPASTESPECIAL {
     pub dwAspect: ::win32_system_sys::Com::DVASPECT,
     pub dwParam: usize,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for REPASTESPECIAL {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for REPASTESPECIAL {
     fn clone(&self) -> Self {
         *self
@@ -1124,7 +1124,7 @@ pub const RICHEDIT_CLASS10A: &str = "RICHEDIT";
 pub const RICHEDIT_CLASSA: &str = "RichEdit20A";
 pub const RICHEDIT_CLASSW: &str = "RichEdit20W";
 #[repr(C, packed(4))]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
 pub struct RICHEDIT_IMAGE_PARAMETERS {
     pub xWidth: i32,
     pub yHeight: i32,
@@ -1133,9 +1133,9 @@ pub struct RICHEDIT_IMAGE_PARAMETERS {
     pub pwszAlternateText: ::windows_core_sys::PCWSTR,
     pub pIStream: ::win32_system_sys::Com::IStream,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for RICHEDIT_IMAGE_PARAMETERS {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for RICHEDIT_IMAGE_PARAMETERS {
     fn clone(&self) -> Self {
         *self

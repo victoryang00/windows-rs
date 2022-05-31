@@ -3,7 +3,7 @@ extern "system" {
     pub fn CreatePresentationFactory(d3ddevice: ::windows_core_sys::IUnknown, riid: *const ::windows_core_sys::GUID, presentationfactory: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct CompositionFrameDisplayInstance {
     pub displayAdapterLUID: ::win32_foundation_sys::LUID,
     pub displayVidPnSourceId: u32,
@@ -14,9 +14,9 @@ pub struct CompositionFrameDisplayInstance {
     pub requiredCrossAdapterCopy: u8,
     pub colorSpace: super::Dxgi::Common::DXGI_COLOR_SPACE_TYPE,
 }
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for CompositionFrameDisplayInstance {}
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for CompositionFrameDisplayInstance {
     fn clone(&self) -> Self {
         *self

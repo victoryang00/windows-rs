@@ -906,11 +906,11 @@ pub struct IMLOperatorTypeInferrer_Vtbl {
 #[repr(transparent)]
 pub struct IWinMLEvaluationContext(::windows_core::IUnknown);
 impl IWinMLEvaluationContext {
-    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn BindValue(&self, pdescriptor: *const WINML_BINDING_DESC) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).BindValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdescriptor)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetValueByName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, name: Param0) -> ::windows_core::Result<*mut WINML_BINDING_DESC> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut WINML_BINDING_DESC>::zeroed();
         (::windows_core::Interface::vtable(self).GetValueByName)(::windows_core::Interface::as_raw(self), name.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut WINML_BINDING_DESC>(result__)
@@ -963,13 +963,13 @@ unsafe impl ::windows_core::Interface for IWinMLEvaluationContext {
 #[doc(hidden)]
 pub struct IWinMLEvaluationContext_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    #[cfg(feature = "win32-graphics")]
     pub BindValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdescriptor: *const WINML_BINDING_DESC) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    #[cfg(not(feature = "win32-graphics"))]
     BindValue: usize,
-    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    #[cfg(feature = "win32-graphics")]
     pub GetValueByName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::windows_core::PCWSTR, pdescriptor: *mut *mut WINML_BINDING_DESC) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetValueByName: usize,
     pub Clear: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -1048,7 +1048,7 @@ impl IWinMLRuntime {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).LoadModel)(::windows_core::Interface::as_raw(self), path.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWinMLModel>(result__)
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn CreateEvaluationContext<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Direct3D12::ID3D12Device>>(&self, device: Param0) -> ::windows_core::Result<IWinMLEvaluationContext> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateEvaluationContext)(::windows_core::Interface::as_raw(self), device.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWinMLEvaluationContext>(result__)
@@ -1102,9 +1102,9 @@ unsafe impl ::windows_core::Interface for IWinMLRuntime {
 pub struct IWinMLRuntime_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub LoadModel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, path: ::windows_core::PCWSTR, ppmodel: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    #[cfg(feature = "win32-graphics")]
     pub CreateEvaluationContext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, device: ::windows_core::RawPtr, ppcontext: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    #[cfg(not(feature = "win32-graphics"))]
     CreateEvaluationContext: usize,
     pub EvaluateModel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcontext: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -1786,38 +1786,38 @@ impl ::core::fmt::Debug for MLOperatorTensorDataType {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 pub struct WINML_BINDING_DESC {
     pub Name: ::windows_core::PCWSTR,
     pub BindType: WINML_BINDING_TYPE,
     pub Anonymous: WINML_BINDING_DESC_0,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for WINML_BINDING_DESC {
     fn clone(&self) -> Self {
         Self { Name: self.Name, BindType: self.BindType, Anonymous: self.Anonymous.clone() }
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for WINML_BINDING_DESC {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for WINML_BINDING_DESC {
     fn eq(&self, other: &Self) -> bool {
         self.Name == other.Name && self.BindType == other.BindType && self.Anonymous == other.Anonymous
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for WINML_BINDING_DESC {}
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for WINML_BINDING_DESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 pub union WINML_BINDING_DESC_0 {
     pub Tensor: WINML_TENSOR_BINDING_DESC,
     pub Sequence: WINML_SEQUENCE_BINDING_DESC,
@@ -1825,25 +1825,25 @@ pub union WINML_BINDING_DESC_0 {
     pub Image: WINML_IMAGE_BINDING_DESC,
     pub Resource: ::core::mem::ManuallyDrop<WINML_RESOURCE_BINDING_DESC>,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for WINML_BINDING_DESC_0 {
     fn clone(&self) -> Self {
         unsafe { ::core::mem::transmute_copy(self) }
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for WINML_BINDING_DESC_0 {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for WINML_BINDING_DESC_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WINML_BINDING_DESC_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for WINML_BINDING_DESC_0 {}
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for WINML_BINDING_DESC_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2112,38 +2112,38 @@ impl ::core::default::Default for WINML_MODEL_DESC {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 pub struct WINML_RESOURCE_BINDING_DESC {
     pub ElementType: WINML_TENSOR_DATA_TYPE,
     pub NumDimensions: u32,
     pub pShape: *mut i64,
     pub pResource: ::core::option::Option<::win32_graphics::Direct3D12::ID3D12Resource>,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for WINML_RESOURCE_BINDING_DESC {
     fn clone(&self) -> Self {
         Self { ElementType: self.ElementType, NumDimensions: self.NumDimensions, pShape: self.pShape, pResource: self.pResource.clone() }
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for WINML_RESOURCE_BINDING_DESC {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WINML_RESOURCE_BINDING_DESC").field("ElementType", &self.ElementType).field("NumDimensions", &self.NumDimensions).field("pShape", &self.pShape).field("pResource", &self.pResource).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for WINML_RESOURCE_BINDING_DESC {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for WINML_RESOURCE_BINDING_DESC {
     fn eq(&self, other: &Self) -> bool {
         self.ElementType == other.ElementType && self.NumDimensions == other.NumDimensions && self.pShape == other.pShape && self.pResource == other.pResource
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for WINML_RESOURCE_BINDING_DESC {}
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for WINML_RESOURCE_BINDING_DESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

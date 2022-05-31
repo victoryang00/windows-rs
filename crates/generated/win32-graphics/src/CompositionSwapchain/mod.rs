@@ -1,5 +1,5 @@
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics")]
 pub struct CompositionFrameDisplayInstance {
     pub displayAdapterLUID: ::win32_foundation::LUID,
     pub displayVidPnSourceId: u32,
@@ -10,33 +10,33 @@ pub struct CompositionFrameDisplayInstance {
     pub requiredCrossAdapterCopy: u8,
     pub colorSpace: super::Dxgi::Common::DXGI_COLOR_SPACE_TYPE,
 }
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for CompositionFrameDisplayInstance {}
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for CompositionFrameDisplayInstance {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for CompositionFrameDisplayInstance {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CompositionFrameDisplayInstance").field("displayAdapterLUID", &self.displayAdapterLUID).field("displayVidPnSourceId", &self.displayVidPnSourceId).field("displayUniqueId", &self.displayUniqueId).field("renderAdapterLUID", &self.renderAdapterLUID).field("instanceKind", &self.instanceKind).field("finalTransform", &self.finalTransform).field("requiredCrossAdapterCopy", &self.requiredCrossAdapterCopy).field("colorSpace", &self.colorSpace).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for CompositionFrameDisplayInstance {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for CompositionFrameDisplayInstance {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CompositionFrameDisplayInstance>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for CompositionFrameDisplayInstance {}
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for CompositionFrameDisplayInstance {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -95,7 +95,7 @@ impl ICompositionFramePresentStatistics {
     pub unsafe fn GetCompositionFrameId(&self) -> u64 {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).GetCompositionFrameId)(::windows_core::Interface::as_raw(self)))
     }
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetDisplayInstanceArray(&self, displayinstancearraycount: *mut u32, displayinstancearray: *mut *mut CompositionFrameDisplayInstance) {
         (::windows_core::Interface::vtable(self).GetDisplayInstanceArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(displayinstancearraycount), ::core::mem::transmute(displayinstancearray))
     }
@@ -166,9 +166,9 @@ pub struct ICompositionFramePresentStatistics_Vtbl {
     pub base__: IPresentStatistics_Vtbl,
     pub GetContentTag: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> usize,
     pub GetCompositionFrameId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> u64,
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub GetDisplayInstanceArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, displayinstancearraycount: *mut u32, displayinstancearray: *mut *mut CompositionFrameDisplayInstance),
-    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetDisplayInstanceArray: usize,
 }
 #[repr(transparent)]
@@ -702,11 +702,11 @@ impl IPresentationSurface {
     pub unsafe fn SetBuffer<'a, Param0: ::windows_core::IntoParam<'a, IPresentationBuffer>>(&self, presentationbuffer: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBuffer)(::windows_core::Interface::as_raw(self), presentationbuffer.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetColorSpace(&self, colorspace: super::Dxgi::Common::DXGI_COLOR_SPACE_TYPE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetColorSpace)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(colorspace)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetAlphaMode(&self, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetAlphaMode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(alphamode)).ok()
     }
@@ -791,13 +791,13 @@ unsafe impl ::windows_core::Interface for IPresentationSurface {
 pub struct IPresentationSurface_Vtbl {
     pub base__: IPresentationContent_Vtbl,
     pub SetBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, presentationbuffer: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub SetColorSpace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, colorspace: super::Dxgi::Common::DXGI_COLOR_SPACE_TYPE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetColorSpace: usize,
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub SetAlphaMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetAlphaMode: usize,
     pub SetSourceRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sourcerect: *const ::win32_foundation::RECT) -> ::windows_core::HRESULT,
     pub SetTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, transform: *const PresentationTransform) -> ::windows_core::HRESULT,

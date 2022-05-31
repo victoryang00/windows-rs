@@ -509,17 +509,17 @@ pub const ERROR_WSMAN_WMI_PROVIDER_INVALID_PARAMETER: u32 = 2150859038u32;
 pub const ERROR_WSMAN_WMI_PROVIDER_NOT_CAPABLE: u32 = 2150859010u32;
 pub const ERROR_WSMAN_WMI_SVC_ACCESS_DENIED: u32 = 2150859012u32;
 pub const ERROR_WSMAN_WRONG_METADATA: u32 = 2150859233u32;
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(transparent)]
 pub struct IWSMan(::windows_core::IUnknown);
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl IWSMan {
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CreateSession<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, super::Com::IDispatch>>(&self, connection: Param0, flags: i32, connectionoptions: Param2) -> ::windows_core::Result<super::Com::IDispatch> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateSession)(::windows_core::Interface::as_raw(self), connection.into_param().abi(), ::core::mem::transmute(flags), connectionoptions.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::IDispatch>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CreateConnectionOptions(&self) -> ::windows_core::Result<super::Com::IDispatch> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateConnectionOptions)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::IDispatch>(result__)
@@ -533,99 +533,99 @@ impl IWSMan {
         (::windows_core::Interface::vtable(self).Error)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSMan> for ::windows_core::IUnknown {
     fn from(value: IWSMan) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSMan> for ::windows_core::IUnknown {
     fn from(value: &IWSMan) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IWSMan {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IWSMan {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSMan> for super::Com::IDispatch {
     fn from(value: IWSMan) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSMan> for super::Com::IDispatch {
     fn from(value: &IWSMan) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, super::Com::IDispatch> for IWSMan {
     fn into_param(self) -> ::windows_core::Param<'a, super::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, super::Com::IDispatch> for &'a IWSMan {
     fn into_param(self) -> ::windows_core::Param<'a, super::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for IWSMan {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for IWSMan {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for IWSMan {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for IWSMan {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("IWSMan").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Interface for IWSMan {
     type Vtable = IWSMan_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x190d8637_5cd3_496d_ad24_69636bb5a3b5);
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IWSMan_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub CreateSession: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, connection: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, flags: i32, connectionoptions: ::windows_core::RawPtr, session: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     CreateSession: usize,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub CreateConnectionOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, connectionoptions: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     CreateConnectionOptions: usize,
     pub CommandLine: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub Error: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(transparent)]
 pub struct IWSManConnectionOptions(::windows_core::IUnknown);
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl IWSManConnectionOptions {
     pub unsafe fn UserName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
@@ -638,80 +638,80 @@ impl IWSManConnectionOptions {
         (::windows_core::Interface::vtable(self).SetPassword)(::windows_core::Interface::as_raw(self), password.into_param().abi()).ok()
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManConnectionOptions> for ::windows_core::IUnknown {
     fn from(value: IWSManConnectionOptions) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManConnectionOptions> for ::windows_core::IUnknown {
     fn from(value: &IWSManConnectionOptions) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IWSManConnectionOptions {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IWSManConnectionOptions {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManConnectionOptions> for super::Com::IDispatch {
     fn from(value: IWSManConnectionOptions) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManConnectionOptions> for super::Com::IDispatch {
     fn from(value: &IWSManConnectionOptions) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, super::Com::IDispatch> for IWSManConnectionOptions {
     fn into_param(self) -> ::windows_core::Param<'a, super::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, super::Com::IDispatch> for &'a IWSManConnectionOptions {
     fn into_param(self) -> ::windows_core::Param<'a, super::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for IWSManConnectionOptions {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for IWSManConnectionOptions {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for IWSManConnectionOptions {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for IWSManConnectionOptions {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("IWSManConnectionOptions").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Interface for IWSManConnectionOptions {
     type Vtable = IWSManConnectionOptions_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf704e861_9e52_464f_b786_da5eb2320fdd);
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IWSManConnectionOptions_Vtbl {
@@ -720,10 +720,10 @@ pub struct IWSManConnectionOptions_Vtbl {
     pub SetUserName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub SetPassword: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, password: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(transparent)]
 pub struct IWSManConnectionOptionsEx(::windows_core::IUnknown);
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl IWSManConnectionOptionsEx {
     pub unsafe fn UserName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
@@ -743,104 +743,104 @@ impl IWSManConnectionOptionsEx {
         (::windows_core::Interface::vtable(self).SetCertificateThumbprint)(::windows_core::Interface::as_raw(self), thumbprint.into_param().abi()).ok()
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManConnectionOptionsEx> for ::windows_core::IUnknown {
     fn from(value: IWSManConnectionOptionsEx) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManConnectionOptionsEx> for ::windows_core::IUnknown {
     fn from(value: &IWSManConnectionOptionsEx) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IWSManConnectionOptionsEx {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IWSManConnectionOptionsEx {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManConnectionOptionsEx> for super::Com::IDispatch {
     fn from(value: IWSManConnectionOptionsEx) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManConnectionOptionsEx> for super::Com::IDispatch {
     fn from(value: &IWSManConnectionOptionsEx) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, super::Com::IDispatch> for IWSManConnectionOptionsEx {
     fn into_param(self) -> ::windows_core::Param<'a, super::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, super::Com::IDispatch> for &'a IWSManConnectionOptionsEx {
     fn into_param(self) -> ::windows_core::Param<'a, super::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManConnectionOptionsEx> for IWSManConnectionOptions {
     fn from(value: IWSManConnectionOptionsEx) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManConnectionOptionsEx> for IWSManConnectionOptions {
     fn from(value: &IWSManConnectionOptionsEx) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, IWSManConnectionOptions> for IWSManConnectionOptionsEx {
     fn into_param(self) -> ::windows_core::Param<'a, IWSManConnectionOptions> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, IWSManConnectionOptions> for &'a IWSManConnectionOptionsEx {
     fn into_param(self) -> ::windows_core::Param<'a, IWSManConnectionOptions> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for IWSManConnectionOptionsEx {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for IWSManConnectionOptionsEx {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for IWSManConnectionOptionsEx {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for IWSManConnectionOptionsEx {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("IWSManConnectionOptionsEx").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Interface for IWSManConnectionOptionsEx {
     type Vtable = IWSManConnectionOptionsEx_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xef43edf7_2a48_4d93_9526_8bd6ab6d4a6b);
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IWSManConnectionOptionsEx_Vtbl {
@@ -848,10 +848,10 @@ pub struct IWSManConnectionOptionsEx_Vtbl {
     pub CertificateThumbprint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, thumbprint: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub SetCertificateThumbprint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, thumbprint: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(transparent)]
 pub struct IWSManConnectionOptionsEx2(::windows_core::IUnknown);
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl IWSManConnectionOptionsEx2 {
     pub unsafe fn UserName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
@@ -902,128 +902,128 @@ impl IWSManConnectionOptionsEx2 {
         (::windows_core::Interface::vtable(self).ProxyAuthenticationUseDigest)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManConnectionOptionsEx2> for ::windows_core::IUnknown {
     fn from(value: IWSManConnectionOptionsEx2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManConnectionOptionsEx2> for ::windows_core::IUnknown {
     fn from(value: &IWSManConnectionOptionsEx2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IWSManConnectionOptionsEx2 {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IWSManConnectionOptionsEx2 {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManConnectionOptionsEx2> for super::Com::IDispatch {
     fn from(value: IWSManConnectionOptionsEx2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManConnectionOptionsEx2> for super::Com::IDispatch {
     fn from(value: &IWSManConnectionOptionsEx2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, super::Com::IDispatch> for IWSManConnectionOptionsEx2 {
     fn into_param(self) -> ::windows_core::Param<'a, super::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, super::Com::IDispatch> for &'a IWSManConnectionOptionsEx2 {
     fn into_param(self) -> ::windows_core::Param<'a, super::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManConnectionOptionsEx2> for IWSManConnectionOptions {
     fn from(value: IWSManConnectionOptionsEx2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManConnectionOptionsEx2> for IWSManConnectionOptions {
     fn from(value: &IWSManConnectionOptionsEx2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, IWSManConnectionOptions> for IWSManConnectionOptionsEx2 {
     fn into_param(self) -> ::windows_core::Param<'a, IWSManConnectionOptions> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, IWSManConnectionOptions> for &'a IWSManConnectionOptionsEx2 {
     fn into_param(self) -> ::windows_core::Param<'a, IWSManConnectionOptions> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManConnectionOptionsEx2> for IWSManConnectionOptionsEx {
     fn from(value: IWSManConnectionOptionsEx2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManConnectionOptionsEx2> for IWSManConnectionOptionsEx {
     fn from(value: &IWSManConnectionOptionsEx2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, IWSManConnectionOptionsEx> for IWSManConnectionOptionsEx2 {
     fn into_param(self) -> ::windows_core::Param<'a, IWSManConnectionOptionsEx> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, IWSManConnectionOptionsEx> for &'a IWSManConnectionOptionsEx2 {
     fn into_param(self) -> ::windows_core::Param<'a, IWSManConnectionOptionsEx> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for IWSManConnectionOptionsEx2 {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for IWSManConnectionOptionsEx2 {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for IWSManConnectionOptionsEx2 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for IWSManConnectionOptionsEx2 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("IWSManConnectionOptionsEx2").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Interface for IWSManConnectionOptionsEx2 {
     type Vtable = IWSManConnectionOptionsEx2_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf500c9ec_24ee_48ab_b38d_fc9a164c658e);
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IWSManConnectionOptionsEx2_Vtbl {
@@ -1037,10 +1037,10 @@ pub struct IWSManConnectionOptionsEx2_Vtbl {
     pub ProxyAuthenticationUseBasic: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut i32) -> ::windows_core::HRESULT,
     pub ProxyAuthenticationUseDigest: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut i32) -> ::windows_core::HRESULT,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(transparent)]
 pub struct IWSManEnumerator(::windows_core::IUnknown);
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl IWSManEnumerator {
     pub unsafe fn ReadItem(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
@@ -1055,80 +1055,80 @@ impl IWSManEnumerator {
         (::windows_core::Interface::vtable(self).Error)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManEnumerator> for ::windows_core::IUnknown {
     fn from(value: IWSManEnumerator) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManEnumerator> for ::windows_core::IUnknown {
     fn from(value: &IWSManEnumerator) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IWSManEnumerator {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IWSManEnumerator {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManEnumerator> for super::Com::IDispatch {
     fn from(value: IWSManEnumerator) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManEnumerator> for super::Com::IDispatch {
     fn from(value: &IWSManEnumerator) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, super::Com::IDispatch> for IWSManEnumerator {
     fn into_param(self) -> ::windows_core::Param<'a, super::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, super::Com::IDispatch> for &'a IWSManEnumerator {
     fn into_param(self) -> ::windows_core::Param<'a, super::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for IWSManEnumerator {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for IWSManEnumerator {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for IWSManEnumerator {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for IWSManEnumerator {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("IWSManEnumerator").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Interface for IWSManEnumerator {
     type Vtable = IWSManEnumerator_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf3457ca9_abb9_4fa5_b850_90e8ca300e7f);
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IWSManEnumerator_Vtbl {
@@ -1137,17 +1137,17 @@ pub struct IWSManEnumerator_Vtbl {
     pub AtEndOfStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eos: *mut i16) -> ::windows_core::HRESULT,
     pub Error: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(transparent)]
 pub struct IWSManEx(::windows_core::IUnknown);
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl IWSManEx {
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CreateSession<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, super::Com::IDispatch>>(&self, connection: Param0, flags: i32, connectionoptions: Param2) -> ::windows_core::Result<super::Com::IDispatch> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateSession)(::windows_core::Interface::as_raw(self), connection.into_param().abi(), ::core::mem::transmute(flags), connectionoptions.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::IDispatch>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CreateConnectionOptions(&self) -> ::windows_core::Result<super::Com::IDispatch> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateConnectionOptions)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::IDispatch>(result__)
@@ -1160,7 +1160,7 @@ impl IWSManEx {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.Error)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CreateResourceLocator<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, strresourcelocator: Param0) -> ::windows_core::Result<super::Com::IDispatch> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateResourceLocator)(::windows_core::Interface::as_raw(self), strresourcelocator.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::IDispatch>(result__)
@@ -1242,111 +1242,111 @@ impl IWSManEx {
         (::windows_core::Interface::vtable(self).EnumerationFlagReturnObject)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManEx> for ::windows_core::IUnknown {
     fn from(value: IWSManEx) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManEx> for ::windows_core::IUnknown {
     fn from(value: &IWSManEx) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IWSManEx {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IWSManEx {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManEx> for super::Com::IDispatch {
     fn from(value: IWSManEx) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManEx> for super::Com::IDispatch {
     fn from(value: &IWSManEx) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, super::Com::IDispatch> for IWSManEx {
     fn into_param(self) -> ::windows_core::Param<'a, super::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, super::Com::IDispatch> for &'a IWSManEx {
     fn into_param(self) -> ::windows_core::Param<'a, super::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManEx> for IWSMan {
     fn from(value: IWSManEx) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManEx> for IWSMan {
     fn from(value: &IWSManEx) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, IWSMan> for IWSManEx {
     fn into_param(self) -> ::windows_core::Param<'a, IWSMan> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, IWSMan> for &'a IWSManEx {
     fn into_param(self) -> ::windows_core::Param<'a, IWSMan> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for IWSManEx {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for IWSManEx {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for IWSManEx {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for IWSManEx {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("IWSManEx").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Interface for IWSManEx {
     type Vtable = IWSManEx_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2d53bdaa_798e_49e6_a1aa_74d01256f411);
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IWSManEx_Vtbl {
     pub base__: IWSMan_Vtbl,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub CreateResourceLocator: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, strresourcelocator: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, newresourcelocator: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     CreateResourceLocator: usize,
     pub SessionFlagUTF8: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, flags: *mut i32) -> ::windows_core::HRESULT,
     pub SessionFlagCredUsernamePassword: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, flags: *mut i32) -> ::windows_core::HRESULT,
@@ -1368,17 +1368,17 @@ pub struct IWSManEx_Vtbl {
     pub EnumerationFlagHierarchyDeepBasePropsOnly: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, flags: *mut i32) -> ::windows_core::HRESULT,
     pub EnumerationFlagReturnObject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, flags: *mut i32) -> ::windows_core::HRESULT,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(transparent)]
 pub struct IWSManEx2(::windows_core::IUnknown);
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl IWSManEx2 {
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CreateSession<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, super::Com::IDispatch>>(&self, connection: Param0, flags: i32, connectionoptions: Param2) -> ::windows_core::Result<super::Com::IDispatch> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.CreateSession)(::windows_core::Interface::as_raw(self), connection.into_param().abi(), ::core::mem::transmute(flags), connectionoptions.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::IDispatch>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CreateConnectionOptions(&self) -> ::windows_core::Result<super::Com::IDispatch> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.CreateConnectionOptions)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::IDispatch>(result__)
@@ -1391,7 +1391,7 @@ impl IWSManEx2 {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.Error)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CreateResourceLocator<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, strresourcelocator: Param0) -> ::windows_core::Result<super::Com::IDispatch> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateResourceLocator)(::windows_core::Interface::as_raw(self), strresourcelocator.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::IDispatch>(result__)
@@ -1477,145 +1477,145 @@ impl IWSManEx2 {
         (::windows_core::Interface::vtable(self).SessionFlagUseClientCertificate)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManEx2> for ::windows_core::IUnknown {
     fn from(value: IWSManEx2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManEx2> for ::windows_core::IUnknown {
     fn from(value: &IWSManEx2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IWSManEx2 {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IWSManEx2 {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManEx2> for super::Com::IDispatch {
     fn from(value: IWSManEx2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManEx2> for super::Com::IDispatch {
     fn from(value: &IWSManEx2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, super::Com::IDispatch> for IWSManEx2 {
     fn into_param(self) -> ::windows_core::Param<'a, super::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, super::Com::IDispatch> for &'a IWSManEx2 {
     fn into_param(self) -> ::windows_core::Param<'a, super::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManEx2> for IWSMan {
     fn from(value: IWSManEx2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManEx2> for IWSMan {
     fn from(value: &IWSManEx2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, IWSMan> for IWSManEx2 {
     fn into_param(self) -> ::windows_core::Param<'a, IWSMan> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, IWSMan> for &'a IWSManEx2 {
     fn into_param(self) -> ::windows_core::Param<'a, IWSMan> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManEx2> for IWSManEx {
     fn from(value: IWSManEx2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManEx2> for IWSManEx {
     fn from(value: &IWSManEx2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, IWSManEx> for IWSManEx2 {
     fn into_param(self) -> ::windows_core::Param<'a, IWSManEx> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, IWSManEx> for &'a IWSManEx2 {
     fn into_param(self) -> ::windows_core::Param<'a, IWSManEx> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for IWSManEx2 {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for IWSManEx2 {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for IWSManEx2 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for IWSManEx2 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("IWSManEx2").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Interface for IWSManEx2 {
     type Vtable = IWSManEx2_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1d1b5ae0_42d9_4021_8261_3987619512e9);
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IWSManEx2_Vtbl {
     pub base__: IWSManEx_Vtbl,
     pub SessionFlagUseClientCertificate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, flags: *mut i32) -> ::windows_core::HRESULT,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(transparent)]
 pub struct IWSManEx3(::windows_core::IUnknown);
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl IWSManEx3 {
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CreateSession<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, super::Com::IDispatch>>(&self, connection: Param0, flags: i32, connectionoptions: Param2) -> ::windows_core::Result<super::Com::IDispatch> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.CreateSession)(::windows_core::Interface::as_raw(self), connection.into_param().abi(), ::core::mem::transmute(flags), connectionoptions.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::IDispatch>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CreateConnectionOptions(&self) -> ::windows_core::Result<super::Com::IDispatch> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.CreateConnectionOptions)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::IDispatch>(result__)
@@ -1628,7 +1628,7 @@ impl IWSManEx3 {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.Error)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CreateResourceLocator<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, strresourcelocator: Param0) -> ::windows_core::Result<super::Com::IDispatch> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.CreateResourceLocator)(::windows_core::Interface::as_raw(self), strresourcelocator.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::IDispatch>(result__)
@@ -1742,152 +1742,152 @@ impl IWSManEx3 {
         (::windows_core::Interface::vtable(self).SessionFlagUseSsl)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManEx3> for ::windows_core::IUnknown {
     fn from(value: IWSManEx3) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManEx3> for ::windows_core::IUnknown {
     fn from(value: &IWSManEx3) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IWSManEx3 {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IWSManEx3 {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManEx3> for super::Com::IDispatch {
     fn from(value: IWSManEx3) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManEx3> for super::Com::IDispatch {
     fn from(value: &IWSManEx3) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, super::Com::IDispatch> for IWSManEx3 {
     fn into_param(self) -> ::windows_core::Param<'a, super::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, super::Com::IDispatch> for &'a IWSManEx3 {
     fn into_param(self) -> ::windows_core::Param<'a, super::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManEx3> for IWSMan {
     fn from(value: IWSManEx3) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManEx3> for IWSMan {
     fn from(value: &IWSManEx3) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, IWSMan> for IWSManEx3 {
     fn into_param(self) -> ::windows_core::Param<'a, IWSMan> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, IWSMan> for &'a IWSManEx3 {
     fn into_param(self) -> ::windows_core::Param<'a, IWSMan> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManEx3> for IWSManEx {
     fn from(value: IWSManEx3) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManEx3> for IWSManEx {
     fn from(value: &IWSManEx3) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, IWSManEx> for IWSManEx3 {
     fn into_param(self) -> ::windows_core::Param<'a, IWSManEx> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, IWSManEx> for &'a IWSManEx3 {
     fn into_param(self) -> ::windows_core::Param<'a, IWSManEx> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManEx3> for IWSManEx2 {
     fn from(value: IWSManEx3) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManEx3> for IWSManEx2 {
     fn from(value: &IWSManEx3) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, IWSManEx2> for IWSManEx3 {
     fn into_param(self) -> ::windows_core::Param<'a, IWSManEx2> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, IWSManEx2> for &'a IWSManEx3 {
     fn into_param(self) -> ::windows_core::Param<'a, IWSManEx2> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for IWSManEx3 {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for IWSManEx3 {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for IWSManEx3 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for IWSManEx3 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("IWSManEx3").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Interface for IWSManEx3 {
     type Vtable = IWSManEx3_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6400e966_011d_4eac_8474_049e0848afad);
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IWSManEx3_Vtbl {
@@ -1900,104 +1900,104 @@ pub struct IWSManEx3_Vtbl {
     pub SessionFlagAllowNegotiateImplicitCredentials: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, flags: *mut i32) -> ::windows_core::HRESULT,
     pub SessionFlagUseSsl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, flags: *mut i32) -> ::windows_core::HRESULT,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(transparent)]
 pub struct IWSManInternal(::windows_core::IUnknown);
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl IWSManInternal {
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn ConfigSDDL<'a, Param0: ::windows_core::IntoParam<'a, super::Com::IDispatch>, Param1: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, session: Param0, resourceuri: Param1, flags: i32) -> ::windows_core::Result<::win32_foundation::BSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).ConfigSDDL)(::windows_core::Interface::as_raw(self), session.into_param().abi(), resourceuri.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManInternal> for ::windows_core::IUnknown {
     fn from(value: IWSManInternal) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManInternal> for ::windows_core::IUnknown {
     fn from(value: &IWSManInternal) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IWSManInternal {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IWSManInternal {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManInternal> for super::Com::IDispatch {
     fn from(value: IWSManInternal) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManInternal> for super::Com::IDispatch {
     fn from(value: &IWSManInternal) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, super::Com::IDispatch> for IWSManInternal {
     fn into_param(self) -> ::windows_core::Param<'a, super::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, super::Com::IDispatch> for &'a IWSManInternal {
     fn into_param(self) -> ::windows_core::Param<'a, super::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for IWSManInternal {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for IWSManInternal {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for IWSManInternal {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for IWSManInternal {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("IWSManInternal").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Interface for IWSManInternal {
     type Vtable = IWSManInternal_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x04ae2b1d_9954_4d99_94a9_a961e72c3a13);
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IWSManInternal_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub ConfigSDDL: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, session: ::windows_core::RawPtr, resourceuri: ::core::mem::ManuallyDrop<super::Com::VARIANT>, flags: i32, resource: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     ConfigSDDL: usize,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(transparent)]
 pub struct IWSManResourceLocator(::windows_core::IUnknown);
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl IWSManResourceLocator {
     pub unsafe fn SetResourceURI<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, uri: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetResourceURI)(::windows_core::Interface::as_raw(self), uri.into_param().abi()).ok()
@@ -2006,7 +2006,7 @@ impl IWSManResourceLocator {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).ResourceURI)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn AddSelector<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, resourceselname: Param0, selvalue: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AddSelector)(::windows_core::Interface::as_raw(self), resourceselname.into_param().abi(), selvalue.into_param().abi()).ok()
     }
@@ -2027,7 +2027,7 @@ impl IWSManResourceLocator {
     pub unsafe fn SetFragmentDialect<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, text: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetFragmentDialect)(::windows_core::Interface::as_raw(self), text.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn AddOption<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::Com::VARIANT>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, optionname: Param0, optionvalue: Param1, mustcomply: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AddOption)(::windows_core::Interface::as_raw(self), optionname.into_param().abi(), optionvalue.into_param().abi(), mustcomply.into_param().abi()).ok()
     }
@@ -2046,98 +2046,98 @@ impl IWSManResourceLocator {
         (::windows_core::Interface::vtable(self).Error)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManResourceLocator> for ::windows_core::IUnknown {
     fn from(value: IWSManResourceLocator) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManResourceLocator> for ::windows_core::IUnknown {
     fn from(value: &IWSManResourceLocator) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IWSManResourceLocator {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IWSManResourceLocator {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManResourceLocator> for super::Com::IDispatch {
     fn from(value: IWSManResourceLocator) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManResourceLocator> for super::Com::IDispatch {
     fn from(value: &IWSManResourceLocator) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, super::Com::IDispatch> for IWSManResourceLocator {
     fn into_param(self) -> ::windows_core::Param<'a, super::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, super::Com::IDispatch> for &'a IWSManResourceLocator {
     fn into_param(self) -> ::windows_core::Param<'a, super::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for IWSManResourceLocator {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for IWSManResourceLocator {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for IWSManResourceLocator {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for IWSManResourceLocator {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("IWSManResourceLocator").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Interface for IWSManResourceLocator {
     type Vtable = IWSManResourceLocator_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa7a1ba28_de41_466a_ad0a_c4059ead7428);
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IWSManResourceLocator_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
     pub SetResourceURI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub ResourceURI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub AddSelector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, resourceselname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, selvalue: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     AddSelector: usize,
     pub ClearSelectors: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub FragmentPath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, text: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub SetFragmentPath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, text: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub FragmentDialect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, text: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub SetFragmentDialect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, text: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub AddOption: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, optionname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, optionvalue: ::core::mem::ManuallyDrop<super::Com::VARIANT>, mustcomply: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     AddOption: usize,
     pub SetMustUnderstandOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mustunderstand: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub MustUnderstandOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mustunderstand: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
@@ -2192,36 +2192,36 @@ unsafe impl ::windows_core::Interface for IWSManResourceLocatorInternal {
 pub struct IWSManResourceLocatorInternal_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(transparent)]
 pub struct IWSManSession(::windows_core::IUnknown);
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl IWSManSession {
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn Get<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, resourceuri: Param0, flags: i32) -> ::windows_core::Result<::win32_foundation::BSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).Get)(::windows_core::Interface::as_raw(self), resourceuri.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn Put<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, resourceuri: Param0, resource: Param1, flags: i32) -> ::windows_core::Result<::win32_foundation::BSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).Put)(::windows_core::Interface::as_raw(self), resourceuri.into_param().abi(), resource.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn Create<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, resourceuri: Param0, resource: Param1, flags: i32) -> ::windows_core::Result<::win32_foundation::BSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).Create)(::windows_core::Interface::as_raw(self), resourceuri.into_param().abi(), resource.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn Delete<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, resourceuri: Param0, flags: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Delete)(::windows_core::Interface::as_raw(self), resourceuri.into_param().abi(), ::core::mem::transmute(flags)).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn Invoke2<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::Com::VARIANT>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, actionuri: Param0, resourceuri: Param1, parameters: Param2, flags: i32) -> ::windows_core::Result<::win32_foundation::BSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).Invoke2)(::windows_core::Interface::as_raw(self), actionuri.into_param().abi(), resourceuri.into_param().abi(), parameters.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn Enumerate<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, resourceuri: Param0, filter: Param1, dialect: Param2, flags: i32) -> ::windows_core::Result<super::Com::IDispatch> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).Enumerate)(::windows_core::Interface::as_raw(self), resourceuri.into_param().abi(), filter.into_param().abi(), dialect.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::IDispatch>(result__)
@@ -2249,107 +2249,107 @@ impl IWSManSession {
         (::windows_core::Interface::vtable(self).SetTimeout)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(value)).ok()
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManSession> for ::windows_core::IUnknown {
     fn from(value: IWSManSession) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManSession> for ::windows_core::IUnknown {
     fn from(value: &IWSManSession) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IWSManSession {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IWSManSession {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IWSManSession> for super::Com::IDispatch {
     fn from(value: IWSManSession) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IWSManSession> for super::Com::IDispatch {
     fn from(value: &IWSManSession) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, super::Com::IDispatch> for IWSManSession {
     fn into_param(self) -> ::windows_core::Param<'a, super::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, super::Com::IDispatch> for &'a IWSManSession {
     fn into_param(self) -> ::windows_core::Param<'a, super::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for IWSManSession {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for IWSManSession {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for IWSManSession {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for IWSManSession {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("IWSManSession").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Interface for IWSManSession {
     type Vtable = IWSManSession_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfc84fc58_1286_40c4_9da0_c8ef6ec241e0);
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IWSManSession_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub Get: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, resourceuri: ::core::mem::ManuallyDrop<super::Com::VARIANT>, flags: i32, resource: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     Get: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub Put: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, resourceuri: ::core::mem::ManuallyDrop<super::Com::VARIANT>, resource: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, flags: i32, resultresource: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     Put: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, resourceuri: ::core::mem::ManuallyDrop<super::Com::VARIANT>, resource: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, flags: i32, newuri: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     Create: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub Delete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, resourceuri: ::core::mem::ManuallyDrop<super::Com::VARIANT>, flags: i32) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     Delete: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub Invoke2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, actionuri: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, resourceuri: ::core::mem::ManuallyDrop<super::Com::VARIANT>, parameters: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, flags: i32, result: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     Invoke2: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub Enumerate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, resourceuri: ::core::mem::ManuallyDrop<super::Com::VARIANT>, filter: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, dialect: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, flags: i32, resultset: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     Enumerate: usize,
     pub Identify: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, flags: i32, result: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub Error: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,

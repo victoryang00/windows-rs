@@ -341,7 +341,7 @@ impl AppBroadcastingUI {
             (::windows_core::Interface::vtable(this).GetDefault)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AppBroadcastingUI>(result__)
         })
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn GetForUser<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>>(user: Param0) -> ::windows_core::Result<AppBroadcastingUI> {
         Self::IAppBroadcastingUIStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -500,8 +500,8 @@ unsafe impl ::windows_core::Interface for IAppBroadcastingUIStatics {
 pub struct IAppBroadcastingUIStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub GetDefault: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub GetForUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     GetForUser: usize,
 }

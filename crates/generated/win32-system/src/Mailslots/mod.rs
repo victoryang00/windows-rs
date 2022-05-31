@@ -1,4 +1,4 @@
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateMailslotA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpname: Param0, nmaxmessagesize: u32, lreadtimeout: u32, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
@@ -13,7 +13,7 @@ pub unsafe fn CreateMailslotA<'a, Param0: ::windows_core::IntoParam<'a, ::window
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateMailslotW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpname: Param0, nmaxmessagesize: u32, lreadtimeout: u32, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]

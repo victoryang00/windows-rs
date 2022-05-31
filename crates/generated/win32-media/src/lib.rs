@@ -264,7 +264,7 @@ pub struct IReferenceClockTimerControl_Vtbl {
     pub GetDefaultTimerResolution: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptimerresolution: *mut i64) -> ::windows_core::HRESULT,
 }
 pub const JOYERR_BASE: u32 = 160u32;
-#[cfg(feature = "Win32_Media_Multimedia")]
+#[cfg(feature = "win32-media")]
 pub type LPDRVCALLBACK = ::core::option::Option<unsafe extern "system" fn(hdrvr: Multimedia::HDRVR, umsg: u32, dwuser: usize, dw1: usize, dw2: usize)>;
 pub type LPTIMECALLBACK = ::core::option::Option<unsafe extern "system" fn(utimerid: u32, umsg: u32, dwuser: usize, dw1: usize, dw2: usize)>;
 pub const MAXERRORLENGTH: u32 = 256u32;

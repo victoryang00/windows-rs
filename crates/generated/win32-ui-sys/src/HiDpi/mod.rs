@@ -1,6 +1,6 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn AdjustWindowRectExForDpi(lprect: *mut ::win32_foundation_sys::RECT, dwstyle: super::WindowsAndMessaging::WINDOW_STYLE, bmenu: ::win32_foundation_sys::BOOL, dwexstyle: super::WindowsAndMessaging::WINDOW_EX_STYLE, dpi: u32) -> ::win32_foundation_sys::BOOL;
     pub fn AreDpiAwarenessContextsEqual(dpicontexta: DPI_AWARENESS_CONTEXT, dpicontextb: DPI_AWARENESS_CONTEXT) -> ::win32_foundation_sys::BOOL;
     pub fn EnableNonClientDpiScaling(hwnd: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::BOOL;
@@ -8,7 +8,7 @@ extern "system" {
     pub fn GetDialogControlDpiChangeBehavior(hwnd: ::win32_foundation_sys::HWND) -> DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS;
     pub fn GetDialogDpiChangeBehavior(hdlg: ::win32_foundation_sys::HWND) -> DIALOG_DPI_CHANGE_BEHAVIORS;
     pub fn GetDpiAwarenessContextForProcess(hprocess: ::win32_foundation_sys::HANDLE) -> DPI_AWARENESS_CONTEXT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetDpiForMonitor(hmonitor: ::win32_graphics_sys::Gdi::HMONITOR, dpitype: MONITOR_DPI_TYPE, dpix: *mut u32, dpiy: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn GetDpiForSystem() -> u32;
     pub fn GetDpiForWindow(hwnd: ::win32_foundation_sys::HWND) -> u32;

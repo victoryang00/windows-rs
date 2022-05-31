@@ -201,9 +201,9 @@ unsafe impl ::windows_core::Interface for IPrintTask {
 #[doc(hidden)]
 pub struct IPrintTask_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "ApplicationModel_DataTransfer")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_DataTransfer"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     Properties: usize,
     pub Source: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Options: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -256,9 +256,9 @@ pub struct IPrintTaskOptions_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub SetBordering: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintBordering) -> ::windows_core::HRESULT,
     pub Bordering: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintBordering) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub GetPagePrintTicket: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, printpageinfo: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     GetPagePrintTicket: usize,
 }
 #[doc(hidden)]
@@ -273,9 +273,9 @@ unsafe impl ::windows_core::Interface for IPrintTaskOptions2 {
 pub struct IPrintTaskOptions2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub PageRangeOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub CustomPageRanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CustomPageRanges: usize,
 }
 #[repr(transparent)]
@@ -600,7 +600,7 @@ pub struct IPrintTaskOptionsCoreProperties_Vtbl {
 #[repr(transparent)]
 pub struct IPrintTaskOptionsCoreUIConfiguration(::windows_core::IUnknown);
 impl IPrintTaskOptionsCoreUIConfiguration {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn DisplayedOptions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -680,9 +680,9 @@ unsafe impl ::windows_core::Interface for IPrintTaskOptionsCoreUIConfiguration {
 #[doc(hidden)]
 pub struct IPrintTaskOptionsCoreUIConfiguration_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub DisplayedOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     DisplayedOptions: usize,
 }
 #[doc(hidden)]
@@ -1965,7 +1965,7 @@ unsafe impl ::windows_core::RuntimeType for PrintStaple {
 #[repr(transparent)]
 pub struct PrintTask(::windows_core::IUnknown);
 impl PrintTask {
-    #[cfg(feature = "ApplicationModel_DataTransfer")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_applicationmodel::DataTransfer::DataPackagePropertySet> {
         let this = self;
         unsafe {
@@ -2269,7 +2269,7 @@ impl PrintTaskOptions {
             (::windows_core::Interface::vtable(this).Bordering)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintBordering>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetPagePrintTicket<'a, Param0: ::windows_core::IntoParam<'a, PrintPageInfo>>(&self, printpageinfo: Param0) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStream> {
         let this = &::windows_core::Interface::cast::<IPrintTaskOptions>(self)?;
         unsafe {
@@ -2284,7 +2284,7 @@ impl PrintTaskOptions {
             (::windows_core::Interface::vtable(this).PageRangeOptions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintPageRangeOptions>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CustomPageRanges(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<PrintPageRange>> {
         let this = &::windows_core::Interface::cast::<IPrintTaskOptions2>(self)?;
         unsafe {
@@ -2434,7 +2434,7 @@ impl PrintTaskOptions {
             (::windows_core::Interface::vtable(this).NumberOfCopies)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn DisplayedOptions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreUIConfiguration>(self)?;
         unsafe {

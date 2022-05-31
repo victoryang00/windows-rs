@@ -9,17 +9,17 @@ unsafe impl ::windows_core::Interface for IWebViewControlAcceleratorKeyPressedEv
 #[doc(hidden)]
 pub struct IWebViewControlAcceleratorKeyPressedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub EventType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_ui::Core::CoreAcceleratorKeyEventType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Core"))]
+    #[cfg(not(feature = "winrt-ui"))]
     EventType: usize,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub VirtualKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_system::VirtualKey) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     VirtualKey: usize,
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub KeyStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_ui::Core::CorePhysicalKeyStatus) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Core"))]
+    #[cfg(not(feature = "winrt-ui"))]
     KeyStatus: usize,
     pub RoutingStage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut WebViewControlAcceleratorKeyRoutingStage) -> ::windows_core::HRESULT,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -53,9 +53,9 @@ pub struct IWebViewControlProcess_Vtbl {
     pub EnterpriseId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub IsPrivateNetworkClientServerCapabilityEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub CreateWebViewControlAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hostwindowhandle: i64, bounds: ::winrt_foundation::Rect, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetWebViewControls: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetWebViewControls: usize,
     pub Terminate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub ProcessExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -166,12 +166,12 @@ impl WebViewControl {
             (::windows_core::Interface::vtable(this).CanGoForward)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetDefaultBackgroundColor<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Color>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDefaultBackgroundColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub fn DefaultBackgroundColor(&self) -> ::windows_core::Result<::winrt_ui::Color> {
         let this = self;
         unsafe {
@@ -193,7 +193,7 @@ impl WebViewControl {
             (::windows_core::Interface::vtable(this).Settings)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::WebViewControlSettings>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn DeferredPermissionRequests(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<super::WebViewControlDeferredPermissionRequest>> {
         let this = self;
         unsafe {
@@ -229,12 +229,12 @@ impl WebViewControl {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).NavigateToLocalStreamUri)(::windows_core::Interface::as_raw(this), source.into_param().abi(), streamresolver.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Web_Http")]
+    #[cfg(feature = "winrt-web")]
     pub fn NavigateWithHttpRequestMessage<'a, Param0: ::windows_core::IntoParam<'a, super::super::Http::HttpRequestMessage>>(&self, requestmessage: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).NavigateWithHttpRequestMessage)(::windows_core::Interface::as_raw(this), requestmessage.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InvokeScriptAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, scriptname: Param0, arguments: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -242,7 +242,7 @@ impl WebViewControl {
             (::windows_core::Interface::vtable(this).InvokeScriptAsync)(::windows_core::Interface::as_raw(this), scriptname.into_param().abi(), arguments.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CapturePreviewToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(&self, stream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
@@ -250,7 +250,7 @@ impl WebViewControl {
             (::windows_core::Interface::vtable(this).CapturePreviewToStreamAsync)(::windows_core::Interface::as_raw(this), stream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_DataTransfer")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn CaptureSelectedContentToDataPackageAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_applicationmodel::DataTransfer::DataPackage>> {
         let this = self;
         unsafe {
@@ -670,7 +670,7 @@ impl<'a> ::windows_core::IntoParam<'a, super::IWebViewControl2> for &WebViewCont
 #[repr(transparent)]
 pub struct WebViewControlAcceleratorKeyPressedEventArgs(::windows_core::IUnknown);
 impl WebViewControlAcceleratorKeyPressedEventArgs {
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn EventType(&self) -> ::windows_core::Result<::winrt_ui::Core::CoreAcceleratorKeyEventType> {
         let this = self;
         unsafe {
@@ -678,7 +678,7 @@ impl WebViewControlAcceleratorKeyPressedEventArgs {
             (::windows_core::Interface::vtable(this).EventType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Core::CoreAcceleratorKeyEventType>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn VirtualKey(&self) -> ::windows_core::Result<::winrt_system::VirtualKey> {
         let this = self;
         unsafe {
@@ -686,7 +686,7 @@ impl WebViewControlAcceleratorKeyPressedEventArgs {
             (::windows_core::Interface::vtable(this).VirtualKey)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::VirtualKey>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn KeyStatus(&self) -> ::windows_core::Result<::winrt_ui::Core::CorePhysicalKeyStatus> {
         let this = self;
         unsafe {
@@ -969,7 +969,7 @@ impl WebViewControlProcess {
             (::windows_core::Interface::vtable(this).CreateWebViewControlAsync)(::windows_core::Interface::as_raw(this), hostwindowhandle, bounds.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<WebViewControl>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetWebViewControls(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<WebViewControl>> {
         let this = self;
         unsafe {

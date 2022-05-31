@@ -58,7 +58,7 @@ impl BluetoothAdapter {
             (::windows_core::Interface::vtable(this).IsAdvertisementOffloadSupported)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Devices_Radios")]
+    #[cfg(feature = "winrt-devices")]
     pub fn GetRadioAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::Radios::Radio>> {
         let this = self;
         unsafe {
@@ -419,7 +419,7 @@ impl BluetoothDevice {
             (::windows_core::Interface::vtable(this).DeviceId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Networking")]
+    #[cfg(feature = "winrt-networking")]
     pub fn HostName(&self) -> ::windows_core::Result<::winrt_networking::HostName> {
         let this = self;
         unsafe {
@@ -441,7 +441,7 @@ impl BluetoothDevice {
             (::windows_core::Interface::vtable(this).ClassOfDevice)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<BluetoothClassOfDevice>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub fn SdpRecords(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_storage::Streams::IBuffer>> {
         let this = self;
         unsafe {
@@ -449,7 +449,7 @@ impl BluetoothDevice {
             (::windows_core::Interface::vtable(this).SdpRecords)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_storage::Streams::IBuffer>>(result__)
         }
     }
-    #[cfg(all(feature = "Devices_Bluetooth_Rfcomm", feature = "Foundation_Collections", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-foundation", feature = "winrt-"))]
     pub fn RfcommServices(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<Rfcomm::RfcommDeviceService>> {
         let this = self;
         unsafe {
@@ -504,7 +504,7 @@ impl BluetoothDevice {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveConnectionStatusChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub fn DeviceInformation(&self) -> ::windows_core::Result<super::Enumeration::DeviceInformation> {
         let this = &::windows_core::Interface::cast::<IBluetoothDevice2>(self)?;
         unsafe {
@@ -512,7 +512,7 @@ impl BluetoothDevice {
             (::windows_core::Interface::vtable(this).DeviceInformation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Enumeration::DeviceInformation>(result__)
         }
     }
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub fn DeviceAccessInformation(&self) -> ::windows_core::Result<super::Enumeration::DeviceAccessInformation> {
         let this = &::windows_core::Interface::cast::<IBluetoothDevice3>(self)?;
         unsafe {
@@ -520,7 +520,7 @@ impl BluetoothDevice {
             (::windows_core::Interface::vtable(this).DeviceAccessInformation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Enumeration::DeviceAccessInformation>(result__)
         }
     }
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub fn RequestAccessAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::Enumeration::DeviceAccessStatus>> {
         let this = &::windows_core::Interface::cast::<IBluetoothDevice3>(self)?;
         unsafe {
@@ -528,7 +528,7 @@ impl BluetoothDevice {
             (::windows_core::Interface::vtable(this).RequestAccessAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::Enumeration::DeviceAccessStatus>>(result__)
         }
     }
-    #[cfg(feature = "Devices_Bluetooth_Rfcomm")]
+    #[cfg(feature = "winrt-devices")]
     pub fn GetRfcommServicesAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<Rfcomm::RfcommDeviceServicesResult>> {
         let this = &::windows_core::Interface::cast::<IBluetoothDevice3>(self)?;
         unsafe {
@@ -536,7 +536,7 @@ impl BluetoothDevice {
             (::windows_core::Interface::vtable(this).GetRfcommServicesAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<Rfcomm::RfcommDeviceServicesResult>>(result__)
         }
     }
-    #[cfg(feature = "Devices_Bluetooth_Rfcomm")]
+    #[cfg(feature = "winrt-devices")]
     pub fn GetRfcommServicesWithCacheModeAsync(&self, cachemode: BluetoothCacheMode) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<Rfcomm::RfcommDeviceServicesResult>> {
         let this = &::windows_core::Interface::cast::<IBluetoothDevice3>(self)?;
         unsafe {
@@ -544,7 +544,7 @@ impl BluetoothDevice {
             (::windows_core::Interface::vtable(this).GetRfcommServicesWithCacheModeAsync)(::windows_core::Interface::as_raw(this), cachemode, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<Rfcomm::RfcommDeviceServicesResult>>(result__)
         }
     }
-    #[cfg(feature = "Devices_Bluetooth_Rfcomm")]
+    #[cfg(feature = "winrt-devices")]
     pub fn GetRfcommServicesForIdAsync<'a, Param0: ::windows_core::IntoParam<'a, Rfcomm::RfcommServiceId>>(&self, serviceid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<Rfcomm::RfcommDeviceServicesResult>> {
         let this = &::windows_core::Interface::cast::<IBluetoothDevice3>(self)?;
         unsafe {
@@ -552,7 +552,7 @@ impl BluetoothDevice {
             (::windows_core::Interface::vtable(this).GetRfcommServicesForIdAsync)(::windows_core::Interface::as_raw(this), serviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<Rfcomm::RfcommDeviceServicesResult>>(result__)
         }
     }
-    #[cfg(feature = "Devices_Bluetooth_Rfcomm")]
+    #[cfg(feature = "winrt-devices")]
     pub fn GetRfcommServicesForIdWithCacheModeAsync<'a, Param0: ::windows_core::IntoParam<'a, Rfcomm::RfcommServiceId>>(&self, serviceid: Param0, cachemode: BluetoothCacheMode) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<Rfcomm::RfcommDeviceServicesResult>> {
         let this = &::windows_core::Interface::cast::<IBluetoothDevice3>(self)?;
         unsafe {
@@ -580,7 +580,7 @@ impl BluetoothDevice {
             (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<BluetoothDevice>>(result__)
         })
     }
-    #[cfg(feature = "Networking")]
+    #[cfg(feature = "winrt-networking")]
     pub fn FromHostNameAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_networking::HostName>>(hostname: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<BluetoothDevice>> {
         Self::IBluetoothDeviceStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1618,7 +1618,7 @@ impl BluetoothLEDevice {
             (::windows_core::Interface::vtable(this).Name)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(all(feature = "Devices_Bluetooth_GenericAttributeProfile", feature = "Foundation_Collections", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-foundation", feature = "winrt-"))]
     pub fn GattServices(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<GenericAttributeProfile::GattDeviceService>> {
         let this = self;
         unsafe {
@@ -1640,7 +1640,7 @@ impl BluetoothLEDevice {
             (::windows_core::Interface::vtable(this).BluetoothAddress)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u64>(result__)
         }
     }
-    #[cfg(all(feature = "Devices_Bluetooth_GenericAttributeProfile", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-"))]
     pub fn GetGattService<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, serviceuuid: Param0) -> ::windows_core::Result<GenericAttributeProfile::GattDeviceService> {
         let this = self;
         unsafe {
@@ -1681,7 +1681,7 @@ impl BluetoothLEDevice {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveConnectionStatusChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub fn DeviceInformation(&self) -> ::windows_core::Result<super::Enumeration::DeviceInformation> {
         let this = &::windows_core::Interface::cast::<IBluetoothLEDevice2>(self)?;
         unsafe {
@@ -1703,7 +1703,7 @@ impl BluetoothLEDevice {
             (::windows_core::Interface::vtable(this).BluetoothAddressType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<BluetoothAddressType>(result__)
         }
     }
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub fn DeviceAccessInformation(&self) -> ::windows_core::Result<super::Enumeration::DeviceAccessInformation> {
         let this = &::windows_core::Interface::cast::<IBluetoothLEDevice3>(self)?;
         unsafe {
@@ -1711,7 +1711,7 @@ impl BluetoothLEDevice {
             (::windows_core::Interface::vtable(this).DeviceAccessInformation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Enumeration::DeviceAccessInformation>(result__)
         }
     }
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub fn RequestAccessAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::Enumeration::DeviceAccessStatus>> {
         let this = &::windows_core::Interface::cast::<IBluetoothLEDevice3>(self)?;
         unsafe {
@@ -1719,7 +1719,7 @@ impl BluetoothLEDevice {
             (::windows_core::Interface::vtable(this).RequestAccessAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::Enumeration::DeviceAccessStatus>>(result__)
         }
     }
-    #[cfg(feature = "Devices_Bluetooth_GenericAttributeProfile")]
+    #[cfg(feature = "winrt-devices")]
     pub fn GetGattServicesAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GenericAttributeProfile::GattDeviceServicesResult>> {
         let this = &::windows_core::Interface::cast::<IBluetoothLEDevice3>(self)?;
         unsafe {
@@ -1727,7 +1727,7 @@ impl BluetoothLEDevice {
             (::windows_core::Interface::vtable(this).GetGattServicesAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GenericAttributeProfile::GattDeviceServicesResult>>(result__)
         }
     }
-    #[cfg(feature = "Devices_Bluetooth_GenericAttributeProfile")]
+    #[cfg(feature = "winrt-devices")]
     pub fn GetGattServicesWithCacheModeAsync(&self, cachemode: BluetoothCacheMode) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GenericAttributeProfile::GattDeviceServicesResult>> {
         let this = &::windows_core::Interface::cast::<IBluetoothLEDevice3>(self)?;
         unsafe {
@@ -1735,7 +1735,7 @@ impl BluetoothLEDevice {
             (::windows_core::Interface::vtable(this).GetGattServicesWithCacheModeAsync)(::windows_core::Interface::as_raw(this), cachemode, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GenericAttributeProfile::GattDeviceServicesResult>>(result__)
         }
     }
-    #[cfg(feature = "Devices_Bluetooth_GenericAttributeProfile")]
+    #[cfg(feature = "winrt-devices")]
     pub fn GetGattServicesForUuidAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, serviceuuid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GenericAttributeProfile::GattDeviceServicesResult>> {
         let this = &::windows_core::Interface::cast::<IBluetoothLEDevice3>(self)?;
         unsafe {
@@ -1743,7 +1743,7 @@ impl BluetoothLEDevice {
             (::windows_core::Interface::vtable(this).GetGattServicesForUuidAsync)(::windows_core::Interface::as_raw(this), serviceuuid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GenericAttributeProfile::GattDeviceServicesResult>>(result__)
         }
     }
-    #[cfg(feature = "Devices_Bluetooth_GenericAttributeProfile")]
+    #[cfg(feature = "winrt-devices")]
     pub fn GetGattServicesForUuidWithCacheModeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, serviceuuid: Param0, cachemode: BluetoothCacheMode) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GenericAttributeProfile::GattDeviceServicesResult>> {
         let this = &::windows_core::Interface::cast::<IBluetoothLEDevice3>(self)?;
         unsafe {
@@ -2624,9 +2624,9 @@ pub struct IBluetoothAdapter_Vtbl {
     pub IsPeripheralRoleSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsCentralRoleSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsAdvertisementOffloadSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Radios")]
+    #[cfg(feature = "winrt-devices")]
     pub GetRadioAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Radios"))]
+    #[cfg(not(feature = "winrt-devices"))]
     GetRadioAsync: usize,
 }
 #[doc(hidden)]
@@ -2714,19 +2714,19 @@ unsafe impl ::windows_core::Interface for IBluetoothDevice {
 pub struct IBluetoothDevice_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub DeviceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Networking")]
+    #[cfg(feature = "winrt-networking")]
     pub HostName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking"))]
+    #[cfg(not(feature = "winrt-networking"))]
     HostName: usize,
     pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub ClassOfDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub SdpRecords: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage_Streams")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-storage")))]
     SdpRecords: usize,
-    #[cfg(all(feature = "Devices_Bluetooth_Rfcomm", feature = "Foundation_Collections", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-foundation", feature = "winrt-"))]
     pub RfcommServices: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Bluetooth_Rfcomm", feature = "Foundation_Collections", feature = "deprecated")))]
+    #[cfg(not(all(feature = "winrt-devices", feature = "winrt-foundation", feature = "winrt-")))]
     RfcommServices: usize,
     pub ConnectionStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut BluetoothConnectionStatus) -> ::windows_core::HRESULT,
     pub BluetoothAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u64) -> ::windows_core::HRESULT,
@@ -2748,9 +2748,9 @@ unsafe impl ::windows_core::Interface for IBluetoothDevice2 {
 #[doc(hidden)]
 pub struct IBluetoothDevice2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub DeviceInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Enumeration"))]
+    #[cfg(not(feature = "winrt-devices"))]
     DeviceInformation: usize,
 }
 #[doc(hidden)]
@@ -2764,29 +2764,29 @@ unsafe impl ::windows_core::Interface for IBluetoothDevice3 {
 #[doc(hidden)]
 pub struct IBluetoothDevice3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub DeviceAccessInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Enumeration"))]
+    #[cfg(not(feature = "winrt-devices"))]
     DeviceAccessInformation: usize,
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub RequestAccessAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Enumeration"))]
+    #[cfg(not(feature = "winrt-devices"))]
     RequestAccessAsync: usize,
-    #[cfg(feature = "Devices_Bluetooth_Rfcomm")]
+    #[cfg(feature = "winrt-devices")]
     pub GetRfcommServicesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_Rfcomm"))]
+    #[cfg(not(feature = "winrt-devices"))]
     GetRfcommServicesAsync: usize,
-    #[cfg(feature = "Devices_Bluetooth_Rfcomm")]
+    #[cfg(feature = "winrt-devices")]
     pub GetRfcommServicesWithCacheModeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cachemode: BluetoothCacheMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_Rfcomm"))]
+    #[cfg(not(feature = "winrt-devices"))]
     GetRfcommServicesWithCacheModeAsync: usize,
-    #[cfg(feature = "Devices_Bluetooth_Rfcomm")]
+    #[cfg(feature = "winrt-devices")]
     pub GetRfcommServicesForIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, serviceid: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_Rfcomm"))]
+    #[cfg(not(feature = "winrt-devices"))]
     GetRfcommServicesForIdAsync: usize,
-    #[cfg(feature = "Devices_Bluetooth_Rfcomm")]
+    #[cfg(feature = "winrt-devices")]
     pub GetRfcommServicesForIdWithCacheModeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, serviceid: ::windows_core::RawPtr, cachemode: BluetoothCacheMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_Rfcomm"))]
+    #[cfg(not(feature = "winrt-devices"))]
     GetRfcommServicesForIdWithCacheModeAsync: usize,
 }
 #[doc(hidden)]
@@ -2855,9 +2855,9 @@ unsafe impl ::windows_core::Interface for IBluetoothDeviceStatics {
 pub struct IBluetoothDeviceStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub FromIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Networking")]
+    #[cfg(feature = "winrt-networking")]
     pub FromHostNameAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hostname: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking"))]
+    #[cfg(not(feature = "winrt-networking"))]
     FromHostNameAsync: usize,
     pub FromBluetoothAddressAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, address: u64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -3039,15 +3039,15 @@ pub struct IBluetoothLEDevice_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub DeviceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Devices_Bluetooth_GenericAttributeProfile", feature = "Foundation_Collections", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-foundation", feature = "winrt-"))]
     pub GattServices: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Bluetooth_GenericAttributeProfile", feature = "Foundation_Collections", feature = "deprecated")))]
+    #[cfg(not(all(feature = "winrt-devices", feature = "winrt-foundation", feature = "winrt-")))]
     GattServices: usize,
     pub ConnectionStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut BluetoothConnectionStatus) -> ::windows_core::HRESULT,
     pub BluetoothAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u64) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Devices_Bluetooth_GenericAttributeProfile", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-"))]
     pub GetGattService: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, serviceuuid: ::windows_core::GUID, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Bluetooth_GenericAttributeProfile", feature = "deprecated")))]
+    #[cfg(not(all(feature = "winrt-devices", feature = "winrt-")))]
     GetGattService: usize,
     pub NameChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveNameChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -3067,9 +3067,9 @@ unsafe impl ::windows_core::Interface for IBluetoothLEDevice2 {
 #[doc(hidden)]
 pub struct IBluetoothLEDevice2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub DeviceInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Enumeration"))]
+    #[cfg(not(feature = "winrt-devices"))]
     DeviceInformation: usize,
     pub Appearance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub BluetoothAddressType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut BluetoothAddressType) -> ::windows_core::HRESULT,
@@ -3085,29 +3085,29 @@ unsafe impl ::windows_core::Interface for IBluetoothLEDevice3 {
 #[doc(hidden)]
 pub struct IBluetoothLEDevice3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub DeviceAccessInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Enumeration"))]
+    #[cfg(not(feature = "winrt-devices"))]
     DeviceAccessInformation: usize,
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub RequestAccessAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Enumeration"))]
+    #[cfg(not(feature = "winrt-devices"))]
     RequestAccessAsync: usize,
-    #[cfg(feature = "Devices_Bluetooth_GenericAttributeProfile")]
+    #[cfg(feature = "winrt-devices")]
     pub GetGattServicesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_GenericAttributeProfile"))]
+    #[cfg(not(feature = "winrt-devices"))]
     GetGattServicesAsync: usize,
-    #[cfg(feature = "Devices_Bluetooth_GenericAttributeProfile")]
+    #[cfg(feature = "winrt-devices")]
     pub GetGattServicesWithCacheModeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cachemode: BluetoothCacheMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_GenericAttributeProfile"))]
+    #[cfg(not(feature = "winrt-devices"))]
     GetGattServicesWithCacheModeAsync: usize,
-    #[cfg(feature = "Devices_Bluetooth_GenericAttributeProfile")]
+    #[cfg(feature = "winrt-devices")]
     pub GetGattServicesForUuidAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, serviceuuid: ::windows_core::GUID, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_GenericAttributeProfile"))]
+    #[cfg(not(feature = "winrt-devices"))]
     GetGattServicesForUuidAsync: usize,
-    #[cfg(feature = "Devices_Bluetooth_GenericAttributeProfile")]
+    #[cfg(feature = "winrt-devices")]
     pub GetGattServicesForUuidWithCacheModeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, serviceuuid: ::windows_core::GUID, cachemode: BluetoothCacheMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_GenericAttributeProfile"))]
+    #[cfg(not(feature = "winrt-devices"))]
     GetGattServicesForUuidWithCacheModeAsync: usize,
 }
 #[doc(hidden)]

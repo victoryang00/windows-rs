@@ -113,7 +113,7 @@ impl ::core::default::Default for PSS_AUXILIARY_PAGES_INFORMATION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system")]
 pub struct PSS_AUXILIARY_PAGE_ENTRY {
     pub Address: *mut ::core::ffi::c_void,
     pub BasicInformation: super::super::Memory::MEMORY_BASIC_INFORMATION,
@@ -121,33 +121,33 @@ pub struct PSS_AUXILIARY_PAGE_ENTRY {
     pub PageContents: *mut ::core::ffi::c_void,
     pub PageSize: u32,
 }
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for PSS_AUXILIARY_PAGE_ENTRY {}
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for PSS_AUXILIARY_PAGE_ENTRY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for PSS_AUXILIARY_PAGE_ENTRY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PSS_AUXILIARY_PAGE_ENTRY").field("Address", &self.Address).field("BasicInformation", &self.BasicInformation).field("CaptureTime", &self.CaptureTime).field("PageContents", &self.PageContents).field("PageSize", &self.PageSize).finish()
     }
 }
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for PSS_AUXILIARY_PAGE_ENTRY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for PSS_AUXILIARY_PAGE_ENTRY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_AUXILIARY_PAGE_ENTRY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for PSS_AUXILIARY_PAGE_ENTRY {}
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for PSS_AUXILIARY_PAGE_ENTRY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -904,7 +904,7 @@ impl ::core::fmt::Debug for PSS_QUERY_INFORMATION_CLASS {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 pub struct PSS_THREAD_ENTRY {
     pub ExitStatus: u32,
     pub TebBaseAddress: *mut ::core::ffi::c_void,
@@ -926,15 +926,15 @@ pub struct PSS_THREAD_ENTRY {
     pub SizeOfContextRecord: u16,
     pub ContextRecord: *mut super::Debug::CONTEXT,
 }
-#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 impl ::core::marker::Copy for PSS_THREAD_ENTRY {}
-#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 impl ::core::clone::Clone for PSS_THREAD_ENTRY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 impl ::core::fmt::Debug for PSS_THREAD_ENTRY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PSS_THREAD_ENTRY")
@@ -960,19 +960,19 @@ impl ::core::fmt::Debug for PSS_THREAD_ENTRY {
             .finish()
     }
 }
-#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 unsafe impl ::windows_core::Abi for PSS_THREAD_ENTRY {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 impl ::core::cmp::PartialEq for PSS_THREAD_ENTRY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_THREAD_ENTRY>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 impl ::core::cmp::Eq for PSS_THREAD_ENTRY {}
-#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 impl ::core::default::Default for PSS_THREAD_ENTRY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

@@ -11,7 +11,7 @@ pub unsafe fn AssignProcessToJobObject<'a, Param0: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateJobObjectA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpjobattributes: *const ::win32_security::SECURITY_ATTRIBUTES, lpname: Param1) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
@@ -26,7 +26,7 @@ pub unsafe fn CreateJobObjectA<'a, Param1: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateJobObjectW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpjobattributes: *const ::win32_security::SECURITY_ATTRIBUTES, lpname: Param1) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
@@ -226,38 +226,38 @@ impl ::core::default::Default for JOBOBJECT_BASIC_ACCOUNTING_INFORMATION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system")]
 pub struct JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION {
     pub BasicInfo: JOBOBJECT_BASIC_ACCOUNTING_INFORMATION,
     pub IoInfo: super::Threading::IO_COUNTERS,
 }
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION {}
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION").field("BasicInfo", &self.BasicInfo).field("IoInfo", &self.IoInfo).finish()
     }
 }
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION {}
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -481,7 +481,7 @@ impl ::core::default::Default for JOBOBJECT_END_OF_JOB_TIME_INFORMATION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system")]
 pub struct JOBOBJECT_EXTENDED_LIMIT_INFORMATION {
     pub BasicLimitInformation: JOBOBJECT_BASIC_LIMIT_INFORMATION,
     pub IoInfo: super::Threading::IO_COUNTERS,
@@ -490,33 +490,33 @@ pub struct JOBOBJECT_EXTENDED_LIMIT_INFORMATION {
     pub PeakProcessMemoryUsed: usize,
     pub PeakJobMemoryUsed: usize,
 }
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for JOBOBJECT_EXTENDED_LIMIT_INFORMATION {}
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for JOBOBJECT_EXTENDED_LIMIT_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for JOBOBJECT_EXTENDED_LIMIT_INFORMATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("JOBOBJECT_EXTENDED_LIMIT_INFORMATION").field("BasicLimitInformation", &self.BasicLimitInformation).field("IoInfo", &self.IoInfo).field("ProcessMemoryLimit", &self.ProcessMemoryLimit).field("JobMemoryLimit", &self.JobMemoryLimit).field("PeakProcessMemoryUsed", &self.PeakProcessMemoryUsed).field("PeakJobMemoryUsed", &self.PeakJobMemoryUsed).finish()
     }
 }
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for JOBOBJECT_EXTENDED_LIMIT_INFORMATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for JOBOBJECT_EXTENDED_LIMIT_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_EXTENDED_LIMIT_INFORMATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for JOBOBJECT_EXTENDED_LIMIT_INFORMATION {}
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for JOBOBJECT_EXTENDED_LIMIT_INFORMATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1225,7 +1225,7 @@ impl ::core::fmt::Debug for JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct JOBOBJECT_SECURITY_LIMIT_INFORMATION {
     pub SecurityLimitFlags: JOB_OBJECT_SECURITY,
     pub JobToken: ::win32_foundation::HANDLE,
@@ -1233,33 +1233,33 @@ pub struct JOBOBJECT_SECURITY_LIMIT_INFORMATION {
     pub PrivilegesToDelete: *mut ::win32_security::TOKEN_PRIVILEGES,
     pub RestrictedSids: *mut ::win32_security::TOKEN_GROUPS,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for JOBOBJECT_SECURITY_LIMIT_INFORMATION {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for JOBOBJECT_SECURITY_LIMIT_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for JOBOBJECT_SECURITY_LIMIT_INFORMATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("JOBOBJECT_SECURITY_LIMIT_INFORMATION").field("SecurityLimitFlags", &self.SecurityLimitFlags).field("JobToken", &self.JobToken).field("SidsToDisable", &self.SidsToDisable).field("PrivilegesToDelete", &self.PrivilegesToDelete).field("RestrictedSids", &self.RestrictedSids).finish()
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for JOBOBJECT_SECURITY_LIMIT_INFORMATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for JOBOBJECT_SECURITY_LIMIT_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_SECURITY_LIMIT_INFORMATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for JOBOBJECT_SECURITY_LIMIT_INFORMATION {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for JOBOBJECT_SECURITY_LIMIT_INFORMATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

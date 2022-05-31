@@ -11,21 +11,21 @@ impl HttpBufferContent {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFromBuffer<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(content: Param0) -> ::windows_core::Result<HttpBufferContent> {
         Self::IHttpBufferContentFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromBuffer)(::windows_core::Interface::as_raw(this), content.into_param().abi(), result__.as_mut_ptr()).from_abi::<HttpBufferContent>(result__)
         })
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFromBufferWithOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(content: Param0, offset: u32, count: u32) -> ::windows_core::Result<HttpBufferContent> {
         Self::IHttpBufferContentFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromBufferWithOffset)(::windows_core::Interface::as_raw(this), content.into_param().abi(), offset, count, result__.as_mut_ptr()).from_abi::<HttpBufferContent>(result__)
         })
     }
-    #[cfg(feature = "Web_Http_Headers")]
+    #[cfg(feature = "winrt-web")]
     pub fn Headers(&self) -> ::windows_core::Result<Headers::HttpContentHeaderCollection> {
         let this = self;
         unsafe {
@@ -40,7 +40,7 @@ impl HttpBufferContent {
             (::windows_core::Interface::vtable(this).BufferAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ReadAsBufferAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>> {
         let this = self;
         unsafe {
@@ -48,7 +48,7 @@ impl HttpBufferContent {
             (::windows_core::Interface::vtable(this).ReadAsBufferAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ReadAsInputStreamAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IInputStream, u64>> {
         let this = self;
         unsafe {
@@ -70,7 +70,7 @@ impl HttpBufferContent {
             (::windows_core::Interface::vtable(this).TryComputeLength)(::windows_core::Interface::as_raw(this), length, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn WriteToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>> {
         let this = self;
         unsafe {
@@ -263,7 +263,7 @@ impl HttpClient {
             (::windows_core::Interface::vtable(this).GetWithOptionAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), completionoption, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetBufferAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, HttpProgress>> {
         let this = self;
         unsafe {
@@ -271,7 +271,7 @@ impl HttpClient {
             (::windows_core::Interface::vtable(this).GetBufferAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, HttpProgress>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetInputStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IInputStream, HttpProgress>> {
         let this = self;
         unsafe {
@@ -314,7 +314,7 @@ impl HttpClient {
             (::windows_core::Interface::vtable(this).SendRequestWithOptionAsync)(::windows_core::Interface::as_raw(this), request.into_param().abi(), completionoption, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>>(result__)
         }
     }
-    #[cfg(feature = "Web_Http_Headers")]
+    #[cfg(feature = "winrt-web")]
     pub fn DefaultRequestHeaders(&self) -> ::windows_core::Result<Headers::HttpRequestHeaderCollection> {
         let this = self;
         unsafe {
@@ -392,7 +392,7 @@ impl HttpClient {
             (::windows_core::Interface::vtable(this).TrySendRequestAsync2)(::windows_core::Interface::as_raw(this), request.into_param().abi(), completionoption, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>>(result__)
         }
     }
-    #[cfg(feature = "Web_Http_Filters")]
+    #[cfg(feature = "winrt-web")]
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, Filters::IHttpFilter>>(filter: Param0) -> ::windows_core::Result<HttpClient> {
         Self::IHttpClientFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -740,12 +740,12 @@ impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &Htt
 }
 unsafe impl ::core::marker::Send for HttpCookie {}
 unsafe impl ::core::marker::Sync for HttpCookie {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 #[repr(transparent)]
 pub struct HttpCookieCollection(::windows_core::IUnknown);
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl HttpCookieCollection {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<HttpCookie>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<HttpCookie>>(self)?;
         unsafe {
@@ -753,7 +753,7 @@ impl HttpCookieCollection {
             (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<HttpCookie>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetAt(&self, index: u32) -> ::windows_core::Result<HttpCookie> {
         let this = self;
         unsafe {
@@ -761,7 +761,7 @@ impl HttpCookieCollection {
             (::windows_core::Interface::vtable(this).GetAt)(::windows_core::Interface::as_raw(this), index, result__.as_mut_ptr()).from_abi::<HttpCookie>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -769,7 +769,7 @@ impl HttpCookieCollection {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn IndexOf<'a, Param0: ::windows_core::IntoParam<'a, HttpCookie>>(&self, value: Param0, index: &mut u32) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
@@ -777,7 +777,7 @@ impl HttpCookieCollection {
             (::windows_core::Interface::vtable(this).IndexOf)(::windows_core::Interface::as_raw(this), value.into_param().abi(), index, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetMany(&self, startindex: u32, items: &mut [::core::option::Option<HttpCookie>]) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -786,27 +786,27 @@ impl HttpCookieCollection {
         }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::clone::Clone for HttpCookieCollection {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::PartialEq for HttpCookieCollection {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::Eq for HttpCookieCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::fmt::Debug for HttpCookieCollection {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("HttpCookieCollection").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::RuntimeType for HttpCookieCollection {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Web.Http.HttpCookieCollection;pinterface({bbe1fa4c-b0e3-4583-baef-1f1b2e483e56};rc(Windows.Web.Http.HttpCookie;{1f5488e2-cc2d-4779-86a7-88f10687d249})))");
     type DefaultType = ::core::option::Option<Self>;
@@ -814,16 +814,16 @@ unsafe impl ::windows_core::RuntimeType for HttpCookieCollection {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::Interface for HttpCookieCollection {
     type Vtable = ::winrt_foundation::Collections::IVectorView_Vtbl<HttpCookie>;
     const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IVectorView<HttpCookie> as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::windows_core::RuntimeName for HttpCookieCollection {
     const NAME: &'static str = "Windows.Web.Http.HttpCookieCollection";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for HttpCookieCollection {
     type Item = HttpCookie;
     type IntoIter = ::winrt_foundation::Collections::VectorViewIterator<Self::Item>;
@@ -831,7 +831,7 @@ impl ::core::iter::IntoIterator for HttpCookieCollection {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &HttpCookieCollection {
     type Item = HttpCookie;
     type IntoIter = ::winrt_foundation::Collections::VectorViewIterator<Self::Item>;
@@ -839,109 +839,109 @@ impl ::core::iter::IntoIterator for &HttpCookieCollection {
         ::winrt_foundation::Collections::VectorViewIterator::new(::core::convert::TryInto::try_into(self).ok())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<HttpCookieCollection> for ::windows_core::IUnknown {
     fn from(value: HttpCookieCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&HttpCookieCollection> for ::windows_core::IUnknown {
     fn from(value: &HttpCookieCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for HttpCookieCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a HttpCookieCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<HttpCookieCollection> for ::windows_core::IInspectable {
     fn from(value: HttpCookieCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&HttpCookieCollection> for ::windows_core::IInspectable {
     fn from(value: &HttpCookieCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for HttpCookieCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a HttpCookieCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<HttpCookieCollection> for ::winrt_foundation::Collections::IIterable<HttpCookie> {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpCookieCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&HttpCookieCollection> for ::winrt_foundation::Collections::IIterable<HttpCookie> {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpCookieCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<HttpCookie>> for HttpCookieCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<HttpCookie>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<HttpCookie>> for &HttpCookieCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<HttpCookie>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<HttpCookie>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<HttpCookieCollection> for ::winrt_foundation::Collections::IVectorView<HttpCookie> {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpCookieCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&HttpCookieCollection> for ::winrt_foundation::Collections::IVectorView<HttpCookie> {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpCookieCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<HttpCookie>> for HttpCookieCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVectorView<HttpCookie>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<HttpCookie>> for &HttpCookieCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVectorView<HttpCookie>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IVectorView<HttpCookie>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Send for HttpCookieCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Sync for HttpCookieCollection {}
 #[repr(transparent)]
 pub struct HttpCookieManager(::windows_core::IUnknown);
@@ -964,7 +964,7 @@ impl HttpCookieManager {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).DeleteCookie)(::windows_core::Interface::as_raw(this), cookie.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetCookies<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<HttpCookieCollection> {
         let this = self;
         unsafe {
@@ -1052,7 +1052,7 @@ impl HttpFormUrlEncodedContent {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Web_Http_Headers")]
+    #[cfg(feature = "winrt-web")]
     pub fn Headers(&self) -> ::windows_core::Result<Headers::HttpContentHeaderCollection> {
         let this = self;
         unsafe {
@@ -1067,7 +1067,7 @@ impl HttpFormUrlEncodedContent {
             (::windows_core::Interface::vtable(this).BufferAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ReadAsBufferAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>> {
         let this = self;
         unsafe {
@@ -1075,7 +1075,7 @@ impl HttpFormUrlEncodedContent {
             (::windows_core::Interface::vtable(this).ReadAsBufferAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ReadAsInputStreamAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IInputStream, u64>> {
         let this = self;
         unsafe {
@@ -1097,7 +1097,7 @@ impl HttpFormUrlEncodedContent {
             (::windows_core::Interface::vtable(this).TryComputeLength)(::windows_core::Interface::as_raw(this), length, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn WriteToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>> {
         let this = self;
         unsafe {
@@ -1105,7 +1105,7 @@ impl HttpFormUrlEncodedContent {
             (::windows_core::Interface::vtable(this).WriteToStreamAsync)(::windows_core::Interface::as_raw(this), outputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>>>(content: Param0) -> ::windows_core::Result<HttpFormUrlEncodedContent> {
         Self::IHttpFormUrlEncodedContentFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1297,7 +1297,7 @@ impl HttpGetBufferResult {
             (::windows_core::Interface::vtable(this).Succeeded)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Value(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
@@ -1464,7 +1464,7 @@ impl HttpGetInputStreamResult {
             (::windows_core::Interface::vtable(this).Succeeded)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Value(&self) -> ::windows_core::Result<::winrt_storage::Streams::IInputStream> {
         let this = self;
         unsafe {
@@ -1944,7 +1944,7 @@ impl HttpMultipartContent {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Web_Http_Headers")]
+    #[cfg(feature = "winrt-web")]
     pub fn Headers(&self) -> ::windows_core::Result<Headers::HttpContentHeaderCollection> {
         let this = self;
         unsafe {
@@ -1959,7 +1959,7 @@ impl HttpMultipartContent {
             (::windows_core::Interface::vtable(this).BufferAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ReadAsBufferAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>> {
         let this = self;
         unsafe {
@@ -1967,7 +1967,7 @@ impl HttpMultipartContent {
             (::windows_core::Interface::vtable(this).ReadAsBufferAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ReadAsInputStreamAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IInputStream, u64>> {
         let this = self;
         unsafe {
@@ -1989,7 +1989,7 @@ impl HttpMultipartContent {
             (::windows_core::Interface::vtable(this).TryComputeLength)(::windows_core::Interface::as_raw(this), length, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn WriteToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>> {
         let this = self;
         unsafe {
@@ -2013,7 +2013,7 @@ impl HttpMultipartContent {
             (::windows_core::Interface::vtable(this).CreateWithSubtypeAndBoundary)(::windows_core::Interface::as_raw(this), subtype.into_param().abi(), boundary.into_param().abi(), result__.as_mut_ptr()).from_abi::<HttpMultipartContent>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<IHttpContent>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<IHttpContent>>(self)?;
         unsafe {
@@ -2063,7 +2063,7 @@ unsafe impl ::windows_core::Interface for HttpMultipartContent {
 impl ::windows_core::RuntimeName for HttpMultipartContent {
     const NAME: &'static str = "Windows.Web.Http.HttpMultipartContent";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for HttpMultipartContent {
     type Item = IHttpContent;
     type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
@@ -2071,7 +2071,7 @@ impl ::core::iter::IntoIterator for HttpMultipartContent {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &HttpMultipartContent {
     type Item = IHttpContent;
     type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
@@ -2163,27 +2163,27 @@ impl<'a> ::windows_core::IntoParam<'a, IHttpContent> for &HttpMultipartContent {
         ::core::convert::TryInto::<IHttpContent>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<HttpMultipartContent> for ::winrt_foundation::Collections::IIterable<IHttpContent> {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpMultipartContent) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&HttpMultipartContent> for ::winrt_foundation::Collections::IIterable<IHttpContent> {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpMultipartContent) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<IHttpContent>> for HttpMultipartContent {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<IHttpContent>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<IHttpContent>> for &HttpMultipartContent {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<IHttpContent>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<IHttpContent>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -2227,7 +2227,7 @@ impl HttpMultipartFormDataContent {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Web_Http_Headers")]
+    #[cfg(feature = "winrt-web")]
     pub fn Headers(&self) -> ::windows_core::Result<Headers::HttpContentHeaderCollection> {
         let this = self;
         unsafe {
@@ -2242,7 +2242,7 @@ impl HttpMultipartFormDataContent {
             (::windows_core::Interface::vtable(this).BufferAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ReadAsBufferAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>> {
         let this = self;
         unsafe {
@@ -2250,7 +2250,7 @@ impl HttpMultipartFormDataContent {
             (::windows_core::Interface::vtable(this).ReadAsBufferAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ReadAsInputStreamAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IInputStream, u64>> {
         let this = self;
         unsafe {
@@ -2272,7 +2272,7 @@ impl HttpMultipartFormDataContent {
             (::windows_core::Interface::vtable(this).TryComputeLength)(::windows_core::Interface::as_raw(this), length, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn WriteToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>> {
         let this = self;
         unsafe {
@@ -2298,7 +2298,7 @@ impl HttpMultipartFormDataContent {
             (::windows_core::Interface::vtable(this).CreateWithBoundary)(::windows_core::Interface::as_raw(this), boundary.into_param().abi(), result__.as_mut_ptr()).from_abi::<HttpMultipartFormDataContent>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<IHttpContent>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<IHttpContent>>(self)?;
         unsafe {
@@ -2348,7 +2348,7 @@ unsafe impl ::windows_core::Interface for HttpMultipartFormDataContent {
 impl ::windows_core::RuntimeName for HttpMultipartFormDataContent {
     const NAME: &'static str = "Windows.Web.Http.HttpMultipartFormDataContent";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for HttpMultipartFormDataContent {
     type Item = IHttpContent;
     type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
@@ -2356,7 +2356,7 @@ impl ::core::iter::IntoIterator for HttpMultipartFormDataContent {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &HttpMultipartFormDataContent {
     type Item = IHttpContent;
     type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
@@ -2448,27 +2448,27 @@ impl<'a> ::windows_core::IntoParam<'a, IHttpContent> for &HttpMultipartFormDataC
         ::core::convert::TryInto::<IHttpContent>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<HttpMultipartFormDataContent> for ::winrt_foundation::Collections::IIterable<IHttpContent> {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpMultipartFormDataContent) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&HttpMultipartFormDataContent> for ::winrt_foundation::Collections::IIterable<IHttpContent> {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpMultipartFormDataContent) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<IHttpContent>> for HttpMultipartFormDataContent {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<IHttpContent>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<IHttpContent>> for &HttpMultipartFormDataContent {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<IHttpContent>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<IHttpContent>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -2611,7 +2611,7 @@ impl HttpRequestMessage {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetContent)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Web_Http_Headers")]
+    #[cfg(feature = "winrt-web")]
     pub fn Headers(&self) -> ::windows_core::Result<Headers::HttpRequestHeaderCollection> {
         let this = self;
         unsafe {
@@ -2630,7 +2630,7 @@ impl HttpRequestMessage {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetMethod)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
@@ -2974,7 +2974,7 @@ impl HttpResponseMessage {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetContent)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Web_Http_Headers")]
+    #[cfg(feature = "winrt-web")]
     pub fn Headers(&self) -> ::windows_core::Result<Headers::HttpResponseHeaderCollection> {
         let this = self;
         unsafe {
@@ -3315,7 +3315,7 @@ impl HttpStreamContent {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Web_Http_Headers")]
+    #[cfg(feature = "winrt-web")]
     pub fn Headers(&self) -> ::windows_core::Result<Headers::HttpContentHeaderCollection> {
         let this = self;
         unsafe {
@@ -3330,7 +3330,7 @@ impl HttpStreamContent {
             (::windows_core::Interface::vtable(this).BufferAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ReadAsBufferAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>> {
         let this = self;
         unsafe {
@@ -3338,7 +3338,7 @@ impl HttpStreamContent {
             (::windows_core::Interface::vtable(this).ReadAsBufferAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ReadAsInputStreamAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IInputStream, u64>> {
         let this = self;
         unsafe {
@@ -3360,7 +3360,7 @@ impl HttpStreamContent {
             (::windows_core::Interface::vtable(this).TryComputeLength)(::windows_core::Interface::as_raw(this), length, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn WriteToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>> {
         let this = self;
         unsafe {
@@ -3368,7 +3368,7 @@ impl HttpStreamContent {
             (::windows_core::Interface::vtable(this).WriteToStreamAsync)(::windows_core::Interface::as_raw(this), outputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFromInputStream<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IInputStream>>(content: Param0) -> ::windows_core::Result<HttpStreamContent> {
         Self::IHttpStreamContentFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -3532,7 +3532,7 @@ impl HttpStringContent {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Web_Http_Headers")]
+    #[cfg(feature = "winrt-web")]
     pub fn Headers(&self) -> ::windows_core::Result<Headers::HttpContentHeaderCollection> {
         let this = self;
         unsafe {
@@ -3547,7 +3547,7 @@ impl HttpStringContent {
             (::windows_core::Interface::vtable(this).BufferAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ReadAsBufferAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>> {
         let this = self;
         unsafe {
@@ -3555,7 +3555,7 @@ impl HttpStringContent {
             (::windows_core::Interface::vtable(this).ReadAsBufferAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ReadAsInputStreamAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IInputStream, u64>> {
         let this = self;
         unsafe {
@@ -3577,7 +3577,7 @@ impl HttpStringContent {
             (::windows_core::Interface::vtable(this).TryComputeLength)(::windows_core::Interface::as_raw(this), length, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn WriteToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>> {
         let this = self;
         unsafe {
@@ -3591,14 +3591,14 @@ impl HttpStringContent {
             (::windows_core::Interface::vtable(this).CreateFromString)(::windows_core::Interface::as_raw(this), content.into_param().abi(), result__.as_mut_ptr()).from_abi::<HttpStringContent>(result__)
         })
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFromStringWithEncoding<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(content: Param0, encoding: ::winrt_storage::Streams::UnicodeEncoding) -> ::windows_core::Result<HttpStringContent> {
         Self::IHttpStringContentFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromStringWithEncoding)(::windows_core::Interface::as_raw(this), content.into_param().abi(), encoding, result__.as_mut_ptr()).from_abi::<HttpStringContent>(result__)
         })
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFromStringWithEncodingAndMediaType<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(content: Param0, encoding: ::winrt_storage::Streams::UnicodeEncoding, mediatype: Param2) -> ::windows_core::Result<HttpStringContent> {
         Self::IHttpStringContentFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -3758,7 +3758,7 @@ unsafe impl ::core::marker::Sync for HttpStringContent {}
 #[repr(transparent)]
 pub struct HttpTransportInformation(::windows_core::IUnknown);
 impl HttpTransportInformation {
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub fn ServerCertificate(&self) -> ::windows_core::Result<::winrt_security::Cryptography::Certificates::Certificate> {
         let this = self;
         unsafe {
@@ -3766,7 +3766,7 @@ impl HttpTransportInformation {
             (::windows_core::Interface::vtable(this).ServerCertificate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Cryptography::Certificates::Certificate>(result__)
         }
     }
-    #[cfg(feature = "Networking_Sockets")]
+    #[cfg(feature = "winrt-networking")]
     pub fn ServerCertificateErrorSeverity(&self) -> ::windows_core::Result<::winrt_networking::Sockets::SocketSslErrorSeverity> {
         let this = self;
         unsafe {
@@ -3774,7 +3774,7 @@ impl HttpTransportInformation {
             (::windows_core::Interface::vtable(this).ServerCertificateErrorSeverity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_networking::Sockets::SocketSslErrorSeverity>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn ServerCertificateErrors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::ChainValidationResult>> {
         let this = self;
         unsafe {
@@ -3782,7 +3782,7 @@ impl HttpTransportInformation {
             (::windows_core::Interface::vtable(this).ServerCertificateErrors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::ChainValidationResult>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn ServerIntermediateCertificates(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::Certificate>> {
         let this = self;
         unsafe {
@@ -3938,13 +3938,13 @@ unsafe impl ::windows_core::Interface for IHttpBufferContentFactory {
 #[doc(hidden)]
 pub struct IHttpBufferContentFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateFromBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, content: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateFromBuffer: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateFromBufferWithOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, content: ::windows_core::RawPtr, offset: u32, count: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateFromBufferWithOffset: usize,
 }
 #[doc(hidden)]
@@ -3961,22 +3961,22 @@ pub struct IHttpClient_Vtbl {
     pub DeleteAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetWithOptionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, completionoption: HttpCompletionOption, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub GetBufferAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     GetBufferAsync: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub GetInputStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     GetInputStreamAsync: usize,
     pub GetStringAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub PostAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, content: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub PutAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, content: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SendRequestAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, request: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SendRequestWithOptionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, request: ::windows_core::RawPtr, completionoption: HttpCompletionOption, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Web_Http_Headers")]
+    #[cfg(feature = "winrt-web")]
     pub DefaultRequestHeaders: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Web_Http_Headers"))]
+    #[cfg(not(feature = "winrt-web"))]
     DefaultRequestHeaders: usize,
 }
 #[doc(hidden)]
@@ -4012,15 +4012,15 @@ unsafe impl ::windows_core::Interface for IHttpClientFactory {
 #[doc(hidden)]
 pub struct IHttpClientFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Web_Http_Filters")]
+    #[cfg(feature = "winrt-web")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filter: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Web_Http_Filters"))]
+    #[cfg(not(feature = "winrt-web"))]
     Create: usize,
 }
 #[repr(transparent)]
 pub struct IHttpContent(::windows_core::IUnknown);
 impl IHttpContent {
-    #[cfg(feature = "Web_Http_Headers")]
+    #[cfg(feature = "winrt-web")]
     pub fn Headers(&self) -> ::windows_core::Result<Headers::HttpContentHeaderCollection> {
         let this = self;
         unsafe {
@@ -4035,7 +4035,7 @@ impl IHttpContent {
             (::windows_core::Interface::vtable(this).BufferAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ReadAsBufferAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>> {
         let this = self;
         unsafe {
@@ -4043,7 +4043,7 @@ impl IHttpContent {
             (::windows_core::Interface::vtable(this).ReadAsBufferAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ReadAsInputStreamAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IInputStream, u64>> {
         let this = self;
         unsafe {
@@ -4065,7 +4065,7 @@ impl IHttpContent {
             (::windows_core::Interface::vtable(this).TryComputeLength)(::windows_core::Interface::as_raw(this), length, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn WriteToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>> {
         let this = self;
         unsafe {
@@ -4171,24 +4171,24 @@ unsafe impl ::windows_core::Interface for IHttpContent {
 #[doc(hidden)]
 pub struct IHttpContent_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Web_Http_Headers")]
+    #[cfg(feature = "winrt-web")]
     pub Headers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Web_Http_Headers"))]
+    #[cfg(not(feature = "winrt-web"))]
     Headers: usize,
     pub BufferAllAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub ReadAsBufferAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     ReadAsBufferAsync: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub ReadAsInputStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     ReadAsInputStreamAsync: usize,
     pub ReadAsStringAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub TryComputeLength: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, length: *mut u64, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub WriteToStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, outputstream: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     WriteToStreamAsync: usize,
 }
 #[doc(hidden)]
@@ -4241,9 +4241,9 @@ pub struct IHttpCookieManager_Vtbl {
     pub SetCookie: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetCookieWithThirdParty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::windows_core::RawPtr, thirdparty: bool, result__: *mut bool) -> ::windows_core::HRESULT,
     pub DeleteCookie: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetCookies: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetCookies: usize,
 }
 #[doc(hidden)]
@@ -4257,9 +4257,9 @@ unsafe impl ::windows_core::Interface for IHttpFormUrlEncodedContentFactory {
 #[doc(hidden)]
 pub struct IHttpFormUrlEncodedContentFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, content: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Create: usize,
 }
 #[doc(hidden)]
@@ -4277,9 +4277,9 @@ pub struct IHttpGetBufferResult_Vtbl {
     pub RequestMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ResponseMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Succeeded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub Value: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Value: usize,
 }
 #[doc(hidden)]
@@ -4297,9 +4297,9 @@ pub struct IHttpGetInputStreamResult_Vtbl {
     pub RequestMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ResponseMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Succeeded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub Value: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Value: usize,
 }
 #[doc(hidden)]
@@ -4432,15 +4432,15 @@ pub struct IHttpRequestMessage_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Content: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Web_Http_Headers")]
+    #[cfg(feature = "winrt-web")]
     pub Headers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Web_Http_Headers"))]
+    #[cfg(not(feature = "winrt-web"))]
     Headers: usize,
     pub Method: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetMethod: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Properties: usize,
     pub RequestUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetRequestUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -4488,9 +4488,9 @@ pub struct IHttpResponseMessage_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Content: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Web_Http_Headers")]
+    #[cfg(feature = "winrt-web")]
     pub Headers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Web_Http_Headers"))]
+    #[cfg(not(feature = "winrt-web"))]
     Headers: usize,
     pub IsSuccessStatusCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub ReasonPhrase: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -4529,9 +4529,9 @@ unsafe impl ::windows_core::Interface for IHttpStreamContentFactory {
 #[doc(hidden)]
 pub struct IHttpStreamContentFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateFromInputStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, content: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateFromInputStream: usize,
 }
 #[doc(hidden)]
@@ -4546,13 +4546,13 @@ unsafe impl ::windows_core::Interface for IHttpStringContentFactory {
 pub struct IHttpStringContentFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub CreateFromString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, content: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateFromStringWithEncoding: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, content: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, encoding: ::winrt_storage::Streams::UnicodeEncoding, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateFromStringWithEncoding: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateFromStringWithEncodingAndMediaType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, content: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, encoding: ::winrt_storage::Streams::UnicodeEncoding, mediatype: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateFromStringWithEncodingAndMediaType: usize,
 }
 #[doc(hidden)]
@@ -4566,20 +4566,20 @@ unsafe impl ::windows_core::Interface for IHttpTransportInformation {
 #[doc(hidden)]
 pub struct IHttpTransportInformation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub ServerCertificate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Cryptography_Certificates"))]
+    #[cfg(not(feature = "winrt-security"))]
     ServerCertificate: usize,
-    #[cfg(feature = "Networking_Sockets")]
+    #[cfg(feature = "winrt-networking")]
     pub ServerCertificateErrorSeverity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_networking::Sockets::SocketSslErrorSeverity) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking_Sockets"))]
+    #[cfg(not(feature = "winrt-networking"))]
     ServerCertificateErrorSeverity: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub ServerCertificateErrors: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security")))]
     ServerCertificateErrors: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub ServerIntermediateCertificates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security")))]
     ServerIntermediateCertificates: usize,
 }

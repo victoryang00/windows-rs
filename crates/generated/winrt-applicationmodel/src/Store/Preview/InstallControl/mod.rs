@@ -82,7 +82,7 @@ impl AppInstallItem {
         let this = &::windows_core::Interface::cast::<IAppInstallItem2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RestartWithTelemetry)(::windows_core::Interface::as_raw(this), correlationvector.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Children(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<AppInstallItem>> {
         let this = &::windows_core::Interface::cast::<IAppInstallItem3>(self)?;
         unsafe {
@@ -246,7 +246,7 @@ impl AppInstallManager {
         static mut SHARED: ::windows_core::FactoryCache<AppInstallManager, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AppInstallItems(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<AppInstallItem>> {
         let this = self;
         unsafe {
@@ -338,7 +338,7 @@ impl AppInstallManager {
             (::windows_core::Interface::vtable(this).SearchForUpdatesAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), skuid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AppInstallItem>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SearchForAllUpdatesAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<AppInstallItem>>> {
         let this = self;
         unsafe {
@@ -381,7 +381,7 @@ impl AppInstallManager {
             (::windows_core::Interface::vtable(this).SearchForUpdatesWithTelemetryAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), skuid.into_param().abi(), catalogid.into_param().abi(), correlationvector.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AppInstallItem>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SearchForAllUpdatesWithTelemetryAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, correlationvector: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<AppInstallItem>>> {
         let this = &::windows_core::Interface::cast::<IAppInstallManager2>(self)?;
         unsafe {
@@ -408,7 +408,7 @@ impl AppInstallManager {
         let this = &::windows_core::Interface::cast::<IAppInstallManager2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RestartWithTelemetry)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), correlationvector.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Management_Deployment"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-management"))]
     pub fn StartProductInstallAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param6: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param7: ::windows_core::IntoParam<'a, ::winrt_management::Deployment::PackageVolume>>(&self, productid: Param0, catalogid: Param1, flightid: Param2, clientid: Param3, repair: bool, forceuseofnonremovablestorage: bool, correlationvector: Param6, targetvolume: Param7) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<AppInstallItem>>> {
         let this = &::windows_core::Interface::cast::<IAppInstallManager3>(self)?;
         unsafe {
@@ -416,7 +416,7 @@ impl AppInstallManager {
             (::windows_core::Interface::vtable(this).StartProductInstallAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), catalogid.into_param().abi(), flightid.into_param().abi(), clientid.into_param().abi(), repair, forceuseofnonremovablestorage, correlationvector.into_param().abi(), targetvolume.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<AppInstallItem>>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Management_Deployment", feature = "System"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-management", feature = "winrt-system"))]
     pub fn StartProductInstallForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param4: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param7: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param8: ::windows_core::IntoParam<'a, ::winrt_management::Deployment::PackageVolume>>(
         &self,
         user: Param0,
@@ -435,7 +435,7 @@ impl AppInstallManager {
             (::windows_core::Interface::vtable(this).StartProductInstallForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), productid.into_param().abi(), catalogid.into_param().abi(), flightid.into_param().abi(), clientid.into_param().abi(), repair, forceuseofnonremovablestorage, correlationvector.into_param().abi(), targetvolume.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<AppInstallItem>>>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn UpdateAppByPackageFamilyNameForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, user: Param0, packagefamilyname: Param1, correlationvector: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AppInstallItem>> {
         let this = &::windows_core::Interface::cast::<IAppInstallManager3>(self)?;
         unsafe {
@@ -443,7 +443,7 @@ impl AppInstallManager {
             (::windows_core::Interface::vtable(this).UpdateAppByPackageFamilyNameForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), packagefamilyname.into_param().abi(), correlationvector.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AppInstallItem>>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn SearchForUpdatesForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param4: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, user: Param0, productid: Param1, skuid: Param2, catalogid: Param3, correlationvector: Param4) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AppInstallItem>> {
         let this = &::windows_core::Interface::cast::<IAppInstallManager3>(self)?;
         unsafe {
@@ -451,7 +451,7 @@ impl AppInstallManager {
             (::windows_core::Interface::vtable(this).SearchForUpdatesForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), productid.into_param().abi(), skuid.into_param().abi(), catalogid.into_param().abi(), correlationvector.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AppInstallItem>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "System"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-system"))]
     pub fn SearchForAllUpdatesForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, user: Param0, correlationvector: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<AppInstallItem>>> {
         let this = &::windows_core::Interface::cast::<IAppInstallManager3>(self)?;
         unsafe {
@@ -459,7 +459,7 @@ impl AppInstallManager {
             (::windows_core::Interface::vtable(this).SearchForAllUpdatesForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), correlationvector.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<AppInstallItem>>>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn GetIsAppAllowedToInstallForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param4: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, user: Param0, productid: Param1, skuid: Param2, catalogid: Param3, correlationvector: Param4) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IAppInstallManager3>(self)?;
         unsafe {
@@ -467,7 +467,7 @@ impl AppInstallManager {
             (::windows_core::Interface::vtable(this).GetIsAppAllowedToInstallForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), productid.into_param().abi(), skuid.into_param().abi(), catalogid.into_param().abi(), correlationvector.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn GetIsApplicableForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, user: Param0, productid: Param1, skuid: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IAppInstallManager3>(self)?;
         unsafe {
@@ -486,7 +486,7 @@ impl AppInstallManager {
             (::windows_core::Interface::vtable(this).GetFreeUserEntitlementAsync)(::windows_core::Interface::as_raw(this), storeid.into_param().abi(), campaignid.into_param().abi(), correlationvector.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GetEntitlementResult>>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn GetFreeUserEntitlementForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, user: Param0, storeid: Param1, campaignid: Param2, correlationvector: Param3) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GetEntitlementResult>> {
         let this = &::windows_core::Interface::cast::<IAppInstallManager4>(self)?;
         unsafe {
@@ -501,7 +501,7 @@ impl AppInstallManager {
             (::windows_core::Interface::vtable(this).GetFreeDeviceEntitlementAsync)(::windows_core::Interface::as_raw(this), storeid.into_param().abi(), campaignid.into_param().abi(), correlationvector.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GetEntitlementResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AppInstallItemsWithGroupSupport(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<AppInstallItem>> {
         let this = &::windows_core::Interface::cast::<IAppInstallManager5>(self)?;
         unsafe {
@@ -509,7 +509,7 @@ impl AppInstallManager {
             (::windows_core::Interface::vtable(this).AppInstallItemsWithGroupSupport)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<AppInstallItem>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SearchForAllUpdatesWithUpdateOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, AppUpdateOptions>>(&self, correlationvector: Param0, clientid: Param1, updateoptions: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<AppInstallItem>>> {
         let this = &::windows_core::Interface::cast::<IAppInstallManager6>(self)?;
         unsafe {
@@ -517,7 +517,7 @@ impl AppInstallManager {
             (::windows_core::Interface::vtable(this).SearchForAllUpdatesWithUpdateOptionsAsync)(::windows_core::Interface::as_raw(this), correlationvector.into_param().abi(), clientid.into_param().abi(), updateoptions.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<AppInstallItem>>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "System"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-system"))]
     pub fn SearchForAllUpdatesWithUpdateOptionsForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, AppUpdateOptions>>(&self, user: Param0, correlationvector: Param1, clientid: Param2, updateoptions: Param3) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<AppInstallItem>>> {
         let this = &::windows_core::Interface::cast::<IAppInstallManager6>(self)?;
         unsafe {
@@ -532,7 +532,7 @@ impl AppInstallManager {
             (::windows_core::Interface::vtable(this).SearchForUpdatesWithUpdateOptionsAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), skuid.into_param().abi(), correlationvector.into_param().abi(), clientid.into_param().abi(), updateoptions.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AppInstallItem>>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn SearchForUpdatesWithUpdateOptionsForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param4: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param5: ::windows_core::IntoParam<'a, AppUpdateOptions>>(&self, user: Param0, productid: Param1, skuid: Param2, correlationvector: Param3, clientid: Param4, updateoptions: Param5) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AppInstallItem>> {
         let this = &::windows_core::Interface::cast::<IAppInstallManager6>(self)?;
         unsafe {
@@ -540,7 +540,7 @@ impl AppInstallManager {
             (::windows_core::Interface::vtable(this).SearchForUpdatesWithUpdateOptionsForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), productid.into_param().abi(), skuid.into_param().abi(), correlationvector.into_param().abi(), clientid.into_param().abi(), updateoptions.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AppInstallItem>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn StartProductInstallWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param4: ::windows_core::IntoParam<'a, AppInstallOptions>>(&self, productid: Param0, flightid: Param1, clientid: Param2, correlationvector: Param3, installoptions: Param4) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<AppInstallItem>>> {
         let this = &::windows_core::Interface::cast::<IAppInstallManager6>(self)?;
         unsafe {
@@ -548,7 +548,7 @@ impl AppInstallManager {
             (::windows_core::Interface::vtable(this).StartProductInstallWithOptionsAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), flightid.into_param().abi(), clientid.into_param().abi(), correlationvector.into_param().abi(), installoptions.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<AppInstallItem>>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "System"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-system"))]
     pub fn StartProductInstallWithOptionsForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param4: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param5: ::windows_core::IntoParam<'a, AppInstallOptions>>(&self, user: Param0, productid: Param1, flightid: Param2, clientid: Param3, correlationvector: Param4, installoptions: Param5) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<AppInstallItem>>> {
         let this = &::windows_core::Interface::cast::<IAppInstallManager6>(self)?;
         unsafe {
@@ -563,7 +563,7 @@ impl AppInstallManager {
             (::windows_core::Interface::vtable(this).GetIsPackageIdentityAllowedToInstallAsync)(::windows_core::Interface::as_raw(this), correlationvector.into_param().abi(), packageidentityname.into_param().abi(), publishercertificatename.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn GetIsPackageIdentityAllowedToInstallForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, user: Param0, correlationvector: Param1, packageidentityname: Param2, publishercertificatename: Param3) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IAppInstallManager6>(self)?;
         unsafe {
@@ -788,7 +788,7 @@ impl AppInstallOptions {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetRepair)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Management_Deployment")]
+    #[cfg(feature = "winrt-management")]
     pub fn TargetVolume(&self) -> ::windows_core::Result<::winrt_management::Deployment::PackageVolume> {
         let this = self;
         unsafe {
@@ -796,7 +796,7 @@ impl AppInstallOptions {
             (::windows_core::Interface::vtable(this).TargetVolume)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_management::Deployment::PackageVolume>(result__)
         }
     }
-    #[cfg(feature = "Management_Deployment")]
+    #[cfg(feature = "winrt-management")]
     pub fn SetTargetVolume<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_management::Deployment::PackageVolume>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetTargetVolume)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -1067,7 +1067,7 @@ impl AppInstallStatus {
             (::windows_core::Interface::vtable(this).ErrorCode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HRESULT>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IAppInstallStatus2>(self)?;
         unsafe {
@@ -1550,9 +1550,9 @@ unsafe impl ::windows_core::Interface for IAppInstallItem3 {
 #[doc(hidden)]
 pub struct IAppInstallItem3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Children: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Children: usize,
     pub ItemOperationsMightAffectOtherItems: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
 }
@@ -1603,9 +1603,9 @@ unsafe impl ::windows_core::Interface for IAppInstallManager {
 #[doc(hidden)]
 pub struct IAppInstallManager_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub AppInstallItems: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     AppInstallItems: usize,
     pub Cancel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Pause: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -1622,9 +1622,9 @@ pub struct IAppInstallManager_Vtbl {
     pub StartAppInstallAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, skuid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, repair: bool, forceuseofnonremovablestorage: bool, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub UpdateAppByPackageFamilyNameAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagefamilyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SearchForUpdatesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, skuid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SearchForAllUpdatesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SearchForAllUpdatesAsync: usize,
     pub IsStoreBlockedByPolicyAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, storeclientname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, storeclientpublisher: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetIsAppAllowedToInstallAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -1643,9 +1643,9 @@ pub struct IAppInstallManager2_Vtbl {
     pub StartAppInstallWithTelemetryAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, skuid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, repair: bool, forceuseofnonremovablestorage: bool, catalogid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, bundleid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, correlationvector: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub UpdateAppByPackageFamilyNameWithTelemetryAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagefamilyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, correlationvector: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SearchForUpdatesWithTelemetryAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, skuid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, catalogid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, correlationvector: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SearchForAllUpdatesWithTelemetryAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, correlationvector: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SearchForAllUpdatesWithTelemetryAsync: usize,
     pub GetIsAppAllowedToInstallWithTelemetryAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, skuid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, catalogid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, correlationvector: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CancelWithTelemetry: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, correlationvector: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -1663,33 +1663,33 @@ unsafe impl ::windows_core::Interface for IAppInstallManager3 {
 #[doc(hidden)]
 pub struct IAppInstallManager3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Management_Deployment"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-management"))]
     pub StartProductInstallAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, catalogid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, flightid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, clientid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, repair: bool, forceuseofnonremovablestorage: bool, correlationvector: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, targetvolume: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Management_Deployment")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-management")))]
     StartProductInstallAsync: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Management_Deployment", feature = "System"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-management", feature = "winrt-system"))]
     pub StartProductInstallForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, catalogid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, flightid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, clientid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, repair: bool, forceuseofnonremovablestorage: bool, correlationvector: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, targetvolume: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Management_Deployment", feature = "System")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-management", feature = "winrt-system")))]
     StartProductInstallForUserAsync: usize,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub UpdateAppByPackageFamilyNameForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, packagefamilyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, correlationvector: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     UpdateAppByPackageFamilyNameForUserAsync: usize,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub SearchForUpdatesForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, skuid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, catalogid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, correlationvector: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     SearchForUpdatesForUserAsync: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "System"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-system"))]
     pub SearchForAllUpdatesForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, correlationvector: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "System")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-system")))]
     SearchForAllUpdatesForUserAsync: usize,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub GetIsAppAllowedToInstallForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, skuid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, catalogid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, correlationvector: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     GetIsAppAllowedToInstallForUserAsync: usize,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub GetIsApplicableForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, skuid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     GetIsApplicableForUserAsync: usize,
     pub MoveToFrontOfDownloadQueue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, correlationvector: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
@@ -1705,9 +1705,9 @@ unsafe impl ::windows_core::Interface for IAppInstallManager4 {
 pub struct IAppInstallManager4_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub GetFreeUserEntitlementAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, storeid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, campaignid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, correlationvector: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub GetFreeUserEntitlementForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, storeid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, campaignid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, correlationvector: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     GetFreeUserEntitlementForUserAsync: usize,
     pub GetFreeDeviceEntitlementAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, storeid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, campaignid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, correlationvector: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -1722,9 +1722,9 @@ unsafe impl ::windows_core::Interface for IAppInstallManager5 {
 #[doc(hidden)]
 pub struct IAppInstallManager5_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub AppInstallItemsWithGroupSupport: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     AppInstallItemsWithGroupSupport: usize,
 }
 #[doc(hidden)]
@@ -1738,31 +1738,31 @@ unsafe impl ::windows_core::Interface for IAppInstallManager6 {
 #[doc(hidden)]
 pub struct IAppInstallManager6_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SearchForAllUpdatesWithUpdateOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, correlationvector: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, clientid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, updateoptions: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SearchForAllUpdatesWithUpdateOptionsAsync: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "System"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-system"))]
     pub SearchForAllUpdatesWithUpdateOptionsForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, correlationvector: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, clientid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, updateoptions: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "System")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-system")))]
     SearchForAllUpdatesWithUpdateOptionsForUserAsync: usize,
     pub SearchForUpdatesWithUpdateOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, skuid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, correlationvector: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, clientid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, updateoptions: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub SearchForUpdatesWithUpdateOptionsForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, skuid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, correlationvector: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, clientid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, updateoptions: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     SearchForUpdatesWithUpdateOptionsForUserAsync: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub StartProductInstallWithOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, flightid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, clientid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, correlationvector: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, installoptions: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     StartProductInstallWithOptionsAsync: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "System"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-system"))]
     pub StartProductInstallWithOptionsForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, flightid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, clientid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, correlationvector: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, installoptions: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "System")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-system")))]
     StartProductInstallWithOptionsForUserAsync: usize,
     pub GetIsPackageIdentityAllowedToInstallAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, correlationvector: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, packageidentityname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, publishercertificatename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub GetIsPackageIdentityAllowedToInstallForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, correlationvector: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, packageidentityname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, publishercertificatename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     GetIsPackageIdentityAllowedToInstallForUserAsync: usize,
 }
 #[doc(hidden)]
@@ -1810,13 +1810,13 @@ pub struct IAppInstallOptions_Vtbl {
     pub SetAllowForcedAppRestart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub Repair: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetRepair: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Management_Deployment")]
+    #[cfg(feature = "winrt-management")]
     pub TargetVolume: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Management_Deployment"))]
+    #[cfg(not(feature = "winrt-management"))]
     TargetVolume: usize,
-    #[cfg(feature = "Management_Deployment")]
+    #[cfg(feature = "winrt-management")]
     pub SetTargetVolume: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Management_Deployment"))]
+    #[cfg(not(feature = "winrt-management"))]
     SetTargetVolume: usize,
     pub LaunchAfterInstall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetLaunchAfterInstall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -1879,9 +1879,9 @@ unsafe impl ::windows_core::Interface for IAppInstallStatus2 {
 #[doc(hidden)]
 pub struct IAppInstallStatus2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub User: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     User: usize,
     pub ReadyForLaunch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
 }

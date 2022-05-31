@@ -1587,7 +1587,7 @@ pub struct IEnumSyncChanges_Vtbl {
 #[repr(transparent)]
 pub struct IEnumSyncProviderConfigUIInfos(::windows_core::IUnknown);
 impl IEnumSyncProviderConfigUIInfos {
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn Next(&self, cfactories: u32, ppsyncproviderconfiguiinfo: *mut ::core::option::Option<ISyncProviderConfigUIInfo>, pcfetched: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Next)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(cfactories), ::core::mem::transmute(ppsyncproviderconfiguiinfo), ::core::mem::transmute(pcfetched)).ok()
     }
@@ -1646,9 +1646,9 @@ unsafe impl ::windows_core::Interface for IEnumSyncProviderConfigUIInfos {
 #[doc(hidden)]
 pub struct IEnumSyncProviderConfigUIInfos_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub Next: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cfactories: u32, ppsyncproviderconfiguiinfo: *mut ::windows_core::RawPtr, pcfetched: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    #[cfg(not(feature = "win32-ui"))]
     Next: usize,
     pub Skip: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cfactories: u32) -> ::windows_core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -1657,7 +1657,7 @@ pub struct IEnumSyncProviderConfigUIInfos_Vtbl {
 #[repr(transparent)]
 pub struct IEnumSyncProviderInfos(::windows_core::IUnknown);
 impl IEnumSyncProviderInfos {
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn Next(&self, cinstances: u32, ppsyncproviderinfo: *mut ::core::option::Option<ISyncProviderInfo>, pcfetched: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Next)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(cinstances), ::core::mem::transmute(ppsyncproviderinfo), ::core::mem::transmute(pcfetched)).ok()
     }
@@ -1716,9 +1716,9 @@ unsafe impl ::windows_core::Interface for IEnumSyncProviderInfos {
 #[doc(hidden)]
 pub struct IEnumSyncProviderInfos_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub Next: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cinstances: u32, ppsyncproviderinfo: *mut ::windows_core::RawPtr, pcfetched: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    #[cfg(not(feature = "win32-ui"))]
     Next: usize,
     pub Skip: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cinstances: u32) -> ::windows_core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -2737,7 +2737,7 @@ pub struct IRecoverableErrorData_Vtbl {
 #[repr(transparent)]
 pub struct IRegisteredSyncProvider(::windows_core::IUnknown);
 impl IRegisteredSyncProvider {
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn Init<'a, Param2: ::windows_core::IntoParam<'a, ::win32_ui::Shell::PropertiesSystem::IPropertyStore>>(&self, pguidinstanceid: *const ::windows_core::GUID, pguidcontenttype: *const ::windows_core::GUID, pcontextpropertystore: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Init)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pguidinstanceid), ::core::mem::transmute(pguidcontenttype), pcontextpropertystore.into_param().abi()).ok()
     }
@@ -2793,9 +2793,9 @@ unsafe impl ::windows_core::Interface for IRegisteredSyncProvider {
 #[doc(hidden)]
 pub struct IRegisteredSyncProvider_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub Init: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidinstanceid: *const ::windows_core::GUID, pguidcontenttype: *const ::windows_core::GUID, pcontextpropertystore: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    #[cfg(not(feature = "win32-ui"))]
     Init: usize,
     pub GetInstanceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidinstanceid: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -5566,21 +5566,21 @@ pub struct ISyncProvider_Vtbl {
 #[repr(transparent)]
 pub struct ISyncProviderConfigUI(::windows_core::IUnknown);
 impl ISyncProviderConfigUI {
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn Init<'a, Param2: ::windows_core::IntoParam<'a, ::win32_ui::Shell::PropertiesSystem::IPropertyStore>>(&self, pguidinstanceid: *const ::windows_core::GUID, pguidcontenttype: *const ::windows_core::GUID, pconfigurationproperties: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Init)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pguidinstanceid), ::core::mem::transmute(pguidcontenttype), pconfigurationproperties.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn GetRegisteredProperties(&self) -> ::windows_core::Result<::win32_ui::Shell::PropertiesSystem::IPropertyStore> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetRegisteredProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_ui::Shell::PropertiesSystem::IPropertyStore>(result__)
     }
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn CreateAndRegisterNewSyncProvider<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, hwndparent: Param0, punkcontext: Param1) -> ::windows_core::Result<ISyncProviderInfo> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateAndRegisterNewSyncProvider)(::windows_core::Interface::as_raw(self), hwndparent.into_param().abi(), punkcontext.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ISyncProviderInfo>(result__)
     }
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn ModifySyncProvider<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>, Param2: ::windows_core::IntoParam<'a, ISyncProviderInfo>>(&self, hwndparent: Param0, punkcontext: Param1, pproviderinfo: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ModifySyncProvider)(::windows_core::Interface::as_raw(self), hwndparent.into_param().abi(), punkcontext.into_param().abi(), pproviderinfo.into_param().abi()).ok()
     }
@@ -5629,48 +5629,48 @@ unsafe impl ::windows_core::Interface for ISyncProviderConfigUI {
 #[doc(hidden)]
 pub struct ISyncProviderConfigUI_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub Init: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidinstanceid: *const ::windows_core::GUID, pguidcontenttype: *const ::windows_core::GUID, pconfigurationproperties: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    #[cfg(not(feature = "win32-ui"))]
     Init: usize,
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub GetRegisteredProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppconfiguiproperties: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    #[cfg(not(feature = "win32-ui"))]
     GetRegisteredProperties: usize,
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub CreateAndRegisterNewSyncProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwndparent: ::win32_foundation::HWND, punkcontext: *mut ::core::ffi::c_void, ppproviderinfo: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    #[cfg(not(feature = "win32-ui"))]
     CreateAndRegisterNewSyncProvider: usize,
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub ModifySyncProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwndparent: ::win32_foundation::HWND, punkcontext: *mut ::core::ffi::c_void, pproviderinfo: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    #[cfg(not(feature = "win32-ui"))]
     ModifySyncProvider: usize,
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 #[repr(transparent)]
 pub struct ISyncProviderConfigUIInfo(::windows_core::IUnknown);
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl ISyncProviderConfigUIInfo {
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn GetCount(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetCount)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn GetAt(&self, iprop: u32) -> ::windows_core::Result<::win32_ui::Shell::PropertiesSystem::PROPERTYKEY> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_ui::Shell::PropertiesSystem::PROPERTYKEY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetAt)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(iprop), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_ui::Shell::PropertiesSystem::PROPERTYKEY>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-ui"))]
     pub unsafe fn GetValue(&self, key: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_core::Result<super::Com::StructuredStorage::PROPVARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::Com::StructuredStorage::PROPVARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(key), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::StructuredStorage::PROPVARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-ui"))]
     pub unsafe fn SetValue(&self, key: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, propvar: *const super::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(key), ::core::mem::transmute(propvar)).ok()
     }
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn Commit(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Commit)(::windows_core::Interface::as_raw(self)).ok()
     }
@@ -5679,111 +5679,111 @@ impl ISyncProviderConfigUIInfo {
         (::windows_core::Interface::vtable(self).GetSyncProviderConfigUI)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwclscontext), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ISyncProviderConfigUI>(result__)
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl ::core::convert::From<ISyncProviderConfigUIInfo> for ::windows_core::IUnknown {
     fn from(value: ISyncProviderConfigUIInfo) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl ::core::convert::From<&ISyncProviderConfigUIInfo> for ::windows_core::IUnknown {
     fn from(value: &ISyncProviderConfigUIInfo) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for ISyncProviderConfigUIInfo {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ISyncProviderConfigUIInfo {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl ::core::convert::From<ISyncProviderConfigUIInfo> for ::win32_ui::Shell::PropertiesSystem::IPropertyStore {
     fn from(value: ISyncProviderConfigUIInfo) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl ::core::convert::From<&ISyncProviderConfigUIInfo> for ::win32_ui::Shell::PropertiesSystem::IPropertyStore {
     fn from(value: &ISyncProviderConfigUIInfo) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl<'a> ::windows_core::IntoParam<'a, ::win32_ui::Shell::PropertiesSystem::IPropertyStore> for ISyncProviderConfigUIInfo {
     fn into_param(self) -> ::windows_core::Param<'a, ::win32_ui::Shell::PropertiesSystem::IPropertyStore> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl<'a> ::windows_core::IntoParam<'a, ::win32_ui::Shell::PropertiesSystem::IPropertyStore> for &'a ISyncProviderConfigUIInfo {
     fn into_param(self) -> ::windows_core::Param<'a, ::win32_ui::Shell::PropertiesSystem::IPropertyStore> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl ::core::clone::Clone for ISyncProviderConfigUIInfo {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl ::core::cmp::PartialEq for ISyncProviderConfigUIInfo {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl ::core::cmp::Eq for ISyncProviderConfigUIInfo {}
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl ::core::fmt::Debug for ISyncProviderConfigUIInfo {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("ISyncProviderConfigUIInfo").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 unsafe impl ::windows_core::Interface for ISyncProviderConfigUIInfo {
     type Vtable = ISyncProviderConfigUIInfo_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x214141ae_33d7_4d8d_8e37_f227e880ce50);
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct ISyncProviderConfigUIInfo_Vtbl {
     pub base__: ::win32_ui::Shell::PropertiesSystem::IPropertyStore_Vtbl,
     pub GetSyncProviderConfigUI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwclscontext: u32, ppsyncproviderconfigui: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 #[repr(transparent)]
 pub struct ISyncProviderInfo(::windows_core::IUnknown);
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl ISyncProviderInfo {
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn GetCount(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetCount)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn GetAt(&self, iprop: u32) -> ::windows_core::Result<::win32_ui::Shell::PropertiesSystem::PROPERTYKEY> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_ui::Shell::PropertiesSystem::PROPERTYKEY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetAt)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(iprop), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_ui::Shell::PropertiesSystem::PROPERTYKEY>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-ui"))]
     pub unsafe fn GetValue(&self, key: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_core::Result<super::Com::StructuredStorage::PROPVARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::Com::StructuredStorage::PROPVARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(key), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::StructuredStorage::PROPVARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-ui"))]
     pub unsafe fn SetValue(&self, key: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, propvar: *const super::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(key), ::core::mem::transmute(propvar)).ok()
     }
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn Commit(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Commit)(::windows_core::Interface::as_raw(self)).ok()
     }
@@ -5792,80 +5792,80 @@ impl ISyncProviderInfo {
         (::windows_core::Interface::vtable(self).GetSyncProvider)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwclscontext), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IRegisteredSyncProvider>(result__)
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl ::core::convert::From<ISyncProviderInfo> for ::windows_core::IUnknown {
     fn from(value: ISyncProviderInfo) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl ::core::convert::From<&ISyncProviderInfo> for ::windows_core::IUnknown {
     fn from(value: &ISyncProviderInfo) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for ISyncProviderInfo {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ISyncProviderInfo {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl ::core::convert::From<ISyncProviderInfo> for ::win32_ui::Shell::PropertiesSystem::IPropertyStore {
     fn from(value: ISyncProviderInfo) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl ::core::convert::From<&ISyncProviderInfo> for ::win32_ui::Shell::PropertiesSystem::IPropertyStore {
     fn from(value: &ISyncProviderInfo) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl<'a> ::windows_core::IntoParam<'a, ::win32_ui::Shell::PropertiesSystem::IPropertyStore> for ISyncProviderInfo {
     fn into_param(self) -> ::windows_core::Param<'a, ::win32_ui::Shell::PropertiesSystem::IPropertyStore> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl<'a> ::windows_core::IntoParam<'a, ::win32_ui::Shell::PropertiesSystem::IPropertyStore> for &'a ISyncProviderInfo {
     fn into_param(self) -> ::windows_core::Param<'a, ::win32_ui::Shell::PropertiesSystem::IPropertyStore> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl ::core::clone::Clone for ISyncProviderInfo {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl ::core::cmp::PartialEq for ISyncProviderInfo {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl ::core::cmp::Eq for ISyncProviderInfo {}
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 impl ::core::fmt::Debug for ISyncProviderInfo {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("ISyncProviderInfo").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 unsafe impl ::windows_core::Interface for ISyncProviderInfo {
     type Vtable = ISyncProviderInfo_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1ee135de_88a4_4504_b0d0_f7920d7e5ba6);
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct ISyncProviderInfo_Vtbl {
@@ -5875,7 +5875,7 @@ pub struct ISyncProviderInfo_Vtbl {
 #[repr(transparent)]
 pub struct ISyncProviderRegistration(::windows_core::IUnknown);
 impl ISyncProviderRegistration {
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn CreateSyncProviderConfigUIRegistrationInstance(&self, pconfiguiconfig: *const SyncProviderConfigUIConfiguration) -> ::windows_core::Result<ISyncProviderConfigUIInfo> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateSyncProviderConfigUIRegistrationInstance)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pconfiguiconfig), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ISyncProviderConfigUIInfo>(result__)
@@ -5887,7 +5887,7 @@ impl ISyncProviderRegistration {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).EnumerateSyncProviderConfigUIs)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pguidcontenttype), ::core::mem::transmute(dwsupportedarchitecture), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumSyncProviderConfigUIInfos>(result__)
     }
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn CreateSyncProviderRegistrationInstance(&self, pproviderconfiguration: *const SyncProviderConfiguration) -> ::windows_core::Result<ISyncProviderInfo> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateSyncProviderRegistrationInstance)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pproviderconfiguration), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ISyncProviderInfo>(result__)
@@ -5895,7 +5895,7 @@ impl ISyncProviderRegistration {
     pub unsafe fn UnregisterSyncProvider(&self, pguidinstanceid: *const ::windows_core::GUID) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).UnregisterSyncProvider)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pguidinstanceid)).ok()
     }
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn GetSyncProviderConfigUIInfoforProvider(&self, pguidproviderinstanceid: *const ::windows_core::GUID) -> ::windows_core::Result<ISyncProviderConfigUIInfo> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetSyncProviderConfigUIInfoforProvider)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pguidproviderinstanceid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ISyncProviderConfigUIInfo>(result__)
@@ -5904,7 +5904,7 @@ impl ISyncProviderRegistration {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).EnumerateSyncProviders)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pguidcontenttype), ::core::mem::transmute(dwstateflagstofiltermask), ::core::mem::transmute(dwstateflagstofilter), ::core::mem::transmute(refproviderclsid), ::core::mem::transmute(dwsupportedarchitecture), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumSyncProviderInfos>(result__)
     }
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn GetSyncProviderInfo(&self, pguidinstanceid: *const ::windows_core::GUID) -> ::windows_core::Result<ISyncProviderInfo> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetSyncProviderInfo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pguidinstanceid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ISyncProviderInfo>(result__)
@@ -5913,7 +5913,7 @@ impl ISyncProviderRegistration {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetSyncProviderFromInstanceId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pguidinstanceid), ::core::mem::transmute(dwclscontext), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IRegisteredSyncProvider>(result__)
     }
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn GetSyncProviderConfigUIInfo(&self, pguidinstanceid: *const ::windows_core::GUID) -> ::windows_core::Result<ISyncProviderConfigUIInfo> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetSyncProviderConfigUIInfo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pguidinstanceid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ISyncProviderConfigUIInfo>(result__)
@@ -5984,30 +5984,30 @@ unsafe impl ::windows_core::Interface for ISyncProviderRegistration {
 #[doc(hidden)]
 pub struct ISyncProviderRegistration_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub CreateSyncProviderConfigUIRegistrationInstance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pconfiguiconfig: *const SyncProviderConfigUIConfiguration, ppconfiguiinfo: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    #[cfg(not(feature = "win32-ui"))]
     CreateSyncProviderConfigUIRegistrationInstance: usize,
     pub UnregisterSyncProviderConfigUI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidinstanceid: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub EnumerateSyncProviderConfigUIs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidcontenttype: *const ::windows_core::GUID, dwsupportedarchitecture: u32, ppenumsyncproviderconfiguiinfos: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub CreateSyncProviderRegistrationInstance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pproviderconfiguration: *const SyncProviderConfiguration, ppproviderinfo: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    #[cfg(not(feature = "win32-ui"))]
     CreateSyncProviderRegistrationInstance: usize,
     pub UnregisterSyncProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidinstanceid: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub GetSyncProviderConfigUIInfoforProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidproviderinstanceid: *const ::windows_core::GUID, ppproviderconfiguiinfo: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    #[cfg(not(feature = "win32-ui"))]
     GetSyncProviderConfigUIInfoforProvider: usize,
     pub EnumerateSyncProviders: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidcontenttype: *const ::windows_core::GUID, dwstateflagstofiltermask: u32, dwstateflagstofilter: u32, refproviderclsid: *const ::windows_core::GUID, dwsupportedarchitecture: u32, ppenumsyncproviderinfos: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub GetSyncProviderInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidinstanceid: *const ::windows_core::GUID, ppproviderinfo: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    #[cfg(not(feature = "win32-ui"))]
     GetSyncProviderInfo: usize,
     pub GetSyncProviderFromInstanceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidinstanceid: *const ::windows_core::GUID, dwclscontext: u32, ppsyncprovider: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub GetSyncProviderConfigUIInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidinstanceid: *const ::windows_core::GUID, ppconfiguiinfo: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    #[cfg(not(feature = "win32-ui"))]
     GetSyncProviderConfigUIInfo: usize,
     pub GetSyncProviderConfigUIFromInstanceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidinstanceid: *const ::windows_core::GUID, dwclscontext: u32, ppconfigui: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetSyncProviderState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidinstanceid: *const ::windows_core::GUID, pdwstateflags: *mut u32) -> ::windows_core::HRESULT,
@@ -6388,49 +6388,49 @@ impl ::core::fmt::Debug for KNOWLEDGE_COOKIE_COMPARISON_RESULT {
         f.debug_tuple("KNOWLEDGE_COOKIE_COMPARISON_RESULT").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const PKEY_CONFIGUI_CAPABILITIES: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 5u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const PKEY_CONFIGUI_CLSID: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 3u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const PKEY_CONFIGUI_CONTENTTYPE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 4u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const PKEY_CONFIGUI_DESCRIPTION: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 9u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const PKEY_CONFIGUI_ICON: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 11u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const PKEY_CONFIGUI_INSTANCEID: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 2u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const PKEY_CONFIGUI_IS_GLOBAL: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 7u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const PKEY_CONFIGUI_MENUITEM: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 13u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const PKEY_CONFIGUI_MENUITEM_NOUI: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 12u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const PKEY_CONFIGUI_NAME: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 8u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const PKEY_CONFIGUI_SUPPORTED_ARCHITECTURE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 6u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const PKEY_CONFIGUI_TOOLTIPS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 10u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const PKEY_PROVIDER_CAPABILITIES: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 6u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const PKEY_PROVIDER_CLSID: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 3u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const PKEY_PROVIDER_CONFIGUI: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 4u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const PKEY_PROVIDER_CONTENTTYPE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 5u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const PKEY_PROVIDER_DESCRIPTION: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 9u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const PKEY_PROVIDER_ICON: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 11u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const PKEY_PROVIDER_INSTANCEID: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 2u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const PKEY_PROVIDER_NAME: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 8u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const PKEY_PROVIDER_SUPPORTED_ARCHITECTURE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 7u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const PKEY_PROVIDER_TOOLTIPS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 10u32 };
 pub const SYNC_CHANGE_FLAG_DELETED: u32 = 1u32;
 pub const SYNC_CHANGE_FLAG_DOES_NOT_EXIST: u32 = 2u32;

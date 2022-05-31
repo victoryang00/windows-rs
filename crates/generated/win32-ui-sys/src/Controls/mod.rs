@@ -4,14 +4,14 @@ pub mod Dialogs;
 pub mod RichEdit;
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn BeginBufferedAnimation(hwnd: ::win32_foundation_sys::HWND, hdctarget: ::win32_graphics_sys::Gdi::HDC, prctarget: *const ::win32_foundation_sys::RECT, dwformat: BP_BUFFERFORMAT, ppaintparams: *const BP_PAINTPARAMS, panimationparams: *const BP_ANIMATIONPARAMS, phdcfrom: *mut ::win32_graphics_sys::Gdi::HDC, phdcto: *mut ::win32_graphics_sys::Gdi::HDC) -> isize;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn BeginBufferedPaint(hdctarget: ::win32_graphics_sys::Gdi::HDC, prctarget: *const ::win32_foundation_sys::RECT, dwformat: BP_BUFFERFORMAT, ppaintparams: *const BP_PAINTPARAMS, phdc: *mut ::win32_graphics_sys::Gdi::HDC) -> isize;
     pub fn BeginPanningFeedback(hwnd: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::BOOL;
     pub fn BufferedPaintClear(hbufferedpaint: isize, prc: *const ::win32_foundation_sys::RECT) -> ::windows_core_sys::HRESULT;
     pub fn BufferedPaintInit() -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn BufferedPaintRenderAnimation(hwnd: ::win32_foundation_sys::HWND, hdctarget: ::win32_graphics_sys::Gdi::HDC) -> ::win32_foundation_sys::BOOL;
     pub fn BufferedPaintSetAlpha(hbufferedpaint: isize, prc: *const ::win32_foundation_sys::RECT, alpha: u8) -> ::windows_core_sys::HRESULT;
     pub fn BufferedPaintStopAllAnimations(hwnd: ::win32_foundation_sys::HWND) -> ::windows_core_sys::HRESULT;
@@ -19,15 +19,15 @@ extern "system" {
     pub fn CheckDlgButton(hdlg: ::win32_foundation_sys::HWND, nidbutton: i32, ucheck: DLG_BUTTON_CHECK_STATE) -> ::win32_foundation_sys::BOOL;
     pub fn CheckRadioButton(hdlg: ::win32_foundation_sys::HWND, nidfirstbutton: i32, nidlastbutton: i32, nidcheckbutton: i32) -> ::win32_foundation_sys::BOOL;
     pub fn CloseThemeData(htheme: isize) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn CreateMappedBitmap(hinstance: ::win32_foundation_sys::HINSTANCE, idbitmap: isize, wflags: u32, lpcolormap: *const COLORMAP, inummaps: i32) -> ::win32_graphics_sys::Gdi::HBITMAP;
-    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+    #[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
     pub fn CreatePropertySheetPageA(constpropsheetpagepointer: *mut PROPSHEETPAGEA) -> HPROPSHEETPAGE;
-    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+    #[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
     pub fn CreatePropertySheetPageW(constpropsheetpagepointer: *mut PROPSHEETPAGEW) -> HPROPSHEETPAGE;
     pub fn CreateStatusWindowA(style: i32, lpsztext: ::windows_core_sys::PCSTR, hwndparent: ::win32_foundation_sys::HWND, wid: u32) -> ::win32_foundation_sys::HWND;
     pub fn CreateStatusWindowW(style: i32, lpsztext: ::windows_core_sys::PCWSTR, hwndparent: ::win32_foundation_sys::HWND, wid: u32) -> ::win32_foundation_sys::HWND;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn CreateSyntheticPointerDevice(pointertype: super::WindowsAndMessaging::POINTER_INPUT_TYPE, maxcount: u32, mode: POINTER_FEEDBACK_MODE) -> HSYNTHETICPOINTERDEVICE;
     pub fn CreateToolbarEx(hwnd: ::win32_foundation_sys::HWND, ws: u32, wid: u32, nbitmaps: i32, hbminst: ::win32_foundation_sys::HINSTANCE, wbmid: usize, lpbuttons: *mut TBBUTTON, inumbuttons: i32, dxbutton: i32, dybutton: i32, dxbitmap: i32, dybitmap: i32, ustructsize: u32) -> ::win32_foundation_sys::HWND;
     pub fn CreateUpDownControl(dwstyle: u32, x: i32, y: i32, cx: i32, cy: i32, hparent: ::win32_foundation_sys::HWND, nid: i32, hinst: ::win32_foundation_sys::HINSTANCE, hbuddy: ::win32_foundation_sys::HWND, nupper: i32, nlower: i32, npos: i32) -> ::win32_foundation_sys::HWND;
@@ -44,10 +44,10 @@ extern "system" {
     pub fn DPA_GetSize(hdpa: HDPA) -> u64;
     pub fn DPA_Grow(pdpa: HDPA, cp: i32) -> ::win32_foundation_sys::BOOL;
     pub fn DPA_InsertPtr(hdpa: HDPA, i: i32, p: *const ::core::ffi::c_void) -> i32;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn DPA_LoadStream(phdpa: *mut HDPA, pfn: PFNDPASTREAM, pstream: ::win32_system_sys::Com::IStream, pvinstdata: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn DPA_Merge(hdpadest: HDPA, hdpasrc: HDPA, dwflags: u32, pfncompare: PFNDACOMPARE, pfnmerge: PFNDPAMERGE, lparam: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn DPA_SaveStream(hdpa: HDPA, pfn: PFNDPASTREAM, pstream: ::win32_system_sys::Com::IStream, pvinstdata: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn DPA_Search(hdpa: HDPA, pfind: *const ::core::ffi::c_void, istart: i32, pfncompare: PFNDACOMPARE, lparam: ::win32_foundation_sys::LPARAM, options: u32) -> i32;
     pub fn DPA_SetPtr(hdpa: HDPA, i: i32, p: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
@@ -76,29 +76,29 @@ extern "system" {
     pub fn DlgDirSelectExA(hwnddlg: ::win32_foundation_sys::HWND, lpstring: ::windows_core_sys::PSTR, chcount: i32, idlistbox: i32) -> ::win32_foundation_sys::BOOL;
     pub fn DlgDirSelectExW(hwnddlg: ::win32_foundation_sys::HWND, lpstring: ::windows_core_sys::PWSTR, chcount: i32, idlistbox: i32) -> ::win32_foundation_sys::BOOL;
     pub fn DrawInsert(handparent: ::win32_foundation_sys::HWND, hlb: ::win32_foundation_sys::HWND, nitem: i32);
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DrawShadowText(hdc: ::win32_graphics_sys::Gdi::HDC, psztext: ::windows_core_sys::PCWSTR, cch: u32, prc: *const ::win32_foundation_sys::RECT, dwflags: u32, crtext: u32, crshadow: u32, ixoffset: i32, iyoffset: i32) -> i32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DrawStatusTextA(hdc: ::win32_graphics_sys::Gdi::HDC, lprc: *mut ::win32_foundation_sys::RECT, psztext: ::windows_core_sys::PCSTR, uflags: u32);
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DrawStatusTextW(hdc: ::win32_graphics_sys::Gdi::HDC, lprc: *mut ::win32_foundation_sys::RECT, psztext: ::windows_core_sys::PCWSTR, uflags: u32);
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DrawThemeBackground(htheme: isize, hdc: ::win32_graphics_sys::Gdi::HDC, ipartid: i32, istateid: i32, prect: *const ::win32_foundation_sys::RECT, pcliprect: *const ::win32_foundation_sys::RECT) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DrawThemeBackgroundEx(htheme: isize, hdc: ::win32_graphics_sys::Gdi::HDC, ipartid: i32, istateid: i32, prect: *const ::win32_foundation_sys::RECT, poptions: *const DTBGOPTS) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DrawThemeEdge(htheme: isize, hdc: ::win32_graphics_sys::Gdi::HDC, ipartid: i32, istateid: i32, pdestrect: *const ::win32_foundation_sys::RECT, uedge: u32, uflags: u32, pcontentrect: *mut ::win32_foundation_sys::RECT) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DrawThemeIcon(htheme: isize, hdc: ::win32_graphics_sys::Gdi::HDC, ipartid: i32, istateid: i32, prect: *const ::win32_foundation_sys::RECT, himl: HIMAGELIST, iimageindex: i32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DrawThemeParentBackground(hwnd: ::win32_foundation_sys::HWND, hdc: ::win32_graphics_sys::Gdi::HDC, prc: *const ::win32_foundation_sys::RECT) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DrawThemeParentBackgroundEx(hwnd: ::win32_foundation_sys::HWND, hdc: ::win32_graphics_sys::Gdi::HDC, dwflags: DRAW_THEME_PARENT_BACKGROUND_FLAGS, prc: *const ::win32_foundation_sys::RECT) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DrawThemeText(htheme: isize, hdc: ::win32_graphics_sys::Gdi::HDC, ipartid: i32, istateid: i32, psztext: ::windows_core_sys::PCWSTR, cchtext: i32, dwtextflags: u32, dwtextflags2: u32, prect: *const ::win32_foundation_sys::RECT) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DrawThemeTextEx(htheme: isize, hdc: ::win32_graphics_sys::Gdi::HDC, ipartid: i32, istateid: i32, psztext: ::windows_core_sys::PCWSTR, cchtext: i32, dwtextflags: u32, prect: *mut ::win32_foundation_sys::RECT, poptions: *const DTTOPTS) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn EnableScrollBar(hwnd: ::win32_foundation_sys::HWND, wsbflags: super::WindowsAndMessaging::SCROLLBAR_CONSTANTS, warrows: ENABLE_SCROLL_BAR_ARROWS) -> ::win32_foundation_sys::BOOL;
     pub fn EnableThemeDialogTexture(hwnd: ::win32_foundation_sys::HWND, dwflags: u32) -> ::windows_core_sys::HRESULT;
     pub fn EnableTheming(fenable: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
@@ -108,27 +108,27 @@ extern "system" {
     pub fn EvaluateProximityToPolygon(numvertices: u32, controlpolygon: *const ::win32_foundation_sys::POINT, phittestinginput: *const TOUCH_HIT_TESTING_INPUT, pproximityeval: *mut TOUCH_HIT_TESTING_PROXIMITY_EVALUATION) -> ::win32_foundation_sys::BOOL;
     pub fn EvaluateProximityToRect(controlboundingbox: *const ::win32_foundation_sys::RECT, phittestinginput: *const TOUCH_HIT_TESTING_INPUT, pproximityeval: *mut TOUCH_HIT_TESTING_PROXIMITY_EVALUATION) -> ::win32_foundation_sys::BOOL;
     pub fn FlatSB_EnableScrollBar(param0: ::win32_foundation_sys::HWND, param1: i32, param2: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn FlatSB_GetScrollInfo(param0: ::win32_foundation_sys::HWND, code: super::WindowsAndMessaging::SCROLLBAR_CONSTANTS, param2: *mut super::WindowsAndMessaging::SCROLLINFO) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn FlatSB_GetScrollPos(param0: ::win32_foundation_sys::HWND, code: super::WindowsAndMessaging::SCROLLBAR_CONSTANTS) -> i32;
     pub fn FlatSB_GetScrollProp(param0: ::win32_foundation_sys::HWND, propindex: WSB_PROP, param2: *mut i32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn FlatSB_GetScrollRange(param0: ::win32_foundation_sys::HWND, code: super::WindowsAndMessaging::SCROLLBAR_CONSTANTS, param2: *mut i32, param3: *mut i32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn FlatSB_SetScrollInfo(param0: ::win32_foundation_sys::HWND, code: super::WindowsAndMessaging::SCROLLBAR_CONSTANTS, psi: *mut super::WindowsAndMessaging::SCROLLINFO, fredraw: ::win32_foundation_sys::BOOL) -> i32;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn FlatSB_SetScrollPos(param0: ::win32_foundation_sys::HWND, code: super::WindowsAndMessaging::SCROLLBAR_CONSTANTS, pos: i32, fredraw: ::win32_foundation_sys::BOOL) -> i32;
     pub fn FlatSB_SetScrollProp(param0: ::win32_foundation_sys::HWND, index: WSB_PROP, newvalue: isize, param3: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn FlatSB_SetScrollRange(param0: ::win32_foundation_sys::HWND, code: super::WindowsAndMessaging::SCROLLBAR_CONSTANTS, min: i32, max: i32, fredraw: ::win32_foundation_sys::BOOL) -> i32;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn FlatSB_ShowScrollBar(param0: ::win32_foundation_sys::HWND, code: super::WindowsAndMessaging::SCROLLBAR_CONSTANTS, param2: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetBufferedPaintBits(hbufferedpaint: isize, ppbbuffer: *mut *mut ::win32_graphics_sys::Gdi::RGBQUAD, pcxrow: *mut i32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetBufferedPaintDC(hbufferedpaint: isize) -> ::win32_graphics_sys::Gdi::HDC;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetBufferedPaintTargetDC(hbufferedpaint: isize) -> ::win32_graphics_sys::Gdi::HDC;
     pub fn GetBufferedPaintTargetRect(hbufferedpaint: isize, prc: *mut ::win32_foundation_sys::RECT) -> ::windows_core_sys::HRESULT;
     pub fn GetComboBoxInfo(hwndcombo: ::win32_foundation_sys::HWND, pcbi: *mut COMBOBOXINFO) -> ::win32_foundation_sys::BOOL;
@@ -139,28 +139,28 @@ extern "system" {
     pub fn GetThemeAnimationProperty(htheme: isize, istoryboardid: i32, itargetid: i32, eproperty: TA_PROPERTY, pvproperty: *mut ::core::ffi::c_void, cbsize: u32, pcbsizeout: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn GetThemeAnimationTransform(htheme: isize, istoryboardid: i32, itargetid: i32, dwtransformindex: u32, ptransform: *mut TA_TRANSFORM, cbsize: u32, pcbsizeout: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn GetThemeAppProperties() -> u32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetThemeBackgroundContentRect(htheme: isize, hdc: ::win32_graphics_sys::Gdi::HDC, ipartid: i32, istateid: i32, pboundingrect: *const ::win32_foundation_sys::RECT, pcontentrect: *mut ::win32_foundation_sys::RECT) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetThemeBackgroundExtent(htheme: isize, hdc: ::win32_graphics_sys::Gdi::HDC, ipartid: i32, istateid: i32, pcontentrect: *const ::win32_foundation_sys::RECT, pextentrect: *mut ::win32_foundation_sys::RECT) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetThemeBackgroundRegion(htheme: isize, hdc: ::win32_graphics_sys::Gdi::HDC, ipartid: i32, istateid: i32, prect: *const ::win32_foundation_sys::RECT, pregion: *mut ::win32_graphics_sys::Gdi::HRGN) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetThemeBitmap(htheme: isize, ipartid: i32, istateid: i32, ipropid: THEME_PROPERTY_SYMBOL_ID, dwflags: GET_THEME_BITMAP_FLAGS, phbitmap: *mut ::win32_graphics_sys::Gdi::HBITMAP) -> ::windows_core_sys::HRESULT;
     pub fn GetThemeBool(htheme: isize, ipartid: i32, istateid: i32, ipropid: THEME_PROPERTY_SYMBOL_ID, pfval: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn GetThemeColor(htheme: isize, ipartid: i32, istateid: i32, ipropid: i32, pcolor: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn GetThemeDocumentationProperty(pszthemename: ::windows_core_sys::PCWSTR, pszpropertyname: ::windows_core_sys::PCWSTR, pszvaluebuff: ::windows_core_sys::PWSTR, cchmaxvalchars: i32) -> ::windows_core_sys::HRESULT;
     pub fn GetThemeEnumValue(htheme: isize, ipartid: i32, istateid: i32, ipropid: i32, pival: *mut i32) -> ::windows_core_sys::HRESULT;
     pub fn GetThemeFilename(htheme: isize, ipartid: i32, istateid: i32, ipropid: i32, pszthemefilename: ::windows_core_sys::PWSTR, cchmaxbuffchars: i32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetThemeFont(htheme: isize, hdc: ::win32_graphics_sys::Gdi::HDC, ipartid: i32, istateid: i32, ipropid: i32, pfont: *mut ::win32_graphics_sys::Gdi::LOGFONTW) -> ::windows_core_sys::HRESULT;
     pub fn GetThemeInt(htheme: isize, ipartid: i32, istateid: i32, ipropid: i32, pival: *mut i32) -> ::windows_core_sys::HRESULT;
     pub fn GetThemeIntList(htheme: isize, ipartid: i32, istateid: i32, ipropid: i32, pintlist: *mut INTLIST) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetThemeMargins(htheme: isize, hdc: ::win32_graphics_sys::Gdi::HDC, ipartid: i32, istateid: i32, ipropid: i32, prc: *const ::win32_foundation_sys::RECT, pmargins: *mut MARGINS) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetThemeMetric(htheme: isize, hdc: ::win32_graphics_sys::Gdi::HDC, ipartid: i32, istateid: i32, ipropid: THEME_PROPERTY_SYMBOL_ID, pival: *mut i32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetThemePartSize(htheme: isize, hdc: ::win32_graphics_sys::Gdi::HDC, ipartid: i32, istateid: i32, prc: *const ::win32_foundation_sys::RECT, esize: THEMESIZE, psz: *mut ::win32_foundation_sys::SIZE) -> ::windows_core_sys::HRESULT;
     pub fn GetThemePosition(htheme: isize, ipartid: i32, istateid: i32, ipropid: i32, ppoint: *mut ::win32_foundation_sys::POINT) -> ::windows_core_sys::HRESULT;
     pub fn GetThemePropertyOrigin(htheme: isize, ipartid: i32, istateid: i32, ipropid: i32, porigin: *mut PROPERTYORIGIN) -> ::windows_core_sys::HRESULT;
@@ -169,27 +169,27 @@ extern "system" {
     pub fn GetThemeString(htheme: isize, ipartid: i32, istateid: i32, ipropid: i32, pszbuff: ::windows_core_sys::PWSTR, cchmaxbuffchars: i32) -> ::windows_core_sys::HRESULT;
     pub fn GetThemeSysBool(htheme: isize, iboolid: i32) -> ::win32_foundation_sys::BOOL;
     pub fn GetThemeSysColor(htheme: isize, icolorid: i32) -> u32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetThemeSysColorBrush(htheme: isize, icolorid: THEME_PROPERTY_SYMBOL_ID) -> ::win32_graphics_sys::Gdi::HBRUSH;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetThemeSysFont(htheme: isize, ifontid: THEME_PROPERTY_SYMBOL_ID, plf: *mut ::win32_graphics_sys::Gdi::LOGFONTW) -> ::windows_core_sys::HRESULT;
     pub fn GetThemeSysInt(htheme: isize, iintid: i32, pivalue: *mut i32) -> ::windows_core_sys::HRESULT;
     pub fn GetThemeSysSize(htheme: isize, isizeid: i32) -> i32;
     pub fn GetThemeSysString(htheme: isize, istringid: THEME_PROPERTY_SYMBOL_ID, pszstringbuff: ::windows_core_sys::PWSTR, cchmaxstringchars: i32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetThemeTextExtent(htheme: isize, hdc: ::win32_graphics_sys::Gdi::HDC, ipartid: i32, istateid: i32, psztext: ::windows_core_sys::PCWSTR, cchcharcount: i32, dwtextflags: u32, pboundingrect: *const ::win32_foundation_sys::RECT, pextentrect: *mut ::win32_foundation_sys::RECT) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetThemeTextMetrics(htheme: isize, hdc: ::win32_graphics_sys::Gdi::HDC, ipartid: i32, istateid: i32, ptm: *mut ::win32_graphics_sys::Gdi::TEXTMETRICW) -> ::windows_core_sys::HRESULT;
     pub fn GetThemeTimingFunction(htheme: isize, itimingfunctionid: i32, ptimingfunction: *mut TA_TIMINGFUNCTION, cbsize: u32, pcbsizeout: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn GetThemeTransitionDuration(htheme: isize, ipartid: i32, istateidfrom: i32, istateidto: i32, ipropid: i32, pdwduration: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn GetWindowFeedbackSetting(hwnd: ::win32_foundation_sys::HWND, feedback: FEEDBACK_TYPE, dwflags: u32, psize: *mut u32, config: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn GetWindowTheme(hwnd: ::win32_foundation_sys::HWND) -> isize;
     pub fn HIMAGELIST_QueryInterface(himl: HIMAGELIST, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn HitTestThemeBackground(htheme: isize, hdc: ::win32_graphics_sys::Gdi::HDC, ipartid: i32, istateid: i32, dwoptions: u32, prect: *const ::win32_foundation_sys::RECT, hrgn: ::win32_graphics_sys::Gdi::HRGN, pttest: ::win32_foundation_sys::POINT, pwhittestcode: *mut u16) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ImageList_Add(himl: HIMAGELIST, hbmimage: ::win32_graphics_sys::Gdi::HBITMAP, hbmmask: ::win32_graphics_sys::Gdi::HBITMAP) -> i32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ImageList_AddMasked(himl: HIMAGELIST, hbmimage: ::win32_graphics_sys::Gdi::HBITMAP, crmask: u32) -> i32;
     pub fn ImageList_BeginDrag(himltrack: HIMAGELIST, itrack: i32, dxhotspot: i32, dyhotspot: i32) -> ::win32_foundation_sys::BOOL;
     pub fn ImageList_CoCreateInstance(rclsid: *const ::windows_core_sys::GUID, punkouter: ::windows_core_sys::IUnknown, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
@@ -200,44 +200,44 @@ extern "system" {
     pub fn ImageList_DragLeave(hwndlock: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::BOOL;
     pub fn ImageList_DragMove(x: i32, y: i32) -> ::win32_foundation_sys::BOOL;
     pub fn ImageList_DragShowNolock(fshow: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ImageList_Draw(himl: HIMAGELIST, i: i32, hdcdst: ::win32_graphics_sys::Gdi::HDC, x: i32, y: i32, fstyle: IMAGE_LIST_DRAW_STYLE) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ImageList_DrawEx(himl: HIMAGELIST, i: i32, hdcdst: ::win32_graphics_sys::Gdi::HDC, x: i32, y: i32, dx: i32, dy: i32, rgbbk: u32, rgbfg: u32, fstyle: IMAGE_LIST_DRAW_STYLE) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ImageList_DrawIndirect(pimldp: *const IMAGELISTDRAWPARAMS) -> ::win32_foundation_sys::BOOL;
     pub fn ImageList_Duplicate(himl: HIMAGELIST) -> HIMAGELIST;
     pub fn ImageList_EndDrag();
     pub fn ImageList_GetBkColor(himl: HIMAGELIST) -> u32;
     pub fn ImageList_GetDragImage(ppt: *mut ::win32_foundation_sys::POINT, ppthotspot: *mut ::win32_foundation_sys::POINT) -> HIMAGELIST;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ImageList_GetIcon(himl: HIMAGELIST, i: i32, flags: u32) -> super::WindowsAndMessaging::HICON;
     pub fn ImageList_GetIconSize(himl: HIMAGELIST, cx: *mut i32, cy: *mut i32) -> ::win32_foundation_sys::BOOL;
     pub fn ImageList_GetImageCount(himl: HIMAGELIST) -> i32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ImageList_GetImageInfo(himl: HIMAGELIST, i: i32, pimageinfo: *mut IMAGEINFO) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ImageList_LoadImageA(hi: ::win32_foundation_sys::HINSTANCE, lpbmp: ::windows_core_sys::PCSTR, cx: i32, cgrow: i32, crmask: u32, utype: u32, uflags: super::WindowsAndMessaging::IMAGE_FLAGS) -> HIMAGELIST;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ImageList_LoadImageW(hi: ::win32_foundation_sys::HINSTANCE, lpbmp: ::windows_core_sys::PCWSTR, cx: i32, cgrow: i32, crmask: u32, utype: u32, uflags: super::WindowsAndMessaging::IMAGE_FLAGS) -> HIMAGELIST;
     pub fn ImageList_Merge(himl1: HIMAGELIST, i1: i32, himl2: HIMAGELIST, i2: i32, dx: i32, dy: i32) -> HIMAGELIST;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn ImageList_Read(pstm: ::win32_system_sys::Com::IStream) -> HIMAGELIST;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn ImageList_ReadEx(dwflags: u32, pstm: ::win32_system_sys::Com::IStream, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn ImageList_Remove(himl: HIMAGELIST, i: i32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ImageList_Replace(himl: HIMAGELIST, i: i32, hbmimage: ::win32_graphics_sys::Gdi::HBITMAP, hbmmask: ::win32_graphics_sys::Gdi::HBITMAP) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ImageList_ReplaceIcon(himl: HIMAGELIST, i: i32, hicon: super::WindowsAndMessaging::HICON) -> i32;
     pub fn ImageList_SetBkColor(himl: HIMAGELIST, clrbk: u32) -> u32;
     pub fn ImageList_SetDragCursorImage(himldrag: HIMAGELIST, idrag: i32, dxhotspot: i32, dyhotspot: i32) -> ::win32_foundation_sys::BOOL;
     pub fn ImageList_SetIconSize(himl: HIMAGELIST, cx: i32, cy: i32) -> ::win32_foundation_sys::BOOL;
     pub fn ImageList_SetImageCount(himl: HIMAGELIST, unewcount: u32) -> ::win32_foundation_sys::BOOL;
     pub fn ImageList_SetOverlayImage(himl: HIMAGELIST, iimage: i32, ioverlay: i32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn ImageList_Write(himl: HIMAGELIST, pstm: ::win32_system_sys::Com::IStream) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn ImageList_WriteEx(himl: HIMAGELIST, dwflags: u32, pstm: ::win32_system_sys::Com::IStream) -> ::windows_core_sys::HRESULT;
     pub fn InitCommonControls();
     pub fn InitCommonControlsEx(picce: *const INITCOMMONCONTROLSEX) -> ::win32_foundation_sys::BOOL;
@@ -252,38 +252,38 @@ extern "system" {
     pub fn IsThemeDialogTextureEnabled(hwnd: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::BOOL;
     pub fn IsThemePartDefined(htheme: isize, ipartid: i32, istateid: i32) -> ::win32_foundation_sys::BOOL;
     pub fn LBItemFromPt(hlb: ::win32_foundation_sys::HWND, pt: ::win32_foundation_sys::POINT, bautoscroll: ::win32_foundation_sys::BOOL) -> i32;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn LoadIconMetric(hinst: ::win32_foundation_sys::HINSTANCE, pszname: ::windows_core_sys::PCWSTR, lims: _LI_METRIC, phico: *mut super::WindowsAndMessaging::HICON) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn LoadIconWithScaleDown(hinst: ::win32_foundation_sys::HINSTANCE, pszname: ::windows_core_sys::PCWSTR, cx: i32, cy: i32, phico: *mut super::WindowsAndMessaging::HICON) -> ::windows_core_sys::HRESULT;
     pub fn MakeDragList(hlb: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn MenuHelp(umsg: u32, wparam: ::win32_foundation_sys::WPARAM, lparam: ::win32_foundation_sys::LPARAM, hmainmenu: super::WindowsAndMessaging::HMENU, hinst: ::win32_foundation_sys::HINSTANCE, hwndstatus: ::win32_foundation_sys::HWND, lpwids: *const u32);
     pub fn OpenThemeData(hwnd: ::win32_foundation_sys::HWND, pszclasslist: ::windows_core_sys::PCWSTR) -> isize;
     pub fn OpenThemeDataEx(hwnd: ::win32_foundation_sys::HWND, pszclasslist: ::windows_core_sys::PCWSTR, dwflags: OPEN_THEME_DATA_FLAGS) -> isize;
     pub fn PackTouchHitTestingProximityEvaluation(phittestinginput: *const TOUCH_HIT_TESTING_INPUT, pproximityeval: *const TOUCH_HIT_TESTING_PROXIMITY_EVALUATION) -> ::win32_foundation_sys::LRESULT;
-    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+    #[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
     pub fn PropertySheetA(param0: *mut PROPSHEETHEADERA_V2) -> isize;
-    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+    #[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
     pub fn PropertySheetW(param0: *mut PROPSHEETHEADERW_V2) -> isize;
     pub fn RegisterPointerDeviceNotifications(window: ::win32_foundation_sys::HWND, notifyrange: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     pub fn RegisterTouchHitTestingWindow(hwnd: ::win32_foundation_sys::HWND, value: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn SetScrollInfo(hwnd: ::win32_foundation_sys::HWND, nbar: super::WindowsAndMessaging::SCROLLBAR_CONSTANTS, lpsi: *const super::WindowsAndMessaging::SCROLLINFO, redraw: ::win32_foundation_sys::BOOL) -> i32;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn SetScrollPos(hwnd: ::win32_foundation_sys::HWND, nbar: super::WindowsAndMessaging::SCROLLBAR_CONSTANTS, npos: i32, bredraw: ::win32_foundation_sys::BOOL) -> i32;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn SetScrollRange(hwnd: ::win32_foundation_sys::HWND, nbar: super::WindowsAndMessaging::SCROLLBAR_CONSTANTS, nminpos: i32, nmaxpos: i32, bredraw: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     pub fn SetThemeAppProperties(dwflags: u32);
     pub fn SetWindowFeedbackSetting(hwnd: ::win32_foundation_sys::HWND, feedback: FEEDBACK_TYPE, dwflags: u32, size: u32, configuration: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn SetWindowTheme(hwnd: ::win32_foundation_sys::HWND, pszsubappname: ::windows_core_sys::PCWSTR, pszsubidlist: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn SetWindowThemeAttribute(hwnd: ::win32_foundation_sys::HWND, eattribute: WINDOWTHEMEATTRIBUTETYPE, pvattribute: *const ::core::ffi::c_void, cbattribute: u32) -> ::windows_core_sys::HRESULT;
     pub fn ShowHideMenuCtl(hwnd: ::win32_foundation_sys::HWND, uflags: usize, lpinfo: *const i32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ShowScrollBar(hwnd: ::win32_foundation_sys::HWND, wbar: super::WindowsAndMessaging::SCROLLBAR_CONSTANTS, bshow: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     pub fn Str_SetPtrW(ppsz: *mut ::windows_core_sys::PWSTR, psz: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
     pub fn TaskDialog(hwndowner: ::win32_foundation_sys::HWND, hinstance: ::win32_foundation_sys::HINSTANCE, pszwindowtitle: ::windows_core_sys::PCWSTR, pszmaininstruction: ::windows_core_sys::PCWSTR, pszcontent: ::windows_core_sys::PCWSTR, dwcommonbuttons: TASKDIALOG_COMMON_BUTTON_FLAGS, pszicon: ::windows_core_sys::PCWSTR, pnbutton: *mut i32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn TaskDialogIndirect(ptaskconfig: *const TASKDIALOGCONFIG, pnbutton: *mut i32, pnradiobutton: *mut i32, pfverificationflagchecked: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn UninitializeFlatSB(param0: ::win32_foundation_sys::HWND) -> ::windows_core_sys::HRESULT;
     pub fn UpdatePanningFeedback(hwnd: ::win32_foundation_sys::HWND, ltotaloverpanoffsetx: i32, ltotaloverpanoffsety: i32, fininertia: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
@@ -359,16 +359,16 @@ pub const BPBF_DIB: BP_BUFFERFORMAT = 1i32;
 pub const BPBF_TOPDOWNDIB: BP_BUFFERFORMAT = 2i32;
 pub const BPBF_TOPDOWNMONODIB: BP_BUFFERFORMAT = 3i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct BP_PAINTPARAMS {
     pub cbSize: u32,
     pub dwFlags: BP_PAINTPARAMS_FLAGS,
     pub prcExclude: *const ::win32_foundation_sys::RECT,
     pub pBlendFunction: *const ::win32_graphics_sys::Gdi::BLENDFUNCTION,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for BP_PAINTPARAMS {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for BP_PAINTPARAMS {
     fn clone(&self) -> Self {
         *self
@@ -466,7 +466,7 @@ pub const CCHCCCLASS: u32 = 32u32;
 pub const CCHCCDESC: u32 = 32u32;
 pub const CCHCCTEXT: u32 = 256u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct CCINFOA {
     pub szClass: [::win32_foundation_sys::CHAR; 32],
     pub flOptions: u32,
@@ -484,16 +484,16 @@ pub struct CCINFOA {
     pub dwReserved1: u32,
     pub dwReserved2: u32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for CCINFOA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for CCINFOA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct CCINFOW {
     pub szClass: [u16; 32],
     pub flOptions: u32,
@@ -511,9 +511,9 @@ pub struct CCINFOW {
     pub dwReserved1: u32,
     pub dwReserved2: u32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for CCINFOW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for CCINFOW {
     fn clone(&self) -> Self {
         *self
@@ -835,7 +835,7 @@ pub const DL_DRAGGING: DRAGLISTINFO_NOTIFICATION_FLAGS = 1158u32;
 pub const DL_DROPPED: DRAGLISTINFO_NOTIFICATION_FLAGS = 1159u32;
 pub const DRAGLISTMSGSTRING: &str = "commctrl_DragListMsg";
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct DRAWITEMSTRUCT {
     pub CtlType: DRAWITEMSTRUCT_CTL_TYPE,
     pub CtlID: u32,
@@ -847,9 +847,9 @@ pub struct DRAWITEMSTRUCT {
     pub rcItem: ::win32_foundation_sys::RECT,
     pub itemData: usize,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for DRAWITEMSTRUCT {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for DRAWITEMSTRUCT {
     fn clone(&self) -> Self {
         *self
@@ -915,7 +915,7 @@ pub const DTS_SHOWNONE: u32 = 2u32;
 pub const DTS_TIMEFORMAT: u32 = 9u32;
 pub const DTS_UPDOWN: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct DTTOPTS {
     pub dwSize: u32,
     pub dwFlags: u32,
@@ -933,15 +933,15 @@ pub struct DTTOPTS {
     pub pfnDrawTextCallback: DTT_CALLBACK_PROC,
     pub lParam: ::win32_foundation_sys::LPARAM,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for DTTOPTS {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for DTTOPTS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub type DTT_CALLBACK_PROC = ::core::option::Option<unsafe extern "system" fn(hdc: ::win32_graphics_sys::Gdi::HDC, psztext: ::windows_core_sys::PWSTR, cchtext: i32, prc: *mut ::win32_foundation_sys::RECT, dwflags: u32, lparam: ::win32_foundation_sys::LPARAM) -> i32>;
 pub const DTT_FLAGS2VALIDBITS: u32 = 1u32;
 pub const DTT_GRAYED: u32 = 1u32;
@@ -1162,7 +1162,7 @@ impl ::core::clone::Clone for HDHITTESTINFO {
 }
 pub const HDIS_FOCUSED: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct HDITEMA {
     pub mask: HDI_MASK,
     pub cxy: i32,
@@ -1177,16 +1177,16 @@ pub struct HDITEMA {
     pub pvFilter: *mut ::core::ffi::c_void,
     pub state: u32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for HDITEMA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for HDITEMA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct HDITEMW {
     pub mask: HDI_MASK,
     pub cxy: i32,
@@ -1201,9 +1201,9 @@ pub struct HDITEMW {
     pub pvFilter: *mut ::core::ffi::c_void,
     pub state: u32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for HDITEMW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for HDITEMW {
     fn clone(&self) -> Self {
         *self
@@ -1222,14 +1222,14 @@ pub const HDI_ORDER: HDI_MASK = 128u32;
 pub const HDI_FILTER: HDI_MASK = 256u32;
 pub const HDI_STATE: HDI_MASK = 512u32;
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct HDLAYOUT {
     pub prc: *mut ::win32_foundation_sys::RECT,
     pub pwpos: *mut super::WindowsAndMessaging::WINDOWPOS,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for HDLAYOUT {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for HDLAYOUT {
     fn clone(&self) -> Self {
         *self
@@ -1420,7 +1420,7 @@ pub const ILS_NORMAL: u32 = 0u32;
 pub const ILS_SATURATE: u32 = 4u32;
 pub const ILS_SHADOW: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct IMAGEINFO {
     pub hbmImage: ::win32_graphics_sys::Gdi::HBITMAP,
     pub hbmMask: ::win32_graphics_sys::Gdi::HBITMAP,
@@ -1428,9 +1428,9 @@ pub struct IMAGEINFO {
     pub Unused2: i32,
     pub rcImage: ::win32_foundation_sys::RECT,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for IMAGEINFO {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for IMAGEINFO {
     fn clone(&self) -> Self {
         *self
@@ -1440,7 +1440,7 @@ pub type IMAGELAYOUT = i32;
 pub const IL_VERTICAL: IMAGELAYOUT = 0i32;
 pub const IL_HORIZONTAL: IMAGELAYOUT = 1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct IMAGELISTDRAWPARAMS {
     pub cbSize: u32,
     pub himl: HIMAGELIST,
@@ -1460,9 +1460,9 @@ pub struct IMAGELISTDRAWPARAMS {
     pub Frame: u32,
     pub crEffect: u32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for IMAGELISTDRAWPARAMS {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for IMAGELISTDRAWPARAMS {
     fn clone(&self) -> Self {
         *self
@@ -1611,19 +1611,19 @@ pub const SPLS_NORMAL: LOGOFFBUTTONSSTATES = 1i32;
 pub const SPLS_HOT: LOGOFFBUTTONSSTATES = 2i32;
 pub const SPLS_PRESSED: LOGOFFBUTTONSSTATES = 3i32;
 pub type LPFNADDPROPSHEETPAGES = ::core::option::Option<unsafe extern "system" fn(param0: *mut ::core::ffi::c_void, param1: LPFNSVADDPROPSHEETPAGE, param2: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::BOOL>;
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub type LPFNCCINFOA = ::core::option::Option<unsafe extern "system" fn(acci: *mut CCINFOA) -> u32>;
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub type LPFNCCINFOW = ::core::option::Option<unsafe extern "system" fn(acci: *mut CCINFOW) -> u32>;
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub type LPFNCCSIZETOTEXTA = ::core::option::Option<unsafe extern "system" fn(flstyle: u32, flextstyle: u32, hfont: ::win32_graphics_sys::Gdi::HFONT, psztext: ::windows_core_sys::PCSTR) -> i32>;
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub type LPFNCCSIZETOTEXTW = ::core::option::Option<unsafe extern "system" fn(flstyle: u32, flextstyle: u32, hfont: ::win32_graphics_sys::Gdi::HFONT, psztext: ::windows_core_sys::PCWSTR) -> i32>;
 pub type LPFNCCSTYLEA = ::core::option::Option<unsafe extern "system" fn(hwndparent: ::win32_foundation_sys::HWND, pccs: *mut CCSTYLEA) -> ::win32_foundation_sys::BOOL>;
 pub type LPFNCCSTYLEW = ::core::option::Option<unsafe extern "system" fn(hwndparent: ::win32_foundation_sys::HWND, pccs: *mut CCSTYLEW) -> ::win32_foundation_sys::BOOL>;
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub type LPFNPSPCALLBACKA = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation_sys::HWND, umsg: PSPCB_MESSAGE, ppsp: *mut PROPSHEETPAGEA) -> u32>;
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub type LPFNPSPCALLBACKW = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation_sys::HWND, umsg: PSPCB_MESSAGE, ppsp: *mut PROPSHEETPAGEW) -> u32>;
 pub type LPFNSVADDPROPSHEETPAGE = ::core::option::Option<unsafe extern "system" fn(param0: HPROPSHEETPAGE, param1: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::BOOL>;
 pub const LVA_ALIGNLEFT: u32 = 1u32;
@@ -1641,7 +1641,7 @@ pub const LVBKIF_STYLE_NORMAL: u32 = 0u32;
 pub const LVBKIF_STYLE_TILE: u32 = 16u32;
 pub const LVBKIF_TYPE_WATERMARK: u32 = 268435456u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct LVBKIMAGEA {
     pub ulFlags: u32,
     pub hbm: ::win32_graphics_sys::Gdi::HBITMAP,
@@ -1650,16 +1650,16 @@ pub struct LVBKIMAGEA {
     pub xOffsetPercent: i32,
     pub yOffsetPercent: i32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for LVBKIMAGEA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for LVBKIMAGEA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct LVBKIMAGEW {
     pub ulFlags: u32,
     pub hbm: ::win32_graphics_sys::Gdi::HBITMAP,
@@ -1668,9 +1668,9 @@ pub struct LVBKIMAGEW {
     pub xOffsetPercent: i32,
     pub yOffsetPercent: i32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for LVBKIMAGEW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for LVBKIMAGEW {
     fn clone(&self) -> Self {
         *self
@@ -2667,7 +2667,7 @@ impl ::core::clone::Clone for NMCOMBOBOXEXW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct NMCUSTOMDRAW {
     pub hdr: NMHDR,
     pub dwDrawStage: NMCUSTOMDRAW_DRAW_STAGE,
@@ -2677,9 +2677,9 @@ pub struct NMCUSTOMDRAW {
     pub uItemState: u32,
     pub lItemlParam: ::win32_foundation_sys::LPARAM,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for NMCUSTOMDRAW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for NMCUSTOMDRAW {
     fn clone(&self) -> Self {
         *self
@@ -2708,7 +2708,7 @@ impl ::core::clone::Clone for NMCUSTOMSPLITRECTINFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct NMCUSTOMTEXT {
     pub hdr: NMHDR,
     pub hDC: ::win32_graphics_sys::Gdi::HDC,
@@ -2718,9 +2718,9 @@ pub struct NMCUSTOMTEXT {
     pub uFormat: u32,
     pub fLink: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for NMCUSTOMTEXT {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for NMCUSTOMTEXT {
     fn clone(&self) -> Self {
         *self
@@ -2912,32 +2912,32 @@ impl ::core::clone::Clone for NMHDR {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct NMHEADERA {
     pub hdr: NMHDR,
     pub iItem: i32,
     pub iButton: HEADER_CONTROL_NOTIFICATION_BUTTON,
     pub pitem: *mut HDITEMA,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for NMHEADERA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for NMHEADERA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct NMHEADERW {
     pub hdr: NMHDR,
     pub iItem: i32,
     pub iButton: HEADER_CONTROL_NOTIFICATION_BUTTON,
     pub pitem: *mut HDITEMW,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for NMHEADERW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for NMHEADERW {
     fn clone(&self) -> Self {
         *self
@@ -3026,7 +3026,7 @@ impl ::core::clone::Clone for NMLVCACHEHINT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct NMLVCUSTOMDRAW {
     pub nmcd: NMCUSTOMDRAW,
     pub clrText: u32,
@@ -3041,9 +3041,9 @@ pub struct NMLVCUSTOMDRAW {
     pub rcText: ::win32_foundation_sys::RECT,
     pub uAlign: NMLVCUSTOMDRAW_ALIGN,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for NMLVCUSTOMDRAW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for NMLVCUSTOMDRAW {
     fn clone(&self) -> Self {
         *self
@@ -3398,7 +3398,7 @@ impl ::core::clone::Clone for NMSELCHANGE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct NMTBCUSTOMDRAW {
     pub nmcd: NMCUSTOMDRAW,
     pub hbrMonoDither: ::win32_graphics_sys::Gdi::HBRUSH,
@@ -3415,9 +3415,9 @@ pub struct NMTBCUSTOMDRAW {
     pub nHLStringBkMode: i32,
     pub iListGap: i32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for NMTBCUSTOMDRAW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for NMTBCUSTOMDRAW {
     fn clone(&self) -> Self {
         *self
@@ -3638,14 +3638,14 @@ impl ::core::clone::Clone for NMTREEVIEWW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct NMTTCUSTOMDRAW {
     pub nmcd: NMCUSTOMDRAW,
     pub uDrawFlags: u32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for NMTTCUSTOMDRAW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for NMTTCUSTOMDRAW {
     fn clone(&self) -> Self {
         *self
@@ -3682,7 +3682,7 @@ impl ::core::clone::Clone for NMTTDISPINFOW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct NMTVASYNCDRAW {
     pub hdr: NMHDR,
     pub pimldp: *mut IMAGELISTDRAWPARAMS,
@@ -3692,25 +3692,25 @@ pub struct NMTVASYNCDRAW {
     pub dwRetFlags: u32,
     pub iRetImageIndex: i32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for NMTVASYNCDRAW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for NMTVASYNCDRAW {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct NMTVCUSTOMDRAW {
     pub nmcd: NMCUSTOMDRAW,
     pub clrText: u32,
     pub clrTextBk: u32,
     pub iLevel: i32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for NMTVCUSTOMDRAW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for NMTVCUSTOMDRAW {
     fn clone(&self) -> Self {
         *self
@@ -3925,7 +3925,7 @@ pub type PFNDAENUMCALLBACK = ::core::option::Option<unsafe extern "system" fn(p:
 pub type PFNDAENUMCALLBACKCONST = ::core::option::Option<unsafe extern "system" fn(p: *const ::core::ffi::c_void, pdata: *const ::core::ffi::c_void) -> i32>;
 pub type PFNDPAMERGE = ::core::option::Option<unsafe extern "system" fn(umsg: DPAMM_MESSAGE, pvdest: *const ::core::ffi::c_void, pvsrc: *const ::core::ffi::c_void, lparam: ::win32_foundation_sys::LPARAM) -> *mut ::core::ffi::c_void>;
 pub type PFNDPAMERGECONST = ::core::option::Option<unsafe extern "system" fn(umsg: DPAMM_MESSAGE, pvdest: *const ::core::ffi::c_void, pvsrc: *const ::core::ffi::c_void, lparam: ::win32_foundation_sys::LPARAM) -> *mut ::core::ffi::c_void>;
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub type PFNDPASTREAM = ::core::option::Option<unsafe extern "system" fn(pinfo: *const DPASTREAMINFO, pstream: ::win32_system_sys::Com::IStream, pvinstdata: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT>;
 pub type PFNLVCOMPARE = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_foundation_sys::LPARAM, param1: ::win32_foundation_sys::LPARAM, param2: ::win32_foundation_sys::LPARAM) -> i32>;
 pub type PFNLVGROUPCOMPARE = ::core::option::Option<unsafe extern "system" fn(param0: i32, param1: i32, param2: *mut ::core::ffi::c_void) -> i32>;
@@ -3975,7 +3975,7 @@ pub const POINTER_DEVICE_CURSOR_TYPE_TIP: POINTER_DEVICE_CURSOR_TYPE = 1i32;
 pub const POINTER_DEVICE_CURSOR_TYPE_ERASER: POINTER_DEVICE_CURSOR_TYPE = 2i32;
 pub const POINTER_DEVICE_CURSOR_TYPE_MAX: POINTER_DEVICE_CURSOR_TYPE = -1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct POINTER_DEVICE_INFO {
     pub displayOrientation: u32,
     pub device: ::win32_foundation_sys::HANDLE,
@@ -3985,9 +3985,9 @@ pub struct POINTER_DEVICE_INFO {
     pub maxActiveContacts: u16,
     pub productString: [u16; 520],
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for POINTER_DEVICE_INFO {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for POINTER_DEVICE_INFO {
     fn clone(&self) -> Self {
         *self
@@ -4021,28 +4021,28 @@ pub const POINTER_FEEDBACK_DEFAULT: POINTER_FEEDBACK_MODE = 1i32;
 pub const POINTER_FEEDBACK_INDIRECT: POINTER_FEEDBACK_MODE = 2i32;
 pub const POINTER_FEEDBACK_NONE: POINTER_FEEDBACK_MODE = 3i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_UI_Input_Pointer", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-ui-sys", feature = "win32-ui-sys"))]
 pub struct POINTER_TYPE_INFO {
     pub r#type: super::WindowsAndMessaging::POINTER_INPUT_TYPE,
     pub Anonymous: POINTER_TYPE_INFO_0,
 }
-#[cfg(all(feature = "Win32_UI_Input_Pointer", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-ui-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for POINTER_TYPE_INFO {}
-#[cfg(all(feature = "Win32_UI_Input_Pointer", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-ui-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for POINTER_TYPE_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_UI_Input_Pointer", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-ui-sys", feature = "win32-ui-sys"))]
 pub union POINTER_TYPE_INFO_0 {
     pub touchInfo: super::Input::Pointer::POINTER_TOUCH_INFO,
     pub penInfo: super::Input::Pointer::POINTER_PEN_INFO,
 }
-#[cfg(all(feature = "Win32_UI_Input_Pointer", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-ui-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for POINTER_TYPE_INFO_0 {}
-#[cfg(all(feature = "Win32_UI_Input_Pointer", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-ui-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for POINTER_TYPE_INFO_0 {
     fn clone(&self) -> Self {
         *self
@@ -4061,7 +4061,7 @@ pub const PO_CLASS: PROPERTYORIGIN = 2i32;
 pub const PO_GLOBAL: PROPERTYORIGIN = 3i32;
 pub const PO_NOTFOUND: PROPERTYORIGIN = 4i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub struct PROPSHEETHEADERA_V1 {
     pub dwSize: u32,
     pub dwFlags: u32,
@@ -4074,58 +4074,58 @@ pub struct PROPSHEETHEADERA_V1 {
     pub Anonymous3: PROPSHEETHEADERA_V1_2,
     pub pfnCallback: PFNPROPSHEETCALLBACK,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETHEADERA_V1 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETHEADERA_V1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETHEADERA_V1_0 {
     pub hIcon: super::WindowsAndMessaging::HICON,
     pub pszIcon: ::windows_core_sys::PCSTR,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETHEADERA_V1_0 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETHEADERA_V1_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETHEADERA_V1_1 {
     pub nStartPage: u32,
     pub pStartPage: ::windows_core_sys::PCSTR,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETHEADERA_V1_1 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETHEADERA_V1_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETHEADERA_V1_2 {
     pub ppsp: *mut PROPSHEETPAGEA,
     pub phpage: *mut HPROPSHEETPAGE,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETHEADERA_V1_2 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETHEADERA_V1_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub struct PROPSHEETHEADERA_V2 {
     pub dwSize: u32,
     pub dwFlags: u32,
@@ -4141,86 +4141,86 @@ pub struct PROPSHEETHEADERA_V2 {
     pub hplWatermark: ::win32_graphics_sys::Gdi::HPALETTE,
     pub Anonymous5: PROPSHEETHEADERA_V2_4,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETHEADERA_V2 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETHEADERA_V2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETHEADERA_V2_0 {
     pub hIcon: super::WindowsAndMessaging::HICON,
     pub pszIcon: ::windows_core_sys::PCSTR,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETHEADERA_V2_0 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETHEADERA_V2_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETHEADERA_V2_1 {
     pub nStartPage: u32,
     pub pStartPage: ::windows_core_sys::PCSTR,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETHEADERA_V2_1 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETHEADERA_V2_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETHEADERA_V2_2 {
     pub ppsp: *mut PROPSHEETPAGEA,
     pub phpage: *mut HPROPSHEETPAGE,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETHEADERA_V2_2 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETHEADERA_V2_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETHEADERA_V2_3 {
     pub hbmWatermark: ::win32_graphics_sys::Gdi::HBITMAP,
     pub pszbmWatermark: ::windows_core_sys::PCSTR,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETHEADERA_V2_3 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETHEADERA_V2_3 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETHEADERA_V2_4 {
     pub hbmHeader: ::win32_graphics_sys::Gdi::HBITMAP,
     pub pszbmHeader: ::windows_core_sys::PCSTR,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETHEADERA_V2_4 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETHEADERA_V2_4 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub struct PROPSHEETHEADERW_V1 {
     pub dwSize: u32,
     pub dwFlags: u32,
@@ -4233,58 +4233,58 @@ pub struct PROPSHEETHEADERW_V1 {
     pub Anonymous3: PROPSHEETHEADERW_V1_2,
     pub pfnCallback: PFNPROPSHEETCALLBACK,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETHEADERW_V1 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETHEADERW_V1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETHEADERW_V1_0 {
     pub hIcon: super::WindowsAndMessaging::HICON,
     pub pszIcon: ::windows_core_sys::PCWSTR,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETHEADERW_V1_0 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETHEADERW_V1_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETHEADERW_V1_1 {
     pub nStartPage: u32,
     pub pStartPage: ::windows_core_sys::PCWSTR,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETHEADERW_V1_1 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETHEADERW_V1_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETHEADERW_V1_2 {
     pub ppsp: *mut PROPSHEETPAGEW,
     pub phpage: *mut HPROPSHEETPAGE,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETHEADERW_V1_2 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETHEADERW_V1_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub struct PROPSHEETHEADERW_V2 {
     pub dwSize: u32,
     pub dwFlags: u32,
@@ -4300,86 +4300,86 @@ pub struct PROPSHEETHEADERW_V2 {
     pub hplWatermark: ::win32_graphics_sys::Gdi::HPALETTE,
     pub Anonymous5: PROPSHEETHEADERW_V2_4,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETHEADERW_V2 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETHEADERW_V2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETHEADERW_V2_0 {
     pub hIcon: super::WindowsAndMessaging::HICON,
     pub pszIcon: ::windows_core_sys::PCWSTR,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETHEADERW_V2_0 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETHEADERW_V2_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETHEADERW_V2_1 {
     pub nStartPage: u32,
     pub pStartPage: ::windows_core_sys::PCWSTR,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETHEADERW_V2_1 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETHEADERW_V2_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETHEADERW_V2_2 {
     pub ppsp: *mut PROPSHEETPAGEW,
     pub phpage: *mut HPROPSHEETPAGE,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETHEADERW_V2_2 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETHEADERW_V2_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETHEADERW_V2_3 {
     pub hbmWatermark: ::win32_graphics_sys::Gdi::HBITMAP,
     pub pszbmWatermark: ::windows_core_sys::PCWSTR,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETHEADERW_V2_3 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETHEADERW_V2_3 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETHEADERW_V2_4 {
     pub hbmHeader: ::win32_graphics_sys::Gdi::HBITMAP,
     pub pszbmHeader: ::windows_core_sys::PCWSTR,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETHEADERW_V2_4 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETHEADERW_V2_4 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub struct PROPSHEETPAGEA {
     pub dwSize: u32,
     pub dwFlags: u32,
@@ -4396,58 +4396,58 @@ pub struct PROPSHEETPAGEA {
     pub hActCtx: ::win32_foundation_sys::HANDLE,
     pub Anonymous3: PROPSHEETPAGEA_2,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEA {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETPAGEA_0 {
     pub pszTemplate: ::windows_core_sys::PCSTR,
     pub pResource: *mut super::WindowsAndMessaging::DLGTEMPLATE,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEA_0 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEA_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETPAGEA_1 {
     pub hIcon: super::WindowsAndMessaging::HICON,
     pub pszIcon: ::windows_core_sys::PCSTR,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEA_1 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEA_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETPAGEA_2 {
     pub hbmHeader: ::win32_graphics_sys::Gdi::HBITMAP,
     pub pszbmHeader: ::windows_core_sys::PCSTR,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEA_2 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEA_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub struct PROPSHEETPAGEA_V1 {
     pub dwSize: u32,
     pub dwFlags: u32,
@@ -4460,44 +4460,44 @@ pub struct PROPSHEETPAGEA_V1 {
     pub pfnCallback: LPFNPSPCALLBACKA,
     pub pcRefParent: *mut u32,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEA_V1 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEA_V1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETPAGEA_V1_0 {
     pub pszTemplate: ::windows_core_sys::PCSTR,
     pub pResource: *mut super::WindowsAndMessaging::DLGTEMPLATE,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEA_V1_0 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEA_V1_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETPAGEA_V1_1 {
     pub hIcon: super::WindowsAndMessaging::HICON,
     pub pszIcon: ::windows_core_sys::PCSTR,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEA_V1_1 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEA_V1_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub struct PROPSHEETPAGEA_V2 {
     pub dwSize: u32,
     pub dwFlags: u32,
@@ -4512,44 +4512,44 @@ pub struct PROPSHEETPAGEA_V2 {
     pub pszHeaderTitle: ::windows_core_sys::PCSTR,
     pub pszHeaderSubTitle: ::windows_core_sys::PCSTR,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEA_V2 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEA_V2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETPAGEA_V2_0 {
     pub pszTemplate: ::windows_core_sys::PCSTR,
     pub pResource: *mut super::WindowsAndMessaging::DLGTEMPLATE,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEA_V2_0 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEA_V2_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETPAGEA_V2_1 {
     pub hIcon: super::WindowsAndMessaging::HICON,
     pub pszIcon: ::windows_core_sys::PCSTR,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEA_V2_1 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEA_V2_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub struct PROPSHEETPAGEA_V3 {
     pub dwSize: u32,
     pub dwFlags: u32,
@@ -4565,44 +4565,44 @@ pub struct PROPSHEETPAGEA_V3 {
     pub pszHeaderSubTitle: ::windows_core_sys::PCSTR,
     pub hActCtx: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEA_V3 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEA_V3 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETPAGEA_V3_0 {
     pub pszTemplate: ::windows_core_sys::PCSTR,
     pub pResource: *mut super::WindowsAndMessaging::DLGTEMPLATE,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEA_V3_0 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEA_V3_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETPAGEA_V3_1 {
     pub hIcon: super::WindowsAndMessaging::HICON,
     pub pszIcon: ::windows_core_sys::PCSTR,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEA_V3_1 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEA_V3_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub struct PROPSHEETPAGEW {
     pub dwSize: u32,
     pub dwFlags: u32,
@@ -4619,58 +4619,58 @@ pub struct PROPSHEETPAGEW {
     pub hActCtx: ::win32_foundation_sys::HANDLE,
     pub Anonymous3: PROPSHEETPAGEW_2,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEW {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEW {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETPAGEW_0 {
     pub pszTemplate: ::windows_core_sys::PCWSTR,
     pub pResource: *mut super::WindowsAndMessaging::DLGTEMPLATE,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEW_0 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEW_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETPAGEW_1 {
     pub hIcon: super::WindowsAndMessaging::HICON,
     pub pszIcon: ::windows_core_sys::PCWSTR,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEW_1 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEW_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETPAGEW_2 {
     pub hbmHeader: ::win32_graphics_sys::Gdi::HBITMAP,
     pub pszbmHeader: ::windows_core_sys::PCWSTR,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEW_2 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEW_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub struct PROPSHEETPAGEW_V1 {
     pub dwSize: u32,
     pub dwFlags: u32,
@@ -4683,44 +4683,44 @@ pub struct PROPSHEETPAGEW_V1 {
     pub pfnCallback: LPFNPSPCALLBACKW,
     pub pcRefParent: *mut u32,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEW_V1 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEW_V1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETPAGEW_V1_0 {
     pub pszTemplate: ::windows_core_sys::PCWSTR,
     pub pResource: *mut super::WindowsAndMessaging::DLGTEMPLATE,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEW_V1_0 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEW_V1_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETPAGEW_V1_1 {
     pub hIcon: super::WindowsAndMessaging::HICON,
     pub pszIcon: ::windows_core_sys::PCWSTR,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEW_V1_1 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEW_V1_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub struct PROPSHEETPAGEW_V2 {
     pub dwSize: u32,
     pub dwFlags: u32,
@@ -4735,44 +4735,44 @@ pub struct PROPSHEETPAGEW_V2 {
     pub pszHeaderTitle: ::windows_core_sys::PCWSTR,
     pub pszHeaderSubTitle: ::windows_core_sys::PCWSTR,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEW_V2 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEW_V2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETPAGEW_V2_0 {
     pub pszTemplate: ::windows_core_sys::PCWSTR,
     pub pResource: *mut super::WindowsAndMessaging::DLGTEMPLATE,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEW_V2_0 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEW_V2_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETPAGEW_V2_1 {
     pub hIcon: super::WindowsAndMessaging::HICON,
     pub pszIcon: ::windows_core_sys::PCWSTR,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEW_V2_1 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEW_V2_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub struct PROPSHEETPAGEW_V3 {
     pub dwSize: u32,
     pub dwFlags: u32,
@@ -4788,37 +4788,37 @@ pub struct PROPSHEETPAGEW_V3 {
     pub pszHeaderSubTitle: ::windows_core_sys::PCWSTR,
     pub hActCtx: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEW_V3 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEW_V3 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETPAGEW_V3_0 {
     pub pszTemplate: ::windows_core_sys::PCWSTR,
     pub pResource: *mut super::WindowsAndMessaging::DLGTEMPLATE,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEW_V3_0 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEW_V3_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub union PROPSHEETPAGEW_V3_1 {
     pub hIcon: super::WindowsAndMessaging::HICON,
     pub pszIcon: ::windows_core_sys::PCWSTR,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for PROPSHEETPAGEW_V3_1 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for PROPSHEETPAGEW_V3_1 {
     fn clone(&self) -> Self {
         *self
@@ -5059,7 +5059,7 @@ pub const RB_SETWINDOWTHEME: u32 = 8203u32;
 pub const RB_SHOWBAND: u32 = 1059u32;
 pub const RB_SIZETORECT: u32 = 1047u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct REBARBANDINFOA {
     pub cbSize: u32,
     pub fMask: u32,
@@ -5084,16 +5084,16 @@ pub struct REBARBANDINFOA {
     pub rcChevronLocation: ::win32_foundation_sys::RECT,
     pub uChevronState: u32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for REBARBANDINFOA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for REBARBANDINFOA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct REBARBANDINFOW {
     pub cbSize: u32,
     pub fMask: u32,
@@ -5118,9 +5118,9 @@ pub struct REBARBANDINFOW {
     pub rcChevronLocation: ::win32_foundation_sys::RECT,
     pub uChevronState: u32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for REBARBANDINFOW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for REBARBANDINFOW {
     fn clone(&self) -> Self {
         *self
@@ -5245,7 +5245,7 @@ pub const TBP_SIZINGBARRIGHT: TASKBARPARTS = 6i32;
 pub const TBP_SIZINGBARTOP: TASKBARPARTS = 7i32;
 pub const TBP_SIZINGBARLEFT: TASKBARPARTS = 8i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct TASKDIALOGCONFIG {
     pub cbSize: u32,
     pub hwndParent: ::win32_foundation_sys::HWND,
@@ -5272,37 +5272,37 @@ pub struct TASKDIALOGCONFIG {
     pub lpCallbackData: isize,
     pub cxWidth: u32,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for TASKDIALOGCONFIG {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for TASKDIALOGCONFIG {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub union TASKDIALOGCONFIG_0 {
     pub hMainIcon: super::WindowsAndMessaging::HICON,
     pub pszMainIcon: ::windows_core_sys::PCWSTR,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for TASKDIALOGCONFIG_0 {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for TASKDIALOGCONFIG_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub union TASKDIALOGCONFIG_1 {
     pub hFooterIcon: super::WindowsAndMessaging::HICON,
     pub pszFooterIcon: ::windows_core_sys::PCWSTR,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for TASKDIALOGCONFIG_1 {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for TASKDIALOGCONFIG_1 {
     fn clone(&self) -> Self {
         *self
@@ -5690,30 +5690,30 @@ impl ::core::clone::Clone for TBREPLACEBITMAP {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 pub struct TBSAVEPARAMSA {
     pub hkr: ::win32_system_sys::Registry::HKEY,
     pub pszSubKey: ::windows_core_sys::PCSTR,
     pub pszValueName: ::windows_core_sys::PCSTR,
 }
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for TBSAVEPARAMSA {}
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for TBSAVEPARAMSA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 pub struct TBSAVEPARAMSW {
     pub hkr: ::win32_system_sys::Registry::HKEY,
     pub pszSubKey: ::windows_core_sys::PCWSTR,
     pub pszValueName: ::windows_core_sys::PCWSTR,
 }
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for TBSAVEPARAMSW {}
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for TBSAVEPARAMSW {
     fn clone(&self) -> Self {
         *self

@@ -41,7 +41,7 @@ pub unsafe fn AddClipboardFormatListener<'a, Param0: ::windows_core::IntoParam<'
 }
 pub const CADV_LATEACK: u32 = 65535u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct CONVCONTEXT {
     pub cb: u32,
     pub wFlags: u32,
@@ -51,40 +51,40 @@ pub struct CONVCONTEXT {
     pub dwSecurity: u32,
     pub qos: ::win32_security::SECURITY_QUALITY_OF_SERVICE,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for CONVCONTEXT {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for CONVCONTEXT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for CONVCONTEXT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CONVCONTEXT").field("cb", &self.cb).field("wFlags", &self.wFlags).field("wCountryID", &self.wCountryID).field("iCodePage", &self.iCodePage).field("dwLangID", &self.dwLangID).field("dwSecurity", &self.dwSecurity).field("qos", &self.qos).finish()
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for CONVCONTEXT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for CONVCONTEXT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CONVCONTEXT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for CONVCONTEXT {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for CONVCONTEXT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct CONVINFO {
     pub cb: u32,
     pub hUser: usize,
@@ -103,15 +103,15 @@ pub struct CONVINFO {
     pub hwnd: ::win32_foundation::HWND,
     pub hwndPartner: ::win32_foundation::HWND,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for CONVINFO {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for CONVINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for CONVINFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CONVINFO")
@@ -134,19 +134,19 @@ impl ::core::fmt::Debug for CONVINFO {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for CONVINFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for CONVINFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CONVINFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for CONVINFO {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for CONVINFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -793,7 +793,7 @@ pub unsafe fn DdeCmpStringHandles<'a, Param0: ::windows_core::IntoParam<'a, HSZ>
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn DdeConnect<'a, Param1: ::windows_core::IntoParam<'a, HSZ>, Param2: ::windows_core::IntoParam<'a, HSZ>>(idinst: u32, hszservice: Param1, hsztopic: Param2, pcc: *const CONVCONTEXT) -> HCONV {
     #[cfg(windows)]
@@ -807,7 +807,7 @@ pub unsafe fn DdeConnect<'a, Param1: ::windows_core::IntoParam<'a, HSZ>, Param2:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn DdeConnectList<'a, Param1: ::windows_core::IntoParam<'a, HSZ>, Param2: ::windows_core::IntoParam<'a, HSZ>, Param3: ::windows_core::IntoParam<'a, HCONVLIST>>(idinst: u32, hszservice: Param1, hsztopic: Param2, hconvlist: Param3, pcc: *const CONVCONTEXT) -> HCONVLIST {
     #[cfg(windows)]
@@ -1029,7 +1029,7 @@ pub unsafe fn DdePostAdvise<'a, Param1: ::windows_core::IntoParam<'a, HSZ>, Para
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn DdeQueryConvInfo<'a, Param0: ::windows_core::IntoParam<'a, HCONV>>(hconv: Param0, idtransaction: u32, pconvinfo: *mut CONVINFO) -> u32 {
     #[cfg(windows)]
@@ -1095,7 +1095,7 @@ pub unsafe fn DdeReconnect<'a, Param0: ::windows_core::IntoParam<'a, HCONV>>(hco
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn DdeSetQualityOfService<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwndclient: Param0, pqosnew: *const ::win32_security::SECURITY_QUALITY_OF_SERVICE, pqosprev: *mut ::win32_security::SECURITY_QUALITY_OF_SERVICE) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -1667,40 +1667,40 @@ pub unsafe fn IsClipboardFormatAvailable(format: u32) -> ::win32_foundation::BOO
 }
 pub const MAX_MONITORS: u32 = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct METAFILEPICT {
     pub mm: i32,
     pub xExt: i32,
     pub yExt: i32,
     pub hMF: ::win32_graphics::Gdi::HMETAFILE,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for METAFILEPICT {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for METAFILEPICT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for METAFILEPICT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("METAFILEPICT").field("mm", &self.mm).field("xExt", &self.xExt).field("yExt", &self.yExt).field("hMF", &self.hMF).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for METAFILEPICT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for METAFILEPICT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<METAFILEPICT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for METAFILEPICT {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for METAFILEPICT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1712,7 +1712,7 @@ pub const MH_CREATE: u32 = 1u32;
 pub const MH_DELETE: u32 = 3u32;
 pub const MH_KEEP: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct MONCBSTRUCT {
     pub cb: u32,
     pub dwTime: u32,
@@ -1730,33 +1730,33 @@ pub struct MONCBSTRUCT {
     pub cbData: u32,
     pub Data: [u32; 8],
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for MONCBSTRUCT {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for MONCBSTRUCT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for MONCBSTRUCT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MONCBSTRUCT").field("cb", &self.cb).field("dwTime", &self.dwTime).field("hTask", &self.hTask).field("dwRet", &self.dwRet).field("wType", &self.wType).field("wFmt", &self.wFmt).field("hConv", &self.hConv).field("hsz1", &self.hsz1).field("hsz2", &self.hsz2).field("hData", &self.hData).field("dwData1", &self.dwData1).field("dwData2", &self.dwData2).field("cc", &self.cc).field("cbData", &self.cbData).field("Data", &self.Data).finish()
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for MONCBSTRUCT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for MONCBSTRUCT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MONCBSTRUCT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for MONCBSTRUCT {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for MONCBSTRUCT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2090,7 +2090,7 @@ pub unsafe fn SetClipboardViewer<'a, Param0: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn SetWinMetaFileBits<'a, Param2: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HDC>>(nsize: u32, lpmeta16data: *const u8, hdcref: Param2, lpmfp: *const METAFILEPICT) -> ::win32_graphics::Gdi::HENHMETAFILE {
     #[cfg(windows)]

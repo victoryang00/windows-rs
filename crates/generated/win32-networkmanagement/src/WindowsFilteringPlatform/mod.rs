@@ -316,70 +316,70 @@ impl ::core::fmt::Debug for FWPM_CHANGE_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_CLASSIFY_OPTION0 {
     pub r#type: FWP_CLASSIFY_OPTION_TYPE,
     pub value: FWP_VALUE0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_CLASSIFY_OPTION0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_CLASSIFY_OPTION0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_CLASSIFY_OPTION0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_CLASSIFY_OPTION0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_CLASSIFY_OPTION0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_CLASSIFY_OPTION0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_CLASSIFY_OPTION0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_CLASSIFY_OPTIONS0 {
     pub numOptions: u32,
     pub options: *mut FWPM_CLASSIFY_OPTION0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_CLASSIFY_OPTIONS0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_CLASSIFY_OPTIONS0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for FWPM_CLASSIFY_OPTIONS0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FWPM_CLASSIFY_OPTIONS0").field("numOptions", &self.numOptions).field("options", &self.options).finish()
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_CLASSIFY_OPTIONS0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_CLASSIFY_OPTIONS0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_CLASSIFY_OPTIONS0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_CLASSIFY_OPTIONS0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_CLASSIFY_OPTIONS0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -818,7 +818,7 @@ impl ::core::fmt::Debug for FWPM_FIELD_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_FILTER0 {
     pub filterKey: ::windows_core::GUID,
     pub displayData: FWPM_DISPLAY_DATA0,
@@ -836,59 +836,59 @@ pub struct FWPM_FILTER0 {
     pub filterId: u64,
     pub effectiveWeight: FWP_VALUE0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_FILTER0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_FILTER0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_FILTER0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_FILTER0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_FILTER0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_FILTER0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_FILTER0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_FILTER0_0 {
     pub rawContext: u64,
     pub providerContextKey: ::windows_core::GUID,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_FILTER0_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_FILTER0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_FILTER0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_FILTER0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_FILTER0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_FILTER0_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_FILTER0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -927,40 +927,40 @@ impl ::core::default::Default for FWPM_FILTER_CHANGE0 {
 }
 pub type FWPM_FILTER_CHANGE_CALLBACK0 = ::core::option::Option<unsafe extern "system" fn(context: *mut ::core::ffi::c_void, change: *const FWPM_FILTER_CHANGE0)>;
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_FILTER_CONDITION0 {
     pub fieldKey: ::windows_core::GUID,
     pub matchType: FWP_MATCH_TYPE,
     pub conditionValue: FWP_CONDITION_VALUE0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_FILTER_CONDITION0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_FILTER_CONDITION0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_FILTER_CONDITION0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_FILTER_CONDITION0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_FILTER_CONDITION0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_FILTER_CONDITION0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_FILTER_CONDITION0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_FILTER_ENUM_TEMPLATE0 {
     pub providerKey: *mut ::windows_core::GUID,
     pub layerKey: ::windows_core::GUID,
@@ -972,33 +972,33 @@ pub struct FWPM_FILTER_ENUM_TEMPLATE0 {
     pub actionMask: u32,
     pub calloutKey: *mut ::windows_core::GUID,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_FILTER_ENUM_TEMPLATE0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_FILTER_ENUM_TEMPLATE0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for FWPM_FILTER_ENUM_TEMPLATE0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FWPM_FILTER_ENUM_TEMPLATE0").field("providerKey", &self.providerKey).field("layerKey", &self.layerKey).field("enumType", &self.enumType).field("flags", &self.flags).field("providerContextTemplate", &self.providerContextTemplate).field("numFilterConditions", &self.numFilterConditions).field("filterCondition", &self.filterCondition).field("actionMask", &self.actionMask).field("calloutKey", &self.calloutKey).finish()
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_FILTER_ENUM_TEMPLATE0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_FILTER_ENUM_TEMPLATE0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_FILTER_ENUM_TEMPLATE0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_FILTER_ENUM_TEMPLATE0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_FILTER_ENUM_TEMPLATE0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1070,39 +1070,39 @@ pub const FWPM_FILTER_FLAG_RESERVED1: u32 = 8192u32;
 pub const FWPM_FILTER_FLAG_SILENT_MODE: u32 = 1024u32;
 pub const FWPM_FILTER_FLAG_SYSTEMOS_ONLY: u32 = 256u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_FILTER_SUBSCRIPTION0 {
     pub enumTemplate: *mut FWPM_FILTER_ENUM_TEMPLATE0,
     pub flags: u32,
     pub sessionKey: ::windows_core::GUID,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_FILTER_SUBSCRIPTION0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_FILTER_SUBSCRIPTION0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for FWPM_FILTER_SUBSCRIPTION0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FWPM_FILTER_SUBSCRIPTION0").field("enumTemplate", &self.enumTemplate).field("flags", &self.flags).field("sessionKey", &self.sessionKey).finish()
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_FILTER_SUBSCRIPTION0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_FILTER_SUBSCRIPTION0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_FILTER_SUBSCRIPTION0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_FILTER_SUBSCRIPTION0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_FILTER_SUBSCRIPTION0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1308,40 +1308,40 @@ pub const FWPM_LAYER_STREAM_V4_DISCARD: ::windows_core::GUID = ::windows_core::G
 pub const FWPM_LAYER_STREAM_V6: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x47c9137a_7ec4_46b3_b6e4_48e926b1eda4);
 pub const FWPM_LAYER_STREAM_V6_DISCARD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x10a59fc7_b628_4c41_9eb8_cf37d55103cf);
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_NET_EVENT0 {
     pub header: FWPM_NET_EVENT_HEADER0,
     pub r#type: FWPM_NET_EVENT_TYPE,
     pub Anonymous: FWPM_NET_EVENT0_0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_NET_EVENT0_0 {
     pub ikeMmFailure: *mut FWPM_NET_EVENT_IKEEXT_MM_FAILURE0,
     pub ikeQmFailure: *mut FWPM_NET_EVENT_IKEEXT_QM_FAILURE0,
@@ -1350,67 +1350,67 @@ pub union FWPM_NET_EVENT0_0 {
     pub ipsecDrop: *mut FWPM_NET_EVENT_IPSEC_KERNEL_DROP0,
     pub idpDrop: *mut FWPM_NET_EVENT_IPSEC_DOSP_DROP0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT0_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT0_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_NET_EVENT1 {
     pub header: FWPM_NET_EVENT_HEADER1,
     pub r#type: FWPM_NET_EVENT_TYPE,
     pub Anonymous: FWPM_NET_EVENT1_0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_NET_EVENT1_0 {
     pub ikeMmFailure: *mut FWPM_NET_EVENT_IKEEXT_MM_FAILURE1,
     pub ikeQmFailure: *mut FWPM_NET_EVENT_IKEEXT_QM_FAILURE0,
@@ -1419,67 +1419,67 @@ pub union FWPM_NET_EVENT1_0 {
     pub ipsecDrop: *mut FWPM_NET_EVENT_IPSEC_KERNEL_DROP0,
     pub idpDrop: *mut FWPM_NET_EVENT_IPSEC_DOSP_DROP0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT1_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT1_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT1_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT1_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT1_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT1_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT1_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_NET_EVENT2 {
     pub header: FWPM_NET_EVENT_HEADER2,
     pub r#type: FWPM_NET_EVENT_TYPE,
     pub Anonymous: FWPM_NET_EVENT2_0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT2 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT2 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_NET_EVENT2_0 {
     pub ikeMmFailure: *mut FWPM_NET_EVENT_IKEEXT_MM_FAILURE1,
     pub ikeQmFailure: *mut FWPM_NET_EVENT_IKEEXT_QM_FAILURE0,
@@ -1492,67 +1492,67 @@ pub union FWPM_NET_EVENT2_0 {
     pub capabilityAllow: *mut FWPM_NET_EVENT_CAPABILITY_ALLOW0,
     pub classifyDropMac: *mut FWPM_NET_EVENT_CLASSIFY_DROP_MAC0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT2_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT2_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT2_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT2_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT2_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT2_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT2_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_NET_EVENT3 {
     pub header: FWPM_NET_EVENT_HEADER3,
     pub r#type: FWPM_NET_EVENT_TYPE,
     pub Anonymous: FWPM_NET_EVENT3_0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT3 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT3 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT3 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT3 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT3>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT3 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT3 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_NET_EVENT3_0 {
     pub ikeMmFailure: *mut FWPM_NET_EVENT_IKEEXT_MM_FAILURE1,
     pub ikeQmFailure: *mut FWPM_NET_EVENT_IKEEXT_QM_FAILURE0,
@@ -1565,67 +1565,67 @@ pub union FWPM_NET_EVENT3_0 {
     pub capabilityAllow: *mut FWPM_NET_EVENT_CAPABILITY_ALLOW0,
     pub classifyDropMac: *mut FWPM_NET_EVENT_CLASSIFY_DROP_MAC0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT3_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT3_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT3_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT3_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT3_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT3_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT3_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_NET_EVENT4_ {
     pub header: FWPM_NET_EVENT_HEADER3,
     pub r#type: FWPM_NET_EVENT_TYPE,
     pub Anonymous: FWPM_NET_EVENT4__0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT4_ {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT4_ {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT4_ {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT4_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT4_>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT4_ {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT4_ {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_NET_EVENT4__0 {
     pub ikeMmFailure: *mut FWPM_NET_EVENT_IKEEXT_MM_FAILURE2_,
     pub ikeQmFailure: *mut FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_,
@@ -1638,67 +1638,67 @@ pub union FWPM_NET_EVENT4__0 {
     pub capabilityAllow: *mut FWPM_NET_EVENT_CAPABILITY_ALLOW0,
     pub classifyDropMac: *mut FWPM_NET_EVENT_CLASSIFY_DROP_MAC0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT4__0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT4__0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT4__0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT4__0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT4__0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT4__0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT4__0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_NET_EVENT5_ {
     pub header: FWPM_NET_EVENT_HEADER3,
     pub r#type: FWPM_NET_EVENT_TYPE,
     pub Anonymous: FWPM_NET_EVENT5__0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT5_ {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT5_ {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT5_ {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT5_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT5_>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT5_ {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT5_ {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_NET_EVENT5__0 {
     pub ikeMmFailure: *mut FWPM_NET_EVENT_IKEEXT_MM_FAILURE2_,
     pub ikeQmFailure: *mut FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_,
@@ -1712,41 +1712,41 @@ pub union FWPM_NET_EVENT5__0 {
     pub classifyDropMac: *mut FWPM_NET_EVENT_CLASSIFY_DROP_MAC0,
     pub lpmPacketArrival: *mut FWPM_NET_EVENT_LPM_PACKET_ARRIVAL0_,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT5__0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT5__0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT5__0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT5__0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT5__0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT5__0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT5__0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub type FWPM_NET_EVENT_CALLBACK0 = ::core::option::Option<unsafe extern "system" fn(context: *mut ::core::ffi::c_void, event: *const FWPM_NET_EVENT1)>;
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub type FWPM_NET_EVENT_CALLBACK1 = ::core::option::Option<unsafe extern "system" fn(context: *mut ::core::ffi::c_void, event: *const FWPM_NET_EVENT2)>;
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub type FWPM_NET_EVENT_CALLBACK2 = ::core::option::Option<unsafe extern "system" fn(context: *mut ::core::ffi::c_void, event: *const FWPM_NET_EVENT3)>;
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub type FWPM_NET_EVENT_CALLBACK3 = ::core::option::Option<unsafe extern "system" fn(context: *mut ::core::ffi::c_void, event: *const FWPM_NET_EVENT4_)>;
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub type FWPM_NET_EVENT_CALLBACK4 = ::core::option::Option<unsafe extern "system" fn(context: *mut ::core::ffi::c_void, event: *const FWPM_NET_EVENT5_)>;
 #[repr(C)]
 pub struct FWPM_NET_EVENT_CAPABILITY_ALLOW0 {
@@ -2027,40 +2027,40 @@ impl ::core::default::Default for FWPM_NET_EVENT_CLASSIFY_DROP_MAC0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_NET_EVENT_ENUM_TEMPLATE0 {
     pub startTime: ::win32_foundation::FILETIME,
     pub endTime: ::win32_foundation::FILETIME,
     pub numFilterConditions: u32,
     pub filterCondition: *mut FWPM_FILTER_CONDITION0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_ENUM_TEMPLATE0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_ENUM_TEMPLATE0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for FWPM_NET_EVENT_ENUM_TEMPLATE0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FWPM_NET_EVENT_ENUM_TEMPLATE0").field("startTime", &self.startTime).field("endTime", &self.endTime).field("numFilterConditions", &self.numFilterConditions).field("filterCondition", &self.filterCondition).finish()
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_ENUM_TEMPLATE0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_ENUM_TEMPLATE0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_ENUM_TEMPLATE0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_ENUM_TEMPLATE0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT_ENUM_TEMPLATE0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2081,7 +2081,7 @@ pub const FWPM_NET_EVENT_FLAG_REMOTE_PORT_SET: u32 = 16u32;
 pub const FWPM_NET_EVENT_FLAG_SCOPE_ID_SET: u32 = 128u32;
 pub const FWPM_NET_EVENT_FLAG_USER_ID_SET: u32 = 64u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_NET_EVENT_HEADER0 {
     pub timeStamp: ::win32_foundation::FILETIME,
     pub flags: u32,
@@ -2095,98 +2095,98 @@ pub struct FWPM_NET_EVENT_HEADER0 {
     pub appId: FWP_BYTE_BLOB,
     pub userId: *mut ::win32_security::SID,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_NET_EVENT_HEADER0_0 {
     pub localAddrV4: u32,
     pub localAddrV6: FWP_BYTE_ARRAY16,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER0_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER0_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_NET_EVENT_HEADER0_1 {
     pub remoteAddrV4: u32,
     pub remoteAddrV6: FWP_BYTE_ARRAY16,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER0_1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER0_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER0_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER0_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER0_1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER0_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_NET_EVENT_HEADER1 {
     pub timeStamp: ::win32_foundation::FILETIME,
     pub flags: u32,
@@ -2201,192 +2201,192 @@ pub struct FWPM_NET_EVENT_HEADER1 {
     pub userId: *mut ::win32_security::SID,
     pub Anonymous3: FWPM_NET_EVENT_HEADER1_2,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_NET_EVENT_HEADER1_0 {
     pub localAddrV4: u32,
     pub localAddrV6: FWP_BYTE_ARRAY16,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER1_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER1_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER1_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER1_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER1_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER1_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER1_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_NET_EVENT_HEADER1_1 {
     pub remoteAddrV4: u32,
     pub remoteAddrV6: FWP_BYTE_ARRAY16,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER1_1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER1_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER1_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER1_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER1_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER1_1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER1_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_NET_EVENT_HEADER1_2 {
     pub Anonymous: FWPM_NET_EVENT_HEADER1_2_0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER1_2 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER1_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER1_2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER1_2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER1_2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER1_2 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER1_2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_NET_EVENT_HEADER1_2_0 {
     pub reserved1: FWP_AF,
     pub Anonymous: FWPM_NET_EVENT_HEADER1_2_0_0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER1_2_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER1_2_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER1_2_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER1_2_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER1_2_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER1_2_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER1_2_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_NET_EVENT_HEADER1_2_0_0 {
     pub Anonymous: FWPM_NET_EVENT_HEADER1_2_0_0_0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER1_2_0_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER1_2_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER1_2_0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER1_2_0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER1_2_0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER1_2_0_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER1_2_0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_NET_EVENT_HEADER1_2_0_0_0 {
     pub reserved2: FWP_BYTE_ARRAY6,
     pub reserved3: FWP_BYTE_ARRAY6,
@@ -2398,40 +2398,40 @@ pub struct FWPM_NET_EVENT_HEADER1_2_0_0_0 {
     pub reserved9: u16,
     pub reserved10: u64,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER1_2_0_0_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER1_2_0_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for FWPM_NET_EVENT_HEADER1_2_0_0_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FWPM_NET_EVENT_HEADER1_2_0_0_0").field("reserved2", &self.reserved2).field("reserved3", &self.reserved3).field("reserved4", &self.reserved4).field("reserved5", &self.reserved5).field("reserved6", &self.reserved6).field("reserved7", &self.reserved7).field("reserved8", &self.reserved8).field("reserved9", &self.reserved9).field("reserved10", &self.reserved10).finish()
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER1_2_0_0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER1_2_0_0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER1_2_0_0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER1_2_0_0_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER1_2_0_0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_NET_EVENT_HEADER2 {
     pub timeStamp: ::win32_foundation::FILETIME,
     pub flags: u32,
@@ -2447,98 +2447,98 @@ pub struct FWPM_NET_EVENT_HEADER2 {
     pub addressFamily: FWP_AF,
     pub packageSid: *mut ::win32_security::SID,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER2 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER2 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_NET_EVENT_HEADER2_0 {
     pub localAddrV4: u32,
     pub localAddrV6: FWP_BYTE_ARRAY16,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER2_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER2_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER2_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER2_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER2_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER2_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER2_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_NET_EVENT_HEADER2_1 {
     pub remoteAddrV4: u32,
     pub remoteAddrV6: FWP_BYTE_ARRAY16,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER2_1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER2_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER2_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER2_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER2_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER2_1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER2_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_NET_EVENT_HEADER3 {
     pub timeStamp: ::win32_foundation::FILETIME,
     pub flags: u32,
@@ -2557,91 +2557,91 @@ pub struct FWPM_NET_EVENT_HEADER3 {
     pub policyFlags: u64,
     pub effectiveName: FWP_BYTE_BLOB,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER3 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER3 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER3 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER3 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER3>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER3 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER3 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_NET_EVENT_HEADER3_0 {
     pub localAddrV4: u32,
     pub localAddrV6: FWP_BYTE_ARRAY16,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER3_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER3_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER3_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER3_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER3_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER3_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER3_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_NET_EVENT_HEADER3_1 {
     pub remoteAddrV4: u32,
     pub remoteAddrV6: FWP_BYTE_ARRAY16,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER3_1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER3_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER3_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER3_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER3_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER3_1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER3_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2912,7 +2912,7 @@ impl ::core::default::Default for FWPM_NET_EVENT_IKEEXT_MM_FAILURE2_ {
 pub const FWPM_NET_EVENT_IKEEXT_MM_FAILURE_FLAG_BENIGN: u32 = 1u32;
 pub const FWPM_NET_EVENT_IKEEXT_MM_FAILURE_FLAG_MULTIPLE: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_NET_EVENT_IKEEXT_QM_FAILURE0 {
     pub failureErrorCode: u32,
     pub failurePoint: IPSEC_FAILURE_POINT,
@@ -2924,96 +2924,96 @@ pub struct FWPM_NET_EVENT_IKEEXT_QM_FAILURE0 {
     pub Anonymous2: FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_1,
     pub qmFilterId: u64,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_IKEEXT_QM_FAILURE0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_0 {
     pub localSubNet: FWP_CONDITION_VALUE0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_1 {
     pub remoteSubNet: FWP_CONDITION_VALUE0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_ {
     pub failureErrorCode: u32,
     pub failurePoint: IPSEC_FAILURE_POINT,
@@ -3027,89 +3027,89 @@ pub struct FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_ {
     pub mmSaLuid: u64,
     pub mmProviderContextKey: ::windows_core::GUID,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_ {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_ {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_ {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_ {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_ {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__0 {
     pub localSubNet: FWP_CONDITION_VALUE0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__1 {
     pub remoteSubNet: FWP_CONDITION_VALUE0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3262,39 +3262,39 @@ impl ::core::default::Default for FWPM_NET_EVENT_LPM_PACKET_ARRIVAL0_ {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_NET_EVENT_SUBSCRIPTION0 {
     pub enumTemplate: *mut FWPM_NET_EVENT_ENUM_TEMPLATE0,
     pub flags: u32,
     pub sessionKey: ::windows_core::GUID,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_SUBSCRIPTION0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_SUBSCRIPTION0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for FWPM_NET_EVENT_SUBSCRIPTION0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FWPM_NET_EVENT_SUBSCRIPTION0").field("enumTemplate", &self.enumTemplate).field("flags", &self.flags).field("sessionKey", &self.sessionKey).finish()
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_SUBSCRIPTION0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_SUBSCRIPTION0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_SUBSCRIPTION0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_SUBSCRIPTION0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_NET_EVENT_SUBSCRIPTION0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3399,7 +3399,7 @@ impl ::core::default::Default for FWPM_PROVIDER_CHANGE0 {
 }
 pub type FWPM_PROVIDER_CHANGE_CALLBACK0 = ::core::option::Option<unsafe extern "system" fn(context: *mut ::core::ffi::c_void, change: *const FWPM_PROVIDER_CHANGE0)>;
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_PROVIDER_CONTEXT0 {
     pub providerContextKey: ::windows_core::GUID,
     pub displayData: FWPM_DISPLAY_DATA0,
@@ -3410,34 +3410,34 @@ pub struct FWPM_PROVIDER_CONTEXT0 {
     pub Anonymous: FWPM_PROVIDER_CONTEXT0_0,
     pub providerContextId: u64,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_PROVIDER_CONTEXT0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_PROVIDER_CONTEXT0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_PROVIDER_CONTEXT0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_PROVIDER_CONTEXT0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_PROVIDER_CONTEXT0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_PROVIDER_CONTEXT0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_PROVIDER_CONTEXT0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_PROVIDER_CONTEXT0_0 {
     pub keyingPolicy: *mut IPSEC_KEYING_POLICY0,
     pub ikeQmTransportPolicy: *mut IPSEC_TRANSPORT_POLICY0,
@@ -3449,34 +3449,34 @@ pub union FWPM_PROVIDER_CONTEXT0_0 {
     pub dataBuffer: *mut FWP_BYTE_BLOB,
     pub classifyOptions: *mut FWPM_CLASSIFY_OPTIONS0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_PROVIDER_CONTEXT0_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_PROVIDER_CONTEXT0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_PROVIDER_CONTEXT0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_PROVIDER_CONTEXT0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_PROVIDER_CONTEXT0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_PROVIDER_CONTEXT0_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_PROVIDER_CONTEXT0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_PROVIDER_CONTEXT1 {
     pub providerContextKey: ::windows_core::GUID,
     pub displayData: FWPM_DISPLAY_DATA0,
@@ -3487,34 +3487,34 @@ pub struct FWPM_PROVIDER_CONTEXT1 {
     pub Anonymous: FWPM_PROVIDER_CONTEXT1_0,
     pub providerContextId: u64,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_PROVIDER_CONTEXT1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_PROVIDER_CONTEXT1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_PROVIDER_CONTEXT1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_PROVIDER_CONTEXT1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_PROVIDER_CONTEXT1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_PROVIDER_CONTEXT1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_PROVIDER_CONTEXT1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_PROVIDER_CONTEXT1_0 {
     pub keyingPolicy: *mut IPSEC_KEYING_POLICY0,
     pub ikeQmTransportPolicy: *mut IPSEC_TRANSPORT_POLICY1,
@@ -3529,34 +3529,34 @@ pub union FWPM_PROVIDER_CONTEXT1_0 {
     pub ikeV2MmPolicy: *mut IKEEXT_POLICY1,
     pub idpOptions: *mut IPSEC_DOSP_OPTIONS0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_PROVIDER_CONTEXT1_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_PROVIDER_CONTEXT1_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_PROVIDER_CONTEXT1_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_PROVIDER_CONTEXT1_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_PROVIDER_CONTEXT1_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_PROVIDER_CONTEXT1_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_PROVIDER_CONTEXT1_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_PROVIDER_CONTEXT2 {
     pub providerContextKey: ::windows_core::GUID,
     pub displayData: FWPM_DISPLAY_DATA0,
@@ -3567,34 +3567,34 @@ pub struct FWPM_PROVIDER_CONTEXT2 {
     pub Anonymous: FWPM_PROVIDER_CONTEXT2_0,
     pub providerContextId: u64,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_PROVIDER_CONTEXT2 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_PROVIDER_CONTEXT2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_PROVIDER_CONTEXT2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_PROVIDER_CONTEXT2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_PROVIDER_CONTEXT2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_PROVIDER_CONTEXT2 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_PROVIDER_CONTEXT2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_PROVIDER_CONTEXT2_0 {
     pub keyingPolicy: *mut IPSEC_KEYING_POLICY1,
     pub ikeQmTransportPolicy: *mut IPSEC_TRANSPORT_POLICY2,
@@ -3610,34 +3610,34 @@ pub union FWPM_PROVIDER_CONTEXT2_0 {
     pub ikeV2MmPolicy: *mut IKEEXT_POLICY2,
     pub idpOptions: *mut IPSEC_DOSP_OPTIONS0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_PROVIDER_CONTEXT2_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_PROVIDER_CONTEXT2_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_PROVIDER_CONTEXT2_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_PROVIDER_CONTEXT2_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_PROVIDER_CONTEXT2_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_PROVIDER_CONTEXT2_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_PROVIDER_CONTEXT2_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_PROVIDER_CONTEXT3_ {
     pub providerContextKey: ::windows_core::GUID,
     pub displayData: FWPM_DISPLAY_DATA0,
@@ -3648,34 +3648,34 @@ pub struct FWPM_PROVIDER_CONTEXT3_ {
     pub Anonymous: FWPM_PROVIDER_CONTEXT3__0,
     pub providerContextId: u64,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_PROVIDER_CONTEXT3_ {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_PROVIDER_CONTEXT3_ {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_PROVIDER_CONTEXT3_ {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_PROVIDER_CONTEXT3_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_PROVIDER_CONTEXT3_>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_PROVIDER_CONTEXT3_ {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_PROVIDER_CONTEXT3_ {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWPM_PROVIDER_CONTEXT3__0 {
     pub keyingPolicy: *mut IPSEC_KEYING_POLICY1,
     pub ikeQmTransportPolicy: *mut IPSEC_TRANSPORT_POLICY2,
@@ -3691,27 +3691,27 @@ pub union FWPM_PROVIDER_CONTEXT3__0 {
     pub ikeV2MmPolicy: *mut IKEEXT_POLICY2,
     pub idpOptions: *mut IPSEC_DOSP_OPTIONS0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_PROVIDER_CONTEXT3__0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_PROVIDER_CONTEXT3__0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_PROVIDER_CONTEXT3__0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_PROVIDER_CONTEXT3__0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_PROVIDER_CONTEXT3__0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_PROVIDER_CONTEXT3__0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_PROVIDER_CONTEXT3__0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3948,7 +3948,7 @@ impl ::core::fmt::Debug for FWPM_SERVICE_STATE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWPM_SESSION0 {
     pub sessionKey: ::windows_core::GUID,
     pub displayData: FWPM_DISPLAY_DATA0,
@@ -3959,33 +3959,33 @@ pub struct FWPM_SESSION0 {
     pub username: ::windows_core::PWSTR,
     pub kernelMode: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWPM_SESSION0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWPM_SESSION0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for FWPM_SESSION0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FWPM_SESSION0").field("sessionKey", &self.sessionKey).field("displayData", &self.displayData).field("flags", &self.flags).field("txnWaitTimeoutInMSec", &self.txnWaitTimeoutInMSec).field("processId", &self.processId).field("sid", &self.sid).field("username", &self.username).field("kernelMode", &self.kernelMode).finish()
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWPM_SESSION0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWPM_SESSION0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_SESSION0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWPM_SESSION0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWPM_SESSION0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4833,39 +4833,39 @@ pub const FWP_CONDITION_SOCKET_PROPERTY_FLAG_ALLOW_EDGE_TRAFFIC: u32 = 2u32;
 pub const FWP_CONDITION_SOCKET_PROPERTY_FLAG_DENY_EDGE_TRAFFIC: u32 = 4u32;
 pub const FWP_CONDITION_SOCKET_PROPERTY_FLAG_IS_SYSTEM_PORT_RPC: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWP_CONDITION_VALUE0 {
     pub r#type: FWP_DATA_TYPE,
     pub Anonymous: FWP_CONDITION_VALUE0_0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWP_CONDITION_VALUE0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWP_CONDITION_VALUE0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWP_CONDITION_VALUE0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWP_CONDITION_VALUE0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWP_CONDITION_VALUE0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWP_CONDITION_VALUE0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWP_CONDITION_VALUE0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWP_CONDITION_VALUE0_0 {
     pub uint8: u8,
     pub uint16: u16,
@@ -4889,27 +4889,27 @@ pub union FWP_CONDITION_VALUE0_0 {
     pub v6AddrMask: *mut FWP_V6_ADDR_AND_MASK,
     pub rangeValue: *mut FWP_RANGE0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWP_CONDITION_VALUE0_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWP_CONDITION_VALUE0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWP_CONDITION_VALUE0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWP_CONDITION_VALUE0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWP_CONDITION_VALUE0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWP_CONDITION_VALUE0_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWP_CONDITION_VALUE0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5112,72 +5112,72 @@ pub const FWP_OPTION_VALUE_DISABLE_LOOSE_SOURCE: u32 = 0u32;
 pub const FWP_OPTION_VALUE_ENABLE_LOCAL_ONLY_MAPPING: u32 = 1u32;
 pub const FWP_OPTION_VALUE_ENABLE_LOOSE_SOURCE: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWP_RANGE0 {
     pub valueLow: FWP_VALUE0,
     pub valueHigh: FWP_VALUE0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWP_RANGE0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWP_RANGE0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWP_RANGE0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWP_RANGE0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWP_RANGE0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWP_RANGE0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWP_RANGE0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWP_TOKEN_INFORMATION {
     pub sidCount: u32,
     pub sids: *mut ::win32_security::SID_AND_ATTRIBUTES,
     pub restrictedSidCount: u32,
     pub restrictedSids: *mut ::win32_security::SID_AND_ATTRIBUTES,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWP_TOKEN_INFORMATION {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWP_TOKEN_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for FWP_TOKEN_INFORMATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FWP_TOKEN_INFORMATION").field("sidCount", &self.sidCount).field("sids", &self.sids).field("restrictedSidCount", &self.restrictedSidCount).field("restrictedSids", &self.restrictedSids).finish()
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWP_TOKEN_INFORMATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWP_TOKEN_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWP_TOKEN_INFORMATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWP_TOKEN_INFORMATION {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWP_TOKEN_INFORMATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5245,39 +5245,39 @@ impl ::core::default::Default for FWP_V6_ADDR_AND_MASK {
 }
 pub const FWP_V6_ADDR_SIZE: u32 = 16u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FWP_VALUE0 {
     pub r#type: FWP_DATA_TYPE,
     pub Anonymous: FWP_VALUE0_0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWP_VALUE0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWP_VALUE0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWP_VALUE0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWP_VALUE0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWP_VALUE0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWP_VALUE0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWP_VALUE0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union FWP_VALUE0_0 {
     pub uint8: u8,
     pub uint16: u16,
@@ -5298,27 +5298,27 @@ pub union FWP_VALUE0_0 {
     pub unicodeString: ::windows_core::PWSTR,
     pub byteArray6: *mut FWP_BYTE_ARRAY6,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FWP_VALUE0_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FWP_VALUE0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FWP_VALUE0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FWP_VALUE0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWP_VALUE0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FWP_VALUE0_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FWP_VALUE0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5350,7 +5350,7 @@ impl ::core::fmt::Debug for FWP_VSWITCH_NETWORK_TYPE {
         f.debug_tuple("FWP_VSWITCH_NETWORK_TYPE").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmCalloutAdd0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, callout: *const FWPM_CALLOUT0, sd: Param2, id: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -5455,7 +5455,7 @@ pub unsafe fn FwpmCalloutGetByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmCalloutGetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
@@ -5469,7 +5469,7 @@ pub unsafe fn FwpmCalloutGetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoP
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmCalloutSetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
@@ -5574,7 +5574,7 @@ pub unsafe fn FwpmConnectionGetById0<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmConnectionGetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
@@ -5588,7 +5588,7 @@ pub unsafe fn FwpmConnectionGetSecurityInfo0<'a, Param0: ::windows_core::IntoPar
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmConnectionSetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
@@ -5667,7 +5667,7 @@ pub unsafe fn FwpmEngineClose0<'a, Param0: ::windows_core::IntoParam<'a, ::win32
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmEngineGetOption0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, option: FWPM_ENGINE_OPTION, value: *mut *mut FWP_VALUE0) -> u32 {
     #[cfg(windows)]
@@ -5681,7 +5681,7 @@ pub unsafe fn FwpmEngineGetOption0<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmEngineGetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
@@ -5695,7 +5695,7 @@ pub unsafe fn FwpmEngineGetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Security", feature = "Win32_System_Rpc"))]
+#[cfg(all(feature = "win32-security", feature = "win32-system"))]
 #[inline]
 pub unsafe fn FwpmEngineOpen0<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, authnservice: u32, authidentity: *const ::win32_system::Rpc::SEC_WINNT_AUTH_IDENTITY_W, session: *const FWPM_SESSION0, enginehandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
@@ -5709,7 +5709,7 @@ pub unsafe fn FwpmEngineOpen0<'a, Param0: ::windows_core::IntoParam<'a, ::window
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmEngineSetOption0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, option: FWPM_ENGINE_OPTION, newvalue: *const FWP_VALUE0) -> u32 {
     #[cfg(windows)]
@@ -5723,7 +5723,7 @@ pub unsafe fn FwpmEngineSetOption0<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmEngineSetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
@@ -5737,7 +5737,7 @@ pub unsafe fn FwpmEngineSetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmFilterAdd0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, filter: *const FWPM_FILTER0, sd: Param2, id: *mut u64) -> u32 {
     #[cfg(windows)]
@@ -5751,7 +5751,7 @@ pub unsafe fn FwpmFilterAdd0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_f
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmFilterCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const FWPM_FILTER_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
@@ -5804,7 +5804,7 @@ pub unsafe fn FwpmFilterDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmFilterEnum0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_FILTER0, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -5818,7 +5818,7 @@ pub unsafe fn FwpmFilterEnum0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmFilterGetById0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, filter: *mut *mut FWPM_FILTER0) -> u32 {
     #[cfg(windows)]
@@ -5832,7 +5832,7 @@ pub unsafe fn FwpmFilterGetById0<'a, Param0: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmFilterGetByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, filter: *mut *mut FWPM_FILTER0) -> u32 {
     #[cfg(windows)]
@@ -5846,7 +5846,7 @@ pub unsafe fn FwpmFilterGetByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmFilterGetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
@@ -5860,7 +5860,7 @@ pub unsafe fn FwpmFilterGetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoPa
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmFilterSetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
@@ -5874,7 +5874,7 @@ pub unsafe fn FwpmFilterSetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoPa
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmFilterSubscribeChanges0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_FILTER_SUBSCRIPTION0, callback: FWPM_FILTER_CHANGE_CALLBACK0, context: *const ::core::ffi::c_void, changehandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
@@ -5888,7 +5888,7 @@ pub unsafe fn FwpmFilterSubscribeChanges0<'a, Param0: ::windows_core::IntoParam<
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmFilterSubscriptionsGet0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, entries: *mut *mut *mut FWPM_FILTER_SUBSCRIPTION0, numentries: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -5941,7 +5941,7 @@ pub unsafe fn FwpmGetAppIdFromFileName0<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmIPsecTunnelAdd0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param6: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, flags: u32, mainmodepolicy: *const FWPM_PROVIDER_CONTEXT0, tunnelpolicy: *const FWPM_PROVIDER_CONTEXT0, filterconditions: &[FWPM_FILTER_CONDITION0], sd: Param6) -> u32 {
     #[cfg(windows)]
@@ -5955,7 +5955,7 @@ pub unsafe fn FwpmIPsecTunnelAdd0<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmIPsecTunnelAdd1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param7: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, flags: u32, mainmodepolicy: *const FWPM_PROVIDER_CONTEXT1, tunnelpolicy: *const FWPM_PROVIDER_CONTEXT1, filterconditions: &[FWPM_FILTER_CONDITION0], keymodkey: *const ::windows_core::GUID, sd: Param7) -> u32 {
     #[cfg(windows)]
@@ -5969,7 +5969,7 @@ pub unsafe fn FwpmIPsecTunnelAdd1<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmIPsecTunnelAdd2<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param7: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, flags: u32, mainmodepolicy: *const FWPM_PROVIDER_CONTEXT2, tunnelpolicy: *const FWPM_PROVIDER_CONTEXT2, filterconditions: &[FWPM_FILTER_CONDITION0], keymodkey: *const ::windows_core::GUID, sd: Param7) -> u32 {
     #[cfg(windows)]
@@ -5983,7 +5983,7 @@ pub unsafe fn FwpmIPsecTunnelAdd2<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmIPsecTunnelAdd3<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param7: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, flags: u32, mainmodepolicy: *const FWPM_PROVIDER_CONTEXT3_, tunnelpolicy: *const FWPM_PROVIDER_CONTEXT3_, filterconditions: &[FWPM_FILTER_CONDITION0], keymodkey: *const ::windows_core::GUID, sd: Param7) -> u32 {
     #[cfg(windows)]
@@ -6075,7 +6075,7 @@ pub unsafe fn FwpmLayerGetByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmLayerGetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
@@ -6089,7 +6089,7 @@ pub unsafe fn FwpmLayerGetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoPar
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmLayerSetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
@@ -6103,7 +6103,7 @@ pub unsafe fn FwpmLayerSetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoPar
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmNetEventCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const FWPM_NET_EVENT_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
@@ -6130,7 +6130,7 @@ pub unsafe fn FwpmNetEventDestroyEnumHandle0<'a, Param0: ::windows_core::IntoPar
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmNetEventEnum0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT0, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -6144,7 +6144,7 @@ pub unsafe fn FwpmNetEventEnum0<'a, Param0: ::windows_core::IntoParam<'a, ::win3
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmNetEventEnum1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT1, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -6158,7 +6158,7 @@ pub unsafe fn FwpmNetEventEnum1<'a, Param0: ::windows_core::IntoParam<'a, ::win3
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmNetEventEnum2<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT2, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -6172,7 +6172,7 @@ pub unsafe fn FwpmNetEventEnum2<'a, Param0: ::windows_core::IntoParam<'a, ::win3
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmNetEventEnum3<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT3, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -6186,7 +6186,7 @@ pub unsafe fn FwpmNetEventEnum3<'a, Param0: ::windows_core::IntoParam<'a, ::win3
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmNetEventEnum4<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT4_, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -6200,7 +6200,7 @@ pub unsafe fn FwpmNetEventEnum4<'a, Param0: ::windows_core::IntoParam<'a, ::win3
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmNetEventEnum5<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT5_, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -6214,7 +6214,7 @@ pub unsafe fn FwpmNetEventEnum5<'a, Param0: ::windows_core::IntoParam<'a, ::win3
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmNetEventSubscribe0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: FWPM_NET_EVENT_CALLBACK0, context: *const ::core::ffi::c_void, eventshandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
@@ -6228,7 +6228,7 @@ pub unsafe fn FwpmNetEventSubscribe0<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmNetEventSubscribe1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: FWPM_NET_EVENT_CALLBACK1, context: *const ::core::ffi::c_void, eventshandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
@@ -6242,7 +6242,7 @@ pub unsafe fn FwpmNetEventSubscribe1<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmNetEventSubscribe2<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: FWPM_NET_EVENT_CALLBACK2, context: *const ::core::ffi::c_void, eventshandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
@@ -6256,7 +6256,7 @@ pub unsafe fn FwpmNetEventSubscribe2<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmNetEventSubscribe3<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: FWPM_NET_EVENT_CALLBACK3, context: *const ::core::ffi::c_void, eventshandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
@@ -6270,7 +6270,7 @@ pub unsafe fn FwpmNetEventSubscribe3<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmNetEventSubscribe4<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: FWPM_NET_EVENT_CALLBACK4, context: *const ::core::ffi::c_void, eventshandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
@@ -6284,7 +6284,7 @@ pub unsafe fn FwpmNetEventSubscribe4<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmNetEventSubscriptionsGet0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, entries: *mut *mut *mut FWPM_NET_EVENT_SUBSCRIPTION0, numentries: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -6311,7 +6311,7 @@ pub unsafe fn FwpmNetEventUnsubscribe0<'a, Param0: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmNetEventsGetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
@@ -6325,7 +6325,7 @@ pub unsafe fn FwpmNetEventsGetSecurityInfo0<'a, Param0: ::windows_core::IntoPara
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmNetEventsSetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
@@ -6339,7 +6339,7 @@ pub unsafe fn FwpmNetEventsSetSecurityInfo0<'a, Param0: ::windows_core::IntoPara
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmProviderAdd0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, provider: *const FWPM_PROVIDER0, sd: Param2) -> u32 {
     #[cfg(windows)]
@@ -6353,7 +6353,7 @@ pub unsafe fn FwpmProviderAdd0<'a, Param0: ::windows_core::IntoParam<'a, ::win32
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmProviderContextAdd0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, providercontext: *const FWPM_PROVIDER_CONTEXT0, sd: Param2, id: *mut u64) -> u32 {
     #[cfg(windows)]
@@ -6367,7 +6367,7 @@ pub unsafe fn FwpmProviderContextAdd0<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmProviderContextAdd1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, providercontext: *const FWPM_PROVIDER_CONTEXT1, sd: Param2, id: *mut u64) -> u32 {
     #[cfg(windows)]
@@ -6381,7 +6381,7 @@ pub unsafe fn FwpmProviderContextAdd1<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmProviderContextAdd2<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, providercontext: *const FWPM_PROVIDER_CONTEXT2, sd: Param2, id: *mut u64) -> u32 {
     #[cfg(windows)]
@@ -6395,7 +6395,7 @@ pub unsafe fn FwpmProviderContextAdd2<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmProviderContextAdd3<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, providercontext: *const FWPM_PROVIDER_CONTEXT3_, sd: Param2, id: *mut u64) -> u32 {
     #[cfg(windows)]
@@ -6461,7 +6461,7 @@ pub unsafe fn FwpmProviderContextDestroyEnumHandle0<'a, Param0: ::windows_core::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmProviderContextEnum0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_PROVIDER_CONTEXT0, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -6475,7 +6475,7 @@ pub unsafe fn FwpmProviderContextEnum0<'a, Param0: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmProviderContextEnum1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_PROVIDER_CONTEXT1, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -6489,7 +6489,7 @@ pub unsafe fn FwpmProviderContextEnum1<'a, Param0: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmProviderContextEnum2<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_PROVIDER_CONTEXT2, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -6503,7 +6503,7 @@ pub unsafe fn FwpmProviderContextEnum2<'a, Param0: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmProviderContextEnum3<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_PROVIDER_CONTEXT3_, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -6517,7 +6517,7 @@ pub unsafe fn FwpmProviderContextEnum3<'a, Param0: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmProviderContextGetById0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT0) -> u32 {
     #[cfg(windows)]
@@ -6531,7 +6531,7 @@ pub unsafe fn FwpmProviderContextGetById0<'a, Param0: ::windows_core::IntoParam<
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmProviderContextGetById1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT1) -> u32 {
     #[cfg(windows)]
@@ -6545,7 +6545,7 @@ pub unsafe fn FwpmProviderContextGetById1<'a, Param0: ::windows_core::IntoParam<
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmProviderContextGetById2<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT2) -> u32 {
     #[cfg(windows)]
@@ -6559,7 +6559,7 @@ pub unsafe fn FwpmProviderContextGetById2<'a, Param0: ::windows_core::IntoParam<
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmProviderContextGetById3<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT3_) -> u32 {
     #[cfg(windows)]
@@ -6573,7 +6573,7 @@ pub unsafe fn FwpmProviderContextGetById3<'a, Param0: ::windows_core::IntoParam<
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmProviderContextGetByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT0) -> u32 {
     #[cfg(windows)]
@@ -6587,7 +6587,7 @@ pub unsafe fn FwpmProviderContextGetByKey0<'a, Param0: ::windows_core::IntoParam
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmProviderContextGetByKey1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT1) -> u32 {
     #[cfg(windows)]
@@ -6601,7 +6601,7 @@ pub unsafe fn FwpmProviderContextGetByKey1<'a, Param0: ::windows_core::IntoParam
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmProviderContextGetByKey2<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT2) -> u32 {
     #[cfg(windows)]
@@ -6615,7 +6615,7 @@ pub unsafe fn FwpmProviderContextGetByKey2<'a, Param0: ::windows_core::IntoParam
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmProviderContextGetByKey3<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT3_) -> u32 {
     #[cfg(windows)]
@@ -6629,7 +6629,7 @@ pub unsafe fn FwpmProviderContextGetByKey3<'a, Param0: ::windows_core::IntoParam
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmProviderContextGetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
@@ -6643,7 +6643,7 @@ pub unsafe fn FwpmProviderContextGetSecurityInfoByKey0<'a, Param0: ::windows_cor
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmProviderContextSetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
@@ -6761,7 +6761,7 @@ pub unsafe fn FwpmProviderGetByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmProviderGetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
@@ -6775,7 +6775,7 @@ pub unsafe fn FwpmProviderGetSecurityInfoByKey0<'a, Param0: ::windows_core::Into
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmProviderSetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
@@ -6854,7 +6854,7 @@ pub unsafe fn FwpmSessionDestroyEnumHandle0<'a, Param0: ::windows_core::IntoPara
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmSessionEnum0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_SESSION0, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -6868,7 +6868,7 @@ pub unsafe fn FwpmSessionEnum0<'a, Param0: ::windows_core::IntoParam<'a, ::win32
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmSubLayerAdd0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, sublayer: *const FWPM_SUBLAYER0, sd: Param2) -> u32 {
     #[cfg(windows)]
@@ -6947,7 +6947,7 @@ pub unsafe fn FwpmSubLayerGetByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmSubLayerGetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
@@ -6961,7 +6961,7 @@ pub unsafe fn FwpmSubLayerGetSecurityInfoByKey0<'a, Param0: ::windows_core::Into
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmSubLayerSetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
@@ -7118,7 +7118,7 @@ pub unsafe fn FwpmvSwitchEventUnsubscribe0<'a, Param0: ::windows_core::IntoParam
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmvSwitchEventsGetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
@@ -7132,7 +7132,7 @@ pub unsafe fn FwpmvSwitchEventsGetSecurityInfo0<'a, Param0: ::windows_core::Into
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FwpmvSwitchEventsSetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
@@ -10174,33 +10174,33 @@ impl ::core::default::Default for IKEEXT_SA_DETAILS2_0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct IKEEXT_SA_ENUM_TEMPLATE0 {
     pub localSubNet: FWP_CONDITION_VALUE0,
     pub remoteSubNet: FWP_CONDITION_VALUE0,
     pub localMainModeCertHash: FWP_BYTE_BLOB,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for IKEEXT_SA_ENUM_TEMPLATE0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for IKEEXT_SA_ENUM_TEMPLATE0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for IKEEXT_SA_ENUM_TEMPLATE0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for IKEEXT_SA_ENUM_TEMPLATE0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IKEEXT_SA_ENUM_TEMPLATE0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for IKEEXT_SA_ENUM_TEMPLATE0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for IKEEXT_SA_ENUM_TEMPLATE0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11368,7 +11368,7 @@ impl ::core::default::Default for IPSEC_KEY_MANAGER0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct IPSEC_KEY_MANAGER_CALLBACKS0 {
     pub reserved: ::windows_core::GUID,
     pub flags: u32,
@@ -11376,43 +11376,43 @@ pub struct IPSEC_KEY_MANAGER_CALLBACKS0 {
     pub keyDictation: IPSEC_KEY_MANAGER_DICTATE_KEY0,
     pub keyNotify: IPSEC_KEY_MANAGER_NOTIFY_KEY0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for IPSEC_KEY_MANAGER_CALLBACKS0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for IPSEC_KEY_MANAGER_CALLBACKS0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for IPSEC_KEY_MANAGER_CALLBACKS0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("IPSEC_KEY_MANAGER_CALLBACKS0").field("reserved", &self.reserved).field("flags", &self.flags).field("keyDictationCheck", &self.keyDictationCheck.map(|f| f as usize)).field("keyDictation", &self.keyDictation.map(|f| f as usize)).field("keyNotify", &self.keyNotify.map(|f| f as usize)).finish()
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for IPSEC_KEY_MANAGER_CALLBACKS0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for IPSEC_KEY_MANAGER_CALLBACKS0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IPSEC_KEY_MANAGER_CALLBACKS0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for IPSEC_KEY_MANAGER_CALLBACKS0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for IPSEC_KEY_MANAGER_CALLBACKS0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub type IPSEC_KEY_MANAGER_DICTATE_KEY0 = ::core::option::Option<unsafe extern "system" fn(inboundsadetails: *mut IPSEC_SA_DETAILS1, outboundsadetails: *mut IPSEC_SA_DETAILS1, keyingmodulegenkey: *mut ::win32_foundation::BOOL) -> u32>;
 pub const IPSEC_KEY_MANAGER_FLAG_DICTATE_KEY: u32 = 1u32;
 pub type IPSEC_KEY_MANAGER_KEY_DICTATION_CHECK0 = ::core::option::Option<unsafe extern "system" fn(iketraffic: *const IKEEXT_TRAFFIC0, willdictatekey: *mut ::win32_foundation::BOOL, weight: *mut u32)>;
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub type IPSEC_KEY_MANAGER_NOTIFY_KEY0 = ::core::option::Option<unsafe extern "system" fn(inboundsa: *const IPSEC_SA_DETAILS1, outboundsa: *const IPSEC_SA_DETAILS1)>;
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -11886,78 +11886,78 @@ impl ::core::default::Default for IPSEC_SA_CIPHER_INFORMATION0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct IPSEC_SA_CONTEXT0 {
     pub saContextId: u64,
     pub inboundSa: *mut IPSEC_SA_DETAILS0,
     pub outboundSa: *mut IPSEC_SA_DETAILS0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for IPSEC_SA_CONTEXT0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for IPSEC_SA_CONTEXT0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for IPSEC_SA_CONTEXT0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("IPSEC_SA_CONTEXT0").field("saContextId", &self.saContextId).field("inboundSa", &self.inboundSa).field("outboundSa", &self.outboundSa).finish()
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for IPSEC_SA_CONTEXT0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for IPSEC_SA_CONTEXT0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IPSEC_SA_CONTEXT0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for IPSEC_SA_CONTEXT0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for IPSEC_SA_CONTEXT0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct IPSEC_SA_CONTEXT1 {
     pub saContextId: u64,
     pub inboundSa: *mut IPSEC_SA_DETAILS1,
     pub outboundSa: *mut IPSEC_SA_DETAILS1,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for IPSEC_SA_CONTEXT1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for IPSEC_SA_CONTEXT1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for IPSEC_SA_CONTEXT1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("IPSEC_SA_CONTEXT1").field("saContextId", &self.saContextId).field("inboundSa", &self.inboundSa).field("outboundSa", &self.outboundSa).finish()
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for IPSEC_SA_CONTEXT1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for IPSEC_SA_CONTEXT1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IPSEC_SA_CONTEXT1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for IPSEC_SA_CONTEXT1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for IPSEC_SA_CONTEXT1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11995,32 +11995,32 @@ impl ::core::default::Default for IPSEC_SA_CONTEXT_CHANGE0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct IPSEC_SA_CONTEXT_ENUM_TEMPLATE0 {
     pub localSubNet: FWP_CONDITION_VALUE0,
     pub remoteSubNet: FWP_CONDITION_VALUE0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for IPSEC_SA_CONTEXT_ENUM_TEMPLATE0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for IPSEC_SA_CONTEXT_ENUM_TEMPLATE0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for IPSEC_SA_CONTEXT_ENUM_TEMPLATE0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for IPSEC_SA_CONTEXT_ENUM_TEMPLATE0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IPSEC_SA_CONTEXT_ENUM_TEMPLATE0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for IPSEC_SA_CONTEXT_ENUM_TEMPLATE0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for IPSEC_SA_CONTEXT_ENUM_TEMPLATE0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -12052,46 +12052,46 @@ impl ::core::fmt::Debug for IPSEC_SA_CONTEXT_EVENT_TYPE0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct IPSEC_SA_CONTEXT_SUBSCRIPTION0 {
     pub enumTemplate: *mut IPSEC_SA_CONTEXT_ENUM_TEMPLATE0,
     pub flags: u32,
     pub sessionKey: ::windows_core::GUID,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for IPSEC_SA_CONTEXT_SUBSCRIPTION0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for IPSEC_SA_CONTEXT_SUBSCRIPTION0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for IPSEC_SA_CONTEXT_SUBSCRIPTION0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("IPSEC_SA_CONTEXT_SUBSCRIPTION0").field("enumTemplate", &self.enumTemplate).field("flags", &self.flags).field("sessionKey", &self.sessionKey).finish()
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for IPSEC_SA_CONTEXT_SUBSCRIPTION0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for IPSEC_SA_CONTEXT_SUBSCRIPTION0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IPSEC_SA_CONTEXT_SUBSCRIPTION0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for IPSEC_SA_CONTEXT_SUBSCRIPTION0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for IPSEC_SA_CONTEXT_SUBSCRIPTION0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct IPSEC_SA_DETAILS0 {
     pub ipVersion: FWP_IP_VERSION,
     pub saDirection: FWP_DIRECTION,
@@ -12100,65 +12100,65 @@ pub struct IPSEC_SA_DETAILS0 {
     pub Anonymous: IPSEC_SA_DETAILS0_0,
     pub transportFilter: *mut FWPM_FILTER0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for IPSEC_SA_DETAILS0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for IPSEC_SA_DETAILS0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for IPSEC_SA_DETAILS0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for IPSEC_SA_DETAILS0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IPSEC_SA_DETAILS0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for IPSEC_SA_DETAILS0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for IPSEC_SA_DETAILS0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union IPSEC_SA_DETAILS0_0 {
     pub udpEncapsulation: *mut IPSEC_V4_UDP_ENCAPSULATION0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for IPSEC_SA_DETAILS0_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for IPSEC_SA_DETAILS0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for IPSEC_SA_DETAILS0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for IPSEC_SA_DETAILS0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IPSEC_SA_DETAILS0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for IPSEC_SA_DETAILS0_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for IPSEC_SA_DETAILS0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct IPSEC_SA_DETAILS1 {
     pub ipVersion: FWP_IP_VERSION,
     pub saDirection: FWP_DIRECTION,
@@ -12168,58 +12168,58 @@ pub struct IPSEC_SA_DETAILS1 {
     pub transportFilter: *mut FWPM_FILTER0,
     pub virtualIfTunnelInfo: IPSEC_VIRTUAL_IF_TUNNEL_INFO0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for IPSEC_SA_DETAILS1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for IPSEC_SA_DETAILS1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for IPSEC_SA_DETAILS1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for IPSEC_SA_DETAILS1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IPSEC_SA_DETAILS1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for IPSEC_SA_DETAILS1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for IPSEC_SA_DETAILS1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub union IPSEC_SA_DETAILS1_0 {
     pub udpEncapsulation: *mut IPSEC_V4_UDP_ENCAPSULATION0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for IPSEC_SA_DETAILS1_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for IPSEC_SA_DETAILS1_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for IPSEC_SA_DETAILS1_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for IPSEC_SA_DETAILS1_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IPSEC_SA_DETAILS1_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for IPSEC_SA_DETAILS1_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for IPSEC_SA_DETAILS1_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -13555,7 +13555,7 @@ impl ::core::default::Default for IPSEC_VIRTUAL_IF_TUNNEL_INFO0 {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn IPsecDospGetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
@@ -13582,7 +13582,7 @@ pub unsafe fn IPsecDospGetStatistics0<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn IPsecDospSetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
@@ -13661,7 +13661,7 @@ pub unsafe fn IPsecGetStatistics1<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn IPsecKeyManagerAddAndRegister0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, keymanager: *const IPSEC_KEY_MANAGER0, keymanagercallbacks: *const IPSEC_KEY_MANAGER_CALLBACKS0, keymgmthandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
@@ -13675,7 +13675,7 @@ pub unsafe fn IPsecKeyManagerAddAndRegister0<'a, Param0: ::windows_core::IntoPar
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn IPsecKeyManagerGetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, reserved: *const ::core::ffi::c_void, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
@@ -13689,7 +13689,7 @@ pub unsafe fn IPsecKeyManagerGetSecurityInfoByKey0<'a, Param0: ::windows_core::I
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn IPsecKeyManagerSetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, reserved: *const ::core::ffi::c_void, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
@@ -13807,7 +13807,7 @@ pub unsafe fn IPsecSaContextCreate1<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn IPsecSaContextCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const IPSEC_SA_CONTEXT_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
@@ -13847,7 +13847,7 @@ pub unsafe fn IPsecSaContextDestroyEnumHandle0<'a, Param0: ::windows_core::IntoP
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn IPsecSaContextEnum0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut IPSEC_SA_CONTEXT0, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -13861,7 +13861,7 @@ pub unsafe fn IPsecSaContextEnum0<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn IPsecSaContextEnum1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut IPSEC_SA_CONTEXT1, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -13888,7 +13888,7 @@ pub unsafe fn IPsecSaContextExpire0<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn IPsecSaContextGetById0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, sacontext: *mut *mut IPSEC_SA_CONTEXT0) -> u32 {
     #[cfg(windows)]
@@ -13902,7 +13902,7 @@ pub unsafe fn IPsecSaContextGetById0<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn IPsecSaContextGetById1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, sacontext: *mut *mut IPSEC_SA_CONTEXT1) -> u32 {
     #[cfg(windows)]
@@ -13955,7 +13955,7 @@ pub unsafe fn IPsecSaContextSetSpi0<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn IPsecSaContextSubscribe0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, subscription: *const IPSEC_SA_CONTEXT_SUBSCRIPTION0, callback: IPSEC_SA_CONTEXT_CALLBACK0, context: *const ::core::ffi::c_void, eventshandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
@@ -13969,7 +13969,7 @@ pub unsafe fn IPsecSaContextSubscribe0<'a, Param0: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn IPsecSaContextSubscriptionsGet0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, entries: *mut *mut *mut IPSEC_SA_CONTEXT_SUBSCRIPTION0, numentries: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -13996,7 +13996,7 @@ pub unsafe fn IPsecSaContextUnsubscribe0<'a, Param0: ::windows_core::IntoParam<'
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn IPsecSaContextUpdate0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, flags: u64, newvalues: *const IPSEC_SA_CONTEXT1) -> u32 {
     #[cfg(windows)]
@@ -14023,7 +14023,7 @@ pub unsafe fn IPsecSaCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn IPsecSaDbGetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
@@ -14037,7 +14037,7 @@ pub unsafe fn IPsecSaDbGetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn IPsecSaDbSetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
@@ -14064,7 +14064,7 @@ pub unsafe fn IPsecSaDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn IPsecSaEnum0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut IPSEC_SA_DETAILS0, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -14078,7 +14078,7 @@ pub unsafe fn IPsecSaEnum0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_fou
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn IPsecSaEnum1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut IPSEC_SA_DETAILS1, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -14118,7 +14118,7 @@ pub unsafe fn IkeextGetStatistics1<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn IkeextSaCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const IKEEXT_SA_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
@@ -14132,7 +14132,7 @@ pub unsafe fn IkeextSaCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn IkeextSaDbGetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
@@ -14146,7 +14146,7 @@ pub unsafe fn IkeextSaDbGetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn IkeextSaDbSetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]

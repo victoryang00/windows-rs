@@ -133,7 +133,7 @@ impl AppDisplayInfo {
             (::windows_core::Interface::vtable(this).Description)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetLogo<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Size>>(&self, size: Param0) -> ::windows_core::Result<::winrt_storage::Streams::RandomAccessStreamReference> {
         let this = self;
         unsafe {
@@ -312,7 +312,7 @@ impl AppInfo {
             (::windows_core::Interface::vtable(this).GetFromAppUserModelId)(::windows_core::Interface::as_raw(this), appusermodelid.into_param().abi(), result__.as_mut_ptr()).from_abi::<AppInfo>(result__)
         })
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn GetFromAppUserModelIdForUser<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(user: Param0, appusermodelid: Param1) -> ::windows_core::Result<AppInfo> {
         Self::IAppInfoStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -476,7 +476,7 @@ impl AppInstallerInfo {
             (::windows_core::Interface::vtable(this).PausedUntil)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::DateTime>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn UpdateUris(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Uri>> {
         let this = &::windows_core::Interface::cast::<IAppInstallerInfo2>(self)?;
         unsafe {
@@ -484,7 +484,7 @@ impl AppInstallerInfo {
             (::windows_core::Interface::vtable(this).UpdateUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Uri>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RepairUris(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Uri>> {
         let this = &::windows_core::Interface::cast::<IAppInstallerInfo2>(self)?;
         unsafe {
@@ -492,7 +492,7 @@ impl AppInstallerInfo {
             (::windows_core::Interface::vtable(this).RepairUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Uri>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn DependencyPackageUris(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Uri>> {
         let this = &::windows_core::Interface::cast::<IAppInstallerInfo2>(self)?;
         unsafe {
@@ -500,7 +500,7 @@ impl AppInstallerInfo {
             (::windows_core::Interface::vtable(this).DependencyPackageUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Uri>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn OptionalPackageUris(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Uri>> {
         let this = &::windows_core::Interface::cast::<IAppInstallerInfo2>(self)?;
         unsafe {
@@ -648,7 +648,7 @@ impl AppInstance {
             (::windows_core::Interface::vtable(this).RecommendedInstance)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AppInstance>(result__)
         })
     }
-    #[cfg(feature = "ApplicationModel_Activation")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn GetActivatedEventArgs() -> ::windows_core::Result<Activation::IActivatedEventArgs> {
         Self::IAppInstanceStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -664,7 +664,7 @@ impl AppInstance {
     pub fn Unregister() -> ::windows_core::Result<()> {
         Self::IAppInstanceStatics(|this| unsafe { (::windows_core::Interface::vtable(this).Unregister)(::windows_core::Interface::as_raw(this)).ok() })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetInstances() -> ::windows_core::Result<::winrt_foundation::Collections::IVector<AppInstance>> {
         Self::IAppInstanceStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1080,9 +1080,9 @@ pub struct IAppDisplayInfo_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Description: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub GetLogo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, size: ::winrt_foundation::Size, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     GetLogo: usize,
 }
 #[doc(hidden)]
@@ -1153,9 +1153,9 @@ pub struct IAppInfoStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Current: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetFromAppUserModelId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appusermodelid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub GetFromAppUserModelIdForUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, appusermodelid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     GetFromAppUserModelIdForUser: usize,
 }
 #[doc(hidden)]
@@ -1192,21 +1192,21 @@ pub struct IAppInstallerInfo2_Vtbl {
     pub Version: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PackageVersion) -> ::windows_core::HRESULT,
     pub LastChecked: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub PausedUntil: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub UpdateUris: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     UpdateUris: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub RepairUris: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     RepairUris: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub DependencyPackageUris: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     DependencyPackageUris: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub OptionalPackageUris: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     OptionalPackageUris: usize,
     pub PolicySource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut AppInstallerPolicySource) -> ::windows_core::HRESULT,
 }
@@ -1237,15 +1237,15 @@ unsafe impl ::windows_core::Interface for IAppInstanceStatics {
 pub struct IAppInstanceStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub RecommendedInstance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "ApplicationModel_Activation")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub GetActivatedEventArgs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Activation"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     GetActivatedEventArgs: usize,
     pub FindOrRegisterInstanceForKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Unregister: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetInstances: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetInstances: usize,
 }
 #[doc(hidden)]
@@ -1539,14 +1539,14 @@ unsafe impl ::windows_core::Interface for IPackage {
 pub struct IPackage_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub InstalledLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     InstalledLocation: usize,
     pub IsFramework: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Dependencies: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Dependencies: usize,
 }
 #[doc(hidden)]
@@ -1581,9 +1581,9 @@ pub struct IPackage3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub InstalledDate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "ApplicationModel_Core", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-applicationmodel", feature = "winrt-foundation"))]
     pub GetAppListEntriesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "ApplicationModel_Core", feature = "Foundation_Collections")))]
+    #[cfg(not(all(feature = "winrt-applicationmodel", feature = "winrt-foundation")))]
     GetAppListEntriesAsync: usize,
 }
 #[doc(hidden)]
@@ -1612,18 +1612,18 @@ unsafe impl ::windows_core::Interface for IPackage5 {
 #[doc(hidden)]
 pub struct IPackage5_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetContentGroupsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetContentGroupsAsync: usize,
     pub GetContentGroupAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub StageContentGroupsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, names: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     StageContentGroupsAsync: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub StageContentGroupsWithPriorityAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, names: ::windows_core::RawPtr, movetoheadofqueue: bool, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     StageContentGroupsWithPriorityAsync: usize,
     pub SetInUseAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, inuse: bool, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -1652,13 +1652,13 @@ unsafe impl ::windows_core::Interface for IPackage7 {
 #[doc(hidden)]
 pub struct IPackage7_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub MutableLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     MutableLocation: usize,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub EffectiveLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     EffectiveLocation: usize,
 }
 #[doc(hidden)]
@@ -1672,17 +1672,17 @@ unsafe impl ::windows_core::Interface for IPackage8 {
 #[doc(hidden)]
 pub struct IPackage8_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub EffectiveExternalLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     EffectiveExternalLocation: usize,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub MachineExternalLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     MachineExternalLocation: usize,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub UserExternalLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     UserExternalLocation: usize,
     pub InstalledPath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub MutablePath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -1690,13 +1690,13 @@ pub struct IPackage8_Vtbl {
     pub EffectiveExternalPath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub MachineExternalPath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub UserExternalPath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub GetLogoAsRandomAccessStreamReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, size: ::winrt_foundation::Size, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     GetLogoAsRandomAccessStreamReference: usize,
-    #[cfg(all(feature = "ApplicationModel_Core", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-applicationmodel", feature = "winrt-foundation"))]
     pub GetAppListEntries: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "ApplicationModel_Core", feature = "Foundation_Collections")))]
+    #[cfg(not(all(feature = "winrt-applicationmodel", feature = "winrt-foundation")))]
     GetAppListEntries: usize,
     pub IsStub: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
 }
@@ -1748,9 +1748,9 @@ unsafe impl ::windows_core::Interface for IPackageCatalog3 {
 #[doc(hidden)]
 pub struct IPackageCatalog3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub RemoveOptionalPackagesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, optionalpackagefamilynames: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     RemoveOptionalPackagesAsync: usize,
 }
 #[doc(hidden)]
@@ -1765,9 +1765,9 @@ unsafe impl ::windows_core::Interface for IPackageCatalog4 {
 pub struct IPackageCatalog4_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub AddResourcePackageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, resourcepackagefamilyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, resourceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, options: AddResourcePackageOptions, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub RemoveResourcePackagesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, resourcepackages: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     RemoveResourcePackagesAsync: usize,
 }
 #[doc(hidden)]
@@ -1810,9 +1810,9 @@ unsafe impl ::windows_core::Interface for IPackageCatalogRemoveOptionalPackagesR
 #[doc(hidden)]
 pub struct IPackageCatalogRemoveOptionalPackagesResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub PackagesRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     PackagesRemoved: usize,
     pub ExtendedError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::HRESULT) -> ::windows_core::HRESULT,
 }
@@ -1827,9 +1827,9 @@ unsafe impl ::windows_core::Interface for IPackageCatalogRemoveResourcePackagesR
 #[doc(hidden)]
 pub struct IPackageCatalogRemoveResourcePackagesResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub PackagesRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     PackagesRemoved: usize,
     pub ExtendedError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::HRESULT) -> ::windows_core::HRESULT,
 }
@@ -1908,9 +1908,9 @@ pub struct IPackageId_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Version: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PackageVersion) -> ::windows_core::HRESULT,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub Architecture: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_system::ProcessorArchitecture) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     Architecture: usize,
     pub ResourceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Publisher: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -2091,9 +2091,9 @@ pub struct IPackageWithMetadata_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub InstallDate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub GetThumbnailToken: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub Launch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, parameters: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     Launch: usize,
 }
 #[doc(hidden)]
@@ -2123,9 +2123,9 @@ unsafe impl ::windows_core::Interface for IStartupTaskStatics {
 #[doc(hidden)]
 pub struct IStartupTaskStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetForCurrentPackageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetForCurrentPackageAsync: usize,
     pub GetAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, taskid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -2649,7 +2649,7 @@ impl Package {
             (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PackageId>(result__)
         }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn InstalledLocation(&self) -> ::windows_core::Result<::winrt_storage::StorageFolder> {
         let this = self;
         unsafe {
@@ -2664,7 +2664,7 @@ impl Package {
             (::windows_core::Interface::vtable(this).IsFramework)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Dependencies(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<Package>> {
         let this = self;
         unsafe {
@@ -2735,7 +2735,7 @@ impl Package {
             (::windows_core::Interface::vtable(this).InstalledDate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
-    #[cfg(all(feature = "ApplicationModel_Core", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-applicationmodel", feature = "winrt-foundation"))]
     pub fn GetAppListEntriesAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<Core::AppListEntry>>> {
         let this = &::windows_core::Interface::cast::<IPackage3>(self)?;
         unsafe {
@@ -2764,7 +2764,7 @@ impl Package {
             (::windows_core::Interface::vtable(this).VerifyContentIntegrityAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetContentGroupsAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVector<PackageContentGroup>>> {
         let this = &::windows_core::Interface::cast::<IPackage5>(self)?;
         unsafe {
@@ -2779,7 +2779,7 @@ impl Package {
             (::windows_core::Interface::vtable(this).GetContentGroupAsync)(::windows_core::Interface::as_raw(this), name.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<PackageContentGroup>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn StageContentGroupsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, names: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVector<PackageContentGroup>>> {
         let this = &::windows_core::Interface::cast::<IPackage5>(self)?;
         unsafe {
@@ -2787,7 +2787,7 @@ impl Package {
             (::windows_core::Interface::vtable(this).StageContentGroupsAsync)(::windows_core::Interface::as_raw(this), names.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVector<PackageContentGroup>>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn StageContentGroupsWithPriorityAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, names: Param0, movetoheadofqueue: bool) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVector<PackageContentGroup>>> {
         let this = &::windows_core::Interface::cast::<IPackage5>(self)?;
         unsafe {
@@ -2816,7 +2816,7 @@ impl Package {
             (::windows_core::Interface::vtable(this).CheckUpdateAvailabilityAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<PackageUpdateAvailabilityResult>>(result__)
         }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn MutableLocation(&self) -> ::windows_core::Result<::winrt_storage::StorageFolder> {
         let this = &::windows_core::Interface::cast::<IPackage7>(self)?;
         unsafe {
@@ -2824,7 +2824,7 @@ impl Package {
             (::windows_core::Interface::vtable(this).MutableLocation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::StorageFolder>(result__)
         }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn EffectiveLocation(&self) -> ::windows_core::Result<::winrt_storage::StorageFolder> {
         let this = &::windows_core::Interface::cast::<IPackage7>(self)?;
         unsafe {
@@ -2832,7 +2832,7 @@ impl Package {
             (::windows_core::Interface::vtable(this).EffectiveLocation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::StorageFolder>(result__)
         }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn EffectiveExternalLocation(&self) -> ::windows_core::Result<::winrt_storage::StorageFolder> {
         let this = &::windows_core::Interface::cast::<IPackage8>(self)?;
         unsafe {
@@ -2840,7 +2840,7 @@ impl Package {
             (::windows_core::Interface::vtable(this).EffectiveExternalLocation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::StorageFolder>(result__)
         }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn MachineExternalLocation(&self) -> ::windows_core::Result<::winrt_storage::StorageFolder> {
         let this = &::windows_core::Interface::cast::<IPackage8>(self)?;
         unsafe {
@@ -2848,7 +2848,7 @@ impl Package {
             (::windows_core::Interface::vtable(this).MachineExternalLocation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::StorageFolder>(result__)
         }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn UserExternalLocation(&self) -> ::windows_core::Result<::winrt_storage::StorageFolder> {
         let this = &::windows_core::Interface::cast::<IPackage8>(self)?;
         unsafe {
@@ -2898,7 +2898,7 @@ impl Package {
             (::windows_core::Interface::vtable(this).UserExternalPath)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetLogoAsRandomAccessStreamReference<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Size>>(&self, size: Param0) -> ::windows_core::Result<::winrt_storage::Streams::RandomAccessStreamReference> {
         let this = &::windows_core::Interface::cast::<IPackage8>(self)?;
         unsafe {
@@ -2906,7 +2906,7 @@ impl Package {
             (::windows_core::Interface::vtable(this).GetLogoAsRandomAccessStreamReference)(::windows_core::Interface::as_raw(this), size.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::RandomAccessStreamReference>(result__)
         }
     }
-    #[cfg(all(feature = "ApplicationModel_Core", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-applicationmodel", feature = "winrt-foundation"))]
     pub fn GetAppListEntries(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<Core::AppListEntry>> {
         let this = &::windows_core::Interface::cast::<IPackage8>(self)?;
         unsafe {
@@ -2941,7 +2941,7 @@ impl Package {
             (::windows_core::Interface::vtable(this).GetThumbnailToken)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn Launch<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, parameters: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IPackageWithMetadata>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Launch)(::windows_core::Interface::as_raw(this), parameters.into_param().abi()).ok() }
@@ -3099,7 +3099,7 @@ impl PackageCatalog {
             (::windows_core::Interface::vtable(this).AddOptionalPackageAsync)(::windows_core::Interface::as_raw(this), optionalpackagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<PackageCatalogAddOptionalPackageResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveOptionalPackagesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, optionalpackagefamilynames: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<PackageCatalogRemoveOptionalPackagesResult>> {
         let this = &::windows_core::Interface::cast::<IPackageCatalog3>(self)?;
         unsafe {
@@ -3114,7 +3114,7 @@ impl PackageCatalog {
             (::windows_core::Interface::vtable(this).AddResourcePackageAsync)(::windows_core::Interface::as_raw(this), resourcepackagefamilyname.into_param().abi(), resourceid.into_param().abi(), options, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<PackageCatalogAddResourcePackageResult, PackageInstallProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveResourcePackagesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<Package>>>(&self, resourcepackages: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<PackageCatalogRemoveResourcePackagesResult>> {
         let this = &::windows_core::Interface::cast::<IPackageCatalog4>(self)?;
         unsafe {
@@ -3397,7 +3397,7 @@ unsafe impl ::core::marker::Sync for PackageCatalogAddResourcePackageResult {}
 #[repr(transparent)]
 pub struct PackageCatalogRemoveOptionalPackagesResult(::windows_core::IUnknown);
 impl PackageCatalogRemoveOptionalPackagesResult {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn PackagesRemoved(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<Package>> {
         let this = self;
         unsafe {
@@ -3486,7 +3486,7 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Pac
 #[repr(transparent)]
 pub struct PackageCatalogRemoveResourcePackagesResult(::windows_core::IUnknown);
 impl PackageCatalogRemoveResourcePackagesResult {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn PackagesRemoved(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<Package>> {
         let this = self;
         unsafe {
@@ -3865,7 +3865,7 @@ impl PackageId {
             (::windows_core::Interface::vtable(this).Version)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PackageVersion>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn Architecture(&self) -> ::windows_core::Result<::winrt_system::ProcessorArchitecture> {
         let this = self;
         unsafe {
@@ -4961,7 +4961,7 @@ impl StartupTask {
             (::windows_core::Interface::vtable(this).TaskId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetForCurrentPackageAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<StartupTask>>> {
         Self::IStartupTaskStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();

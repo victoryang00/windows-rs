@@ -59,7 +59,7 @@ impl HttpBaseProtocolFilter {
             (::windows_core::Interface::vtable(this).CookieManager)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::HttpCookieManager>(result__)
         }
     }
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub fn ClientCertificate(&self) -> ::windows_core::Result<::winrt_security::Cryptography::Certificates::Certificate> {
         let this = self;
         unsafe {
@@ -67,12 +67,12 @@ impl HttpBaseProtocolFilter {
             (::windows_core::Interface::vtable(this).ClientCertificate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Cryptography::Certificates::Certificate>(result__)
         }
     }
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetClientCertificate<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Cryptography::Certificates::Certificate>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetClientCertificate)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn IgnorableServerCertificateErrors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_security::Cryptography::Certificates::ChainValidationResult>> {
         let this = self;
         unsafe {
@@ -91,7 +91,7 @@ impl HttpBaseProtocolFilter {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetMaxConnectionsPerServer)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn ProxyCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = self;
         unsafe {
@@ -99,12 +99,12 @@ impl HttpBaseProtocolFilter {
             (::windows_core::Interface::vtable(this).ProxyCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetProxyCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetProxyCredential)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn ServerCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = self;
         unsafe {
@@ -112,7 +112,7 @@ impl HttpBaseProtocolFilter {
             (::windows_core::Interface::vtable(this).ServerCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetServerCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetServerCredential)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -165,7 +165,7 @@ impl HttpBaseProtocolFilter {
         let this = &::windows_core::Interface::cast::<IHttpBaseProtocolFilter4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ClearAuthenticationCache)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IHttpBaseProtocolFilter5>(self)?;
         unsafe {
@@ -173,7 +173,7 @@ impl HttpBaseProtocolFilter {
             (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn CreateForUser<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>>(user: Param0) -> ::windows_core::Result<HttpBaseProtocolFilter> {
         Self::IHttpBaseProtocolFilterStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -517,7 +517,7 @@ impl HttpServerCustomValidationRequestedEventArgs {
             (::windows_core::Interface::vtable(this).RequestMessage)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::HttpRequestMessage>(result__)
         }
     }
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub fn ServerCertificate(&self) -> ::windows_core::Result<::winrt_security::Cryptography::Certificates::Certificate> {
         let this = self;
         unsafe {
@@ -525,7 +525,7 @@ impl HttpServerCustomValidationRequestedEventArgs {
             (::windows_core::Interface::vtable(this).ServerCertificate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Cryptography::Certificates::Certificate>(result__)
         }
     }
-    #[cfg(feature = "Networking_Sockets")]
+    #[cfg(feature = "winrt-networking")]
     pub fn ServerCertificateErrorSeverity(&self) -> ::windows_core::Result<::winrt_networking::Sockets::SocketSslErrorSeverity> {
         let this = self;
         unsafe {
@@ -533,7 +533,7 @@ impl HttpServerCustomValidationRequestedEventArgs {
             (::windows_core::Interface::vtable(this).ServerCertificateErrorSeverity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_networking::Sockets::SocketSslErrorSeverity>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn ServerCertificateErrors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::ChainValidationResult>> {
         let this = self;
         unsafe {
@@ -541,7 +541,7 @@ impl HttpServerCustomValidationRequestedEventArgs {
             (::windows_core::Interface::vtable(this).ServerCertificateErrors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::ChainValidationResult>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn ServerIntermediateCertificates(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::Certificate>> {
         let this = self;
         unsafe {
@@ -652,35 +652,35 @@ pub struct IHttpBaseProtocolFilter_Vtbl {
     pub SetAutomaticDecompression: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub CacheControl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CookieManager: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub ClientCertificate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Cryptography_Certificates"))]
+    #[cfg(not(feature = "winrt-security"))]
     ClientCertificate: usize,
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub SetClientCertificate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Cryptography_Certificates"))]
+    #[cfg(not(feature = "winrt-security"))]
     SetClientCertificate: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub IgnorableServerCertificateErrors: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security")))]
     IgnorableServerCertificateErrors: usize,
     pub MaxConnectionsPerServer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub SetMaxConnectionsPerServer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub ProxyCredential: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     ProxyCredential: usize,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub SetProxyCredential: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     SetProxyCredential: usize,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub ServerCredential: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     ServerCredential: usize,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub SetServerCredential: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     SetServerCredential: usize,
     pub UseProxy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetUseProxy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -739,9 +739,9 @@ unsafe impl ::windows_core::Interface for IHttpBaseProtocolFilter5 {
 #[doc(hidden)]
 pub struct IHttpBaseProtocolFilter5_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub User: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     User: usize,
 }
 #[doc(hidden)]
@@ -755,9 +755,9 @@ unsafe impl ::windows_core::Interface for IHttpBaseProtocolFilterStatics {
 #[doc(hidden)]
 pub struct IHttpBaseProtocolFilterStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub CreateForUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     CreateForUser: usize,
 }
 #[doc(hidden)]
@@ -898,21 +898,21 @@ unsafe impl ::windows_core::Interface for IHttpServerCustomValidationRequestedEv
 pub struct IHttpServerCustomValidationRequestedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub RequestMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub ServerCertificate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Cryptography_Certificates"))]
+    #[cfg(not(feature = "winrt-security"))]
     ServerCertificate: usize,
-    #[cfg(feature = "Networking_Sockets")]
+    #[cfg(feature = "winrt-networking")]
     pub ServerCertificateErrorSeverity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_networking::Sockets::SocketSslErrorSeverity) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking_Sockets"))]
+    #[cfg(not(feature = "winrt-networking"))]
     ServerCertificateErrorSeverity: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub ServerCertificateErrors: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security")))]
     ServerCertificateErrors: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub ServerIntermediateCertificates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security")))]
     ServerIntermediateCertificates: usize,
     pub Reject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,

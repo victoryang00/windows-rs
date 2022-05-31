@@ -98,12 +98,12 @@ impl ::core::default::Default for AccessListEntry {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 #[repr(transparent)]
 pub struct AccessListEntryView(::windows_core::IUnknown);
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl AccessListEntryView {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<AccessListEntry>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<AccessListEntry>>(self)?;
         unsafe {
@@ -111,7 +111,7 @@ impl AccessListEntryView {
             (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<AccessListEntry>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetAt(&self, index: u32) -> ::windows_core::Result<AccessListEntry> {
         let this = self;
         unsafe {
@@ -119,7 +119,7 @@ impl AccessListEntryView {
             (::windows_core::Interface::vtable(this).GetAt)(::windows_core::Interface::as_raw(this), index, result__.as_mut_ptr()).from_abi::<AccessListEntry>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -127,7 +127,7 @@ impl AccessListEntryView {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn IndexOf<'a, Param0: ::windows_core::IntoParam<'a, AccessListEntry>>(&self, value: Param0, index: &mut u32) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
@@ -135,7 +135,7 @@ impl AccessListEntryView {
             (::windows_core::Interface::vtable(this).IndexOf)(::windows_core::Interface::as_raw(this), value.into_param().abi(), index, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetMany(&self, startindex: u32, items: &mut [AccessListEntry]) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -144,27 +144,27 @@ impl AccessListEntryView {
         }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::clone::Clone for AccessListEntryView {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::PartialEq for AccessListEntryView {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::Eq for AccessListEntryView {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::fmt::Debug for AccessListEntryView {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("AccessListEntryView").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::RuntimeType for AccessListEntryView {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Storage.AccessCache.AccessListEntryView;pinterface({bbe1fa4c-b0e3-4583-baef-1f1b2e483e56};struct(Windows.Storage.AccessCache.AccessListEntry;string;string)))");
     type DefaultType = ::core::option::Option<Self>;
@@ -172,16 +172,16 @@ unsafe impl ::windows_core::RuntimeType for AccessListEntryView {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::Interface for AccessListEntryView {
     type Vtable = ::winrt_foundation::Collections::IVectorView_Vtbl<AccessListEntry>;
     const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IVectorView<AccessListEntry> as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::windows_core::RuntimeName for AccessListEntryView {
     const NAME: &'static str = "Windows.Storage.AccessCache.AccessListEntryView";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for AccessListEntryView {
     type Item = AccessListEntry;
     type IntoIter = ::winrt_foundation::Collections::VectorViewIterator<Self::Item>;
@@ -189,7 +189,7 @@ impl ::core::iter::IntoIterator for AccessListEntryView {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &AccessListEntryView {
     type Item = AccessListEntry;
     type IntoIter = ::winrt_foundation::Collections::VectorViewIterator<Self::Item>;
@@ -197,101 +197,101 @@ impl ::core::iter::IntoIterator for &AccessListEntryView {
         ::winrt_foundation::Collections::VectorViewIterator::new(::core::convert::TryInto::try_into(self).ok())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<AccessListEntryView> for ::windows_core::IUnknown {
     fn from(value: AccessListEntryView) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&AccessListEntryView> for ::windows_core::IUnknown {
     fn from(value: &AccessListEntryView) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for AccessListEntryView {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a AccessListEntryView {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<AccessListEntryView> for ::windows_core::IInspectable {
     fn from(value: AccessListEntryView) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&AccessListEntryView> for ::windows_core::IInspectable {
     fn from(value: &AccessListEntryView) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for AccessListEntryView {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a AccessListEntryView {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<AccessListEntryView> for ::winrt_foundation::Collections::IIterable<AccessListEntry> {
     type Error = ::windows_core::Error;
     fn try_from(value: AccessListEntryView) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&AccessListEntryView> for ::winrt_foundation::Collections::IIterable<AccessListEntry> {
     type Error = ::windows_core::Error;
     fn try_from(value: &AccessListEntryView) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<AccessListEntry>> for AccessListEntryView {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<AccessListEntry>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<AccessListEntry>> for &AccessListEntryView {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<AccessListEntry>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<AccessListEntry>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<AccessListEntryView> for ::winrt_foundation::Collections::IVectorView<AccessListEntry> {
     type Error = ::windows_core::Error;
     fn try_from(value: AccessListEntryView) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&AccessListEntryView> for ::winrt_foundation::Collections::IVectorView<AccessListEntry> {
     type Error = ::windows_core::Error;
     fn try_from(value: &AccessListEntryView) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<AccessListEntry>> for AccessListEntryView {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVectorView<AccessListEntry>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<AccessListEntry>> for &AccessListEntryView {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVectorView<AccessListEntry>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IVectorView<AccessListEntry>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -335,13 +335,13 @@ unsafe impl ::windows_core::Interface for IStorageApplicationPermissionsStatics2
 #[doc(hidden)]
 pub struct IStorageApplicationPermissionsStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub GetFutureAccessListForUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     GetFutureAccessListForUser: usize,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub GetMostRecentlyUsedListForUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     GetMostRecentlyUsedListForUser: usize,
 }
 #[repr(transparent)]
@@ -433,7 +433,7 @@ impl IStorageItemAccessList {
             (::windows_core::Interface::vtable(this).CheckAccess)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Entries(&self) -> ::windows_core::Result<AccessListEntryView> {
         let this = self;
         unsafe {
@@ -534,9 +534,9 @@ pub struct IStorageItemAccessList_Vtbl {
     pub ContainsItem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut bool) -> ::windows_core::HRESULT,
     pub Clear: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub CheckAccess: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Entries: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Entries: usize,
     pub MaximumItemsAllowed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
 }
@@ -696,14 +696,14 @@ impl StorageApplicationPermissions {
             (::windows_core::Interface::vtable(this).MostRecentlyUsedList)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<StorageItemMostRecentlyUsedList>(result__)
         })
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn GetFutureAccessListForUser<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>>(user: Param0) -> ::windows_core::Result<StorageItemAccessList> {
         Self::IStorageApplicationPermissionsStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetFutureAccessListForUser)(::windows_core::Interface::as_raw(this), user.into_param().abi(), result__.as_mut_ptr()).from_abi::<StorageItemAccessList>(result__)
         })
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn GetMostRecentlyUsedListForUser<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>>(user: Param0) -> ::windows_core::Result<StorageItemMostRecentlyUsedList> {
         Self::IStorageApplicationPermissionsStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -811,7 +811,7 @@ impl StorageItemAccessList {
             (::windows_core::Interface::vtable(this).CheckAccess)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Entries(&self) -> ::windows_core::Result<AccessListEntryView> {
         let this = self;
         unsafe {
@@ -1008,7 +1008,7 @@ impl StorageItemMostRecentlyUsedList {
             (::windows_core::Interface::vtable(this).CheckAccess)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Entries(&self) -> ::windows_core::Result<AccessListEntryView> {
         let this = &::windows_core::Interface::cast::<IStorageItemAccessList>(self)?;
         unsafe {

@@ -115,32 +115,32 @@ pub const APPX_ENCRYPTED_PACKAGE_OPTION_NONE: APPX_ENCRYPTED_PACKAGE_OPTIONS = 0
 pub const APPX_ENCRYPTED_PACKAGE_OPTION_DIFFUSION: APPX_ENCRYPTED_PACKAGE_OPTIONS = 1u32;
 pub const APPX_ENCRYPTED_PACKAGE_OPTION_PAGE_HASHING: APPX_ENCRYPTED_PACKAGE_OPTIONS = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct APPX_ENCRYPTED_PACKAGE_SETTINGS {
     pub keyLength: u32,
     pub encryptionAlgorithm: ::windows_core_sys::PCWSTR,
     pub useDiffusion: ::win32_foundation_sys::BOOL,
     pub blockMapHashAlgorithm: ::win32_system_sys::Com::IUri,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for APPX_ENCRYPTED_PACKAGE_SETTINGS {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for APPX_ENCRYPTED_PACKAGE_SETTINGS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct APPX_ENCRYPTED_PACKAGE_SETTINGS2 {
     pub keyLength: u32,
     pub encryptionAlgorithm: ::windows_core_sys::PCWSTR,
     pub blockMapHashAlgorithm: ::win32_system_sys::Com::IUri,
     pub options: u32,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for APPX_ENCRYPTED_PACKAGE_SETTINGS2 {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for APPX_ENCRYPTED_PACKAGE_SETTINGS2 {
     fn clone(&self) -> Self {
         *self
@@ -186,30 +186,30 @@ pub const APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTION_LOCALIZED: APPX_PAC
 pub type APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION = i32;
 pub const APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION_APPEND_DELTA: APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION = 0i32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct APPX_PACKAGE_SETTINGS {
     pub forceZip32: ::win32_foundation_sys::BOOL,
     pub hashMethod: ::win32_system_sys::Com::IUri,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for APPX_PACKAGE_SETTINGS {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for APPX_PACKAGE_SETTINGS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct APPX_PACKAGE_WRITER_PAYLOAD_STREAM {
     pub inputStream: ::win32_system_sys::Com::IStream,
     pub fileName: ::windows_core_sys::PCWSTR,
     pub contentType: ::windows_core_sys::PCWSTR,
     pub compressionOption: APPX_COMPRESSION_OPTION,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for APPX_PACKAGE_WRITER_PAYLOAD_STREAM {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for APPX_PACKAGE_WRITER_PAYLOAD_STREAM {
     fn clone(&self) -> Self {
         *self

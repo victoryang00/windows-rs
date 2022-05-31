@@ -1429,11 +1429,11 @@ pub struct IPersistStorage_Vtbl {
 #[repr(transparent)]
 pub struct IPropertyBag(::windows_core::IUnknown);
 impl IPropertyBag {
-    #[cfg(feature = "Win32_System_Ole")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn Read<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::IErrorLog>>(&self, pszpropname: Param0, pvar: *mut super::VARIANT, perrorlog: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Read)(::windows_core::Interface::as_raw(self), pszpropname.into_param().abi(), ::core::mem::transmute(pvar), perrorlog.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_System_Ole")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn Write<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszpropname: Param0, pvar: *const super::VARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Write)(::windows_core::Interface::as_raw(self), pszpropname.into_param().abi(), ::core::mem::transmute(pvar)).ok()
     }
@@ -1482,23 +1482,23 @@ unsafe impl ::windows_core::Interface for IPropertyBag {
 #[doc(hidden)]
 pub struct IPropertyBag_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_System_Ole")]
+    #[cfg(feature = "win32-system")]
     pub Read: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszpropname: ::windows_core::PCWSTR, pvar: *mut super::VARIANT, perrorlog: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Ole"))]
+    #[cfg(not(feature = "win32-system"))]
     Read: usize,
-    #[cfg(feature = "Win32_System_Ole")]
+    #[cfg(feature = "win32-system")]
     pub Write: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszpropname: ::windows_core::PCWSTR, pvar: *const super::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Ole"))]
+    #[cfg(not(feature = "win32-system"))]
     Write: usize,
 }
 #[repr(transparent)]
 pub struct IPropertyBag2(::windows_core::IUnknown);
 impl IPropertyBag2 {
-    #[cfg(feature = "Win32_System_Ole")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn Read<'a, Param2: ::windows_core::IntoParam<'a, super::IErrorLog>>(&self, cproperties: u32, ppropbag: *const PROPBAG2, perrlog: Param2, pvarvalue: *mut super::VARIANT, phrerror: *mut ::windows_core::HRESULT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Read)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(cproperties), ::core::mem::transmute(ppropbag), perrlog.into_param().abi(), ::core::mem::transmute(pvarvalue), ::core::mem::transmute(phrerror)).ok()
     }
-    #[cfg(feature = "Win32_System_Ole")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn Write(&self, cproperties: u32, ppropbag: *const PROPBAG2, pvarvalue: *const super::VARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Write)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(cproperties), ::core::mem::transmute(ppropbag), ::core::mem::transmute(pvarvalue)).ok()
     }
@@ -1557,13 +1557,13 @@ unsafe impl ::windows_core::Interface for IPropertyBag2 {
 #[doc(hidden)]
 pub struct IPropertyBag2_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_System_Ole")]
+    #[cfg(feature = "win32-system")]
     pub Read: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cproperties: u32, ppropbag: *const PROPBAG2, perrlog: ::windows_core::RawPtr, pvarvalue: *mut super::VARIANT, phrerror: *mut ::windows_core::HRESULT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Ole"))]
+    #[cfg(not(feature = "win32-system"))]
     Read: usize,
-    #[cfg(feature = "Win32_System_Ole")]
+    #[cfg(feature = "win32-system")]
     pub Write: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cproperties: u32, ppropbag: *const PROPBAG2, pvarvalue: *const super::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Ole"))]
+    #[cfg(not(feature = "win32-system"))]
     Write: usize,
     pub CountProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcproperties: *mut u32) -> ::windows_core::HRESULT,
     pub GetPropertyInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, iproperty: u32, cproperties: u32, ppropbag: *mut PROPBAG2, pcproperties: *mut u32) -> ::windows_core::HRESULT,
@@ -1998,7 +1998,7 @@ pub unsafe fn OleConvertIStorageToOLESTREAM<'a, Param0: ::windows_core::IntoPara
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn OleConvertIStorageToOLESTREAMEx<'a, Param0: ::windows_core::IntoParam<'a, IStorage>>(pstg: Param0, cfformat: u16, lwidth: i32, lheight: i32, dwsize: u32, pmedium: *mut super::STGMEDIUM, polestm: *mut OLESTREAM) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -2025,7 +2025,7 @@ pub unsafe fn OleConvertOLESTREAMToIStorage<'a, Param1: ::windows_core::IntoPara
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn OleConvertOLESTREAMToIStorageEx<'a, Param1: ::windows_core::IntoParam<'a, IStorage>>(polestm: *mut OLESTREAM, pstg: Param1, pcfformat: *mut u16, plwwidth: *mut i32, plheight: *mut i32, pdwsize: *mut u32, pmedium: *mut super::STGMEDIUM) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -2895,7 +2895,7 @@ pub unsafe fn StgCreatePropStg<'a, Param0: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn StgCreateStorageEx<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(pwcsname: Param0, grfmode: STGM, stgfmt: STGFMT, grfattrs: u32, pstgoptions: *mut STGOPTIONS, psecuritydescriptor: Param5, riid: *const ::windows_core::GUID, ppobjectopen: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -3033,7 +3033,7 @@ pub unsafe fn StgOpenStorage<'a, Param0: ::windows_core::IntoParam<'a, ::windows
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn StgOpenStorageEx<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(pwcsname: Param0, grfmode: STGM, stgfmt: STGFMT, grfattrs: u32, pstgoptions: *mut STGOPTIONS, psecuritydescriptor: Param5, riid: *const ::windows_core::GUID, ppobjectopen: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]

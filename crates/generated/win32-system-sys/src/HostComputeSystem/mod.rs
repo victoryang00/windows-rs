@@ -6,13 +6,13 @@ extern "system" {
     pub fn HcsCloseOperation(operation: HCS_OPERATION);
     pub fn HcsCloseProcess(process: HCS_PROCESS);
     pub fn HcsCrashComputeSystem(computesystem: HCS_SYSTEM, operation: HCS_OPERATION, options: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn HcsCreateComputeSystem(id: ::windows_core_sys::PCWSTR, configuration: ::windows_core_sys::PCWSTR, operation: HCS_OPERATION, securitydescriptor: *const ::win32_security_sys::SECURITY_DESCRIPTOR, computesystem: *mut HCS_SYSTEM) -> ::windows_core_sys::HRESULT;
     pub fn HcsCreateComputeSystemInNamespace(idnamespace: ::windows_core_sys::PCWSTR, id: ::windows_core_sys::PCWSTR, configuration: ::windows_core_sys::PCWSTR, operation: HCS_OPERATION, options: *const HCS_CREATE_OPTIONS, computesystem: *mut HCS_SYSTEM) -> ::windows_core_sys::HRESULT;
     pub fn HcsCreateEmptyGuestStateFile(gueststatefilepath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn HcsCreateEmptyRuntimeStateFile(runtimestatefilepath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn HcsCreateOperation(context: *const ::core::ffi::c_void, callback: HCS_OPERATION_COMPLETION) -> HCS_OPERATION;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn HcsCreateProcess(computesystem: HCS_SYSTEM, processparameters: ::windows_core_sys::PCWSTR, operation: HCS_OPERATION, securitydescriptor: *const ::win32_security_sys::SECURITY_DESCRIPTOR, process: *mut HCS_PROCESS) -> ::windows_core_sys::HRESULT;
     pub fn HcsDestroyLayer(layerpath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn HcsDetachLayerStorageFilter(layerpath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
@@ -70,7 +70,7 @@ extern "system" {
 pub type HCS_CREATE_OPTIONS = i32;
 pub const HcsCreateOptions_1: HCS_CREATE_OPTIONS = 65536i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct HCS_CREATE_OPTIONS_1 {
     pub Version: HCS_CREATE_OPTIONS,
     pub UserToken: ::win32_foundation_sys::HANDLE,
@@ -79,9 +79,9 @@ pub struct HCS_CREATE_OPTIONS_1 {
     pub CallbackContext: *mut ::core::ffi::c_void,
     pub Callback: HCS_EVENT_CALLBACK,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for HCS_CREATE_OPTIONS_1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for HCS_CREATE_OPTIONS_1 {
     fn clone(&self) -> Self {
         *self

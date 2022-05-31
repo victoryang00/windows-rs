@@ -1,7 +1,7 @@
 #[repr(transparent)]
 pub struct ILearningModelDeviceFactoryNative(::windows_core::IUnknown);
 impl ILearningModelDeviceFactoryNative {
-    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn CreateFromD3D12CommandQueue<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Direct3D12::ID3D12CommandQueue>>(&self, value: Param0) -> ::windows_core::Result<::windows_core::IUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).CreateFromD3D12CommandQueue)(::windows_core::Interface::as_raw(self), value.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
@@ -51,15 +51,15 @@ unsafe impl ::windows_core::Interface for ILearningModelDeviceFactoryNative {
 #[doc(hidden)]
 pub struct ILearningModelDeviceFactoryNative_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    #[cfg(feature = "win32-graphics")]
     pub CreateFromD3D12CommandQueue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    #[cfg(not(feature = "win32-graphics"))]
     CreateFromD3D12CommandQueue: usize,
 }
 #[repr(transparent)]
 pub struct ILearningModelOperatorProviderNative(::windows_core::IUnknown);
 impl ILearningModelOperatorProviderNative {
-    #[cfg(feature = "Win32_AI_MachineLearning_WinML")]
+    #[cfg(feature = "win32-ai")]
     pub unsafe fn GetRegistry(&self) -> ::windows_core::Result<::win32_ai::MachineLearning::WinML::IMLOperatorRegistry> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetRegistry)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_ai::MachineLearning::WinML::IMLOperatorRegistry>(result__)
@@ -109,9 +109,9 @@ unsafe impl ::windows_core::Interface for ILearningModelOperatorProviderNative {
 #[doc(hidden)]
 pub struct ILearningModelOperatorProviderNative_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_AI_MachineLearning_WinML")]
+    #[cfg(feature = "win32-ai")]
     pub GetRegistry: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppoperatorregistry: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_AI_MachineLearning_WinML"))]
+    #[cfg(not(feature = "win32-ai"))]
     GetRegistry: usize,
 }
 #[repr(transparent)]
@@ -173,7 +173,7 @@ impl ITensorNative {
     pub unsafe fn GetBuffer(&self, value: *mut *mut u8, capacity: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetBuffer)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(value), ::core::mem::transmute(capacity)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetD3D12Resource(&self) -> ::windows_core::Result<::win32_graphics::Direct3D12::ID3D12Resource> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetD3D12Resource)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_graphics::Direct3D12::ID3D12Resource>(result__)
@@ -224,15 +224,15 @@ unsafe impl ::windows_core::Interface for ITensorNative {
 pub struct ITensorNative_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut *mut u8, capacity: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    #[cfg(feature = "win32-graphics")]
     pub GetD3D12Resource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetD3D12Resource: usize,
 }
 #[repr(transparent)]
 pub struct ITensorStaticsNative(::windows_core::IUnknown);
 impl ITensorStaticsNative {
-    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn CreateFromD3D12Resource<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Direct3D12::ID3D12Resource>>(&self, value: Param0, shape: *mut i64, shapecount: i32, result: *mut ::core::option::Option<::windows_core::IUnknown>) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).CreateFromD3D12Resource)(::windows_core::Interface::as_raw(self), value.into_param().abi(), ::core::mem::transmute(shape), ::core::mem::transmute(shapecount), ::core::mem::transmute(result)).ok()
     }
@@ -281,8 +281,8 @@ unsafe impl ::windows_core::Interface for ITensorStaticsNative {
 #[doc(hidden)]
 pub struct ITensorStaticsNative_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    #[cfg(feature = "win32-graphics")]
     pub CreateFromD3D12Resource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, shape: *mut i64, shapecount: i32, result: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    #[cfg(not(feature = "win32-graphics"))]
     CreateFromD3D12Resource: usize,
 }

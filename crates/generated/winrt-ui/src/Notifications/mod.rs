@@ -49,7 +49,7 @@ impl AdaptiveNotificationText {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AdaptiveNotificationContentKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Hints(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<IAdaptiveNotificationContent>(self)?;
         unsafe {
@@ -177,7 +177,7 @@ unsafe impl ::core::marker::Sync for AdaptiveNotificationText {}
 #[repr(transparent)]
 pub struct BadgeNotification(::windows_core::IUnknown);
 impl BadgeNotification {
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn Content(&self) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         let this = self;
         unsafe {
@@ -196,7 +196,7 @@ impl BadgeNotification {
             (::windows_core::Interface::vtable(this).ExpirationTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::DateTime>>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn CreateBadgeNotification<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_data::Xml::Dom::XmlDocument>>(content: Param0) -> ::windows_core::Result<BadgeNotification> {
         Self::IBadgeNotificationFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -333,14 +333,14 @@ impl BadgeUpdateManager {
             (::windows_core::Interface::vtable(this).CreateBadgeUpdaterForSecondaryTile)(::windows_core::Interface::as_raw(this), tileid.into_param().abi(), result__.as_mut_ptr()).from_abi::<BadgeUpdater>(result__)
         })
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn GetTemplateContent(r#type: BadgeTemplateType) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         Self::IBadgeUpdateManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetTemplateContent)(::windows_core::Interface::as_raw(this), r#type, result__.as_mut_ptr()).from_abi::<::winrt_data::Xml::Dom::XmlDocument>(result__)
         })
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn GetForUser<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>>(user: Param0) -> ::windows_core::Result<BadgeUpdateManagerForUser> {
         Self::IBadgeUpdateManagerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -383,7 +383,7 @@ impl BadgeUpdateManagerForUser {
             (::windows_core::Interface::vtable(this).CreateBadgeUpdaterForSecondaryTile)(::windows_core::Interface::as_raw(this), tileid.into_param().abi(), result__.as_mut_ptr()).from_abi::<BadgeUpdater>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = self;
         unsafe {
@@ -570,7 +570,7 @@ impl IAdaptiveNotificationContent {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AdaptiveNotificationContentKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Hints(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -651,9 +651,9 @@ unsafe impl ::windows_core::Interface for IAdaptiveNotificationContent {
 pub struct IAdaptiveNotificationContent_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Kind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut AdaptiveNotificationContentKind) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Hints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Hints: usize,
 }
 #[doc(hidden)]
@@ -683,9 +683,9 @@ unsafe impl ::windows_core::Interface for IBadgeNotification {
 #[doc(hidden)]
 pub struct IBadgeNotification_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub Content: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     Content: usize,
     pub SetExpirationTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ExpirationTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -701,9 +701,9 @@ unsafe impl ::windows_core::Interface for IBadgeNotificationFactory {
 #[doc(hidden)]
 pub struct IBadgeNotificationFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub CreateBadgeNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, content: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     CreateBadgeNotification: usize,
 }
 #[doc(hidden)]
@@ -720,9 +720,9 @@ pub struct IBadgeUpdateManagerForUser_Vtbl {
     pub CreateBadgeUpdaterForApplication: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateBadgeUpdaterForApplicationWithId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, applicationid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateBadgeUpdaterForSecondaryTile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, tileid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub User: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     User: usize,
 }
 #[doc(hidden)]
@@ -739,9 +739,9 @@ pub struct IBadgeUpdateManagerStatics_Vtbl {
     pub CreateBadgeUpdaterForApplication: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateBadgeUpdaterForApplicationWithId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, applicationid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateBadgeUpdaterForSecondaryTile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, tileid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub GetTemplateContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: BadgeTemplateType, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     GetTemplateContent: usize,
 }
 #[doc(hidden)]
@@ -755,9 +755,9 @@ unsafe impl ::windows_core::Interface for IBadgeUpdateManagerStatics2 {
 #[doc(hidden)]
 pub struct IBadgeUpdateManagerStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub GetForUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     GetForUser: usize,
 }
 #[doc(hidden)]
@@ -870,13 +870,13 @@ pub struct INotificationBinding_Vtbl {
     pub SetTemplate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Language: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetLanguage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Hints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Hints: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetTextElements: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetTextElements: usize,
 }
 #[doc(hidden)]
@@ -890,9 +890,9 @@ unsafe impl ::windows_core::Interface for INotificationData {
 #[doc(hidden)]
 pub struct INotificationData_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Values: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Values: usize,
     pub SequenceNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub SetSequenceNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
@@ -908,13 +908,13 @@ unsafe impl ::windows_core::Interface for INotificationDataFactory {
 #[doc(hidden)]
 pub struct INotificationDataFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub CreateNotificationDataWithValuesAndSequenceNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, initialvalues: ::windows_core::RawPtr, sequencenumber: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CreateNotificationDataWithValuesAndSequenceNumber: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub CreateNotificationDataWithValues: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, initialvalues: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CreateNotificationDataWithValues: usize,
 }
 #[doc(hidden)]
@@ -930,9 +930,9 @@ pub struct INotificationVisual_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Language: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetLanguage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Bindings: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Bindings: usize,
     pub GetBinding: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, templatename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -947,9 +947,9 @@ unsafe impl ::windows_core::Interface for IScheduledTileNotification {
 #[doc(hidden)]
 pub struct IScheduledTileNotification_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub Content: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     Content: usize,
     pub DeliveryTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub SetExpirationTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -970,9 +970,9 @@ unsafe impl ::windows_core::Interface for IScheduledTileNotificationFactory {
 #[doc(hidden)]
 pub struct IScheduledTileNotificationFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub CreateScheduledTileNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, content: ::windows_core::RawPtr, deliverytime: ::winrt_foundation::DateTime, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     CreateScheduledTileNotification: usize,
 }
 #[doc(hidden)]
@@ -986,9 +986,9 @@ unsafe impl ::windows_core::Interface for IScheduledToastNotification {
 #[doc(hidden)]
 pub struct IScheduledToastNotification_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub Content: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     Content: usize,
     pub DeliveryTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub SnoozeInterval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -1055,13 +1055,13 @@ unsafe impl ::windows_core::Interface for IScheduledToastNotificationFactory {
 #[doc(hidden)]
 pub struct IScheduledToastNotificationFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub CreateScheduledToastNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, content: ::windows_core::RawPtr, deliverytime: ::winrt_foundation::DateTime, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     CreateScheduledToastNotification: usize,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub CreateScheduledToastNotificationRecurring: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, content: ::windows_core::RawPtr, deliverytime: ::winrt_foundation::DateTime, snoozeinterval: ::winrt_foundation::TimeSpan, maximumsnoozecount: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     CreateScheduledToastNotificationRecurring: usize,
 }
 #[doc(hidden)]
@@ -1104,9 +1104,9 @@ unsafe impl ::windows_core::Interface for ITileFlyoutNotification {
 #[doc(hidden)]
 pub struct ITileFlyoutNotification_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub Content: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     Content: usize,
     pub SetExpirationTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ExpirationTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -1122,9 +1122,9 @@ unsafe impl ::windows_core::Interface for ITileFlyoutNotificationFactory {
 #[doc(hidden)]
 pub struct ITileFlyoutNotificationFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub CreateTileFlyoutNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, content: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     CreateTileFlyoutNotification: usize,
 }
 #[doc(hidden)]
@@ -1141,9 +1141,9 @@ pub struct ITileFlyoutUpdateManagerStatics_Vtbl {
     pub CreateTileFlyoutUpdaterForApplication: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateTileFlyoutUpdaterForApplicationWithId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, applicationid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateTileFlyoutUpdaterForSecondaryTile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, tileid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub GetTemplateContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: TileFlyoutTemplateType, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     GetTemplateContent: usize,
 }
 #[doc(hidden)]
@@ -1175,9 +1175,9 @@ unsafe impl ::windows_core::Interface for ITileNotification {
 #[doc(hidden)]
 pub struct ITileNotification_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub Content: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     Content: usize,
     pub SetExpirationTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ExpirationTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -1195,9 +1195,9 @@ unsafe impl ::windows_core::Interface for ITileNotificationFactory {
 #[doc(hidden)]
 pub struct ITileNotificationFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub CreateTileNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, content: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     CreateTileNotification: usize,
 }
 #[doc(hidden)]
@@ -1214,9 +1214,9 @@ pub struct ITileUpdateManagerForUser_Vtbl {
     pub CreateTileUpdaterForApplication: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateTileUpdaterForApplicationWithId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, applicationid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateTileUpdaterForSecondaryTile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, tileid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub User: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     User: usize,
 }
 #[doc(hidden)]
@@ -1233,9 +1233,9 @@ pub struct ITileUpdateManagerStatics_Vtbl {
     pub CreateTileUpdaterForApplication: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateTileUpdaterForApplicationWithId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, applicationid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateTileUpdaterForSecondaryTile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, tileid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub GetTemplateContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: TileTemplateType, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     GetTemplateContent: usize,
 }
 #[doc(hidden)]
@@ -1249,9 +1249,9 @@ unsafe impl ::windows_core::Interface for ITileUpdateManagerStatics2 {
 #[doc(hidden)]
 pub struct ITileUpdateManagerStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub GetForUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     GetForUser: usize,
 }
 #[doc(hidden)]
@@ -1271,20 +1271,20 @@ pub struct ITileUpdater_Vtbl {
     pub Setting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut NotificationSetting) -> ::windows_core::HRESULT,
     pub AddToSchedule: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scheduledtile: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RemoveFromSchedule: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scheduledtile: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetScheduledTileNotifications: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetScheduledTileNotifications: usize,
     pub StartPeriodicUpdate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, tilecontent: ::windows_core::RawPtr, requestedinterval: PeriodicUpdateRecurrence) -> ::windows_core::HRESULT,
     pub StartPeriodicUpdateAtTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, tilecontent: ::windows_core::RawPtr, starttime: ::winrt_foundation::DateTime, requestedinterval: PeriodicUpdateRecurrence) -> ::windows_core::HRESULT,
     pub StopPeriodicUpdate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub StartPeriodicUpdateBatch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, tilecontents: ::windows_core::RawPtr, requestedinterval: PeriodicUpdateRecurrence) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     StartPeriodicUpdateBatch: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub StartPeriodicUpdateBatchAtTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, tilecontents: ::windows_core::RawPtr, starttime: ::winrt_foundation::DateTime, requestedinterval: PeriodicUpdateRecurrence) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     StartPeriodicUpdateBatchAtTime: usize,
 }
 #[doc(hidden)]
@@ -1326,9 +1326,9 @@ unsafe impl ::windows_core::Interface for IToastActivatedEventArgs2 {
 #[doc(hidden)]
 pub struct IToastActivatedEventArgs2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub UserInput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     UserInput: usize,
 }
 #[doc(hidden)]
@@ -1375,16 +1375,16 @@ unsafe impl ::windows_core::Interface for IToastCollectionManager {
 pub struct IToastCollectionManager_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub SaveToastCollectionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, collection: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub FindAllToastCollectionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     FindAllToastCollectionsAsync: usize,
     pub GetToastCollectionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, collectionid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RemoveToastCollectionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, collectionid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RemoveAllToastCollectionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub User: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     User: usize,
     pub AppId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
@@ -1425,9 +1425,9 @@ unsafe impl ::windows_core::Interface for IToastNotification {
 #[doc(hidden)]
 pub struct IToastNotification_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub Content: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     Content: usize,
     pub SetExpirationTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ExpirationTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -1514,9 +1514,9 @@ unsafe impl ::windows_core::Interface for IToastNotificationActionTriggerDetail 
 pub struct IToastNotificationActionTriggerDetail_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Argument: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub UserInput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     UserInput: usize,
 }
 #[doc(hidden)]
@@ -1530,9 +1530,9 @@ unsafe impl ::windows_core::Interface for IToastNotificationFactory {
 #[doc(hidden)]
 pub struct IToastNotificationFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub CreateToastNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, content: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     CreateToastNotification: usize,
 }
 #[doc(hidden)]
@@ -1565,13 +1565,13 @@ unsafe impl ::windows_core::Interface for IToastNotificationHistory2 {
 #[doc(hidden)]
 pub struct IToastNotificationHistory2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetHistory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetHistory: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetHistoryWithId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, applicationid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetHistoryWithId: usize,
 }
 #[doc(hidden)]
@@ -1614,9 +1614,9 @@ pub struct IToastNotificationManagerForUser_Vtbl {
     pub CreateToastNotifier: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateToastNotifierWithId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, applicationid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub History: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub User: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     User: usize,
 }
 #[doc(hidden)]
@@ -1648,9 +1648,9 @@ pub struct IToastNotificationManagerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub CreateToastNotifier: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateToastNotifierWithId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, applicationid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub GetTemplateContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: ToastTemplateType, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     GetTemplateContent: usize,
 }
 #[doc(hidden)]
@@ -1677,9 +1677,9 @@ unsafe impl ::windows_core::Interface for IToastNotificationManagerStatics4 {
 #[doc(hidden)]
 pub struct IToastNotificationManagerStatics4_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub GetForUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     GetForUser: usize,
     pub ConfigureNotificationMirroring: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: NotificationMirroring) -> ::windows_core::HRESULT,
 }
@@ -1712,9 +1712,9 @@ pub struct IToastNotifier_Vtbl {
     pub Setting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut NotificationSetting) -> ::windows_core::HRESULT,
     pub AddToSchedule: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scheduledtoast: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RemoveFromSchedule: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scheduledtoast: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetScheduledToastNotifications: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetScheduledToastNotifications: usize,
 }
 #[doc(hidden)]
@@ -1757,9 +1757,9 @@ unsafe impl ::windows_core::Interface for IUserNotification {
 pub struct IUserNotification_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Notification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "ApplicationModel")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub AppInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     AppInfo: usize,
     pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub CreationTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
@@ -2094,7 +2094,7 @@ impl NotificationBinding {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetLanguage)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Hints(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -2102,7 +2102,7 @@ impl NotificationBinding {
             (::windows_core::Interface::vtable(this).Hints)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetTextElements(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<AdaptiveNotificationText>> {
         let this = self;
         unsafe {
@@ -2193,7 +2193,7 @@ impl NotificationData {
         static mut SHARED: ::windows_core::FactoryCache<NotificationData, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Values(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -2212,14 +2212,14 @@ impl NotificationData {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSequenceNumber)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CreateNotificationDataWithValuesAndSequenceNumber<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>>>(initialvalues: Param0, sequencenumber: u32) -> ::windows_core::Result<NotificationData> {
         Self::INotificationDataFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateNotificationDataWithValuesAndSequenceNumber)(::windows_core::Interface::as_raw(this), initialvalues.into_param().abi(), sequencenumber, result__.as_mut_ptr()).from_abi::<NotificationData>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CreateNotificationDataWithValues<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>>>(initialvalues: Param0) -> ::windows_core::Result<NotificationData> {
         Self::INotificationDataFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -2481,7 +2481,7 @@ impl NotificationVisual {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetLanguage)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Bindings(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<NotificationBinding>> {
         let this = self;
         unsafe {
@@ -2608,7 +2608,7 @@ unsafe impl ::windows_core::RuntimeType for PeriodicUpdateRecurrence {
 #[repr(transparent)]
 pub struct ScheduledTileNotification(::windows_core::IUnknown);
 impl ScheduledTileNotification {
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn Content(&self) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         let this = self;
         unsafe {
@@ -2656,7 +2656,7 @@ impl ScheduledTileNotification {
             (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn CreateScheduledTileNotification<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_data::Xml::Dom::XmlDocument>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(content: Param0, deliverytime: Param1) -> ::windows_core::Result<ScheduledTileNotification> {
         Self::IScheduledTileNotificationFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -2743,7 +2743,7 @@ unsafe impl ::core::marker::Sync for ScheduledTileNotification {}
 #[repr(transparent)]
 pub struct ScheduledToastNotification(::windows_core::IUnknown);
 impl ScheduledToastNotification {
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn Content(&self) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         let this = self;
         unsafe {
@@ -2849,14 +2849,14 @@ impl ScheduledToastNotification {
         let this = &::windows_core::Interface::cast::<IScheduledToastNotification4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetExpirationTime)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn CreateScheduledToastNotification<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_data::Xml::Dom::XmlDocument>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(content: Param0, deliverytime: Param1) -> ::windows_core::Result<ScheduledToastNotification> {
         Self::IScheduledToastNotificationFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateScheduledToastNotification)(::windows_core::Interface::as_raw(this), content.into_param().abi(), deliverytime.into_param().abi(), result__.as_mut_ptr()).from_abi::<ScheduledToastNotification>(result__)
         })
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn CreateScheduledToastNotificationRecurring<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_data::Xml::Dom::XmlDocument>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(content: Param0, deliverytime: Param1, snoozeinterval: Param2, maximumsnoozecount: u32) -> ::windows_core::Result<ScheduledToastNotification> {
         Self::IScheduledToastNotificationFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -3127,7 +3127,7 @@ unsafe impl ::core::marker::Sync for ShownTileNotification {}
 #[repr(transparent)]
 pub struct TileFlyoutNotification(::windows_core::IUnknown);
 impl TileFlyoutNotification {
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn Content(&self) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         let this = self;
         unsafe {
@@ -3146,7 +3146,7 @@ impl TileFlyoutNotification {
             (::windows_core::Interface::vtable(this).ExpirationTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::DateTime>>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn CreateTileFlyoutNotification<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_data::Xml::Dom::XmlDocument>>(content: Param0) -> ::windows_core::Result<TileFlyoutNotification> {
         Self::ITileFlyoutNotificationFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -3282,7 +3282,7 @@ impl TileFlyoutUpdateManager {
             (::windows_core::Interface::vtable(this).CreateTileFlyoutUpdaterForSecondaryTile)(::windows_core::Interface::as_raw(this), tileid.into_param().abi(), result__.as_mut_ptr()).from_abi::<TileFlyoutUpdater>(result__)
         })
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn GetTemplateContent(r#type: TileFlyoutTemplateType) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         Self::ITileFlyoutUpdateManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -3401,7 +3401,7 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Til
 #[repr(transparent)]
 pub struct TileNotification(::windows_core::IUnknown);
 impl TileNotification {
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn Content(&self) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         let this = self;
         unsafe {
@@ -3431,7 +3431,7 @@ impl TileNotification {
             (::windows_core::Interface::vtable(this).Tag)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn CreateTileNotification<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_data::Xml::Dom::XmlDocument>>(content: Param0) -> ::windows_core::Result<TileNotification> {
         Self::ITileNotificationFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -3692,14 +3692,14 @@ impl TileUpdateManager {
             (::windows_core::Interface::vtable(this).CreateTileUpdaterForSecondaryTile)(::windows_core::Interface::as_raw(this), tileid.into_param().abi(), result__.as_mut_ptr()).from_abi::<TileUpdater>(result__)
         })
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn GetTemplateContent(r#type: TileTemplateType) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         Self::ITileUpdateManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetTemplateContent)(::windows_core::Interface::as_raw(this), r#type, result__.as_mut_ptr()).from_abi::<::winrt_data::Xml::Dom::XmlDocument>(result__)
         })
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn GetForUser<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>>(user: Param0) -> ::windows_core::Result<TileUpdateManagerForUser> {
         Self::ITileUpdateManagerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -3742,7 +3742,7 @@ impl TileUpdateManagerForUser {
             (::windows_core::Interface::vtable(this).CreateTileUpdaterForSecondaryTile)(::windows_core::Interface::as_raw(this), tileid.into_param().abi(), result__.as_mut_ptr()).from_abi::<TileUpdater>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = self;
         unsafe {
@@ -3853,7 +3853,7 @@ impl TileUpdater {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveFromSchedule)(::windows_core::Interface::as_raw(this), scheduledtile.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetScheduledTileNotifications(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ScheduledTileNotification>> {
         let this = self;
         unsafe {
@@ -3873,12 +3873,12 @@ impl TileUpdater {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).StopPeriodicUpdate)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn StartPeriodicUpdateBatch<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>>(&self, tilecontents: Param0, requestedinterval: PeriodicUpdateRecurrence) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).StartPeriodicUpdateBatch)(::windows_core::Interface::as_raw(this), tilecontents.into_param().abi(), requestedinterval).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn StartPeriodicUpdateBatchAtTime<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(&self, tilecontents: Param0, starttime: Param1, requestedinterval: PeriodicUpdateRecurrence) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).StartPeriodicUpdateBatchAtTime)(::windows_core::Interface::as_raw(this), tilecontents.into_param().abi(), starttime.into_param().abi(), requestedinterval).ok() }
@@ -3978,7 +3978,7 @@ impl ToastActivatedEventArgs {
             (::windows_core::Interface::vtable(this).Arguments)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn UserInput(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = &::windows_core::Interface::cast::<IToastActivatedEventArgs2>(self)?;
         unsafe {
@@ -4193,7 +4193,7 @@ impl ToastCollectionManager {
             (::windows_core::Interface::vtable(this).SaveToastCollectionAsync)(::windows_core::Interface::as_raw(this), collection.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn FindAllToastCollectionsAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<ToastCollection>>> {
         let this = self;
         unsafe {
@@ -4222,7 +4222,7 @@ impl ToastCollectionManager {
             (::windows_core::Interface::vtable(this).RemoveAllToastCollectionsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = self;
         unsafe {
@@ -4548,7 +4548,7 @@ unsafe impl ::windows_core::RuntimeType for ToastHistoryChangedType {
 #[repr(transparent)]
 pub struct ToastNotification(::windows_core::IUnknown);
 impl ToastNotification {
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn Content(&self) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         let this = self;
         unsafe {
@@ -4688,7 +4688,7 @@ impl ToastNotification {
         let this = &::windows_core::Interface::cast::<IToastNotification6>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetExpiresOnReboot)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn CreateToastNotification<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_data::Xml::Dom::XmlDocument>>(content: Param0) -> ::windows_core::Result<ToastNotification> {
         Self::IToastNotificationFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -4782,7 +4782,7 @@ impl ToastNotificationActionTriggerDetail {
             (::windows_core::Interface::vtable(this).Argument)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn UserInput(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = self;
         unsafe {
@@ -4892,7 +4892,7 @@ impl ToastNotificationHistory {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ClearWithId)(::windows_core::Interface::as_raw(this), applicationid.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetHistory(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ToastNotification>> {
         let this = &::windows_core::Interface::cast::<IToastNotificationHistory2>(self)?;
         unsafe {
@@ -4900,7 +4900,7 @@ impl ToastNotificationHistory {
             (::windows_core::Interface::vtable(this).GetHistory)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<ToastNotification>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetHistoryWithId<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, applicationid: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ToastNotification>> {
         let this = &::windows_core::Interface::cast::<IToastNotificationHistory2>(self)?;
         unsafe {
@@ -5081,7 +5081,7 @@ impl ToastNotificationManager {
             (::windows_core::Interface::vtable(this).CreateToastNotifierWithId)(::windows_core::Interface::as_raw(this), applicationid.into_param().abi(), result__.as_mut_ptr()).from_abi::<ToastNotifier>(result__)
         })
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn GetTemplateContent(r#type: ToastTemplateType) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         Self::IToastNotificationManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -5094,7 +5094,7 @@ impl ToastNotificationManager {
             (::windows_core::Interface::vtable(this).History)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ToastNotificationHistory>(result__)
         })
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn GetForUser<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>>(user: Param0) -> ::windows_core::Result<ToastNotificationManagerForUser> {
         Self::IToastNotificationManagerStatics4(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -5154,7 +5154,7 @@ impl ToastNotificationManagerForUser {
             (::windows_core::Interface::vtable(this).History)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ToastNotificationHistory>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = self;
         unsafe {
@@ -5322,7 +5322,7 @@ impl ToastNotifier {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveFromSchedule)(::windows_core::Interface::as_raw(this), scheduledtoast.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetScheduledToastNotifications(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ScheduledToastNotification>> {
         let this = self;
         unsafe {
@@ -5477,7 +5477,7 @@ impl UserNotification {
             (::windows_core::Interface::vtable(this).Notification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Notification>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn AppInfo(&self) -> ::windows_core::Result<::winrt_applicationmodel::AppInfo> {
         let this = self;
         unsafe {

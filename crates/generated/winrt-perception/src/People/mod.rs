@@ -8,7 +8,7 @@ impl EyesPose {
             (::windows_core::Interface::vtable(this).IsCalibrationValid)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub fn Gaze(&self) -> ::windows_core::Result<::winrt_foundation::IReference<super::Spatial::SpatialRay>> {
         let this = self;
         unsafe {
@@ -29,7 +29,7 @@ impl EyesPose {
             (::windows_core::Interface::vtable(this).IsSupported)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         })
     }
-    #[cfg(feature = "UI_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn RequestAccessAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_ui::Input::GazeInputAccessStatus>> {
         Self::IEyesPoseStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -173,7 +173,7 @@ unsafe impl ::windows_core::RuntimeType for HandJointKind {
 #[repr(transparent)]
 pub struct HandMeshObserver(::windows_core::IUnknown);
 impl HandMeshObserver {
-    #[cfg(feature = "UI_Input_Spatial")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Source(&self) -> ::windows_core::Result<::winrt_ui::Input::Spatial::SpatialInteractionSource> {
         let this = self;
         unsafe {
@@ -301,30 +301,30 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Han
 unsafe impl ::core::marker::Send for HandMeshObserver {}
 unsafe impl ::core::marker::Sync for HandMeshObserver {}
 #[repr(C)]
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 pub struct HandMeshVertex {
     pub Position: ::winrt_foundation::Numerics::Vector3,
     pub Normal: ::winrt_foundation::Numerics::Vector3,
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::marker::Copy for HandMeshVertex {}
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::clone::Clone for HandMeshVertex {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::fmt::Debug for HandMeshVertex {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HandMeshVertex").field("Position", &self.Position).field("Normal", &self.Normal).finish()
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::Abi for HandMeshVertex {
     type Abi = Self;
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::RuntimeType for HandMeshVertex {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"struct(Windows.Perception.People.HandMeshVertex;struct(Windows.Foundation.Numerics.Vector3;f4;f4;f4);struct(Windows.Foundation.Numerics.Vector3;f4;f4;f4))");
     type DefaultType = Self;
@@ -332,15 +332,15 @@ unsafe impl ::windows_core::RuntimeType for HandMeshVertex {
         Ok(*from)
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::PartialEq for HandMeshVertex {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HandMeshVertex>()) == 0 }
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::Eq for HandMeshVertex {}
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::default::Default for HandMeshVertex {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -349,7 +349,7 @@ impl ::core::default::Default for HandMeshVertex {
 #[repr(transparent)]
 pub struct HandMeshVertexState(::windows_core::IUnknown);
 impl HandMeshVertexState {
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub fn CoordinateSystem(&self) -> ::windows_core::Result<super::Spatial::SpatialCoordinateSystem> {
         let this = self;
         unsafe {
@@ -357,7 +357,7 @@ impl HandMeshVertexState {
             (::windows_core::Interface::vtable(this).CoordinateSystem)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Spatial::SpatialCoordinateSystem>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetVertices(&self, vertices: &mut [HandMeshVertex]) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).GetVertices)(::windows_core::Interface::as_raw(this), vertices.len() as u32, ::core::mem::transmute_copy(&vertices)).ok() }
@@ -445,7 +445,7 @@ unsafe impl ::core::marker::Sync for HandMeshVertexState {}
 #[repr(transparent)]
 pub struct HandPose(::windows_core::IUnknown);
 impl HandPose {
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub fn TryGetJoint<'a, Param0: ::windows_core::IntoParam<'a, super::Spatial::SpatialCoordinateSystem>>(&self, coordinatesystem: Param0, joint: HandJointKind, jointpose: &mut JointPose) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
@@ -453,7 +453,7 @@ impl HandPose {
             (::windows_core::Interface::vtable(this).TryGetJoint)(::windows_core::Interface::as_raw(this), coordinatesystem.into_param().abi(), joint, jointpose, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub fn TryGetJoints<'a, Param0: ::windows_core::IntoParam<'a, super::Spatial::SpatialCoordinateSystem>>(&self, coordinatesystem: Param0, joints: &[HandJointKind], jointposes: &mut [JointPose]) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
@@ -461,7 +461,7 @@ impl HandPose {
             (::windows_core::Interface::vtable(this).TryGetJoints)(::windows_core::Interface::as_raw(this), coordinatesystem.into_param().abi(), joints.len() as u32, ::core::mem::transmute(joints.as_ptr()), jointposes.len() as u32, ::core::mem::transmute_copy(&jointposes), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetRelativeJoint(&self, joint: HandJointKind, referencejoint: HandJointKind) -> ::windows_core::Result<JointPose> {
         let this = self;
         unsafe {
@@ -469,7 +469,7 @@ impl HandPose {
             (::windows_core::Interface::vtable(this).GetRelativeJoint)(::windows_core::Interface::as_raw(this), joint, referencejoint, result__.as_mut_ptr()).from_abi::<JointPose>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetRelativeJoints(&self, joints: &[HandJointKind], referencejoints: &[HandJointKind], jointposes: &mut [JointPose]) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).GetRelativeJoints)(::windows_core::Interface::as_raw(this), joints.len() as u32, ::core::mem::transmute(joints.as_ptr()), referencejoints.len() as u32, ::core::mem::transmute(referencejoints.as_ptr()), jointposes.len() as u32, ::core::mem::transmute_copy(&jointposes)).ok() }
@@ -550,7 +550,7 @@ unsafe impl ::core::marker::Sync for HandPose {}
 #[repr(transparent)]
 pub struct HeadPose(::windows_core::IUnknown);
 impl HeadPose {
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -558,7 +558,7 @@ impl HeadPose {
             (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ForwardDirection(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -566,7 +566,7 @@ impl HeadPose {
             (::windows_core::Interface::vtable(this).ForwardDirection)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn UpDirection(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -659,9 +659,9 @@ unsafe impl ::windows_core::Interface for IEyesPose {
 pub struct IEyesPose_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsCalibrationValid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub Gaze: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Numerics", feature = "Perception_Spatial")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-perception")))]
     Gaze: usize,
     pub UpdateTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -677,9 +677,9 @@ unsafe impl ::windows_core::Interface for IEyesPoseStatics {
 pub struct IEyesPoseStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub RequestAccessAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     RequestAccessAsync: usize,
 }
 #[doc(hidden)]
@@ -693,9 +693,9 @@ unsafe impl ::windows_core::Interface for IHandMeshObserver {
 #[doc(hidden)]
 pub struct IHandMeshObserver_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Input_Spatial")]
+    #[cfg(feature = "winrt-ui")]
     pub Source: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Input_Spatial"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Source: usize,
     pub TriangleIndexCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub VertexCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
@@ -716,13 +716,13 @@ unsafe impl ::windows_core::Interface for IHandMeshVertexState {
 #[doc(hidden)]
 pub struct IHandMeshVertexState_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub CoordinateSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception_Spatial"))]
+    #[cfg(not(feature = "winrt-perception"))]
     CoordinateSystem: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetVertices: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vertices_array_size: u32, vertices: *mut HandMeshVertex) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetVertices: usize,
     pub UpdateTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -737,21 +737,21 @@ unsafe impl ::windows_core::Interface for IHandPose {
 #[doc(hidden)]
 pub struct IHandPose_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub TryGetJoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, joint: HandJointKind, jointpose: *mut JointPose, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Numerics", feature = "Perception_Spatial")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-perception")))]
     TryGetJoint: usize,
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub TryGetJoints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, joints_array_size: u32, joints: *const HandJointKind, jointPoses_array_size: u32, jointposes: *mut JointPose, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Numerics", feature = "Perception_Spatial")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-perception")))]
     TryGetJoints: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetRelativeJoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, joint: HandJointKind, referencejoint: HandJointKind, result__: *mut JointPose) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetRelativeJoint: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetRelativeJoints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, joints_array_size: u32, joints: *const HandJointKind, referenceJoints_array_size: u32, referencejoints: *const HandJointKind, jointPoses_array_size: u32, jointposes: *mut JointPose) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetRelativeJoints: usize,
 }
 #[doc(hidden)]
@@ -765,46 +765,46 @@ unsafe impl ::windows_core::Interface for IHeadPose {
 #[doc(hidden)]
 pub struct IHeadPose_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Position: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub ForwardDirection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ForwardDirection: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub UpDirection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     UpDirection: usize,
 }
 #[repr(C)]
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 pub struct JointPose {
     pub Orientation: ::winrt_foundation::Numerics::Quaternion,
     pub Position: ::winrt_foundation::Numerics::Vector3,
     pub Radius: f32,
     pub Accuracy: JointPoseAccuracy,
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::marker::Copy for JointPose {}
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::clone::Clone for JointPose {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::fmt::Debug for JointPose {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("JointPose").field("Orientation", &self.Orientation).field("Position", &self.Position).field("Radius", &self.Radius).field("Accuracy", &self.Accuracy).finish()
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::Abi for JointPose {
     type Abi = Self;
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::RuntimeType for JointPose {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"struct(Windows.Perception.People.JointPose;struct(Windows.Foundation.Numerics.Quaternion;f4;f4;f4;f4);struct(Windows.Foundation.Numerics.Vector3;f4;f4;f4);f4;enum(Windows.Perception.People.JointPoseAccuracy;i4))");
     type DefaultType = Self;
@@ -812,15 +812,15 @@ unsafe impl ::windows_core::RuntimeType for JointPose {
         Ok(*from)
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::PartialEq for JointPose {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JointPose>()) == 0 }
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::Eq for JointPose {}
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::default::Default for JointPose {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

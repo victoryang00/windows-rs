@@ -283,7 +283,7 @@ impl ::core::fmt::Debug for DCOMPOSITION_DEPTH_MODE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics")]
 pub struct DCOMPOSITION_FRAME_STATISTICS {
     pub lastFrameTime: i64,
     pub currentCompositionRate: super::Dxgi::Common::DXGI_RATIONAL,
@@ -291,33 +291,33 @@ pub struct DCOMPOSITION_FRAME_STATISTICS {
     pub timeFrequency: i64,
     pub nextEstimatedFrameTime: i64,
 }
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for DCOMPOSITION_FRAME_STATISTICS {}
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for DCOMPOSITION_FRAME_STATISTICS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for DCOMPOSITION_FRAME_STATISTICS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DCOMPOSITION_FRAME_STATISTICS").field("lastFrameTime", &self.lastFrameTime).field("currentCompositionRate", &self.currentCompositionRate).field("currentTime", &self.currentTime).field("timeFrequency", &self.timeFrequency).field("nextEstimatedFrameTime", &self.nextEstimatedFrameTime).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for DCOMPOSITION_FRAME_STATISTICS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for DCOMPOSITION_FRAME_STATISTICS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DCOMPOSITION_FRAME_STATISTICS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for DCOMPOSITION_FRAME_STATISTICS {}
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for DCOMPOSITION_FRAME_STATISTICS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -388,7 +388,7 @@ pub unsafe fn DCompositionBoostCompositorClock<'a, Param0: ::windows_core::IntoP
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Dxgi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn DCompositionCreateDevice<'a, Param0: ::windows_core::IntoParam<'a, super::Dxgi::IDXGIDevice>>(dxgidevice: Param0, iid: *const ::windows_core::GUID, dcompositiondevice: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -428,7 +428,7 @@ pub unsafe fn DCompositionCreateDevice3<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn DCompositionCreateSurfaceHandle(desiredaccess: u32, securityattributes: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
@@ -534,15 +534,15 @@ impl IDCompositionAffineTransform2DEffect {
     pub unsafe fn SetInput<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, index: u32, input: Param1, flags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetInput)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), input.into_param().abi(), ::core::mem::transmute(flags)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetInterpolationMode(&self, interpolationmode: super::Direct2D::Common::D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetInterpolationMode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(interpolationmode)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetBorderMode(&self, bordermode: super::Direct2D::Common::D2D1_BORDER_MODE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBorderMode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(bordermode)).ok()
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub unsafe fn SetTransformMatrix(&self, transformmatrix: *const ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetTransformMatrix)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(transformmatrix)).ok()
     }
@@ -643,17 +643,17 @@ unsafe impl ::windows_core::Interface for IDCompositionAffineTransform2DEffect {
 #[doc(hidden)]
 pub struct IDCompositionAffineTransform2DEffect_Vtbl {
     pub base__: IDCompositionFilterEffect_Vtbl,
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub SetInterpolationMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, interpolationmode: super::Direct2D::Common::D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetInterpolationMode: usize,
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub SetBorderMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bordermode: super::Direct2D::Common::D2D1_BORDER_MODE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetBorderMode: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetTransformMatrix: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, transformmatrix: *const ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetTransformMatrix: usize,
     pub SetTransformMatrixElement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, row: i32, column: i32, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetTransformMatrixElement2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, row: i32, column: i32, value: f32) -> ::windows_core::HRESULT,
@@ -739,7 +739,7 @@ impl IDCompositionArithmeticCompositeEffect {
     pub unsafe fn SetInput<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, index: u32, input: Param1, flags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetInput)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), input.into_param().abi(), ::core::mem::transmute(flags)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetCoefficients(&self, coefficients: *const super::Direct2D::Common::D2D_VECTOR_4F) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetCoefficients)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(coefficients)).ok()
     }
@@ -855,9 +855,9 @@ unsafe impl ::windows_core::Interface for IDCompositionArithmeticCompositeEffect
 #[doc(hidden)]
 pub struct IDCompositionArithmeticCompositeEffect_Vtbl {
     pub base__: IDCompositionFilterEffect_Vtbl,
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub SetCoefficients: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coefficients: *const super::Direct2D::Common::D2D_VECTOR_4F) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetCoefficients: usize,
     pub SetClampOutput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, clampoutput: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub SetCoefficient1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -875,7 +875,7 @@ impl IDCompositionBlendEffect {
     pub unsafe fn SetInput<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, index: u32, input: Param1, flags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetInput)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), input.into_param().abi(), ::core::mem::transmute(flags)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetMode(&self, mode: super::Direct2D::Common::D2D1_BLEND_MODE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetMode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(mode)).ok()
     }
@@ -964,9 +964,9 @@ unsafe impl ::windows_core::Interface for IDCompositionBlendEffect {
 #[doc(hidden)]
 pub struct IDCompositionBlendEffect_Vtbl {
     pub base__: IDCompositionFilterEffect_Vtbl,
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub SetMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mode: super::Direct2D::Common::D2D1_BLEND_MODE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetMode: usize,
 }
 #[repr(transparent)]
@@ -975,11 +975,11 @@ impl IDCompositionBrightnessEffect {
     pub unsafe fn SetInput<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, index: u32, input: Param1, flags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetInput)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), input.into_param().abi(), ::core::mem::transmute(flags)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetWhitePoint(&self, whitepoint: *const super::Direct2D::Common::D2D_VECTOR_2F) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetWhitePoint)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(whitepoint)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetBlackPoint(&self, blackpoint: *const super::Direct2D::Common::D2D_VECTOR_2F) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBlackPoint)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(blackpoint)).ok()
     }
@@ -1092,13 +1092,13 @@ unsafe impl ::windows_core::Interface for IDCompositionBrightnessEffect {
 #[doc(hidden)]
 pub struct IDCompositionBrightnessEffect_Vtbl {
     pub base__: IDCompositionFilterEffect_Vtbl,
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub SetWhitePoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, whitepoint: *const super::Direct2D::Common::D2D_VECTOR_2F) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetWhitePoint: usize,
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub SetBlackPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, blackpoint: *const super::Direct2D::Common::D2D_VECTOR_2F) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetBlackPoint: usize,
     pub SetWhitePointX: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetWhitePointX2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, whitepointx: f32) -> ::windows_core::HRESULT,
@@ -1163,7 +1163,7 @@ impl IDCompositionColorMatrixEffect {
     pub unsafe fn SetInput<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, index: u32, input: Param1, flags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetInput)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), input.into_param().abi(), ::core::mem::transmute(flags)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetMatrix(&self, matrix: *const super::Direct2D::Common::D2D_MATRIX_5X4_F) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetMatrix)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(matrix)).ok()
     }
@@ -1173,7 +1173,7 @@ impl IDCompositionColorMatrixEffect {
     pub unsafe fn SetMatrixElement2(&self, row: i32, column: i32, value: f32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetMatrixElement2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(row), ::core::mem::transmute(column), ::core::mem::transmute(value)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetAlphaMode(&self, mode: super::Direct2D::Common::D2D1_COLORMATRIX_ALPHA_MODE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetAlphaMode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(mode)).ok()
     }
@@ -1265,15 +1265,15 @@ unsafe impl ::windows_core::Interface for IDCompositionColorMatrixEffect {
 #[doc(hidden)]
 pub struct IDCompositionColorMatrixEffect_Vtbl {
     pub base__: IDCompositionFilterEffect_Vtbl,
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub SetMatrix: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, matrix: *const super::Direct2D::Common::D2D_MATRIX_5X4_F) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetMatrix: usize,
     pub SetMatrixElement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, row: i32, column: i32, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetMatrixElement2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, row: i32, column: i32, value: f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub SetAlphaMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mode: super::Direct2D::Common::D2D1_COLORMATRIX_ALPHA_MODE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetAlphaMode: usize,
     pub SetClampOutput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, clamp: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
@@ -1283,7 +1283,7 @@ impl IDCompositionCompositeEffect {
     pub unsafe fn SetInput<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, index: u32, input: Param1, flags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetInput)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), input.into_param().abi(), ::core::mem::transmute(flags)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetMode(&self, mode: super::Direct2D::Common::D2D1_COMPOSITE_MODE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetMode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(mode)).ok()
     }
@@ -1372,9 +1372,9 @@ unsafe impl ::windows_core::Interface for IDCompositionCompositeEffect {
 #[doc(hidden)]
 pub struct IDCompositionCompositeEffect_Vtbl {
     pub base__: IDCompositionFilterEffect_Vtbl,
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub SetMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mode: super::Direct2D::Common::D2D1_COMPOSITE_MODE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetMode: usize,
 }
 #[repr(transparent)]
@@ -1391,7 +1391,7 @@ impl IDCompositionDelegatedInkTrail {
     pub unsafe fn RemoveTrailPoints(&self, generationid: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RemoveTrailPoints)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(generationid)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn StartNewTrail(&self, color: *const super::Direct2D::Common::D2D1_COLOR_F) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).StartNewTrail)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(color)).ok()
     }
@@ -1443,9 +1443,9 @@ pub struct IDCompositionDelegatedInkTrail_Vtbl {
     pub AddTrailPoints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, inkpoints: *const DCompositionInkTrailPoint, inkpointscount: u32, generationid: *mut u32) -> ::windows_core::HRESULT,
     pub AddTrailPointsWithPrediction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, inkpoints: *const DCompositionInkTrailPoint, inkpointscount: u32, predictedinkpoints: *const DCompositionInkTrailPoint, predictedinkpointscount: u32, generationid: *mut u32) -> ::windows_core::HRESULT,
     pub RemoveTrailPoints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, generationid: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub StartNewTrail: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, color: *const super::Direct2D::Common::D2D1_COLOR_F) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     StartNewTrail: usize,
 }
 #[repr(transparent)]
@@ -1457,7 +1457,7 @@ impl IDCompositionDesktopDevice {
     pub unsafe fn WaitForCommitCompletion(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.WaitForCommitCompletion)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetFrameStatistics(&self) -> ::windows_core::Result<DCOMPOSITION_FRAME_STATISTICS> {
         let mut result__ = ::core::mem::MaybeUninit::<DCOMPOSITION_FRAME_STATISTICS>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetFrameStatistics)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DCOMPOSITION_FRAME_STATISTICS>(result__)
@@ -1470,12 +1470,12 @@ impl IDCompositionDesktopDevice {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateSurfaceFactory)(::windows_core::Interface::as_raw(self), renderingdevice.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDCompositionSurfaceFactory>(result__)
     }
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn CreateSurface(&self, width: u32, height: u32, pixelformat: super::Dxgi::Common::DXGI_FORMAT, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE) -> ::windows_core::Result<IDCompositionSurface> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateSurface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(width), ::core::mem::transmute(height), ::core::mem::transmute(pixelformat), ::core::mem::transmute(alphamode), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDCompositionSurface>(result__)
     }
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn CreateVirtualSurface(&self, initialwidth: u32, initialheight: u32, pixelformat: super::Dxgi::Common::DXGI_FORMAT, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE) -> ::windows_core::Result<IDCompositionVirtualSurface> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateVirtualSurface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(initialwidth), ::core::mem::transmute(initialheight), ::core::mem::transmute(pixelformat), ::core::mem::transmute(alphamode), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDCompositionVirtualSurface>(result__)
@@ -1626,7 +1626,7 @@ impl IDCompositionDevice {
     pub unsafe fn WaitForCommitCompletion(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).WaitForCommitCompletion)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetFrameStatistics(&self) -> ::windows_core::Result<DCOMPOSITION_FRAME_STATISTICS> {
         let mut result__ = ::core::mem::MaybeUninit::<DCOMPOSITION_FRAME_STATISTICS>::zeroed();
         (::windows_core::Interface::vtable(self).GetFrameStatistics)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DCOMPOSITION_FRAME_STATISTICS>(result__)
@@ -1639,12 +1639,12 @@ impl IDCompositionDevice {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateVisual)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDCompositionVisual>(result__)
     }
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn CreateSurface(&self, width: u32, height: u32, pixelformat: super::Dxgi::Common::DXGI_FORMAT, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE) -> ::windows_core::Result<IDCompositionSurface> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateSurface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(width), ::core::mem::transmute(height), ::core::mem::transmute(pixelformat), ::core::mem::transmute(alphamode), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDCompositionSurface>(result__)
     }
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn CreateVirtualSurface(&self, initialwidth: u32, initialheight: u32, pixelformat: super::Dxgi::Common::DXGI_FORMAT, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE) -> ::windows_core::Result<IDCompositionVirtualSurface> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateVirtualSurface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(initialwidth), ::core::mem::transmute(initialheight), ::core::mem::transmute(pixelformat), ::core::mem::transmute(alphamode), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDCompositionVirtualSurface>(result__)
@@ -1764,19 +1764,19 @@ pub struct IDCompositionDevice_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub Commit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub WaitForCommitCompletion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub GetFrameStatistics: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, statistics: *mut DCOMPOSITION_FRAME_STATISTICS) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetFrameStatistics: usize,
     pub CreateTargetForHwnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: ::win32_foundation::HWND, topmost: ::win32_foundation::BOOL, target: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateVisual: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, visual: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub CreateSurface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, width: u32, height: u32, pixelformat: super::Dxgi::Common::DXGI_FORMAT, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE, surface: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     CreateSurface: usize,
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub CreateVirtualSurface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, initialwidth: u32, initialheight: u32, pixelformat: super::Dxgi::Common::DXGI_FORMAT, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE, virtualsurface: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     CreateVirtualSurface: usize,
     pub CreateSurfaceFromHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handle: ::win32_foundation::HANDLE, surface: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub CreateSurfaceFromHwnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: ::win32_foundation::HWND, surface: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -1805,7 +1805,7 @@ impl IDCompositionDevice2 {
     pub unsafe fn WaitForCommitCompletion(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).WaitForCommitCompletion)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetFrameStatistics(&self) -> ::windows_core::Result<DCOMPOSITION_FRAME_STATISTICS> {
         let mut result__ = ::core::mem::MaybeUninit::<DCOMPOSITION_FRAME_STATISTICS>::zeroed();
         (::windows_core::Interface::vtable(self).GetFrameStatistics)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DCOMPOSITION_FRAME_STATISTICS>(result__)
@@ -1818,12 +1818,12 @@ impl IDCompositionDevice2 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateSurfaceFactory)(::windows_core::Interface::as_raw(self), renderingdevice.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDCompositionSurfaceFactory>(result__)
     }
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn CreateSurface(&self, width: u32, height: u32, pixelformat: super::Dxgi::Common::DXGI_FORMAT, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE) -> ::windows_core::Result<IDCompositionSurface> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateSurface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(width), ::core::mem::transmute(height), ::core::mem::transmute(pixelformat), ::core::mem::transmute(alphamode), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDCompositionSurface>(result__)
     }
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn CreateVirtualSurface(&self, initialwidth: u32, initialheight: u32, pixelformat: super::Dxgi::Common::DXGI_FORMAT, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE) -> ::windows_core::Result<IDCompositionVirtualSurface> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateVirtualSurface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(initialwidth), ::core::mem::transmute(initialheight), ::core::mem::transmute(pixelformat), ::core::mem::transmute(alphamode), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDCompositionVirtualSurface>(result__)
@@ -1931,19 +1931,19 @@ pub struct IDCompositionDevice2_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub Commit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub WaitForCommitCompletion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub GetFrameStatistics: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, statistics: *mut DCOMPOSITION_FRAME_STATISTICS) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetFrameStatistics: usize,
     pub CreateVisual: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, visual: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateSurfaceFactory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, renderingdevice: *mut ::core::ffi::c_void, surfacefactory: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub CreateSurface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, width: u32, height: u32, pixelformat: super::Dxgi::Common::DXGI_FORMAT, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE, surface: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     CreateSurface: usize,
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub CreateVirtualSurface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, initialwidth: u32, initialheight: u32, pixelformat: super::Dxgi::Common::DXGI_FORMAT, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE, virtualsurface: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     CreateVirtualSurface: usize,
     pub CreateTranslateTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, translatetransform: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateScaleTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scaletransform: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -1969,7 +1969,7 @@ impl IDCompositionDevice3 {
     pub unsafe fn WaitForCommitCompletion(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.WaitForCommitCompletion)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetFrameStatistics(&self) -> ::windows_core::Result<DCOMPOSITION_FRAME_STATISTICS> {
         let mut result__ = ::core::mem::MaybeUninit::<DCOMPOSITION_FRAME_STATISTICS>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetFrameStatistics)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DCOMPOSITION_FRAME_STATISTICS>(result__)
@@ -1982,12 +1982,12 @@ impl IDCompositionDevice3 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateSurfaceFactory)(::windows_core::Interface::as_raw(self), renderingdevice.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDCompositionSurfaceFactory>(result__)
     }
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn CreateSurface(&self, width: u32, height: u32, pixelformat: super::Dxgi::Common::DXGI_FORMAT, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE) -> ::windows_core::Result<IDCompositionSurface> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateSurface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(width), ::core::mem::transmute(height), ::core::mem::transmute(pixelformat), ::core::mem::transmute(alphamode), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDCompositionSurface>(result__)
     }
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn CreateVirtualSurface(&self, initialwidth: u32, initialheight: u32, pixelformat: super::Dxgi::Common::DXGI_FORMAT, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE) -> ::windows_core::Result<IDCompositionVirtualSurface> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateVirtualSurface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(initialwidth), ::core::mem::transmute(initialheight), ::core::mem::transmute(pixelformat), ::core::mem::transmute(alphamode), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDCompositionVirtualSurface>(result__)
@@ -2450,7 +2450,7 @@ impl IDCompositionGaussianBlurEffect {
     pub unsafe fn SetStandardDeviation2(&self, amount: f32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetStandardDeviation2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(amount)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetBorderMode(&self, mode: super::Direct2D::Common::D2D1_BORDER_MODE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBorderMode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(mode)).ok()
     }
@@ -2541,9 +2541,9 @@ pub struct IDCompositionGaussianBlurEffect_Vtbl {
     pub base__: IDCompositionFilterEffect_Vtbl,
     pub SetStandardDeviation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetStandardDeviation2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, amount: f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub SetBorderMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mode: super::Direct2D::Common::D2D1_BORDER_MODE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetBorderMode: usize,
 }
 #[repr(transparent)]
@@ -2884,7 +2884,7 @@ pub struct IDCompositionLinearTransferEffect_Vtbl {
 #[repr(transparent)]
 pub struct IDCompositionMatrixTransform(::windows_core::IUnknown);
 impl IDCompositionMatrixTransform {
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub unsafe fn SetMatrix(&self, matrix: *const ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetMatrix)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(matrix)).ok()
     }
@@ -2999,9 +2999,9 @@ unsafe impl ::windows_core::Interface for IDCompositionMatrixTransform {
 #[doc(hidden)]
 pub struct IDCompositionMatrixTransform_Vtbl {
     pub base__: IDCompositionTransform_Vtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetMatrix: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, matrix: *const ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetMatrix: usize,
     pub SetMatrixElement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, row: i32, column: i32, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetMatrixElement2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, row: i32, column: i32, value: f32) -> ::windows_core::HRESULT,
@@ -3009,7 +3009,7 @@ pub struct IDCompositionMatrixTransform_Vtbl {
 #[repr(transparent)]
 pub struct IDCompositionMatrixTransform3D(::windows_core::IUnknown);
 impl IDCompositionMatrixTransform3D {
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetMatrix(&self, matrix: *const super::Direct3D::D3DMATRIX) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetMatrix)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(matrix)).ok()
     }
@@ -3104,9 +3104,9 @@ unsafe impl ::windows_core::Interface for IDCompositionMatrixTransform3D {
 #[doc(hidden)]
 pub struct IDCompositionMatrixTransform3D_Vtbl {
     pub base__: IDCompositionTransform3D_Vtbl,
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub SetMatrix: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, matrix: *const super::Direct3D::D3DMATRIX) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct3D"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetMatrix: usize,
     pub SetMatrixElement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, row: i32, column: i32, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetMatrixElement2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, row: i32, column: i32, value: f32) -> ::windows_core::HRESULT,
@@ -3944,7 +3944,7 @@ impl IDCompositionShadowEffect {
     pub unsafe fn SetStandardDeviation2(&self, amount: f32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetStandardDeviation2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(amount)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetColor(&self, color: *const super::Direct2D::Common::D2D_VECTOR_4F) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetColor)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(color)).ok()
     }
@@ -4059,9 +4059,9 @@ pub struct IDCompositionShadowEffect_Vtbl {
     pub base__: IDCompositionFilterEffect_Vtbl,
     pub SetStandardDeviation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetStandardDeviation2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, amount: f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub SetColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, color: *const super::Direct2D::Common::D2D_VECTOR_4F) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetColor: usize,
     pub SetRed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetRed2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, amount: f32) -> ::windows_core::HRESULT,
@@ -4285,12 +4285,12 @@ pub struct IDCompositionSurface_Vtbl {
 #[repr(transparent)]
 pub struct IDCompositionSurfaceFactory(::windows_core::IUnknown);
 impl IDCompositionSurfaceFactory {
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn CreateSurface(&self, width: u32, height: u32, pixelformat: super::Dxgi::Common::DXGI_FORMAT, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE) -> ::windows_core::Result<IDCompositionSurface> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateSurface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(width), ::core::mem::transmute(height), ::core::mem::transmute(pixelformat), ::core::mem::transmute(alphamode), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDCompositionSurface>(result__)
     }
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn CreateVirtualSurface(&self, initialwidth: u32, initialheight: u32, pixelformat: super::Dxgi::Common::DXGI_FORMAT, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE) -> ::windows_core::Result<IDCompositionVirtualSurface> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateVirtualSurface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(initialwidth), ::core::mem::transmute(initialheight), ::core::mem::transmute(pixelformat), ::core::mem::transmute(alphamode), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDCompositionVirtualSurface>(result__)
@@ -4340,13 +4340,13 @@ unsafe impl ::windows_core::Interface for IDCompositionSurfaceFactory {
 #[doc(hidden)]
 pub struct IDCompositionSurfaceFactory_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub CreateSurface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, width: u32, height: u32, pixelformat: super::Dxgi::Common::DXGI_FORMAT, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE, surface: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     CreateSurface: usize,
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub CreateVirtualSurface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, initialwidth: u32, initialheight: u32, pixelformat: super::Dxgi::Common::DXGI_FORMAT, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE, virtualsurface: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     CreateVirtualSurface: usize,
 }
 #[repr(transparent)]
@@ -4962,15 +4962,15 @@ impl IDCompositionTurbulenceEffect {
     pub unsafe fn SetInput<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, index: u32, input: Param1, flags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetInput)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), input.into_param().abi(), ::core::mem::transmute(flags)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetOffset(&self, offset: *const super::Direct2D::Common::D2D_VECTOR_2F) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetOffset)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(offset)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetBaseFrequency(&self, frequency: *const super::Direct2D::Common::D2D_VECTOR_2F) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBaseFrequency)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(frequency)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetSize(&self, size: *const super::Direct2D::Common::D2D_VECTOR_2F) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSize)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(size)).ok()
     }
@@ -4980,7 +4980,7 @@ impl IDCompositionTurbulenceEffect {
     pub unsafe fn SetSeed(&self, seed: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSeed)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(seed)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetNoise(&self, noise: super::Direct2D::Common::D2D1_TURBULENCE_NOISE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetNoise)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(noise)).ok()
     }
@@ -5072,23 +5072,23 @@ unsafe impl ::windows_core::Interface for IDCompositionTurbulenceEffect {
 #[doc(hidden)]
 pub struct IDCompositionTurbulenceEffect_Vtbl {
     pub base__: IDCompositionFilterEffect_Vtbl,
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub SetOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: *const super::Direct2D::Common::D2D_VECTOR_2F) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetOffset: usize,
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub SetBaseFrequency: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, frequency: *const super::Direct2D::Common::D2D_VECTOR_2F) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetBaseFrequency: usize,
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub SetSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, size: *const super::Direct2D::Common::D2D_VECTOR_2F) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetSize: usize,
     pub SetNumOctaves: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, numoctaves: u32) -> ::windows_core::HRESULT,
     pub SetSeed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, seed: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub SetNoise: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, noise: super::Direct2D::Common::D2D1_TURBULENCE_NOISE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetNoise: usize,
     pub SetStitchable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stitchable: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
@@ -5202,7 +5202,7 @@ impl IDCompositionVisual {
     pub unsafe fn SetTransform<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionTransform>>(&self, transform: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetTransform)(::windows_core::Interface::as_raw(self), transform.into_param().abi()).ok()
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub unsafe fn SetTransform2(&self, matrix: *const ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetTransform2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(matrix)).ok()
     }
@@ -5221,7 +5221,7 @@ impl IDCompositionVisual {
     pub unsafe fn SetClip<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionClip>>(&self, clip: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetClip)(::windows_core::Interface::as_raw(self), clip.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetClip2(&self, rect: *const super::Direct2D::Common::D2D_RECT_F) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetClip2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(rect)).ok()
     }
@@ -5290,18 +5290,18 @@ pub struct IDCompositionVisual_Vtbl {
     pub SetOffsetY: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetOffsetY2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offsety: f32) -> ::windows_core::HRESULT,
     pub SetTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, transform: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetTransform2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, matrix: *const ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetTransform2: usize,
     pub SetTransformParent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, visual: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetEffect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, effect: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetBitmapInterpolationMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, interpolationmode: DCOMPOSITION_BITMAP_INTERPOLATION_MODE) -> ::windows_core::HRESULT,
     pub SetBorderMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bordermode: DCOMPOSITION_BORDER_MODE) -> ::windows_core::HRESULT,
     pub SetClip: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, clip: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub SetClip2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, rect: *const super::Direct2D::Common::D2D_RECT_F) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetClip2: usize,
     pub SetContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, content: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub AddVisual: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, visual: ::windows_core::RawPtr, insertabove: ::win32_foundation::BOOL, referencevisual: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -5327,7 +5327,7 @@ impl IDCompositionVisual2 {
     pub unsafe fn SetTransform<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionTransform>>(&self, transform: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetTransform)(::windows_core::Interface::as_raw(self), transform.into_param().abi()).ok()
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub unsafe fn SetTransform2(&self, matrix: *const ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetTransform2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(matrix)).ok()
     }
@@ -5346,7 +5346,7 @@ impl IDCompositionVisual2 {
     pub unsafe fn SetClip<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionClip>>(&self, clip: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetClip)(::windows_core::Interface::as_raw(self), clip.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetClip2(&self, rect: *const super::Direct2D::Common::D2D_RECT_F) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetClip2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(rect)).ok()
     }
@@ -5457,7 +5457,7 @@ impl IDCompositionVisual3 {
     pub unsafe fn SetTransform<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionTransform>>(&self, transform: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.SetTransform)(::windows_core::Interface::as_raw(self), transform.into_param().abi()).ok()
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub unsafe fn SetTransform2(&self, matrix: *const ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.SetTransform2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(matrix)).ok()
     }
@@ -5476,7 +5476,7 @@ impl IDCompositionVisual3 {
     pub unsafe fn SetClip<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionClip>>(&self, clip: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.SetClip)(::windows_core::Interface::as_raw(self), clip.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetClip2(&self, rect: *const super::Direct2D::Common::D2D_RECT_F) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.SetClip2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(rect)).ok()
     }
@@ -5501,7 +5501,7 @@ impl IDCompositionVisual3 {
     pub unsafe fn SetBackFaceVisibility(&self, visibility: DCOMPOSITION_BACKFACE_VISIBILITY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.SetBackFaceVisibility)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(visibility)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn EnableHeatMap(&self, color: *const super::Direct2D::Common::D2D1_COLOR_F) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.EnableHeatMap)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(color)).ok()
     }
@@ -5532,7 +5532,7 @@ impl IDCompositionVisual3 {
     pub unsafe fn SetTransform3<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionTransform3D>>(&self, transform: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetTransform3)(::windows_core::Interface::as_raw(self), transform.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetTransform4(&self, matrix: *const super::Direct2D::Common::D2D_MATRIX_4X4_F) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetTransform4)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(matrix)).ok()
     }
@@ -5650,9 +5650,9 @@ pub struct IDCompositionVisual3_Vtbl {
     pub SetOpacity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetOpacity2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, opacity: f32) -> ::windows_core::HRESULT,
     pub SetTransform3: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, transform: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub SetTransform4: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, matrix: *const super::Direct2D::Common::D2D_MATRIX_4X4_F) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetTransform4: usize,
     pub SetVisible: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, visible: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
@@ -5674,7 +5674,7 @@ impl IDCompositionVisualDebug {
     pub unsafe fn SetTransform<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionTransform>>(&self, transform: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.SetTransform)(::windows_core::Interface::as_raw(self), transform.into_param().abi()).ok()
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub unsafe fn SetTransform2(&self, matrix: *const ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.SetTransform2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(matrix)).ok()
     }
@@ -5693,7 +5693,7 @@ impl IDCompositionVisualDebug {
     pub unsafe fn SetClip<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionClip>>(&self, clip: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.SetClip)(::windows_core::Interface::as_raw(self), clip.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetClip2(&self, rect: *const super::Direct2D::Common::D2D_RECT_F) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.SetClip2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(rect)).ok()
     }
@@ -5718,7 +5718,7 @@ impl IDCompositionVisualDebug {
     pub unsafe fn SetBackFaceVisibility(&self, visibility: DCOMPOSITION_BACKFACE_VISIBILITY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetBackFaceVisibility)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(visibility)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn EnableHeatMap(&self, color: *const super::Direct2D::Common::D2D1_COLOR_F) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).EnableHeatMap)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(color)).ok()
     }
@@ -5816,9 +5816,9 @@ unsafe impl ::windows_core::Interface for IDCompositionVisualDebug {
 #[doc(hidden)]
 pub struct IDCompositionVisualDebug_Vtbl {
     pub base__: IDCompositionVisual2_Vtbl,
-    #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+    #[cfg(feature = "win32-graphics")]
     pub EnableHeatMap: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, color: *const super::Direct2D::Common::D2D1_COLOR_F) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
+    #[cfg(not(feature = "win32-graphics"))]
     EnableHeatMap: usize,
     pub DisableHeatMap: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub EnableRedrawRegions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,

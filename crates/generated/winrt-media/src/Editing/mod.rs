@@ -37,7 +37,7 @@ impl BackgroundAudioTrack {
             (::windows_core::Interface::vtable(this).TrimmedDuration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn UserData(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -74,7 +74,7 @@ impl BackgroundAudioTrack {
             (::windows_core::Interface::vtable(this).Clone)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<BackgroundAudioTrack>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn GetAudioEncodingProperties(&self) -> ::windows_core::Result<super::MediaProperties::AudioEncodingProperties> {
         let this = self;
         unsafe {
@@ -82,7 +82,7 @@ impl BackgroundAudioTrack {
             (::windows_core::Interface::vtable(this).GetAudioEncodingProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::MediaProperties::AudioEncodingProperties>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub fn AudioEffectDefinitions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::Effects::IAudioEffectDefinition>> {
         let this = self;
         unsafe {
@@ -96,7 +96,7 @@ impl BackgroundAudioTrack {
             (::windows_core::Interface::vtable(this).CreateFromEmbeddedAudioTrack)(::windows_core::Interface::as_raw(this), embeddedaudiotrack.into_param().abi(), result__.as_mut_ptr()).from_abi::<BackgroundAudioTrack>(result__)
         })
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFromFileAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(file: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<BackgroundAudioTrack>> {
         Self::IBackgroundAudioTrackStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -183,7 +183,7 @@ unsafe impl ::core::marker::Sync for BackgroundAudioTrack {}
 #[repr(transparent)]
 pub struct EmbeddedAudioTrack(::windows_core::IUnknown);
 impl EmbeddedAudioTrack {
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn GetAudioEncodingProperties(&self) -> ::windows_core::Result<super::MediaProperties::AudioEncodingProperties> {
         let this = self;
         unsafe {
@@ -281,22 +281,22 @@ pub struct IBackgroundAudioTrack_Vtbl {
     pub SetTrimTimeFromEnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub OriginalDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub TrimmedDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub UserData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     UserData: usize,
     pub SetDelay: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub Delay: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub SetVolume: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
     pub Volume: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub GetAudioEncodingProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     GetAudioEncodingProperties: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub AudioEffectDefinitions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Media_Effects")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-media")))]
     AudioEffectDefinitions: usize,
 }
 #[doc(hidden)]
@@ -311,9 +311,9 @@ unsafe impl ::windows_core::Interface for IBackgroundAudioTrackStatics {
 pub struct IBackgroundAudioTrackStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub CreateFromEmbeddedAudioTrack: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, embeddedaudiotrack: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateFromFileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateFromFileAsync: usize,
 }
 #[doc(hidden)]
@@ -327,9 +327,9 @@ unsafe impl ::windows_core::Interface for IEmbeddedAudioTrack {
 #[doc(hidden)]
 pub struct IEmbeddedAudioTrack_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub GetAudioEncodingProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     GetAudioEncodingProperties: usize,
 }
 #[doc(hidden)]
@@ -349,32 +349,32 @@ pub struct IMediaClip_Vtbl {
     pub SetTrimTimeFromEnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub OriginalDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub TrimmedDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub UserData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     UserData: usize,
     pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub StartTimeInComposition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub EndTimeInComposition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub EmbeddedAudioTracks: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     EmbeddedAudioTracks: usize,
     pub SelectedEmbeddedAudioTrackIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub SetSelectedEmbeddedAudioTrackIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
     pub SetVolume: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
     pub Volume: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub GetVideoEncodingProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     GetVideoEncodingProperties: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub AudioEffectDefinitions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Media_Effects")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-media")))]
     AudioEffectDefinitions: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub VideoEffectDefinitions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Media_Effects")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-media")))]
     VideoEffectDefinitions: usize,
 }
 #[doc(hidden)]
@@ -388,17 +388,17 @@ unsafe impl ::windows_core::Interface for IMediaClipStatics {
 #[doc(hidden)]
 pub struct IMediaClipStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateFromColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, color: ::winrt_ui::Color, originalduration: ::winrt_foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateFromColor: usize,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateFromFileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateFromFileAsync: usize,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateFromImageFileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, originalduration: ::winrt_foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateFromImageFileAsync: usize,
 }
 #[doc(hidden)]
@@ -412,9 +412,9 @@ unsafe impl ::windows_core::Interface for IMediaClipStatics2 {
 #[doc(hidden)]
 pub struct IMediaClipStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub CreateFromSurface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, surface: ::windows_core::RawPtr, originalduration: ::winrt_foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX_Direct3D11"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     CreateFromSurface: usize,
 }
 #[doc(hidden)]
@@ -429,58 +429,58 @@ unsafe impl ::windows_core::Interface for IMediaComposition {
 pub struct IMediaComposition_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Duration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Clips: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Clips: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub BackgroundAudioTracks: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     BackgroundAudioTracks: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub UserData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     UserData: usize,
     pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub SaveAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SaveAsync: usize,
-    #[cfg(all(feature = "Graphics_Imaging", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-graphics", feature = "winrt-storage"))]
     pub GetThumbnailAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, timefromstart: ::winrt_foundation::TimeSpan, scaledwidth: i32, scaledheight: i32, frameprecision: VideoFramePrecision, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Graphics_Imaging", feature = "Storage_Streams")))]
+    #[cfg(not(all(feature = "winrt-graphics", feature = "winrt-storage")))]
     GetThumbnailAsync: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Graphics_Imaging", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-graphics", feature = "winrt-storage"))]
     pub GetThumbnailsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, timesfromstart: ::windows_core::RawPtr, scaledwidth: i32, scaledheight: i32, frameprecision: VideoFramePrecision, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Graphics_Imaging", feature = "Storage_Streams")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-graphics", feature = "winrt-storage")))]
     GetThumbnailsAsync: usize,
-    #[cfg(all(feature = "Media_Transcoding", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-storage"))]
     pub RenderToFileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, destination: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Media_Transcoding", feature = "Storage")))]
+    #[cfg(not(all(feature = "winrt-media", feature = "winrt-storage")))]
     RenderToFileAsync: usize,
-    #[cfg(all(feature = "Media_Transcoding", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-storage"))]
     pub RenderToFileWithTrimmingPreferenceAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, destination: ::windows_core::RawPtr, trimmingpreference: MediaTrimmingPreference, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Media_Transcoding", feature = "Storage")))]
+    #[cfg(not(all(feature = "winrt-media", feature = "winrt-storage")))]
     RenderToFileWithTrimmingPreferenceAsync: usize,
-    #[cfg(all(feature = "Media_MediaProperties", feature = "Media_Transcoding", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-media", feature = "winrt-storage"))]
     pub RenderToFileWithProfileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, destination: ::windows_core::RawPtr, trimmingpreference: MediaTrimmingPreference, encodingprofile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Media_MediaProperties", feature = "Media_Transcoding", feature = "Storage")))]
+    #[cfg(not(all(feature = "winrt-media", feature = "winrt-media", feature = "winrt-storage")))]
     RenderToFileWithProfileAsync: usize,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub CreateDefaultEncodingProfile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     CreateDefaultEncodingProfile: usize,
-    #[cfg(feature = "Media_Core")]
+    #[cfg(feature = "winrt-media")]
     pub GenerateMediaStreamSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Core"))]
+    #[cfg(not(feature = "winrt-media"))]
     GenerateMediaStreamSource: usize,
-    #[cfg(all(feature = "Media_Core", feature = "Media_MediaProperties"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-media"))]
     pub GenerateMediaStreamSourceWithProfile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, encodingprofile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Media_Core", feature = "Media_MediaProperties")))]
+    #[cfg(not(all(feature = "winrt-media", feature = "winrt-media")))]
     GenerateMediaStreamSourceWithProfile: usize,
-    #[cfg(feature = "Media_Core")]
+    #[cfg(feature = "winrt-media")]
     pub GeneratePreviewMediaStreamSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scaledwidth: i32, scaledheight: i32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Core"))]
+    #[cfg(not(feature = "winrt-media"))]
     GeneratePreviewMediaStreamSource: usize,
 }
 #[doc(hidden)]
@@ -494,9 +494,9 @@ unsafe impl ::windows_core::Interface for IMediaComposition2 {
 #[doc(hidden)]
 pub struct IMediaComposition2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub OverlayLayers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     OverlayLayers: usize,
 }
 #[doc(hidden)]
@@ -510,9 +510,9 @@ unsafe impl ::windows_core::Interface for IMediaCompositionStatics {
 #[doc(hidden)]
 pub struct IMediaCompositionStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub LoadAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     LoadAsync: usize,
 }
 #[doc(hidden)]
@@ -563,13 +563,13 @@ unsafe impl ::windows_core::Interface for IMediaOverlayLayer {
 pub struct IMediaOverlayLayer_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Overlays: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Overlays: usize,
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub CustomCompositorDefinition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Effects"))]
+    #[cfg(not(feature = "winrt-media"))]
     CustomCompositorDefinition: usize,
 }
 #[doc(hidden)]
@@ -583,9 +583,9 @@ unsafe impl ::windows_core::Interface for IMediaOverlayLayerFactory {
 #[doc(hidden)]
 pub struct IMediaOverlayLayerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub CreateWithCompositorDefinition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, compositordefinition: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Effects"))]
+    #[cfg(not(feature = "winrt-media"))]
     CreateWithCompositorDefinition: usize,
 }
 #[repr(transparent)]
@@ -627,7 +627,7 @@ impl MediaClip {
             (::windows_core::Interface::vtable(this).TrimmedDuration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn UserData(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -656,7 +656,7 @@ impl MediaClip {
             (::windows_core::Interface::vtable(this).EndTimeInComposition)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn EmbeddedAudioTracks(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<EmbeddedAudioTrack>> {
         let this = self;
         unsafe {
@@ -686,7 +686,7 @@ impl MediaClip {
             (::windows_core::Interface::vtable(this).Volume)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn GetVideoEncodingProperties(&self) -> ::windows_core::Result<super::MediaProperties::VideoEncodingProperties> {
         let this = self;
         unsafe {
@@ -694,7 +694,7 @@ impl MediaClip {
             (::windows_core::Interface::vtable(this).GetVideoEncodingProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::MediaProperties::VideoEncodingProperties>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub fn AudioEffectDefinitions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::Effects::IAudioEffectDefinition>> {
         let this = self;
         unsafe {
@@ -702,7 +702,7 @@ impl MediaClip {
             (::windows_core::Interface::vtable(this).AudioEffectDefinitions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<super::Effects::IAudioEffectDefinition>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub fn VideoEffectDefinitions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::Effects::IVideoEffectDefinition>> {
         let this = self;
         unsafe {
@@ -710,28 +710,28 @@ impl MediaClip {
             (::windows_core::Interface::vtable(this).VideoEffectDefinitions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<super::Effects::IVideoEffectDefinition>>(result__)
         }
     }
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateFromColor<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Color>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(color: Param0, originalduration: Param1) -> ::windows_core::Result<MediaClip> {
         Self::IMediaClipStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromColor)(::windows_core::Interface::as_raw(this), color.into_param().abi(), originalduration.into_param().abi(), result__.as_mut_ptr()).from_abi::<MediaClip>(result__)
         })
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFromFileAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(file: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MediaClip>> {
         Self::IMediaClipStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromFileAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MediaClip>>(result__)
         })
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFromImageFileAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(file: Param0, originalduration: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MediaClip>> {
         Self::IMediaClipStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromImageFileAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), originalduration.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MediaClip>>(result__)
         })
     }
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn CreateFromSurface<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::DirectX::Direct3D11::IDirect3DSurface>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(surface: Param0, originalduration: Param1) -> ::windows_core::Result<MediaClip> {
         Self::IMediaClipStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -836,7 +836,7 @@ impl MediaComposition {
             (::windows_core::Interface::vtable(this).Duration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Clips(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<MediaClip>> {
         let this = self;
         unsafe {
@@ -844,7 +844,7 @@ impl MediaComposition {
             (::windows_core::Interface::vtable(this).Clips)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<MediaClip>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn BackgroundAudioTracks(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<BackgroundAudioTrack>> {
         let this = self;
         unsafe {
@@ -852,7 +852,7 @@ impl MediaComposition {
             (::windows_core::Interface::vtable(this).BackgroundAudioTracks)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<BackgroundAudioTrack>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn UserData(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -867,7 +867,7 @@ impl MediaComposition {
             (::windows_core::Interface::vtable(this).Clone)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaComposition>(result__)
         }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SaveAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(&self, file: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
@@ -875,7 +875,7 @@ impl MediaComposition {
             (::windows_core::Interface::vtable(this).SaveAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(all(feature = "Graphics_Imaging", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-graphics", feature = "winrt-storage"))]
     pub fn GetThumbnailAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(&self, timefromstart: Param0, scaledwidth: i32, scaledheight: i32, frameprecision: VideoFramePrecision) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_graphics::Imaging::ImageStream>> {
         let this = self;
         unsafe {
@@ -883,7 +883,7 @@ impl MediaComposition {
             (::windows_core::Interface::vtable(this).GetThumbnailAsync)(::windows_core::Interface::as_raw(this), timefromstart.into_param().abi(), scaledwidth, scaledheight, frameprecision, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_graphics::Imaging::ImageStream>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Graphics_Imaging", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-graphics", feature = "winrt-storage"))]
     pub fn GetThumbnailsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::TimeSpan>>>(&self, timesfromstart: Param0, scaledwidth: i32, scaledheight: i32, frameprecision: VideoFramePrecision) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<::winrt_graphics::Imaging::ImageStream>>> {
         let this = self;
         unsafe {
@@ -891,7 +891,7 @@ impl MediaComposition {
             (::windows_core::Interface::vtable(this).GetThumbnailsAsync)(::windows_core::Interface::as_raw(this), timesfromstart.into_param().abi(), scaledwidth, scaledheight, frameprecision, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<::winrt_graphics::Imaging::ImageStream>>>(result__)
         }
     }
-    #[cfg(all(feature = "Media_Transcoding", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-storage"))]
     pub fn RenderToFileAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(&self, destination: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<super::Transcoding::TranscodeFailureReason, f64>> {
         let this = self;
         unsafe {
@@ -899,7 +899,7 @@ impl MediaComposition {
             (::windows_core::Interface::vtable(this).RenderToFileAsync)(::windows_core::Interface::as_raw(this), destination.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<super::Transcoding::TranscodeFailureReason, f64>>(result__)
         }
     }
-    #[cfg(all(feature = "Media_Transcoding", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-storage"))]
     pub fn RenderToFileWithTrimmingPreferenceAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(&self, destination: Param0, trimmingpreference: MediaTrimmingPreference) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<super::Transcoding::TranscodeFailureReason, f64>> {
         let this = self;
         unsafe {
@@ -907,7 +907,7 @@ impl MediaComposition {
             (::windows_core::Interface::vtable(this).RenderToFileWithTrimmingPreferenceAsync)(::windows_core::Interface::as_raw(this), destination.into_param().abi(), trimmingpreference, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<super::Transcoding::TranscodeFailureReason, f64>>(result__)
         }
     }
-    #[cfg(all(feature = "Media_MediaProperties", feature = "Media_Transcoding", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-media", feature = "winrt-storage"))]
     pub fn RenderToFileWithProfileAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>, Param2: ::windows_core::IntoParam<'a, super::MediaProperties::MediaEncodingProfile>>(&self, destination: Param0, trimmingpreference: MediaTrimmingPreference, encodingprofile: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<super::Transcoding::TranscodeFailureReason, f64>> {
         let this = self;
         unsafe {
@@ -915,7 +915,7 @@ impl MediaComposition {
             (::windows_core::Interface::vtable(this).RenderToFileWithProfileAsync)(::windows_core::Interface::as_raw(this), destination.into_param().abi(), trimmingpreference, encodingprofile.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<super::Transcoding::TranscodeFailureReason, f64>>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn CreateDefaultEncodingProfile(&self) -> ::windows_core::Result<super::MediaProperties::MediaEncodingProfile> {
         let this = self;
         unsafe {
@@ -923,7 +923,7 @@ impl MediaComposition {
             (::windows_core::Interface::vtable(this).CreateDefaultEncodingProfile)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::MediaProperties::MediaEncodingProfile>(result__)
         }
     }
-    #[cfg(feature = "Media_Core")]
+    #[cfg(feature = "winrt-media")]
     pub fn GenerateMediaStreamSource(&self) -> ::windows_core::Result<super::Core::MediaStreamSource> {
         let this = self;
         unsafe {
@@ -931,7 +931,7 @@ impl MediaComposition {
             (::windows_core::Interface::vtable(this).GenerateMediaStreamSource)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Core::MediaStreamSource>(result__)
         }
     }
-    #[cfg(all(feature = "Media_Core", feature = "Media_MediaProperties"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-media"))]
     pub fn GenerateMediaStreamSourceWithProfile<'a, Param0: ::windows_core::IntoParam<'a, super::MediaProperties::MediaEncodingProfile>>(&self, encodingprofile: Param0) -> ::windows_core::Result<super::Core::MediaStreamSource> {
         let this = self;
         unsafe {
@@ -939,7 +939,7 @@ impl MediaComposition {
             (::windows_core::Interface::vtable(this).GenerateMediaStreamSourceWithProfile)(::windows_core::Interface::as_raw(this), encodingprofile.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Core::MediaStreamSource>(result__)
         }
     }
-    #[cfg(feature = "Media_Core")]
+    #[cfg(feature = "winrt-media")]
     pub fn GeneratePreviewMediaStreamSource(&self, scaledwidth: i32, scaledheight: i32) -> ::windows_core::Result<super::Core::MediaStreamSource> {
         let this = self;
         unsafe {
@@ -947,7 +947,7 @@ impl MediaComposition {
             (::windows_core::Interface::vtable(this).GeneratePreviewMediaStreamSource)(::windows_core::Interface::as_raw(this), scaledwidth, scaledheight, result__.as_mut_ptr()).from_abi::<super::Core::MediaStreamSource>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn OverlayLayers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<MediaOverlayLayer>> {
         let this = &::windows_core::Interface::cast::<IMediaComposition2>(self)?;
         unsafe {
@@ -955,7 +955,7 @@ impl MediaComposition {
             (::windows_core::Interface::vtable(this).OverlayLayers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<MediaOverlayLayer>>(result__)
         }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn LoadAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::StorageFile>>(file: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MediaComposition>> {
         Self::IMediaCompositionStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1206,7 +1206,7 @@ impl MediaOverlayLayer {
             (::windows_core::Interface::vtable(this).Clone)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaOverlayLayer>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Overlays(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<MediaOverlay>> {
         let this = self;
         unsafe {
@@ -1214,7 +1214,7 @@ impl MediaOverlayLayer {
             (::windows_core::Interface::vtable(this).Overlays)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<MediaOverlay>>(result__)
         }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn CustomCompositorDefinition(&self) -> ::windows_core::Result<super::Effects::IVideoCompositorDefinition> {
         let this = self;
         unsafe {
@@ -1222,7 +1222,7 @@ impl MediaOverlayLayer {
             (::windows_core::Interface::vtable(this).CustomCompositorDefinition)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Effects::IVideoCompositorDefinition>(result__)
         }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn CreateWithCompositorDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IVideoCompositorDefinition>>(compositordefinition: Param0) -> ::windows_core::Result<MediaOverlayLayer> {
         Self::IMediaOverlayLayerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();

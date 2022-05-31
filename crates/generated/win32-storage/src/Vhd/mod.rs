@@ -374,7 +374,7 @@ pub unsafe fn ApplySnapshotVhdSet<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Security", feature = "Win32_System_IO"))]
+#[cfg(all(feature = "win32-security", feature = "win32-system"))]
 #[inline]
 pub unsafe fn AttachVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(virtualdiskhandle: Param0, securitydescriptor: Param1, flags: ATTACH_VIRTUAL_DISK_FLAG, providerspecificflags: u32, parameters: *const ATTACH_VIRTUAL_DISK_PARAMETERS, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
@@ -898,7 +898,7 @@ impl ::core::fmt::Debug for CREATE_VIRTUAL_DISK_VERSION {
         f.debug_tuple("CREATE_VIRTUAL_DISK_VERSION").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_System_IO")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn CompactVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, flags: COMPACT_VIRTUAL_DISK_FLAG, parameters: *const COMPACT_VIRTUAL_DISK_PARAMETERS, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
@@ -925,7 +925,7 @@ pub unsafe fn CompleteForkVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Security", feature = "Win32_System_IO"))]
+#[cfg(all(feature = "win32-security", feature = "win32-system"))]
 #[inline]
 pub unsafe fn CreateVirtualDisk<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(virtualstoragetype: *const VIRTUAL_STORAGE_TYPE, path: Param1, virtualdiskaccessmask: VIRTUAL_DISK_ACCESS_MASK, securitydescriptor: Param3, flags: CREATE_VIRTUAL_DISK_FLAG, providerspecificflags: u32, parameters: *const CREATE_VIRTUAL_DISK_PARAMETERS, overlapped: *const ::win32_system::IO::OVERLAPPED, handle: *mut ::win32_foundation::HANDLE) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
@@ -1415,7 +1415,7 @@ pub unsafe fn EnumerateVirtualDiskMetadata<'a, Param0: ::windows_core::IntoParam
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_IO")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn ExpandVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, flags: EXPAND_VIRTUAL_DISK_FLAG, parameters: *const EXPAND_VIRTUAL_DISK_PARAMETERS, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
@@ -1583,7 +1583,7 @@ impl ::core::fmt::Debug for FORK_VIRTUAL_DISK_VERSION {
         f.debug_tuple("FORK_VIRTUAL_DISK_VERSION").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_System_IO")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn ForkVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, flags: FORK_VIRTUAL_DISK_FLAG, parameters: *const FORK_VIRTUAL_DISK_PARAMETERS, overlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
@@ -1927,7 +1927,7 @@ pub unsafe fn GetVirtualDiskMetadata<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_IO")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn GetVirtualDiskOperationProgress<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, overlapped: *const ::win32_system::IO::OVERLAPPED, progress: *mut VIRTUAL_DISK_PROGRESS) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
@@ -2456,7 +2456,7 @@ impl ::core::fmt::Debug for MODIFY_VHDSET_VERSION {
         f.debug_tuple("MODIFY_VHDSET_VERSION").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_System_IO")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn MergeVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, flags: MERGE_VIRTUAL_DISK_FLAG, parameters: *const MERGE_VIRTUAL_DISK_PARAMETERS, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
@@ -2470,7 +2470,7 @@ pub unsafe fn MergeVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, ::win32
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_IO")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn MirrorVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, flags: MIRROR_VIRTUAL_DISK_FLAG, parameters: *const MIRROR_VIRTUAL_DISK_PARAMETERS, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
@@ -3247,7 +3247,7 @@ pub unsafe fn RawSCSIVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_IO")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn ResizeVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, flags: RESIZE_VIRTUAL_DISK_FLAG, parameters: *const RESIZE_VIRTUAL_DISK_PARAMETERS, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]

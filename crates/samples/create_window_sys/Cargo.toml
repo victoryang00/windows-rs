@@ -16,4 +16,4 @@ features = ["LibraryLoader"]
 
 [dependencies.win32-ui-sys]
 path = "../../generated/win32-ui-sys"
-features = ["WindowsAndMessaging"]
+features = ["WindowsAndMessaging", "win32-graphics-sys"]

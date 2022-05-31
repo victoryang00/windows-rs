@@ -1225,9 +1225,9 @@ pub struct IXmlDocumentIO_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub LoadXml: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xml: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub LoadXmlWithSettings: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xml: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, loadsettings: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub SaveToFileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SaveToFileAsync: usize,
 }
 #[doc(hidden)]
@@ -1241,13 +1241,13 @@ unsafe impl ::windows_core::Interface for IXmlDocumentIO2 {
 #[doc(hidden)]
 pub struct IXmlDocumentIO2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub LoadXmlFromBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, buffer: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     LoadXmlFromBuffer: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub LoadXmlFromBufferWithSettings: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, buffer: ::windows_core::RawPtr, loadsettings: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     LoadXmlFromBufferWithSettings: usize,
 }
 #[doc(hidden)]
@@ -1263,13 +1263,13 @@ pub struct IXmlDocumentStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub LoadFromUriAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub LoadFromUriWithSettingsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, loadsettings: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub LoadFromFileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     LoadFromFileAsync: usize,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub LoadFromFileWithSettingsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, loadsettings: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     LoadFromFileWithSettingsAsync: usize,
 }
 #[doc(hidden)]
@@ -3746,7 +3746,7 @@ impl XmlDocument {
         let this = &::windows_core::Interface::cast::<IXmlDocumentIO>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).LoadXmlWithSettings)(::windows_core::Interface::as_raw(this), xml.into_param().abi(), loadsettings.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SaveToFileAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(&self, file: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = &::windows_core::Interface::cast::<IXmlDocumentIO>(self)?;
         unsafe {
@@ -3754,12 +3754,12 @@ impl XmlDocument {
             (::windows_core::Interface::vtable(this).SaveToFileAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn LoadXmlFromBuffer<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, buffer: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IXmlDocumentIO2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).LoadXmlFromBuffer)(::windows_core::Interface::as_raw(this), buffer.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn LoadXmlFromBufferWithSettings<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param1: ::windows_core::IntoParam<'a, XmlLoadSettings>>(&self, buffer: Param0, loadsettings: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IXmlDocumentIO2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).LoadXmlFromBufferWithSettings)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), loadsettings.into_param().abi()).ok() }
@@ -3776,14 +3776,14 @@ impl XmlDocument {
             (::windows_core::Interface::vtable(this).LoadFromUriWithSettingsAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), loadsettings.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<XmlDocument>>(result__)
         })
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn LoadFromFileAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(file: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<XmlDocument>> {
         Self::IXmlDocumentStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).LoadFromFileAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<XmlDocument>>(result__)
         })
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn LoadFromFileWithSettingsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>, Param1: ::windows_core::IntoParam<'a, XmlLoadSettings>>(file: Param0, loadsettings: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<XmlDocument>> {
         Self::IXmlDocumentStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -5815,7 +5815,7 @@ unsafe impl ::core::marker::Sync for XmlLoadSettings {}
 #[repr(transparent)]
 pub struct XmlNamedNodeMap(::windows_core::IUnknown);
 impl XmlNamedNodeMap {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<IXmlNode>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<IXmlNode>>(self)?;
         unsafe {
@@ -5823,7 +5823,7 @@ impl XmlNamedNodeMap {
             (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<IXmlNode>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetAt(&self, index: u32) -> ::windows_core::Result<IXmlNode> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVectorView<IXmlNode>>(self)?;
         unsafe {
@@ -5831,7 +5831,7 @@ impl XmlNamedNodeMap {
             (::windows_core::Interface::vtable(this).GetAt)(::windows_core::Interface::as_raw(this), index, result__.as_mut_ptr()).from_abi::<IXmlNode>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVectorView<IXmlNode>>(self)?;
         unsafe {
@@ -5839,7 +5839,7 @@ impl XmlNamedNodeMap {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn IndexOf<'a, Param0: ::windows_core::IntoParam<'a, IXmlNode>>(&self, value: Param0, index: &mut u32) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVectorView<IXmlNode>>(self)?;
         unsafe {
@@ -5847,7 +5847,7 @@ impl XmlNamedNodeMap {
             (::windows_core::Interface::vtable(this).IndexOf)(::windows_core::Interface::as_raw(this), value.into_param().abi(), index, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetMany(&self, startindex: u32, items: &mut [::core::option::Option<IXmlNode>]) -> ::windows_core::Result<u32> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVectorView<IXmlNode>>(self)?;
         unsafe {
@@ -5942,7 +5942,7 @@ unsafe impl ::windows_core::Interface for XmlNamedNodeMap {
 impl ::windows_core::RuntimeName for XmlNamedNodeMap {
     const NAME: &'static str = "Windows.Data.Xml.Dom.XmlNamedNodeMap";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for XmlNamedNodeMap {
     type Item = IXmlNode;
     type IntoIter = ::winrt_foundation::Collections::VectorViewIterator<Self::Item>;
@@ -5950,7 +5950,7 @@ impl ::core::iter::IntoIterator for XmlNamedNodeMap {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &XmlNamedNodeMap {
     type Item = IXmlNode;
     type IntoIter = ::winrt_foundation::Collections::VectorViewIterator<Self::Item>;
@@ -5998,53 +5998,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Xml
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<XmlNamedNodeMap> for ::winrt_foundation::Collections::IIterable<IXmlNode> {
     type Error = ::windows_core::Error;
     fn try_from(value: XmlNamedNodeMap) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&XmlNamedNodeMap> for ::winrt_foundation::Collections::IIterable<IXmlNode> {
     type Error = ::windows_core::Error;
     fn try_from(value: &XmlNamedNodeMap) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<IXmlNode>> for XmlNamedNodeMap {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<IXmlNode>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<IXmlNode>> for &XmlNamedNodeMap {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<IXmlNode>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<IXmlNode>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<XmlNamedNodeMap> for ::winrt_foundation::Collections::IVectorView<IXmlNode> {
     type Error = ::windows_core::Error;
     fn try_from(value: XmlNamedNodeMap) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&XmlNamedNodeMap> for ::winrt_foundation::Collections::IVectorView<IXmlNode> {
     type Error = ::windows_core::Error;
     fn try_from(value: &XmlNamedNodeMap) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<IXmlNode>> for XmlNamedNodeMap {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVectorView<IXmlNode>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<IXmlNode>> for &XmlNamedNodeMap {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVectorView<IXmlNode>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IVectorView<IXmlNode>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -6055,7 +6055,7 @@ unsafe impl ::core::marker::Sync for XmlNamedNodeMap {}
 #[repr(transparent)]
 pub struct XmlNodeList(::windows_core::IUnknown);
 impl XmlNodeList {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<IXmlNode>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<IXmlNode>>(self)?;
         unsafe {
@@ -6063,7 +6063,7 @@ impl XmlNodeList {
             (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<IXmlNode>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetAt(&self, index: u32) -> ::windows_core::Result<IXmlNode> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVectorView<IXmlNode>>(self)?;
         unsafe {
@@ -6071,7 +6071,7 @@ impl XmlNodeList {
             (::windows_core::Interface::vtable(this).GetAt)(::windows_core::Interface::as_raw(this), index, result__.as_mut_ptr()).from_abi::<IXmlNode>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVectorView<IXmlNode>>(self)?;
         unsafe {
@@ -6079,7 +6079,7 @@ impl XmlNodeList {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn IndexOf<'a, Param0: ::windows_core::IntoParam<'a, IXmlNode>>(&self, value: Param0, index: &mut u32) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVectorView<IXmlNode>>(self)?;
         unsafe {
@@ -6087,7 +6087,7 @@ impl XmlNodeList {
             (::windows_core::Interface::vtable(this).IndexOf)(::windows_core::Interface::as_raw(this), value.into_param().abi(), index, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetMany(&self, startindex: u32, items: &mut [::core::option::Option<IXmlNode>]) -> ::windows_core::Result<u32> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVectorView<IXmlNode>>(self)?;
         unsafe {
@@ -6140,7 +6140,7 @@ unsafe impl ::windows_core::Interface for XmlNodeList {
 impl ::windows_core::RuntimeName for XmlNodeList {
     const NAME: &'static str = "Windows.Data.Xml.Dom.XmlNodeList";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for XmlNodeList {
     type Item = IXmlNode;
     type IntoIter = ::winrt_foundation::Collections::VectorViewIterator<Self::Item>;
@@ -6148,7 +6148,7 @@ impl ::core::iter::IntoIterator for XmlNodeList {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &XmlNodeList {
     type Item = IXmlNode;
     type IntoIter = ::winrt_foundation::Collections::VectorViewIterator<Self::Item>;
@@ -6196,53 +6196,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Xml
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<XmlNodeList> for ::winrt_foundation::Collections::IIterable<IXmlNode> {
     type Error = ::windows_core::Error;
     fn try_from(value: XmlNodeList) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&XmlNodeList> for ::winrt_foundation::Collections::IIterable<IXmlNode> {
     type Error = ::windows_core::Error;
     fn try_from(value: &XmlNodeList) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<IXmlNode>> for XmlNodeList {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<IXmlNode>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<IXmlNode>> for &XmlNodeList {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<IXmlNode>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<IXmlNode>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<XmlNodeList> for ::winrt_foundation::Collections::IVectorView<IXmlNode> {
     type Error = ::windows_core::Error;
     fn try_from(value: XmlNodeList) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&XmlNodeList> for ::winrt_foundation::Collections::IVectorView<IXmlNode> {
     type Error = ::windows_core::Error;
     fn try_from(value: &XmlNodeList) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<IXmlNode>> for XmlNodeList {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVectorView<IXmlNode>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<IXmlNode>> for &XmlNodeList {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVectorView<IXmlNode>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IVectorView<IXmlNode>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)

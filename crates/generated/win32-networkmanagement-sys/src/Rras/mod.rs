@@ -5,13 +5,13 @@ extern "system" {
     pub fn MgmDeleteGroupMembershipEntry(hprotocol: ::win32_foundation_sys::HANDLE, dwsourceaddr: u32, dwsourcemask: u32, dwgroupaddr: u32, dwgroupmask: u32, dwifindex: u32, dwifnexthopipaddr: u32, dwflags: u32) -> u32;
     pub fn MgmGetFirstMfe(pdwbuffersize: *mut u32, pbbuffer: *mut u8, pdwnumentries: *mut u32) -> u32;
     pub fn MgmGetFirstMfeStats(pdwbuffersize: *mut u32, pbbuffer: *mut u8, pdwnumentries: *mut u32, dwflags: u32) -> u32;
-    #[cfg(feature = "Win32_NetworkManagement_IpHelper")]
+    #[cfg(feature = "win32-networkmanagement-sys")]
     pub fn MgmGetMfe(pimm: *mut super::IpHelper::MIB_IPMCAST_MFE, pdwbuffersize: *mut u32, pbbuffer: *mut u8) -> u32;
-    #[cfg(feature = "Win32_NetworkManagement_IpHelper")]
+    #[cfg(feature = "win32-networkmanagement-sys")]
     pub fn MgmGetMfeStats(pimm: *mut super::IpHelper::MIB_IPMCAST_MFE, pdwbuffersize: *mut u32, pbbuffer: *mut u8, dwflags: u32) -> u32;
-    #[cfg(feature = "Win32_NetworkManagement_IpHelper")]
+    #[cfg(feature = "win32-networkmanagement-sys")]
     pub fn MgmGetNextMfe(pimmstart: *mut super::IpHelper::MIB_IPMCAST_MFE, pdwbuffersize: *mut u32, pbbuffer: *mut u8, pdwnumentries: *mut u32) -> u32;
-    #[cfg(feature = "Win32_NetworkManagement_IpHelper")]
+    #[cfg(feature = "win32-networkmanagement-sys")]
     pub fn MgmGetNextMfeStats(pimmstart: *mut super::IpHelper::MIB_IPMCAST_MFE, pdwbuffersize: *mut u32, pbbuffer: *mut u8, pdwnumentries: *mut u32, dwflags: u32) -> u32;
     pub fn MgmGetProtocolOnInterface(dwifindex: u32, dwifnexthopaddr: u32, pdwifprotocolid: *mut u32, pdwifcomponentid: *mut u32) -> u32;
     pub fn MgmGroupEnumerationEnd(henum: ::win32_foundation_sys::HANDLE) -> u32;
@@ -41,14 +41,14 @@ extern "system" {
     pub fn MprAdminInterfaceEnum(hmprserver: isize, dwlevel: u32, lplpbbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: *const u32) -> u32;
     pub fn MprAdminInterfaceGetCredentials(lpwsserver: ::windows_core_sys::PCWSTR, lpwsinterfacename: ::windows_core_sys::PCWSTR, lpwsusername: ::windows_core_sys::PWSTR, lpwspassword: ::windows_core_sys::PWSTR, lpwsdomainname: ::windows_core_sys::PWSTR) -> u32;
     pub fn MprAdminInterfaceGetCredentialsEx(hmprserver: isize, hinterface: ::win32_foundation_sys::HANDLE, dwlevel: u32, lplpbbuffer: *mut *mut u8) -> u32;
-    #[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+    #[cfg(all(feature = "win32-networking-sys", feature = "win32-security-sys"))]
     pub fn MprAdminInterfaceGetCustomInfoEx(hmprserver: isize, hinterface: ::win32_foundation_sys::HANDLE, pcustominfo: *mut MPR_IF_CUSTOMINFOEX2) -> u32;
     pub fn MprAdminInterfaceGetHandle(hmprserver: isize, lpwsinterfacename: ::windows_core_sys::PCWSTR, phinterface: *mut ::win32_foundation_sys::HANDLE, fincludeclientinterfaces: ::win32_foundation_sys::BOOL) -> u32;
     pub fn MprAdminInterfaceGetInfo(hmprserver: isize, hinterface: ::win32_foundation_sys::HANDLE, dwlevel: u32, lplpbbuffer: *const *const u8) -> u32;
     pub fn MprAdminInterfaceQueryUpdateResult(hmprserver: isize, hinterface: ::win32_foundation_sys::HANDLE, dwprotocolid: u32, lpdwupdateresult: *mut u32) -> u32;
     pub fn MprAdminInterfaceSetCredentials(lpwsserver: ::windows_core_sys::PCWSTR, lpwsinterfacename: ::windows_core_sys::PCWSTR, lpwsusername: ::windows_core_sys::PCWSTR, lpwsdomainname: ::windows_core_sys::PCWSTR, lpwspassword: ::windows_core_sys::PCWSTR) -> u32;
     pub fn MprAdminInterfaceSetCredentialsEx(hmprserver: isize, hinterface: ::win32_foundation_sys::HANDLE, dwlevel: u32, lpbbuffer: *const u8) -> u32;
-    #[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+    #[cfg(all(feature = "win32-networking-sys", feature = "win32-security-sys"))]
     pub fn MprAdminInterfaceSetCustomInfoEx(hmprserver: isize, hinterface: ::win32_foundation_sys::HANDLE, pcustominfo: *const MPR_IF_CUSTOMINFOEX2) -> u32;
     pub fn MprAdminInterfaceSetInfo(hmprserver: isize, hinterface: ::win32_foundation_sys::HANDLE, dwlevel: u32, lpbbuffer: *const u8) -> u32;
     pub fn MprAdminInterfaceTransportAdd(hmprserver: isize, hinterface: ::win32_foundation_sys::HANDLE, dwtransportid: u32, pinterfaceinfo: *const u8, dwinterfaceinfosize: u32) -> u32;
@@ -80,11 +80,11 @@ extern "system" {
     pub fn MprAdminServerDisconnect(hmprserver: isize);
     pub fn MprAdminServerGetCredentials(hmprserver: isize, dwlevel: u32, lplpbbuffer: *const *const u8) -> u32;
     pub fn MprAdminServerGetInfo(hmprserver: isize, dwlevel: u32, lplpbbuffer: *mut *mut u8) -> u32;
-    #[cfg(feature = "Win32_Security_Cryptography")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn MprAdminServerGetInfoEx(hmprserver: isize, pserverinfo: *mut MPR_SERVER_EX1) -> u32;
     pub fn MprAdminServerSetCredentials(hmprserver: isize, dwlevel: u32, lpbbuffer: *const u8) -> u32;
     pub fn MprAdminServerSetInfo(hmprserver: isize, dwlevel: u32, lpbbuffer: *const u8) -> u32;
-    #[cfg(feature = "Win32_Security_Cryptography")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn MprAdminServerSetInfoEx(hmprserver: isize, pserverinfo: *const MPR_SERVER_SET_CONFIG_EX1) -> u32;
     pub fn MprAdminTransportCreate(hmprserver: isize, dwtransportid: u32, lpwstransportname: ::windows_core_sys::PCWSTR, pglobalinfo: *const u8, dwglobalinfosize: u32, pclientinterfaceinfo: *const u8, dwclientinterfaceinfosize: u32, lpwsdllpath: ::windows_core_sys::PCWSTR) -> u32;
     pub fn MprAdminTransportGetInfo(hmprserver: isize, dwtransportid: u32, ppglobalinfo: *mut *mut u8, lpdwglobalinfosize: *mut u32, ppclientinterfaceinfo: *mut *mut u8, lpdwclientinterfaceinfosize: *mut u32) -> u32;
@@ -100,11 +100,11 @@ extern "system" {
     pub fn MprConfigInterfaceCreate(hmprconfig: ::win32_foundation_sys::HANDLE, dwlevel: u32, lpbbuffer: *const u8, phrouterinterface: *mut ::win32_foundation_sys::HANDLE) -> u32;
     pub fn MprConfigInterfaceDelete(hmprconfig: ::win32_foundation_sys::HANDLE, hrouterinterface: ::win32_foundation_sys::HANDLE) -> u32;
     pub fn MprConfigInterfaceEnum(hmprconfig: ::win32_foundation_sys::HANDLE, dwlevel: u32, lplpbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: *mut u32) -> u32;
-    #[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+    #[cfg(all(feature = "win32-networking-sys", feature = "win32-security-sys"))]
     pub fn MprConfigInterfaceGetCustomInfoEx(hmprconfig: ::win32_foundation_sys::HANDLE, hrouterinterface: ::win32_foundation_sys::HANDLE, pcustominfo: *mut MPR_IF_CUSTOMINFOEX2) -> u32;
     pub fn MprConfigInterfaceGetHandle(hmprconfig: ::win32_foundation_sys::HANDLE, lpwsinterfacename: ::windows_core_sys::PCWSTR, phrouterinterface: *mut ::win32_foundation_sys::HANDLE) -> u32;
     pub fn MprConfigInterfaceGetInfo(hmprconfig: ::win32_foundation_sys::HANDLE, hrouterinterface: ::win32_foundation_sys::HANDLE, dwlevel: u32, lplpbuffer: *mut *mut u8, lpdwbuffersize: *mut u32) -> u32;
-    #[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+    #[cfg(all(feature = "win32-networking-sys", feature = "win32-security-sys"))]
     pub fn MprConfigInterfaceSetCustomInfoEx(hmprconfig: ::win32_foundation_sys::HANDLE, hrouterinterface: ::win32_foundation_sys::HANDLE, pcustominfo: *const MPR_IF_CUSTOMINFOEX2) -> u32;
     pub fn MprConfigInterfaceSetInfo(hmprconfig: ::win32_foundation_sys::HANDLE, hrouterinterface: ::win32_foundation_sys::HANDLE, dwlevel: u32, lpbbuffer: *const u8) -> u32;
     pub fn MprConfigInterfaceTransportAdd(hmprconfig: ::win32_foundation_sys::HANDLE, hrouterinterface: ::win32_foundation_sys::HANDLE, dwtransportid: u32, lpwstransportname: ::windows_core_sys::PCWSTR, pinterfaceinfo: *const u8, dwinterfaceinfosize: u32, phrouteriftransport: *mut ::win32_foundation_sys::HANDLE) -> u32;
@@ -117,13 +117,13 @@ extern "system" {
     pub fn MprConfigServerConnect(lpwsservername: ::windows_core_sys::PCWSTR, phmprconfig: *mut ::win32_foundation_sys::HANDLE) -> u32;
     pub fn MprConfigServerDisconnect(hmprconfig: ::win32_foundation_sys::HANDLE);
     pub fn MprConfigServerGetInfo(hmprconfig: ::win32_foundation_sys::HANDLE, dwlevel: u32, lplpbbuffer: *mut *mut u8) -> u32;
-    #[cfg(feature = "Win32_Security_Cryptography")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn MprConfigServerGetInfoEx(hmprconfig: ::win32_foundation_sys::HANDLE, pserverinfo: *mut MPR_SERVER_EX1) -> u32;
     pub fn MprConfigServerInstall(dwlevel: u32, pbuffer: *const ::core::ffi::c_void) -> u32;
     pub fn MprConfigServerRefresh(hmprconfig: ::win32_foundation_sys::HANDLE) -> u32;
     pub fn MprConfigServerRestore(hmprconfig: ::win32_foundation_sys::HANDLE, lpwspath: ::windows_core_sys::PCWSTR) -> u32;
     pub fn MprConfigServerSetInfo(hmprserver: isize, dwlevel: u32, lpbbuffer: *const u8) -> u32;
-    #[cfg(feature = "Win32_Security_Cryptography")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn MprConfigServerSetInfoEx(hmprconfig: ::win32_foundation_sys::HANDLE, psetserverconfig: *const MPR_SERVER_SET_CONFIG_EX1) -> u32;
     pub fn MprConfigTransportCreate(hmprconfig: ::win32_foundation_sys::HANDLE, dwtransportid: u32, lpwstransportname: ::windows_core_sys::PCWSTR, pglobalinfo: *const u8, dwglobalinfosize: u32, pclientinterfaceinfo: *const u8, dwclientinterfaceinfosize: u32, lpwsdllpath: ::windows_core_sys::PCWSTR, phroutertransport: *mut ::win32_foundation_sys::HANDLE) -> u32;
     pub fn MprConfigTransportDelete(hmprconfig: ::win32_foundation_sys::HANDLE, hroutertransport: ::win32_foundation_sys::HANDLE) -> u32;
@@ -174,9 +174,9 @@ extern "system" {
     pub fn RasGetAutodialEnableW(param0: u32, param1: *mut i32) -> u32;
     pub fn RasGetAutodialParamA(param0: u32, param1: *mut ::core::ffi::c_void, param2: *mut u32) -> u32;
     pub fn RasGetAutodialParamW(param0: u32, param1: *mut ::core::ffi::c_void, param2: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn RasGetConnectStatusA(param0: HRASCONN, param1: *mut RASCONNSTATUSA) -> u32;
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn RasGetConnectStatusW(param0: HRASCONN, param1: *mut RASCONNSTATUSW) -> u32;
     pub fn RasGetConnectionStatistics(hrasconn: HRASCONN, lpstatistics: *mut RAS_STATS) -> u32;
     pub fn RasGetCountryInfoA(param0: *mut RASCTRYINFO, param1: *mut u32) -> u32;
@@ -191,16 +191,16 @@ extern "system" {
     pub fn RasGetEapUserIdentityW(pszphonebook: ::windows_core_sys::PCWSTR, pszentry: ::windows_core_sys::PCWSTR, dwflags: u32, hwnd: ::win32_foundation_sys::HWND, ppraseapuseridentity: *mut *mut RASEAPUSERIDENTITYW) -> u32;
     pub fn RasGetEntryDialParamsA(param0: ::windows_core_sys::PCSTR, param1: *mut RASDIALPARAMSA, param2: *mut i32) -> u32;
     pub fn RasGetEntryDialParamsW(param0: ::windows_core_sys::PCWSTR, param1: *mut RASDIALPARAMSW, param2: *mut i32) -> u32;
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn RasGetEntryPropertiesA(param0: ::windows_core_sys::PCSTR, param1: ::windows_core_sys::PCSTR, param2: *mut RASENTRYA, param3: *mut u32, param4: *mut u8, param5: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn RasGetEntryPropertiesW(param0: ::windows_core_sys::PCWSTR, param1: ::windows_core_sys::PCWSTR, param2: *mut RASENTRYW, param3: *mut u32, param4: *mut u8, param5: *mut u32) -> u32;
     pub fn RasGetErrorStringA(resourceid: u32, lpszstring: ::windows_core_sys::PSTR, inbufsize: u32) -> u32;
     pub fn RasGetErrorStringW(resourceid: u32, lpszstring: ::windows_core_sys::PWSTR, inbufsize: u32) -> u32;
     pub fn RasGetLinkStatistics(hrasconn: HRASCONN, dwsubentry: u32, lpstatistics: *mut RAS_STATS) -> u32;
     pub fn RasGetPCscf(lpszpcscf: ::windows_core_sys::PWSTR) -> u32;
     pub fn RasGetProjectionInfoA(param0: HRASCONN, param1: RASPROJECTION, param2: *mut ::core::ffi::c_void, param3: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn RasGetProjectionInfoEx(hrasconn: HRASCONN, prasprojection: *mut RAS_PROJECTION_INFO, lpdwsize: *mut u32) -> u32;
     pub fn RasGetProjectionInfoW(param0: HRASCONN, param1: RASPROJECTION, param2: *mut ::core::ffi::c_void, param3: *mut u32) -> u32;
     pub fn RasGetSubEntryHandleA(param0: HRASCONN, param1: u32, param2: *mut HRASCONN) -> u32;
@@ -228,22 +228,22 @@ extern "system" {
     pub fn RasSetEapUserDataW(htoken: ::win32_foundation_sys::HANDLE, pszphonebook: ::windows_core_sys::PCWSTR, pszentry: ::windows_core_sys::PCWSTR, pbeapdata: *const u8, dwsizeofeapdata: u32) -> u32;
     pub fn RasSetEntryDialParamsA(param0: ::windows_core_sys::PCSTR, param1: *const RASDIALPARAMSA, param2: ::win32_foundation_sys::BOOL) -> u32;
     pub fn RasSetEntryDialParamsW(param0: ::windows_core_sys::PCWSTR, param1: *const RASDIALPARAMSW, param2: ::win32_foundation_sys::BOOL) -> u32;
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn RasSetEntryPropertiesA(param0: ::windows_core_sys::PCSTR, param1: ::windows_core_sys::PCSTR, param2: *const RASENTRYA, param3: u32, param4: *const u8, param5: u32) -> u32;
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn RasSetEntryPropertiesW(param0: ::windows_core_sys::PCWSTR, param1: ::windows_core_sys::PCWSTR, param2: *const RASENTRYW, param3: u32, param4: *const u8, param5: u32) -> u32;
     pub fn RasSetSubEntryPropertiesA(param0: ::windows_core_sys::PCSTR, param1: ::windows_core_sys::PCSTR, param2: u32, param3: *const RASSUBENTRYA, param4: u32, param5: *const u8, param6: u32) -> u32;
     pub fn RasSetSubEntryPropertiesW(param0: ::windows_core_sys::PCWSTR, param1: ::windows_core_sys::PCWSTR, param2: u32, param3: *const RASSUBENTRYW, param4: u32, param5: *const u8, param6: u32) -> u32;
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn RasUpdateConnection(hrasconn: HRASCONN, lprasupdateconn: *const RASUPDATECONN) -> u32;
     pub fn RasValidateEntryNameA(param0: ::windows_core_sys::PCSTR, param1: ::windows_core_sys::PCSTR) -> u32;
     pub fn RasValidateEntryNameW(param0: ::windows_core_sys::PCWSTR, param1: ::windows_core_sys::PCWSTR) -> u32;
     pub fn RtmAddNextHop(rtmreghandle: isize, nexthopinfo: *mut RTM_NEXTHOP_INFO, nexthophandle: *mut isize, changeflags: *mut u32) -> u32;
     pub fn RtmAddRouteToDest(rtmreghandle: isize, routehandle: *mut isize, destaddress: *mut RTM_NET_ADDRESS, routeinfo: *mut RTM_ROUTE_INFO, timetolive: u32, routelisthandle: isize, notifytype: u32, notifyhandle: isize, changeflags: *mut u32) -> u32;
     pub fn RtmBlockMethods(rtmreghandle: isize, targethandle: ::win32_foundation_sys::HANDLE, targettype: u8, blockingflag: u32) -> u32;
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn RtmConvertIpv6AddressAndLengthToNetAddress(pnetaddress: *mut RTM_NET_ADDRESS, address: ::win32_networking_sys::WinSock::IN6_ADDR, dwlength: u32, dwaddresssize: u32) -> u32;
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn RtmConvertNetAddressToIpv6AddressAndLength(pnetaddress: *mut RTM_NET_ADDRESS, paddress: *mut ::win32_networking_sys::WinSock::IN6_ADDR, plength: *mut u32, dwaddresssize: u32) -> u32;
     pub fn RtmCreateDestEnum(rtmreghandle: isize, targetviews: u32, enumflags: u32, netaddress: *mut RTM_NET_ADDRESS, protocolid: u32, rtmenumhandle: *mut isize) -> u32;
     pub fn RtmCreateNextHopEnum(rtmreghandle: isize, enumflags: u32, netaddress: *mut RTM_NET_ADDRESS, rtmenumhandle: *mut isize) -> u32;
@@ -611,16 +611,16 @@ impl ::core::clone::Clone for GRE_CONFIG_PARAMS0 {
 }
 pub type HRASCONN = isize;
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 pub struct IKEV2_CONFIG_PARAMS {
     pub dwNumPorts: u32,
     pub dwPortFlags: u32,
     pub dwTunnelConfigParamFlags: u32,
     pub TunnelConfigParams: IKEV2_TUNNEL_CONFIG_PARAMS4,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for IKEV2_CONFIG_PARAMS {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for IKEV2_CONFIG_PARAMS {
     fn clone(&self) -> Self {
         *self
@@ -690,7 +690,7 @@ impl ::core::clone::Clone for IKEV2_PROJECTION_INFO2 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 pub struct IKEV2_TUNNEL_CONFIG_PARAMS2 {
     pub dwIdleTimeout: u32,
     pub dwNetworkBlackoutTime: u32,
@@ -703,16 +703,16 @@ pub struct IKEV2_TUNNEL_CONFIG_PARAMS2 {
     pub dwEncryptionType: u32,
     pub customPolicy: *mut ROUTER_CUSTOM_IKEv2_POLICY0,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for IKEV2_TUNNEL_CONFIG_PARAMS2 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for IKEV2_TUNNEL_CONFIG_PARAMS2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 pub struct IKEV2_TUNNEL_CONFIG_PARAMS3 {
     pub dwIdleTimeout: u32,
     pub dwNetworkBlackoutTime: u32,
@@ -728,16 +728,16 @@ pub struct IKEV2_TUNNEL_CONFIG_PARAMS3 {
     pub certificateEKUs: *mut MPR_CERT_EKU,
     pub machineCertificateHash: ::win32_security_sys::Cryptography::CRYPTOAPI_BLOB,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for IKEV2_TUNNEL_CONFIG_PARAMS3 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for IKEV2_TUNNEL_CONFIG_PARAMS3 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 pub struct IKEV2_TUNNEL_CONFIG_PARAMS4 {
     pub dwIdleTimeout: u32,
     pub dwNetworkBlackoutTime: u32,
@@ -754,9 +754,9 @@ pub struct IKEV2_TUNNEL_CONFIG_PARAMS4 {
     pub machineCertificateHash: ::win32_security_sys::Cryptography::CRYPTOAPI_BLOB,
     pub dwMmSaLifeTime: u32,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for IKEV2_TUNNEL_CONFIG_PARAMS4 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for IKEV2_TUNNEL_CONFIG_PARAMS4 {
     fn clone(&self) -> Self {
         *self
@@ -850,7 +850,7 @@ pub const MGM_JOIN_STATE_FLAG: u32 = 1u32;
 pub const MGM_MFE_STATS_0: u32 = 1u32;
 pub const MGM_MFE_STATS_1: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct MPRAPI_ADMIN_DLL_CALLBACKS {
     pub revision: u8,
     pub lpfnMprAdminGetIpAddressForUser: PMPRADMINGETIPADDRESSFORUSER,
@@ -866,9 +866,9 @@ pub struct MPRAPI_ADMIN_DLL_CALLBACKS {
     pub lpfnRasAdminConnectionHangupNotificationEx: PMPRADMINCONNECTIONHANGUPNOTIFICATIONEX,
     pub lpfnRASValidatePreAuthenticatedConnectionEx: PMPRADMINRASVALIDATEPREAUTHENTICATEDCONNECTIONEX,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for MPRAPI_ADMIN_DLL_CALLBACKS {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for MPRAPI_ADMIN_DLL_CALLBACKS {
     fn clone(&self) -> Self {
         *self
@@ -923,23 +923,23 @@ pub const MPRAPI_SET_CONFIG_PROTOCOL_FOR_L2TP: u32 = 2u32;
 pub const MPRAPI_SET_CONFIG_PROTOCOL_FOR_PPTP: u32 = 1u32;
 pub const MPRAPI_SET_CONFIG_PROTOCOL_FOR_SSTP: u32 = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 pub struct MPRAPI_TUNNEL_CONFIG_PARAMS0 {
     pub IkeConfigParams: IKEV2_CONFIG_PARAMS,
     pub PptpConfigParams: PPTP_CONFIG_PARAMS,
     pub L2tpConfigParams: L2TP_CONFIG_PARAMS1,
     pub SstpConfigParams: SSTP_CONFIG_PARAMS,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for MPRAPI_TUNNEL_CONFIG_PARAMS0 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for MPRAPI_TUNNEL_CONFIG_PARAMS0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 pub struct MPRAPI_TUNNEL_CONFIG_PARAMS1 {
     pub IkeConfigParams: IKEV2_CONFIG_PARAMS,
     pub PptpConfigParams: PPTP_CONFIG_PARAMS,
@@ -947,9 +947,9 @@ pub struct MPRAPI_TUNNEL_CONFIG_PARAMS1 {
     pub SstpConfigParams: SSTP_CONFIG_PARAMS,
     pub GREConfigParams: GRE_CONFIG_PARAMS0,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for MPRAPI_TUNNEL_CONFIG_PARAMS1 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for MPRAPI_TUNNEL_CONFIG_PARAMS1 {
     fn clone(&self) -> Self {
         *self
@@ -1087,45 +1087,45 @@ impl ::core::clone::Clone for MPR_IFTRANSPORT_0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 pub struct MPR_IF_CUSTOMINFOEX0 {
     pub Header: MPRAPI_OBJECT_HEADER,
     pub dwFlags: u32,
     pub customIkev2Config: ROUTER_IKEv2_IF_CUSTOM_CONFIG0,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for MPR_IF_CUSTOMINFOEX0 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for MPR_IF_CUSTOMINFOEX0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 pub struct MPR_IF_CUSTOMINFOEX1 {
     pub Header: MPRAPI_OBJECT_HEADER,
     pub dwFlags: u32,
     pub customIkev2Config: ROUTER_IKEv2_IF_CUSTOM_CONFIG1,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for MPR_IF_CUSTOMINFOEX1 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for MPR_IF_CUSTOMINFOEX1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking-sys", feature = "win32-security-sys"))]
 pub struct MPR_IF_CUSTOMINFOEX2 {
     pub Header: MPRAPI_OBJECT_HEADER,
     pub dwFlags: u32,
     pub customIkev2Config: ROUTER_IKEv2_IF_CUSTOM_CONFIG2,
 }
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking-sys", feature = "win32-security-sys"))]
 impl ::core::marker::Copy for MPR_IF_CUSTOMINFOEX2 {}
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking-sys", feature = "win32-security-sys"))]
 impl ::core::clone::Clone for MPR_IF_CUSTOMINFOEX2 {
     fn clone(&self) -> Self {
         *self
@@ -1211,7 +1211,7 @@ impl ::core::clone::Clone for MPR_INTERFACE_2 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct MPR_INTERFACE_3 {
     pub wszInterfaceName: [u16; 257],
     pub hInterface: ::win32_foundation_sys::HANDLE,
@@ -1255,9 +1255,9 @@ pub struct MPR_INTERFACE_3 {
     pub ipv6addrDnsAlt: ::win32_networking_sys::WinSock::IN6_ADDR,
     pub ipv6addr: *mut ::win32_networking_sys::WinSock::IN6_ADDR,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for MPR_INTERFACE_3 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for MPR_INTERFACE_3 {
     fn clone(&self) -> Self {
         *self
@@ -1339,7 +1339,7 @@ impl ::core::clone::Clone for MPR_SERVER_2 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 pub struct MPR_SERVER_EX0 {
     pub Header: MPRAPI_OBJECT_HEADER,
     pub fLanOnlyMode: u32,
@@ -1349,16 +1349,16 @@ pub struct MPR_SERVER_EX0 {
     pub Reserved: u32,
     pub ConfigParams: MPRAPI_TUNNEL_CONFIG_PARAMS0,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for MPR_SERVER_EX0 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for MPR_SERVER_EX0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 pub struct MPR_SERVER_EX1 {
     pub Header: MPRAPI_OBJECT_HEADER,
     pub fLanOnlyMode: u32,
@@ -1368,39 +1368,39 @@ pub struct MPR_SERVER_EX1 {
     pub Reserved: u32,
     pub ConfigParams: MPRAPI_TUNNEL_CONFIG_PARAMS1,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for MPR_SERVER_EX1 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for MPR_SERVER_EX1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 pub struct MPR_SERVER_SET_CONFIG_EX0 {
     pub Header: MPRAPI_OBJECT_HEADER,
     pub setConfigForProtocols: u32,
     pub ConfigParams: MPRAPI_TUNNEL_CONFIG_PARAMS0,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for MPR_SERVER_SET_CONFIG_EX0 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for MPR_SERVER_SET_CONFIG_EX0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 pub struct MPR_SERVER_SET_CONFIG_EX1 {
     pub Header: MPRAPI_OBJECT_HEADER,
     pub setConfigForProtocols: u32,
     pub ConfigParams: MPRAPI_TUNNEL_CONFIG_PARAMS1,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for MPR_SERVER_SET_CONFIG_EX1 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for MPR_SERVER_SET_CONFIG_EX1 {
     fn clone(&self) -> Self {
         *self
@@ -1419,16 +1419,16 @@ impl ::core::clone::Clone for MPR_TRANSPORT_0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct MPR_VPN_TRAFFIC_SELECTORS {
     pub numTsi: u32,
     pub numTsr: u32,
     pub tsI: *mut _MPR_VPN_SELECTOR,
     pub tsR: *mut _MPR_VPN_SELECTOR,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for MPR_VPN_TRAFFIC_SELECTORS {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for MPR_VPN_TRAFFIC_SELECTORS {
     fn clone(&self) -> Self {
         *self
@@ -1480,12 +1480,12 @@ pub type PMPRADMINCONNECTIONHANGUPNOTIFICATION2 = ::core::option::Option<unsafe 
 pub type PMPRADMINCONNECTIONHANGUPNOTIFICATION3 = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_CONNECTION_0, param1: *mut RAS_CONNECTION_1, param2: *mut RAS_CONNECTION_2, param3: RAS_CONNECTION_3)>;
 pub type PMPRADMINCONNECTIONHANGUPNOTIFICATIONEX = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_CONNECTION_EX)>;
 pub type PMPRADMINGETIPADDRESSFORUSER = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: ::windows_core_sys::PCWSTR, param2: *mut u32, param3: *mut ::win32_foundation_sys::BOOL) -> u32>;
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub type PMPRADMINGETIPV6ADDRESSFORUSER = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: ::windows_core_sys::PCWSTR, param2: *mut ::win32_networking_sys::WinSock::IN6_ADDR, param3: *mut ::win32_foundation_sys::BOOL) -> u32>;
 pub type PMPRADMINLINKHANGUPNOTIFICATION = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_PORT_0, param1: *mut RAS_PORT_1)>;
 pub type PMPRADMINRASVALIDATEPREAUTHENTICATEDCONNECTIONEX = ::core::option::Option<unsafe extern "system" fn(param0: *mut AUTH_VALIDATION_EX) -> u32>;
 pub type PMPRADMINRELEASEIPADRESS = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: ::windows_core_sys::PCWSTR, param2: *mut u32)>;
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub type PMPRADMINRELEASEIPV6ADDRESSFORUSER = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: ::windows_core_sys::PCWSTR, param2: *mut ::win32_networking_sys::WinSock::IN6_ADDR)>;
 pub type PMPRADMINTERMINATEDLL = ::core::option::Option<unsafe extern "system" fn() -> u32>;
 #[repr(C)]
@@ -1973,7 +1973,7 @@ pub const RASCS_InvokeEapUI: RASCONNSTATE = 4100i32;
 pub const RASCS_Connected: RASCONNSTATE = 8192i32;
 pub const RASCS_Disconnected: RASCONNSTATE = 8193i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct RASCONNSTATUSA {
     pub dwSize: u32,
     pub rasconnstate: RASCONNSTATE,
@@ -1985,16 +1985,16 @@ pub struct RASCONNSTATUSA {
     pub remoteEndPoint: RASTUNNELENDPOINT,
     pub rasconnsubstate: RASCONNSUBSTATE,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for RASCONNSTATUSA {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for RASCONNSTATUSA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct RASCONNSTATUSW {
     pub dwSize: u32,
     pub rasconnstate: RASCONNSTATE,
@@ -2006,9 +2006,9 @@ pub struct RASCONNSTATUSW {
     pub remoteEndPoint: RASTUNNELENDPOINT,
     pub rasconnsubstate: RASCONNSUBSTATE,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for RASCONNSTATUSW {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for RASCONNSTATUSW {
     fn clone(&self) -> Self {
         *self
@@ -2278,7 +2278,7 @@ pub const RASEDFLAG_NoRename: u32 = 8u32;
 pub const RASEDFLAG_PositionDlg: u32 = 1u32;
 pub const RASEDFLAG_ShellOwned: u32 = 1073741824u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct RASENTRYA {
     pub dwSize: u32,
     pub dwfOptions: u32,
@@ -2342,9 +2342,9 @@ pub struct RASENTRYA {
     pub IdrType: IKEV2_ID_PAYLOAD_TYPE,
     pub fDisableIKEv2Fragmentation: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for RASENTRYA {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for RASENTRYA {
     fn clone(&self) -> Self {
         *self
@@ -2413,7 +2413,7 @@ impl ::core::clone::Clone for RASENTRYNAMEW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct RASENTRYW {
     pub dwSize: u32,
     pub dwfOptions: u32,
@@ -2477,9 +2477,9 @@ pub struct RASENTRYW {
     pub IdrType: IKEV2_ID_PAYLOAD_TYPE,
     pub fDisableIKEv2Fragmentation: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for RASENTRYW {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for RASENTRYW {
     fn clone(&self) -> Self {
         *self
@@ -2562,7 +2562,7 @@ pub const RASFP_Slip: u32 = 2u32;
 pub const RASIDS_Disabled: u32 = 4294967295u32;
 pub const RASIDS_UseGlobalValue: u32 = 0u32;
 #[repr(C, packed(4))]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct RASIKEV2_PROJECTION_INFO {
     pub dwIPv4NegotiationError: u32,
     pub ipv4Address: ::win32_networking_sys::WinSock::IN_ADDR,
@@ -2580,9 +2580,9 @@ pub struct RASIKEV2_PROJECTION_INFO {
     pub numIPv6ServerAddresses: u32,
     pub ipv6ServerAddresses: *mut ::win32_networking_sys::WinSock::IN6_ADDR,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for RASIKEV2_PROJECTION_INFO {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for RASIKEV2_PROJECTION_INFO {
     fn clone(&self) -> Self {
         *self
@@ -2870,7 +2870,7 @@ impl ::core::clone::Clone for RASPPPNBFW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct RASPPP_PROJECTION_INFO {
     pub dwIPv4NegotiationError: u32,
     pub ipv4Address: ::win32_networking_sys::WinSock::IN_ADDR,
@@ -2896,9 +2896,9 @@ pub struct RASPPP_PROJECTION_INFO {
     pub dwCcpOptions: u32,
     pub dwCcpServerOptions: u32,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for RASPPP_PROJECTION_INFO {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for RASPPP_PROJECTION_INFO {
     fn clone(&self) -> Self {
         *self
@@ -2961,28 +2961,28 @@ impl ::core::clone::Clone for RASSUBENTRYW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct RASTUNNELENDPOINT {
     pub dwType: u32,
     pub Anonymous: RASTUNNELENDPOINT_0,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for RASTUNNELENDPOINT {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for RASTUNNELENDPOINT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub union RASTUNNELENDPOINT_0 {
     pub ipv4: ::win32_networking_sys::WinSock::IN_ADDR,
     pub ipv6: ::win32_networking_sys::WinSock::IN6_ADDR,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for RASTUNNELENDPOINT_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for RASTUNNELENDPOINT_0 {
     fn clone(&self) -> Self {
         *self
@@ -2992,7 +2992,7 @@ pub const RASTUNNELENDPOINT_IPv4: u32 = 1u32;
 pub const RASTUNNELENDPOINT_IPv6: u32 = 2u32;
 pub const RASTUNNELENDPOINT_UNKNOWN: u32 = 0u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct RASUPDATECONN {
     pub version: RASAPIVERSION,
     pub dwSize: u32,
@@ -3001,9 +3001,9 @@ pub struct RASUPDATECONN {
     pub localEndPoint: RASTUNNELENDPOINT,
     pub remoteEndPoint: RASTUNNELENDPOINT,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for RASUPDATECONN {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for RASUPDATECONN {
     fn clone(&self) -> Self {
         *self
@@ -3274,29 +3274,29 @@ pub const RAS_PORT_AUTHENTICATING: RAS_PORT_CONDITION = 4i32;
 pub const RAS_PORT_AUTHENTICATED: RAS_PORT_CONDITION = 5i32;
 pub const RAS_PORT_INITIALIZING: RAS_PORT_CONDITION = 6i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct RAS_PROJECTION_INFO {
     pub version: RASAPIVERSION,
     pub r#type: RASPROJECTION_INFO_TYPE,
     pub Anonymous: RAS_PROJECTION_INFO_0,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for RAS_PROJECTION_INFO {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for RAS_PROJECTION_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub union RAS_PROJECTION_INFO_0 {
     pub ppp: RASPPP_PROJECTION_INFO,
     pub ikev2: RASIKEV2_PROJECTION_INFO,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for RAS_PROJECTION_INFO_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for RAS_PROJECTION_INFO_0 {
     fn clone(&self) -> Self {
         *self
@@ -3422,23 +3422,23 @@ impl ::core::clone::Clone for ROUTER_CUSTOM_IKEv2_POLICY0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 pub struct ROUTER_IKEv2_IF_CUSTOM_CONFIG0 {
     pub dwSaLifeTime: u32,
     pub dwSaDataSize: u32,
     pub certificateName: ::win32_security_sys::Cryptography::CRYPTOAPI_BLOB,
     pub customPolicy: *mut ROUTER_CUSTOM_IKEv2_POLICY0,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for ROUTER_IKEv2_IF_CUSTOM_CONFIG0 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for ROUTER_IKEv2_IF_CUSTOM_CONFIG0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 pub struct ROUTER_IKEv2_IF_CUSTOM_CONFIG1 {
     pub dwSaLifeTime: u32,
     pub dwSaDataSize: u32,
@@ -3446,16 +3446,16 @@ pub struct ROUTER_IKEv2_IF_CUSTOM_CONFIG1 {
     pub customPolicy: *mut ROUTER_CUSTOM_IKEv2_POLICY0,
     pub certificateHash: ::win32_security_sys::Cryptography::CRYPTOAPI_BLOB,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for ROUTER_IKEv2_IF_CUSTOM_CONFIG1 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for ROUTER_IKEv2_IF_CUSTOM_CONFIG1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking-sys", feature = "win32-security-sys"))]
 pub struct ROUTER_IKEv2_IF_CUSTOM_CONFIG2 {
     pub dwSaLifeTime: u32,
     pub dwSaDataSize: u32,
@@ -3465,9 +3465,9 @@ pub struct ROUTER_IKEv2_IF_CUSTOM_CONFIG2 {
     pub dwMmSaLifeTime: u32,
     pub vpnTrafficSelectors: MPR_VPN_TRAFFIC_SELECTORS,
 }
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking-sys", feature = "win32-security-sys"))]
 impl ::core::marker::Copy for ROUTER_IKEv2_IF_CUSTOM_CONFIG2 {}
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking-sys", feature = "win32-security-sys"))]
 impl ::core::clone::Clone for ROUTER_IKEv2_IF_CUSTOM_CONFIG2 {
     fn clone(&self) -> Self {
         *self
@@ -3800,21 +3800,21 @@ impl ::core::clone::Clone for SOURCE_GROUP_ENTRY {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 pub struct SSTP_CERT_INFO {
     pub isDefault: ::win32_foundation_sys::BOOL,
     pub certBlob: ::win32_security_sys::Cryptography::CRYPTOAPI_BLOB,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for SSTP_CERT_INFO {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for SSTP_CERT_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 pub struct SSTP_CONFIG_PARAMS {
     pub dwNumPorts: u32,
     pub dwPortFlags: u32,
@@ -3822,37 +3822,37 @@ pub struct SSTP_CONFIG_PARAMS {
     pub certAlgorithm: u32,
     pub sstpCertDetails: SSTP_CERT_INFO,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for SSTP_CONFIG_PARAMS {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for SSTP_CONFIG_PARAMS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct VPN_TS_IP_ADDRESS {
     pub Type: u16,
     pub Anonymous: VPN_TS_IP_ADDRESS_0,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for VPN_TS_IP_ADDRESS {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for VPN_TS_IP_ADDRESS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub union VPN_TS_IP_ADDRESS_0 {
     pub v4: ::win32_networking_sys::WinSock::IN_ADDR,
     pub v6: ::win32_networking_sys::WinSock::IN6_ADDR,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for VPN_TS_IP_ADDRESS_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for VPN_TS_IP_ADDRESS_0 {
     fn clone(&self) -> Self {
         *self
@@ -3875,7 +3875,7 @@ pub const VS_SstpOnly: u32 = 5u32;
 pub const WARNING_MSG_ALIAS_NOT_ADDED: u32 = 644u32;
 pub const WM_RASDIALEVENT: u32 = 52429u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct _MPR_VPN_SELECTOR {
     pub r#type: MPR_VPN_TS_TYPE,
     pub protocolId: u8,
@@ -3885,9 +3885,9 @@ pub struct _MPR_VPN_SELECTOR {
     pub addrStart: VPN_TS_IP_ADDRESS,
     pub addrEnd: VPN_TS_IP_ADDRESS,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for _MPR_VPN_SELECTOR {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for _MPR_VPN_SELECTOR {
     fn clone(&self) -> Self {
         *self

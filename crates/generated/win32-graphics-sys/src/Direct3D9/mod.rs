@@ -1139,7 +1139,7 @@ pub const D3DISSUE_END: u32 = 1u32;
 pub const D3DKEYEXCHANGE_DXVA: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1137932124, data2: 14565, data3: 18724, data4: [141, 134, 211, 252, 207, 21, 62, 155] };
 pub const D3DKEYEXCHANGE_RSAES_OAEP: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3247741077, data2: 55082, data3: 18973, data4: [142, 93, 237, 133, 125, 23, 21, 32] };
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct D3DLIGHT9 {
     pub Type: D3DLIGHTTYPE,
     pub Diffuse: D3DCOLORVALUE,
@@ -1155,9 +1155,9 @@ pub struct D3DLIGHT9 {
     pub Theta: f32,
     pub Phi: f32,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for D3DLIGHT9 {}
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for D3DLIGHT9 {
     fn clone(&self) -> Self {
         *self

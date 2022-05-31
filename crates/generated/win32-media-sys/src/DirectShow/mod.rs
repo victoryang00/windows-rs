@@ -194,7 +194,7 @@ impl ::core::clone::Clone for AMVABeginFrameInfo {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_DirectDraw")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct AMVACompBufferInfo {
     pub dwNumCompBuffers: u32,
     pub dwWidthToCreate: u32,
@@ -203,9 +203,9 @@ pub struct AMVACompBufferInfo {
     pub ddCompCaps: ::win32_graphics_sys::DirectDraw::DDSCAPS2,
     pub ddPixelFormat: ::win32_graphics_sys::DirectDraw::DDPIXELFORMAT,
 }
-#[cfg(feature = "Win32_Graphics_DirectDraw")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for AMVACompBufferInfo {}
-#[cfg(feature = "Win32_Graphics_DirectDraw")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for AMVACompBufferInfo {
     fn clone(&self) -> Self {
         *self
@@ -233,30 +233,30 @@ impl ::core::clone::Clone for AMVAInternalMemInfo {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_DirectDraw")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct AMVAUncompBufferInfo {
     pub dwMinNumSurfaces: u32,
     pub dwMaxNumSurfaces: u32,
     pub ddUncompPixelFormat: ::win32_graphics_sys::DirectDraw::DDPIXELFORMAT,
 }
-#[cfg(feature = "Win32_Graphics_DirectDraw")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for AMVAUncompBufferInfo {}
-#[cfg(feature = "Win32_Graphics_DirectDraw")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for AMVAUncompBufferInfo {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_DirectDraw")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct AMVAUncompDataInfo {
     pub dwUncompWidth: u32,
     pub dwUncompHeight: u32,
     pub ddUncompPixelFormat: ::win32_graphics_sys::DirectDraw::DDPIXELFORMAT,
 }
-#[cfg(feature = "Win32_Graphics_DirectDraw")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for AMVAUncompDataInfo {}
-#[cfg(feature = "Win32_Graphics_DirectDraw")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for AMVAUncompDataInfo {
     fn clone(&self) -> Self {
         *self
@@ -656,31 +656,31 @@ pub const AM_MPEG2Profile_SNRScalable: AM_MPEG2Profile = 3i32;
 pub const AM_MPEG2Profile_SpatiallyScalable: AM_MPEG2Profile = 4i32;
 pub const AM_MPEG2Profile_High: AM_MPEG2Profile = 5i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Media_MediaFoundation")]
+#[cfg(feature = "win32-media-sys")]
 pub struct AM_MPEGSTREAMTYPE {
     pub dwStreamId: u32,
     pub dwReserved: u32,
     pub mt: super::MediaFoundation::AM_MEDIA_TYPE,
     pub bFormat: [u8; 1],
 }
-#[cfg(feature = "Win32_Media_MediaFoundation")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for AM_MPEGSTREAMTYPE {}
-#[cfg(feature = "Win32_Media_MediaFoundation")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for AM_MPEGSTREAMTYPE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_MediaFoundation")]
+#[cfg(feature = "win32-media-sys")]
 pub struct AM_MPEGSYSTEMTYPE {
     pub dwBitRate: u32,
     pub cStreams: u32,
     pub Streams: [AM_MPEGSTREAMTYPE; 1],
 }
-#[cfg(feature = "Win32_Media_MediaFoundation")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for AM_MPEGSYSTEMTYPE {}
-#[cfg(feature = "Win32_Media_MediaFoundation")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for AM_MPEGSYSTEMTYPE {
     fn clone(&self) -> Self {
         *self
@@ -787,7 +787,7 @@ impl ::core::clone::Clone for AM_QueryRate {
 pub const AM_ReverseBlockEnd: u32 = 4u32;
 pub const AM_ReverseBlockStart: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Media_MediaFoundation")]
+#[cfg(feature = "win32-media-sys")]
 pub struct AM_SAMPLE2_PROPERTIES {
     pub cbData: u32,
     pub dwTypeSpecificFlags: u32,
@@ -800,9 +800,9 @@ pub struct AM_SAMPLE2_PROPERTIES {
     pub pbBuffer: *mut u8,
     pub cbBuffer: i32,
 }
-#[cfg(feature = "Win32_Media_MediaFoundation")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for AM_SAMPLE2_PROPERTIES {}
-#[cfg(feature = "Win32_Media_MediaFoundation")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for AM_SAMPLE2_PROPERTIES {
     fn clone(&self) -> Self {
         *self
@@ -1117,16 +1117,16 @@ impl ::core::clone::Clone for AVIOLDINDEX_0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct AVIPALCHANGE {
     pub bFirstEntry: u8,
     pub bNumEntries: u8,
     pub wFlags: u16,
     pub peNew: [::win32_graphics_sys::Gdi::PALETTEENTRY; 1],
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for AVIPALCHANGE {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for AVIPALCHANGE {
     fn clone(&self) -> Self {
         *self
@@ -3380,7 +3380,7 @@ impl ::core::clone::Clone for DVINFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_MediaFoundation")]
+#[cfg(feature = "win32-media-sys")]
 pub struct DVR_STREAM_DESC {
     pub Version: u32,
     pub StreamId: u32,
@@ -3391,9 +3391,9 @@ pub struct DVR_STREAM_DESC {
     pub guidFormatType: ::windows_core_sys::GUID,
     pub MediaType: super::MediaFoundation::AM_MEDIA_TYPE,
 }
-#[cfg(feature = "Win32_Media_MediaFoundation")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for DVR_STREAM_DESC {}
-#[cfg(feature = "Win32_Media_MediaFoundation")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for DVR_STREAM_DESC {
     fn clone(&self) -> Self {
         *self
@@ -3401,7 +3401,7 @@ impl ::core::clone::Clone for DVR_STREAM_DESC {
 }
 pub const DWORD_ALLPARAMS: i32 = -1i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Direct3D9", feature = "Win32_Media_MediaFoundation"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-media-sys"))]
 pub struct DXVA2SW_CALLBACKS {
     pub Size: u32,
     pub GetVideoProcessorRenderTargetCount: PDXVA2SW_GETVIDEOPROCESSORRENDERTARGETCOUNT,
@@ -3418,16 +3418,16 @@ pub struct DXVA2SW_CALLBACKS {
     pub VideoProcessSetRenderTarget: PDXVA2SW_VIDEOPROCESSSETRENDERTARGET,
     pub VideoProcessBlt: PDXVA2SW_VIDEOPROCESSBLT,
 }
-#[cfg(all(feature = "Win32_Graphics_Direct3D9", feature = "Win32_Media_MediaFoundation"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-media-sys"))]
 impl ::core::marker::Copy for DXVA2SW_CALLBACKS {}
-#[cfg(all(feature = "Win32_Graphics_Direct3D9", feature = "Win32_Media_MediaFoundation"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-media-sys"))]
 impl ::core::clone::Clone for DXVA2SW_CALLBACKS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Diagnostics_Etw")]
+#[cfg(feature = "win32-system-sys")]
 pub struct DXVA2TraceVideoProcessBltData {
     pub wmiHeader: ::win32_system_sys::Diagnostics::Etw::EVENT_TRACE_HEADER,
     pub pObject: u64,
@@ -3436,9 +3436,9 @@ pub struct DXVA2TraceVideoProcessBltData {
     pub TargetRect: ::win32_foundation_sys::RECT,
     pub Enter: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_System_Diagnostics_Etw")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for DXVA2TraceVideoProcessBltData {}
-#[cfg(feature = "Win32_System_Diagnostics_Etw")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for DXVA2TraceVideoProcessBltData {
     fn clone(&self) -> Self {
         *self
@@ -3447,16 +3447,16 @@ impl ::core::clone::Clone for DXVA2TraceVideoProcessBltData {
 pub const DXVA2Trace_Control: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2688052853, data2: 63244, data3: 17996, data4: [169, 206, 51, 196, 78, 9, 22, 35] };
 pub const DXVA2Trace_DecodeDevBeginFrame: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2681318646, data2: 17611, data3: 17975, data4: [188, 98, 44, 17, 169, 96, 143, 144] };
 #[repr(C)]
-#[cfg(feature = "Win32_System_Diagnostics_Etw")]
+#[cfg(feature = "win32-system-sys")]
 pub struct DXVA2Trace_DecodeDevBeginFrameData {
     pub wmiHeader: ::win32_system_sys::Diagnostics::Etw::EVENT_TRACE_HEADER,
     pub pObject: u64,
     pub pRenderTarget: u64,
     pub Enter: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_System_Diagnostics_Etw")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for DXVA2Trace_DecodeDevBeginFrameData {}
-#[cfg(feature = "Win32_System_Diagnostics_Etw")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for DXVA2Trace_DecodeDevBeginFrameData {
     fn clone(&self) -> Self {
         *self
@@ -3464,7 +3464,7 @@ impl ::core::clone::Clone for DXVA2Trace_DecodeDevBeginFrameData {
 }
 pub const DXVA2Trace_DecodeDevCreated: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3034453921, data2: 50610, data3: 17662, data4: [134, 213, 217, 122, 100, 129, 20, 255] };
 #[repr(C)]
-#[cfg(feature = "Win32_System_Diagnostics_Etw")]
+#[cfg(feature = "win32-system-sys")]
 pub struct DXVA2Trace_DecodeDevCreatedData {
     pub wmiHeader: ::win32_system_sys::Diagnostics::Etw::EVENT_TRACE_HEADER,
     pub pObject: u64,
@@ -3474,9 +3474,9 @@ pub struct DXVA2Trace_DecodeDevCreatedData {
     pub Height: u32,
     pub Enter: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_System_Diagnostics_Etw")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for DXVA2Trace_DecodeDevCreatedData {}
-#[cfg(feature = "Win32_System_Diagnostics_Etw")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for DXVA2Trace_DecodeDevCreatedData {
     fn clone(&self) -> Self {
         *self
@@ -3487,31 +3487,31 @@ pub const DXVA2Trace_DecodeDevEndFrame: ::windows_core_sys::GUID = ::windows_cor
 pub const DXVA2Trace_DecodeDevExecute: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2232085324, data2: 53658, data3: 17929, data4: [179, 180, 188, 191, 14, 34, 18, 30] };
 pub const DXVA2Trace_DecodeDevGetBuffer: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1471228155, data2: 29387, data3: 16695, data4: [165, 117, 217, 31, 163, 22, 8, 151] };
 #[repr(C)]
-#[cfg(feature = "Win32_System_Diagnostics_Etw")]
+#[cfg(feature = "win32-system-sys")]
 pub struct DXVA2Trace_DecodeDevGetBufferData {
     pub wmiHeader: ::win32_system_sys::Diagnostics::Etw::EVENT_TRACE_HEADER,
     pub pObject: u64,
     pub BufferType: u32,
     pub Enter: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_System_Diagnostics_Etw")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for DXVA2Trace_DecodeDevGetBufferData {}
-#[cfg(feature = "Win32_System_Diagnostics_Etw")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for DXVA2Trace_DecodeDevGetBufferData {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Diagnostics_Etw")]
+#[cfg(feature = "win32-system-sys")]
 pub struct DXVA2Trace_DecodeDeviceData {
     pub wmiHeader: ::win32_system_sys::Diagnostics::Etw::EVENT_TRACE_HEADER,
     pub pObject: u64,
     pub Enter: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_System_Diagnostics_Etw")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for DXVA2Trace_DecodeDeviceData {}
-#[cfg(feature = "Win32_System_Diagnostics_Etw")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for DXVA2Trace_DecodeDeviceData {
     fn clone(&self) -> Self {
         *self
@@ -3520,7 +3520,7 @@ impl ::core::clone::Clone for DXVA2Trace_DecodeDeviceData {
 pub const DXVA2Trace_VideoProcessBlt: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1762172096, data2: 29099, data3: 17104, data4: [149, 58, 40, 135, 191, 5, 168, 175] };
 pub const DXVA2Trace_VideoProcessDevCreated: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2304051398, data2: 21517, data3: 19591, data4: [152, 248, 141, 203, 242, 218, 187, 42] };
 #[repr(C)]
-#[cfg(feature = "Win32_System_Diagnostics_Etw")]
+#[cfg(feature = "win32-system-sys")]
 pub struct DXVA2Trace_VideoProcessDevCreatedData {
     pub wmiHeader: ::win32_system_sys::Diagnostics::Etw::EVENT_TRACE_HEADER,
     pub pObject: u64,
@@ -3531,9 +3531,9 @@ pub struct DXVA2Trace_VideoProcessDevCreatedData {
     pub Height: u32,
     pub Enter: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_System_Diagnostics_Etw")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for DXVA2Trace_VideoProcessDevCreatedData {}
-#[cfg(feature = "Win32_System_Diagnostics_Etw")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for DXVA2Trace_VideoProcessDevCreatedData {
     fn clone(&self) -> Self {
         *self
@@ -3541,15 +3541,15 @@ impl ::core::clone::Clone for DXVA2Trace_VideoProcessDevCreatedData {
 }
 pub const DXVA2Trace_VideoProcessDevDestroyed: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 4185862321, data2: 64329, data3: 17095, data4: [142, 232, 136, 189, 250, 146, 212, 226] };
 #[repr(C)]
-#[cfg(feature = "Win32_System_Diagnostics_Etw")]
+#[cfg(feature = "win32-system-sys")]
 pub struct DXVA2Trace_VideoProcessDeviceData {
     pub wmiHeader: ::win32_system_sys::Diagnostics::Etw::EVENT_TRACE_HEADER,
     pub pObject: u64,
     pub Enter: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_System_Diagnostics_Etw")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for DXVA2Trace_VideoProcessDeviceData {}
-#[cfg(feature = "Win32_System_Diagnostics_Etw")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for DXVA2Trace_VideoProcessDeviceData {
     fn clone(&self) -> Self {
         *self
@@ -3575,7 +3575,7 @@ pub const DXVA2_SampleFlag_TFF: DXVA2_SampleFlags = 131072i32;
 pub const DXVA2_SampleFlag_RFF_TFF_Present: DXVA2_SampleFlags = 262144i32;
 pub const DXVA2_SampleFlagsMask: DXVA2_SampleFlags = -65505i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Media_MediaFoundation")]
+#[cfg(feature = "win32-media-sys")]
 pub struct DXVA2_VIDEOPROCESSBLT {
     pub TargetFrame: i64,
     pub TargetRect: ::win32_foundation_sys::RECT,
@@ -3593,16 +3593,16 @@ pub struct DXVA2_VIDEOPROCESSBLT {
     pub pSrcSurfaces: *mut DXVA2_VIDEOSAMPLE,
     pub NumSrcSurfaces: u32,
 }
-#[cfg(feature = "Win32_Media_MediaFoundation")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for DXVA2_VIDEOPROCESSBLT {}
-#[cfg(feature = "Win32_Media_MediaFoundation")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for DXVA2_VIDEOPROCESSBLT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_MediaFoundation")]
+#[cfg(feature = "win32-media-sys")]
 pub struct DXVA2_VIDEOSAMPLE {
     pub Start: i64,
     pub End: i64,
@@ -3614,9 +3614,9 @@ pub struct DXVA2_VIDEOSAMPLE {
     pub Pal: [super::MediaFoundation::DXVA2_AYUVSample8; 16],
     pub PlanarAlpha: super::MediaFoundation::DXVA2_Fixed32,
 }
-#[cfg(feature = "Win32_Media_MediaFoundation")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for DXVA2_VIDEOSAMPLE {}
-#[cfg(feature = "Win32_Media_MediaFoundation")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for DXVA2_VIDEOSAMPLE {
     fn clone(&self) -> Self {
         *self
@@ -4325,21 +4325,21 @@ pub const BDA_GUARD_19_128: GuardInterval = 6i32;
 pub const BDA_GUARD_19_256: GuardInterval = 7i32;
 pub const BDA_GUARD_MAX: GuardInterval = 8i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct HEAACWAVEFORMAT {
     pub wfInfo: HEAACWAVEINFO,
     pub pbAudioSpecificConfig: [u8; 1],
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for HEAACWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for HEAACWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct HEAACWAVEINFO {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wPayloadType: u16,
@@ -4348,9 +4348,9 @@ pub struct HEAACWAVEINFO {
     pub wReserved1: u16,
     pub dwReserved2: u32,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for HEAACWAVEINFO {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for HEAACWAVEINFO {
     fn clone(&self) -> Self {
         *self
@@ -4994,16 +4994,16 @@ pub const KSDATAFORMAT_TYPE_BDA_IP_CONTROL: ::windows_core_sys::GUID = ::windows
 pub const KSDATAFORMAT_TYPE_MPE: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1163859820, data2: 19206, data3: 18382, data4: [154, 239, 140, 174, 247, 61, 247, 181] };
 pub const KSDATAFORMAT_TYPE_MPEG2_SECTIONS: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1163859820, data2: 19206, data3: 18382, data4: [154, 239, 140, 174, 247, 61, 247, 181] };
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSEVENTDATA_BDA_RF_TUNER_SCAN_S {
     pub EventData: super::KernelStreaming::KSEVENTDATA,
     pub StartFrequency: u32,
     pub EndFrequency: u32,
     pub LockRequested: BDA_LockType,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSEVENTDATA_BDA_RF_TUNER_SCAN_S {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSEVENTDATA_BDA_RF_TUNER_SCAN_S {
     fn clone(&self) -> Self {
         *self
@@ -5111,37 +5111,37 @@ pub const KSMETHOD_BDA_WMDRMTUNER_SETSYNCVALUE: KSMETHOD_BDA_WMDRM_TUNER = 3i32;
 pub const KSMETHOD_BDA_WMDRMTUNER_STARTCODEPROFILE: KSMETHOD_BDA_WMDRM_TUNER = 4i32;
 pub const KSMETHOD_BDA_WMDRMTUNER_PURCHASE_ENTITLEMENT: KSMETHOD_BDA_WMDRM_TUNER = 5i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_BUFFER {
     pub NodeMethod: super::KernelStreaming::KSM_NODE,
     pub ulBufferSize: u32,
     pub argbBuffer: [u8; 1],
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_BUFFER {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_BUFFER {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_CAS_CAPTURETOKEN {
     pub NodeMethod: super::KernelStreaming::KSM_NODE,
     pub ulTokenLength: u32,
     pub argbToken: [u8; 1],
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_CAS_CAPTURETOKEN {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_CAS_CAPTURETOKEN {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_CAS_CLOSEMMIDIALOG {
     pub NodeMethod: super::KernelStreaming::KSM_NODE,
     pub ulDialogRequest: u32,
@@ -5149,16 +5149,16 @@ pub struct KSM_BDA_CAS_CLOSEMMIDIALOG {
     pub ulDialogNumber: u32,
     pub ulReason: u32,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_CAS_CLOSEMMIDIALOG {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_CAS_CLOSEMMIDIALOG {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_CAS_ENTITLEMENTTOKEN {
     pub NodeMethod: super::KernelStreaming::KSM_NODE,
     pub ulDialogRequest: u32,
@@ -5167,136 +5167,136 @@ pub struct KSM_BDA_CAS_ENTITLEMENTTOKEN {
     pub ulEntitlementTokenLen: u32,
     pub argbEntitlementToken: [u8; 1],
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_CAS_ENTITLEMENTTOKEN {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_CAS_ENTITLEMENTTOKEN {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_CAS_OPENBROADCASTMMI {
     pub NodeMethod: super::KernelStreaming::KSM_NODE,
     pub ulDialogRequest: u32,
     pub cLanguage: [::win32_foundation_sys::CHAR; 12],
     pub ulEventId: u32,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_CAS_OPENBROADCASTMMI {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_CAS_OPENBROADCASTMMI {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_DEBUG_LEVEL {
     pub Method: super::KernelStreaming::KSIDENTIFIER,
     pub ucDebugLevel: u8,
     pub ulDebugStringSize: u32,
     pub argbDebugString: [u8; 1],
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_DEBUG_LEVEL {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_DEBUG_LEVEL {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_DRM_SETDRM {
     pub NodeMethod: super::KernelStreaming::KSM_NODE,
     pub NewDRMuuid: ::windows_core_sys::GUID,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_DRM_SETDRM {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_DRM_SETDRM {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_EVENT_COMPLETE {
     pub Method: super::KernelStreaming::KSIDENTIFIER,
     pub ulEventID: u32,
     pub ulEventResult: u32,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_EVENT_COMPLETE {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_EVENT_COMPLETE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_GDDS_SERVICEFROMTUNEXML {
     pub Method: super::KernelStreaming::KSIDENTIFIER,
     pub ulTuneXmlLength: u32,
     pub argbTuneXml: [u8; 1],
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_GDDS_SERVICEFROMTUNEXML {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_GDDS_SERVICEFROMTUNEXML {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_GDDS_TUNEXMLFROMIDX {
     pub Method: super::KernelStreaming::KSIDENTIFIER,
     pub ulIdx: u64,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_GDDS_TUNEXMLFROMIDX {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_GDDS_TUNEXMLFROMIDX {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_GPNV_GETVALUE {
     pub Method: super::KernelStreaming::KSIDENTIFIER,
     pub ulNameLength: u32,
     pub cLanguage: [::win32_foundation_sys::CHAR; 12],
     pub argbData: [u8; 1],
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_GPNV_GETVALUE {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_GPNV_GETVALUE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_GPNV_NAMEINDEX {
     pub Method: super::KernelStreaming::KSIDENTIFIER,
     pub ulValueNameIndex: u32,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_GPNV_NAMEINDEX {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_GPNV_NAMEINDEX {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_GPNV_SETVALUE {
     pub Method: super::KernelStreaming::KSIDENTIFIER,
     pub ulDialogRequest: u32,
@@ -5305,206 +5305,206 @@ pub struct KSM_BDA_GPNV_SETVALUE {
     pub ulValueLength: u32,
     pub argbName: [u8; 1],
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_GPNV_SETVALUE {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_GPNV_SETVALUE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_ISDBCAS_REQUEST {
     pub NodeMethod: super::KernelStreaming::KSM_NODE,
     pub ulRequestID: u32,
     pub ulIsdbCommandSize: u32,
     pub argbIsdbCommandData: [u8; 1],
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_ISDBCAS_REQUEST {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_ISDBCAS_REQUEST {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_PIN {
     pub Method: super::KernelStreaming::KSIDENTIFIER,
     pub Anonymous: KSM_BDA_PIN_0,
     pub Reserved: u32,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_PIN {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_PIN {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub union KSM_BDA_PIN_0 {
     pub PinId: u32,
     pub PinType: u32,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_PIN_0 {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_PIN_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_PIN_PAIR {
     pub Method: super::KernelStreaming::KSIDENTIFIER,
     pub Anonymous1: KSM_BDA_PIN_PAIR_0,
     pub Anonymous2: KSM_BDA_PIN_PAIR_1,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_PIN_PAIR {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_PIN_PAIR {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub union KSM_BDA_PIN_PAIR_0 {
     pub InputPinId: u32,
     pub InputPinType: u32,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_PIN_PAIR_0 {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_PIN_PAIR_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub union KSM_BDA_PIN_PAIR_1 {
     pub OutputPinId: u32,
     pub OutputPinType: u32,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_PIN_PAIR_1 {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_PIN_PAIR_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_SCAN_CAPABILTIES {
     pub Method: super::KernelStreaming::KSIDENTIFIER,
     pub uuidBroadcastStandard: ::windows_core_sys::GUID,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_SCAN_CAPABILTIES {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_SCAN_CAPABILTIES {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_SCAN_FILTER {
     pub Method: super::KernelStreaming::KSIDENTIFIER,
     pub ulScanModulationTypeSize: u32,
     pub AnalogVideoStandards: u64,
     pub argbScanModulationTypes: [u8; 1],
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_SCAN_FILTER {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_SCAN_FILTER {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_SCAN_START {
     pub Method: super::KernelStreaming::KSIDENTIFIER,
     pub LowerFrequency: u32,
     pub HigherFrequency: u32,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_SCAN_START {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_SCAN_START {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_TS_SELECTOR_SETTSID {
     pub NodeMethod: super::KernelStreaming::KSM_NODE,
     pub usTSID: u16,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_TS_SELECTOR_SETTSID {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_TS_SELECTOR_SETTSID {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_TUNER_TUNEREQUEST {
     pub Method: super::KernelStreaming::KSIDENTIFIER,
     pub ulTuneLength: u32,
     pub argbTuneData: [u8; 1],
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_TUNER_TUNEREQUEST {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_TUNER_TUNEREQUEST {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_USERACTIVITY_USEREASON {
     pub Method: super::KernelStreaming::KSIDENTIFIER,
     pub ulUseReason: u32,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_USERACTIVITY_USEREASON {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_USERACTIVITY_USEREASON {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_WMDRMTUNER_GETPIDPROTECTION {
     pub NodeMethod: super::KernelStreaming::KSM_NODE,
     pub ulPID: u32,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_WMDRMTUNER_GETPIDPROTECTION {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_WMDRMTUNER_GETPIDPROTECTION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_WMDRMTUNER_PURCHASEENTITLEMENT {
     pub NodeMethod: super::KernelStreaming::KSM_NODE,
     pub ulDialogRequest: u32,
@@ -5512,68 +5512,68 @@ pub struct KSM_BDA_WMDRMTUNER_PURCHASEENTITLEMENT {
     pub ulPurchaseTokenLength: u32,
     pub argbDataBuffer: [u8; 1],
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_WMDRMTUNER_PURCHASEENTITLEMENT {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_WMDRMTUNER_PURCHASEENTITLEMENT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_WMDRMTUNER_SETPIDPROTECTION {
     pub NodeMethod: super::KernelStreaming::KSM_NODE,
     pub ulPID: u32,
     pub uuidKeyID: ::windows_core_sys::GUID,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_WMDRMTUNER_SETPIDPROTECTION {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_WMDRMTUNER_SETPIDPROTECTION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_WMDRMTUNER_SYNCVALUE {
     pub NodeMethod: super::KernelStreaming::KSM_NODE,
     pub ulSyncValue: u32,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_WMDRMTUNER_SYNCVALUE {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_WMDRMTUNER_SYNCVALUE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_WMDRM_LICENSE {
     pub NodeMethod: super::KernelStreaming::KSM_NODE,
     pub uuidKeyID: ::windows_core_sys::GUID,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_WMDRM_LICENSE {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_WMDRM_LICENSE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSM_BDA_WMDRM_RENEWLICENSE {
     pub NodeMethod: super::KernelStreaming::KSM_NODE,
     pub ulXMRLicenseLength: u32,
     pub ulEntitlementTokenLength: u32,
     pub argbDataBuffer: [u8; 1],
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSM_BDA_WMDRM_RENEWLICENSE {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSM_BDA_WMDRM_RENEWLICENSE {
     fn clone(&self) -> Self {
         *self
@@ -5679,7 +5679,7 @@ pub type KSPROPERTY_BDA_PIN_EVENT = i32;
 pub const KSEVENT_BDA_PIN_CONNECTED: KSPROPERTY_BDA_PIN_EVENT = 0i32;
 pub const KSEVENT_BDA_PIN_DISCONNECTED: KSPROPERTY_BDA_PIN_EVENT = 1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSPROPERTY_BDA_RF_TUNER_CAPS_S {
     pub Property: super::KernelStreaming::KSP_NODE,
     pub Mode: u32,
@@ -5692,16 +5692,16 @@ pub struct KSPROPERTY_BDA_RF_TUNER_CAPS_S {
     pub DigitalSensingRange: u32,
     pub MilliSecondsPerMHz: u32,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSPROPERTY_BDA_RF_TUNER_CAPS_S {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSPROPERTY_BDA_RF_TUNER_CAPS_S {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSPROPERTY_BDA_RF_TUNER_SCAN_STATUS_S {
     pub Property: super::KernelStreaming::KSP_NODE,
     pub CurrentFrequency: u32,
@@ -5709,38 +5709,38 @@ pub struct KSPROPERTY_BDA_RF_TUNER_SCAN_STATUS_S {
     pub FrequencyRangeMax: u32,
     pub MilliSecondsLeft: u32,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSPROPERTY_BDA_RF_TUNER_SCAN_STATUS_S {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSPROPERTY_BDA_RF_TUNER_SCAN_STATUS_S {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSPROPERTY_BDA_RF_TUNER_STANDARD_MODE_S {
     pub Property: super::KernelStreaming::KSP_NODE,
     pub AutoDetect: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSPROPERTY_BDA_RF_TUNER_STANDARD_MODE_S {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSPROPERTY_BDA_RF_TUNER_STANDARD_MODE_S {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSPROPERTY_BDA_RF_TUNER_STANDARD_S {
     pub Property: super::KernelStreaming::KSP_NODE,
     pub SignalType: BDA_SignalType,
     pub SignalStandard: u32,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSPROPERTY_BDA_RF_TUNER_STANDARD_S {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSPROPERTY_BDA_RF_TUNER_STANDARD_S {
     fn clone(&self) -> Self {
         *self
@@ -5789,30 +5789,30 @@ pub const KSPROPSETID_BdaTableSection: ::windows_core_sys::GUID = ::windows_core
 pub const KSPROPSETID_BdaTopology: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2706303029, data2: 2595, data3: 4563, data4: [156, 199, 0, 192, 79, 121, 113, 224] };
 pub const KSPROPSETID_BdaVoidTransform: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1905811270, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSP_BDA_NODE_PIN {
     pub Property: super::KernelStreaming::KSIDENTIFIER,
     pub ulNodeType: u32,
     pub ulInputPinId: u32,
     pub ulOutputPinId: u32,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSP_BDA_NODE_PIN {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSP_BDA_NODE_PIN {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KSP_NODE_ESPID {
     pub Property: super::KernelStreaming::KSP_NODE,
     pub EsPid: u32,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KSP_NODE_ESPID {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KSP_NODE_ESPID {
     fn clone(&self) -> Self {
         *self
@@ -5834,27 +5834,27 @@ impl ::core::clone::Clone for KS_BDA_FRAME_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KS_DATARANGE_BDA_ANTENNA {
     pub DataRange: super::KernelStreaming::KSDATAFORMAT,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KS_DATARANGE_BDA_ANTENNA {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KS_DATARANGE_BDA_ANTENNA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 pub struct KS_DATARANGE_BDA_TRANSPORT {
     pub DataRange: super::KernelStreaming::KSDATAFORMAT,
     pub BdaTransportInfo: BDA_TRANSPORT_INFO,
 }
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for KS_DATARANGE_BDA_TRANSPORT {}
-#[cfg(feature = "Win32_Media_KernelStreaming")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for KS_DATARANGE_BDA_TRANSPORT {
     fn clone(&self) -> Self {
         *self
@@ -5952,7 +5952,7 @@ pub const MMSSF_ASYNCHRONOUS: MMSSF_GET_INFORMATION_FLAGS = 4u32;
 pub const MPBOOL_FALSE: u32 = 0u32;
 pub const MPBOOL_TRUE: u32 = 1u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct MPEG1WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub fwHeadLayer: u16,
@@ -5964,9 +5964,9 @@ pub struct MPEG1WAVEFORMAT {
     pub dwPTSLow: u32,
     pub dwPTSHigh: u32,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for MPEG1WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for MPEG1WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
@@ -6147,7 +6147,7 @@ impl ::core::clone::Clone for MPEG2_TRANSPORT_STRIDE {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct MPEGLAYER3WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wID: u16,
@@ -6156,9 +6156,9 @@ pub struct MPEGLAYER3WAVEFORMAT {
     pub nFramesPerBlock: u16,
     pub nCodecDelay: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for MPEGLAYER3WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for MPEGLAYER3WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
@@ -6724,28 +6724,28 @@ impl ::core::clone::Clone for PBDA_TAG_ATTRIBUTE {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Graphics_Direct3D9", feature = "Win32_Media_MediaFoundation"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-media-sys"))]
 pub type PDXVA2SW_CREATEVIDEOPROCESSDEVICE = ::core::option::Option<unsafe extern "system" fn(pd3dd9: ::win32_graphics_sys::Direct3D9::IDirect3DDevice9, pvideodesc: *const super::MediaFoundation::DXVA2_VideoDesc, rendertargetformat: ::win32_graphics_sys::Direct3D9::D3DFORMAT, maxsubstreams: u32, phdevice: *mut ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT>;
 pub type PDXVA2SW_DESTROYVIDEOPROCESSDEVICE = ::core::option::Option<unsafe extern "system" fn(hdevice: ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT>;
-#[cfg(all(feature = "Win32_Graphics_Direct3D9", feature = "Win32_Media_MediaFoundation"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-media-sys"))]
 pub type PDXVA2SW_GETFILTERPROPERTYRANGE = ::core::option::Option<unsafe extern "system" fn(pvideodesc: *const super::MediaFoundation::DXVA2_VideoDesc, rendertargetformat: ::win32_graphics_sys::Direct3D9::D3DFORMAT, filtersetting: u32, prange: *mut super::MediaFoundation::DXVA2_ValueRange) -> ::windows_core_sys::HRESULT>;
-#[cfg(all(feature = "Win32_Graphics_Direct3D9", feature = "Win32_Media_MediaFoundation"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-media-sys"))]
 pub type PDXVA2SW_GETPROCAMPRANGE = ::core::option::Option<unsafe extern "system" fn(pvideodesc: *const super::MediaFoundation::DXVA2_VideoDesc, rendertargetformat: ::win32_graphics_sys::Direct3D9::D3DFORMAT, procampcap: u32, prange: *mut super::MediaFoundation::DXVA2_ValueRange) -> ::windows_core_sys::HRESULT>;
-#[cfg(all(feature = "Win32_Graphics_Direct3D9", feature = "Win32_Media_MediaFoundation"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-media-sys"))]
 pub type PDXVA2SW_GETVIDEOPROCESSORCAPS = ::core::option::Option<unsafe extern "system" fn(pvideodesc: *const super::MediaFoundation::DXVA2_VideoDesc, rendertargetformat: ::win32_graphics_sys::Direct3D9::D3DFORMAT, pcaps: *mut super::MediaFoundation::DXVA2_VideoProcessorCaps) -> ::windows_core_sys::HRESULT>;
-#[cfg(all(feature = "Win32_Graphics_Direct3D9", feature = "Win32_Media_MediaFoundation"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-media-sys"))]
 pub type PDXVA2SW_GETVIDEOPROCESSORRENDERTARGETCOUNT = ::core::option::Option<unsafe extern "system" fn(pvideodesc: *const super::MediaFoundation::DXVA2_VideoDesc, pcount: *mut u32) -> ::windows_core_sys::HRESULT>;
-#[cfg(all(feature = "Win32_Graphics_Direct3D9", feature = "Win32_Media_MediaFoundation"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-media-sys"))]
 pub type PDXVA2SW_GETVIDEOPROCESSORRENDERTARGETS = ::core::option::Option<unsafe extern "system" fn(pvideodesc: *const super::MediaFoundation::DXVA2_VideoDesc, count: u32, pformats: *mut ::win32_graphics_sys::Direct3D9::D3DFORMAT) -> ::windows_core_sys::HRESULT>;
-#[cfg(all(feature = "Win32_Graphics_Direct3D9", feature = "Win32_Media_MediaFoundation"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-media-sys"))]
 pub type PDXVA2SW_GETVIDEOPROCESSORSUBSTREAMFORMATCOUNT = ::core::option::Option<unsafe extern "system" fn(pvideodesc: *const super::MediaFoundation::DXVA2_VideoDesc, rendertargetformat: ::win32_graphics_sys::Direct3D9::D3DFORMAT, pcount: *mut u32) -> ::windows_core_sys::HRESULT>;
-#[cfg(all(feature = "Win32_Graphics_Direct3D9", feature = "Win32_Media_MediaFoundation"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-media-sys"))]
 pub type PDXVA2SW_GETVIDEOPROCESSORSUBSTREAMFORMATS = ::core::option::Option<unsafe extern "system" fn(pvideodesc: *const super::MediaFoundation::DXVA2_VideoDesc, rendertargetformat: ::win32_graphics_sys::Direct3D9::D3DFORMAT, count: u32, pformats: *mut ::win32_graphics_sys::Direct3D9::D3DFORMAT) -> ::windows_core_sys::HRESULT>;
 pub type PDXVA2SW_VIDEOPROCESSBEGINFRAME = ::core::option::Option<unsafe extern "system" fn(hdevice: ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT>;
-#[cfg(feature = "Win32_Media_MediaFoundation")]
+#[cfg(feature = "win32-media-sys")]
 pub type PDXVA2SW_VIDEOPROCESSBLT = ::core::option::Option<unsafe extern "system" fn(hdevice: ::win32_foundation_sys::HANDLE, pblt: *const DXVA2_VIDEOPROCESSBLT) -> ::windows_core_sys::HRESULT>;
 pub type PDXVA2SW_VIDEOPROCESSENDFRAME = ::core::option::Option<unsafe extern "system" fn(hdevice: ::win32_foundation_sys::HANDLE, phandlecomplete: *mut ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT>;
-#[cfg(feature = "Win32_Graphics_Direct3D9")]
+#[cfg(feature = "win32-graphics-sys")]
 pub type PDXVA2SW_VIDEOPROCESSSETRENDERTARGET = ::core::option::Option<unsafe extern "system" fn(hdevice: ::win32_foundation_sys::HANDLE, prendertarget: ::win32_graphics_sys::Direct3D9::IDirect3DSurface9) -> ::windows_core_sys::HRESULT>;
 #[repr(C)]
 pub struct PIC_SEQ_SAMPLE {
@@ -6811,15 +6811,15 @@ pub type PIN_DIRECTION = i32;
 pub const PINDIR_INPUT: PIN_DIRECTION = 0i32;
 pub const PINDIR_OUTPUT: PIN_DIRECTION = 1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct PIN_INFO {
     pub pFilter: IBaseFilter,
     pub dir: PIN_DIRECTION,
     pub achName: [u16; 128],
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for PIN_INFO {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for PIN_INFO {
     fn clone(&self) -> Self {
         *self
@@ -7733,14 +7733,14 @@ impl ::core::clone::Clone for TRANSPORT_PROPERTIES_0_0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct TRUECOLORINFO {
     pub dwBitMasks: [u32; 3],
     pub bmiColors: [::win32_graphics_sys::Gdi::RGBQUAD; 256],
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for TRUECOLORINFO {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for TRUECOLORINFO {
     fn clone(&self) -> Self {
         *self
@@ -8044,7 +8044,7 @@ pub const ConstantBitRate: VIDEOENCODER_BITRATE_MODE = 0i32;
 pub const VariableBitRateAverage: VIDEOENCODER_BITRATE_MODE = 1i32;
 pub const VariableBitRatePeak: VIDEOENCODER_BITRATE_MODE = 2i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct VIDEOINFO {
     pub rcSource: ::win32_foundation_sys::RECT,
     pub rcTarget: ::win32_foundation_sys::RECT,
@@ -8054,24 +8054,24 @@ pub struct VIDEOINFO {
     pub bmiHeader: ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
     pub Anonymous: VIDEOINFO_0,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for VIDEOINFO {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for VIDEOINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub union VIDEOINFO_0 {
     pub bmiColors: [::win32_graphics_sys::Gdi::RGBQUAD; 256],
     pub dwBitMasks: [u32; 3],
     pub TrueColorInfo: TRUECOLORINFO,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for VIDEOINFO_0 {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for VIDEOINFO_0 {
     fn clone(&self) -> Self {
         *self
@@ -8108,7 +8108,7 @@ impl ::core::clone::Clone for VIDEO_STREAM_CONFIG_CAPS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D9")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct VMR9AllocationInfo {
     pub dwFlags: u32,
     pub dwWidth: u32,
@@ -8119,16 +8119,16 @@ pub struct VMR9AllocationInfo {
     pub szAspectRatio: ::win32_foundation_sys::SIZE,
     pub szNativeSize: ::win32_foundation_sys::SIZE,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D9")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for VMR9AllocationInfo {}
-#[cfg(feature = "Win32_Graphics_Direct3D9")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for VMR9AllocationInfo {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Direct3D9", feature = "Win32_Graphics_Gdi"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
 pub struct VMR9AlphaBitmap {
     pub dwFlags: u32,
     pub hdc: ::win32_graphics_sys::Gdi::HDC,
@@ -8139,9 +8139,9 @@ pub struct VMR9AlphaBitmap {
     pub clrSrcKey: u32,
     pub dwFilterMode: u32,
 }
-#[cfg(all(feature = "Win32_Graphics_Direct3D9", feature = "Win32_Graphics_Gdi"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
 impl ::core::marker::Copy for VMR9AlphaBitmap {}
-#[cfg(all(feature = "Win32_Graphics_Direct3D9", feature = "Win32_Graphics_Gdi"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
 impl ::core::clone::Clone for VMR9AlphaBitmap {
     fn clone(&self) -> Self {
         *self
@@ -8223,7 +8223,7 @@ pub const VMR9Mode_Windowless: VMR9Mode = 2i32;
 pub const VMR9Mode_Renderless: VMR9Mode = 4i32;
 pub const VMR9Mode_Mask: VMR9Mode = 7i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct VMR9MonitorInfo {
     pub uDevID: u32,
     pub rcMonitor: ::win32_foundation_sys::RECT,
@@ -8237,9 +8237,9 @@ pub struct VMR9MonitorInfo {
     pub dwSubSysId: u32,
     pub dwRevision: u32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for VMR9MonitorInfo {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for VMR9MonitorInfo {
     fn clone(&self) -> Self {
         *self
@@ -8265,7 +8265,7 @@ pub const VMR9Sample_Discontinuity: VMR9PresentationFlags = 4i32;
 pub const VMR9Sample_TimeValid: VMR9PresentationFlags = 8i32;
 pub const VMR9Sample_SrcDstRectsValid: VMR9PresentationFlags = 16i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D9")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct VMR9PresentationInfo {
     pub dwFlags: u32,
     pub lpSurf: ::win32_graphics_sys::Direct3D9::IDirect3DSurface9,
@@ -8277,9 +8277,9 @@ pub struct VMR9PresentationInfo {
     pub dwReserved1: u32,
     pub dwReserved2: u32,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D9")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for VMR9PresentationInfo {}
-#[cfg(feature = "Win32_Graphics_Direct3D9")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for VMR9PresentationInfo {
     fn clone(&self) -> Self {
         *self
@@ -8349,7 +8349,7 @@ impl ::core::clone::Clone for VMR9VideoDesc {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D9")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct VMR9VideoStreamInfo {
     pub pddsVideoSurface: ::win32_graphics_sys::Direct3D9::IDirect3DSurface9,
     pub dwWidth: u32,
@@ -8361,9 +8361,9 @@ pub struct VMR9VideoStreamInfo {
     pub rtEnd: i64,
     pub SampleFormat: VMR9_SampleFormat,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D9")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for VMR9VideoStreamInfo {}
-#[cfg(feature = "Win32_Graphics_Direct3D9")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for VMR9VideoStreamInfo {
     fn clone(&self) -> Self {
         *self
@@ -8377,7 +8377,7 @@ pub const VMR9_SampleFieldInterleavedOddFirst: VMR9_SampleFormat = 4i32;
 pub const VMR9_SampleFieldSingleEven: VMR9_SampleFormat = 5i32;
 pub const VMR9_SampleFieldSingleOdd: VMR9_SampleFormat = 6i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_DirectDraw", feature = "Win32_Graphics_Gdi"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
 pub struct VMRALLOCATIONINFO {
     pub dwFlags: u32,
     pub lpHdr: *mut ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
@@ -8388,16 +8388,16 @@ pub struct VMRALLOCATIONINFO {
     pub dwInterlaceFlags: u32,
     pub szNativeSize: ::win32_foundation_sys::SIZE,
 }
-#[cfg(all(feature = "Win32_Graphics_DirectDraw", feature = "Win32_Graphics_Gdi"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
 impl ::core::marker::Copy for VMRALLOCATIONINFO {}
-#[cfg(all(feature = "Win32_Graphics_DirectDraw", feature = "Win32_Graphics_Gdi"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
 impl ::core::clone::Clone for VMRALLOCATIONINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_DirectDraw", feature = "Win32_Graphics_Gdi"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
 pub struct VMRALPHABITMAP {
     pub dwFlags: u32,
     pub hdc: ::win32_graphics_sys::Gdi::HDC,
@@ -8407,9 +8407,9 @@ pub struct VMRALPHABITMAP {
     pub fAlpha: f32,
     pub clrSrcKey: u32,
 }
-#[cfg(all(feature = "Win32_Graphics_DirectDraw", feature = "Win32_Graphics_Gdi"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
 impl ::core::marker::Copy for VMRALPHABITMAP {}
-#[cfg(all(feature = "Win32_Graphics_DirectDraw", feature = "Win32_Graphics_Gdi"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
 impl ::core::clone::Clone for VMRALPHABITMAP {
     fn clone(&self) -> Self {
         *self
@@ -8471,7 +8471,7 @@ impl ::core::clone::Clone for VMRGUID {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct VMRMONITORINFO {
     pub guid: VMRGUID,
     pub rcMonitor: ::win32_foundation_sys::RECT,
@@ -8485,9 +8485,9 @@ pub struct VMRMONITORINFO {
     pub dwSubSysId: u32,
     pub dwRevision: u32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for VMRMONITORINFO {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for VMRMONITORINFO {
     fn clone(&self) -> Self {
         *self
@@ -8519,7 +8519,7 @@ pub const VMRMode_Windowless: VMRMode = 2i32;
 pub const VMRMode_Renderless: VMRMode = 4i32;
 pub const VMRMode_Mask: VMRMode = 7i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_DirectDraw")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct VMRPRESENTATIONINFO {
     pub dwFlags: u32,
     pub lpSurf: ::win32_graphics_sys::DirectDraw::IDirectDrawSurface7,
@@ -8531,9 +8531,9 @@ pub struct VMRPRESENTATIONINFO {
     pub dwTypeSpecificFlags: u32,
     pub dwInterlaceFlags: u32,
 }
-#[cfg(feature = "Win32_Graphics_DirectDraw")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for VMRPRESENTATIONINFO {}
-#[cfg(feature = "Win32_Graphics_DirectDraw")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for VMRPRESENTATIONINFO {
     fn clone(&self) -> Self {
         *self
@@ -8563,7 +8563,7 @@ pub const AMAP_FORCE_SYSMEM: VMRSurfaceAllocationFlags = 8i32;
 pub const AMAP_DIRECTED_FLIP: VMRSurfaceAllocationFlags = 16i32;
 pub const AMAP_DXVA_TARGET: VMRSurfaceAllocationFlags = 32i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_DirectDraw")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct VMRVIDEOSTREAMINFO {
     pub pddsVideoSurface: ::win32_graphics_sys::DirectDraw::IDirectDrawSurface7,
     pub dwWidth: u32,
@@ -8573,9 +8573,9 @@ pub struct VMRVIDEOSTREAMINFO {
     pub ddClrKey: ::win32_graphics_sys::DirectDraw::DDCOLORKEY,
     pub rNormal: NORMALIZEDRECT,
 }
-#[cfg(feature = "Win32_Graphics_DirectDraw")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for VMRVIDEOSTREAMINFO {}
-#[cfg(feature = "Win32_Graphics_DirectDraw")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for VMRVIDEOSTREAMINFO {
     fn clone(&self) -> Self {
         *self

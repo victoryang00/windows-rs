@@ -49,7 +49,7 @@ impl Compressor {
             (::windows_core::Interface::vtable(this).FinishAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn DetachStream(&self) -> ::windows_core::Result<super::Streams::IOutputStream> {
         let this = self;
         unsafe {
@@ -57,21 +57,21 @@ impl Compressor {
             (::windows_core::Interface::vtable(this).DetachStream)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Streams::IOutputStream>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateCompressor<'a, Param0: ::windows_core::IntoParam<'a, super::Streams::IOutputStream>>(underlyingstream: Param0) -> ::windows_core::Result<Compressor> {
         Self::ICompressorFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateCompressor)(::windows_core::Interface::as_raw(this), underlyingstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<Compressor>(result__)
         })
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateCompressorEx<'a, Param0: ::windows_core::IntoParam<'a, super::Streams::IOutputStream>>(underlyingstream: Param0, algorithm: CompressAlgorithm, blocksize: u32) -> ::windows_core::Result<Compressor> {
         Self::ICompressorFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateCompressorEx)(::windows_core::Interface::as_raw(this), underlyingstream.into_param().abi(), algorithm, blocksize, result__.as_mut_ptr()).from_abi::<Compressor>(result__)
         })
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn WriteAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Streams::IBuffer>>(&self, buffer: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>> {
         let this = &::windows_core::Interface::cast::<super::Streams::IOutputStream>(self)?;
         unsafe {
@@ -79,7 +79,7 @@ impl Compressor {
             (::windows_core::Interface::vtable(this).WriteAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn FlushAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<super::Streams::IOutputStream>(self)?;
         unsafe {
@@ -184,27 +184,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &Compr
         ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<Compressor> for super::Streams::IOutputStream {
     type Error = ::windows_core::Error;
     fn try_from(value: Compressor) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<&Compressor> for super::Streams::IOutputStream {
     type Error = ::windows_core::Error;
     fn try_from(value: &Compressor) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, super::Streams::IOutputStream> for Compressor {
     fn into_param(self) -> ::windows_core::Param<'a, super::Streams::IOutputStream> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, super::Streams::IOutputStream> for &Compressor {
     fn into_param(self) -> ::windows_core::Param<'a, super::Streams::IOutputStream> {
         ::core::convert::TryInto::<super::Streams::IOutputStream>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -219,7 +219,7 @@ impl Decompressor {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn DetachStream(&self) -> ::windows_core::Result<super::Streams::IInputStream> {
         let this = self;
         unsafe {
@@ -227,14 +227,14 @@ impl Decompressor {
             (::windows_core::Interface::vtable(this).DetachStream)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Streams::IInputStream>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateDecompressor<'a, Param0: ::windows_core::IntoParam<'a, super::Streams::IInputStream>>(underlyingstream: Param0) -> ::windows_core::Result<Decompressor> {
         Self::IDecompressorFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateDecompressor)(::windows_core::Interface::as_raw(this), underlyingstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<Decompressor>(result__)
         })
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ReadAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Streams::IBuffer>>(&self, buffer: Param0, count: u32, options: super::Streams::InputStreamOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<super::Streams::IBuffer, u32>> {
         let this = &::windows_core::Interface::cast::<super::Streams::IInputStream>(self)?;
         unsafe {
@@ -339,27 +339,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &Decom
         ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<Decompressor> for super::Streams::IInputStream {
     type Error = ::windows_core::Error;
     fn try_from(value: Decompressor) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<&Decompressor> for super::Streams::IInputStream {
     type Error = ::windows_core::Error;
     fn try_from(value: &Decompressor) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, super::Streams::IInputStream> for Decompressor {
     fn into_param(self) -> ::windows_core::Param<'a, super::Streams::IInputStream> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, super::Streams::IInputStream> for &Decompressor {
     fn into_param(self) -> ::windows_core::Param<'a, super::Streams::IInputStream> {
         ::core::convert::TryInto::<super::Streams::IInputStream>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -379,9 +379,9 @@ unsafe impl ::windows_core::Interface for ICompressor {
 pub struct ICompressor_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub FinishAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub DetachStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     DetachStream: usize,
 }
 #[doc(hidden)]
@@ -395,13 +395,13 @@ unsafe impl ::windows_core::Interface for ICompressorFactory {
 #[doc(hidden)]
 pub struct ICompressorFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateCompressor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, underlyingstream: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateCompressor: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateCompressorEx: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, underlyingstream: ::windows_core::RawPtr, algorithm: CompressAlgorithm, blocksize: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateCompressorEx: usize,
 }
 #[doc(hidden)]
@@ -415,9 +415,9 @@ unsafe impl ::windows_core::Interface for IDecompressor {
 #[doc(hidden)]
 pub struct IDecompressor_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub DetachStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     DetachStream: usize,
 }
 #[doc(hidden)]
@@ -431,8 +431,8 @@ unsafe impl ::windows_core::Interface for IDecompressorFactory {
 #[doc(hidden)]
 pub struct IDecompressorFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateDecompressor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, underlyingstream: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateDecompressor: usize,
 }

@@ -20,16 +20,16 @@ pub const Animation: BaseValueSource = 12i32;
 pub const Coercion: BaseValueSource = 13i32;
 pub const BaseValueSourceVisualState: BaseValueSource = 14i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct BitmapDescription {
     pub Width: u32,
     pub Height: u32,
     pub Format: ::win32_graphics_sys::Dxgi::Common::DXGI_FORMAT,
     pub AlphaMode: ::win32_graphics_sys::Dxgi::Common::DXGI_ALPHA_MODE,
 }
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for BitmapDescription {}
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for BitmapDescription {
     fn clone(&self) -> Self {
         *self
@@ -50,15 +50,15 @@ impl ::core::clone::Clone for CollectionElementValue {
 }
 pub const E_UNKNOWNTYPE: ::windows_core_sys::HRESULT = -2144665560i32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct EnumType {
     pub Name: ::win32_foundation_sys::BSTR,
     pub ValueInts: *mut ::win32_system_sys::Com::SAFEARRAY,
     pub ValueStrings: *mut ::win32_system_sys::Com::SAFEARRAY,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for EnumType {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for EnumType {
     fn clone(&self) -> Self {
         *self

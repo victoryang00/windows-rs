@@ -1,4 +1,4 @@
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn DMLCreateDevice<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Direct3D12::ID3D12Device>, T: ::windows_core::Interface>(d3d12device: Param0, flags: DML_CREATE_DEVICE_FLAGS, result__: *mut ::core::option::Option<T>) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -12,7 +12,7 @@ pub unsafe fn DMLCreateDevice<'a, Param0: ::windows_core::IntoParam<'a, ::win32_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn DMLCreateDevice1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Direct3D12::ID3D12Device>, T: ::windows_core::Interface>(d3d12device: Param0, flags: DML_CREATE_DEVICE_FLAGS, minimumfeaturelevel: DML_FEATURE_LEVEL, result__: *mut ::core::option::Option<T>) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1036,14 +1036,14 @@ impl ::core::default::Default for DML_BINDING_PROPERTIES {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 pub struct DML_BINDING_TABLE_DESC {
     pub Dispatchable: ::core::option::Option<IDMLDispatchable>,
     pub CPUDescriptorHandle: ::win32_graphics::Direct3D12::D3D12_CPU_DESCRIPTOR_HANDLE,
     pub GPUDescriptorHandle: ::win32_graphics::Direct3D12::D3D12_GPU_DESCRIPTOR_HANDLE,
     pub SizeInDescriptors: u32,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for DML_BINDING_TABLE_DESC {
     fn clone(&self) -> Self {
         Self {
@@ -1054,25 +1054,25 @@ impl ::core::clone::Clone for DML_BINDING_TABLE_DESC {
         }
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for DML_BINDING_TABLE_DESC {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DML_BINDING_TABLE_DESC").field("Dispatchable", &self.Dispatchable).field("CPUDescriptorHandle", &self.CPUDescriptorHandle).field("GPUDescriptorHandle", &self.GPUDescriptorHandle).field("SizeInDescriptors", &self.SizeInDescriptors).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for DML_BINDING_TABLE_DESC {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for DML_BINDING_TABLE_DESC {
     fn eq(&self, other: &Self) -> bool {
         self.Dispatchable == other.Dispatchable && self.CPUDescriptorHandle == other.CPUDescriptorHandle && self.GPUDescriptorHandle == other.GPUDescriptorHandle && self.SizeInDescriptors == other.SizeInDescriptors
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for DML_BINDING_TABLE_DESC {}
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for DML_BINDING_TABLE_DESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1104,75 +1104,75 @@ impl ::core::fmt::Debug for DML_BINDING_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 pub struct DML_BUFFER_ARRAY_BINDING {
     pub BindingCount: u32,
     pub Bindings: *const DML_BUFFER_BINDING,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for DML_BUFFER_ARRAY_BINDING {}
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for DML_BUFFER_ARRAY_BINDING {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for DML_BUFFER_ARRAY_BINDING {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DML_BUFFER_ARRAY_BINDING").field("BindingCount", &self.BindingCount).field("Bindings", &self.Bindings).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for DML_BUFFER_ARRAY_BINDING {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for DML_BUFFER_ARRAY_BINDING {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_BUFFER_ARRAY_BINDING>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for DML_BUFFER_ARRAY_BINDING {}
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for DML_BUFFER_ARRAY_BINDING {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 pub struct DML_BUFFER_BINDING {
     pub Buffer: ::core::option::Option<::win32_graphics::Direct3D12::ID3D12Resource>,
     pub Offset: u64,
     pub SizeInBytes: u64,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for DML_BUFFER_BINDING {
     fn clone(&self) -> Self {
         Self { Buffer: self.Buffer.clone(), Offset: self.Offset, SizeInBytes: self.SizeInBytes }
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for DML_BUFFER_BINDING {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DML_BUFFER_BINDING").field("Buffer", &self.Buffer).field("Offset", &self.Offset).field("SizeInBytes", &self.SizeInBytes).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for DML_BUFFER_BINDING {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for DML_BUFFER_BINDING {
     fn eq(&self, other: &Self) -> bool {
         self.Buffer == other.Buffer && self.Offset == other.Offset && self.SizeInBytes == other.SizeInBytes
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for DML_BUFFER_BINDING {}
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for DML_BUFFER_BINDING {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6586,7 +6586,7 @@ impl IDMLBindingTable {
     pub unsafe fn BindPersistentResource(&self, binding: *const DML_BINDING_DESC) {
         (::windows_core::Interface::vtable(self).BindPersistentResource)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(binding))
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn Reset(&self, desc: *const DML_BINDING_TABLE_DESC) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Reset)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(desc)).ok()
     }
@@ -6679,9 +6679,9 @@ pub struct IDMLBindingTable_Vtbl {
     pub BindOutputs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bindingcount: u32, bindings: *const DML_BINDING_DESC),
     pub BindTemporaryResource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, binding: *const DML_BINDING_DESC),
     pub BindPersistentResource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, binding: *const DML_BINDING_DESC),
-    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    #[cfg(feature = "win32-graphics")]
     pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, desc: *const DML_BINDING_TABLE_DESC) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    #[cfg(not(feature = "win32-graphics"))]
     Reset: usize,
 }
 #[repr(transparent)]
@@ -6703,7 +6703,7 @@ impl IDMLCommandRecorder {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).base__.GetDevice)(::windows_core::Interface::as_raw(self), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn RecordDispatch<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Direct3D12::ID3D12CommandList>, Param1: ::windows_core::IntoParam<'a, IDMLDispatchable>, Param2: ::windows_core::IntoParam<'a, IDMLBindingTable>>(&self, commandlist: Param0, dispatchable: Param1, bindings: Param2) {
         (::windows_core::Interface::vtable(self).RecordDispatch)(::windows_core::Interface::as_raw(self), commandlist.into_param().abi(), dispatchable.into_param().abi(), bindings.into_param().abi())
     }
@@ -6792,9 +6792,9 @@ unsafe impl ::windows_core::Interface for IDMLCommandRecorder {
 #[doc(hidden)]
 pub struct IDMLCommandRecorder_Vtbl {
     pub base__: IDMLDeviceChild_Vtbl,
-    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    #[cfg(feature = "win32-graphics")]
     pub RecordDispatch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, commandlist: ::windows_core::RawPtr, dispatchable: ::windows_core::RawPtr, bindings: ::windows_core::RawPtr),
-    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    #[cfg(not(feature = "win32-graphics"))]
     RecordDispatch: usize,
 }
 #[repr(transparent)]
@@ -7032,7 +7032,7 @@ impl IDMLDevice {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).CreateCommandRecorder)(::windows_core::Interface::as_raw(self), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn CreateBindingTable<T: ::windows_core::Interface>(&self, desc: *const DML_BINDING_TABLE_DESC) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).CreateBindingTable)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(desc), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
@@ -7120,9 +7120,9 @@ pub struct IDMLDevice_Vtbl {
     pub CompileOperator: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, op: ::windows_core::RawPtr, flags: DML_EXECUTION_FLAGS, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub CreateOperatorInitializer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, operatorcount: u32, operators: *const ::windows_core::RawPtr, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub CreateCommandRecorder: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    #[cfg(feature = "win32-graphics")]
     pub CreateBindingTable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, desc: *const DML_BINDING_TABLE_DESC, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    #[cfg(not(feature = "win32-graphics"))]
     CreateBindingTable: usize,
     pub Evict: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, count: u32, ppobjects: *const ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub MakeResident: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, count: u32, ppobjects: *const ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -7161,7 +7161,7 @@ impl IDMLDevice1 {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).base__.CreateCommandRecorder)(::windows_core::Interface::as_raw(self), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn CreateBindingTable<T: ::windows_core::Interface>(&self, desc: *const DML_BINDING_TABLE_DESC) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).base__.CreateBindingTable)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(desc), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)

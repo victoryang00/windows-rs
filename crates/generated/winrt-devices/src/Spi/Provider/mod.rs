@@ -258,7 +258,7 @@ pub struct ISpiDeviceProvider_Vtbl {
 #[repr(transparent)]
 pub struct ISpiProvider(::windows_core::IUnknown);
 impl ISpiProvider {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetControllersAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<ISpiControllerProvider>>> {
         let this = self;
         unsafe {
@@ -338,9 +338,9 @@ unsafe impl ::windows_core::Interface for ISpiProvider {
 #[doc(hidden)]
 pub struct ISpiProvider_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetControllersAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetControllersAsync: usize,
 }
 #[repr(transparent)]

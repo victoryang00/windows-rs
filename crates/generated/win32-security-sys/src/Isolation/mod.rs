@@ -6,7 +6,7 @@ extern "system" {
     pub fn DeriveRestrictedAppContainerSidFromAppContainerSidAndRestrictedName(psidappcontainersid: ::win32_foundation_sys::PSID, pszrestrictedappcontainername: ::windows_core_sys::PCWSTR, ppsidrestrictedappcontainersid: *mut ::win32_foundation_sys::PSID) -> ::windows_core_sys::HRESULT;
     pub fn GetAppContainerFolderPath(pszappcontainersid: ::windows_core_sys::PCWSTR, ppszpath: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn GetAppContainerNamedObjectPath(token: ::win32_foundation_sys::HANDLE, appcontainersid: ::win32_foundation_sys::PSID, objectpathlength: u32, objectpath: ::windows_core_sys::PWSTR, returnlength: *mut u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_Registry")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn GetAppContainerRegistryLocation(desiredaccess: u32, phappcontainerkey: *mut ::win32_system_sys::Registry::HKEY) -> ::windows_core_sys::HRESULT;
     pub fn IsProcessInIsolatedContainer(isprocessinisolatedcontainer: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn IsProcessInIsolatedWindowsEnvironment(isprocessinisolatedwindowsenvironment: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;

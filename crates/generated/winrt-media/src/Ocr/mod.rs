@@ -9,13 +9,13 @@ unsafe impl ::windows_core::Interface for IOcrEngine {
 #[doc(hidden)]
 pub struct IOcrEngine_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_Imaging")]
+    #[cfg(feature = "winrt-graphics")]
     pub RecognizeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bitmap: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Imaging"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     RecognizeAsync: usize,
-    #[cfg(feature = "Globalization")]
+    #[cfg(feature = "winrt-globalization")]
     pub RecognizerLanguage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Globalization"))]
+    #[cfg(not(feature = "winrt-globalization"))]
     RecognizerLanguage: usize,
 }
 #[doc(hidden)]
@@ -30,17 +30,17 @@ unsafe impl ::windows_core::Interface for IOcrEngineStatics {
 pub struct IOcrEngineStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub MaxImageDimension: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Globalization"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-globalization"))]
     pub AvailableRecognizerLanguages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Globalization")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-globalization")))]
     AvailableRecognizerLanguages: usize,
-    #[cfg(feature = "Globalization")]
+    #[cfg(feature = "winrt-globalization")]
     pub IsLanguageSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, language: ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Globalization"))]
+    #[cfg(not(feature = "winrt-globalization"))]
     IsLanguageSupported: usize,
-    #[cfg(feature = "Globalization")]
+    #[cfg(feature = "winrt-globalization")]
     pub TryCreateFromLanguage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, language: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Globalization"))]
+    #[cfg(not(feature = "winrt-globalization"))]
     TryCreateFromLanguage: usize,
     pub TryCreateFromUserProfileLanguages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -55,9 +55,9 @@ unsafe impl ::windows_core::Interface for IOcrLine {
 #[doc(hidden)]
 pub struct IOcrLine_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Words: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Words: usize,
     pub Text: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
@@ -72,9 +72,9 @@ unsafe impl ::windows_core::Interface for IOcrResult {
 #[doc(hidden)]
 pub struct IOcrResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Lines: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Lines: usize,
     pub TextAngle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Text: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -96,7 +96,7 @@ pub struct IOcrWord_Vtbl {
 #[repr(transparent)]
 pub struct OcrEngine(::windows_core::IUnknown);
 impl OcrEngine {
-    #[cfg(feature = "Graphics_Imaging")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn RecognizeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::Imaging::SoftwareBitmap>>(&self, bitmap: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<OcrResult>> {
         let this = self;
         unsafe {
@@ -104,7 +104,7 @@ impl OcrEngine {
             (::windows_core::Interface::vtable(this).RecognizeAsync)(::windows_core::Interface::as_raw(this), bitmap.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<OcrResult>>(result__)
         }
     }
-    #[cfg(feature = "Globalization")]
+    #[cfg(feature = "winrt-globalization")]
     pub fn RecognizerLanguage(&self) -> ::windows_core::Result<::winrt_globalization::Language> {
         let this = self;
         unsafe {
@@ -118,21 +118,21 @@ impl OcrEngine {
             (::windows_core::Interface::vtable(this).MaxImageDimension)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Globalization"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-globalization"))]
     pub fn AvailableRecognizerLanguages() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_globalization::Language>> {
         Self::IOcrEngineStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).AvailableRecognizerLanguages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_globalization::Language>>(result__)
         })
     }
-    #[cfg(feature = "Globalization")]
+    #[cfg(feature = "winrt-globalization")]
     pub fn IsLanguageSupported<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_globalization::Language>>(language: Param0) -> ::windows_core::Result<bool> {
         Self::IOcrEngineStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
             (::windows_core::Interface::vtable(this).IsLanguageSupported)(::windows_core::Interface::as_raw(this), language.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         })
     }
-    #[cfg(feature = "Globalization")]
+    #[cfg(feature = "winrt-globalization")]
     pub fn TryCreateFromLanguage<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_globalization::Language>>(language: Param0) -> ::windows_core::Result<OcrEngine> {
         Self::IOcrEngineStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -225,7 +225,7 @@ unsafe impl ::core::marker::Sync for OcrEngine {}
 #[repr(transparent)]
 pub struct OcrLine(::windows_core::IUnknown);
 impl OcrLine {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Words(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<OcrWord>> {
         let this = self;
         unsafe {
@@ -316,7 +316,7 @@ unsafe impl ::core::marker::Sync for OcrLine {}
 #[repr(transparent)]
 pub struct OcrResult(::windows_core::IUnknown);
 impl OcrResult {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Lines(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<OcrLine>> {
         let this = self;
         unsafe {

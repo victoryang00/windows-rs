@@ -11,7 +11,7 @@ pub mod UI;
 #[repr(transparent)]
 pub struct IUriToStreamResolver(::windows_core::IUnknown);
 impl IUriToStreamResolver {
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn UriToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IInputStream>> {
         let this = self;
         unsafe {
@@ -91,9 +91,9 @@ unsafe impl ::windows_core::Interface for IUriToStreamResolver {
 #[doc(hidden)]
 pub struct IUriToStreamResolver_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub UriToStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     UriToStreamAsync: usize,
 }
 #[doc(hidden)]

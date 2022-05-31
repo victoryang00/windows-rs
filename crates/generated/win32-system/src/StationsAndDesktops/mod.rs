@@ -222,7 +222,7 @@ pub unsafe fn CloseWindowStation<'a, Param0: ::windows_core::IntoParam<'a, HWINS
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security"))]
 #[inline]
 pub unsafe fn CreateDesktopA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszdesktop: Param0, lpszdevice: Param1, pdevmode: *mut ::win32_graphics::Gdi::DEVMODEA, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::windows_core::Result<HDESK> {
     #[cfg(windows)]
@@ -237,7 +237,7 @@ pub unsafe fn CreateDesktopA<'a, Param0: ::windows_core::IntoParam<'a, ::windows
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security"))]
 #[inline]
 pub unsafe fn CreateDesktopExA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszdesktop: Param0, lpszdevice: Param1, pdevmode: *mut ::win32_graphics::Gdi::DEVMODEA, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security::SECURITY_ATTRIBUTES, ulheapsize: u32, pvoid: *mut ::core::ffi::c_void) -> ::windows_core::Result<HDESK> {
     #[cfg(windows)]
@@ -252,7 +252,7 @@ pub unsafe fn CreateDesktopExA<'a, Param0: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security"))]
 #[inline]
 pub unsafe fn CreateDesktopExW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszdesktop: Param0, lpszdevice: Param1, pdevmode: *mut ::win32_graphics::Gdi::DEVMODEW, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security::SECURITY_ATTRIBUTES, ulheapsize: u32, pvoid: *mut ::core::ffi::c_void) -> ::windows_core::Result<HDESK> {
     #[cfg(windows)]
@@ -267,7 +267,7 @@ pub unsafe fn CreateDesktopExW<'a, Param0: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security"))]
 #[inline]
 pub unsafe fn CreateDesktopW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszdesktop: Param0, lpszdevice: Param1, pdevmode: *mut ::win32_graphics::Gdi::DEVMODEW, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::windows_core::Result<HDESK> {
     #[cfg(windows)]
@@ -282,7 +282,7 @@ pub unsafe fn CreateDesktopW<'a, Param0: ::windows_core::IntoParam<'a, ::windows
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateWindowStationA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpwinsta: Param0, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::windows_core::Result<HWINSTA> {
     #[cfg(windows)]
@@ -297,7 +297,7 @@ pub unsafe fn CreateWindowStationA<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateWindowStationW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpwinsta: Param0, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::windows_core::Result<HWINSTA> {
     #[cfg(windows)]
@@ -314,7 +314,7 @@ pub unsafe fn CreateWindowStationW<'a, Param0: ::windows_core::IntoParam<'a, ::w
 }
 pub type DESKTOPENUMPROCA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCSTR, param1: ::win32_foundation::LPARAM) -> ::win32_foundation::BOOL>;
 pub type DESKTOPENUMPROCW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: ::win32_foundation::LPARAM) -> ::win32_foundation::BOOL>;
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn EnumDesktopWindows<'a, Param0: ::windows_core::IntoParam<'a, HDESK>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(hdesktop: Param0, lpfn: ::win32_ui::WindowsAndMessaging::WNDENUMPROC, lparam: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]

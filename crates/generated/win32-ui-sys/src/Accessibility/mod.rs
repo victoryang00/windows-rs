@@ -2,11 +2,11 @@
 extern "system" {
     pub fn AccNotifyTouchInteraction(hwndapp: ::win32_foundation_sys::HWND, hwndtarget: ::win32_foundation_sys::HWND, pttarget: ::win32_foundation_sys::POINT) -> ::windows_core_sys::HRESULT;
     pub fn AccSetRunningUtilityState(hwndapp: ::win32_foundation_sys::HWND, dwutilitystatemask: u32, dwutilitystate: ACC_UTILITY_STATE_FLAGS) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn AccessibleChildren(pacccontainer: IAccessible, ichildstart: i32, cchildren: i32, rgvarchildren: *mut ::win32_system_sys::Com::VARIANT, pcobtained: *mut i32) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn AccessibleObjectFromEvent(hwnd: ::win32_foundation_sys::HWND, dwid: u32, dwchildid: u32, ppacc: *mut IAccessible, pvarchild: *mut ::win32_system_sys::Com::VARIANT) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn AccessibleObjectFromPoint(ptscreen: ::win32_foundation_sys::POINT, ppacc: *mut IAccessible, pvarchild: *mut ::win32_system_sys::Com::VARIANT) -> ::windows_core_sys::HRESULT;
     pub fn AccessibleObjectFromWindow(hwnd: ::win32_foundation_sys::HWND, dwid: u32, riid: *const ::windows_core_sys::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn CreateStdAccessibleObject(hwnd: ::win32_foundation_sys::HWND, idobject: i32, riid: *const ::windows_core_sys::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
@@ -23,10 +23,10 @@ extern "system" {
     pub fn GridPattern_GetItem(hobj: HUIAPATTERNOBJECT, row: i32, column: i32, presult: *mut HUIANODE) -> ::windows_core_sys::HRESULT;
     pub fn InvokePattern_Invoke(hobj: HUIAPATTERNOBJECT) -> ::windows_core_sys::HRESULT;
     pub fn IsWinEventHookInstalled(event: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn ItemContainerPattern_FindItemByProperty(hobj: HUIAPATTERNOBJECT, hnodestartafter: HUIANODE, propertyid: i32, value: ::win32_system_sys::Com::VARIANT, pfound: *mut HUIANODE) -> ::windows_core_sys::HRESULT;
     pub fn LegacyIAccessiblePattern_DoDefaultAction(hobj: HUIAPATTERNOBJECT) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn LegacyIAccessiblePattern_GetIAccessible(hobj: HUIAPATTERNOBJECT, paccessible: *mut IAccessible) -> ::windows_core_sys::HRESULT;
     pub fn LegacyIAccessiblePattern_Select(hobj: HUIAPATTERNOBJECT, flagsselect: i32) -> ::windows_core_sys::HRESULT;
     pub fn LegacyIAccessiblePattern_SetValue(hobj: HUIAPATTERNOBJECT, szvalue: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
@@ -36,9 +36,9 @@ extern "system" {
     pub fn NotifyWinEvent(event: u32, hwnd: ::win32_foundation_sys::HWND, idobject: i32, idchild: i32);
     pub fn ObjectFromLresult(lresult: ::win32_foundation_sys::LRESULT, riid: *const ::windows_core_sys::GUID, wparam: ::win32_foundation_sys::WPARAM, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn RangeValuePattern_SetValue(hobj: HUIAPATTERNOBJECT, val: f64) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn RegisterPointerInputTarget(hwnd: ::win32_foundation_sys::HWND, pointertype: super::WindowsAndMessaging::POINTER_INPUT_TYPE) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn RegisterPointerInputTargetEx(hwnd: ::win32_foundation_sys::HWND, pointertype: super::WindowsAndMessaging::POINTER_INPUT_TYPE, fobserve: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     pub fn ScrollItemPattern_ScrollIntoView(hobj: HUIAPATTERNOBJECT) -> ::windows_core_sys::HRESULT;
     pub fn ScrollPattern_Scroll(hobj: HUIAPATTERNOBJECT, horizontalamount: ScrollAmount, verticalamount: ScrollAmount) -> ::windows_core_sys::HRESULT;
@@ -49,9 +49,9 @@ extern "system" {
     pub fn SetWinEventHook(eventmin: u32, eventmax: u32, hmodwineventproc: ::win32_foundation_sys::HINSTANCE, pfnwineventproc: WINEVENTPROC, idprocess: u32, idthread: u32, dwflags: u32) -> HWINEVENTHOOK;
     pub fn SynchronizedInputPattern_Cancel(hobj: HUIAPATTERNOBJECT) -> ::windows_core_sys::HRESULT;
     pub fn SynchronizedInputPattern_StartListening(hobj: HUIAPATTERNOBJECT, inputtype: SynchronizedInputType) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn TextPattern_GetSelection(hobj: HUIAPATTERNOBJECT, pretval: *mut *mut ::win32_system_sys::Com::SAFEARRAY) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn TextPattern_GetVisibleRanges(hobj: HUIAPATTERNOBJECT, pretval: *mut *mut ::win32_system_sys::Com::SAFEARRAY) -> ::windows_core_sys::HRESULT;
     pub fn TextPattern_RangeFromChild(hobj: HUIAPATTERNOBJECT, hnodechild: HUIANODE, pretval: *mut HUIATEXTRANGE) -> ::windows_core_sys::HRESULT;
     pub fn TextPattern_RangeFromPoint(hobj: HUIAPATTERNOBJECT, point: UiaPoint, pretval: *mut HUIATEXTRANGE) -> ::windows_core_sys::HRESULT;
@@ -62,14 +62,14 @@ extern "system" {
     pub fn TextRange_Compare(hobj: HUIATEXTRANGE, range: HUIATEXTRANGE, pretval: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn TextRange_CompareEndpoints(hobj: HUIATEXTRANGE, endpoint: TextPatternRangeEndpoint, targetrange: HUIATEXTRANGE, targetendpoint: TextPatternRangeEndpoint, pretval: *mut i32) -> ::windows_core_sys::HRESULT;
     pub fn TextRange_ExpandToEnclosingUnit(hobj: HUIATEXTRANGE, unit: TextUnit) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn TextRange_FindAttribute(hobj: HUIATEXTRANGE, attributeid: i32, val: ::win32_system_sys::Com::VARIANT, backward: ::win32_foundation_sys::BOOL, pretval: *mut HUIATEXTRANGE) -> ::windows_core_sys::HRESULT;
     pub fn TextRange_FindText(hobj: HUIATEXTRANGE, text: ::win32_foundation_sys::BSTR, backward: ::win32_foundation_sys::BOOL, ignorecase: ::win32_foundation_sys::BOOL, pretval: *mut HUIATEXTRANGE) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn TextRange_GetAttributeValue(hobj: HUIATEXTRANGE, attributeid: i32, pretval: *mut ::win32_system_sys::Com::VARIANT) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn TextRange_GetBoundingRectangles(hobj: HUIATEXTRANGE, pretval: *mut *mut ::win32_system_sys::Com::SAFEARRAY) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn TextRange_GetChildren(hobj: HUIATEXTRANGE, pretval: *mut *mut ::win32_system_sys::Com::SAFEARRAY) -> ::windows_core_sys::HRESULT;
     pub fn TextRange_GetEnclosingElement(hobj: HUIATEXTRANGE, pretval: *mut HUIANODE) -> ::windows_core_sys::HRESULT;
     pub fn TextRange_GetText(hobj: HUIATEXTRANGE, maxlength: i32, pretval: *mut ::win32_foundation_sys::BSTR) -> ::windows_core_sys::HRESULT;
@@ -83,75 +83,75 @@ extern "system" {
     pub fn TransformPattern_Move(hobj: HUIAPATTERNOBJECT, x: f64, y: f64) -> ::windows_core_sys::HRESULT;
     pub fn TransformPattern_Resize(hobj: HUIAPATTERNOBJECT, width: f64, height: f64) -> ::windows_core_sys::HRESULT;
     pub fn TransformPattern_Rotate(hobj: HUIAPATTERNOBJECT, degrees: f64) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn UiaAddEvent(hnode: HUIANODE, eventid: i32, pcallback: *mut UiaEventCallback, scope: TreeScope, pproperties: *mut i32, cproperties: i32, prequest: *mut UiaCacheRequest, phevent: *mut HUIAEVENT) -> ::windows_core_sys::HRESULT;
     pub fn UiaClientsAreListening() -> ::win32_foundation_sys::BOOL;
     pub fn UiaDisconnectAllProviders() -> ::windows_core_sys::HRESULT;
     pub fn UiaDisconnectProvider(pprovider: IRawElementProviderSimple) -> ::windows_core_sys::HRESULT;
     pub fn UiaEventAddWindow(hevent: HUIAEVENT, hwnd: ::win32_foundation_sys::HWND) -> ::windows_core_sys::HRESULT;
     pub fn UiaEventRemoveWindow(hevent: HUIAEVENT, hwnd: ::win32_foundation_sys::HWND) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn UiaFind(hnode: HUIANODE, pparams: *mut UiaFindParams, prequest: *mut UiaCacheRequest, pprequesteddata: *mut *mut ::win32_system_sys::Com::SAFEARRAY, ppoffsets: *mut *mut ::win32_system_sys::Com::SAFEARRAY, pptreestructures: *mut *mut ::win32_system_sys::Com::SAFEARRAY) -> ::windows_core_sys::HRESULT;
     pub fn UiaGetErrorDescription(pdescription: *mut ::win32_foundation_sys::BSTR) -> ::win32_foundation_sys::BOOL;
     pub fn UiaGetPatternProvider(hnode: HUIANODE, patternid: i32, phobj: *mut HUIAPATTERNOBJECT) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn UiaGetPropertyValue(hnode: HUIANODE, propertyid: i32, pvalue: *mut ::win32_system_sys::Com::VARIANT) -> ::windows_core_sys::HRESULT;
     pub fn UiaGetReservedMixedAttributeValue(punkmixedattributevalue: *mut ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
     pub fn UiaGetReservedNotSupportedValue(punknotsupportedvalue: *mut ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
     pub fn UiaGetRootNode(phnode: *mut HUIANODE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn UiaGetRuntimeId(hnode: HUIANODE, pruntimeid: *mut *mut ::win32_system_sys::Com::SAFEARRAY) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn UiaGetUpdatedCache(hnode: HUIANODE, prequest: *mut UiaCacheRequest, normalizestate: NormalizeState, pnormalizecondition: *mut UiaCondition, pprequesteddata: *mut *mut ::win32_system_sys::Com::SAFEARRAY, pptreestructure: *mut ::win32_foundation_sys::BSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn UiaHPatternObjectFromVariant(pvar: *mut ::win32_system_sys::Com::VARIANT, phobj: *mut HUIAPATTERNOBJECT) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn UiaHTextRangeFromVariant(pvar: *mut ::win32_system_sys::Com::VARIANT, phtextrange: *mut HUIATEXTRANGE) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn UiaHUiaNodeFromVariant(pvar: *mut ::win32_system_sys::Com::VARIANT, phnode: *mut HUIANODE) -> ::windows_core_sys::HRESULT;
     pub fn UiaHasServerSideProvider(hwnd: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::BOOL;
     pub fn UiaHostProviderFromHwnd(hwnd: ::win32_foundation_sys::HWND, ppprovider: *mut IRawElementProviderSimple) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn UiaIAccessibleFromProvider(pprovider: IRawElementProviderSimple, dwflags: u32, ppaccessible: *mut IAccessible, pvarchild: *mut ::win32_system_sys::Com::VARIANT) -> ::windows_core_sys::HRESULT;
     pub fn UiaLookupId(r#type: AutomationIdentifierType, pguid: *const ::windows_core_sys::GUID) -> i32;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn UiaNavigate(hnode: HUIANODE, direction: NavigateDirection, pcondition: *mut UiaCondition, prequest: *mut UiaCacheRequest, pprequesteddata: *mut *mut ::win32_system_sys::Com::SAFEARRAY, pptreestructure: *mut ::win32_foundation_sys::BSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn UiaNodeFromFocus(prequest: *mut UiaCacheRequest, pprequesteddata: *mut *mut ::win32_system_sys::Com::SAFEARRAY, pptreestructure: *mut ::win32_foundation_sys::BSTR) -> ::windows_core_sys::HRESULT;
     pub fn UiaNodeFromHandle(hwnd: ::win32_foundation_sys::HWND, phnode: *mut HUIANODE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn UiaNodeFromPoint(x: f64, y: f64, prequest: *mut UiaCacheRequest, pprequesteddata: *mut *mut ::win32_system_sys::Com::SAFEARRAY, pptreestructure: *mut ::win32_foundation_sys::BSTR) -> ::windows_core_sys::HRESULT;
     pub fn UiaNodeFromProvider(pprovider: IRawElementProviderSimple, phnode: *mut HUIANODE) -> ::windows_core_sys::HRESULT;
     pub fn UiaNodeRelease(hnode: HUIANODE) -> ::win32_foundation_sys::BOOL;
     pub fn UiaPatternRelease(hobj: HUIAPATTERNOBJECT) -> ::win32_foundation_sys::BOOL;
     pub fn UiaProviderForNonClient(hwnd: ::win32_foundation_sys::HWND, idobject: i32, idchild: i32, ppprovider: *mut IRawElementProviderSimple) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn UiaProviderFromIAccessible(paccessible: IAccessible, idchild: i32, dwflags: u32, ppprovider: *mut IRawElementProviderSimple) -> ::windows_core_sys::HRESULT;
     pub fn UiaRaiseActiveTextPositionChangedEvent(provider: IRawElementProviderSimple, textrange: ITextRangeProvider) -> ::windows_core_sys::HRESULT;
     pub fn UiaRaiseAsyncContentLoadedEvent(pprovider: IRawElementProviderSimple, asynccontentloadedstate: AsyncContentLoadedState, percentcomplete: f64) -> ::windows_core_sys::HRESULT;
     pub fn UiaRaiseAutomationEvent(pprovider: IRawElementProviderSimple, id: i32) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn UiaRaiseAutomationPropertyChangedEvent(pprovider: IRawElementProviderSimple, id: i32, oldvalue: ::win32_system_sys::Com::VARIANT, newvalue: ::win32_system_sys::Com::VARIANT) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn UiaRaiseChangesEvent(pprovider: IRawElementProviderSimple, eventidcount: i32, puiachanges: *mut UiaChangeInfo) -> ::windows_core_sys::HRESULT;
     pub fn UiaRaiseNotificationEvent(provider: IRawElementProviderSimple, notificationkind: NotificationKind, notificationprocessing: NotificationProcessing, displaystring: ::win32_foundation_sys::BSTR, activityid: ::win32_foundation_sys::BSTR) -> ::windows_core_sys::HRESULT;
     pub fn UiaRaiseStructureChangedEvent(pprovider: IRawElementProviderSimple, structurechangetype: StructureChangeType, pruntimeid: *mut i32, cruntimeidlen: i32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn UiaRaiseTextEditTextChangedEvent(pprovider: IRawElementProviderSimple, texteditchangetype: TextEditChangeType, pchangeddata: *mut ::win32_system_sys::Com::SAFEARRAY) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn UiaRegisterProviderCallback(pcallback: *mut UiaProviderCallback);
     pub fn UiaRemoveEvent(hevent: HUIAEVENT) -> ::windows_core_sys::HRESULT;
     pub fn UiaReturnRawElementProvider(hwnd: ::win32_foundation_sys::HWND, wparam: ::win32_foundation_sys::WPARAM, lparam: ::win32_foundation_sys::LPARAM, el: IRawElementProviderSimple) -> ::win32_foundation_sys::LRESULT;
     pub fn UiaSetFocus(hnode: HUIANODE) -> ::windows_core_sys::HRESULT;
     pub fn UiaTextRangeRelease(hobj: HUIATEXTRANGE) -> ::win32_foundation_sys::BOOL;
     pub fn UnhookWinEvent(hwineventhook: HWINEVENTHOOK) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn UnregisterPointerInputTarget(hwnd: ::win32_foundation_sys::HWND, pointertype: super::WindowsAndMessaging::POINTER_INPUT_TYPE) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn UnregisterPointerInputTargetEx(hwnd: ::win32_foundation_sys::HWND, pointertype: super::WindowsAndMessaging::POINTER_INPUT_TYPE) -> ::win32_foundation_sys::BOOL;
     pub fn ValuePattern_SetValue(hobj: HUIAPATTERNOBJECT, pval: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn VirtualizedItemPattern_Realize(hobj: HUIAPATTERNOBJECT) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn WindowFromAccessibleObject(param0: IAccessible, phwnd: *mut ::win32_foundation_sys::HWND) -> ::windows_core_sys::HRESULT;
     pub fn WindowPattern_Close(hobj: HUIAPATTERNOBJECT) -> ::windows_core_sys::HRESULT;
     pub fn WindowPattern_SetWindowVisualState(hobj: HUIAPATTERNOBJECT, state: WindowVisualState) -> ::windows_core_sys::HRESULT;
@@ -705,9 +705,9 @@ pub const ItemContainer_Pattern_GUID: ::windows_core_sys::GUID = ::windows_core_
 pub const ItemStatus_Property_GUID: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1373504289, data2: 14707, data3: 17383, data4: [137, 19, 11, 8, 232, 19, 195, 127] };
 pub const ItemType_Property_GUID: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3453633357, data2: 25122, data3: 16699, data4: [166, 138, 50, 93, 209, 212, 15, 57] };
 pub const LIBID_Accessibility: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 514120688, data2: 15419, data3: 4559, data4: [129, 12, 0, 170, 0, 56, 155, 113] };
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub type LPFNACCESSIBLECHILDREN = ::core::option::Option<unsafe extern "system" fn(pacccontainer: IAccessible, ichildstart: i32, cchildren: i32, rgvarchildren: *mut ::win32_system_sys::Com::VARIANT, pcobtained: *mut i32) -> ::windows_core_sys::HRESULT>;
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub type LPFNACCESSIBLEOBJECTFROMPOINT = ::core::option::Option<unsafe extern "system" fn(ptscreen: ::win32_foundation_sys::POINT, ppacc: *mut IAccessible, pvarchild: *mut ::win32_system_sys::Com::VARIANT) -> ::windows_core_sys::HRESULT>;
 pub type LPFNACCESSIBLEOBJECTFROMWINDOW = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation_sys::HWND, dwid: u32, riid: *const ::windows_core_sys::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT>;
 pub type LPFNCREATESTDACCESSIBLEOBJECT = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation_sys::HWND, idobject: i32, riid: *const ::windows_core_sys::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT>;
@@ -1878,31 +1878,31 @@ impl ::core::clone::Clone for UiaCacheRequest {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub struct UiaChangeInfo {
     pub uiaId: i32,
     pub payload: ::win32_system_sys::Com::VARIANT,
     pub extraInfo: ::win32_system_sys::Com::VARIANT,
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for UiaChangeInfo {}
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for UiaChangeInfo {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub struct UiaChangesEventArgs {
     pub Type: EventArgsType,
     pub EventId: i32,
     pub EventIdCount: i32,
     pub pUiaChanges: *mut UiaChangeInfo,
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for UiaChangesEventArgs {}
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for UiaChangesEventArgs {
     fn clone(&self) -> Self {
         *self
@@ -1929,7 +1929,7 @@ impl ::core::clone::Clone for UiaEventArgs {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub type UiaEventCallback = ::core::option::Option<unsafe extern "system" fn(pargs: *mut UiaEventArgs, prequesteddata: *mut ::win32_system_sys::Com::SAFEARRAY, ptreestructure: ::win32_foundation_sys::BSTR)>;
 #[repr(C)]
 pub struct UiaFindParams {
@@ -1967,7 +1967,7 @@ impl ::core::clone::Clone for UiaPoint {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub struct UiaPropertyChangedEventArgs {
     pub Type: EventArgsType,
     pub EventId: i32,
@@ -1975,31 +1975,31 @@ pub struct UiaPropertyChangedEventArgs {
     pub OldValue: ::win32_system_sys::Com::VARIANT,
     pub NewValue: ::win32_system_sys::Com::VARIANT,
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for UiaPropertyChangedEventArgs {}
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for UiaPropertyChangedEventArgs {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub struct UiaPropertyCondition {
     pub ConditionType: ConditionType,
     pub PropertyId: i32,
     pub Value: ::win32_system_sys::Com::VARIANT,
     pub Flags: PropertyConditionFlags,
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for UiaPropertyCondition {}
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for UiaPropertyCondition {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub type UiaProviderCallback = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation_sys::HWND, providertype: ProviderType) -> *mut ::win32_system_sys::Com::SAFEARRAY>;
 #[repr(C)]
 pub struct UiaRect {
@@ -2030,16 +2030,16 @@ impl ::core::clone::Clone for UiaStructureChangedEventArgs {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct UiaTextEditTextChangedEventArgs {
     pub Type: EventArgsType,
     pub EventId: i32,
     pub TextEditChangeType: TextEditChangeType,
     pub pTextChange: *mut ::win32_system_sys::Com::SAFEARRAY,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for UiaTextEditTextChangedEventArgs {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for UiaTextEditTextChangedEventArgs {
     fn clone(&self) -> Self {
         *self

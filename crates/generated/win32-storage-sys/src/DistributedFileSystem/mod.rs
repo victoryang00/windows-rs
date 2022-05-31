@@ -6,12 +6,12 @@ extern "system" {
     pub fn NetDfsAddStdRoot(servername: ::windows_core_sys::PCWSTR, rootshare: ::windows_core_sys::PCWSTR, comment: ::windows_core_sys::PCWSTR, flags: u32) -> u32;
     pub fn NetDfsEnum(dfsname: ::windows_core_sys::PCWSTR, level: u32, prefmaxlen: u32, buffer: *mut *mut u8, entriesread: *mut u32, resumehandle: *mut u32) -> u32;
     pub fn NetDfsGetClientInfo(dfsentrypath: ::windows_core_sys::PCWSTR, servername: ::windows_core_sys::PCWSTR, sharename: ::windows_core_sys::PCWSTR, level: u32, buffer: *mut *mut u8) -> u32;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn NetDfsGetFtContainerSecurity(domainname: ::windows_core_sys::PCWSTR, securityinformation: u32, ppsecuritydescriptor: *mut ::win32_security_sys::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> u32;
     pub fn NetDfsGetInfo(dfsentrypath: ::windows_core_sys::PCWSTR, servername: ::windows_core_sys::PCWSTR, sharename: ::windows_core_sys::PCWSTR, level: u32, buffer: *mut *mut u8) -> u32;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn NetDfsGetSecurity(dfsentrypath: ::windows_core_sys::PCWSTR, securityinformation: u32, ppsecuritydescriptor: *mut ::win32_security_sys::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn NetDfsGetStdContainerSecurity(machinename: ::windows_core_sys::PCWSTR, securityinformation: u32, ppsecuritydescriptor: *mut ::win32_security_sys::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> u32;
     pub fn NetDfsGetSupportedNamespaceVersion(origin: DFS_NAMESPACE_VERSION_ORIGIN, pname: ::windows_core_sys::PCWSTR, ppversioninfo: *mut *mut DFS_SUPPORTED_NAMESPACE_VERSION_INFO) -> u32;
     pub fn NetDfsMove(olddfsentrypath: ::windows_core_sys::PCWSTR, newdfsentrypath: ::windows_core_sys::PCWSTR, flags: u32) -> u32;
@@ -21,12 +21,12 @@ extern "system" {
     pub fn NetDfsRemoveRootTarget(pdfspath: ::windows_core_sys::PCWSTR, ptargetpath: ::windows_core_sys::PCWSTR, flags: u32) -> u32;
     pub fn NetDfsRemoveStdRoot(servername: ::windows_core_sys::PCWSTR, rootshare: ::windows_core_sys::PCWSTR, flags: u32) -> u32;
     pub fn NetDfsSetClientInfo(dfsentrypath: ::windows_core_sys::PCWSTR, servername: ::windows_core_sys::PCWSTR, sharename: ::windows_core_sys::PCWSTR, level: u32, buffer: *const u8) -> u32;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn NetDfsSetFtContainerSecurity(domainname: ::windows_core_sys::PCWSTR, securityinformation: u32, psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR) -> u32;
     pub fn NetDfsSetInfo(dfsentrypath: ::windows_core_sys::PCWSTR, servername: ::windows_core_sys::PCWSTR, sharename: ::windows_core_sys::PCWSTR, level: u32, buffer: *const u8) -> u32;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn NetDfsSetSecurity(dfsentrypath: ::windows_core_sys::PCWSTR, securityinformation: u32, psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR) -> u32;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn NetDfsSetStdContainerSecurity(machinename: ::windows_core_sys::PCWSTR, securityinformation: u32, psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR) -> u32;
 }
 pub const DFS_ADD_VOLUME: u32 = 1u32;
@@ -132,7 +132,7 @@ impl ::core::clone::Clone for DFS_INFO_106 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct DFS_INFO_107 {
     pub Comment: ::windows_core_sys::PWSTR,
     pub State: u32,
@@ -142,23 +142,23 @@ pub struct DFS_INFO_107 {
     pub SdLengthReserved: u32,
     pub pSecurityDescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for DFS_INFO_107 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for DFS_INFO_107 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct DFS_INFO_150 {
     pub SdLengthReserved: u32,
     pub pSecurityDescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for DFS_INFO_150 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for DFS_INFO_150 {
     fn clone(&self) -> Self {
         *self
@@ -351,7 +351,7 @@ impl ::core::clone::Clone for DFS_INFO_7 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct DFS_INFO_8 {
     pub EntryPath: ::windows_core_sys::PWSTR,
     pub Comment: ::windows_core_sys::PWSTR,
@@ -364,16 +364,16 @@ pub struct DFS_INFO_8 {
     pub pSecurityDescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR,
     pub NumberOfStorages: u32,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for DFS_INFO_8 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for DFS_INFO_8 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct DFS_INFO_9 {
     pub EntryPath: ::windows_core_sys::PWSTR,
     pub Comment: ::windows_core_sys::PWSTR,
@@ -387,9 +387,9 @@ pub struct DFS_INFO_9 {
     pub NumberOfStorages: u32,
     pub Storage: *mut DFS_STORAGE_INFO_1,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for DFS_INFO_9 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for DFS_INFO_9 {
     fn clone(&self) -> Self {
         *self

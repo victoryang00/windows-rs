@@ -541,7 +541,7 @@ pub unsafe fn FilterClose<'a, Param0: ::windows_core::IntoParam<'a, HFILTER>>(hf
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FilterConnectCommunicationPort<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpportname: Param0, dwoptions: u32, lpcontext: *const ::core::ffi::c_void, wsizeofcontext: u16, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
@@ -675,7 +675,7 @@ pub unsafe fn FilterGetInformation<'a, Param0: ::windows_core::IntoParam<'a, HFI
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_IO")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn FilterGetMessage<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hport: Param0, lpmessagebuffer: *mut FILTER_MESSAGE_HEADER, dwmessagebuffersize: u32, lpoverlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::windows_core::Result<()> {
     #[cfg(windows)]

@@ -29,9 +29,9 @@ unsafe impl ::windows_core::Interface for IOfflineMapPackageQueryResult {
 pub struct IOfflineMapPackageQueryResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut OfflineMapPackageQueryStatus) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Packages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Packages: usize,
 }
 #[doc(hidden)]
@@ -58,17 +58,17 @@ unsafe impl ::windows_core::Interface for IOfflineMapPackageStatics {
 #[doc(hidden)]
 pub struct IOfflineMapPackageStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub FindPackagesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, querypoint: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     FindPackagesAsync: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub FindPackagesInBoundingBoxAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, queryboundingbox: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     FindPackagesInBoundingBoxAsync: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub FindPackagesInGeocircleAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, querycircle: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     FindPackagesInGeocircleAsync: usize,
 }
 #[repr(transparent)]
@@ -120,21 +120,21 @@ impl OfflineMapPackage {
             (::windows_core::Interface::vtable(this).RequestStartDownloadAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<OfflineMapPackageStartDownloadResult>>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn FindPackagesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(querypoint: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<OfflineMapPackageQueryResult>> {
         Self::IOfflineMapPackageStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).FindPackagesAsync)(::windows_core::Interface::as_raw(this), querypoint.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<OfflineMapPackageQueryResult>>(result__)
         })
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn FindPackagesInBoundingBoxAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::GeoboundingBox>>(queryboundingbox: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<OfflineMapPackageQueryResult>> {
         Self::IOfflineMapPackageStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).FindPackagesInBoundingBoxAsync)(::windows_core::Interface::as_raw(this), queryboundingbox.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<OfflineMapPackageQueryResult>>(result__)
         })
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn FindPackagesInGeocircleAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geocircle>>(querycircle: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<OfflineMapPackageQueryResult>> {
         Self::IOfflineMapPackageStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -228,7 +228,7 @@ impl OfflineMapPackageQueryResult {
             (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<OfflineMapPackageQueryStatus>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Packages(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<OfflineMapPackage>> {
         let this = self;
         unsafe {

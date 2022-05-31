@@ -1,22 +1,22 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn ADsBuildEnumerator(padscontainer: IADsContainer, ppenumvariant: *mut ::win32_system_sys::Ole::IEnumVARIANT) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn ADsBuildVarArrayInt(lpdwobjecttypes: *mut u32, dwobjecttypes: u32, pvar: *mut ::win32_system_sys::Com::VARIANT) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn ADsBuildVarArrayStr(lpppathnames: *const ::windows_core_sys::PWSTR, dwpathnames: u32, pvar: *mut ::win32_system_sys::Com::VARIANT) -> ::windows_core_sys::HRESULT;
     pub fn ADsDecodeBinaryData(szsrcdata: ::windows_core_sys::PCWSTR, ppbdestdata: *mut *mut u8, pdwdestlen: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn ADsEncodeBinaryData(pbsrcdata: *mut u8, dwsrclen: u32, ppszdestdata: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn ADsEnumerateNext(penumvariant: ::win32_system_sys::Ole::IEnumVARIANT, celements: u32, pvar: *mut ::win32_system_sys::Com::VARIANT, pcelementsfetched: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Ole")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn ADsFreeEnumerator(penumvariant: ::win32_system_sys::Ole::IEnumVARIANT) -> ::windows_core_sys::HRESULT;
     pub fn ADsGetLastError(lperror: *mut u32, lperrorbuf: ::windows_core_sys::PWSTR, dwerrorbuflen: u32, lpnamebuf: ::windows_core_sys::PWSTR, dwnamebuflen: u32) -> ::windows_core_sys::HRESULT;
     pub fn ADsGetObject(lpszpathname: ::windows_core_sys::PCWSTR, riid: *const ::windows_core_sys::GUID, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn ADsOpenObject(lpszpathname: ::windows_core_sys::PCWSTR, lpszusername: ::windows_core_sys::PCWSTR, lpszpassword: ::windows_core_sys::PCWSTR, dwreserved: ADS_AUTHENTICATION_ENUM, riid: *const ::windows_core_sys::GUID, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn ADsPropCheckIfWritable(pwzattr: ::windows_core_sys::PCWSTR, pwritableattrs: *const ADS_ATTR_INFO) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn ADsPropCreateNotifyObj(pappthddataobj: ::win32_system_sys::Com::IDataObject, pwzadsobjname: ::windows_core_sys::PCWSTR, phnotifyobj: *mut ::win32_foundation_sys::HWND) -> ::windows_core_sys::HRESULT;
     pub fn ADsPropGetInitInfo(hnotifyobj: ::win32_foundation_sys::HWND, pinitparams: *mut ADSPROPINITPARAMS) -> ::win32_foundation_sys::BOOL;
     pub fn ADsPropSendErrorMessage(hnotifyobj: ::win32_foundation_sys::HWND, perror: *mut ADSPROPERROR) -> ::win32_foundation_sys::BOOL;
@@ -25,21 +25,21 @@ extern "system" {
     pub fn ADsPropShowErrorDialog(hnotifyobj: ::win32_foundation_sys::HWND, hpage: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::BOOL;
     pub fn ADsSetLastError(dwerr: u32, pszerror: ::windows_core_sys::PCWSTR, pszprovider: ::windows_core_sys::PCWSTR);
     pub fn AdsFreeAdsValues(padsvalues: *mut ADSVALUE, dwnumvalues: u32);
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn AdsTypeToPropVariant(padsvalues: *mut ADSVALUE, dwnumvalues: u32, pvariant: *mut ::win32_system_sys::Com::VARIANT) -> ::windows_core_sys::HRESULT;
     pub fn AllocADsMem(cb: u32) -> *mut ::core::ffi::c_void;
     pub fn AllocADsStr(pstr: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::PWSTR;
-    #[cfg(all(feature = "Win32_Security", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-security-sys", feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn BinarySDToSecurityDescriptor(psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR, pvarsec: *mut ::win32_system_sys::Com::VARIANT, pszservername: ::windows_core_sys::PCWSTR, username: ::windows_core_sys::PCWSTR, password: ::windows_core_sys::PCWSTR, dwflags: u32) -> ::windows_core_sys::HRESULT;
     pub fn DsAddSidHistoryA(hds: ::win32_foundation_sys::HANDLE, flags: u32, srcdomain: ::windows_core_sys::PCSTR, srcprincipal: ::windows_core_sys::PCSTR, srcdomaincontroller: ::windows_core_sys::PCSTR, srcdomaincreds: *const ::core::ffi::c_void, dstdomain: ::windows_core_sys::PCSTR, dstprincipal: ::windows_core_sys::PCSTR) -> u32;
     pub fn DsAddSidHistoryW(hds: ::win32_foundation_sys::HANDLE, flags: u32, srcdomain: ::windows_core_sys::PCWSTR, srcprincipal: ::windows_core_sys::PCWSTR, srcdomaincontroller: ::windows_core_sys::PCWSTR, srcdomaincreds: *const ::core::ffi::c_void, dstdomain: ::windows_core_sys::PCWSTR, dstprincipal: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn DsAddressToSiteNamesA(computername: ::windows_core_sys::PCSTR, entrycount: u32, socketaddresses: *const super::WinSock::SOCKET_ADDRESS, sitenames: *mut *mut ::windows_core_sys::PSTR) -> u32;
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn DsAddressToSiteNamesExA(computername: ::windows_core_sys::PCSTR, entrycount: u32, socketaddresses: *const super::WinSock::SOCKET_ADDRESS, sitenames: *mut *mut ::windows_core_sys::PSTR, subnetnames: *mut *mut ::windows_core_sys::PSTR) -> u32;
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn DsAddressToSiteNamesExW(computername: ::windows_core_sys::PCWSTR, entrycount: u32, socketaddresses: *const super::WinSock::SOCKET_ADDRESS, sitenames: *mut *mut ::windows_core_sys::PWSTR, subnetnames: *mut *mut ::windows_core_sys::PWSTR) -> u32;
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn DsAddressToSiteNamesW(computername: ::windows_core_sys::PCWSTR, entrycount: u32, socketaddresses: *const super::WinSock::SOCKET_ADDRESS, sitenames: *mut *mut ::windows_core_sys::PWSTR) -> u32;
     pub fn DsBindA(domaincontrollername: ::windows_core_sys::PCSTR, dnsdomainname: ::windows_core_sys::PCSTR, phds: *mut ::win32_foundation_sys::HANDLE) -> u32;
     pub fn DsBindByInstanceA(servername: ::windows_core_sys::PCSTR, annotation: ::windows_core_sys::PCSTR, instanceguid: *const ::windows_core_sys::GUID, dnsdomainname: ::windows_core_sys::PCSTR, authidentity: *const ::core::ffi::c_void, serviceprincipalname: ::windows_core_sys::PCSTR, bindflags: u32, phds: *mut ::win32_foundation_sys::HANDLE) -> u32;
@@ -54,9 +54,9 @@ extern "system" {
     pub fn DsBindWithSpnExW(domaincontrollername: ::windows_core_sys::PCWSTR, dnsdomainname: ::windows_core_sys::PCWSTR, authidentity: *const ::core::ffi::c_void, serviceprincipalname: ::windows_core_sys::PCWSTR, bindflags: u32, phds: *mut ::win32_foundation_sys::HANDLE) -> u32;
     pub fn DsBindWithSpnW(domaincontrollername: ::windows_core_sys::PCWSTR, dnsdomainname: ::windows_core_sys::PCWSTR, authidentity: *const ::core::ffi::c_void, serviceprincipalname: ::windows_core_sys::PCWSTR, phds: *mut ::win32_foundation_sys::HANDLE) -> u32;
     pub fn DsBindingSetTimeout(hds: ::win32_foundation_sys::HANDLE, ctimeoutsecs: u32) -> u32;
-    #[cfg(feature = "Win32_UI_Shell")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn DsBrowseForContainerA(pinfo: *mut DSBROWSEINFOA) -> i32;
-    #[cfg(feature = "Win32_UI_Shell")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn DsBrowseForContainerW(pinfo: *mut DSBROWSEINFOW) -> i32;
     pub fn DsClientMakeSpnForTargetServerA(serviceclass: ::windows_core_sys::PCSTR, servicename: ::windows_core_sys::PCSTR, pcspnlength: *mut u32, pszspn: ::windows_core_sys::PSTR) -> u32;
     pub fn DsClientMakeSpnForTargetServerW(serviceclass: ::windows_core_sys::PCWSTR, servicename: ::windows_core_sys::PCWSTR, pcspnlength: *mut u32, pszspn: ::windows_core_sys::PWSTR) -> u32;
@@ -86,9 +86,9 @@ extern "system" {
     pub fn DsGetDcCloseW(getdccontexthandle: GetDcContextHandle);
     pub fn DsGetDcNameA(computername: ::windows_core_sys::PCSTR, domainname: ::windows_core_sys::PCSTR, domainguid: *const ::windows_core_sys::GUID, sitename: ::windows_core_sys::PCSTR, flags: u32, domaincontrollerinfo: *mut *mut DOMAIN_CONTROLLER_INFOA) -> u32;
     pub fn DsGetDcNameW(computername: ::windows_core_sys::PCWSTR, domainname: ::windows_core_sys::PCWSTR, domainguid: *const ::windows_core_sys::GUID, sitename: ::windows_core_sys::PCWSTR, flags: u32, domaincontrollerinfo: *mut *mut DOMAIN_CONTROLLER_INFOW) -> u32;
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn DsGetDcNextA(getdccontexthandle: ::win32_foundation_sys::HANDLE, sockaddresscount: *mut u32, sockaddresses: *mut *mut super::WinSock::SOCKET_ADDRESS, dnshostname: *mut ::windows_core_sys::PSTR) -> u32;
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn DsGetDcNextW(getdccontexthandle: ::win32_foundation_sys::HANDLE, sockaddresscount: *mut u32, sockaddresses: *mut *mut super::WinSock::SOCKET_ADDRESS, dnshostname: *mut ::windows_core_sys::PWSTR) -> u32;
     pub fn DsGetDcOpenA(dnsname: ::windows_core_sys::PCSTR, optionflags: u32, sitename: ::windows_core_sys::PCSTR, domainguid: *const ::windows_core_sys::GUID, dnsforestname: ::windows_core_sys::PCSTR, dcflags: u32, retgetdccontext: *mut GetDcContextHandle) -> u32;
     pub fn DsGetDcOpenW(dnsname: ::windows_core_sys::PCWSTR, optionflags: u32, sitename: ::windows_core_sys::PCWSTR, domainguid: *const ::windows_core_sys::GUID, dnsforestname: ::windows_core_sys::PCWSTR, dcflags: u32, retgetdccontext: *mut GetDcContextHandle) -> u32;
@@ -96,10 +96,10 @@ extern "system" {
     pub fn DsGetDcSiteCoverageW(servername: ::windows_core_sys::PCWSTR, entrycount: *mut u32, sitenames: *mut *mut ::windows_core_sys::PWSTR) -> u32;
     pub fn DsGetDomainControllerInfoA(hds: ::win32_foundation_sys::HANDLE, domainname: ::windows_core_sys::PCSTR, infolevel: u32, pcout: *mut u32, ppinfo: *mut *mut ::core::ffi::c_void) -> u32;
     pub fn DsGetDomainControllerInfoW(hds: ::win32_foundation_sys::HANDLE, domainname: ::windows_core_sys::PCWSTR, infolevel: u32, pcout: *mut u32, ppinfo: *mut *mut ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Security_Authentication_Identity")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn DsGetForestTrustInformationW(servername: ::windows_core_sys::PCWSTR, trusteddomainname: ::windows_core_sys::PCWSTR, flags: u32, foresttrustinfo: *mut *mut ::win32_security_sys::Authentication::Identity::LSA_FOREST_TRUST_INFORMATION) -> u32;
     pub fn DsGetFriendlyClassName(pszobjectclass: ::windows_core_sys::PCWSTR, pszbuffer: ::windows_core_sys::PWSTR, cchbuffer: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn DsGetIcon(dwflags: u32, pszobjectclass: ::windows_core_sys::PCWSTR, cximage: i32, cyimage: i32) -> ::win32_ui_sys::WindowsAndMessaging::HICON;
     pub fn DsGetRdnW(ppdn: *mut ::windows_core_sys::PWSTR, pcdn: *mut u32, ppkey: *mut ::windows_core_sys::PWSTR, pckey: *mut u32, ppval: *mut ::windows_core_sys::PWSTR, pcval: *mut u32) -> u32;
     pub fn DsGetSiteNameA(computername: ::windows_core_sys::PCSTR, sitename: *mut ::windows_core_sys::PSTR) -> u32;
@@ -130,7 +130,7 @@ extern "system" {
     pub fn DsMakeSpnW(serviceclass: ::windows_core_sys::PCWSTR, servicename: ::windows_core_sys::PCWSTR, instancename: ::windows_core_sys::PCWSTR, instanceport: u16, referrer: ::windows_core_sys::PCWSTR, pcspnlength: *mut u32, pszspn: ::windows_core_sys::PWSTR) -> u32;
     pub fn DsMapSchemaGuidsA(hds: ::win32_foundation_sys::HANDLE, cguids: u32, rguids: *const ::windows_core_sys::GUID, ppguidmap: *mut *mut DS_SCHEMA_GUID_MAPA) -> u32;
     pub fn DsMapSchemaGuidsW(hds: ::win32_foundation_sys::HANDLE, cguids: u32, rguids: *const ::windows_core_sys::GUID, ppguidmap: *mut *mut DS_SCHEMA_GUID_MAPW) -> u32;
-    #[cfg(feature = "Win32_Security_Authentication_Identity")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn DsMergeForestTrustInformationW(domainname: ::windows_core_sys::PCWSTR, newforesttrustinfo: *const ::win32_security_sys::Authentication::Identity::LSA_FOREST_TRUST_INFORMATION, oldforesttrustinfo: *const ::win32_security_sys::Authentication::Identity::LSA_FOREST_TRUST_INFORMATION, mergedforesttrustinfo: *mut *mut ::win32_security_sys::Authentication::Identity::LSA_FOREST_TRUST_INFORMATION) -> u32;
     pub fn DsQuerySitesByCostA(hds: ::win32_foundation_sys::HANDLE, pszfromsite: ::windows_core_sys::PCSTR, rgsztosites: *const ::windows_core_sys::PSTR, ctosites: u32, dwflags: u32, prgsiteinfo: *mut *mut DS_SITE_COST_INFO) -> u32;
     pub fn DsQuerySitesByCostW(hds: ::win32_foundation_sys::HANDLE, pwszfromsite: ::windows_core_sys::PCWSTR, rgwsztosites: *const ::windows_core_sys::PWSTR, ctosites: u32, dwflags: u32, prgsiteinfo: *mut *mut DS_SITE_COST_INFO) -> u32;
@@ -173,11 +173,11 @@ extern "system" {
     pub fn DsWriteAccountSpnW(hds: ::win32_foundation_sys::HANDLE, operation: DS_SPN_WRITE_OP, pszaccount: ::windows_core_sys::PCWSTR, cspn: u32, rpszspn: *const ::windows_core_sys::PWSTR) -> u32;
     pub fn FreeADsMem(pmem: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn FreeADsStr(pstr: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn PropVariantToAdsType(pvariant: *mut ::win32_system_sys::Com::VARIANT, dwnumvariant: u32, ppadsvalues: *mut *mut ADSVALUE, pdwnumvalues: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn ReallocADsMem(poldmem: *mut ::core::ffi::c_void, cbold: u32, cbnew: u32) -> *mut ::core::ffi::c_void;
     pub fn ReallocADsStr(ppstr: *mut ::windows_core_sys::PWSTR, pstr: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
-    #[cfg(all(feature = "Win32_Security", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-security-sys", feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn SecurityDescriptorToBinarySD(vvarsecdes: ::win32_system_sys::Com::VARIANT, ppsecuritydescriptor: *mut ::win32_security_sys::PSECURITY_DESCRIPTOR, pdwsdlength: *mut u32, pszservername: ::windows_core_sys::PCWSTR, username: ::windows_core_sys::PCWSTR, password: ::windows_core_sys::PCWSTR, dwflags: u32) -> ::windows_core_sys::HRESULT;
 }
 pub const ACTRL_DS_CONTROL_ACCESS: u32 = 256u32;
@@ -883,7 +883,7 @@ pub const CLSID_MicrosoftDS: ::windows_core_sys::GUID = ::windows_core_sys::GUID
 pub const CQFF_ISOPTIONAL: u32 = 2u32;
 pub const CQFF_NOGLOBALPAGES: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct CQFORM {
     pub cbStruct: u32,
     pub dwFlags: u32,
@@ -891,16 +891,16 @@ pub struct CQFORM {
     pub hIcon: ::win32_ui_sys::WindowsAndMessaging::HICON,
     pub pszTitle: ::windows_core_sys::PCWSTR,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for CQFORM {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for CQFORM {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct CQPAGE {
     pub cbStruct: u32,
     pub dwFlags: u32,
@@ -911,9 +911,9 @@ pub struct CQPAGE {
     pub pDlgProc: ::win32_ui_sys::WindowsAndMessaging::DLGPROC,
     pub lParam: ::win32_foundation_sys::LPARAM,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for CQPAGE {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for CQPAGE {
     fn clone(&self) -> Self {
         *self
@@ -1007,16 +1007,16 @@ pub const DSA_NEWOBJ_CTX_COMMIT: u32 = 2u32;
 pub const DSA_NEWOBJ_CTX_POSTCOMMIT: u32 = 3u32;
 pub const DSA_NEWOBJ_CTX_PRECOMMIT: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct DSA_NEWOBJ_DISPINFO {
     pub dwSize: u32,
     pub hObjClassIcon: ::win32_ui_sys::WindowsAndMessaging::HICON,
     pub lpszWizTitle: ::windows_core_sys::PWSTR,
     pub lpszContDisplayName: ::windows_core_sys::PWSTR,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for DSA_NEWOBJ_DISPINFO {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for DSA_NEWOBJ_DISPINFO {
     fn clone(&self) -> Self {
         *self
@@ -1090,7 +1090,7 @@ pub const DSBM_QUERYINSERT: u32 = 100u32;
 pub const DSBM_QUERYINSERTA: u32 = 101u32;
 pub const DSBM_QUERYINSERTW: u32 = 100u32;
 #[repr(C)]
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct DSBROWSEINFOA {
     pub cbStruct: u32,
     pub hwndOwner: ::win32_foundation_sys::HWND,
@@ -1108,16 +1108,16 @@ pub struct DSBROWSEINFOA {
     pub pszObjectClass: ::windows_core_sys::PWSTR,
     pub cchObjectClass: u32,
 }
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for DSBROWSEINFOA {}
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for DSBROWSEINFOA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct DSBROWSEINFOW {
     pub cbStruct: u32,
     pub hwndOwner: ::win32_foundation_sys::HWND,
@@ -1135,9 +1135,9 @@ pub struct DSBROWSEINFOW {
     pub pszObjectClass: ::windows_core_sys::PWSTR,
     pub cchObjectClass: u32,
 }
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for DSBROWSEINFOW {}
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for DSBROWSEINFOW {
     fn clone(&self) -> Self {
         *self
@@ -2497,7 +2497,7 @@ impl ::core::clone::Clone for DS_SCHEMA_GUID_MAPW {
 }
 pub const DS_SCHEMA_GUID_NOT_FOUND: u32 = 0u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub struct DS_SELECTION {
     pub pwzName: ::windows_core_sys::PWSTR,
     pub pwzADsPath: ::windows_core_sys::PWSTR,
@@ -2506,24 +2506,24 @@ pub struct DS_SELECTION {
     pub pvarFetchedAttributes: *mut ::win32_system_sys::Com::VARIANT,
     pub flScopeType: u32,
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for DS_SELECTION {}
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for DS_SELECTION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub struct DS_SELECTION_LIST {
     pub cItems: u32,
     pub cFetchedAttributes: u32,
     pub aDsSelection: [DS_SELECTION; 1],
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for DS_SELECTION_LIST {}
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for DS_SELECTION_LIST {
     fn clone(&self) -> Self {
         *self
@@ -2680,11 +2680,11 @@ pub type IPersistQuery = *mut ::core::ffi::c_void;
 pub type IPrivateDispatch = *mut ::core::ffi::c_void;
 pub type IPrivateUnknown = *mut ::core::ffi::c_void;
 pub type IQueryForm = *mut ::core::ffi::c_void;
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub type LPCQADDFORMSPROC = ::core::option::Option<unsafe extern "system" fn(lparam: ::win32_foundation_sys::LPARAM, pform: *mut CQFORM) -> ::windows_core_sys::HRESULT>;
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub type LPCQADDPAGESPROC = ::core::option::Option<unsafe extern "system" fn(lparam: ::win32_foundation_sys::LPARAM, clsidform: *const ::windows_core_sys::GUID, ppage: *mut CQPAGE) -> ::windows_core_sys::HRESULT>;
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub type LPCQPAGEPROC = ::core::option::Option<unsafe extern "system" fn(ppage: *mut CQPAGE, hwnd: ::win32_foundation_sys::HWND, umsg: u32, wparam: ::win32_foundation_sys::WPARAM, lparam: ::win32_foundation_sys::LPARAM) -> ::windows_core_sys::HRESULT>;
 pub type LPDSENUMATTRIBUTES = ::core::option::Option<unsafe extern "system" fn(lparam: ::win32_foundation_sys::LPARAM, pszattributename: ::windows_core_sys::PCWSTR, pszdisplayname: ::windows_core_sys::PCWSTR, dwflags: u32) -> ::windows_core_sys::HRESULT>;
 pub const LargeInteger: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2457432565, data2: 2361, data3: 4561, data4: [139, 225, 0, 192, 79, 216, 213, 3] };
@@ -2742,7 +2742,7 @@ pub const NTDSTRANSPORT_OPT_IGNORE_SCHEDULES: u32 = 1u32;
 pub const NameTranslate: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 659533343, data2: 13862, data3: 4561, data4: [163, 164, 0, 192, 79, 185, 80, 220] };
 pub const NetAddress: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2964787783, data2: 16512, data3: 4561, data4: [163, 172, 0, 192, 79, 185, 80, 220] };
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system-sys")]
 pub struct OPENQUERYWINDOW {
     pub cbStruct: u32,
     pub dwFlags: u32,
@@ -2752,23 +2752,23 @@ pub struct OPENQUERYWINDOW {
     pub pPersistQuery: IPersistQuery,
     pub Anonymous: OPENQUERYWINDOW_0,
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for OPENQUERYWINDOW {}
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for OPENQUERYWINDOW {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system-sys")]
 pub union OPENQUERYWINDOW_0 {
     pub pFormParameters: *mut ::core::ffi::c_void,
     pub ppbFormParameters: ::win32_system_sys::Com::StructuredStorage::IPropertyBag,
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for OPENQUERYWINDOW_0 {}
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for OPENQUERYWINDOW_0 {
     fn clone(&self) -> Self {
         *self

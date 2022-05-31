@@ -1,4 +1,4 @@
-#[cfg(feature = "Win32_Graphics_Dxgi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn CreateDirect3D11DeviceFromDXGIDevice<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Dxgi::IDXGIDevice>>(dxgidevice: Param0) -> ::windows_core::Result<::windows_core::IInspectable> {
     #[cfg(windows)]
@@ -13,7 +13,7 @@ pub unsafe fn CreateDirect3D11DeviceFromDXGIDevice<'a, Param0: ::windows_core::I
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Dxgi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn CreateDirect3D11SurfaceFromDXGISurface<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Dxgi::IDXGISurface>>(dgxisurface: Param0) -> ::windows_core::Result<::windows_core::IInspectable> {
     #[cfg(windows)]

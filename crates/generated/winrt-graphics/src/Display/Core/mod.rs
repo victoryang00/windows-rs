@@ -131,7 +131,7 @@ unsafe impl ::windows_core::RuntimeType for HdmiDisplayHdrOption {
 #[repr(transparent)]
 pub struct HdmiDisplayInformation(::windows_core::IUnknown);
 impl HdmiDisplayInformation {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetSupportedDisplayModes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<HdmiDisplayMode>> {
         let this = self;
         unsafe {
@@ -474,9 +474,9 @@ unsafe impl ::windows_core::Interface for IHdmiDisplayInformation {
 #[doc(hidden)]
 pub struct IHdmiDisplayInformation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetSupportedDisplayModes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetSupportedDisplayModes: usize,
     pub GetCurrentDisplayMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetDefaultDisplayModeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,

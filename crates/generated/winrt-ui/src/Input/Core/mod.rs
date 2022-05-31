@@ -10,9 +10,9 @@ unsafe impl ::windows_core::Interface for IRadialControllerIndependentInputSourc
 pub struct IRadialControllerIndependentInputSource_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Controller: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub Dispatcher: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Core"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Dispatcher: usize,
 }
 #[doc(hidden)]
@@ -26,9 +26,9 @@ unsafe impl ::windows_core::Interface for IRadialControllerIndependentInputSourc
 #[doc(hidden)]
 pub struct IRadialControllerIndependentInputSource2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub DispatcherQueue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     DispatcherQueue: usize,
 }
 #[doc(hidden)]
@@ -42,9 +42,9 @@ unsafe impl ::windows_core::Interface for IRadialControllerIndependentInputSourc
 #[doc(hidden)]
 pub struct IRadialControllerIndependentInputSourceStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "ApplicationModel_Core")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub CreateForView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, view: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Core"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     CreateForView: usize,
 }
 #[repr(transparent)]
@@ -57,7 +57,7 @@ impl RadialControllerIndependentInputSource {
             (::windows_core::Interface::vtable(this).Controller)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::RadialController>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::super::Core::CoreDispatcher> {
         let this = self;
         unsafe {
@@ -65,7 +65,7 @@ impl RadialControllerIndependentInputSource {
             (::windows_core::Interface::vtable(this).Dispatcher)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Core::CoreDispatcher>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<IRadialControllerIndependentInputSource2>(self)?;
         unsafe {
@@ -73,7 +73,7 @@ impl RadialControllerIndependentInputSource {
             (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::DispatcherQueue>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Core")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn CreateForView<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_applicationmodel::Core::CoreApplicationView>>(view: Param0) -> ::windows_core::Result<RadialControllerIndependentInputSource> {
         Self::IRadialControllerIndependentInputSourceStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();

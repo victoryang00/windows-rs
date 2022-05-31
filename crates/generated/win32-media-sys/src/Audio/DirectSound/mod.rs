@@ -21,7 +21,7 @@ pub const DS3DALG_HRTF_FULL: ::windows_core_sys::GUID = ::windows_core_sys::GUID
 pub const DS3DALG_HRTF_LIGHT: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3259052866, data2: 7195, data3: 4562, data4: [148, 245, 0, 192, 79, 194, 138, 202] };
 pub const DS3DALG_NO_VIRTUALIZATION: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3259052863, data2: 7195, data3: 4562, data4: [148, 245, 0, 192, 79, 194, 138, 202] };
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct DS3DBUFFER {
     pub dwSize: u32,
     pub vPosition: ::win32_graphics_sys::Direct3D::D3DVECTOR,
@@ -34,16 +34,16 @@ pub struct DS3DBUFFER {
     pub flMaxDistance: f32,
     pub dwMode: u32,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for DS3DBUFFER {}
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for DS3DBUFFER {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct DS3DLISTENER {
     pub dwSize: u32,
     pub vPosition: ::win32_graphics_sys::Direct3D::D3DVECTOR,
@@ -54,9 +54,9 @@ pub struct DS3DLISTENER {
     pub flRolloffFactor: f32,
     pub flDopplerFactor: f32,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for DS3DLISTENER {}
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for DS3DLISTENER {
     fn clone(&self) -> Self {
         *self

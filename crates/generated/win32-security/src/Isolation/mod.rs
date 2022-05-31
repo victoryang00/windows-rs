@@ -80,7 +80,7 @@ pub unsafe fn GetAppContainerNamedObjectPath<'a, Param0: ::windows_core::IntoPar
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn GetAppContainerRegistryLocation(desiredaccess: u32) -> ::windows_core::Result<::win32_system::Registry::HKEY> {
     #[cfg(windows)]

@@ -37,14 +37,14 @@ impl ::core::clone::Clone for HandJointKind {
 }
 pub type HandMeshObserver = *mut ::core::ffi::c_void;
 #[repr(C)]
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation-sys")]
 pub struct HandMeshVertex {
     pub Position: ::winrt_foundation_sys::Numerics::Vector3,
     pub Normal: ::winrt_foundation_sys::Numerics::Vector3,
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation-sys")]
 impl ::core::marker::Copy for HandMeshVertex {}
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation-sys")]
 impl ::core::clone::Clone for HandMeshVertex {
     fn clone(&self) -> Self {
         *self
@@ -54,16 +54,16 @@ pub type HandMeshVertexState = *mut ::core::ffi::c_void;
 pub type HandPose = *mut ::core::ffi::c_void;
 pub type HeadPose = *mut ::core::ffi::c_void;
 #[repr(C)]
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation-sys")]
 pub struct JointPose {
     pub Orientation: ::winrt_foundation_sys::Numerics::Quaternion,
     pub Position: ::winrt_foundation_sys::Numerics::Vector3,
     pub Radius: f32,
     pub Accuracy: JointPoseAccuracy,
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation-sys")]
 impl ::core::marker::Copy for JointPose {}
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation-sys")]
 impl ::core::clone::Clone for JointPose {
     fn clone(&self) -> Self {
         *self

@@ -995,7 +995,7 @@ impl IDirectManipulationManager {
     pub unsafe fn RegisterHitTestTarget<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, window: Param0, hittestwindow: Param1, r#type: DIRECTMANIPULATION_HITTEST_TYPE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RegisterHitTestTarget)(::windows_core::Interface::as_raw(self), window.into_param().abi(), hittestwindow.into_param().abi(), ::core::mem::transmute(r#type)).ok()
     }
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn ProcessInput(&self, message: *const ::win32_ui::WindowsAndMessaging::MSG) -> ::windows_core::Result<::win32_foundation::BOOL> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
         (::windows_core::Interface::vtable(self).ProcessInput)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(message), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
@@ -1060,9 +1060,9 @@ pub struct IDirectManipulationManager_Vtbl {
     pub Activate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, window: ::win32_foundation::HWND) -> ::windows_core::HRESULT,
     pub Deactivate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, window: ::win32_foundation::HWND) -> ::windows_core::HRESULT,
     pub RegisterHitTestTarget: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, window: ::win32_foundation::HWND, hittestwindow: ::win32_foundation::HWND, r#type: DIRECTMANIPULATION_HITTEST_TYPE) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui")]
     pub ProcessInput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, message: *const ::win32_ui::WindowsAndMessaging::MSG, handled: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_UI_WindowsAndMessaging"))]
+    #[cfg(not(feature = "win32-ui"))]
     ProcessInput: usize,
     pub GetUpdateManager: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, riid: *const ::windows_core::GUID, object: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub CreateViewport: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, frameinfo: ::windows_core::RawPtr, window: ::win32_foundation::HWND, riid: *const ::windows_core::GUID, object: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -1080,7 +1080,7 @@ impl IDirectManipulationManager2 {
     pub unsafe fn RegisterHitTestTarget<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, window: Param0, hittestwindow: Param1, r#type: DIRECTMANIPULATION_HITTEST_TYPE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.RegisterHitTestTarget)(::windows_core::Interface::as_raw(self), window.into_param().abi(), hittestwindow.into_param().abi(), ::core::mem::transmute(r#type)).ok()
     }
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn ProcessInput(&self, message: *const ::win32_ui::WindowsAndMessaging::MSG) -> ::windows_core::Result<::win32_foundation::BOOL> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
         (::windows_core::Interface::vtable(self).base__.ProcessInput)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(message), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
@@ -1180,7 +1180,7 @@ impl IDirectManipulationManager3 {
     pub unsafe fn RegisterHitTestTarget<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, window: Param0, hittestwindow: Param1, r#type: DIRECTMANIPULATION_HITTEST_TYPE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.RegisterHitTestTarget)(::windows_core::Interface::as_raw(self), window.into_param().abi(), hittestwindow.into_param().abi(), ::core::mem::transmute(r#type)).ok()
     }
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn ProcessInput(&self, message: *const ::win32_ui::WindowsAndMessaging::MSG) -> ::windows_core::Result<::win32_foundation::BOOL> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.ProcessInput)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(message), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)

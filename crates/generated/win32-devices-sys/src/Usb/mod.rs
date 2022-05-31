@@ -1,7 +1,7 @@
 #[link(name = "windows")]
 extern "system" {
     pub fn WinUsb_AbortPipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn WinUsb_ControlTransfer(interfacehandle: *const ::core::ffi::c_void, setuppacket: WINUSB_SETUP_PACKET, buffer: *mut u8, bufferlength: u32, lengthtransferred: *mut u32, overlapped: *const ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
     pub fn WinUsb_FlushPipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8) -> ::win32_foundation_sys::BOOL;
     pub fn WinUsb_Free(interfacehandle: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
@@ -11,7 +11,7 @@ extern "system" {
     pub fn WinUsb_GetCurrentFrameNumber(interfacehandle: *const ::core::ffi::c_void, currentframenumber: *mut u32, timestamp: *mut i64) -> ::win32_foundation_sys::BOOL;
     pub fn WinUsb_GetCurrentFrameNumberAndQpc(interfacehandle: *const ::core::ffi::c_void, frameqpcinfo: *const USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION) -> ::win32_foundation_sys::BOOL;
     pub fn WinUsb_GetDescriptor(interfacehandle: *const ::core::ffi::c_void, descriptortype: u8, index: u8, languageid: u16, buffer: *mut u8, bufferlength: u32, lengthtransferred: *mut u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn WinUsb_GetOverlappedResult(interfacehandle: *const ::core::ffi::c_void, lpoverlapped: *const ::win32_system_sys::IO::OVERLAPPED, lpnumberofbytestransferred: *mut u32, bwait: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     pub fn WinUsb_GetPipePolicy(interfacehandle: *const ::core::ffi::c_void, pipeid: u8, policytype: u32, valuelength: *mut u32, value: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn WinUsb_GetPowerPolicy(interfacehandle: *const ::core::ffi::c_void, policytype: u32, valuelength: *mut u32, value: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
@@ -22,11 +22,11 @@ extern "system" {
     pub fn WinUsb_QueryInterfaceSettings(interfacehandle: *const ::core::ffi::c_void, alternateinterfacenumber: u8, usbaltinterfacedescriptor: *mut USB_INTERFACE_DESCRIPTOR) -> ::win32_foundation_sys::BOOL;
     pub fn WinUsb_QueryPipe(interfacehandle: *const ::core::ffi::c_void, alternateinterfacenumber: u8, pipeindex: u8, pipeinformation: *mut WINUSB_PIPE_INFORMATION) -> ::win32_foundation_sys::BOOL;
     pub fn WinUsb_QueryPipeEx(interfacehandle: *const ::core::ffi::c_void, alternatesettingnumber: u8, pipeindex: u8, pipeinformationex: *mut WINUSB_PIPE_INFORMATION_EX) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn WinUsb_ReadIsochPipe(bufferhandle: *const ::core::ffi::c_void, offset: u32, length: u32, framenumber: *mut u32, numberofpackets: u32, isopacketdescriptors: *mut USBD_ISO_PACKET_DESCRIPTOR, overlapped: *const ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn WinUsb_ReadIsochPipeAsap(bufferhandle: *const ::core::ffi::c_void, offset: u32, length: u32, continuestream: ::win32_foundation_sys::BOOL, numberofpackets: u32, isopacketdescriptors: *mut USBD_ISO_PACKET_DESCRIPTOR, overlapped: *const ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn WinUsb_ReadPipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8, buffer: *mut u8, bufferlength: u32, lengthtransferred: *mut u32, overlapped: *const ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
     pub fn WinUsb_RegisterIsochBuffer(interfacehandle: *const ::core::ffi::c_void, pipeid: u8, buffer: *mut u8, bufferlength: u32, isochbufferhandle: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn WinUsb_ResetPipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8) -> ::win32_foundation_sys::BOOL;
@@ -36,11 +36,11 @@ extern "system" {
     pub fn WinUsb_StartTrackingForTimeSync(interfacehandle: *const ::core::ffi::c_void, starttrackinginfo: *const USB_START_TRACKING_FOR_TIME_SYNC_INFORMATION) -> ::win32_foundation_sys::BOOL;
     pub fn WinUsb_StopTrackingForTimeSync(interfacehandle: *const ::core::ffi::c_void, stoptrackinginfo: *const USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION) -> ::win32_foundation_sys::BOOL;
     pub fn WinUsb_UnregisterIsochBuffer(isochbufferhandle: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn WinUsb_WriteIsochPipe(bufferhandle: *const ::core::ffi::c_void, offset: u32, length: u32, framenumber: *mut u32, overlapped: *const ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn WinUsb_WriteIsochPipeAsap(bufferhandle: *const ::core::ffi::c_void, offset: u32, length: u32, continuestream: ::win32_foundation_sys::BOOL, overlapped: *const ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn WinUsb_WritePipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8, buffer: *const u8, bufferlength: u32, lengthtransferred: *mut u32, overlapped: *const ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
 }
 pub const ALLOW_PARTIAL_READS: u32 = 5u32;

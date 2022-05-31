@@ -35,7 +35,7 @@ unsafe impl ::windows_core::RuntimeType for AddContactResult {
 #[repr(transparent)]
 pub struct ContactPickerUI(::windows_core::IUnknown);
 impl ContactPickerUI {
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn AddContact<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::Contact>>(&self, id: Param0, contact: Param1) -> ::windows_core::Result<AddContactResult> {
         let this = self;
         unsafe {
@@ -54,7 +54,7 @@ impl ContactPickerUI {
             (::windows_core::Interface::vtable(this).ContainsContact)(::windows_core::Interface::as_raw(this), id.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-"))]
     pub fn DesiredFields(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -87,7 +87,7 @@ impl ContactPickerUI {
             (::windows_core::Interface::vtable(this).AddContact)(::windows_core::Interface::as_raw(this), contact.into_param().abi(), result__.as_mut_ptr()).from_abi::<AddContactResult>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn DesiredFieldsWithContactFieldType(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::ContactFieldType>> {
         let this = &::windows_core::Interface::cast::<IContactPickerUI2>(self)?;
         unsafe {
@@ -258,15 +258,15 @@ unsafe impl ::windows_core::Interface for IContactPickerUI {
 #[doc(hidden)]
 pub struct IContactPickerUI_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub AddContact: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, contact: ::windows_core::RawPtr, result__: *mut AddContactResult) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     AddContact: usize,
     pub RemoveContact: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub ContainsContact: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-"))]
     pub DesiredFields: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "deprecated")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-")))]
     DesiredFields: usize,
     pub SelectionMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::ContactSelectionMode) -> ::windows_core::HRESULT,
     pub ContactRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -284,9 +284,9 @@ unsafe impl ::windows_core::Interface for IContactPickerUI2 {
 pub struct IContactPickerUI2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub AddContact: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, contact: ::windows_core::RawPtr, result__: *mut AddContactResult) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub DesiredFieldsWithContactFieldType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     DesiredFieldsWithContactFieldType: usize,
 }
 #[doc(hidden)]

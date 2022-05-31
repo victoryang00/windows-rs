@@ -844,7 +844,7 @@ impl ::core::clone::Clone for MIDILOCALE {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Multimedia")]
+#[cfg(feature = "win32-media-sys")]
 pub struct MIDIOPENDESC {
     pub hMidi: super::HMIDI,
     pub dwCallback: usize,
@@ -853,9 +853,9 @@ pub struct MIDIOPENDESC {
     pub cIds: u32,
     pub rgIds: [super::super::Multimedia::MIDIOPENSTRMID; 1],
 }
-#[cfg(feature = "Win32_Media_Multimedia")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for MIDIOPENDESC {}
-#[cfg(feature = "Win32_Media_Multimedia")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for MIDIOPENDESC {
     fn clone(&self) -> Self {
         *self

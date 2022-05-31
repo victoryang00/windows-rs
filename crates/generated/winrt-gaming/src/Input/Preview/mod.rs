@@ -1,13 +1,13 @@
 pub struct GameControllerProviderInfo;
 impl GameControllerProviderInfo {
-    #[cfg(feature = "Gaming_Input_Custom")]
+    #[cfg(feature = "winrt-gaming")]
     pub fn GetParentProviderId<'a, Param0: ::windows_core::IntoParam<'a, super::Custom::IGameControllerProvider>>(provider: Param0) -> ::windows_core::Result<::windows_core::HSTRING> {
         Self::IGameControllerProviderInfoStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).GetParentProviderId)(::windows_core::Interface::as_raw(this), provider.into_param().abi(), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
-    #[cfg(feature = "Gaming_Input_Custom")]
+    #[cfg(feature = "winrt-gaming")]
     pub fn GetProviderId<'a, Param0: ::windows_core::IntoParam<'a, super::Custom::IGameControllerProvider>>(provider: Param0) -> ::windows_core::Result<::windows_core::HSTRING> {
         Self::IGameControllerProviderInfoStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
@@ -33,12 +33,12 @@ unsafe impl ::windows_core::Interface for IGameControllerProviderInfoStatics {
 #[doc(hidden)]
 pub struct IGameControllerProviderInfoStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Gaming_Input_Custom")]
+    #[cfg(feature = "winrt-gaming")]
     pub GetParentProviderId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, provider: ::windows_core::RawPtr, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Gaming_Input_Custom"))]
+    #[cfg(not(feature = "winrt-gaming"))]
     GetParentProviderId: usize,
-    #[cfg(feature = "Gaming_Input_Custom")]
+    #[cfg(feature = "winrt-gaming")]
     pub GetProviderId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, provider: ::windows_core::RawPtr, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Gaming_Input_Custom"))]
+    #[cfg(not(feature = "winrt-gaming"))]
     GetProviderId: usize,
 }

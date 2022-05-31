@@ -22,7 +22,7 @@ impl BasicProperties {
             (::windows_core::Interface::vtable(this).ItemDate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RetrievePropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, propertiestoretrieve: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::IInspectable>>> {
         let this = &::windows_core::Interface::cast::<IStorageItemExtraProperties>(self)?;
         unsafe {
@@ -30,7 +30,7 @@ impl BasicProperties {
             (::windows_core::Interface::vtable(this).RetrievePropertiesAsync)(::windows_core::Interface::as_raw(this), propertiestoretrieve.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::IInspectable>>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SavePropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>>>(&self, propertiestosave: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = &::windows_core::Interface::cast::<IStorageItemExtraProperties>(self)?;
         unsafe {
@@ -141,7 +141,7 @@ impl<'a> ::windows_core::IntoParam<'a, IStorageItemExtraProperties> for &BasicPr
 #[repr(transparent)]
 pub struct DocumentProperties(::windows_core::IUnknown);
 impl DocumentProperties {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Author(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -160,7 +160,7 @@ impl DocumentProperties {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetTitle)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Keywords(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -179,7 +179,7 @@ impl DocumentProperties {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetComment)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RetrievePropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, propertiestoretrieve: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::IInspectable>>> {
         let this = &::windows_core::Interface::cast::<IStorageItemExtraProperties>(self)?;
         unsafe {
@@ -187,7 +187,7 @@ impl DocumentProperties {
             (::windows_core::Interface::vtable(this).RetrievePropertiesAsync)(::windows_core::Interface::as_raw(this), propertiestoretrieve.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::IInspectable>>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SavePropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>>>(&self, propertiestosave: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = &::windows_core::Interface::cast::<IStorageItemExtraProperties>(self)?;
         unsafe {
@@ -297,21 +297,21 @@ impl<'a> ::windows_core::IntoParam<'a, IStorageItemExtraProperties> for &Documen
 }
 pub struct GeotagHelper;
 impl GeotagHelper {
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn GetGeotagAsync<'a, Param0: ::windows_core::IntoParam<'a, super::IStorageFile>>(file: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_devices::Geolocation::Geopoint>> {
         Self::IGeotagHelperStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetGeotagAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_devices::Geolocation::Geopoint>>(result__)
         })
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SetGeotagFromGeolocatorAsync<'a, Param0: ::windows_core::IntoParam<'a, super::IStorageFile>, Param1: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geolocator>>(file: Param0, geolocator: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IGeotagHelperStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).SetGeotagFromGeolocatorAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), geolocator.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SetGeotagAsync<'a, Param0: ::windows_core::IntoParam<'a, super::IStorageFile>, Param1: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(file: Param0, geopoint: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IGeotagHelperStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -352,15 +352,15 @@ unsafe impl ::windows_core::Interface for IDocumentProperties {
 #[doc(hidden)]
 pub struct IDocumentProperties_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Author: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Author: usize,
     pub Title: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetTitle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Keywords: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Keywords: usize,
     pub Comment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetComment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -376,17 +376,17 @@ unsafe impl ::windows_core::Interface for IGeotagHelperStatics {
 #[doc(hidden)]
 pub struct IGeotagHelperStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub GetGeotagAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     GetGeotagAsync: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub SetGeotagFromGeolocatorAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, geolocator: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SetGeotagFromGeolocatorAsync: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub SetGeotagAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, geopoint: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SetGeotagAsync: usize,
 }
 #[doc(hidden)]
@@ -402,9 +402,9 @@ pub struct IImageProperties_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Rating: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub SetRating: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Keywords: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Keywords: usize,
     pub DateTaken: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub SetDateTaken: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
@@ -419,9 +419,9 @@ pub struct IImageProperties_Vtbl {
     pub CameraModel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetCameraModel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Orientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PhotoOrientation) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub PeopleNames: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     PeopleNames: usize,
 }
 #[doc(hidden)]
@@ -439,9 +439,9 @@ pub struct IMusicProperties_Vtbl {
     pub SetAlbum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Artist: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetArtist: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Genre: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Genre: usize,
     pub TrackNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub SetTrackNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
@@ -453,25 +453,25 @@ pub struct IMusicProperties_Vtbl {
     pub Bitrate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub AlbumArtist: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetAlbumArtist: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Composers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Composers: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Conductors: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Conductors: usize,
     pub Subtitle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetSubtitle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Producers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Producers: usize,
     pub Publisher: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetPublisher: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Writers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Writers: usize,
     pub Year: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub SetYear: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
@@ -495,7 +495,7 @@ pub struct IStorageItemContentProperties_Vtbl {
 #[repr(transparent)]
 pub struct IStorageItemExtraProperties(::windows_core::IUnknown);
 impl IStorageItemExtraProperties {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RetrievePropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, propertiestoretrieve: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::IInspectable>>> {
         let this = self;
         unsafe {
@@ -503,7 +503,7 @@ impl IStorageItemExtraProperties {
             (::windows_core::Interface::vtable(this).RetrievePropertiesAsync)(::windows_core::Interface::as_raw(this), propertiestoretrieve.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::IInspectable>>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SavePropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>>>(&self, propertiestosave: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
@@ -590,13 +590,13 @@ unsafe impl ::windows_core::Interface for IStorageItemExtraProperties {
 #[doc(hidden)]
 pub struct IStorageItemExtraProperties_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub RetrievePropertiesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertiestoretrieve: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     RetrievePropertiesAsync: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SavePropertiesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertiestosave: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SavePropertiesAsync: usize,
     pub SavePropertiesAsyncOverloadDefault: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -629,9 +629,9 @@ pub struct IVideoProperties_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Rating: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub SetRating: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Keywords: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Keywords: usize,
     pub Width: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub Height: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
@@ -642,22 +642,22 @@ pub struct IVideoProperties_Vtbl {
     pub SetTitle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Subtitle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetSubtitle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Producers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Producers: usize,
     pub Publisher: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetPublisher: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Writers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Writers: usize,
     pub Year: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub SetYear: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
     pub Bitrate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Directors: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Directors: usize,
     pub Orientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut VideoOrientation) -> ::windows_core::HRESULT,
 }
@@ -675,7 +675,7 @@ impl ImageProperties {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetRating)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Keywords(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -762,7 +762,7 @@ impl ImageProperties {
             (::windows_core::Interface::vtable(this).Orientation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PhotoOrientation>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn PeopleNames(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -770,7 +770,7 @@ impl ImageProperties {
             (::windows_core::Interface::vtable(this).PeopleNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RetrievePropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, propertiestoretrieve: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::IInspectable>>> {
         let this = &::windows_core::Interface::cast::<IStorageItemExtraProperties>(self)?;
         unsafe {
@@ -778,7 +778,7 @@ impl ImageProperties {
             (::windows_core::Interface::vtable(this).RetrievePropertiesAsync)(::windows_core::Interface::as_raw(this), propertiestoretrieve.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::IInspectable>>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SavePropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>>>(&self, propertiestosave: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = &::windows_core::Interface::cast::<IStorageItemExtraProperties>(self)?;
         unsafe {
@@ -911,7 +911,7 @@ impl MusicProperties {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetArtist)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Genre(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -977,7 +977,7 @@ impl MusicProperties {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetAlbumArtist)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Composers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -985,7 +985,7 @@ impl MusicProperties {
             (::windows_core::Interface::vtable(this).Composers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Conductors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -1004,7 +1004,7 @@ impl MusicProperties {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSubtitle)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Producers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -1023,7 +1023,7 @@ impl MusicProperties {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPublisher)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Writers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -1042,7 +1042,7 @@ impl MusicProperties {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetYear)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RetrievePropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, propertiestoretrieve: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::IInspectable>>> {
         let this = &::windows_core::Interface::cast::<IStorageItemExtraProperties>(self)?;
         unsafe {
@@ -1050,7 +1050,7 @@ impl MusicProperties {
             (::windows_core::Interface::vtable(this).RetrievePropertiesAsync)(::windows_core::Interface::as_raw(this), propertiestoretrieve.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::IInspectable>>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SavePropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>>>(&self, propertiestosave: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = &::windows_core::Interface::cast::<IStorageItemExtraProperties>(self)?;
         unsafe {
@@ -1294,7 +1294,7 @@ impl StorageItemContentProperties {
             (::windows_core::Interface::vtable(this).GetDocumentPropertiesAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<DocumentProperties>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RetrievePropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, propertiestoretrieve: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::IInspectable>>> {
         let this = &::windows_core::Interface::cast::<IStorageItemExtraProperties>(self)?;
         unsafe {
@@ -1302,7 +1302,7 @@ impl StorageItemContentProperties {
             (::windows_core::Interface::vtable(this).RetrievePropertiesAsync)(::windows_core::Interface::as_raw(this), propertiestoretrieve.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::IInspectable>>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SavePropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>>>(&self, propertiestosave: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = &::windows_core::Interface::cast::<IStorageItemExtraProperties>(self)?;
         unsafe {
@@ -1410,16 +1410,16 @@ impl<'a> ::windows_core::IntoParam<'a, IStorageItemExtraProperties> for &Storage
         ::core::convert::TryInto::<IStorageItemExtraProperties>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 #[repr(transparent)]
 pub struct StorageItemThumbnail(::windows_core::IUnknown);
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl StorageItemThumbnail {
     pub fn Close(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ContentType(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = &::windows_core::Interface::cast::<super::Streams::IContentTypeProvider>(self)?;
         unsafe {
@@ -1427,7 +1427,7 @@ impl StorageItemThumbnail {
             (::windows_core::Interface::vtable(this).ContentType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ReadAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Streams::IBuffer>>(&self, buffer: Param0, count: u32, options: super::Streams::InputStreamOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<super::Streams::IBuffer, u32>> {
         let this = &::windows_core::Interface::cast::<super::Streams::IInputStream>(self)?;
         unsafe {
@@ -1435,7 +1435,7 @@ impl StorageItemThumbnail {
             (::windows_core::Interface::vtable(this).ReadAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), count, options, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<super::Streams::IBuffer, u32>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn WriteAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Streams::IBuffer>>(&self, buffer: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>> {
         let this = &::windows_core::Interface::cast::<super::Streams::IOutputStream>(self)?;
         unsafe {
@@ -1443,7 +1443,7 @@ impl StorageItemThumbnail {
             (::windows_core::Interface::vtable(this).WriteAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn FlushAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<super::Streams::IOutputStream>(self)?;
         unsafe {
@@ -1451,7 +1451,7 @@ impl StorageItemThumbnail {
             (::windows_core::Interface::vtable(this).FlushAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Size(&self) -> ::windows_core::Result<u64> {
         let this = &::windows_core::Interface::cast::<super::Streams::IRandomAccessStream>(self)?;
         unsafe {
@@ -1459,12 +1459,12 @@ impl StorageItemThumbnail {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u64>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SetSize(&self, value: u64) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Streams::IRandomAccessStream>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSize)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetInputStreamAt(&self, position: u64) -> ::windows_core::Result<super::Streams::IInputStream> {
         let this = &::windows_core::Interface::cast::<super::Streams::IRandomAccessStream>(self)?;
         unsafe {
@@ -1472,7 +1472,7 @@ impl StorageItemThumbnail {
             (::windows_core::Interface::vtable(this).GetInputStreamAt)(::windows_core::Interface::as_raw(this), position, result__.as_mut_ptr()).from_abi::<super::Streams::IInputStream>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetOutputStreamAt(&self, position: u64) -> ::windows_core::Result<super::Streams::IOutputStream> {
         let this = &::windows_core::Interface::cast::<super::Streams::IRandomAccessStream>(self)?;
         unsafe {
@@ -1480,7 +1480,7 @@ impl StorageItemThumbnail {
             (::windows_core::Interface::vtable(this).GetOutputStreamAt)(::windows_core::Interface::as_raw(this), position, result__.as_mut_ptr()).from_abi::<super::Streams::IOutputStream>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Position(&self) -> ::windows_core::Result<u64> {
         let this = &::windows_core::Interface::cast::<super::Streams::IRandomAccessStream>(self)?;
         unsafe {
@@ -1488,12 +1488,12 @@ impl StorageItemThumbnail {
             (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u64>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Seek(&self, position: u64) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Streams::IRandomAccessStream>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Seek)(::windows_core::Interface::as_raw(this), position).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CloneStream(&self) -> ::windows_core::Result<super::Streams::IRandomAccessStream> {
         let this = &::windows_core::Interface::cast::<super::Streams::IRandomAccessStream>(self)?;
         unsafe {
@@ -1501,7 +1501,7 @@ impl StorageItemThumbnail {
             (::windows_core::Interface::vtable(this).CloneStream)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Streams::IRandomAccessStream>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CanRead(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Streams::IRandomAccessStream>(self)?;
         unsafe {
@@ -1509,7 +1509,7 @@ impl StorageItemThumbnail {
             (::windows_core::Interface::vtable(this).CanRead)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CanWrite(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Streams::IRandomAccessStream>(self)?;
         unsafe {
@@ -1546,27 +1546,27 @@ impl StorageItemThumbnail {
         }
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::clone::Clone for StorageItemThumbnail {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::cmp::PartialEq for StorageItemThumbnail {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::cmp::Eq for StorageItemThumbnail {}
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::fmt::Debug for StorageItemThumbnail {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("StorageItemThumbnail").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 unsafe impl ::windows_core::RuntimeType for StorageItemThumbnail {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Storage.FileProperties.StorageItemThumbnail;{cc254827-4b3d-438f-9232-10c76bc7e038})");
     type DefaultType = ::core::option::Option<Self>;
@@ -1574,214 +1574,214 @@ unsafe impl ::windows_core::RuntimeType for StorageItemThumbnail {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 unsafe impl ::windows_core::Interface for StorageItemThumbnail {
     type Vtable = super::Streams::IRandomAccessStreamWithContentType_Vtbl;
     const IID: ::windows_core::GUID = <super::Streams::IRandomAccessStreamWithContentType as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::windows_core::RuntimeName for StorageItemThumbnail {
     const NAME: &'static str = "Windows.Storage.FileProperties.StorageItemThumbnail";
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::From<StorageItemThumbnail> for ::windows_core::IUnknown {
     fn from(value: StorageItemThumbnail) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::From<&StorageItemThumbnail> for ::windows_core::IUnknown {
     fn from(value: &StorageItemThumbnail) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for StorageItemThumbnail {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a StorageItemThumbnail {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::From<StorageItemThumbnail> for ::windows_core::IInspectable {
     fn from(value: StorageItemThumbnail) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::From<&StorageItemThumbnail> for ::windows_core::IInspectable {
     fn from(value: &StorageItemThumbnail) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for StorageItemThumbnail {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a StorageItemThumbnail {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<StorageItemThumbnail> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: StorageItemThumbnail) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<&StorageItemThumbnail> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &StorageItemThumbnail) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for StorageItemThumbnail {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &StorageItemThumbnail {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<StorageItemThumbnail> for super::Streams::IContentTypeProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: StorageItemThumbnail) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<&StorageItemThumbnail> for super::Streams::IContentTypeProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &StorageItemThumbnail) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, super::Streams::IContentTypeProvider> for StorageItemThumbnail {
     fn into_param(self) -> ::windows_core::Param<'a, super::Streams::IContentTypeProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, super::Streams::IContentTypeProvider> for &StorageItemThumbnail {
     fn into_param(self) -> ::windows_core::Param<'a, super::Streams::IContentTypeProvider> {
         ::core::convert::TryInto::<super::Streams::IContentTypeProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<StorageItemThumbnail> for super::Streams::IInputStream {
     type Error = ::windows_core::Error;
     fn try_from(value: StorageItemThumbnail) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<&StorageItemThumbnail> for super::Streams::IInputStream {
     type Error = ::windows_core::Error;
     fn try_from(value: &StorageItemThumbnail) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, super::Streams::IInputStream> for StorageItemThumbnail {
     fn into_param(self) -> ::windows_core::Param<'a, super::Streams::IInputStream> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, super::Streams::IInputStream> for &StorageItemThumbnail {
     fn into_param(self) -> ::windows_core::Param<'a, super::Streams::IInputStream> {
         ::core::convert::TryInto::<super::Streams::IInputStream>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<StorageItemThumbnail> for super::Streams::IOutputStream {
     type Error = ::windows_core::Error;
     fn try_from(value: StorageItemThumbnail) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<&StorageItemThumbnail> for super::Streams::IOutputStream {
     type Error = ::windows_core::Error;
     fn try_from(value: &StorageItemThumbnail) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, super::Streams::IOutputStream> for StorageItemThumbnail {
     fn into_param(self) -> ::windows_core::Param<'a, super::Streams::IOutputStream> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, super::Streams::IOutputStream> for &StorageItemThumbnail {
     fn into_param(self) -> ::windows_core::Param<'a, super::Streams::IOutputStream> {
         ::core::convert::TryInto::<super::Streams::IOutputStream>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<StorageItemThumbnail> for super::Streams::IRandomAccessStream {
     type Error = ::windows_core::Error;
     fn try_from(value: StorageItemThumbnail) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<&StorageItemThumbnail> for super::Streams::IRandomAccessStream {
     type Error = ::windows_core::Error;
     fn try_from(value: &StorageItemThumbnail) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, super::Streams::IRandomAccessStream> for StorageItemThumbnail {
     fn into_param(self) -> ::windows_core::Param<'a, super::Streams::IRandomAccessStream> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, super::Streams::IRandomAccessStream> for &StorageItemThumbnail {
     fn into_param(self) -> ::windows_core::Param<'a, super::Streams::IRandomAccessStream> {
         ::core::convert::TryInto::<super::Streams::IRandomAccessStream>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<StorageItemThumbnail> for super::Streams::IRandomAccessStreamWithContentType {
     type Error = ::windows_core::Error;
     fn try_from(value: StorageItemThumbnail) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<&StorageItemThumbnail> for super::Streams::IRandomAccessStreamWithContentType {
     type Error = ::windows_core::Error;
     fn try_from(value: &StorageItemThumbnail) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, super::Streams::IRandomAccessStreamWithContentType> for StorageItemThumbnail {
     fn into_param(self) -> ::windows_core::Param<'a, super::Streams::IRandomAccessStreamWithContentType> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, super::Streams::IRandomAccessStreamWithContentType> for &StorageItemThumbnail {
     fn into_param(self) -> ::windows_core::Param<'a, super::Streams::IRandomAccessStreamWithContentType> {
         ::core::convert::TryInto::<super::Streams::IRandomAccessStreamWithContentType>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -1958,7 +1958,7 @@ unsafe impl ::windows_core::RuntimeType for VideoOrientation {
 #[repr(transparent)]
 pub struct VideoProperties(::windows_core::IUnknown);
 impl VideoProperties {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RetrievePropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, propertiestoretrieve: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::IInspectable>>> {
         let this = &::windows_core::Interface::cast::<IStorageItemExtraProperties>(self)?;
         unsafe {
@@ -1966,7 +1966,7 @@ impl VideoProperties {
             (::windows_core::Interface::vtable(this).RetrievePropertiesAsync)(::windows_core::Interface::as_raw(this), propertiestoretrieve.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::IInspectable>>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SavePropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>>>(&self, propertiestosave: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = &::windows_core::Interface::cast::<IStorageItemExtraProperties>(self)?;
         unsafe {
@@ -1992,7 +1992,7 @@ impl VideoProperties {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetRating)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Keywords(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -2057,7 +2057,7 @@ impl VideoProperties {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSubtitle)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Producers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -2076,7 +2076,7 @@ impl VideoProperties {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPublisher)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Writers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -2102,7 +2102,7 @@ impl VideoProperties {
             (::windows_core::Interface::vtable(this).Bitrate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Directors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {

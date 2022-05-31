@@ -3,11 +3,11 @@ extern "system" {
     pub fn DCompositionAttachMouseDragToHwnd(visual: IDCompositionVisual, hwnd: ::win32_foundation_sys::HWND, enable: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn DCompositionAttachMouseWheelToHwnd(visual: IDCompositionVisual, hwnd: ::win32_foundation_sys::HWND, enable: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn DCompositionBoostCompositorClock(enable: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Dxgi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DCompositionCreateDevice(dxgidevice: super::Dxgi::IDXGIDevice, iid: *const ::windows_core_sys::GUID, dcompositiondevice: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn DCompositionCreateDevice2(renderingdevice: ::windows_core_sys::IUnknown, iid: *const ::windows_core_sys::GUID, dcompositiondevice: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn DCompositionCreateDevice3(renderingdevice: ::windows_core_sys::IUnknown, iid: *const ::windows_core_sys::GUID, dcompositiondevice: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn DCompositionCreateSurfaceHandle(desiredaccess: u32, securityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, surfacehandle: *mut ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
     pub fn DCompositionGetFrameId(frameidtype: COMPOSITION_FRAME_ID_TYPE, frameid: *mut u64) -> ::windows_core_sys::HRESULT;
     pub fn DCompositionGetStatistics(frameid: u64, framestats: *mut COMPOSITION_FRAME_STATS, targetidcount: u32, targetids: *mut COMPOSITION_TARGET_ID, actualtargetidcount: *mut u32) -> ::windows_core_sys::HRESULT;
@@ -97,7 +97,7 @@ pub const DCOMPOSITION_DEPTH_MODE_SPATIAL: DCOMPOSITION_DEPTH_MODE = 1i32;
 pub const DCOMPOSITION_DEPTH_MODE_SORTED: DCOMPOSITION_DEPTH_MODE = 3i32;
 pub const DCOMPOSITION_DEPTH_MODE_INHERIT: DCOMPOSITION_DEPTH_MODE = -1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct DCOMPOSITION_FRAME_STATISTICS {
     pub lastFrameTime: i64,
     pub currentCompositionRate: super::Dxgi::Common::DXGI_RATIONAL,
@@ -105,9 +105,9 @@ pub struct DCOMPOSITION_FRAME_STATISTICS {
     pub timeFrequency: i64,
     pub nextEstimatedFrameTime: i64,
 }
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for DCOMPOSITION_FRAME_STATISTICS {}
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for DCOMPOSITION_FRAME_STATISTICS {
     fn clone(&self) -> Self {
         *self

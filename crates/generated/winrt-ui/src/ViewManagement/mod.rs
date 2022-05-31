@@ -229,7 +229,7 @@ impl ApplicationView {
             (::windows_core::Interface::vtable(this).AdjacentToRightDisplayEdge)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn IsFullScreen(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
@@ -284,7 +284,7 @@ impl ApplicationView {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveConsolidated)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn SuppressSystemOverlays(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<IApplicationView2>(self)?;
         unsafe {
@@ -292,7 +292,7 @@ impl ApplicationView {
             (::windows_core::Interface::vtable(this).SuppressSystemOverlays)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn SetSuppressSystemOverlays(&self, value: bool) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IApplicationView2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSuppressSystemOverlays)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -426,7 +426,7 @@ impl ApplicationView {
         let this = &::windows_core::Interface::cast::<IApplicationView7>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetPersistedStateId)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_WindowManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub fn WindowingEnvironment(&self) -> ::windows_core::Result<super::WindowManagement::WindowingEnvironment> {
         let this = &::windows_core::Interface::cast::<IApplicationView9>(self)?;
         unsafe {
@@ -434,7 +434,7 @@ impl ApplicationView {
             (::windows_core::Interface::vtable(this).WindowingEnvironment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::WindowManagement::WindowingEnvironment>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_WindowManagement"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub fn GetDisplayRegions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<super::WindowManagement::DisplayRegion>> {
         let this = &::windows_core::Interface::cast::<IApplicationView9>(self)?;
         unsafe {
@@ -442,28 +442,28 @@ impl ApplicationView {
             (::windows_core::Interface::vtable(this).GetDisplayRegions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<super::WindowManagement::DisplayRegion>>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn TryUnsnapToFullscreen() -> ::windows_core::Result<bool> {
         Self::IApplicationViewFullscreenStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
             (::windows_core::Interface::vtable(this).TryUnsnapToFullscreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         })
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GetApplicationViewIdForWindow<'a, Param0: ::windows_core::IntoParam<'a, super::Core::ICoreWindow>>(window: Param0) -> ::windows_core::Result<i32> {
         Self::IApplicationViewInteropStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
             (::windows_core::Interface::vtable(this).GetApplicationViewIdForWindow)(::windows_core::Interface::as_raw(this), window.into_param().abi(), result__.as_mut_ptr()).from_abi::<i32>(result__)
         })
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn Value() -> ::windows_core::Result<ApplicationViewState> {
         Self::IApplicationViewStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<ApplicationViewState>::zeroed();
             (::windows_core::Interface::vtable(this).Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ApplicationViewState>(result__)
         })
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn TryUnsnap() -> ::windows_core::Result<bool> {
         Self::IApplicationViewStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
@@ -516,7 +516,7 @@ impl ApplicationView {
             (::windows_core::Interface::vtable(this).UIContext)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::UIContext>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn IApplicationViewFullscreenStatics<R, F: FnOnce(&IApplicationViewFullscreenStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
         static mut SHARED: ::windows_core::FactoryCache<ApplicationView, IApplicationViewFullscreenStatics> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
@@ -525,7 +525,7 @@ impl ApplicationView {
         static mut SHARED: ::windows_core::FactoryCache<ApplicationView, IApplicationViewInteropStatics> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn IApplicationViewStatics<R, F: FnOnce(&IApplicationViewStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
         static mut SHARED: ::windows_core::FactoryCache<ApplicationView, IApplicationViewStatics> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
@@ -894,42 +894,42 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a App
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
 pub struct ApplicationViewState(pub i32);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ApplicationViewState {
     pub const FullScreenLandscape: Self = Self(0i32);
     pub const Filled: Self = Self(1i32);
     pub const Snapped: Self = Self(2i32);
     pub const FullScreenPortrait: Self = Self(3i32);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::marker::Copy for ApplicationViewState {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for ApplicationViewState {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::default::Default for ApplicationViewState {
     fn default() -> Self {
         Self(0)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Abi for ApplicationViewState {
     type Abi = Self;
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::fmt::Debug for ApplicationViewState {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("ApplicationViewState").field(&self.0).finish()
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::RuntimeType for ApplicationViewState {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.ViewManagement.ApplicationViewState;i4)");
     type DefaultType = Self;
@@ -1534,9 +1534,9 @@ pub struct IApplicationView_Vtbl {
     pub Orientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ApplicationViewOrientation) -> ::windows_core::HRESULT,
     pub AdjacentToLeftDisplayEdge: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub AdjacentToRightDisplayEdge: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub IsFullScreen: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     IsFullScreen: usize,
     pub IsOnLockScreen: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsScreenCaptureEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -1558,13 +1558,13 @@ unsafe impl ::windows_core::Interface for IApplicationView2 {
 #[doc(hidden)]
 pub struct IApplicationView2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub SuppressSystemOverlays: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     SuppressSystemOverlays: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub SetSuppressSystemOverlays: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     SetSuppressSystemOverlays: usize,
     pub VisibleBounds: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
     pub VisibleBoundsChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -1635,13 +1635,13 @@ unsafe impl ::windows_core::Interface for IApplicationView9 {
 #[doc(hidden)]
 pub struct IApplicationView9_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_WindowManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub WindowingEnvironment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_WindowManagement"))]
+    #[cfg(not(feature = "winrt-ui"))]
     WindowingEnvironment: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_WindowManagement"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub GetDisplayRegions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "UI_WindowManagement")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-ui")))]
     GetDisplayRegions: usize,
 }
 #[doc(hidden)]
@@ -1671,22 +1671,22 @@ pub struct IApplicationViewConsolidatedEventArgs2_Vtbl {
     pub IsAppInitiated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct IApplicationViewFullscreenStatics(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for IApplicationViewFullscreenStatics {
     type Vtable = IApplicationViewFullscreenStatics_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xbc792ebd_64fe_4b65_a0c0_901ce2b68636);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IApplicationViewFullscreenStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub TryUnsnapToFullscreen: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     TryUnsnapToFullscreen: usize,
 }
 #[doc(hidden)]
@@ -1700,9 +1700,9 @@ unsafe impl ::windows_core::Interface for IApplicationViewInteropStatics {
 #[doc(hidden)]
 pub struct IApplicationViewInteropStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub GetApplicationViewIdForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, window: ::windows_core::RawPtr, result__: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Core"))]
+    #[cfg(not(feature = "winrt-ui"))]
     GetApplicationViewIdForWindow: usize,
 }
 #[doc(hidden)]
@@ -1732,26 +1732,26 @@ pub struct IApplicationViewScalingStatics_Vtbl {
     pub TrySetDisableLayoutScaling: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, disablelayoutscaling: bool, result__: *mut bool) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct IApplicationViewStatics(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for IApplicationViewStatics {
     type Vtable = IApplicationViewStatics_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x010a6306_c433_44e5_a9f2_bd84d4030a95);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IApplicationViewStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub Value: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ApplicationViewState) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     Value: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub TryUnsnap: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     TryUnsnap: usize,
 }
 #[doc(hidden)]
@@ -2037,14 +2037,14 @@ unsafe impl ::windows_core::Interface for IProjectionManagerStatics2 {
 #[doc(hidden)]
 pub struct IProjectionManagerStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub StartProjectingWithDeviceInfoAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, projectionviewid: i32, anchorviewid: i32, displaydeviceinfo: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Enumeration"))]
+    #[cfg(not(feature = "winrt-devices"))]
     StartProjectingWithDeviceInfoAsync: usize,
     pub RequestStartProjectingAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, projectionviewid: i32, anchorviewid: i32, selection: ::winrt_foundation::Rect, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Popups")]
+    #[cfg(feature = "winrt-ui")]
     pub RequestStartProjectingWithPlacementAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, projectionviewid: i32, anchorviewid: i32, selection: ::winrt_foundation::Rect, prefferedplacement: super::Popups::Placement, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Popups"))]
+    #[cfg(not(feature = "winrt-ui"))]
     RequestStartProjectingWithPlacementAsync: usize,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
@@ -2572,7 +2572,7 @@ impl ProjectionManager {
     pub fn RemoveProjectionDisplayAvailableChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
         Self::IProjectionManagerStatics(|this| unsafe { (::windows_core::Interface::vtable(this).RemoveProjectionDisplayAvailableChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() })
     }
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub fn StartProjectingWithDeviceInfoAsync<'a, Param2: ::windows_core::IntoParam<'a, ::winrt_devices::Enumeration::DeviceInformation>>(projectionviewid: i32, anchorviewid: i32, displaydeviceinfo: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IProjectionManagerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -2585,7 +2585,7 @@ impl ProjectionManager {
             (::windows_core::Interface::vtable(this).RequestStartProjectingAsync)(::windows_core::Interface::as_raw(this), projectionviewid, anchorviewid, selection.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
-    #[cfg(feature = "UI_Popups")]
+    #[cfg(feature = "winrt-ui")]
     pub fn RequestStartProjectingWithPlacementAsync<'a, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Rect>>(projectionviewid: i32, anchorviewid: i32, selection: Param2, prefferedplacement: super::Popups::Placement) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::IProjectionManagerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();

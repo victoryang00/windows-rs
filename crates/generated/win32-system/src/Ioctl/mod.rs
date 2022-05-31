@@ -1354,38 +1354,38 @@ impl ::core::default::Default for CSV_QUERY_FILE_REVISION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub struct CSV_QUERY_FILE_REVISION_FILE_ID_128 {
     pub FileId: ::win32_storage::FileSystem::FILE_ID_128,
     pub FileRevision: [i64; 3],
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for CSV_QUERY_FILE_REVISION_FILE_ID_128 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for CSV_QUERY_FILE_REVISION_FILE_ID_128 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::fmt::Debug for CSV_QUERY_FILE_REVISION_FILE_ID_128 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CSV_QUERY_FILE_REVISION_FILE_ID_128").field("FileId", &self.FileId).field("FileRevision", &self.FileRevision).finish()
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for CSV_QUERY_FILE_REVISION_FILE_ID_128 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for CSV_QUERY_FILE_REVISION_FILE_ID_128 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CSV_QUERY_FILE_REVISION_FILE_ID_128>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for CSV_QUERY_FILE_REVISION_FILE_ID_128 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for CSV_QUERY_FILE_REVISION_FILE_ID_128 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3220,71 +3220,71 @@ impl ::core::default::Default for DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub struct DEVICE_MEDIA_INFO {
     pub DeviceSpecific: DEVICE_MEDIA_INFO_0,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for DEVICE_MEDIA_INFO {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for DEVICE_MEDIA_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for DEVICE_MEDIA_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for DEVICE_MEDIA_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVICE_MEDIA_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for DEVICE_MEDIA_INFO {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for DEVICE_MEDIA_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub union DEVICE_MEDIA_INFO_0 {
     pub DiskInfo: DEVICE_MEDIA_INFO_0_0,
     pub RemovableDiskInfo: DEVICE_MEDIA_INFO_0_1,
     pub TapeInfo: DEVICE_MEDIA_INFO_0_2,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for DEVICE_MEDIA_INFO_0 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for DEVICE_MEDIA_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for DEVICE_MEDIA_INFO_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for DEVICE_MEDIA_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVICE_MEDIA_INFO_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for DEVICE_MEDIA_INFO_0 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for DEVICE_MEDIA_INFO_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub struct DEVICE_MEDIA_INFO_0_0 {
     pub Cylinders: i64,
     pub MediaType: STORAGE_MEDIA_TYPE,
@@ -3294,40 +3294,40 @@ pub struct DEVICE_MEDIA_INFO_0_0 {
     pub NumberMediaSides: u32,
     pub MediaCharacteristics: u32,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for DEVICE_MEDIA_INFO_0_0 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for DEVICE_MEDIA_INFO_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::fmt::Debug for DEVICE_MEDIA_INFO_0_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DEVICE_MEDIA_INFO_0_0").field("Cylinders", &self.Cylinders).field("MediaType", &self.MediaType).field("TracksPerCylinder", &self.TracksPerCylinder).field("SectorsPerTrack", &self.SectorsPerTrack).field("BytesPerSector", &self.BytesPerSector).field("NumberMediaSides", &self.NumberMediaSides).field("MediaCharacteristics", &self.MediaCharacteristics).finish()
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for DEVICE_MEDIA_INFO_0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for DEVICE_MEDIA_INFO_0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVICE_MEDIA_INFO_0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for DEVICE_MEDIA_INFO_0_0 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for DEVICE_MEDIA_INFO_0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub struct DEVICE_MEDIA_INFO_0_1 {
     pub Cylinders: i64,
     pub MediaType: STORAGE_MEDIA_TYPE,
@@ -3337,40 +3337,40 @@ pub struct DEVICE_MEDIA_INFO_0_1 {
     pub NumberMediaSides: u32,
     pub MediaCharacteristics: u32,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for DEVICE_MEDIA_INFO_0_1 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for DEVICE_MEDIA_INFO_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::fmt::Debug for DEVICE_MEDIA_INFO_0_1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DEVICE_MEDIA_INFO_0_1").field("Cylinders", &self.Cylinders).field("MediaType", &self.MediaType).field("TracksPerCylinder", &self.TracksPerCylinder).field("SectorsPerTrack", &self.SectorsPerTrack).field("BytesPerSector", &self.BytesPerSector).field("NumberMediaSides", &self.NumberMediaSides).field("MediaCharacteristics", &self.MediaCharacteristics).finish()
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for DEVICE_MEDIA_INFO_0_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for DEVICE_MEDIA_INFO_0_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVICE_MEDIA_INFO_0_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for DEVICE_MEDIA_INFO_0_1 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for DEVICE_MEDIA_INFO_0_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub struct DEVICE_MEDIA_INFO_0_2 {
     pub MediaType: STORAGE_MEDIA_TYPE,
     pub MediaCharacteristics: u32,
@@ -3378,96 +3378,96 @@ pub struct DEVICE_MEDIA_INFO_0_2 {
     pub BusType: ::win32_storage::FileSystem::STORAGE_BUS_TYPE,
     pub BusSpecificData: DEVICE_MEDIA_INFO_0_2_0,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for DEVICE_MEDIA_INFO_0_2 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for DEVICE_MEDIA_INFO_0_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for DEVICE_MEDIA_INFO_0_2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for DEVICE_MEDIA_INFO_0_2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVICE_MEDIA_INFO_0_2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for DEVICE_MEDIA_INFO_0_2 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for DEVICE_MEDIA_INFO_0_2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub union DEVICE_MEDIA_INFO_0_2_0 {
     pub ScsiInformation: DEVICE_MEDIA_INFO_0_2_0_0,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for DEVICE_MEDIA_INFO_0_2_0 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for DEVICE_MEDIA_INFO_0_2_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for DEVICE_MEDIA_INFO_0_2_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for DEVICE_MEDIA_INFO_0_2_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVICE_MEDIA_INFO_0_2_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for DEVICE_MEDIA_INFO_0_2_0 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for DEVICE_MEDIA_INFO_0_2_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub struct DEVICE_MEDIA_INFO_0_2_0_0 {
     pub MediumType: u8,
     pub DensityCode: u8,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for DEVICE_MEDIA_INFO_0_2_0_0 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for DEVICE_MEDIA_INFO_0_2_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::fmt::Debug for DEVICE_MEDIA_INFO_0_2_0_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DEVICE_MEDIA_INFO_0_2_0_0").field("MediumType", &self.MediumType).field("DensityCode", &self.DensityCode).finish()
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for DEVICE_MEDIA_INFO_0_2_0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for DEVICE_MEDIA_INFO_0_2_0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVICE_MEDIA_INFO_0_2_0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for DEVICE_MEDIA_INFO_0_2_0_0 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for DEVICE_MEDIA_INFO_0_2_0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3726,21 +3726,21 @@ impl ::core::default::Default for DEVICE_WRITE_AGGREGATION_DESCRIPTOR {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_Storage_Disk_Number: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x4d1ebee8_0803_4774_9842_b77db50265e9), pid: 5u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_Storage_Gpt_Name: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x4d1ebee8_0803_4774_9842_b77db50265e9), pid: 9u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_Storage_Gpt_Type: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x4d1ebee8_0803_4774_9842_b77db50265e9), pid: 8u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_Storage_Mbr_Type: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x4d1ebee8_0803_4774_9842_b77db50265e9), pid: 7u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_Storage_Partition_Number: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x4d1ebee8_0803_4774_9842_b77db50265e9), pid: 6u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_Storage_Portable: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x4d1ebee8_0803_4774_9842_b77db50265e9), pid: 2u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_Storage_Removable_Media: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x4d1ebee8_0803_4774_9842_b77db50265e9), pid: 3u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_Storage_System_Critical: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x4d1ebee8_0803_4774_9842_b77db50265e9), pid: 4u32 };
 pub const DISABLE_SMART: u32 = 217u32;
 pub const DISK_ATTRIBUTE_OFFLINE: u64 = 1u64;
@@ -6549,38 +6549,38 @@ impl ::core::default::Default for FILE_ZERO_DATA_INFORMATION_EX {
 }
 pub const FILE_ZERO_DATA_INFORMATION_FLAG_PRESERVE_CACHED_DATA: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct FIND_BY_SID_DATA {
     pub Restart: u32,
     pub Sid: ::win32_security::SID,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for FIND_BY_SID_DATA {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for FIND_BY_SID_DATA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for FIND_BY_SID_DATA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FIND_BY_SID_DATA").field("Restart", &self.Restart).field("Sid", &self.Sid).finish()
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for FIND_BY_SID_DATA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for FIND_BY_SID_DATA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FIND_BY_SID_DATA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for FIND_BY_SID_DATA {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for FIND_BY_SID_DATA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7820,33 +7820,33 @@ impl ::core::default::Default for GET_LENGTH_INFORMATION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub struct GET_MEDIA_TYPES {
     pub DeviceType: u32,
     pub MediaInfoCount: u32,
     pub MediaInfo: [DEVICE_MEDIA_INFO; 1],
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for GET_MEDIA_TYPES {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for GET_MEDIA_TYPES {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for GET_MEDIA_TYPES {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for GET_MEDIA_TYPES {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GET_MEDIA_TYPES>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for GET_MEDIA_TYPES {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for GET_MEDIA_TYPES {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -14402,7 +14402,7 @@ impl ::core::default::Default for STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub struct STORAGE_DEVICE_DESCRIPTOR {
     pub Version: u32,
     pub Size: u32,
@@ -14418,15 +14418,15 @@ pub struct STORAGE_DEVICE_DESCRIPTOR {
     pub RawPropertiesLength: u32,
     pub RawDeviceProperties: [u8; 1],
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for STORAGE_DEVICE_DESCRIPTOR {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for STORAGE_DEVICE_DESCRIPTOR {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::fmt::Debug for STORAGE_DEVICE_DESCRIPTOR {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("STORAGE_DEVICE_DESCRIPTOR")
@@ -14446,19 +14446,19 @@ impl ::core::fmt::Debug for STORAGE_DEVICE_DESCRIPTOR {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for STORAGE_DEVICE_DESCRIPTOR {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for STORAGE_DEVICE_DESCRIPTOR {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_DEVICE_DESCRIPTOR>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for STORAGE_DEVICE_DESCRIPTOR {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for STORAGE_DEVICE_DESCRIPTOR {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -17213,47 +17213,47 @@ impl ::core::fmt::Debug for STORAGE_PROTOCOL_UFS_DATA_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 pub struct STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY {
     pub EntryLength: u32,
     pub DependencyTypeFlags: u32,
     pub ProviderSpecificFlags: u32,
     pub VirtualStorageType: ::win32_storage::Vhd::VIRTUAL_STORAGE_TYPE,
 }
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY {}
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 impl ::core::fmt::Debug for STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY").field("EntryLength", &self.EntryLength).field("DependencyTypeFlags", &self.DependencyTypeFlags).field("ProviderSpecificFlags", &self.ProviderSpecificFlags).field("VirtualStorageType", &self.VirtualStorageType).finish()
     }
 }
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY {}
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 pub struct STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY {
     pub EntryLength: u32,
     pub DependencyTypeFlags: u32,
@@ -17269,15 +17269,15 @@ pub struct STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY {
     pub DependentDeviceNameOffset: u32,
     pub DependentDeviceNameSize: u32,
 }
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY {}
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 impl ::core::fmt::Debug for STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY")
@@ -17297,19 +17297,19 @@ impl ::core::fmt::Debug for STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY {}
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -17346,65 +17346,65 @@ impl ::core::default::Default for STORAGE_QUERY_DEPENDENT_VOLUME_REQUEST {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 pub struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE {
     pub ResponseLevel: u32,
     pub NumberEntries: u32,
     pub Anonymous: STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE_0,
 }
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE {}
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE {}
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 pub union STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE_0 {
     pub Lev1Depends: [STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY; 1],
     pub Lev2Depends: [STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY; 1],
 }
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE_0 {}
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE_0 {}
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -19870,34 +19870,34 @@ impl ::core::default::Default for USN_RECORD_EXTENT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub union USN_RECORD_UNION {
     pub Header: USN_RECORD_COMMON_HEADER,
     pub V2: USN_RECORD_V2,
     pub V3: USN_RECORD_V3,
     pub V4: USN_RECORD_V4,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for USN_RECORD_UNION {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for USN_RECORD_UNION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for USN_RECORD_UNION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for USN_RECORD_UNION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USN_RECORD_UNION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for USN_RECORD_UNION {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for USN_RECORD_UNION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -19961,7 +19961,7 @@ impl ::core::default::Default for USN_RECORD_V2 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub struct USN_RECORD_V3 {
     pub RecordLength: u32,
     pub MajorVersion: u16,
@@ -19978,15 +19978,15 @@ pub struct USN_RECORD_V3 {
     pub FileNameOffset: u16,
     pub FileName: [u16; 1],
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for USN_RECORD_V3 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for USN_RECORD_V3 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::fmt::Debug for USN_RECORD_V3 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("USN_RECORD_V3")
@@ -20007,26 +20007,26 @@ impl ::core::fmt::Debug for USN_RECORD_V3 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for USN_RECORD_V3 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for USN_RECORD_V3 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USN_RECORD_V3>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for USN_RECORD_V3 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for USN_RECORD_V3 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub struct USN_RECORD_V4 {
     pub Header: USN_RECORD_COMMON_HEADER,
     pub FileReferenceNumber: ::win32_storage::FileSystem::FILE_ID_128,
@@ -20039,33 +20039,33 @@ pub struct USN_RECORD_V4 {
     pub ExtentSize: u16,
     pub Extents: [USN_RECORD_EXTENT; 1],
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for USN_RECORD_V4 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for USN_RECORD_V4 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::fmt::Debug for USN_RECORD_V4 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("USN_RECORD_V4").field("Header", &self.Header).field("FileReferenceNumber", &self.FileReferenceNumber).field("ParentFileReferenceNumber", &self.ParentFileReferenceNumber).field("Usn", &self.Usn).field("Reason", &self.Reason).field("SourceInfo", &self.SourceInfo).field("RemainingExtents", &self.RemainingExtents).field("NumberOfExtents", &self.NumberOfExtents).field("ExtentSize", &self.ExtentSize).field("Extents", &self.Extents).finish()
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for USN_RECORD_V4 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for USN_RECORD_V4 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USN_RECORD_V4>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for USN_RECORD_V4 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for USN_RECORD_V4 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -20596,37 +20596,37 @@ impl ::core::default::Default for WIM_PROVIDER_UPDATE_OVERLAY_INPUT {
 }
 pub const WOF_CURRENT_VERSION: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub struct WOF_EXTERNAL_FILE_ID {
     pub FileId: ::win32_storage::FileSystem::FILE_ID_128,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for WOF_EXTERNAL_FILE_ID {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for WOF_EXTERNAL_FILE_ID {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::fmt::Debug for WOF_EXTERNAL_FILE_ID {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WOF_EXTERNAL_FILE_ID").field("FileId", &self.FileId).finish()
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for WOF_EXTERNAL_FILE_ID {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for WOF_EXTERNAL_FILE_ID {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WOF_EXTERNAL_FILE_ID>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for WOF_EXTERNAL_FILE_ID {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for WOF_EXTERNAL_FILE_ID {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

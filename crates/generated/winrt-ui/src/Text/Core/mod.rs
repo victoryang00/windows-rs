@@ -8,7 +8,7 @@ impl CoreTextCompositionCompletedEventArgs {
             (::windows_core::Interface::vtable(this).IsCanceled)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CompositionSegments(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<CoreTextCompositionSegment>> {
         let this = self;
         unsafe {
@@ -536,7 +536,7 @@ impl CoreTextFormatUpdatingEventArgs {
             (::windows_core::Interface::vtable(this).Range)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<CoreTextRange>(result__)
         }
     }
-    #[cfg(feature = "UI_ViewManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub fn TextColor(&self) -> ::windows_core::Result<::winrt_foundation::IReference<super::super::ViewManagement::UIElementType>> {
         let this = self;
         unsafe {
@@ -544,7 +544,7 @@ impl CoreTextFormatUpdatingEventArgs {
             (::windows_core::Interface::vtable(this).TextColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<super::super::ViewManagement::UIElementType>>(result__)
         }
     }
-    #[cfg(feature = "UI_ViewManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub fn BackgroundColor(&self) -> ::windows_core::Result<::winrt_foundation::IReference<super::super::ViewManagement::UIElementType>> {
         let this = self;
         unsafe {
@@ -552,7 +552,7 @@ impl CoreTextFormatUpdatingEventArgs {
             (::windows_core::Interface::vtable(this).BackgroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<super::super::ViewManagement::UIElementType>>(result__)
         }
     }
-    #[cfg(feature = "UI_ViewManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub fn UnderlineColor(&self) -> ::windows_core::Result<::winrt_foundation::IReference<super::super::ViewManagement::UIElementType>> {
         let this = self;
         unsafe {
@@ -1545,7 +1545,7 @@ impl ::windows_core::RuntimeName for CoreTextServicesConstants {
 #[repr(transparent)]
 pub struct CoreTextServicesManager(::windows_core::IUnknown);
 impl CoreTextServicesManager {
-    #[cfg(feature = "Globalization")]
+    #[cfg(feature = "winrt-globalization")]
     pub fn InputLanguage(&self) -> ::windows_core::Result<::winrt_globalization::Language> {
         let this = self;
         unsafe {
@@ -1869,7 +1869,7 @@ impl CoreTextTextUpdatingEventArgs {
             (::windows_core::Interface::vtable(this).NewSelection)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<CoreTextRange>(result__)
         }
     }
-    #[cfg(feature = "Globalization")]
+    #[cfg(feature = "winrt-globalization")]
     pub fn InputLanguage(&self) -> ::windows_core::Result<::winrt_globalization::Language> {
         let this = self;
         unsafe {
@@ -2020,9 +2020,9 @@ unsafe impl ::windows_core::Interface for ICoreTextCompositionCompletedEventArgs
 pub struct ICoreTextCompositionCompletedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsCanceled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub CompositionSegments: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CompositionSegments: usize,
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -2123,17 +2123,17 @@ unsafe impl ::windows_core::Interface for ICoreTextFormatUpdatingEventArgs {
 pub struct ICoreTextFormatUpdatingEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Range: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut CoreTextRange) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_ViewManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub TextColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_ViewManagement"))]
+    #[cfg(not(feature = "winrt-ui"))]
     TextColor: usize,
-    #[cfg(feature = "UI_ViewManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub BackgroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_ViewManagement"))]
+    #[cfg(not(feature = "winrt-ui"))]
     BackgroundColor: usize,
-    #[cfg(feature = "UI_ViewManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub UnderlineColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_ViewManagement"))]
+    #[cfg(not(feature = "winrt-ui"))]
     UnderlineColor: usize,
     pub UnderlineType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Reason: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut CoreTextFormatUpdatingReason) -> ::windows_core::HRESULT,
@@ -2257,9 +2257,9 @@ unsafe impl ::windows_core::Interface for ICoreTextServicesManager {
 #[doc(hidden)]
 pub struct ICoreTextServicesManager_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Globalization")]
+    #[cfg(feature = "winrt-globalization")]
     pub InputLanguage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Globalization"))]
+    #[cfg(not(feature = "winrt-globalization"))]
     InputLanguage: usize,
     pub InputLanguageChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveInputLanguageChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -2335,9 +2335,9 @@ pub struct ICoreTextTextUpdatingEventArgs_Vtbl {
     pub Range: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut CoreTextRange) -> ::windows_core::HRESULT,
     pub Text: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub NewSelection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut CoreTextRange) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Globalization")]
+    #[cfg(feature = "winrt-globalization")]
     pub InputLanguage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Globalization"))]
+    #[cfg(not(feature = "winrt-globalization"))]
     InputLanguage: usize,
     pub Result: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut CoreTextTextUpdatingResult) -> ::windows_core::HRESULT,
     pub SetResult: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: CoreTextTextUpdatingResult) -> ::windows_core::HRESULT,

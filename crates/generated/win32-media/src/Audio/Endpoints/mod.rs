@@ -26,13 +26,13 @@ impl ::core::default::Default for AUDIO_ENDPOINT_SHARED_CREATE_PARAMS {
     }
 }
 pub const DEVINTERFACE_AUDIOENDPOINTPLUGIN: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9f2f7b66_65ac_4fa6_8ae4_123c78b89313);
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const DEVPKEY_AudioEndpointPlugin2_FactoryCLSID: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x12d83bd7_cf12_46be_8540_812710d3021c), pid: 4u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const DEVPKEY_AudioEndpointPlugin_DataFlow: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x12d83bd7_cf12_46be_8540_812710d3021c), pid: 2u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const DEVPKEY_AudioEndpointPlugin_FactoryCLSID: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x12d83bd7_cf12_46be_8540_812710d3021c), pid: 1u32 };
-#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+#[cfg(feature = "win32-ui")]
 pub const DEVPKEY_AudioEndpointPlugin_PnPInterface: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x12d83bd7_cf12_46be_8540_812710d3021c), pid: 3u32 };
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -120,7 +120,7 @@ impl IAudioEndpointLastBufferControl {
     pub unsafe fn IsLastBufferControlSupported(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).IsLastBufferControlSupported)(::windows_core::Interface::as_raw(self)))
     }
-    #[cfg(feature = "Win32_Media_Audio_Apo")]
+    #[cfg(feature = "win32-media")]
     pub unsafe fn ReleaseOutputDataPointerForLastBuffer(&self, pconnectionproperty: *const super::Apo::APO_CONNECTION_PROPERTY) {
         (::windows_core::Interface::vtable(self).ReleaseOutputDataPointerForLastBuffer)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pconnectionproperty))
     }
@@ -170,9 +170,9 @@ unsafe impl ::windows_core::Interface for IAudioEndpointLastBufferControl {
 pub struct IAudioEndpointLastBufferControl_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub IsLastBufferControlSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL,
-    #[cfg(feature = "Win32_Media_Audio_Apo")]
+    #[cfg(feature = "win32-media")]
     pub ReleaseOutputDataPointerForLastBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pconnectionproperty: *const super::Apo::APO_CONNECTION_PROPERTY),
-    #[cfg(not(feature = "Win32_Media_Audio_Apo"))]
+    #[cfg(not(feature = "win32-media"))]
     ReleaseOutputDataPointerForLastBuffer: usize,
 }
 #[repr(transparent)]
@@ -299,7 +299,7 @@ impl IAudioEndpointOffloadStreamVolume {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).GetVolumeChannelCount)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(feature = "Win32_Media_KernelStreaming")]
+    #[cfg(feature = "win32-media")]
     pub unsafe fn SetChannelVolumes(&self, u32channelcount: u32, pf32volumes: *const f32, u32curvetype: super::super::KernelStreaming::AUDIO_CURVE_TYPE, pcurveduration: *const i64) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetChannelVolumes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(u32channelcount), ::core::mem::transmute(pf32volumes), ::core::mem::transmute(u32curvetype), ::core::mem::transmute(pcurveduration)).ok()
     }
@@ -353,9 +353,9 @@ unsafe impl ::windows_core::Interface for IAudioEndpointOffloadStreamVolume {
 pub struct IAudioEndpointOffloadStreamVolume_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetVolumeChannelCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pu32channelcount: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Media_KernelStreaming")]
+    #[cfg(feature = "win32-media")]
     pub SetChannelVolumes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, u32channelcount: u32, pf32volumes: *const f32, u32curvetype: super::super::KernelStreaming::AUDIO_CURVE_TYPE, pcurveduration: *const i64) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Media_KernelStreaming"))]
+    #[cfg(not(feature = "win32-media"))]
     SetChannelVolumes: usize,
     pub GetChannelVolumes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, u32channelcount: u32, pf32volumes: *mut f32) -> ::windows_core::HRESULT,
 }

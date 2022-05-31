@@ -1,6 +1,6 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ActivateKeyboardLayout(hkl: super::super::TextServices::HKL, flags: ACTIVATE_KEYBOARD_LAYOUT_FLAGS) -> super::super::TextServices::HKL;
     pub fn BlockInput(fblockit: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     pub fn DragDetect(hwnd: ::win32_foundation_sys::HWND, pt: ::win32_foundation_sys::POINT) -> ::win32_foundation_sys::BOOL;
@@ -14,9 +14,9 @@ extern "system" {
     pub fn GetKeyNameTextA(lparam: i32, lpstring: ::windows_core_sys::PSTR, cchsize: i32) -> i32;
     pub fn GetKeyNameTextW(lparam: i32, lpstring: ::windows_core_sys::PWSTR, cchsize: i32) -> i32;
     pub fn GetKeyState(nvirtkey: i32) -> i16;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn GetKeyboardLayout(idthread: u32) -> super::super::TextServices::HKL;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn GetKeyboardLayoutList(nbuff: i32, lplist: *mut super::super::TextServices::HKL) -> i32;
     pub fn GetKeyboardLayoutNameA(pwszklid: ::windows_core_sys::PSTR) -> ::win32_foundation_sys::BOOL;
     pub fn GetKeyboardLayoutNameW(pwszklid: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::BOOL;
@@ -25,14 +25,14 @@ extern "system" {
     pub fn GetLastInputInfo(plii: *mut LASTINPUTINFO) -> ::win32_foundation_sys::BOOL;
     pub fn GetMouseMovePointsEx(cbsize: u32, lppt: *const MOUSEMOVEPOINT, lpptbuf: *mut MOUSEMOVEPOINT, nbufpoints: i32, resolution: GET_MOUSE_MOVE_POINTS_EX_RESOLUTION) -> i32;
     pub fn IsWindowEnabled(hwnd: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn LoadKeyboardLayoutA(pwszklid: ::windows_core_sys::PCSTR, flags: ACTIVATE_KEYBOARD_LAYOUT_FLAGS) -> super::super::TextServices::HKL;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn LoadKeyboardLayoutW(pwszklid: ::windows_core_sys::PCWSTR, flags: ACTIVATE_KEYBOARD_LAYOUT_FLAGS) -> super::super::TextServices::HKL;
     pub fn MapVirtualKeyA(ucode: u32, umaptype: u32) -> u32;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn MapVirtualKeyExA(ucode: u32, umaptype: u32, dwhkl: super::super::TextServices::HKL) -> u32;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn MapVirtualKeyExW(ucode: u32, umaptype: u32, dwhkl: super::super::TextServices::HKL) -> u32;
     pub fn MapVirtualKeyW(ucode: u32, umaptype: u32) -> u32;
     pub fn OemKeyScan(woemchar: u16) -> u32;
@@ -46,19 +46,19 @@ extern "system" {
     pub fn SetKeyboardState(lpkeystate: *const u8) -> ::win32_foundation_sys::BOOL;
     pub fn SwapMouseButton(fswap: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     pub fn ToAscii(uvirtkey: u32, uscancode: u32, lpkeystate: *const u8, lpchar: *mut u16, uflags: u32) -> i32;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ToAsciiEx(uvirtkey: u32, uscancode: u32, lpkeystate: *const u8, lpchar: *mut u16, uflags: u32, dwhkl: super::super::TextServices::HKL) -> i32;
     pub fn ToUnicode(wvirtkey: u32, wscancode: u32, lpkeystate: *const u8, pwszbuff: ::windows_core_sys::PWSTR, cchbuff: i32, wflags: u32) -> i32;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ToUnicodeEx(wvirtkey: u32, wscancode: u32, lpkeystate: *const u8, pwszbuff: ::windows_core_sys::PWSTR, cchbuff: i32, wflags: u32, dwhkl: super::super::TextServices::HKL) -> i32;
     pub fn TrackMouseEvent(lpeventtrack: *mut TRACKMOUSEEVENT) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn UnloadKeyboardLayout(hkl: super::super::TextServices::HKL) -> ::win32_foundation_sys::BOOL;
     pub fn UnregisterHotKey(hwnd: ::win32_foundation_sys::HWND, id: i32) -> ::win32_foundation_sys::BOOL;
     pub fn VkKeyScanA(ch: ::win32_foundation_sys::CHAR) -> i16;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn VkKeyScanExA(ch: ::win32_foundation_sys::CHAR, dwhkl: super::super::TextServices::HKL) -> i16;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn VkKeyScanExW(ch: u16, dwhkl: super::super::TextServices::HKL) -> i16;
     pub fn VkKeyScanW(ch: u16) -> i16;
     pub fn _TrackMouseEvent(lpeventtrack: *mut TRACKMOUSEEVENT) -> ::win32_foundation_sys::BOOL;

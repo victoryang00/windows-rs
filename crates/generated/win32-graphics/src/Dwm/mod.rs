@@ -126,34 +126,34 @@ pub const DWM_BB_BLURREGION: u32 = 2u32;
 pub const DWM_BB_ENABLE: u32 = 1u32;
 pub const DWM_BB_TRANSITIONONMAXIMIZED: u32 = 4u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct DWM_BLURBEHIND {
     pub dwFlags: u32,
     pub fEnable: ::win32_foundation::BOOL,
     pub hRgnBlur: super::Gdi::HRGN,
     pub fTransitionOnMaximized: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for DWM_BLURBEHIND {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for DWM_BLURBEHIND {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for DWM_BLURBEHIND {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for DWM_BLURBEHIND {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DWM_BLURBEHIND>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for DWM_BLURBEHIND {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for DWM_BLURBEHIND {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -502,7 +502,7 @@ pub unsafe fn DwmDetachMilContent<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn DwmEnableBlurBehindWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0, pblurbehind: *const DWM_BLURBEHIND) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -542,7 +542,7 @@ pub unsafe fn DwmEnableMMCSS<'a, Param0: ::windows_core::IntoParam<'a, ::win32_f
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_Controls")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn DwmExtendFrameIntoClientArea<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0, pmarinset: *const ::win32_ui::Controls::MARGINS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -758,7 +758,7 @@ pub unsafe fn DwmSetDxFrameDuration<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn DwmSetIconicLivePreviewBitmap<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::Gdi::HBITMAP>>(hwnd: Param0, hbmp: Param1, pptclient: *const ::win32_foundation::POINT, dwsitflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -772,7 +772,7 @@ pub unsafe fn DwmSetIconicLivePreviewBitmap<'a, Param0: ::windows_core::IntoPara
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn DwmSetIconicThumbnail<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::Gdi::HBITMAP>>(hwnd: Param0, hbmp: Param1, dwsitflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]

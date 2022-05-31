@@ -1179,7 +1179,7 @@ impl ITextDocument {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).GetText)(::windows_core::Interface::as_raw(this), options, value as *mut _ as _).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn LoadFromStream<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(&self, options: TextSetOptions, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).LoadFromStream)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
@@ -1188,7 +1188,7 @@ impl ITextDocument {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Redo)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SaveToStream<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(&self, options: TextGetOptions, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SaveToStream)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
@@ -1301,14 +1301,14 @@ pub struct ITextDocument_Vtbl {
     pub GetRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startposition: i32, endposition: i32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetRangeFromPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, point: ::winrt_foundation::Point, options: PointOptions, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: TextGetOptions, value: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub LoadFromStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: TextSetOptions, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     LoadFromStream: usize,
     pub Redo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub SaveToStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: TextGetOptions, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SaveToStream: usize,
     pub SetDefaultCharacterFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetDefaultParagraphFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -1944,7 +1944,7 @@ impl ITextRange {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).GetText)(::windows_core::Interface::as_raw(this), options, value as *mut _ as _).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetTextViaStream<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(&self, options: TextGetOptions, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).GetTextViaStream)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
@@ -1956,7 +1956,7 @@ impl ITextRange {
             (::windows_core::Interface::vtable(this).InRange)(::windows_core::Interface::as_raw(this), range.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn InsertImage<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param5: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(&self, width: i32, height: i32, ascent: i32, verticalalign: VerticalCharacterAlignment, alternatetext: Param4, value: Param5) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertImage)(::windows_core::Interface::as_raw(this), width, height, ascent, verticalalign, alternatetext.into_param().abi(), value.into_param().abi()).ok() }
@@ -2024,7 +2024,7 @@ impl ITextRange {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetText2)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SetTextViaStream<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(&self, options: TextSetOptions, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetTextViaStream)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
@@ -2143,14 +2143,14 @@ pub struct ITextRange_Vtbl {
     pub GetPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, horizontalalign: HorizontalCharacterAlignment, verticalalign: VerticalCharacterAlignment, options: PointOptions, point: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub GetRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: PointOptions, rect: *mut ::winrt_foundation::Rect, hit: *mut i32) -> ::windows_core::HRESULT,
     pub GetText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: TextGetOptions, value: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub GetTextViaStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: TextGetOptions, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     GetTextViaStream: usize,
     pub InRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, range: ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub InsertImage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, width: i32, height: i32, ascent: i32, verticalalign: VerticalCharacterAlignment, alternatetext: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     InsertImage: usize,
     pub InStory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, range: ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsEqual: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, range: ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -2164,9 +2164,9 @@ pub struct ITextRange_Vtbl {
     pub SetPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, point: ::winrt_foundation::Point, options: PointOptions, extend: bool) -> ::windows_core::HRESULT,
     pub SetRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startposition: i32, endposition: i32) -> ::windows_core::HRESULT,
     pub SetText2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: TextSetOptions, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub SetTextViaStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: TextSetOptions, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SetTextViaStream: usize,
     pub StartOf: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, extend: bool, result__: *mut i32) -> ::windows_core::HRESULT,
 }
@@ -2431,7 +2431,7 @@ impl ITextSelection {
         let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).GetText)(::windows_core::Interface::as_raw(this), options, value as *mut _ as _).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetTextViaStream<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(&self, options: TextGetOptions, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).GetTextViaStream)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
@@ -2443,7 +2443,7 @@ impl ITextSelection {
             (::windows_core::Interface::vtable(this).InRange)(::windows_core::Interface::as_raw(this), range.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn InsertImage<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param5: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(&self, width: i32, height: i32, ascent: i32, verticalalign: VerticalCharacterAlignment, alternatetext: Param4, value: Param5) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).InsertImage)(::windows_core::Interface::as_raw(this), width, height, ascent, verticalalign, alternatetext.into_param().abi(), value.into_param().abi()).ok() }
@@ -2511,7 +2511,7 @@ impl ITextSelection {
         let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetText2)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SetTextViaStream<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(&self, options: TextSetOptions, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTextViaStream)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
@@ -3209,7 +3209,7 @@ impl RichEditTextDocument {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).GetText)(::windows_core::Interface::as_raw(this), options, value as *mut _ as _).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn LoadFromStream<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(&self, options: TextSetOptions, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).LoadFromStream)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
@@ -3218,7 +3218,7 @@ impl RichEditTextDocument {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Redo)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SaveToStream<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(&self, options: TextGetOptions, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SaveToStream)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
@@ -3580,7 +3580,7 @@ impl RichEditTextRange {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).GetText)(::windows_core::Interface::as_raw(this), options, value as *mut _ as _).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetTextViaStream<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(&self, options: TextGetOptions, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).GetTextViaStream)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
@@ -3592,7 +3592,7 @@ impl RichEditTextRange {
             (::windows_core::Interface::vtable(this).InRange)(::windows_core::Interface::as_raw(this), range.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn InsertImage<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param5: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(&self, width: i32, height: i32, ascent: i32, verticalalign: VerticalCharacterAlignment, alternatetext: Param4, value: Param5) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertImage)(::windows_core::Interface::as_raw(this), width, height, ascent, verticalalign, alternatetext.into_param().abi(), value.into_param().abi()).ok() }
@@ -3660,7 +3660,7 @@ impl RichEditTextRange {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetText2)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SetTextViaStream<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(&self, options: TextSetOptions, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetTextViaStream)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }

@@ -23,108 +23,108 @@ impl ::core::fmt::Debug for CH_DESCRIPTION_TYPE {
         f.debug_tuple("CH_DESCRIPTION_TYPE").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_InfraCast_AccessPointBssid: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 19u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_InfraCast_ChallengeAep: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 21u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_InfraCast_DevnodeAep: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 23u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_InfraCast_HostName_ResolutionMode: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 25u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_InfraCast_PinSupported: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 29u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_InfraCast_RtspTcpConnectionParametersSupported: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 30u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_InfraCast_SinkHostName: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 20u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_InfraCast_SinkIpAddress: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 26u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_InfraCast_StreamSecuritySupported: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 18u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_InfraCast_Supported: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 17u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirectServices_AdvertisementId: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x31b37743_7c5e_4005_93e6_e953f92b82e9), pid: 5u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirectServices_RequestServiceInformation: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x31b37743_7c5e_4005_93e6_e953f92b82e9), pid: 7u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirectServices_ServiceAddress: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x31b37743_7c5e_4005_93e6_e953f92b82e9), pid: 2u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirectServices_ServiceConfigMethods: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x31b37743_7c5e_4005_93e6_e953f92b82e9), pid: 6u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirectServices_ServiceInformation: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x31b37743_7c5e_4005_93e6_e953f92b82e9), pid: 4u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirectServices_ServiceName: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x31b37743_7c5e_4005_93e6_e953f92b82e9), pid: 3u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirect_DeviceAddress: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 1u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirect_DeviceAddressCopy: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 13u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirect_FoundWsbService: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 24u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirect_GroupId: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 4u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirect_InformationElements: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 12u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirect_InterfaceAddress: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 2u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirect_InterfaceGuid: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 3u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirect_IsConnected: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 5u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirect_IsDMGCapable: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 22u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirect_IsLegacyDevice: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 7u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirect_IsMiracastLCPSupported: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 9u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirect_IsRecentlyAssociated: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 14u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirect_IsVisible: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 6u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirect_LinkQuality: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 28u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirect_MiracastVersion: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 8u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirect_Miracast_SessionMgmtControlPort: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 31u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirect_NoMiracastAutoProject: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 16u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirect_RtspTcpConnectionParametersSupported: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 32u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirect_Service_Aeps: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 15u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirect_Services: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 10u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirect_SupportedChannelList: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 11u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFiDirect_TransientAssociation: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x1506935d_e3e7_450f_8637_82233ebe5f6e), pid: 27u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_WiFi_InterfaceGuid: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0xef1167eb_cbfc_4341_a568_a7c91a68982c), pid: 2u32 };
 pub const DISCOVERY_FILTER_BITMASK_ANY: u32 = 15u32;
 pub const DISCOVERY_FILTER_BITMASK_DEVICE: u32 = 1u32;
 pub const DISCOVERY_FILTER_BITMASK_GO: u32 = 2u32;
 pub type DOT11EXTIHV_ADAPTER_RESET = ::core::option::Option<unsafe extern "system" fn(hihvextadapter: ::win32_foundation::HANDLE) -> u32>;
 pub type DOT11EXTIHV_CONTROL = ::core::option::Option<unsafe extern "system" fn(hihvextadapter: ::win32_foundation::HANDLE, dwinbuffersize: u32, pinbuffer: *const u8, dwoutbuffersize: u32, poutbuffer: *mut u8, pdwbytesreturned: *mut u32) -> u32>;
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 pub type DOT11EXTIHV_CREATE_DISCOVERY_PROFILES = ::core::option::Option<unsafe extern "system" fn(hihvextadapter: ::win32_foundation::HANDLE, binsecure: ::win32_foundation::BOOL, pihvprofileparams: *const DOT11EXT_IHV_PROFILE_PARAMS, pconnectablebssid: *const DOT11_BSS_LIST, pihvdiscoveryprofilelist: *mut DOT11EXT_IHV_DISCOVERY_PROFILE_LIST, pdwreasoncode: *mut u32) -> u32>;
 pub type DOT11EXTIHV_DEINIT_ADAPTER = ::core::option::Option<unsafe extern "system" fn(hihvextadapter: ::win32_foundation::HANDLE)>;
 pub type DOT11EXTIHV_DEINIT_SERVICE = ::core::option::Option<unsafe extern "system" fn()>;
 pub type DOT11EXTIHV_GET_VERSION_INFO = ::core::option::Option<unsafe extern "system" fn(pdot11ihvversioninfo: *mut DOT11_IHV_VERSION_INFO) -> u32>;
 pub type DOT11EXTIHV_INIT_ADAPTER = ::core::option::Option<unsafe extern "system" fn(pdot11adapter: *const DOT11_ADAPTER, hdot11svchandle: ::win32_foundation::HANDLE, phihvextadapter: *mut ::win32_foundation::HANDLE) -> u32>;
-#[cfg(all(feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Security_ExtensibleAuthenticationProtocol", feature = "Win32_System_RemoteDesktop"))]
+#[cfg(all(feature = "win32-networkmanagement", feature = "win32-security", feature = "win32-system"))]
 pub type DOT11EXTIHV_INIT_SERVICE = ::core::option::Option<unsafe extern "system" fn(dwvernumused: u32, pdot11extapi: *const DOT11EXT_APIS, pvreserved: *mut ::core::ffi::c_void, pdot11ihvhandlers: *mut DOT11EXT_IHV_HANDLERS) -> u32>;
 pub type DOT11EXTIHV_INIT_VIRTUAL_STATION = ::core::option::Option<unsafe extern "system" fn(pdot11extvsapi: *const DOT11EXT_VIRTUAL_STATION_APIS, pvreserved: *mut ::core::ffi::c_void) -> u32>;
 pub type DOT11EXTIHV_IS_UI_REQUEST_PENDING = ::core::option::Option<unsafe extern "system" fn(guiduirequest: ::windows_core::GUID, pbisrequestpending: *mut ::win32_foundation::BOOL) -> u32>;
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 pub type DOT11EXTIHV_ONEX_INDICATE_RESULT = ::core::option::Option<unsafe extern "system" fn(hihvextadapter: ::win32_foundation::HANDLE, msonexresult: DOT11_MSONEX_RESULT, pdot11msonexresultparams: *const DOT11_MSONEX_RESULT_PARAMS) -> u32>;
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 pub type DOT11EXTIHV_PERFORM_CAPABILITY_MATCH = ::core::option::Option<unsafe extern "system" fn(hihvextadapter: ::win32_foundation::HANDLE, pihvprofileparams: *const DOT11EXT_IHV_PROFILE_PARAMS, pihvconnprofile: *const DOT11EXT_IHV_CONNECTIVITY_PROFILE, pihvsecprofile: *const DOT11EXT_IHV_SECURITY_PROFILE, pconnectablebssid: *const DOT11_BSS_LIST, pdwreasoncode: *mut u32) -> u32>;
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub type DOT11EXTIHV_PERFORM_POST_ASSOCIATE = ::core::option::Option<unsafe extern "system" fn(hihvextadapter: ::win32_foundation::HANDLE, hsecuritysessionid: ::win32_foundation::HANDLE, pportstate: *const DOT11_PORT_STATE, udot11assocparamsbytes: u32, pdot11assocparams: *const DOT11_ASSOCIATION_COMPLETION_PARAMETERS) -> u32>;
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 pub type DOT11EXTIHV_PERFORM_PRE_ASSOCIATE = ::core::option::Option<unsafe extern "system" fn(hihvextadapter: ::win32_foundation::HANDLE, hconnectsession: ::win32_foundation::HANDLE, pihvprofileparams: *const DOT11EXT_IHV_PROFILE_PARAMS, pihvconnprofile: *const DOT11EXT_IHV_CONNECTIVITY_PROFILE, pihvsecprofile: *const DOT11EXT_IHV_SECURITY_PROFILE, pconnectablebssid: *const DOT11_BSS_LIST, pdwreasoncode: *mut u32) -> u32>;
-#[cfg(feature = "Win32_System_RemoteDesktop")]
+#[cfg(feature = "win32-system")]
 pub type DOT11EXTIHV_PROCESS_SESSION_CHANGE = ::core::option::Option<unsafe extern "system" fn(ueventtype: u32, psessionnotification: *const ::win32_system::RemoteDesktop::WTSSESSION_NOTIFICATION) -> u32>;
 pub type DOT11EXTIHV_PROCESS_UI_RESPONSE = ::core::option::Option<unsafe extern "system" fn(guiduirequest: ::windows_core::GUID, dwbytecount: u32, pvresponsebuffer: *const ::core::ffi::c_void) -> u32>;
 pub type DOT11EXTIHV_QUERY_UI_REQUEST = ::core::option::Option<unsafe extern "system" fn(hihvextadapter: ::win32_foundation::HANDLE, connectionphase: DOT11EXT_IHV_CONNECTION_PHASE, ppihvuirequest: *mut *mut DOT11EXT_IHV_UI_REQUEST) -> u32>;
@@ -132,11 +132,11 @@ pub type DOT11EXTIHV_RECEIVE_INDICATION = ::core::option::Option<unsafe extern "
 pub type DOT11EXTIHV_RECEIVE_PACKET = ::core::option::Option<unsafe extern "system" fn(hihvextadapter: ::win32_foundation::HANDLE, dwinbuffersize: u32, pvinbuffer: *const ::core::ffi::c_void) -> u32>;
 pub type DOT11EXTIHV_SEND_PACKET_COMPLETION = ::core::option::Option<unsafe extern "system" fn(hsendcompletion: ::win32_foundation::HANDLE) -> u32>;
 pub type DOT11EXTIHV_STOP_POST_ASSOCIATE = ::core::option::Option<unsafe extern "system" fn(hihvextadapter: ::win32_foundation::HANDLE, ppeer: *const *const u8, dot11assocstatus: u32) -> u32>;
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 pub type DOT11EXTIHV_VALIDATE_PROFILE = ::core::option::Option<unsafe extern "system" fn(hihvextadapter: ::win32_foundation::HANDLE, pihvprofileparams: *const DOT11EXT_IHV_PROFILE_PARAMS, pihvconnprofile: *const DOT11EXT_IHV_CONNECTIVITY_PROFILE, pihvsecprofile: *const DOT11EXT_IHV_SECURITY_PROFILE, pdwreasoncode: *mut u32) -> u32>;
 pub type DOT11EXT_ALLOCATE_BUFFER = ::core::option::Option<unsafe extern "system" fn(dwbytecount: u32, ppvbuffer: *mut *mut ::core::ffi::c_void) -> u32>;
 #[repr(C)]
-#[cfg(all(feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Security_ExtensibleAuthenticationProtocol"))]
+#[cfg(all(feature = "win32-networkmanagement", feature = "win32-security"))]
 pub struct DOT11EXT_APIS {
     pub Dot11ExtAllocateBuffer: DOT11EXT_ALLOCATE_BUFFER,
     pub Dot11ExtFreeBuffer: DOT11EXT_FREE_BUFFER,
@@ -161,15 +161,15 @@ pub struct DOT11EXT_APIS {
     pub Dot11ExtStopOneX: DOT11EXT_ONEX_STOP,
     pub Dot11ExtProcessSecurityPacket: DOT11EXT_PROCESS_ONEX_PACKET,
 }
-#[cfg(all(feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Security_ExtensibleAuthenticationProtocol"))]
+#[cfg(all(feature = "win32-networkmanagement", feature = "win32-security"))]
 impl ::core::marker::Copy for DOT11EXT_APIS {}
-#[cfg(all(feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Security_ExtensibleAuthenticationProtocol"))]
+#[cfg(all(feature = "win32-networkmanagement", feature = "win32-security"))]
 impl ::core::clone::Clone for DOT11EXT_APIS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Security_ExtensibleAuthenticationProtocol"))]
+#[cfg(all(feature = "win32-networkmanagement", feature = "win32-security"))]
 impl ::core::fmt::Debug for DOT11EXT_APIS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11EXT_APIS")
@@ -198,19 +198,19 @@ impl ::core::fmt::Debug for DOT11EXT_APIS {
             .finish()
     }
 }
-#[cfg(all(feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Security_ExtensibleAuthenticationProtocol"))]
+#[cfg(all(feature = "win32-networkmanagement", feature = "win32-security"))]
 unsafe impl ::windows_core::Abi for DOT11EXT_APIS {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Security_ExtensibleAuthenticationProtocol"))]
+#[cfg(all(feature = "win32-networkmanagement", feature = "win32-security"))]
 impl ::core::cmp::PartialEq for DOT11EXT_APIS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11EXT_APIS>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Security_ExtensibleAuthenticationProtocol"))]
+#[cfg(all(feature = "win32-networkmanagement", feature = "win32-security"))]
 impl ::core::cmp::Eq for DOT11EXT_APIS {}
-#[cfg(all(feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Security_ExtensibleAuthenticationProtocol"))]
+#[cfg(all(feature = "win32-networkmanagement", feature = "win32-security"))]
 impl ::core::default::Default for DOT11EXT_APIS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -333,7 +333,7 @@ impl ::core::default::Default for DOT11EXT_IHV_DISCOVERY_PROFILE_LIST {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Security_ExtensibleAuthenticationProtocol", feature = "Win32_System_RemoteDesktop"))]
+#[cfg(all(feature = "win32-networkmanagement", feature = "win32-security", feature = "win32-system"))]
 pub struct DOT11EXT_IHV_HANDLERS {
     pub Dot11ExtIhvDeinitService: DOT11EXTIHV_DEINIT_SERVICE,
     pub Dot11ExtIhvInitAdapter: DOT11EXTIHV_INIT_ADAPTER,
@@ -355,15 +355,15 @@ pub struct DOT11EXT_IHV_HANDLERS {
     pub Dot11ExtIhvOnexIndicateResult: DOT11EXTIHV_ONEX_INDICATE_RESULT,
     pub Dot11ExtIhvControl: DOT11EXTIHV_CONTROL,
 }
-#[cfg(all(feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Security_ExtensibleAuthenticationProtocol", feature = "Win32_System_RemoteDesktop"))]
+#[cfg(all(feature = "win32-networkmanagement", feature = "win32-security", feature = "win32-system"))]
 impl ::core::marker::Copy for DOT11EXT_IHV_HANDLERS {}
-#[cfg(all(feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Security_ExtensibleAuthenticationProtocol", feature = "Win32_System_RemoteDesktop"))]
+#[cfg(all(feature = "win32-networkmanagement", feature = "win32-security", feature = "win32-system"))]
 impl ::core::clone::Clone for DOT11EXT_IHV_HANDLERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Security_ExtensibleAuthenticationProtocol", feature = "Win32_System_RemoteDesktop"))]
+#[cfg(all(feature = "win32-networkmanagement", feature = "win32-security", feature = "win32-system"))]
 impl ::core::fmt::Debug for DOT11EXT_IHV_HANDLERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11EXT_IHV_HANDLERS")
@@ -389,19 +389,19 @@ impl ::core::fmt::Debug for DOT11EXT_IHV_HANDLERS {
             .finish()
     }
 }
-#[cfg(all(feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Security_ExtensibleAuthenticationProtocol", feature = "Win32_System_RemoteDesktop"))]
+#[cfg(all(feature = "win32-networkmanagement", feature = "win32-security", feature = "win32-system"))]
 unsafe impl ::windows_core::Abi for DOT11EXT_IHV_HANDLERS {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Security_ExtensibleAuthenticationProtocol", feature = "Win32_System_RemoteDesktop"))]
+#[cfg(all(feature = "win32-networkmanagement", feature = "win32-security", feature = "win32-system"))]
 impl ::core::cmp::PartialEq for DOT11EXT_IHV_HANDLERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11EXT_IHV_HANDLERS>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Security_ExtensibleAuthenticationProtocol", feature = "Win32_System_RemoteDesktop"))]
+#[cfg(all(feature = "win32-networkmanagement", feature = "win32-security", feature = "win32-system"))]
 impl ::core::cmp::Eq for DOT11EXT_IHV_HANDLERS {}
-#[cfg(all(feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Security_ExtensibleAuthenticationProtocol", feature = "Win32_System_RemoteDesktop"))]
+#[cfg(all(feature = "win32-networkmanagement", feature = "win32-security", feature = "win32-system"))]
 impl ::core::default::Default for DOT11EXT_IHV_HANDLERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -435,79 +435,79 @@ impl ::core::fmt::Debug for DOT11EXT_IHV_INDICATION_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 pub struct DOT11EXT_IHV_PARAMS {
     pub dot11ExtIhvProfileParams: DOT11EXT_IHV_PROFILE_PARAMS,
     pub wstrProfileName: [u16; 256],
     pub dwProfileTypeFlags: u32,
     pub interfaceGuid: ::windows_core::GUID,
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for DOT11EXT_IHV_PARAMS {}
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for DOT11EXT_IHV_PARAMS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for DOT11EXT_IHV_PARAMS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11EXT_IHV_PARAMS").field("dot11ExtIhvProfileParams", &self.dot11ExtIhvProfileParams).field("wstrProfileName", &self.wstrProfileName).field("dwProfileTypeFlags", &self.dwProfileTypeFlags).field("interfaceGuid", &self.interfaceGuid).finish()
     }
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for DOT11EXT_IHV_PARAMS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for DOT11EXT_IHV_PARAMS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11EXT_IHV_PARAMS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for DOT11EXT_IHV_PARAMS {}
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for DOT11EXT_IHV_PARAMS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 pub struct DOT11EXT_IHV_PROFILE_PARAMS {
     pub pSsidList: *mut DOT11EXT_IHV_SSID_LIST,
     pub BssType: DOT11_BSS_TYPE,
     pub pMSSecuritySettings: *mut DOT11_MSSECURITY_SETTINGS,
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for DOT11EXT_IHV_PROFILE_PARAMS {}
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for DOT11EXT_IHV_PROFILE_PARAMS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for DOT11EXT_IHV_PROFILE_PARAMS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11EXT_IHV_PROFILE_PARAMS").field("pSsidList", &self.pSsidList).field("BssType", &self.BssType).field("pMSSecuritySettings", &self.pMSSecuritySettings).finish()
     }
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for DOT11EXT_IHV_PROFILE_PARAMS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for DOT11EXT_IHV_PROFILE_PARAMS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11EXT_IHV_PROFILE_PARAMS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for DOT11EXT_IHV_PROFILE_PARAMS {}
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for DOT11EXT_IHV_PROFILE_PARAMS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -607,7 +607,7 @@ impl ::core::default::Default for DOT11EXT_IHV_UI_REQUEST {
     }
 }
 pub type DOT11EXT_NIC_SPECIFIC_EXTENSION = ::core::option::Option<unsafe extern "system" fn(hdot11svchandle: ::win32_foundation::HANDLE, dwinbuffersize: u32, pvinbuffer: *const ::core::ffi::c_void, pdwoutbuffersize: *mut u32, pvoutbuffer: *mut ::core::ffi::c_void) -> u32>;
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 pub type DOT11EXT_ONEX_START = ::core::option::Option<unsafe extern "system" fn(hdot11svchandle: ::win32_foundation::HANDLE, peapattributes: *const ::win32_security::ExtensibleAuthenticationProtocol::EAP_ATTRIBUTES) -> u32>;
 pub type DOT11EXT_ONEX_STOP = ::core::option::Option<unsafe extern "system" fn(hdot11svchandle: ::win32_foundation::HANDLE) -> u32>;
 pub type DOT11EXT_POST_ASSOCIATE_COMPLETION = ::core::option::Option<unsafe extern "system" fn(hdot11svchandle: ::win32_foundation::HANDLE, hsecuritysessionid: ::win32_foundation::HANDLE, ppeer: *const *const u8, dwreasoncode: u32, dwwin32error: u32) -> u32>;
@@ -622,7 +622,7 @@ pub type DOT11EXT_SEND_PACKET = ::core::option::Option<unsafe extern "system" fn
 pub type DOT11EXT_SEND_UI_REQUEST = ::core::option::Option<unsafe extern "system" fn(hdot11svchandle: ::win32_foundation::HANDLE, pihvuirequest: *const DOT11EXT_IHV_UI_REQUEST) -> u32>;
 pub type DOT11EXT_SET_AUTH_ALGORITHM = ::core::option::Option<unsafe extern "system" fn(hdot11svchandle: ::win32_foundation::HANDLE, dwauthalgo: u32) -> u32>;
 pub type DOT11EXT_SET_CURRENT_PROFILE = ::core::option::Option<unsafe extern "system" fn(hdot11svchandle: ::win32_foundation::HANDLE, hconnectsession: ::win32_foundation::HANDLE, pihvconnprofile: *const DOT11EXT_IHV_CONNECTIVITY_PROFILE, pihvsecprofile: *const DOT11EXT_IHV_SECURITY_PROFILE) -> u32>;
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub type DOT11EXT_SET_DEFAULT_KEY = ::core::option::Option<unsafe extern "system" fn(hdot11svchandle: ::win32_foundation::HANDLE, pkey: *const DOT11_CIPHER_DEFAULT_KEY_VALUE, dot11direction: DOT11_DIRECTION) -> u32>;
 pub type DOT11EXT_SET_DEFAULT_KEY_ID = ::core::option::Option<unsafe extern "system" fn(hdot11svchandle: ::win32_foundation::HANDLE, udefaultkeyid: u32) -> u32>;
 pub type DOT11EXT_SET_ETHERTYPE_HANDLING = ::core::option::Option<unsafe extern "system" fn(hdot11svchandle: ::win32_foundation::HANDLE, umaxbacklog: u32, unumofexemption: u32, pexemption: *const DOT11_PRIVACY_EXEMPTION, unumofregistration: u32, pusregistration: *const u16) -> u32>;
@@ -790,7 +790,7 @@ impl ::core::default::Default for DOT11_ADAPTER {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_ADDITIONAL_IE {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uBeaconIEsOffset: u32,
@@ -798,33 +798,33 @@ pub struct DOT11_ADDITIONAL_IE {
     pub uResponseIEsOffset: u32,
     pub uResponseIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_ADDITIONAL_IE {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_ADDITIONAL_IE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_ADDITIONAL_IE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_ADDITIONAL_IE").field("Header", &self.Header).field("uBeaconIEsOffset", &self.uBeaconIEsOffset).field("uBeaconIEsLength", &self.uBeaconIEsLength).field("uResponseIEsOffset", &self.uResponseIEsOffset).field("uResponseIEsLength", &self.uResponseIEsLength).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_ADDITIONAL_IE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_ADDITIONAL_IE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_ADDITIONAL_IE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_ADDITIONAL_IE {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_ADDITIONAL_IE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -935,40 +935,40 @@ impl ::core::fmt::Debug for DOT11_ADHOC_NETWORK_CONNECTION_STATUS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_ANQP_QUERY_COMPLETE_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub Status: DOT11_ANQP_QUERY_RESULT,
     pub hContext: ::win32_foundation::HANDLE,
     pub uResponseLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_ANQP_QUERY_COMPLETE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_ANQP_QUERY_COMPLETE_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_ANQP_QUERY_COMPLETE_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_ANQP_QUERY_COMPLETE_PARAMETERS").field("Header", &self.Header).field("Status", &self.Status).field("hContext", &self.hContext).field("uResponseLength", &self.uResponseLength).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_ANQP_QUERY_COMPLETE_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_ANQP_QUERY_COMPLETE_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_ANQP_QUERY_COMPLETE_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_ANQP_QUERY_COMPLETE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_ANQP_QUERY_COMPLETE_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1038,7 +1038,7 @@ impl ::core::default::Default for DOT11_AP_JOIN_REQUEST {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_ASSOCIATION_COMPLETION_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub MacAddr: [u8; 6],
@@ -1067,15 +1067,15 @@ pub struct DOT11_ASSOCIATION_COMPLETION_PARAMETERS {
     pub MulticastMgmtCipher: DOT11_CIPHER_ALGORITHM,
     pub uAssocComebackTime: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_ASSOCIATION_COMPLETION_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_ASSOCIATION_COMPLETION_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_ASSOCIATION_COMPLETION_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_ASSOCIATION_COMPLETION_PARAMETERS")
@@ -1108,19 +1108,19 @@ impl ::core::fmt::Debug for DOT11_ASSOCIATION_COMPLETION_PARAMETERS {
             .finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_ASSOCIATION_COMPLETION_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_ASSOCIATION_COMPLETION_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_ASSOCIATION_COMPLETION_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_ASSOCIATION_COMPLETION_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_ASSOCIATION_COMPLETION_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1184,40 +1184,40 @@ impl ::core::default::Default for DOT11_ASSOCIATION_INFO_EX {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_ASSOCIATION_INFO_LIST {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uNumOfEntries: u32,
     pub uTotalNumOfEntries: u32,
     pub dot11AssocInfo: [DOT11_ASSOCIATION_INFO_EX; 1],
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_ASSOCIATION_INFO_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_ASSOCIATION_INFO_LIST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_ASSOCIATION_INFO_LIST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_ASSOCIATION_INFO_LIST").field("Header", &self.Header).field("uNumOfEntries", &self.uNumOfEntries).field("uTotalNumOfEntries", &self.uTotalNumOfEntries).field("dot11AssocInfo", &self.dot11AssocInfo).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_ASSOCIATION_INFO_LIST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_ASSOCIATION_INFO_LIST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_ASSOCIATION_INFO_LIST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_ASSOCIATION_INFO_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_ASSOCIATION_INFO_LIST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1225,40 +1225,40 @@ impl ::core::default::Default for DOT11_ASSOCIATION_INFO_LIST {
 }
 pub const DOT11_ASSOCIATION_INFO_LIST_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_ASSOCIATION_PARAMS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub BSSID: [u8; 6],
     pub uAssocRequestIEsOffset: u32,
     pub uAssocRequestIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_ASSOCIATION_PARAMS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_ASSOCIATION_PARAMS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_ASSOCIATION_PARAMS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_ASSOCIATION_PARAMS").field("Header", &self.Header).field("BSSID", &self.BSSID).field("uAssocRequestIEsOffset", &self.uAssocRequestIEsOffset).field("uAssocRequestIEsLength", &self.uAssocRequestIEsLength).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_ASSOCIATION_PARAMS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_ASSOCIATION_PARAMS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_ASSOCIATION_PARAMS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_ASSOCIATION_PARAMS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_ASSOCIATION_PARAMS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1266,7 +1266,7 @@ impl ::core::default::Default for DOT11_ASSOCIATION_PARAMS {
 }
 pub const DOT11_ASSOCIATION_PARAMS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_ASSOCIATION_START_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub MacAddr: [u8; 6],
@@ -1274,33 +1274,33 @@ pub struct DOT11_ASSOCIATION_START_PARAMETERS {
     pub uIHVDataOffset: u32,
     pub uIHVDataSize: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_ASSOCIATION_START_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_ASSOCIATION_START_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_ASSOCIATION_START_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_ASSOCIATION_START_PARAMETERS").field("Header", &self.Header).field("MacAddr", &self.MacAddr).field("SSID", &self.SSID).field("uIHVDataOffset", &self.uIHVDataOffset).field("uIHVDataSize", &self.uIHVDataSize).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_ASSOCIATION_START_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_ASSOCIATION_START_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_ASSOCIATION_START_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_ASSOCIATION_START_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_ASSOCIATION_START_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1374,40 +1374,40 @@ impl ::core::fmt::Debug for DOT11_AUTH_ALGORITHM {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_AUTH_ALGORITHM_LIST {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uNumOfEntries: u32,
     pub uTotalNumOfEntries: u32,
     pub AlgorithmIds: [DOT11_AUTH_ALGORITHM; 1],
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_AUTH_ALGORITHM_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_AUTH_ALGORITHM_LIST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_AUTH_ALGORITHM_LIST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_AUTH_ALGORITHM_LIST").field("Header", &self.Header).field("uNumOfEntries", &self.uNumOfEntries).field("uTotalNumOfEntries", &self.uTotalNumOfEntries).field("AlgorithmIds", &self.AlgorithmIds).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_AUTH_ALGORITHM_LIST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_AUTH_ALGORITHM_LIST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_AUTH_ALGORITHM_LIST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_AUTH_ALGORITHM_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_AUTH_ALGORITHM_LIST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1446,40 +1446,40 @@ impl ::core::default::Default for DOT11_AUTH_CIPHER_PAIR {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_AUTH_CIPHER_PAIR_LIST {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uNumOfEntries: u32,
     pub uTotalNumOfEntries: u32,
     pub AuthCipherPairs: [DOT11_AUTH_CIPHER_PAIR; 1],
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_AUTH_CIPHER_PAIR_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_AUTH_CIPHER_PAIR_LIST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_AUTH_CIPHER_PAIR_LIST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_AUTH_CIPHER_PAIR_LIST").field("Header", &self.Header).field("uNumOfEntries", &self.uNumOfEntries).field("uTotalNumOfEntries", &self.uTotalNumOfEntries).field("AuthCipherPairs", &self.AuthCipherPairs).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_AUTH_CIPHER_PAIR_LIST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_AUTH_CIPHER_PAIR_LIST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_AUTH_CIPHER_PAIR_LIST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_AUTH_CIPHER_PAIR_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_AUTH_CIPHER_PAIR_LIST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1487,40 +1487,40 @@ impl ::core::default::Default for DOT11_AUTH_CIPHER_PAIR_LIST {
 }
 pub const DOT11_AUTH_CIPHER_PAIR_LIST_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_AVAILABLE_CHANNEL_LIST {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uNumOfEntries: u32,
     pub uTotalNumOfEntries: u32,
     pub uChannelNumber: [u32; 1],
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_AVAILABLE_CHANNEL_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_AVAILABLE_CHANNEL_LIST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_AVAILABLE_CHANNEL_LIST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_AVAILABLE_CHANNEL_LIST").field("Header", &self.Header).field("uNumOfEntries", &self.uNumOfEntries).field("uTotalNumOfEntries", &self.uTotalNumOfEntries).field("uChannelNumber", &self.uChannelNumber).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_AVAILABLE_CHANNEL_LIST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_AVAILABLE_CHANNEL_LIST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_AVAILABLE_CHANNEL_LIST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_AVAILABLE_CHANNEL_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_AVAILABLE_CHANNEL_LIST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1528,40 +1528,40 @@ impl ::core::default::Default for DOT11_AVAILABLE_CHANNEL_LIST {
 }
 pub const DOT11_AVAILABLE_CHANNEL_LIST_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_AVAILABLE_FREQUENCY_LIST {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uNumOfEntries: u32,
     pub uTotalNumOfEntries: u32,
     pub uFrequencyValue: [u32; 1],
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_AVAILABLE_FREQUENCY_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_AVAILABLE_FREQUENCY_LIST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_AVAILABLE_FREQUENCY_LIST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_AVAILABLE_FREQUENCY_LIST").field("Header", &self.Header).field("uNumOfEntries", &self.uNumOfEntries).field("uTotalNumOfEntries", &self.uTotalNumOfEntries).field("uFrequencyValue", &self.uFrequencyValue).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_AVAILABLE_FREQUENCY_LIST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_AVAILABLE_FREQUENCY_LIST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_AVAILABLE_FREQUENCY_LIST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_AVAILABLE_FREQUENCY_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_AVAILABLE_FREQUENCY_LIST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1624,40 +1624,40 @@ impl ::core::default::Default for DOT11_BSSID_CANDIDATE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_BSSID_LIST {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uNumOfEntries: u32,
     pub uTotalNumOfEntries: u32,
     pub BSSIDs: [u8; 6],
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_BSSID_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_BSSID_LIST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_BSSID_LIST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_BSSID_LIST").field("Header", &self.Header).field("uNumOfEntries", &self.uNumOfEntries).field("uTotalNumOfEntries", &self.uTotalNumOfEntries).field("BSSIDs", &self.BSSIDs).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_BSSID_LIST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_BSSID_LIST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_BSSID_LIST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_BSSID_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_BSSID_LIST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1849,78 +1849,78 @@ impl ::core::fmt::Debug for DOT11_BSS_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_BYTE_ARRAY {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uNumOfBytes: u32,
     pub uTotalNumOfBytes: u32,
     pub ucBuffer: [u8; 1],
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_BYTE_ARRAY {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_BYTE_ARRAY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_BYTE_ARRAY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_BYTE_ARRAY").field("Header", &self.Header).field("uNumOfBytes", &self.uNumOfBytes).field("uTotalNumOfBytes", &self.uTotalNumOfBytes).field("ucBuffer", &self.ucBuffer).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_BYTE_ARRAY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_BYTE_ARRAY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_BYTE_ARRAY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_BYTE_ARRAY {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_BYTE_ARRAY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_CAN_SUSTAIN_AP_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub ulReason: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_CAN_SUSTAIN_AP_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_CAN_SUSTAIN_AP_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_CAN_SUSTAIN_AP_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_CAN_SUSTAIN_AP_PARAMETERS").field("Header", &self.Header).field("ulReason", &self.ulReason).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_CAN_SUSTAIN_AP_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_CAN_SUSTAIN_AP_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_CAN_SUSTAIN_AP_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_CAN_SUSTAIN_AP_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_CAN_SUSTAIN_AP_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2014,40 +2014,40 @@ impl ::core::fmt::Debug for DOT11_CIPHER_ALGORITHM {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_CIPHER_ALGORITHM_LIST {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uNumOfEntries: u32,
     pub uTotalNumOfEntries: u32,
     pub AlgorithmIds: [DOT11_CIPHER_ALGORITHM; 1],
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_CIPHER_ALGORITHM_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_CIPHER_ALGORITHM_LIST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_CIPHER_ALGORITHM_LIST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_CIPHER_ALGORITHM_LIST").field("Header", &self.Header).field("uNumOfEntries", &self.uNumOfEntries).field("uTotalNumOfEntries", &self.uTotalNumOfEntries).field("AlgorithmIds", &self.AlgorithmIds).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_CIPHER_ALGORITHM_LIST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_CIPHER_ALGORITHM_LIST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_CIPHER_ALGORITHM_LIST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_CIPHER_ALGORITHM_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_CIPHER_ALGORITHM_LIST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2055,7 +2055,7 @@ impl ::core::default::Default for DOT11_CIPHER_ALGORITHM_LIST {
 }
 pub const DOT11_CIPHER_ALGORITHM_LIST_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_CIPHER_DEFAULT_KEY_VALUE {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uKeyIndex: u32,
@@ -2066,33 +2066,33 @@ pub struct DOT11_CIPHER_DEFAULT_KEY_VALUE {
     pub usKeyLength: u16,
     pub ucKey: [u8; 1],
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_CIPHER_DEFAULT_KEY_VALUE {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_CIPHER_DEFAULT_KEY_VALUE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_CIPHER_DEFAULT_KEY_VALUE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_CIPHER_DEFAULT_KEY_VALUE").field("Header", &self.Header).field("uKeyIndex", &self.uKeyIndex).field("AlgorithmId", &self.AlgorithmId).field("MacAddr", &self.MacAddr).field("bDelete", &self.bDelete).field("bStatic", &self.bStatic).field("usKeyLength", &self.usKeyLength).field("ucKey", &self.ucKey).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_CIPHER_DEFAULT_KEY_VALUE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_CIPHER_DEFAULT_KEY_VALUE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_CIPHER_DEFAULT_KEY_VALUE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_CIPHER_DEFAULT_KEY_VALUE {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_CIPHER_DEFAULT_KEY_VALUE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2138,38 +2138,38 @@ pub const DOT11_CIPHER_KEY_MAPPING_KEY_VALUE_BYTE_ARRAY_REVISION_1: u32 = 1u32;
 pub const DOT11_CONF_ALGO_TKIP: u32 = 2u32;
 pub const DOT11_CONF_ALGO_WEP_RC4: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_CONNECTION_COMPLETION_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uStatus: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_CONNECTION_COMPLETION_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_CONNECTION_COMPLETION_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_CONNECTION_COMPLETION_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_CONNECTION_COMPLETION_PARAMETERS").field("Header", &self.Header).field("uStatus", &self.uStatus).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_CONNECTION_COMPLETION_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_CONNECTION_COMPLETION_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_CONNECTION_COMPLETION_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_CONNECTION_COMPLETION_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_CONNECTION_COMPLETION_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2177,40 +2177,40 @@ impl ::core::default::Default for DOT11_CONNECTION_COMPLETION_PARAMETERS {
 }
 pub const DOT11_CONNECTION_COMPLETION_PARAMETERS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_CONNECTION_START_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub BSSType: DOT11_BSS_TYPE,
     pub AdhocBSSID: [u8; 6],
     pub AdhocSSID: DOT11_SSID,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_CONNECTION_START_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_CONNECTION_START_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_CONNECTION_START_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_CONNECTION_START_PARAMETERS").field("Header", &self.Header).field("BSSType", &self.BSSType).field("AdhocBSSID", &self.AdhocBSSID).field("AdhocSSID", &self.AdhocSSID).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_CONNECTION_START_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_CONNECTION_START_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_CONNECTION_START_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_CONNECTION_START_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_CONNECTION_START_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2274,40 +2274,40 @@ impl ::core::default::Default for DOT11_COUNTERS_ENTRY {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_COUNTRY_OR_REGION_STRING_LIST {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uNumOfEntries: u32,
     pub uTotalNumOfEntries: u32,
     pub CountryOrRegionStrings: [u8; 3],
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_COUNTRY_OR_REGION_STRING_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_COUNTRY_OR_REGION_STRING_LIST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_COUNTRY_OR_REGION_STRING_LIST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_COUNTRY_OR_REGION_STRING_LIST").field("Header", &self.Header).field("uNumOfEntries", &self.uNumOfEntries).field("uTotalNumOfEntries", &self.uTotalNumOfEntries).field("CountryOrRegionStrings", &self.CountryOrRegionStrings).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_COUNTRY_OR_REGION_STRING_LIST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_COUNTRY_OR_REGION_STRING_LIST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_COUNTRY_OR_REGION_STRING_LIST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_COUNTRY_OR_REGION_STRING_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_COUNTRY_OR_REGION_STRING_LIST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2439,39 +2439,39 @@ impl ::core::default::Default for DOT11_DATA_RATE_MAPPING_ENTRY {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_DATA_RATE_MAPPING_TABLE {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uDataRateMappingLength: u32,
     pub DataRateMappingEntries: [DOT11_DATA_RATE_MAPPING_ENTRY; 126],
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_DATA_RATE_MAPPING_TABLE {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_DATA_RATE_MAPPING_TABLE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_DATA_RATE_MAPPING_TABLE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_DATA_RATE_MAPPING_TABLE").field("Header", &self.Header).field("uDataRateMappingLength", &self.uDataRateMappingLength).field("DataRateMappingEntries", &self.DataRateMappingEntries).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_DATA_RATE_MAPPING_TABLE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_DATA_RATE_MAPPING_TABLE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_DATA_RATE_MAPPING_TABLE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_DATA_RATE_MAPPING_TABLE {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_DATA_RATE_MAPPING_TABLE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2596,39 +2596,39 @@ impl ::core::fmt::Debug for DOT11_DIRECTION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_DISASSOCIATE_PEER_REQUEST {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub PeerMacAddr: [u8; 6],
     pub usReason: u16,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_DISASSOCIATE_PEER_REQUEST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_DISASSOCIATE_PEER_REQUEST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_DISASSOCIATE_PEER_REQUEST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_DISASSOCIATE_PEER_REQUEST").field("Header", &self.Header).field("PeerMacAddr", &self.PeerMacAddr).field("usReason", &self.usReason).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_DISASSOCIATE_PEER_REQUEST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_DISASSOCIATE_PEER_REQUEST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_DISASSOCIATE_PEER_REQUEST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_DISASSOCIATE_PEER_REQUEST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_DISASSOCIATE_PEER_REQUEST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2636,7 +2636,7 @@ impl ::core::default::Default for DOT11_DISASSOCIATE_PEER_REQUEST {
 }
 pub const DOT11_DISASSOCIATE_PEER_REQUEST_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_DISASSOCIATION_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub MacAddr: [u8; 6],
@@ -2644,33 +2644,33 @@ pub struct DOT11_DISASSOCIATION_PARAMETERS {
     pub uIHVDataOffset: u32,
     pub uIHVDataSize: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_DISASSOCIATION_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_DISASSOCIATION_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_DISASSOCIATION_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_DISASSOCIATION_PARAMETERS").field("Header", &self.Header).field("MacAddr", &self.MacAddr).field("uReason", &self.uReason).field("uIHVDataOffset", &self.uIHVDataOffset).field("uIHVDataSize", &self.uIHVDataSize).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_DISASSOCIATION_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_DISASSOCIATION_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_DISASSOCIATION_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_DISASSOCIATION_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_DISASSOCIATION_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2790,38 +2790,38 @@ impl ::core::fmt::Debug for DOT11_DS_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 pub struct DOT11_EAP_RESULT {
     pub dwFailureReasonCode: u32,
     pub pAttribArray: *mut ::win32_security::ExtensibleAuthenticationProtocol::EAP_ATTRIBUTES,
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for DOT11_EAP_RESULT {}
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for DOT11_EAP_RESULT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for DOT11_EAP_RESULT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_EAP_RESULT").field("dwFailureReasonCode", &self.dwFailureReasonCode).field("pAttribArray", &self.pAttribArray).finish()
     }
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for DOT11_EAP_RESULT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for DOT11_EAP_RESULT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_EAP_RESULT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for DOT11_EAP_RESULT {}
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for DOT11_EAP_RESULT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2898,7 +2898,7 @@ pub const DOT11_EXEMPT_NO_EXEMPTION: u32 = 0u32;
 pub const DOT11_EXEMPT_ON_KEY_MAPPING_KEY_UNAVAILABLE: u32 = 2u32;
 pub const DOT11_EXEMPT_UNICAST: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_EXTAP_ATTRIBUTES {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uScanSSIDListSize: u32,
@@ -2915,15 +2915,15 @@ pub struct DOT11_EXTAP_ATTRIBUTES {
     pub uInfraNumSupportedMcastAlgoPairs: u32,
     pub pInfraSupportedMcastAlgoPairs: *mut DOT11_AUTH_CIPHER_PAIR,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_EXTAP_ATTRIBUTES {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_EXTAP_ATTRIBUTES {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_EXTAP_ATTRIBUTES {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_EXTAP_ATTRIBUTES")
@@ -2944,19 +2944,19 @@ impl ::core::fmt::Debug for DOT11_EXTAP_ATTRIBUTES {
             .finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_EXTAP_ATTRIBUTES {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_EXTAP_ATTRIBUTES {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_EXTAP_ATTRIBUTES>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_EXTAP_ATTRIBUTES {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_EXTAP_ATTRIBUTES {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2966,7 +2966,7 @@ pub const DOT11_EXTAP_ATTRIBUTES_REVISION_1: u32 = 1u32;
 pub const DOT11_EXTAP_RECV_CONTEXT_REVISION_1: u32 = 1u32;
 pub const DOT11_EXTAP_SEND_CONTEXT_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_EXTSTA_ATTRIBUTES {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uScanSSIDListSize: u32,
@@ -3003,15 +3003,15 @@ pub struct DOT11_EXTSTA_ATTRIBUTES {
     pub bANQPQueryOffloadSupported: ::win32_foundation::BOOLEAN,
     pub bHESSIDConnectionSupported: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_EXTSTA_ATTRIBUTES {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_EXTSTA_ATTRIBUTES {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_EXTSTA_ATTRIBUTES {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_EXTSTA_ATTRIBUTES")
@@ -3052,19 +3052,19 @@ impl ::core::fmt::Debug for DOT11_EXTSTA_ATTRIBUTES {
             .finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_EXTSTA_ATTRIBUTES {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_EXTSTA_ATTRIBUTES {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_EXTSTA_ATTRIBUTES>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_EXTSTA_ATTRIBUTES {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_EXTSTA_ATTRIBUTES {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3078,7 +3078,7 @@ pub const DOT11_EXTSTA_ATTRIBUTES_SAFEMODE_CERTIFIED: u32 = 2u32;
 pub const DOT11_EXTSTA_ATTRIBUTES_SAFEMODE_OID_SUPPORTED: u32 = 1u32;
 pub const DOT11_EXTSTA_ATTRIBUTES_SAFEMODE_RESERVED: u32 = 12u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_EXTSTA_CAPABILITY {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uScanSSIDListSize: u32,
@@ -3092,15 +3092,15 @@ pub struct DOT11_EXTSTA_CAPABILITY {
     pub uPMKIDCacheSize: u32,
     pub uMaxNumPerSTADefaultKeyTables: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_EXTSTA_CAPABILITY {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_EXTSTA_CAPABILITY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_EXTSTA_CAPABILITY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_EXTSTA_CAPABILITY")
@@ -3118,19 +3118,19 @@ impl ::core::fmt::Debug for DOT11_EXTSTA_CAPABILITY {
             .finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_EXTSTA_CAPABILITY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_EXTSTA_CAPABILITY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_EXTSTA_CAPABILITY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_EXTSTA_CAPABILITY {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_EXTSTA_CAPABILITY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3138,7 +3138,7 @@ impl ::core::default::Default for DOT11_EXTSTA_CAPABILITY {
 }
 pub const DOT11_EXTSTA_CAPABILITY_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_EXTSTA_RECV_CONTEXT {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uReceiveFlags: u32,
@@ -3151,15 +3151,15 @@ pub struct DOT11_EXTSTA_RECV_CONTEXT {
     pub pvMediaSpecificInfo: *mut ::core::ffi::c_void,
     pub ullTimestamp: u64,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_EXTSTA_RECV_CONTEXT {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_EXTSTA_RECV_CONTEXT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_EXTSTA_RECV_CONTEXT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_EXTSTA_RECV_CONTEXT")
@@ -3176,19 +3176,19 @@ impl ::core::fmt::Debug for DOT11_EXTSTA_RECV_CONTEXT {
             .finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_EXTSTA_RECV_CONTEXT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_EXTSTA_RECV_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_EXTSTA_RECV_CONTEXT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_EXTSTA_RECV_CONTEXT {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_EXTSTA_RECV_CONTEXT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3196,7 +3196,7 @@ impl ::core::default::Default for DOT11_EXTSTA_RECV_CONTEXT {
 }
 pub const DOT11_EXTSTA_RECV_CONTEXT_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_EXTSTA_SEND_CONTEXT {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub usExemptionActionType: u16,
@@ -3205,33 +3205,33 @@ pub struct DOT11_EXTSTA_SEND_CONTEXT {
     pub pvMediaSpecificInfo: *mut ::core::ffi::c_void,
     pub uSendFlags: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_EXTSTA_SEND_CONTEXT {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_EXTSTA_SEND_CONTEXT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_EXTSTA_SEND_CONTEXT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_EXTSTA_SEND_CONTEXT").field("Header", &self.Header).field("usExemptionActionType", &self.usExemptionActionType).field("uPhyId", &self.uPhyId).field("uDelayedSleepValue", &self.uDelayedSleepValue).field("pvMediaSpecificInfo", &self.pvMediaSpecificInfo).field("uSendFlags", &self.uSendFlags).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_EXTSTA_SEND_CONTEXT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_EXTSTA_SEND_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_EXTSTA_SEND_CONTEXT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_EXTSTA_SEND_CONTEXT {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_EXTSTA_SEND_CONTEXT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3280,7 +3280,7 @@ pub const DOT11_FREQUENCY_BANDS_LOWER: u32 = 1u32;
 pub const DOT11_FREQUENCY_BANDS_MIDDLE: u32 = 2u32;
 pub const DOT11_FREQUENCY_BANDS_UPPER: u32 = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_GO_NEGOTIATION_CONFIRMATION_SEND_COMPLETE_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub PeerDeviceAddress: [u8; 6],
@@ -3289,33 +3289,33 @@ pub struct DOT11_GO_NEGOTIATION_CONFIRMATION_SEND_COMPLETE_PARAMETERS {
     pub uIEsOffset: u32,
     pub uIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_GO_NEGOTIATION_CONFIRMATION_SEND_COMPLETE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_GO_NEGOTIATION_CONFIRMATION_SEND_COMPLETE_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_GO_NEGOTIATION_CONFIRMATION_SEND_COMPLETE_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_GO_NEGOTIATION_CONFIRMATION_SEND_COMPLETE_PARAMETERS").field("Header", &self.Header).field("PeerDeviceAddress", &self.PeerDeviceAddress).field("DialogToken", &self.DialogToken).field("Status", &self.Status).field("uIEsOffset", &self.uIEsOffset).field("uIEsLength", &self.uIEsLength).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_GO_NEGOTIATION_CONFIRMATION_SEND_COMPLETE_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_GO_NEGOTIATION_CONFIRMATION_SEND_COMPLETE_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_GO_NEGOTIATION_CONFIRMATION_SEND_COMPLETE_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_GO_NEGOTIATION_CONFIRMATION_SEND_COMPLETE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_GO_NEGOTIATION_CONFIRMATION_SEND_COMPLETE_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3323,7 +3323,7 @@ impl ::core::default::Default for DOT11_GO_NEGOTIATION_CONFIRMATION_SEND_COMPLET
 }
 pub const DOT11_GO_NEGOTIATION_CONFIRMATION_SEND_COMPLETE_PARAMETERS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_GO_NEGOTIATION_REQUEST_SEND_COMPLETE_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub PeerDeviceAddress: [u8; 6],
@@ -3332,33 +3332,33 @@ pub struct DOT11_GO_NEGOTIATION_REQUEST_SEND_COMPLETE_PARAMETERS {
     pub uIEsOffset: u32,
     pub uIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_GO_NEGOTIATION_REQUEST_SEND_COMPLETE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_GO_NEGOTIATION_REQUEST_SEND_COMPLETE_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_GO_NEGOTIATION_REQUEST_SEND_COMPLETE_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_GO_NEGOTIATION_REQUEST_SEND_COMPLETE_PARAMETERS").field("Header", &self.Header).field("PeerDeviceAddress", &self.PeerDeviceAddress).field("DialogToken", &self.DialogToken).field("Status", &self.Status).field("uIEsOffset", &self.uIEsOffset).field("uIEsLength", &self.uIEsLength).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_GO_NEGOTIATION_REQUEST_SEND_COMPLETE_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_GO_NEGOTIATION_REQUEST_SEND_COMPLETE_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_GO_NEGOTIATION_REQUEST_SEND_COMPLETE_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_GO_NEGOTIATION_REQUEST_SEND_COMPLETE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_GO_NEGOTIATION_REQUEST_SEND_COMPLETE_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3366,7 +3366,7 @@ impl ::core::default::Default for DOT11_GO_NEGOTIATION_REQUEST_SEND_COMPLETE_PAR
 }
 pub const DOT11_GO_NEGOTIATION_REQUEST_SEND_COMPLETE_PARAMETERS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_GO_NEGOTIATION_RESPONSE_SEND_COMPLETE_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub PeerDeviceAddress: [u8; 6],
@@ -3375,33 +3375,33 @@ pub struct DOT11_GO_NEGOTIATION_RESPONSE_SEND_COMPLETE_PARAMETERS {
     pub uIEsOffset: u32,
     pub uIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_GO_NEGOTIATION_RESPONSE_SEND_COMPLETE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_GO_NEGOTIATION_RESPONSE_SEND_COMPLETE_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_GO_NEGOTIATION_RESPONSE_SEND_COMPLETE_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_GO_NEGOTIATION_RESPONSE_SEND_COMPLETE_PARAMETERS").field("Header", &self.Header).field("PeerDeviceAddress", &self.PeerDeviceAddress).field("DialogToken", &self.DialogToken).field("Status", &self.Status).field("uIEsOffset", &self.uIEsOffset).field("uIEsLength", &self.uIEsLength).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_GO_NEGOTIATION_RESPONSE_SEND_COMPLETE_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_GO_NEGOTIATION_RESPONSE_SEND_COMPLETE_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_GO_NEGOTIATION_RESPONSE_SEND_COMPLETE_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_GO_NEGOTIATION_RESPONSE_SEND_COMPLETE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_GO_NEGOTIATION_RESPONSE_SEND_COMPLETE_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3539,40 +3539,40 @@ pub const DOT11_HW_MSDU_AUTH_SUPPORTED_TX: u32 = 16u32;
 pub const DOT11_HW_WEP_SUPPORTED_RX: u32 = 2u32;
 pub const DOT11_HW_WEP_SUPPORTED_TX: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_IBSS_PARAMS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub bJoinOnly: ::win32_foundation::BOOLEAN,
     pub uIEsOffset: u32,
     pub uIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_IBSS_PARAMS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_IBSS_PARAMS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_IBSS_PARAMS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_IBSS_PARAMS").field("Header", &self.Header).field("bJoinOnly", &self.bJoinOnly).field("uIEsOffset", &self.uIEsOffset).field("uIEsLength", &self.uIEsLength).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_IBSS_PARAMS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_IBSS_PARAMS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_IBSS_PARAMS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_IBSS_PARAMS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_IBSS_PARAMS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3610,7 +3610,7 @@ impl ::core::default::Default for DOT11_IHV_VERSION_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_INCOMING_ASSOC_COMPLETION_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub PeerMacAddr: [u8; 6],
@@ -3630,15 +3630,15 @@ pub struct DOT11_INCOMING_ASSOC_COMPLETION_PARAMETERS {
     pub uBeaconOffset: u32,
     pub uBeaconSize: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_INCOMING_ASSOC_COMPLETION_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_INCOMING_ASSOC_COMPLETION_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_INCOMING_ASSOC_COMPLETION_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_INCOMING_ASSOC_COMPLETION_PARAMETERS")
@@ -3662,19 +3662,19 @@ impl ::core::fmt::Debug for DOT11_INCOMING_ASSOC_COMPLETION_PARAMETERS {
             .finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_INCOMING_ASSOC_COMPLETION_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_INCOMING_ASSOC_COMPLETION_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_INCOMING_ASSOC_COMPLETION_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_INCOMING_ASSOC_COMPLETION_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_INCOMING_ASSOC_COMPLETION_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3682,7 +3682,7 @@ impl ::core::default::Default for DOT11_INCOMING_ASSOC_COMPLETION_PARAMETERS {
 }
 pub const DOT11_INCOMING_ASSOC_COMPLETION_PARAMETERS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_INCOMING_ASSOC_DECISION {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub PeerMacAddr: [u8; 6],
@@ -3691,33 +3691,33 @@ pub struct DOT11_INCOMING_ASSOC_DECISION {
     pub uAssocResponseIEsOffset: u32,
     pub uAssocResponseIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_INCOMING_ASSOC_DECISION {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_INCOMING_ASSOC_DECISION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_INCOMING_ASSOC_DECISION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_INCOMING_ASSOC_DECISION").field("Header", &self.Header).field("PeerMacAddr", &self.PeerMacAddr).field("bAccept", &self.bAccept).field("usReasonCode", &self.usReasonCode).field("uAssocResponseIEsOffset", &self.uAssocResponseIEsOffset).field("uAssocResponseIEsLength", &self.uAssocResponseIEsLength).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_INCOMING_ASSOC_DECISION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_INCOMING_ASSOC_DECISION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_INCOMING_ASSOC_DECISION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_INCOMING_ASSOC_DECISION {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_INCOMING_ASSOC_DECISION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3726,7 +3726,7 @@ impl ::core::default::Default for DOT11_INCOMING_ASSOC_DECISION {
 pub const DOT11_INCOMING_ASSOC_DECISION_REVISION_1: u32 = 1u32;
 pub const DOT11_INCOMING_ASSOC_DECISION_REVISION_2: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_INCOMING_ASSOC_DECISION_V2 {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub PeerMacAddr: [u8; 6],
@@ -3736,40 +3736,40 @@ pub struct DOT11_INCOMING_ASSOC_DECISION_V2 {
     pub uAssocResponseIEsLength: u32,
     pub WFDStatus: u8,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_INCOMING_ASSOC_DECISION_V2 {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_INCOMING_ASSOC_DECISION_V2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_INCOMING_ASSOC_DECISION_V2 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_INCOMING_ASSOC_DECISION_V2").field("Header", &self.Header).field("PeerMacAddr", &self.PeerMacAddr).field("bAccept", &self.bAccept).field("usReasonCode", &self.usReasonCode).field("uAssocResponseIEsOffset", &self.uAssocResponseIEsOffset).field("uAssocResponseIEsLength", &self.uAssocResponseIEsLength).field("WFDStatus", &self.WFDStatus).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_INCOMING_ASSOC_DECISION_V2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_INCOMING_ASSOC_DECISION_V2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_INCOMING_ASSOC_DECISION_V2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_INCOMING_ASSOC_DECISION_V2 {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_INCOMING_ASSOC_DECISION_V2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_INCOMING_ASSOC_REQUEST_RECEIVED_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub PeerMacAddr: [u8; 6],
@@ -3777,33 +3777,33 @@ pub struct DOT11_INCOMING_ASSOC_REQUEST_RECEIVED_PARAMETERS {
     pub uAssocReqOffset: u32,
     pub uAssocReqSize: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_INCOMING_ASSOC_REQUEST_RECEIVED_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_INCOMING_ASSOC_REQUEST_RECEIVED_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_INCOMING_ASSOC_REQUEST_RECEIVED_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_INCOMING_ASSOC_REQUEST_RECEIVED_PARAMETERS").field("Header", &self.Header).field("PeerMacAddr", &self.PeerMacAddr).field("bReAssocReq", &self.bReAssocReq).field("uAssocReqOffset", &self.uAssocReqOffset).field("uAssocReqSize", &self.uAssocReqSize).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_INCOMING_ASSOC_REQUEST_RECEIVED_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_INCOMING_ASSOC_REQUEST_RECEIVED_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_INCOMING_ASSOC_REQUEST_RECEIVED_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_INCOMING_ASSOC_REQUEST_RECEIVED_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_INCOMING_ASSOC_REQUEST_RECEIVED_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3811,38 +3811,38 @@ impl ::core::default::Default for DOT11_INCOMING_ASSOC_REQUEST_RECEIVED_PARAMETE
 }
 pub const DOT11_INCOMING_ASSOC_REQUEST_RECEIVED_PARAMETERS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_INCOMING_ASSOC_STARTED_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub PeerMacAddr: [u8; 6],
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_INCOMING_ASSOC_STARTED_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_INCOMING_ASSOC_STARTED_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_INCOMING_ASSOC_STARTED_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_INCOMING_ASSOC_STARTED_PARAMETERS").field("Header", &self.Header).field("PeerMacAddr", &self.PeerMacAddr).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_INCOMING_ASSOC_STARTED_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_INCOMING_ASSOC_STARTED_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_INCOMING_ASSOC_STARTED_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_INCOMING_ASSOC_STARTED_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_INCOMING_ASSOC_STARTED_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3851,7 +3851,7 @@ impl ::core::default::Default for DOT11_INCOMING_ASSOC_STARTED_PARAMETERS {
 pub const DOT11_INCOMING_ASSOC_STARTED_PARAMETERS_REVISION_1: u32 = 1u32;
 pub const DOT11_INVALID_CHANNEL_NUMBER: u32 = 0u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_INVITATION_REQUEST_SEND_COMPLETE_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub PeerDeviceAddress: [u8; 6],
@@ -3861,33 +3861,33 @@ pub struct DOT11_INVITATION_REQUEST_SEND_COMPLETE_PARAMETERS {
     pub uIEsOffset: u32,
     pub uIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_INVITATION_REQUEST_SEND_COMPLETE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_INVITATION_REQUEST_SEND_COMPLETE_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_INVITATION_REQUEST_SEND_COMPLETE_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_INVITATION_REQUEST_SEND_COMPLETE_PARAMETERS").field("Header", &self.Header).field("PeerDeviceAddress", &self.PeerDeviceAddress).field("ReceiverAddress", &self.ReceiverAddress).field("DialogToken", &self.DialogToken).field("Status", &self.Status).field("uIEsOffset", &self.uIEsOffset).field("uIEsLength", &self.uIEsLength).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_INVITATION_REQUEST_SEND_COMPLETE_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_INVITATION_REQUEST_SEND_COMPLETE_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_INVITATION_REQUEST_SEND_COMPLETE_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_INVITATION_REQUEST_SEND_COMPLETE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_INVITATION_REQUEST_SEND_COMPLETE_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3895,7 +3895,7 @@ impl ::core::default::Default for DOT11_INVITATION_REQUEST_SEND_COMPLETE_PARAMET
 }
 pub const DOT11_INVITATION_REQUEST_SEND_COMPLETE_PARAMETERS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_INVITATION_RESPONSE_SEND_COMPLETE_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub ReceiverDeviceAddress: [u8; 6],
@@ -3904,33 +3904,33 @@ pub struct DOT11_INVITATION_RESPONSE_SEND_COMPLETE_PARAMETERS {
     pub uIEsOffset: u32,
     pub uIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_INVITATION_RESPONSE_SEND_COMPLETE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_INVITATION_RESPONSE_SEND_COMPLETE_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_INVITATION_RESPONSE_SEND_COMPLETE_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_INVITATION_RESPONSE_SEND_COMPLETE_PARAMETERS").field("Header", &self.Header).field("ReceiverDeviceAddress", &self.ReceiverDeviceAddress).field("DialogToken", &self.DialogToken).field("Status", &self.Status).field("uIEsOffset", &self.uIEsOffset).field("uIEsLength", &self.uIEsLength).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_INVITATION_RESPONSE_SEND_COMPLETE_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_INVITATION_RESPONSE_SEND_COMPLETE_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_INVITATION_RESPONSE_SEND_COMPLETE_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_INVITATION_RESPONSE_SEND_COMPLETE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_INVITATION_RESPONSE_SEND_COMPLETE_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4242,39 +4242,39 @@ impl ::core::default::Default for DOT11_LINK_QUALITY_ENTRY {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_LINK_QUALITY_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uLinkQualityListSize: u32,
     pub uLinkQualityListOffset: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_LINK_QUALITY_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_LINK_QUALITY_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_LINK_QUALITY_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_LINK_QUALITY_PARAMETERS").field("Header", &self.Header).field("uLinkQualityListSize", &self.uLinkQualityListSize).field("uLinkQualityListOffset", &self.uLinkQualityListOffset).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_LINK_QUALITY_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_LINK_QUALITY_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_LINK_QUALITY_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_LINK_QUALITY_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_LINK_QUALITY_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4282,40 +4282,40 @@ impl ::core::default::Default for DOT11_LINK_QUALITY_PARAMETERS {
 }
 pub const DOT11_LINK_QUALITY_PARAMETERS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_MAC_ADDRESS_LIST {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uNumOfEntries: u32,
     pub uTotalNumOfEntries: u32,
     pub MacAddrs: [u8; 6],
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_MAC_ADDRESS_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_MAC_ADDRESS_LIST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_MAC_ADDRESS_LIST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_MAC_ADDRESS_LIST").field("Header", &self.Header).field("uNumOfEntries", &self.uNumOfEntries).field("uTotalNumOfEntries", &self.uTotalNumOfEntries).field("MacAddrs", &self.MacAddrs).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_MAC_ADDRESS_LIST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_MAC_ADDRESS_LIST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_MAC_ADDRESS_LIST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_MAC_ADDRESS_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_MAC_ADDRESS_LIST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4411,38 +4411,38 @@ impl ::core::default::Default for DOT11_MAC_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_MAC_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uOpmodeMask: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_MAC_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_MAC_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_MAC_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_MAC_PARAMETERS").field("Header", &self.Header).field("uOpmodeMask", &self.uOpmodeMask).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_MAC_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_MAC_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_MAC_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_MAC_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_MAC_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4450,40 +4450,40 @@ impl ::core::default::Default for DOT11_MAC_PARAMETERS {
 }
 pub const DOT11_MAC_PARAMETERS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_MANUFACTURING_CALLBACK_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub dot11ManufacturingCallbackType: DOT11_MANUFACTURING_CALLBACK_TYPE,
     pub uStatus: u32,
     pub pvContext: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_MANUFACTURING_CALLBACK_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_MANUFACTURING_CALLBACK_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_MANUFACTURING_CALLBACK_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_MANUFACTURING_CALLBACK_PARAMETERS").field("Header", &self.Header).field("dot11ManufacturingCallbackType", &self.dot11ManufacturingCallbackType).field("uStatus", &self.uStatus).field("pvContext", &self.pvContext).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_MANUFACTURING_CALLBACK_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_MANUFACTURING_CALLBACK_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_MANUFACTURING_CALLBACK_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_MANUFACTURING_CALLBACK_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_MANUFACTURING_CALLBACK_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4908,39 +4908,39 @@ impl ::core::default::Default for DOT11_MD_CAPABILITY_ENTRY_LIST {
 }
 pub const DOT11_MIN_PDU_SIZE: u32 = 256u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_MPDU_MAX_LENGTH_INDICATION {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uPhyId: u32,
     pub uMPDUMaxLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_MPDU_MAX_LENGTH_INDICATION {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_MPDU_MAX_LENGTH_INDICATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_MPDU_MAX_LENGTH_INDICATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_MPDU_MAX_LENGTH_INDICATION").field("Header", &self.Header).field("uPhyId", &self.uPhyId).field("uMPDUMaxLength", &self.uMPDUMaxLength).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_MPDU_MAX_LENGTH_INDICATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_MPDU_MAX_LENGTH_INDICATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_MPDU_MAX_LENGTH_INDICATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_MPDU_MAX_LENGTH_INDICATION {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_MPDU_MAX_LENGTH_INDICATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4973,7 +4973,7 @@ impl ::core::fmt::Debug for DOT11_MSONEX_RESULT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 pub struct DOT11_MSONEX_RESULT_PARAMS {
     pub Dot11OnexAuthStatus: ONEX_AUTH_STATUS,
     pub Dot11OneXReasonCode: ONEX_REASON_CODE,
@@ -4983,40 +4983,40 @@ pub struct DOT11_MSONEX_RESULT_PARAMS {
     pub dwMPPERecvKeyLen: u32,
     pub pDot11EapResult: *mut DOT11_EAP_RESULT,
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for DOT11_MSONEX_RESULT_PARAMS {}
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for DOT11_MSONEX_RESULT_PARAMS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for DOT11_MSONEX_RESULT_PARAMS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_MSONEX_RESULT_PARAMS").field("Dot11OnexAuthStatus", &self.Dot11OnexAuthStatus).field("Dot11OneXReasonCode", &self.Dot11OneXReasonCode).field("pbMPPESendKey", &self.pbMPPESendKey).field("dwMPPESendKeyLen", &self.dwMPPESendKeyLen).field("pbMPPERecvKey", &self.pbMPPERecvKey).field("dwMPPERecvKeyLen", &self.dwMPPERecvKeyLen).field("pDot11EapResult", &self.pDot11EapResult).finish()
     }
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for DOT11_MSONEX_RESULT_PARAMS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for DOT11_MSONEX_RESULT_PARAMS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_MSONEX_RESULT_PARAMS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for DOT11_MSONEX_RESULT_PARAMS {}
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for DOT11_MSONEX_RESULT_PARAMS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 pub struct DOT11_MSSECURITY_SETTINGS {
     pub dot11AuthAlgorithm: DOT11_AUTH_ALGORITHM,
     pub dot11CipherAlgorithm: DOT11_CIPHER_ALGORITHM,
@@ -5025,33 +5025,33 @@ pub struct DOT11_MSSECURITY_SETTINGS {
     pub dwEapConnectionDataLen: u32,
     pub pEapConnectionData: *mut u8,
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for DOT11_MSSECURITY_SETTINGS {}
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for DOT11_MSSECURITY_SETTINGS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for DOT11_MSSECURITY_SETTINGS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_MSSECURITY_SETTINGS").field("dot11AuthAlgorithm", &self.dot11AuthAlgorithm).field("dot11CipherAlgorithm", &self.dot11CipherAlgorithm).field("fOneXEnabled", &self.fOneXEnabled).field("eapMethodType", &self.eapMethodType).field("dwEapConnectionDataLen", &self.dwEapConnectionDataLen).field("pEapConnectionData", &self.pEapConnectionData).finish()
     }
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for DOT11_MSSECURITY_SETTINGS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for DOT11_MSSECURITY_SETTINGS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_MSSECURITY_SETTINGS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for DOT11_MSSECURITY_SETTINGS {}
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for DOT11_MSSECURITY_SETTINGS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5281,7 +5281,7 @@ impl ::core::default::Default for DOT11_OFFLOAD_NETWORK {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_OFFLOAD_NETWORK_LIST_INFO {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub ulFlags: u32,
@@ -5291,33 +5291,33 @@ pub struct DOT11_OFFLOAD_NETWORK_LIST_INFO {
     pub uNumOfEntries: u32,
     pub offloadNetworkList: [DOT11_OFFLOAD_NETWORK; 1],
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_OFFLOAD_NETWORK_LIST_INFO {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_OFFLOAD_NETWORK_LIST_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_OFFLOAD_NETWORK_LIST_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_OFFLOAD_NETWORK_LIST_INFO").field("Header", &self.Header).field("ulFlags", &self.ulFlags).field("FastScanPeriod", &self.FastScanPeriod).field("FastScanIterations", &self.FastScanIterations).field("SlowScanPeriod", &self.SlowScanPeriod).field("uNumOfEntries", &self.uNumOfEntries).field("offloadNetworkList", &self.offloadNetworkList).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_OFFLOAD_NETWORK_LIST_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_OFFLOAD_NETWORK_LIST_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_OFFLOAD_NETWORK_LIST_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_OFFLOAD_NETWORK_LIST_INFO {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_OFFLOAD_NETWORK_LIST_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5325,38 +5325,38 @@ impl ::core::default::Default for DOT11_OFFLOAD_NETWORK_LIST_INFO {
 }
 pub const DOT11_OFFLOAD_NETWORK_LIST_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_OFFLOAD_NETWORK_STATUS_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub Status: i32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_OFFLOAD_NETWORK_STATUS_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_OFFLOAD_NETWORK_STATUS_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_OFFLOAD_NETWORK_STATUS_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_OFFLOAD_NETWORK_STATUS_PARAMETERS").field("Header", &self.Header).field("Status", &self.Status).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_OFFLOAD_NETWORK_STATUS_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_OFFLOAD_NETWORK_STATUS_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_OFFLOAD_NETWORK_STATUS_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_OFFLOAD_NETWORK_STATUS_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_OFFLOAD_NETWORK_STATUS_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5566,40 +5566,40 @@ impl ::core::default::Default for DOT11_PEER_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_PEER_INFO_LIST {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uNumOfEntries: u32,
     pub uTotalNumOfEntries: u32,
     pub PeerInfo: [DOT11_PEER_INFO; 1],
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_PEER_INFO_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_PEER_INFO_LIST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_PEER_INFO_LIST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_PEER_INFO_LIST").field("Header", &self.Header).field("uNumOfEntries", &self.uNumOfEntries).field("uTotalNumOfEntries", &self.uTotalNumOfEntries).field("PeerInfo", &self.PeerInfo).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_PEER_INFO_LIST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_PEER_INFO_LIST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_PEER_INFO_LIST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_PEER_INFO_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_PEER_INFO_LIST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5674,7 +5674,7 @@ impl ::core::default::Default for DOT11_PER_MSDU_COUNTERS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_PHY_ATTRIBUTES {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub PhyType: DOT11_PHY_TYPE,
@@ -5691,60 +5691,60 @@ pub struct DOT11_PHY_ATTRIBUTES {
     pub DataRateMappingEntries: [DOT11_DATA_RATE_MAPPING_ENTRY; 126],
     pub SupportedDataRatesValue: DOT11_SUPPORTED_DATA_RATES_VALUE_V2,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_PHY_ATTRIBUTES {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_PHY_ATTRIBUTES {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_PHY_ATTRIBUTES {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_PHY_ATTRIBUTES {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_PHY_ATTRIBUTES>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_PHY_ATTRIBUTES {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_PHY_ATTRIBUTES {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub union DOT11_PHY_ATTRIBUTES_0 {
     pub HRDSSSAttributes: DOT11_HRDSSS_PHY_ATTRIBUTES,
     pub OFDMAttributes: DOT11_OFDM_PHY_ATTRIBUTES,
     pub ERPAttributes: DOT11_ERP_PHY_ATTRIBUTES,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_PHY_ATTRIBUTES_0 {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_PHY_ATTRIBUTES_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_PHY_ATTRIBUTES_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_PHY_ATTRIBUTES_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_PHY_ATTRIBUTES_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_PHY_ATTRIBUTES_0 {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_PHY_ATTRIBUTES_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5817,65 +5817,65 @@ impl ::core::default::Default for DOT11_PHY_FRAME_STATISTICS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_PHY_FREQUENCY_ADOPTED_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub ulPhyId: u32,
     pub Anonymous: DOT11_PHY_FREQUENCY_ADOPTED_PARAMETERS_0,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_PHY_FREQUENCY_ADOPTED_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_PHY_FREQUENCY_ADOPTED_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_PHY_FREQUENCY_ADOPTED_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_PHY_FREQUENCY_ADOPTED_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_PHY_FREQUENCY_ADOPTED_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_PHY_FREQUENCY_ADOPTED_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_PHY_FREQUENCY_ADOPTED_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub union DOT11_PHY_FREQUENCY_ADOPTED_PARAMETERS_0 {
     pub ulChannel: u32,
     pub ulFrequency: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_PHY_FREQUENCY_ADOPTED_PARAMETERS_0 {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_PHY_FREQUENCY_ADOPTED_PARAMETERS_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_PHY_FREQUENCY_ADOPTED_PARAMETERS_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_PHY_FREQUENCY_ADOPTED_PARAMETERS_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_PHY_FREQUENCY_ADOPTED_PARAMETERS_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_PHY_FREQUENCY_ADOPTED_PARAMETERS_0 {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_PHY_FREQUENCY_ADOPTED_PARAMETERS_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5883,40 +5883,40 @@ impl ::core::default::Default for DOT11_PHY_FREQUENCY_ADOPTED_PARAMETERS_0 {
 }
 pub const DOT11_PHY_FREQUENCY_ADOPTED_PARAMETERS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_PHY_ID_LIST {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uNumOfEntries: u32,
     pub uTotalNumOfEntries: u32,
     pub dot11PhyId: [u32; 1],
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_PHY_ID_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_PHY_ID_LIST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_PHY_ID_LIST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_PHY_ID_LIST").field("Header", &self.Header).field("uNumOfEntries", &self.uNumOfEntries).field("uTotalNumOfEntries", &self.uTotalNumOfEntries).field("dot11PhyId", &self.dot11PhyId).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_PHY_ID_LIST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_PHY_ID_LIST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_PHY_ID_LIST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_PHY_ID_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_PHY_ID_LIST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5924,40 +5924,40 @@ impl ::core::default::Default for DOT11_PHY_ID_LIST {
 }
 pub const DOT11_PHY_ID_LIST_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_PHY_STATE_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uPhyId: u32,
     pub bHardwarePhyState: ::win32_foundation::BOOLEAN,
     pub bSoftwarePhyState: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_PHY_STATE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_PHY_STATE_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_PHY_STATE_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_PHY_STATE_PARAMETERS").field("Header", &self.Header).field("uPhyId", &self.uPhyId).field("bHardwarePhyState", &self.bHardwarePhyState).field("bSoftwarePhyState", &self.bSoftwarePhyState).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_PHY_STATE_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_PHY_STATE_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_PHY_STATE_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_PHY_STATE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_PHY_STATE_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6037,40 +6037,40 @@ impl ::core::default::Default for DOT11_PHY_TYPE_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_PHY_TYPE_LIST {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uNumOfEntries: u32,
     pub uTotalNumOfEntries: u32,
     pub dot11PhyType: [DOT11_PHY_TYPE; 1],
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_PHY_TYPE_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_PHY_TYPE_LIST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_PHY_TYPE_LIST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_PHY_TYPE_LIST").field("Header", &self.Header).field("uNumOfEntries", &self.uNumOfEntries).field("uTotalNumOfEntries", &self.uTotalNumOfEntries).field("dot11PhyType", &self.dot11PhyType).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_PHY_TYPE_LIST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_PHY_TYPE_LIST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_PHY_TYPE_LIST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_PHY_TYPE_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_PHY_TYPE_LIST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6078,39 +6078,39 @@ impl ::core::default::Default for DOT11_PHY_TYPE_LIST {
 }
 pub const DOT11_PHY_TYPE_LIST_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_PMKID_CANDIDATE_LIST_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uCandidateListSize: u32,
     pub uCandidateListOffset: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_PMKID_CANDIDATE_LIST_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_PMKID_CANDIDATE_LIST_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_PMKID_CANDIDATE_LIST_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_PMKID_CANDIDATE_LIST_PARAMETERS").field("Header", &self.Header).field("uCandidateListSize", &self.uCandidateListSize).field("uCandidateListOffset", &self.uCandidateListOffset).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_PMKID_CANDIDATE_LIST_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_PMKID_CANDIDATE_LIST_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_PMKID_CANDIDATE_LIST_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_PMKID_CANDIDATE_LIST_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_PMKID_CANDIDATE_LIST_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6149,40 +6149,40 @@ impl ::core::default::Default for DOT11_PMKID_ENTRY {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_PMKID_LIST {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uNumOfEntries: u32,
     pub uTotalNumOfEntries: u32,
     pub PMKIDs: [DOT11_PMKID_ENTRY; 1],
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_PMKID_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_PMKID_LIST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_PMKID_LIST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_PMKID_LIST").field("Header", &self.Header).field("uNumOfEntries", &self.uNumOfEntries).field("uTotalNumOfEntries", &self.uTotalNumOfEntries).field("PMKIDs", &self.PMKIDs).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_PMKID_LIST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_PMKID_LIST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_PMKID_LIST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_PMKID_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_PMKID_LIST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6222,39 +6222,39 @@ impl ::core::default::Default for DOT11_PORT_STATE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_PORT_STATE_NOTIFICATION {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub PeerMac: [u8; 6],
     pub bOpen: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_PORT_STATE_NOTIFICATION {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_PORT_STATE_NOTIFICATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_PORT_STATE_NOTIFICATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_PORT_STATE_NOTIFICATION").field("Header", &self.Header).field("PeerMac", &self.PeerMac).field("bOpen", &self.bOpen).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_PORT_STATE_NOTIFICATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_PORT_STATE_NOTIFICATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_PORT_STATE_NOTIFICATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_PORT_STATE_NOTIFICATION {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_PORT_STATE_NOTIFICATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6262,38 +6262,38 @@ impl ::core::default::Default for DOT11_PORT_STATE_NOTIFICATION {
 }
 pub const DOT11_PORT_STATE_NOTIFICATION_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_POWER_MGMT_AUTO_MODE_ENABLED_INFO {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub bEnabled: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_POWER_MGMT_AUTO_MODE_ENABLED_INFO {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_POWER_MGMT_AUTO_MODE_ENABLED_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_POWER_MGMT_AUTO_MODE_ENABLED_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_POWER_MGMT_AUTO_MODE_ENABLED_INFO").field("Header", &self.Header).field("bEnabled", &self.bEnabled).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_POWER_MGMT_AUTO_MODE_ENABLED_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_POWER_MGMT_AUTO_MODE_ENABLED_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_POWER_MGMT_AUTO_MODE_ENABLED_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_POWER_MGMT_AUTO_MODE_ENABLED_INFO {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_POWER_MGMT_AUTO_MODE_ENABLED_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6334,40 +6334,40 @@ impl ::core::default::Default for DOT11_POWER_MGMT_MODE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_POWER_MGMT_MODE_STATUS_INFO {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub PowerSaveMode: DOT11_POWER_MODE,
     pub uPowerSaveLevel: u32,
     pub Reason: DOT11_POWER_MODE_REASON,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_POWER_MGMT_MODE_STATUS_INFO {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_POWER_MGMT_MODE_STATUS_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_POWER_MGMT_MODE_STATUS_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_POWER_MGMT_MODE_STATUS_INFO").field("Header", &self.Header).field("PowerSaveMode", &self.PowerSaveMode).field("uPowerSaveLevel", &self.uPowerSaveLevel).field("Reason", &self.Reason).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_POWER_MGMT_MODE_STATUS_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_POWER_MGMT_MODE_STATUS_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_POWER_MGMT_MODE_STATUS_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_POWER_MGMT_MODE_STATUS_INFO {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_POWER_MGMT_MODE_STATUS_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6467,40 +6467,40 @@ impl ::core::default::Default for DOT11_PRIVACY_EXEMPTION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_PRIVACY_EXEMPTION_LIST {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uNumOfEntries: u32,
     pub uTotalNumOfEntries: u32,
     pub PrivacyExemptionEntries: [DOT11_PRIVACY_EXEMPTION; 1],
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_PRIVACY_EXEMPTION_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_PRIVACY_EXEMPTION_LIST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_PRIVACY_EXEMPTION_LIST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_PRIVACY_EXEMPTION_LIST").field("Header", &self.Header).field("uNumOfEntries", &self.uNumOfEntries).field("uTotalNumOfEntries", &self.uTotalNumOfEntries).field("PrivacyExemptionEntries", &self.PrivacyExemptionEntries).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_PRIVACY_EXEMPTION_LIST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_PRIVACY_EXEMPTION_LIST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_PRIVACY_EXEMPTION_LIST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_PRIVACY_EXEMPTION_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_PRIVACY_EXEMPTION_LIST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6508,7 +6508,7 @@ impl ::core::default::Default for DOT11_PRIVACY_EXEMPTION_LIST {
 }
 pub const DOT11_PRIVACY_EXEMPTION_LIST_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_PROVISION_DISCOVERY_REQUEST_SEND_COMPLETE_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub PeerDeviceAddress: [u8; 6],
@@ -6518,33 +6518,33 @@ pub struct DOT11_PROVISION_DISCOVERY_REQUEST_SEND_COMPLETE_PARAMETERS {
     pub uIEsOffset: u32,
     pub uIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_PROVISION_DISCOVERY_REQUEST_SEND_COMPLETE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_PROVISION_DISCOVERY_REQUEST_SEND_COMPLETE_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_PROVISION_DISCOVERY_REQUEST_SEND_COMPLETE_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_PROVISION_DISCOVERY_REQUEST_SEND_COMPLETE_PARAMETERS").field("Header", &self.Header).field("PeerDeviceAddress", &self.PeerDeviceAddress).field("ReceiverAddress", &self.ReceiverAddress).field("DialogToken", &self.DialogToken).field("Status", &self.Status).field("uIEsOffset", &self.uIEsOffset).field("uIEsLength", &self.uIEsLength).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_PROVISION_DISCOVERY_REQUEST_SEND_COMPLETE_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_PROVISION_DISCOVERY_REQUEST_SEND_COMPLETE_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_PROVISION_DISCOVERY_REQUEST_SEND_COMPLETE_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_PROVISION_DISCOVERY_REQUEST_SEND_COMPLETE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_PROVISION_DISCOVERY_REQUEST_SEND_COMPLETE_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6552,7 +6552,7 @@ impl ::core::default::Default for DOT11_PROVISION_DISCOVERY_REQUEST_SEND_COMPLET
 }
 pub const DOT11_PROVISION_DISCOVERY_REQUEST_SEND_COMPLETE_PARAMETERS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_PROVISION_DISCOVERY_RESPONSE_SEND_COMPLETE_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub ReceiverDeviceAddress: [u8; 6],
@@ -6561,33 +6561,33 @@ pub struct DOT11_PROVISION_DISCOVERY_RESPONSE_SEND_COMPLETE_PARAMETERS {
     pub uIEsOffset: u32,
     pub uIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_PROVISION_DISCOVERY_RESPONSE_SEND_COMPLETE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_PROVISION_DISCOVERY_RESPONSE_SEND_COMPLETE_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_PROVISION_DISCOVERY_RESPONSE_SEND_COMPLETE_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_PROVISION_DISCOVERY_RESPONSE_SEND_COMPLETE_PARAMETERS").field("Header", &self.Header).field("ReceiverDeviceAddress", &self.ReceiverDeviceAddress).field("DialogToken", &self.DialogToken).field("Status", &self.Status).field("uIEsOffset", &self.uIEsOffset).field("uIEsLength", &self.uIEsLength).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_PROVISION_DISCOVERY_RESPONSE_SEND_COMPLETE_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_PROVISION_DISCOVERY_RESPONSE_SEND_COMPLETE_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_PROVISION_DISCOVERY_RESPONSE_SEND_COMPLETE_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_PROVISION_DISCOVERY_RESPONSE_SEND_COMPLETE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_PROVISION_DISCOVERY_RESPONSE_SEND_COMPLETE_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6597,38 +6597,38 @@ pub const DOT11_PROVISION_DISCOVERY_RESPONSE_SEND_COMPLETE_PARAMETERS_REVISION_1
 pub const DOT11_PSD_IE_MAX_DATA_SIZE: u32 = 240u32;
 pub const DOT11_PSD_IE_MAX_ENTRY_NUMBER: u32 = 5u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_QOS_PARAMS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub ucEnabledQoSProtocolFlags: u8,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_QOS_PARAMS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_QOS_PARAMS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_QOS_PARAMS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_QOS_PARAMS").field("Header", &self.Header).field("ucEnabledQoSProtocolFlags", &self.ucEnabledQoSProtocolFlags).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_QOS_PARAMS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_QOS_PARAMS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_QOS_PARAMS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_QOS_PARAMS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_QOS_PARAMS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6754,7 +6754,7 @@ impl ::core::default::Default for DOT11_RATE_SET {
 }
 pub const DOT11_RATE_SET_MAX_LENGTH: u32 = 126u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_RECEIVED_GO_NEGOTIATION_CONFIRMATION_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub PeerDeviceAddress: [u8; 6],
@@ -6762,33 +6762,33 @@ pub struct DOT11_RECEIVED_GO_NEGOTIATION_CONFIRMATION_PARAMETERS {
     pub uIEsOffset: u32,
     pub uIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_RECEIVED_GO_NEGOTIATION_CONFIRMATION_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_RECEIVED_GO_NEGOTIATION_CONFIRMATION_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_RECEIVED_GO_NEGOTIATION_CONFIRMATION_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_RECEIVED_GO_NEGOTIATION_CONFIRMATION_PARAMETERS").field("Header", &self.Header).field("PeerDeviceAddress", &self.PeerDeviceAddress).field("DialogToken", &self.DialogToken).field("uIEsOffset", &self.uIEsOffset).field("uIEsLength", &self.uIEsLength).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_RECEIVED_GO_NEGOTIATION_CONFIRMATION_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_RECEIVED_GO_NEGOTIATION_CONFIRMATION_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_RECEIVED_GO_NEGOTIATION_CONFIRMATION_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_RECEIVED_GO_NEGOTIATION_CONFIRMATION_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_RECEIVED_GO_NEGOTIATION_CONFIRMATION_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6796,7 +6796,7 @@ impl ::core::default::Default for DOT11_RECEIVED_GO_NEGOTIATION_CONFIRMATION_PAR
 }
 pub const DOT11_RECEIVED_GO_NEGOTIATION_CONFIRMATION_PARAMETERS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_RECEIVED_GO_NEGOTIATION_REQUEST_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub PeerDeviceAddress: [u8; 6],
@@ -6805,33 +6805,33 @@ pub struct DOT11_RECEIVED_GO_NEGOTIATION_REQUEST_PARAMETERS {
     pub uIEsOffset: u32,
     pub uIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_RECEIVED_GO_NEGOTIATION_REQUEST_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_RECEIVED_GO_NEGOTIATION_REQUEST_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_RECEIVED_GO_NEGOTIATION_REQUEST_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_RECEIVED_GO_NEGOTIATION_REQUEST_PARAMETERS").field("Header", &self.Header).field("PeerDeviceAddress", &self.PeerDeviceAddress).field("DialogToken", &self.DialogToken).field("RequestContext", &self.RequestContext).field("uIEsOffset", &self.uIEsOffset).field("uIEsLength", &self.uIEsLength).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_RECEIVED_GO_NEGOTIATION_REQUEST_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_RECEIVED_GO_NEGOTIATION_REQUEST_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_RECEIVED_GO_NEGOTIATION_REQUEST_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_RECEIVED_GO_NEGOTIATION_REQUEST_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_RECEIVED_GO_NEGOTIATION_REQUEST_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6839,7 +6839,7 @@ impl ::core::default::Default for DOT11_RECEIVED_GO_NEGOTIATION_REQUEST_PARAMETE
 }
 pub const DOT11_RECEIVED_GO_NEGOTIATION_REQUEST_PARAMETERS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_RECEIVED_GO_NEGOTIATION_RESPONSE_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub PeerDeviceAddress: [u8; 6],
@@ -6848,33 +6848,33 @@ pub struct DOT11_RECEIVED_GO_NEGOTIATION_RESPONSE_PARAMETERS {
     pub uIEsOffset: u32,
     pub uIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_RECEIVED_GO_NEGOTIATION_RESPONSE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_RECEIVED_GO_NEGOTIATION_RESPONSE_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_RECEIVED_GO_NEGOTIATION_RESPONSE_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_RECEIVED_GO_NEGOTIATION_RESPONSE_PARAMETERS").field("Header", &self.Header).field("PeerDeviceAddress", &self.PeerDeviceAddress).field("DialogToken", &self.DialogToken).field("ResponseContext", &self.ResponseContext).field("uIEsOffset", &self.uIEsOffset).field("uIEsLength", &self.uIEsLength).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_RECEIVED_GO_NEGOTIATION_RESPONSE_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_RECEIVED_GO_NEGOTIATION_RESPONSE_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_RECEIVED_GO_NEGOTIATION_RESPONSE_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_RECEIVED_GO_NEGOTIATION_RESPONSE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_RECEIVED_GO_NEGOTIATION_RESPONSE_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6882,7 +6882,7 @@ impl ::core::default::Default for DOT11_RECEIVED_GO_NEGOTIATION_RESPONSE_PARAMET
 }
 pub const DOT11_RECEIVED_GO_NEGOTIATION_RESPONSE_PARAMETERS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_RECEIVED_INVITATION_REQUEST_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub TransmitterDeviceAddress: [u8; 6],
@@ -6892,33 +6892,33 @@ pub struct DOT11_RECEIVED_INVITATION_REQUEST_PARAMETERS {
     pub uIEsOffset: u32,
     pub uIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_RECEIVED_INVITATION_REQUEST_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_RECEIVED_INVITATION_REQUEST_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_RECEIVED_INVITATION_REQUEST_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_RECEIVED_INVITATION_REQUEST_PARAMETERS").field("Header", &self.Header).field("TransmitterDeviceAddress", &self.TransmitterDeviceAddress).field("BSSID", &self.BSSID).field("DialogToken", &self.DialogToken).field("RequestContext", &self.RequestContext).field("uIEsOffset", &self.uIEsOffset).field("uIEsLength", &self.uIEsLength).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_RECEIVED_INVITATION_REQUEST_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_RECEIVED_INVITATION_REQUEST_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_RECEIVED_INVITATION_REQUEST_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_RECEIVED_INVITATION_REQUEST_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_RECEIVED_INVITATION_REQUEST_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6926,7 +6926,7 @@ impl ::core::default::Default for DOT11_RECEIVED_INVITATION_REQUEST_PARAMETERS {
 }
 pub const DOT11_RECEIVED_INVITATION_REQUEST_PARAMETERS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_RECEIVED_INVITATION_RESPONSE_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub TransmitterDeviceAddress: [u8; 6],
@@ -6935,33 +6935,33 @@ pub struct DOT11_RECEIVED_INVITATION_RESPONSE_PARAMETERS {
     pub uIEsOffset: u32,
     pub uIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_RECEIVED_INVITATION_RESPONSE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_RECEIVED_INVITATION_RESPONSE_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_RECEIVED_INVITATION_RESPONSE_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_RECEIVED_INVITATION_RESPONSE_PARAMETERS").field("Header", &self.Header).field("TransmitterDeviceAddress", &self.TransmitterDeviceAddress).field("BSSID", &self.BSSID).field("DialogToken", &self.DialogToken).field("uIEsOffset", &self.uIEsOffset).field("uIEsLength", &self.uIEsLength).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_RECEIVED_INVITATION_RESPONSE_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_RECEIVED_INVITATION_RESPONSE_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_RECEIVED_INVITATION_RESPONSE_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_RECEIVED_INVITATION_RESPONSE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_RECEIVED_INVITATION_RESPONSE_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6969,7 +6969,7 @@ impl ::core::default::Default for DOT11_RECEIVED_INVITATION_RESPONSE_PARAMETERS 
 }
 pub const DOT11_RECEIVED_INVITATION_RESPONSE_PARAMETERS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_RECEIVED_PROVISION_DISCOVERY_REQUEST_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub TransmitterDeviceAddress: [u8; 6],
@@ -6979,33 +6979,33 @@ pub struct DOT11_RECEIVED_PROVISION_DISCOVERY_REQUEST_PARAMETERS {
     pub uIEsOffset: u32,
     pub uIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_RECEIVED_PROVISION_DISCOVERY_REQUEST_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_RECEIVED_PROVISION_DISCOVERY_REQUEST_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_RECEIVED_PROVISION_DISCOVERY_REQUEST_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_RECEIVED_PROVISION_DISCOVERY_REQUEST_PARAMETERS").field("Header", &self.Header).field("TransmitterDeviceAddress", &self.TransmitterDeviceAddress).field("BSSID", &self.BSSID).field("DialogToken", &self.DialogToken).field("RequestContext", &self.RequestContext).field("uIEsOffset", &self.uIEsOffset).field("uIEsLength", &self.uIEsLength).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_RECEIVED_PROVISION_DISCOVERY_REQUEST_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_RECEIVED_PROVISION_DISCOVERY_REQUEST_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_RECEIVED_PROVISION_DISCOVERY_REQUEST_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_RECEIVED_PROVISION_DISCOVERY_REQUEST_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_RECEIVED_PROVISION_DISCOVERY_REQUEST_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7013,7 +7013,7 @@ impl ::core::default::Default for DOT11_RECEIVED_PROVISION_DISCOVERY_REQUEST_PAR
 }
 pub const DOT11_RECEIVED_PROVISION_DISCOVERY_REQUEST_PARAMETERS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_RECEIVED_PROVISION_DISCOVERY_RESPONSE_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub TransmitterDeviceAddress: [u8; 6],
@@ -7022,33 +7022,33 @@ pub struct DOT11_RECEIVED_PROVISION_DISCOVERY_RESPONSE_PARAMETERS {
     pub uIEsOffset: u32,
     pub uIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_RECEIVED_PROVISION_DISCOVERY_RESPONSE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_RECEIVED_PROVISION_DISCOVERY_RESPONSE_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_RECEIVED_PROVISION_DISCOVERY_RESPONSE_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_RECEIVED_PROVISION_DISCOVERY_RESPONSE_PARAMETERS").field("Header", &self.Header).field("TransmitterDeviceAddress", &self.TransmitterDeviceAddress).field("BSSID", &self.BSSID).field("DialogToken", &self.DialogToken).field("uIEsOffset", &self.uIEsOffset).field("uIEsLength", &self.uIEsLength).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_RECEIVED_PROVISION_DISCOVERY_RESPONSE_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_RECEIVED_PROVISION_DISCOVERY_RESPONSE_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_RECEIVED_PROVISION_DISCOVERY_RESPONSE_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_RECEIVED_PROVISION_DISCOVERY_RESPONSE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_RECEIVED_PROVISION_DISCOVERY_RESPONSE_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7410,38 +7410,38 @@ impl ::core::fmt::Debug for DOT11_RESET_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_ROAMING_COMPLETION_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uStatus: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_ROAMING_COMPLETION_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_ROAMING_COMPLETION_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_ROAMING_COMPLETION_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_ROAMING_COMPLETION_PARAMETERS").field("Header", &self.Header).field("uStatus", &self.uStatus).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_ROAMING_COMPLETION_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_ROAMING_COMPLETION_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_ROAMING_COMPLETION_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_ROAMING_COMPLETION_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_ROAMING_COMPLETION_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7449,40 +7449,40 @@ impl ::core::default::Default for DOT11_ROAMING_COMPLETION_PARAMETERS {
 }
 pub const DOT11_ROAMING_COMPLETION_PARAMETERS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_ROAMING_START_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub AdhocBSSID: [u8; 6],
     pub AdhocSSID: DOT11_SSID,
     pub uRoamingReason: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_ROAMING_START_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_ROAMING_START_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_ROAMING_START_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_ROAMING_START_PARAMETERS").field("Header", &self.Header).field("AdhocBSSID", &self.AdhocBSSID).field("AdhocSSID", &self.AdhocSSID).field("uRoamingReason", &self.uRoamingReason).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_ROAMING_START_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_ROAMING_START_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_ROAMING_START_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_ROAMING_START_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_ROAMING_START_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7686,7 +7686,7 @@ impl ::core::default::Default for DOT11_SECURITY_PACKET_HEADER {
 }
 pub const DOT11_SEND_CONTEXT_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_SEND_GO_NEGOTIATION_CONFIRMATION_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub PeerDeviceAddress: [u8; 6],
@@ -7700,15 +7700,15 @@ pub struct DOT11_SEND_GO_NEGOTIATION_CONFIRMATION_PARAMETERS {
     pub uIEsOffset: u32,
     pub uIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_SEND_GO_NEGOTIATION_CONFIRMATION_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_SEND_GO_NEGOTIATION_CONFIRMATION_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_SEND_GO_NEGOTIATION_CONFIRMATION_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_SEND_GO_NEGOTIATION_CONFIRMATION_PARAMETERS")
@@ -7726,19 +7726,19 @@ impl ::core::fmt::Debug for DOT11_SEND_GO_NEGOTIATION_CONFIRMATION_PARAMETERS {
             .finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_SEND_GO_NEGOTIATION_CONFIRMATION_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_SEND_GO_NEGOTIATION_CONFIRMATION_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_SEND_GO_NEGOTIATION_CONFIRMATION_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_SEND_GO_NEGOTIATION_CONFIRMATION_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_SEND_GO_NEGOTIATION_CONFIRMATION_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7746,7 +7746,7 @@ impl ::core::default::Default for DOT11_SEND_GO_NEGOTIATION_CONFIRMATION_PARAMET
 }
 pub const DOT11_SEND_GO_NEGOTIATION_CONFIRMATION_PARAMETERS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_SEND_GO_NEGOTIATION_REQUEST_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub PeerDeviceAddress: [u8; 6],
@@ -7759,15 +7759,15 @@ pub struct DOT11_SEND_GO_NEGOTIATION_REQUEST_PARAMETERS {
     pub uIEsOffset: u32,
     pub uIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_SEND_GO_NEGOTIATION_REQUEST_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_SEND_GO_NEGOTIATION_REQUEST_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_SEND_GO_NEGOTIATION_REQUEST_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_SEND_GO_NEGOTIATION_REQUEST_PARAMETERS")
@@ -7784,19 +7784,19 @@ impl ::core::fmt::Debug for DOT11_SEND_GO_NEGOTIATION_REQUEST_PARAMETERS {
             .finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_SEND_GO_NEGOTIATION_REQUEST_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_SEND_GO_NEGOTIATION_REQUEST_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_SEND_GO_NEGOTIATION_REQUEST_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_SEND_GO_NEGOTIATION_REQUEST_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_SEND_GO_NEGOTIATION_REQUEST_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7804,7 +7804,7 @@ impl ::core::default::Default for DOT11_SEND_GO_NEGOTIATION_REQUEST_PARAMETERS {
 }
 pub const DOT11_SEND_GO_NEGOTIATION_REQUEST_PARAMETERS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_SEND_GO_NEGOTIATION_RESPONSE_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub PeerDeviceAddress: [u8; 6],
@@ -7821,15 +7821,15 @@ pub struct DOT11_SEND_GO_NEGOTIATION_RESPONSE_PARAMETERS {
     pub uIEsOffset: u32,
     pub uIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_SEND_GO_NEGOTIATION_RESPONSE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_SEND_GO_NEGOTIATION_RESPONSE_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_SEND_GO_NEGOTIATION_RESPONSE_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_SEND_GO_NEGOTIATION_RESPONSE_PARAMETERS")
@@ -7850,19 +7850,19 @@ impl ::core::fmt::Debug for DOT11_SEND_GO_NEGOTIATION_RESPONSE_PARAMETERS {
             .finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_SEND_GO_NEGOTIATION_RESPONSE_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_SEND_GO_NEGOTIATION_RESPONSE_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_SEND_GO_NEGOTIATION_RESPONSE_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_SEND_GO_NEGOTIATION_RESPONSE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_SEND_GO_NEGOTIATION_RESPONSE_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7870,7 +7870,7 @@ impl ::core::default::Default for DOT11_SEND_GO_NEGOTIATION_RESPONSE_PARAMETERS 
 }
 pub const DOT11_SEND_GO_NEGOTIATION_RESPONSE_PARAMETERS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_SEND_INVITATION_REQUEST_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub DialogToken: u8,
@@ -7887,15 +7887,15 @@ pub struct DOT11_SEND_INVITATION_REQUEST_PARAMETERS {
     pub uIEsOffset: u32,
     pub uIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_SEND_INVITATION_REQUEST_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_SEND_INVITATION_REQUEST_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_SEND_INVITATION_REQUEST_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_SEND_INVITATION_REQUEST_PARAMETERS")
@@ -7916,19 +7916,19 @@ impl ::core::fmt::Debug for DOT11_SEND_INVITATION_REQUEST_PARAMETERS {
             .finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_SEND_INVITATION_REQUEST_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_SEND_INVITATION_REQUEST_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_SEND_INVITATION_REQUEST_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_SEND_INVITATION_REQUEST_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_SEND_INVITATION_REQUEST_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7936,7 +7936,7 @@ impl ::core::default::Default for DOT11_SEND_INVITATION_REQUEST_PARAMETERS {
 }
 pub const DOT11_SEND_INVITATION_REQUEST_PARAMETERS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_SEND_INVITATION_RESPONSE_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub ReceiverDeviceAddress: [u8; 6],
@@ -7952,15 +7952,15 @@ pub struct DOT11_SEND_INVITATION_RESPONSE_PARAMETERS {
     pub uIEsOffset: u32,
     pub uIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_SEND_INVITATION_RESPONSE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_SEND_INVITATION_RESPONSE_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_SEND_INVITATION_RESPONSE_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_SEND_INVITATION_RESPONSE_PARAMETERS")
@@ -7980,19 +7980,19 @@ impl ::core::fmt::Debug for DOT11_SEND_INVITATION_RESPONSE_PARAMETERS {
             .finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_SEND_INVITATION_RESPONSE_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_SEND_INVITATION_RESPONSE_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_SEND_INVITATION_RESPONSE_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_SEND_INVITATION_RESPONSE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_SEND_INVITATION_RESPONSE_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8000,7 +8000,7 @@ impl ::core::default::Default for DOT11_SEND_INVITATION_RESPONSE_PARAMETERS {
 }
 pub const DOT11_SEND_INVITATION_RESPONSE_PARAMETERS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_SEND_PROVISION_DISCOVERY_REQUEST_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub DialogToken: u8,
@@ -8012,33 +8012,33 @@ pub struct DOT11_SEND_PROVISION_DISCOVERY_REQUEST_PARAMETERS {
     pub uIEsOffset: u32,
     pub uIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_SEND_PROVISION_DISCOVERY_REQUEST_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_SEND_PROVISION_DISCOVERY_REQUEST_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_SEND_PROVISION_DISCOVERY_REQUEST_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_SEND_PROVISION_DISCOVERY_REQUEST_PARAMETERS").field("Header", &self.Header).field("DialogToken", &self.DialogToken).field("PeerDeviceAddress", &self.PeerDeviceAddress).field("uSendTimeout", &self.uSendTimeout).field("GroupCapability", &self.GroupCapability).field("GroupID", &self.GroupID).field("bUseGroupID", &self.bUseGroupID).field("uIEsOffset", &self.uIEsOffset).field("uIEsLength", &self.uIEsLength).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_SEND_PROVISION_DISCOVERY_REQUEST_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_SEND_PROVISION_DISCOVERY_REQUEST_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_SEND_PROVISION_DISCOVERY_REQUEST_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_SEND_PROVISION_DISCOVERY_REQUEST_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_SEND_PROVISION_DISCOVERY_REQUEST_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8046,7 +8046,7 @@ impl ::core::default::Default for DOT11_SEND_PROVISION_DISCOVERY_REQUEST_PARAMET
 }
 pub const DOT11_SEND_PROVISION_DISCOVERY_REQUEST_PARAMETERS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_SEND_PROVISION_DISCOVERY_RESPONSE_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub ReceiverDeviceAddress: [u8; 6],
@@ -8056,33 +8056,33 @@ pub struct DOT11_SEND_PROVISION_DISCOVERY_RESPONSE_PARAMETERS {
     pub uIEsOffset: u32,
     pub uIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_SEND_PROVISION_DISCOVERY_RESPONSE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_SEND_PROVISION_DISCOVERY_RESPONSE_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_SEND_PROVISION_DISCOVERY_RESPONSE_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_SEND_PROVISION_DISCOVERY_RESPONSE_PARAMETERS").field("Header", &self.Header).field("ReceiverDeviceAddress", &self.ReceiverDeviceAddress).field("DialogToken", &self.DialogToken).field("RequestContext", &self.RequestContext).field("uSendTimeout", &self.uSendTimeout).field("uIEsOffset", &self.uIEsOffset).field("uIEsLength", &self.uIEsLength).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_SEND_PROVISION_DISCOVERY_RESPONSE_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_SEND_PROVISION_DISCOVERY_RESPONSE_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_SEND_PROVISION_DISCOVERY_RESPONSE_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_SEND_PROVISION_DISCOVERY_RESPONSE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_SEND_PROVISION_DISCOVERY_RESPONSE_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8122,40 +8122,40 @@ impl ::core::default::Default for DOT11_SSID {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_SSID_LIST {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uNumOfEntries: u32,
     pub uTotalNumOfEntries: u32,
     pub SSIDs: [DOT11_SSID; 1],
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_SSID_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_SSID_LIST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_SSID_LIST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_SSID_LIST").field("Header", &self.Header).field("uNumOfEntries", &self.uNumOfEntries).field("uTotalNumOfEntries", &self.uTotalNumOfEntries).field("SSIDs", &self.SSIDs).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_SSID_LIST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_SSID_LIST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_SSID_LIST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_SSID_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_SSID_LIST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8196,7 +8196,7 @@ impl ::core::default::Default for DOT11_START_REQUEST {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_STATISTICS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub ullFourWayHandshakeFailures: u64,
@@ -8206,33 +8206,33 @@ pub struct DOT11_STATISTICS {
     pub MacMcastCounters: DOT11_MAC_FRAME_STATISTICS,
     pub PhyCounters: [DOT11_PHY_FRAME_STATISTICS; 1],
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_STATISTICS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_STATISTICS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_STATISTICS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_STATISTICS").field("Header", &self.Header).field("ullFourWayHandshakeFailures", &self.ullFourWayHandshakeFailures).field("ullTKIPCounterMeasuresInvoked", &self.ullTKIPCounterMeasuresInvoked).field("ullReserved", &self.ullReserved).field("MacUcastCounters", &self.MacUcastCounters).field("MacMcastCounters", &self.MacMcastCounters).field("PhyCounters", &self.PhyCounters).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_STATISTICS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_STATISTICS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_STATISTICS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_STATISTICS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_STATISTICS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8295,38 +8295,38 @@ pub const DOT11_STATUS_UNSUPPORTED_SERVICE_CLASS: u32 = 8u32;
 pub const DOT11_STATUS_WEP_KEY_UNAVAILABLE: u32 = 1024u32;
 pub const DOT11_STATUS_XMIT_MSDU_TIMER_EXPIRED: u32 = 64u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_STOP_AP_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub ulReason: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_STOP_AP_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_STOP_AP_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_STOP_AP_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_STOP_AP_PARAMETERS").field("Header", &self.Header).field("ulReason", &self.ulReason).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_STOP_AP_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_STOP_AP_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_STOP_AP_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_STOP_AP_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_STOP_AP_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8666,40 +8666,40 @@ impl ::core::fmt::Debug for DOT11_TEMP_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_TKIPMIC_FAILURE_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub bDefaultKeyFailure: ::win32_foundation::BOOLEAN,
     pub uKeyIndex: u32,
     pub PeerMac: [u8; 6],
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_TKIPMIC_FAILURE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_TKIPMIC_FAILURE_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_TKIPMIC_FAILURE_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_TKIPMIC_FAILURE_PARAMETERS").field("Header", &self.Header).field("bDefaultKeyFailure", &self.bDefaultKeyFailure).field("uKeyIndex", &self.uKeyIndex).field("PeerMac", &self.PeerMac).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_TKIPMIC_FAILURE_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_TKIPMIC_FAILURE_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_TKIPMIC_FAILURE_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_TKIPMIC_FAILURE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_TKIPMIC_FAILURE_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8792,39 +8792,39 @@ impl ::core::default::Default for DOT11_VENUEINFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_VWIFI_ATTRIBUTES {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uTotalNumOfEntries: u32,
     pub Combinations: [DOT11_VWIFI_COMBINATION; 1],
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_VWIFI_ATTRIBUTES {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_VWIFI_ATTRIBUTES {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_VWIFI_ATTRIBUTES {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_VWIFI_ATTRIBUTES").field("Header", &self.Header).field("uTotalNumOfEntries", &self.uTotalNumOfEntries).field("Combinations", &self.Combinations).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_VWIFI_ATTRIBUTES {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_VWIFI_ATTRIBUTES {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_VWIFI_ATTRIBUTES>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_VWIFI_ATTRIBUTES {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_VWIFI_ATTRIBUTES {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8832,40 +8832,40 @@ impl ::core::default::Default for DOT11_VWIFI_ATTRIBUTES {
 }
 pub const DOT11_VWIFI_ATTRIBUTES_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_VWIFI_COMBINATION {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uNumInfrastructure: u32,
     pub uNumAdhoc: u32,
     pub uNumSoftAP: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_VWIFI_COMBINATION {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_VWIFI_COMBINATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_VWIFI_COMBINATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_VWIFI_COMBINATION").field("Header", &self.Header).field("uNumInfrastructure", &self.uNumInfrastructure).field("uNumAdhoc", &self.uNumAdhoc).field("uNumSoftAP", &self.uNumSoftAP).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_VWIFI_COMBINATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_VWIFI_COMBINATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_VWIFI_COMBINATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_VWIFI_COMBINATION {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_VWIFI_COMBINATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8875,7 +8875,7 @@ pub const DOT11_VWIFI_COMBINATION_REVISION_1: u32 = 1u32;
 pub const DOT11_VWIFI_COMBINATION_REVISION_2: u32 = 2u32;
 pub const DOT11_VWIFI_COMBINATION_REVISION_3: u32 = 3u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_VWIFI_COMBINATION_V2 {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uNumInfrastructure: u32,
@@ -8883,40 +8883,40 @@ pub struct DOT11_VWIFI_COMBINATION_V2 {
     pub uNumSoftAP: u32,
     pub uNumVirtualStation: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_VWIFI_COMBINATION_V2 {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_VWIFI_COMBINATION_V2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_VWIFI_COMBINATION_V2 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_VWIFI_COMBINATION_V2").field("Header", &self.Header).field("uNumInfrastructure", &self.uNumInfrastructure).field("uNumAdhoc", &self.uNumAdhoc).field("uNumSoftAP", &self.uNumSoftAP).field("uNumVirtualStation", &self.uNumVirtualStation).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_VWIFI_COMBINATION_V2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_VWIFI_COMBINATION_V2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_VWIFI_COMBINATION_V2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_VWIFI_COMBINATION_V2 {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_VWIFI_COMBINATION_V2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_VWIFI_COMBINATION_V3 {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uNumInfrastructure: u32,
@@ -8925,33 +8925,33 @@ pub struct DOT11_VWIFI_COMBINATION_V3 {
     pub uNumVirtualStation: u32,
     pub uNumWFDGroup: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_VWIFI_COMBINATION_V3 {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_VWIFI_COMBINATION_V3 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_VWIFI_COMBINATION_V3 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_VWIFI_COMBINATION_V3").field("Header", &self.Header).field("uNumInfrastructure", &self.uNumInfrastructure).field("uNumAdhoc", &self.uNumAdhoc).field("uNumSoftAP", &self.uNumSoftAP).field("uNumVirtualStation", &self.uNumVirtualStation).field("uNumWFDGroup", &self.uNumWFDGroup).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_VWIFI_COMBINATION_V3 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_VWIFI_COMBINATION_V3 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_VWIFI_COMBINATION_V3>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_VWIFI_COMBINATION_V3 {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_VWIFI_COMBINATION_V3 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -9051,7 +9051,7 @@ impl ::core::default::Default for DOT11_WEP_UPLOAD {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_WFD_ADDITIONAL_IE {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uBeaconIEsOffset: u32,
@@ -9061,33 +9061,33 @@ pub struct DOT11_WFD_ADDITIONAL_IE {
     pub uDefaultRequestIEsOffset: u32,
     pub uDefaultRequestIEsLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_WFD_ADDITIONAL_IE {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_WFD_ADDITIONAL_IE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_WFD_ADDITIONAL_IE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_WFD_ADDITIONAL_IE").field("Header", &self.Header).field("uBeaconIEsOffset", &self.uBeaconIEsOffset).field("uBeaconIEsLength", &self.uBeaconIEsLength).field("uProbeResponseIEsOffset", &self.uProbeResponseIEsOffset).field("uProbeResponseIEsLength", &self.uProbeResponseIEsLength).field("uDefaultRequestIEsOffset", &self.uDefaultRequestIEsOffset).field("uDefaultRequestIEsLength", &self.uDefaultRequestIEsLength).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_WFD_ADDITIONAL_IE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_WFD_ADDITIONAL_IE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_WFD_ADDITIONAL_IE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_WFD_ADDITIONAL_IE {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_WFD_ADDITIONAL_IE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -9189,7 +9189,7 @@ impl ::core::default::Default for DOT11_WFD_ADVERTISEMENT_ID {
 pub const DOT11_WFD_APS2_SERVICE_TYPE_MAX_LENGTH: u32 = 21u32;
 pub const DOT11_WFD_ASP2_INSTANCE_NAME_MAX_LENGTH: u32 = 63u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_WFD_ATTRIBUTES {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uNumConcurrentGORole: u32,
@@ -9207,15 +9207,15 @@ pub struct DOT11_WFD_ATTRIBUTES {
     pub uDiscoveryFilterListSize: u32,
     pub uGORoleClientTableSize: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_WFD_ATTRIBUTES {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_WFD_ATTRIBUTES {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_WFD_ATTRIBUTES {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_WFD_ATTRIBUTES")
@@ -9237,19 +9237,19 @@ impl ::core::fmt::Debug for DOT11_WFD_ATTRIBUTES {
             .finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_WFD_ATTRIBUTES {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_WFD_ATTRIBUTES {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_WFD_ATTRIBUTES>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_WFD_ATTRIBUTES {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_WFD_ATTRIBUTES {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -9320,7 +9320,7 @@ impl ::core::default::Default for DOT11_WFD_CONFIGURATION_TIMEOUT {
 pub const DOT11_WFD_DEVICE_AUTO_AVAILABILITY: u32 = 16u32;
 pub const DOT11_WFD_DEVICE_CAPABILITY_CONCURRENT_OPERATION: u32 = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_WFD_DEVICE_CAPABILITY_CONFIG {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub bServiceDiscoveryEnabled: ::win32_foundation::BOOLEAN,
@@ -9331,15 +9331,15 @@ pub struct DOT11_WFD_DEVICE_CAPABILITY_CONFIG {
     pub bInvitationProcedureEnabled: ::win32_foundation::BOOLEAN,
     pub WPSVersionsEnabled: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_WFD_DEVICE_CAPABILITY_CONFIG {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_WFD_DEVICE_CAPABILITY_CONFIG {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_WFD_DEVICE_CAPABILITY_CONFIG {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_WFD_DEVICE_CAPABILITY_CONFIG")
@@ -9354,19 +9354,19 @@ impl ::core::fmt::Debug for DOT11_WFD_DEVICE_CAPABILITY_CONFIG {
             .finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_WFD_DEVICE_CAPABILITY_CONFIG {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_WFD_DEVICE_CAPABILITY_CONFIG {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_WFD_DEVICE_CAPABILITY_CONFIG>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_WFD_DEVICE_CAPABILITY_CONFIG {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_WFD_DEVICE_CAPABILITY_CONFIG {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -9421,7 +9421,7 @@ impl ::core::default::Default for DOT11_WFD_DEVICE_ENTRY {
 }
 pub const DOT11_WFD_DEVICE_HIGH_AVAILABILITY: u32 = 24u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_WFD_DEVICE_INFO {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub DeviceAddress: [u8; 6],
@@ -9429,33 +9429,33 @@ pub struct DOT11_WFD_DEVICE_INFO {
     pub PrimaryDeviceType: DOT11_WFD_DEVICE_TYPE,
     pub DeviceName: DOT11_WPS_DEVICE_NAME,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_WFD_DEVICE_INFO {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_WFD_DEVICE_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_WFD_DEVICE_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_WFD_DEVICE_INFO").field("Header", &self.Header).field("DeviceAddress", &self.DeviceAddress).field("ConfigMethods", &self.ConfigMethods).field("PrimaryDeviceType", &self.PrimaryDeviceType).field("DeviceName", &self.DeviceName).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_WFD_DEVICE_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_WFD_DEVICE_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_WFD_DEVICE_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_WFD_DEVICE_INFO {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_WFD_DEVICE_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -9463,38 +9463,38 @@ impl ::core::default::Default for DOT11_WFD_DEVICE_INFO {
 }
 pub const DOT11_WFD_DEVICE_INFO_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_WFD_DEVICE_LISTEN_CHANNEL {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub ChannelNumber: u8,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_WFD_DEVICE_LISTEN_CHANNEL {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_WFD_DEVICE_LISTEN_CHANNEL {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_WFD_DEVICE_LISTEN_CHANNEL {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_WFD_DEVICE_LISTEN_CHANNEL").field("Header", &self.Header).field("ChannelNumber", &self.ChannelNumber).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_WFD_DEVICE_LISTEN_CHANNEL {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_WFD_DEVICE_LISTEN_CHANNEL {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_WFD_DEVICE_LISTEN_CHANNEL>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_WFD_DEVICE_LISTEN_CHANNEL {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_WFD_DEVICE_LISTEN_CHANNEL {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -9535,7 +9535,7 @@ impl ::core::default::Default for DOT11_WFD_DEVICE_TYPE {
 }
 pub const DOT11_WFD_DISCOVER_COMPLETE_MAX_LIST_SIZE: u32 = 128u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_WFD_DISCOVER_COMPLETE_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub Status: i32,
@@ -9544,33 +9544,33 @@ pub struct DOT11_WFD_DISCOVER_COMPLETE_PARAMETERS {
     pub uListOffset: u32,
     pub uListLength: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_WFD_DISCOVER_COMPLETE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_WFD_DISCOVER_COMPLETE_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_WFD_DISCOVER_COMPLETE_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_WFD_DISCOVER_COMPLETE_PARAMETERS").field("Header", &self.Header).field("Status", &self.Status).field("uNumOfEntries", &self.uNumOfEntries).field("uTotalNumOfEntries", &self.uTotalNumOfEntries).field("uListOffset", &self.uListOffset).field("uListLength", &self.uListLength).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_WFD_DISCOVER_COMPLETE_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_WFD_DISCOVER_COMPLETE_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_WFD_DISCOVER_COMPLETE_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_WFD_DISCOVER_COMPLETE_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_WFD_DISCOVER_COMPLETE_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -9609,7 +9609,7 @@ impl ::core::default::Default for DOT11_WFD_DISCOVER_DEVICE_FILTER {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_WFD_DISCOVER_REQUEST {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub DiscoverType: DOT11_WFD_DISCOVER_TYPE,
@@ -9621,33 +9621,33 @@ pub struct DOT11_WFD_DISCOVER_REQUEST {
     pub uIEsLength: u32,
     pub bForceScanLegacyNetworks: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_WFD_DISCOVER_REQUEST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_WFD_DISCOVER_REQUEST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_WFD_DISCOVER_REQUEST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_WFD_DISCOVER_REQUEST").field("Header", &self.Header).field("DiscoverType", &self.DiscoverType).field("ScanType", &self.ScanType).field("uDiscoverTimeout", &self.uDiscoverTimeout).field("uDeviceFilterListOffset", &self.uDeviceFilterListOffset).field("uNumDeviceFilters", &self.uNumDeviceFilters).field("uIEsOffset", &self.uIEsOffset).field("uIEsLength", &self.uIEsLength).field("bForceScanLegacyNetworks", &self.bForceScanLegacyNetworks).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_WFD_DISCOVER_REQUEST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_WFD_DISCOVER_REQUEST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_WFD_DISCOVER_REQUEST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_WFD_DISCOVER_REQUEST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_WFD_DISCOVER_REQUEST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -9751,7 +9751,7 @@ impl ::core::default::Default for DOT11_WFD_GROUP_ID {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_WFD_GROUP_JOIN_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub GOOperatingChannel: DOT11_WFD_CHANNEL,
@@ -9759,33 +9759,33 @@ pub struct DOT11_WFD_GROUP_JOIN_PARAMETERS {
     pub bInGroupFormation: ::win32_foundation::BOOLEAN,
     pub bWaitForWPSReady: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_WFD_GROUP_JOIN_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_WFD_GROUP_JOIN_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_WFD_GROUP_JOIN_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_WFD_GROUP_JOIN_PARAMETERS").field("Header", &self.Header).field("GOOperatingChannel", &self.GOOperatingChannel).field("GOConfigTime", &self.GOConfigTime).field("bInGroupFormation", &self.bInGroupFormation).field("bWaitForWPSReady", &self.bWaitForWPSReady).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_WFD_GROUP_JOIN_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_WFD_GROUP_JOIN_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_WFD_GROUP_JOIN_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_WFD_GROUP_JOIN_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_WFD_GROUP_JOIN_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -9793,7 +9793,7 @@ impl ::core::default::Default for DOT11_WFD_GROUP_JOIN_PARAMETERS {
 }
 pub const DOT11_WFD_GROUP_JOIN_PARAMETERS_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub bPersistentGroupEnabled: ::win32_foundation::BOOLEAN,
@@ -9803,15 +9803,15 @@ pub struct DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG {
     pub bGroupFormationEnabled: ::win32_foundation::BOOLEAN,
     pub uMaximumGroupLimit: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG")
@@ -9825,19 +9825,19 @@ impl ::core::fmt::Debug for DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG {
             .finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -9846,7 +9846,7 @@ impl ::core::default::Default for DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG {
 pub const DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG_REVISION_1: u32 = 1u32;
 pub const DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG_REVISION_2: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG_V2 {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub bPersistentGroupEnabled: ::win32_foundation::BOOLEAN,
@@ -9857,15 +9857,15 @@ pub struct DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG_V2 {
     pub uMaximumGroupLimit: u32,
     pub bEapolKeyIpAddressAllocationSupported: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG_V2 {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG_V2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG_V2 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG_V2")
@@ -9880,57 +9880,57 @@ impl ::core::fmt::Debug for DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG_V2 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG_V2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG_V2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG_V2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG_V2 {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG_V2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_WFD_GROUP_START_PARAMETERS {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub AdvertisedOperatingChannel: DOT11_WFD_CHANNEL,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_WFD_GROUP_START_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_WFD_GROUP_START_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_WFD_GROUP_START_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_WFD_GROUP_START_PARAMETERS").field("Header", &self.Header).field("AdvertisedOperatingChannel", &self.AdvertisedOperatingChannel).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_WFD_GROUP_START_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_WFD_GROUP_START_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_WFD_GROUP_START_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_WFD_GROUP_START_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_WFD_GROUP_START_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -9997,40 +9997,40 @@ impl ::core::fmt::Debug for DOT11_WFD_SCAN_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct DOT11_WFD_SECONDARY_DEVICE_TYPE_LIST {
     pub Header: super::Ndis::NDIS_OBJECT_HEADER,
     pub uNumOfEntries: u32,
     pub uTotalNumOfEntries: u32,
     pub SecondaryDeviceTypes: [DOT11_WFD_DEVICE_TYPE; 1],
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for DOT11_WFD_SECONDARY_DEVICE_TYPE_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for DOT11_WFD_SECONDARY_DEVICE_TYPE_LIST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for DOT11_WFD_SECONDARY_DEVICE_TYPE_LIST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOT11_WFD_SECONDARY_DEVICE_TYPE_LIST").field("Header", &self.Header).field("uNumOfEntries", &self.uNumOfEntries).field("uTotalNumOfEntries", &self.uTotalNumOfEntries).field("SecondaryDeviceTypes", &self.SecondaryDeviceTypes).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for DOT11_WFD_SECONDARY_DEVICE_TYPE_LIST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for DOT11_WFD_SECONDARY_DEVICE_TYPE_LIST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOT11_WFD_SECONDARY_DEVICE_TYPE_LIST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for DOT11_WFD_SECONDARY_DEVICE_TYPE_LIST {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for DOT11_WFD_SECONDARY_DEVICE_TYPE_LIST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11460,7 +11460,7 @@ impl ::core::fmt::Debug for ONEX_AUTH_STATUS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 pub struct ONEX_EAP_ERROR {
     pub dwWinError: u32,
     pub r#type: ::win32_security::ExtensibleAuthenticationProtocol::EAP_METHOD_TYPE,
@@ -11472,33 +11472,33 @@ pub struct ONEX_EAP_ERROR {
     pub RootCauseString: ONEX_VARIABLE_BLOB,
     pub RepairString: ONEX_VARIABLE_BLOB,
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for ONEX_EAP_ERROR {}
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for ONEX_EAP_ERROR {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for ONEX_EAP_ERROR {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ONEX_EAP_ERROR").field("dwWinError", &self.dwWinError).field("type", &self.r#type).field("dwReasonCode", &self.dwReasonCode).field("rootCauseGuid", &self.rootCauseGuid).field("repairGuid", &self.repairGuid).field("helpLinkGuid", &self.helpLinkGuid).field("_bitfield", &self._bitfield).field("RootCauseString", &self.RootCauseString).field("RepairString", &self.RepairString).finish()
     }
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for ONEX_EAP_ERROR {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for ONEX_EAP_ERROR {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ONEX_EAP_ERROR>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for ONEX_EAP_ERROR {}
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for ONEX_EAP_ERROR {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -12484,7 +12484,7 @@ impl ::core::fmt::Debug for WLAN_CONNECTION_NOTIFICATION_FLAGS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct WLAN_CONNECTION_PARAMETERS {
     pub wlanConnectionMode: WLAN_CONNECTION_MODE,
     pub strProfile: ::windows_core::PCWSTR,
@@ -12493,40 +12493,40 @@ pub struct WLAN_CONNECTION_PARAMETERS {
     pub dot11BssType: DOT11_BSS_TYPE,
     pub dwFlags: u32,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for WLAN_CONNECTION_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for WLAN_CONNECTION_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for WLAN_CONNECTION_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WLAN_CONNECTION_PARAMETERS").field("wlanConnectionMode", &self.wlanConnectionMode).field("strProfile", &self.strProfile).field("pDot11Ssid", &self.pDot11Ssid).field("pDesiredBssidList", &self.pDesiredBssidList).field("dot11BssType", &self.dot11BssType).field("dwFlags", &self.dwFlags).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for WLAN_CONNECTION_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for WLAN_CONNECTION_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WLAN_CONNECTION_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for WLAN_CONNECTION_PARAMETERS {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for WLAN_CONNECTION_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct WLAN_CONNECTION_PARAMETERS_V2 {
     pub wlanConnectionMode: WLAN_CONNECTION_MODE,
     pub strProfile: ::windows_core::PCWSTR,
@@ -12537,33 +12537,33 @@ pub struct WLAN_CONNECTION_PARAMETERS_V2 {
     pub dwFlags: u32,
     pub pDot11AccessNetworkOptions: *mut DOT11_ACCESSNETWORKOPTIONS,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for WLAN_CONNECTION_PARAMETERS_V2 {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for WLAN_CONNECTION_PARAMETERS_V2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for WLAN_CONNECTION_PARAMETERS_V2 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WLAN_CONNECTION_PARAMETERS_V2").field("wlanConnectionMode", &self.wlanConnectionMode).field("strProfile", &self.strProfile).field("pDot11Ssid", &self.pDot11Ssid).field("pDot11Hessid", &self.pDot11Hessid).field("pDesiredBssidList", &self.pDesiredBssidList).field("dot11BssType", &self.dot11BssType).field("dwFlags", &self.dwFlags).field("pDot11AccessNetworkOptions", &self.pDot11AccessNetworkOptions).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for WLAN_CONNECTION_PARAMETERS_V2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for WLAN_CONNECTION_PARAMETERS_V2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WLAN_CONNECTION_PARAMETERS_V2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for WLAN_CONNECTION_PARAMETERS_V2 {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for WLAN_CONNECTION_PARAMETERS_V2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -14233,7 +14233,7 @@ pub unsafe fn WlanCloseHandle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 #[inline]
 pub unsafe fn WlanConnect<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hclienthandle: Param0, pinterfaceguid: *const ::windows_core::GUID, pconnectionparameters: *const WLAN_CONNECTION_PARAMETERS, preserved: *mut ::core::ffi::c_void) -> u32 {
     #[cfg(windows)]
@@ -14247,7 +14247,7 @@ pub unsafe fn WlanConnect<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foun
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 #[inline]
 pub unsafe fn WlanConnect2<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hclienthandle: Param0, pinterfaceguid: *const ::windows_core::GUID, pconnectionparameters: *const WLAN_CONNECTION_PARAMETERS_V2, preserved: *mut ::core::ffi::c_void) -> u32 {
     #[cfg(windows)]
@@ -14820,7 +14820,7 @@ pub unsafe fn WlanSetProfileCustomUserData<'a, Param0: ::windows_core::IntoParam
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_ExtensibleAuthenticationProtocol")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn WlanSetProfileEapUserData<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_security::ExtensibleAuthenticationProtocol::EAP_METHOD_TYPE>>(hclienthandle: Param0, pinterfaceguid: *const ::windows_core::GUID, strprofilename: Param2, eaptype: Param3, dwflags: WLAN_SET_EAPHOST_FLAGS, dweapuserdatasize: u32, pbeapuserdata: *const u8, preserved: *mut ::core::ffi::c_void) -> u32 {
     #[cfg(windows)]

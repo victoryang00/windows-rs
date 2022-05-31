@@ -50,12 +50,12 @@ impl Accelerometer {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveShaken)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn SetReadingTransform(&self, value: ::winrt_graphics::Display::DisplayOrientations) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAccelerometer2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetReadingTransform)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn ReadingTransform(&self) -> ::windows_core::Result<::winrt_graphics::Display::DisplayOrientations> {
         let this = &::windows_core::Interface::cast::<IAccelerometer2>(self)?;
         unsafe {
@@ -358,7 +358,7 @@ impl AccelerometerReading {
             (::windows_core::Interface::vtable(this).PerformanceCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::TimeSpan>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IAccelerometerReading2>(self)?;
         unsafe {
@@ -649,7 +649,7 @@ impl ActivitySensor {
             (::windows_core::Interface::vtable(this).GetCurrentReadingAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ActivitySensorReading>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SubscribedActivities(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<ActivityType>> {
         let this = self;
         unsafe {
@@ -671,7 +671,7 @@ impl ActivitySensor {
             (::windows_core::Interface::vtable(this).DeviceId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SupportedActivities(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ActivityType>> {
         let this = self;
         unsafe {
@@ -715,14 +715,14 @@ impl ActivitySensor {
             (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ActivitySensor>>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetSystemHistoryAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(fromtime: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<ActivitySensorReading>>> {
         Self::IActivitySensorStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetSystemHistoryAsync)(::windows_core::Interface::as_raw(this), fromtime.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<ActivitySensorReading>>>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetSystemHistoryWithDurationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(fromtime: Param0, duration: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<ActivitySensorReading>>> {
         Self::IActivitySensorStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1105,7 +1105,7 @@ unsafe impl ::windows_core::RuntimeType for ActivitySensorReadingConfidence {
 #[repr(transparent)]
 pub struct ActivitySensorTriggerDetails(::windows_core::IUnknown);
 impl ActivitySensorTriggerDetails {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ReadReports(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ActivitySensorReadingChangeReport>> {
         let this = self;
         unsafe {
@@ -1396,7 +1396,7 @@ impl AltimeterReading {
             (::windows_core::Interface::vtable(this).PerformanceCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::TimeSpan>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IAltimeterReading2>(self)?;
         unsafe {
@@ -1841,7 +1841,7 @@ impl BarometerReading {
             (::windows_core::Interface::vtable(this).PerformanceCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::TimeSpan>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IBarometerReading2>(self)?;
         unsafe {
@@ -2044,12 +2044,12 @@ impl Compass {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveReadingChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn SetReadingTransform(&self, value: ::winrt_graphics::Display::DisplayOrientations) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompass2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetReadingTransform)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn ReadingTransform(&self) -> ::windows_core::Result<::winrt_graphics::Display::DisplayOrientations> {
         let this = &::windows_core::Interface::cast::<ICompass2>(self)?;
         unsafe {
@@ -2306,7 +2306,7 @@ impl CompassReading {
             (::windows_core::Interface::vtable(this).PerformanceCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::TimeSpan>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<ICompassReading2>(self)?;
         unsafe {
@@ -2516,12 +2516,12 @@ impl Gyrometer {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveReadingChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn SetReadingTransform(&self, value: ::winrt_graphics::Display::DisplayOrientations) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IGyrometer2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetReadingTransform)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn ReadingTransform(&self) -> ::windows_core::Result<::winrt_graphics::Display::DisplayOrientations> {
         let this = &::windows_core::Interface::cast::<IGyrometer2>(self)?;
         unsafe {
@@ -2807,7 +2807,7 @@ impl GyrometerReading {
             (::windows_core::Interface::vtable(this).PerformanceCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::TimeSpan>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IGyrometerReading2>(self)?;
         unsafe {
@@ -2988,7 +2988,7 @@ impl HingeAngleReading {
             (::windows_core::Interface::vtable(this).AngleInDegrees)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
@@ -3330,13 +3330,13 @@ unsafe impl ::windows_core::Interface for IAccelerometer2 {
 #[doc(hidden)]
 pub struct IAccelerometer2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub SetReadingTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_graphics::Display::DisplayOrientations) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Display"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     SetReadingTransform: usize,
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub ReadingTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::Display::DisplayOrientations) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Display"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     ReadingTransform: usize,
 }
 #[doc(hidden)]
@@ -3439,9 +3439,9 @@ unsafe impl ::windows_core::Interface for IAccelerometerReading2 {
 pub struct IAccelerometerReading2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub PerformanceCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Properties: usize,
 }
 #[doc(hidden)]
@@ -3522,15 +3522,15 @@ unsafe impl ::windows_core::Interface for IActivitySensor {
 pub struct IActivitySensor_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub GetCurrentReadingAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SubscribedActivities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SubscribedActivities: usize,
     pub PowerInMilliwatts: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub DeviceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SupportedActivities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SupportedActivities: usize,
     pub MinimumReportInterval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub ReadingChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -3591,13 +3591,13 @@ pub struct IActivitySensorStatics_Vtbl {
     pub GetDefaultAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub FromIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetSystemHistoryAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fromtime: ::winrt_foundation::DateTime, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetSystemHistoryAsync: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetSystemHistoryWithDurationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fromtime: ::winrt_foundation::DateTime, duration: ::winrt_foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetSystemHistoryWithDurationAsync: usize,
 }
 #[doc(hidden)]
@@ -3611,9 +3611,9 @@ unsafe impl ::windows_core::Interface for IActivitySensorTriggerDetails {
 #[doc(hidden)]
 pub struct IActivitySensorTriggerDetails_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub ReadReports: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ReadReports: usize,
 }
 #[doc(hidden)]
@@ -3676,9 +3676,9 @@ unsafe impl ::windows_core::Interface for IAltimeterReading2 {
 pub struct IAltimeterReading2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub PerformanceCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Properties: usize,
 }
 #[doc(hidden)]
@@ -3794,9 +3794,9 @@ unsafe impl ::windows_core::Interface for IBarometerReading2 {
 pub struct IBarometerReading2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub PerformanceCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Properties: usize,
 }
 #[doc(hidden)]
@@ -3868,13 +3868,13 @@ unsafe impl ::windows_core::Interface for ICompass2 {
 #[doc(hidden)]
 pub struct ICompass2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub SetReadingTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_graphics::Display::DisplayOrientations) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Display"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     SetReadingTransform: usize,
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub ReadingTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::Display::DisplayOrientations) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Display"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     ReadingTransform: usize,
 }
 #[doc(hidden)]
@@ -3959,9 +3959,9 @@ unsafe impl ::windows_core::Interface for ICompassReading2 {
 pub struct ICompassReading2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub PerformanceCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Properties: usize,
 }
 #[doc(hidden)]
@@ -4046,13 +4046,13 @@ unsafe impl ::windows_core::Interface for IGyrometer2 {
 #[doc(hidden)]
 pub struct IGyrometer2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub SetReadingTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_graphics::Display::DisplayOrientations) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Display"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     SetReadingTransform: usize,
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub ReadingTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::Display::DisplayOrientations) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Display"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     ReadingTransform: usize,
 }
 #[doc(hidden)]
@@ -4142,9 +4142,9 @@ unsafe impl ::windows_core::Interface for IGyrometerReading2 {
 pub struct IGyrometerReading2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub PerformanceCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Properties: usize,
 }
 #[doc(hidden)]
@@ -4200,9 +4200,9 @@ pub struct IHingeAngleReading_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub AngleInDegrees: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Properties: usize,
 }
 #[doc(hidden)]
@@ -4282,13 +4282,13 @@ unsafe impl ::windows_core::Interface for IInclinometer2 {
 #[doc(hidden)]
 pub struct IInclinometer2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub SetReadingTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_graphics::Display::DisplayOrientations) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Display"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     SetReadingTransform: usize,
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub ReadingTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::Display::DisplayOrientations) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Display"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     ReadingTransform: usize,
     pub ReadingType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SensorReadingType) -> ::windows_core::HRESULT,
 }
@@ -4379,9 +4379,9 @@ unsafe impl ::windows_core::Interface for IInclinometerReading2 {
 pub struct IInclinometerReading2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub PerformanceCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Properties: usize,
 }
 #[doc(hidden)]
@@ -4564,9 +4564,9 @@ unsafe impl ::windows_core::Interface for ILightSensorReading2 {
 pub struct ILightSensorReading2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub PerformanceCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Properties: usize,
 }
 #[doc(hidden)]
@@ -4638,13 +4638,13 @@ unsafe impl ::windows_core::Interface for IMagnetometer2 {
 #[doc(hidden)]
 pub struct IMagnetometer2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub SetReadingTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_graphics::Display::DisplayOrientations) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Display"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     SetReadingTransform: usize,
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub ReadingTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::Display::DisplayOrientations) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Display"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     ReadingTransform: usize,
 }
 #[doc(hidden)]
@@ -4735,9 +4735,9 @@ unsafe impl ::windows_core::Interface for IMagnetometerReading2 {
 pub struct IMagnetometerReading2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub PerformanceCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Properties: usize,
 }
 #[doc(hidden)]
@@ -4809,13 +4809,13 @@ unsafe impl ::windows_core::Interface for IOrientationSensor2 {
 #[doc(hidden)]
 pub struct IOrientationSensor2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub SetReadingTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_graphics::Display::DisplayOrientations) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Display"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     SetReadingTransform: usize,
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub ReadingTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::Display::DisplayOrientations) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Display"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     ReadingTransform: usize,
     pub ReadingType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SensorReadingType) -> ::windows_core::HRESULT,
 }
@@ -4874,9 +4874,9 @@ unsafe impl ::windows_core::Interface for IOrientationSensorReading2 {
 pub struct IOrientationSensorReading2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub PerformanceCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Properties: usize,
 }
 #[doc(hidden)]
@@ -4990,9 +4990,9 @@ unsafe impl ::windows_core::Interface for IPedometer2 {
 #[doc(hidden)]
 pub struct IPedometer2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetCurrentReadings: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetCurrentReadings: usize,
 }
 #[doc(hidden)]
@@ -5051,13 +5051,13 @@ pub struct IPedometerStatics_Vtbl {
     pub FromIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetDefaultAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetSystemHistoryAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fromtime: ::winrt_foundation::DateTime, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetSystemHistoryAsync: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetSystemHistoryWithDurationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fromtime: ::winrt_foundation::DateTime, duration: ::winrt_foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetSystemHistoryWithDurationAsync: usize,
 }
 #[doc(hidden)]
@@ -5071,9 +5071,9 @@ unsafe impl ::windows_core::Interface for IPedometerStatics2 {
 #[doc(hidden)]
 pub struct IPedometerStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetReadingsFromTriggerDetails: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, triggerdetails: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetReadingsFromTriggerDetails: usize,
 }
 #[doc(hidden)]
@@ -5161,9 +5161,9 @@ unsafe impl ::windows_core::Interface for IProximitySensorStatics2 {
 #[doc(hidden)]
 pub struct IProximitySensorStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetReadingsFromTriggerDetails: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, triggerdetails: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetReadingsFromTriggerDetails: usize,
 }
 #[repr(transparent)]
@@ -5318,13 +5318,13 @@ unsafe impl ::windows_core::Interface for ISimpleOrientationSensor2 {
 #[doc(hidden)]
 pub struct ISimpleOrientationSensor2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub SetReadingTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_graphics::Display::DisplayOrientations) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Display"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     SetReadingTransform: usize,
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub ReadingTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::Display::DisplayOrientations) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Display"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     ReadingTransform: usize,
 }
 #[doc(hidden)]
@@ -5420,12 +5420,12 @@ impl Inclinometer {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveReadingChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn SetReadingTransform(&self, value: ::winrt_graphics::Display::DisplayOrientations) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IInclinometer2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetReadingTransform)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn ReadingTransform(&self) -> ::windows_core::Result<::winrt_graphics::Display::DisplayOrientations> {
         let this = &::windows_core::Interface::cast::<IInclinometer2>(self)?;
         unsafe {
@@ -5738,7 +5738,7 @@ impl InclinometerReading {
             (::windows_core::Interface::vtable(this).PerformanceCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::TimeSpan>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IInclinometerReading2>(self)?;
         unsafe {
@@ -6201,7 +6201,7 @@ impl LightSensorReading {
             (::windows_core::Interface::vtable(this).PerformanceCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::TimeSpan>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<ILightSensorReading2>(self)?;
         unsafe {
@@ -6404,12 +6404,12 @@ impl Magnetometer {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveReadingChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn SetReadingTransform(&self, value: ::winrt_graphics::Display::DisplayOrientations) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMagnetometer2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetReadingTransform)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn ReadingTransform(&self) -> ::windows_core::Result<::winrt_graphics::Display::DisplayOrientations> {
         let this = &::windows_core::Interface::cast::<IMagnetometer2>(self)?;
         unsafe {
@@ -6737,7 +6737,7 @@ impl MagnetometerReading {
             (::windows_core::Interface::vtable(this).PerformanceCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::TimeSpan>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IMagnetometerReading2>(self)?;
         unsafe {
@@ -6940,12 +6940,12 @@ impl OrientationSensor {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveReadingChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn SetReadingTransform(&self, value: ::winrt_graphics::Display::DisplayOrientations) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IOrientationSensor2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetReadingTransform)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn ReadingTransform(&self) -> ::windows_core::Result<::winrt_graphics::Display::DisplayOrientations> {
         let this = &::windows_core::Interface::cast::<IOrientationSensor2>(self)?;
         unsafe {
@@ -7147,7 +7147,7 @@ impl OrientationSensorReading {
             (::windows_core::Interface::vtable(this).PerformanceCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::TimeSpan>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IOrientationSensorReading2>(self)?;
         unsafe {
@@ -7364,7 +7364,7 @@ impl Pedometer {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveReadingChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetCurrentReadings(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<PedometerStepKind, PedometerReading>> {
         let this = &::windows_core::Interface::cast::<IPedometer2>(self)?;
         unsafe {
@@ -7390,21 +7390,21 @@ impl Pedometer {
             (::windows_core::Interface::vtable(this).GetDeviceSelector)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetSystemHistoryAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(fromtime: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<PedometerReading>>> {
         Self::IPedometerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetSystemHistoryAsync)(::windows_core::Interface::as_raw(this), fromtime.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<PedometerReading>>>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetSystemHistoryWithDurationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(fromtime: Param0, duration: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<PedometerReading>>> {
         Self::IPedometerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetSystemHistoryWithDurationAsync)(::windows_core::Interface::as_raw(this), fromtime.into_param().abi(), duration.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<PedometerReading>>>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetReadingsFromTriggerDetails<'a, Param0: ::windows_core::IntoParam<'a, SensorDataThresholdTriggerDetails>>(triggerdetails: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<PedometerReading>> {
         Self::IPedometerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -7882,7 +7882,7 @@ impl ProximitySensor {
             (::windows_core::Interface::vtable(this).FromId)(::windows_core::Interface::as_raw(this), sensorid.into_param().abi(), result__.as_mut_ptr()).from_abi::<ProximitySensor>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetReadingsFromTriggerDetails<'a, Param0: ::windows_core::IntoParam<'a, SensorDataThresholdTriggerDetails>>(triggerdetails: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ProximitySensorReading>> {
         Self::IProximitySensorStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -8862,12 +8862,12 @@ impl SimpleOrientationSensor {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveOrientationChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn SetReadingTransform(&self, value: ::winrt_graphics::Display::DisplayOrientations) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ISimpleOrientationSensor2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetReadingTransform)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Graphics_Display")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn ReadingTransform(&self) -> ::windows_core::Result<::winrt_graphics::Display::DisplayOrientations> {
         let this = &::windows_core::Interface::cast::<ISimpleOrientationSensor2>(self)?;
         unsafe {

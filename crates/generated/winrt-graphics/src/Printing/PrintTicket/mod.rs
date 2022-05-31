@@ -11,9 +11,9 @@ pub struct IPrintTicketCapabilities_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub XmlNamespace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub XmlNode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     XmlNode: usize,
     pub DocumentBindingFeature: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub DocumentCollateFeature: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -46,15 +46,15 @@ pub struct IPrintTicketFeature_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub XmlNamespace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub XmlNode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     XmlNode: usize,
     pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetOption: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, xmlnamespace: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Options: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Options: usize,
     pub GetSelectedOption: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetSelectedOption: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -73,18 +73,18 @@ pub struct IPrintTicketOption_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub XmlNamespace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub XmlNode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     XmlNode: usize,
     pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub GetPropertyNode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, xmlnamespace: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     GetPropertyNode: usize,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub GetScoredPropertyNode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, xmlnamespace: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     GetScoredPropertyNode: usize,
     pub GetPropertyValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, xmlnamespace: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetScoredPropertyValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, xmlnamespace: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -102,9 +102,9 @@ pub struct IPrintTicketParameterDefinition_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub XmlNamespace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub XmlNode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     XmlNode: usize,
     pub DataType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintTicketParameterDataType) -> ::windows_core::HRESULT,
     pub UnitType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -124,9 +124,9 @@ pub struct IPrintTicketParameterInitializer_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub XmlNamespace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub XmlNode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     XmlNode: usize,
     pub SetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Value: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -159,9 +159,9 @@ pub struct IWorkflowPrintTicket_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub XmlNamespace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub XmlNode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     XmlNode: usize,
     pub GetCapabilities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub DocumentBindingFeature: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -218,7 +218,7 @@ impl PrintTicketCapabilities {
             (::windows_core::Interface::vtable(this).XmlNamespace)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn XmlNode(&self) -> ::windows_core::Result<::winrt_data::Xml::Dom::IXmlNode> {
         let this = self;
         unsafe {
@@ -435,7 +435,7 @@ impl PrintTicketFeature {
             (::windows_core::Interface::vtable(this).XmlNamespace)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn XmlNode(&self) -> ::windows_core::Result<::winrt_data::Xml::Dom::IXmlNode> {
         let this = self;
         unsafe {
@@ -457,7 +457,7 @@ impl PrintTicketFeature {
             (::windows_core::Interface::vtable(this).GetOption)(::windows_core::Interface::as_raw(this), name.into_param().abi(), xmlnamespace.into_param().abi(), result__.as_mut_ptr()).from_abi::<PrintTicketOption>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Options(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<PrintTicketOption>> {
         let this = self;
         unsafe {
@@ -606,7 +606,7 @@ impl PrintTicketOption {
             (::windows_core::Interface::vtable(this).XmlNamespace)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn XmlNode(&self) -> ::windows_core::Result<::winrt_data::Xml::Dom::IXmlNode> {
         let this = self;
         unsafe {
@@ -621,7 +621,7 @@ impl PrintTicketOption {
             (::windows_core::Interface::vtable(this).DisplayName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn GetPropertyNode<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, name: Param0, xmlnamespace: Param1) -> ::windows_core::Result<::winrt_data::Xml::Dom::IXmlNode> {
         let this = self;
         unsafe {
@@ -629,7 +629,7 @@ impl PrintTicketOption {
             (::windows_core::Interface::vtable(this).GetPropertyNode)(::windows_core::Interface::as_raw(this), name.into_param().abi(), xmlnamespace.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_data::Xml::Dom::IXmlNode>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn GetScoredPropertyNode<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, name: Param0, xmlnamespace: Param1) -> ::windows_core::Result<::winrt_data::Xml::Dom::IXmlNode> {
         let this = self;
         unsafe {
@@ -775,7 +775,7 @@ impl PrintTicketParameterDefinition {
             (::windows_core::Interface::vtable(this).XmlNamespace)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn XmlNode(&self) -> ::windows_core::Result<::winrt_data::Xml::Dom::IXmlNode> {
         let this = self;
         unsafe {
@@ -901,7 +901,7 @@ impl PrintTicketParameterInitializer {
             (::windows_core::Interface::vtable(this).XmlNamespace)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn XmlNode(&self) -> ::windows_core::Result<::winrt_data::Xml::Dom::IXmlNode> {
         let this = self;
         unsafe {
@@ -1141,7 +1141,7 @@ impl WorkflowPrintTicket {
             (::windows_core::Interface::vtable(this).XmlNamespace)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn XmlNode(&self) -> ::windows_core::Result<::winrt_data::Xml::Dom::IXmlNode> {
         let this = self;
         unsafe {

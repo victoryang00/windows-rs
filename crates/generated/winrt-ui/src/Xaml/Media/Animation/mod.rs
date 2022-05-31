@@ -1062,7 +1062,7 @@ impl ColorAnimationUsingKeyFrames {
         static mut SHARED: ::windows_core::FactoryCache<ColorAnimationUsingKeyFrames, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn KeyFrames(&self) -> ::windows_core::Result<ColorKeyFrameCollection> {
         let this = self;
         unsafe {
@@ -1338,10 +1338,10 @@ impl<'a> ::windows_core::IntoParam<'a, super::super::DependencyObject> for &Colo
 }
 unsafe impl ::core::marker::Send for ColorKeyFrame {}
 unsafe impl ::core::marker::Sync for ColorKeyFrame {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 #[repr(transparent)]
 pub struct ColorKeyFrameCollection(::windows_core::IUnknown);
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ColorKeyFrameCollection {
     pub fn new() -> ::windows_core::Result<Self> {
         Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
@@ -1350,7 +1350,7 @@ impl ColorKeyFrameCollection {
         static mut SHARED: ::windows_core::FactoryCache<ColorKeyFrameCollection, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<ColorKeyFrame>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<ColorKeyFrame>>(self)?;
         unsafe {
@@ -1358,7 +1358,7 @@ impl ColorKeyFrameCollection {
             (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<ColorKeyFrame>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetAt(&self, index: u32) -> ::windows_core::Result<ColorKeyFrame> {
         let this = self;
         unsafe {
@@ -1366,7 +1366,7 @@ impl ColorKeyFrameCollection {
             (::windows_core::Interface::vtable(this).GetAt)(::windows_core::Interface::as_raw(this), index, result__.as_mut_ptr()).from_abi::<ColorKeyFrame>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -1374,7 +1374,7 @@ impl ColorKeyFrameCollection {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ColorKeyFrame>> {
         let this = self;
         unsafe {
@@ -1382,7 +1382,7 @@ impl ColorKeyFrameCollection {
             (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<ColorKeyFrame>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn IndexOf<'a, Param0: ::windows_core::IntoParam<'a, ColorKeyFrame>>(&self, value: Param0, index: &mut u32) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
@@ -1390,37 +1390,37 @@ impl ColorKeyFrameCollection {
             (::windows_core::Interface::vtable(this).IndexOf)(::windows_core::Interface::as_raw(this), value.into_param().abi(), index, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAt<'a, Param1: ::windows_core::IntoParam<'a, ColorKeyFrame>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertAt<'a, Param1: ::windows_core::IntoParam<'a, ColorKeyFrame>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAt(&self, index: u32) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAt)(::windows_core::Interface::as_raw(this), index).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Append<'a, Param0: ::windows_core::IntoParam<'a, ColorKeyFrame>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Append)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAtEnd(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAtEnd)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Clear(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Clear)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetMany(&self, startindex: u32, items: &mut [::core::option::Option<ColorKeyFrame>]) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -1428,33 +1428,33 @@ impl ColorKeyFrameCollection {
             (::windows_core::Interface::vtable(this).GetMany)(::windows_core::Interface::as_raw(this), startindex, items.len() as u32, ::core::mem::transmute_copy(&items), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ReplaceAll(&self, items: &[::core::option::Option<ColorKeyFrame>]) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ReplaceAll)(::windows_core::Interface::as_raw(this), items.len() as u32, ::core::mem::transmute(items.as_ptr())).ok() }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::clone::Clone for ColorKeyFrameCollection {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::PartialEq for ColorKeyFrameCollection {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::Eq for ColorKeyFrameCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::fmt::Debug for ColorKeyFrameCollection {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("ColorKeyFrameCollection").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::RuntimeType for ColorKeyFrameCollection {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Xaml.Media.Animation.ColorKeyFrameCollection;pinterface({913337e9-11a1-4345-a3a2-4e7f956e222d};rc(Windows.UI.Xaml.Media.Animation.ColorKeyFrame;{b51d82d9-0910-4589-a284-b0c9205858e9})))");
     type DefaultType = ::core::option::Option<Self>;
@@ -1462,16 +1462,16 @@ unsafe impl ::windows_core::RuntimeType for ColorKeyFrameCollection {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::Interface for ColorKeyFrameCollection {
     type Vtable = ::winrt_foundation::Collections::IVector_Vtbl<ColorKeyFrame>;
     const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IVector<ColorKeyFrame> as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::windows_core::RuntimeName for ColorKeyFrameCollection {
     const NAME: &'static str = "Windows.UI.Xaml.Media.Animation.ColorKeyFrameCollection";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for ColorKeyFrameCollection {
     type Item = ColorKeyFrame;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -1479,7 +1479,7 @@ impl ::core::iter::IntoIterator for ColorKeyFrameCollection {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &ColorKeyFrameCollection {
     type Item = ColorKeyFrame;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -1487,109 +1487,109 @@ impl ::core::iter::IntoIterator for &ColorKeyFrameCollection {
         ::winrt_foundation::Collections::VectorIterator::new(::core::convert::TryInto::try_into(self).ok())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<ColorKeyFrameCollection> for ::windows_core::IUnknown {
     fn from(value: ColorKeyFrameCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&ColorKeyFrameCollection> for ::windows_core::IUnknown {
     fn from(value: &ColorKeyFrameCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for ColorKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ColorKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<ColorKeyFrameCollection> for ::windows_core::IInspectable {
     fn from(value: ColorKeyFrameCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&ColorKeyFrameCollection> for ::windows_core::IInspectable {
     fn from(value: &ColorKeyFrameCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for ColorKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a ColorKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<ColorKeyFrameCollection> for ::winrt_foundation::Collections::IIterable<ColorKeyFrame> {
     type Error = ::windows_core::Error;
     fn try_from(value: ColorKeyFrameCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&ColorKeyFrameCollection> for ::winrt_foundation::Collections::IIterable<ColorKeyFrame> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ColorKeyFrameCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<ColorKeyFrame>> for ColorKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<ColorKeyFrame>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<ColorKeyFrame>> for &ColorKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<ColorKeyFrame>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<ColorKeyFrame>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<ColorKeyFrameCollection> for ::winrt_foundation::Collections::IVector<ColorKeyFrame> {
     type Error = ::windows_core::Error;
     fn try_from(value: ColorKeyFrameCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&ColorKeyFrameCollection> for ::winrt_foundation::Collections::IVector<ColorKeyFrame> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ColorKeyFrameCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<ColorKeyFrame>> for ColorKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<ColorKeyFrame>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<ColorKeyFrame>> for &ColorKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<ColorKeyFrame>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IVector<ColorKeyFrame>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Send for ColorKeyFrameCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Sync for ColorKeyFrameCollection {}
 #[repr(transparent)]
 pub struct CommonNavigationTransitionInfo(::windows_core::IUnknown);
@@ -1786,7 +1786,7 @@ impl ConnectedAnimation {
         let this = &::windows_core::Interface::cast::<IConnectedAnimation2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetIsScaleAnimationEnabled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TryStartWithCoordinatedElements<'a, Param0: ::windows_core::IntoParam<'a, super::super::UIElement>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<super::super::UIElement>>>(&self, destination: Param0, coordinatedelements: Param1) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<IConnectedAnimation2>(self)?;
         unsafe {
@@ -1794,7 +1794,7 @@ impl ConnectedAnimation {
             (::windows_core::Interface::vtable(this).TryStartWithCoordinatedElements)(::windows_core::Interface::as_raw(this), destination.into_param().abi(), coordinatedelements.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetAnimationComponent<'a, Param1: ::windows_core::IntoParam<'a, super::super::super::Composition::ICompositionAnimationBase>>(&self, component: ConnectedAnimationComponent, animation: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IConnectedAnimation2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetAnimationComponent)(::windows_core::Interface::as_raw(this), component, animation.into_param().abi()).ok() }
@@ -2007,7 +2007,7 @@ impl ConnectedAnimationService {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDefaultDuration)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub fn DefaultEasingFunction(&self) -> ::windows_core::Result<super::super::super::Composition::CompositionEasingFunction> {
         let this = self;
         unsafe {
@@ -2015,7 +2015,7 @@ impl ConnectedAnimationService {
             (::windows_core::Interface::vtable(this).DefaultEasingFunction)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Composition::CompositionEasingFunction>(result__)
         }
     }
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetDefaultEasingFunction<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Composition::CompositionEasingFunction>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDefaultEasingFunction)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -2341,14 +2341,14 @@ impl ContinuumNavigationTransitionInfo {
             (::windows_core::Interface::vtable(this).ExitElementContainerProperty)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::DependencyProperty>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GetExitElementContainer<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ListViewBase>>(element: Param0) -> ::windows_core::Result<bool> {
         Self::IContinuumNavigationTransitionInfoStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
             (::windows_core::Interface::vtable(this).GetExitElementContainer)(::windows_core::Interface::as_raw(this), element.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetExitElementContainer<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ListViewBase>>(element: Param0, value: bool) -> ::windows_core::Result<()> {
         Self::IContinuumNavigationTransitionInfoStatics(|this| unsafe { (::windows_core::Interface::vtable(this).SetExitElementContainer)(::windows_core::Interface::as_raw(this), element.into_param().abi(), value).ok() })
     }
@@ -3419,7 +3419,7 @@ impl DoubleAnimationUsingKeyFrames {
         static mut SHARED: ::windows_core::FactoryCache<DoubleAnimationUsingKeyFrames, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn KeyFrames(&self) -> ::windows_core::Result<DoubleKeyFrameCollection> {
         let this = self;
         unsafe {
@@ -3695,10 +3695,10 @@ impl<'a> ::windows_core::IntoParam<'a, super::super::DependencyObject> for &Doub
 }
 unsafe impl ::core::marker::Send for DoubleKeyFrame {}
 unsafe impl ::core::marker::Sync for DoubleKeyFrame {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 #[repr(transparent)]
 pub struct DoubleKeyFrameCollection(::windows_core::IUnknown);
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl DoubleKeyFrameCollection {
     pub fn new() -> ::windows_core::Result<Self> {
         Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
@@ -3707,7 +3707,7 @@ impl DoubleKeyFrameCollection {
         static mut SHARED: ::windows_core::FactoryCache<DoubleKeyFrameCollection, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<DoubleKeyFrame>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<DoubleKeyFrame>>(self)?;
         unsafe {
@@ -3715,7 +3715,7 @@ impl DoubleKeyFrameCollection {
             (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<DoubleKeyFrame>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetAt(&self, index: u32) -> ::windows_core::Result<DoubleKeyFrame> {
         let this = self;
         unsafe {
@@ -3723,7 +3723,7 @@ impl DoubleKeyFrameCollection {
             (::windows_core::Interface::vtable(this).GetAt)(::windows_core::Interface::as_raw(this), index, result__.as_mut_ptr()).from_abi::<DoubleKeyFrame>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -3731,7 +3731,7 @@ impl DoubleKeyFrameCollection {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<DoubleKeyFrame>> {
         let this = self;
         unsafe {
@@ -3739,7 +3739,7 @@ impl DoubleKeyFrameCollection {
             (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<DoubleKeyFrame>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn IndexOf<'a, Param0: ::windows_core::IntoParam<'a, DoubleKeyFrame>>(&self, value: Param0, index: &mut u32) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
@@ -3747,37 +3747,37 @@ impl DoubleKeyFrameCollection {
             (::windows_core::Interface::vtable(this).IndexOf)(::windows_core::Interface::as_raw(this), value.into_param().abi(), index, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAt<'a, Param1: ::windows_core::IntoParam<'a, DoubleKeyFrame>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertAt<'a, Param1: ::windows_core::IntoParam<'a, DoubleKeyFrame>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAt(&self, index: u32) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAt)(::windows_core::Interface::as_raw(this), index).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Append<'a, Param0: ::windows_core::IntoParam<'a, DoubleKeyFrame>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Append)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAtEnd(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAtEnd)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Clear(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Clear)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetMany(&self, startindex: u32, items: &mut [::core::option::Option<DoubleKeyFrame>]) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -3785,33 +3785,33 @@ impl DoubleKeyFrameCollection {
             (::windows_core::Interface::vtable(this).GetMany)(::windows_core::Interface::as_raw(this), startindex, items.len() as u32, ::core::mem::transmute_copy(&items), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ReplaceAll(&self, items: &[::core::option::Option<DoubleKeyFrame>]) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ReplaceAll)(::windows_core::Interface::as_raw(this), items.len() as u32, ::core::mem::transmute(items.as_ptr())).ok() }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::clone::Clone for DoubleKeyFrameCollection {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::PartialEq for DoubleKeyFrameCollection {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::Eq for DoubleKeyFrameCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::fmt::Debug for DoubleKeyFrameCollection {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("DoubleKeyFrameCollection").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::RuntimeType for DoubleKeyFrameCollection {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Xaml.Media.Animation.DoubleKeyFrameCollection;pinterface({913337e9-11a1-4345-a3a2-4e7f956e222d};rc(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame;{674456fd-e81e-4f4e-b4ad-0acfed9ecd68})))");
     type DefaultType = ::core::option::Option<Self>;
@@ -3819,16 +3819,16 @@ unsafe impl ::windows_core::RuntimeType for DoubleKeyFrameCollection {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::Interface for DoubleKeyFrameCollection {
     type Vtable = ::winrt_foundation::Collections::IVector_Vtbl<DoubleKeyFrame>;
     const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IVector<DoubleKeyFrame> as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::windows_core::RuntimeName for DoubleKeyFrameCollection {
     const NAME: &'static str = "Windows.UI.Xaml.Media.Animation.DoubleKeyFrameCollection";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for DoubleKeyFrameCollection {
     type Item = DoubleKeyFrame;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -3836,7 +3836,7 @@ impl ::core::iter::IntoIterator for DoubleKeyFrameCollection {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &DoubleKeyFrameCollection {
     type Item = DoubleKeyFrame;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -3844,109 +3844,109 @@ impl ::core::iter::IntoIterator for &DoubleKeyFrameCollection {
         ::winrt_foundation::Collections::VectorIterator::new(::core::convert::TryInto::try_into(self).ok())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<DoubleKeyFrameCollection> for ::windows_core::IUnknown {
     fn from(value: DoubleKeyFrameCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&DoubleKeyFrameCollection> for ::windows_core::IUnknown {
     fn from(value: &DoubleKeyFrameCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for DoubleKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a DoubleKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<DoubleKeyFrameCollection> for ::windows_core::IInspectable {
     fn from(value: DoubleKeyFrameCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&DoubleKeyFrameCollection> for ::windows_core::IInspectable {
     fn from(value: &DoubleKeyFrameCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for DoubleKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a DoubleKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<DoubleKeyFrameCollection> for ::winrt_foundation::Collections::IIterable<DoubleKeyFrame> {
     type Error = ::windows_core::Error;
     fn try_from(value: DoubleKeyFrameCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&DoubleKeyFrameCollection> for ::winrt_foundation::Collections::IIterable<DoubleKeyFrame> {
     type Error = ::windows_core::Error;
     fn try_from(value: &DoubleKeyFrameCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<DoubleKeyFrame>> for DoubleKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<DoubleKeyFrame>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<DoubleKeyFrame>> for &DoubleKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<DoubleKeyFrame>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<DoubleKeyFrame>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<DoubleKeyFrameCollection> for ::winrt_foundation::Collections::IVector<DoubleKeyFrame> {
     type Error = ::windows_core::Error;
     fn try_from(value: DoubleKeyFrameCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&DoubleKeyFrameCollection> for ::winrt_foundation::Collections::IVector<DoubleKeyFrame> {
     type Error = ::windows_core::Error;
     fn try_from(value: &DoubleKeyFrameCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<DoubleKeyFrame>> for DoubleKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<DoubleKeyFrame>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<DoubleKeyFrame>> for &DoubleKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<DoubleKeyFrame>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IVector<DoubleKeyFrame>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Send for DoubleKeyFrameCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Sync for DoubleKeyFrameCollection {}
 #[repr(transparent)]
 pub struct DragItemThemeAnimation(::windows_core::IUnknown);
@@ -4124,7 +4124,7 @@ impl DragOverThemeAnimation {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetToOffset)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Direction(&self) -> ::windows_core::Result<super::super::Controls::Primitives::AnimationDirection> {
         let this = self;
         unsafe {
@@ -4132,7 +4132,7 @@ impl DragOverThemeAnimation {
             (::windows_core::Interface::vtable(this).Direction)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Controls::Primitives::AnimationDirection>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetDirection(&self, value: super::super::Controls::Primitives::AnimationDirection) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDirection)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -5529,7 +5529,7 @@ impl EdgeUIThemeTransition {
         static mut SHARED: ::windows_core::FactoryCache<EdgeUIThemeTransition, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Edge(&self) -> ::windows_core::Result<super::super::Controls::Primitives::EdgeTransitionLocation> {
         let this = self;
         unsafe {
@@ -5537,7 +5537,7 @@ impl EdgeUIThemeTransition {
             (::windows_core::Interface::vtable(this).Edge)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Controls::Primitives::EdgeTransitionLocation>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetEdge(&self, value: super::super::Controls::Primitives::EdgeTransitionLocation) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetEdge)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -6918,9 +6918,9 @@ unsafe impl ::windows_core::Interface for IColorAnimationUsingKeyFrames {
 #[doc(hidden)]
 pub struct IColorAnimationUsingKeyFrames_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub KeyFrames: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     KeyFrames: usize,
     pub EnableDependentAnimation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetEnableDependentAnimation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -7040,13 +7040,13 @@ pub struct IConnectedAnimation2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsScaleAnimationEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetIsScaleAnimationEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub TryStartWithCoordinatedElements: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, destination: ::windows_core::RawPtr, coordinatedelements: ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TryStartWithCoordinatedElements: usize,
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub SetAnimationComponent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, component: ConnectedAnimationComponent, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Composition"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetAnimationComponent: usize,
 }
 #[doc(hidden)]
@@ -7100,13 +7100,13 @@ pub struct IConnectedAnimationService_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub DefaultDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub SetDefaultDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub DefaultEasingFunction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Composition"))]
+    #[cfg(not(feature = "winrt-ui"))]
     DefaultEasingFunction: usize,
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub SetDefaultEasingFunction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Composition"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetDefaultEasingFunction: usize,
     pub PrepareToAnimate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, source: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetAnimation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -7187,13 +7187,13 @@ pub struct IContinuumNavigationTransitionInfoStatics_Vtbl {
     pub GetIsExitElement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetIsExitElement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, value: bool) -> ::windows_core::HRESULT,
     pub ExitElementContainerProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub GetExitElementContainer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     GetExitElementContainer: usize,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub SetExitElementContainer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetExitElementContainer: usize,
 }
 #[doc(hidden)]
@@ -7331,9 +7331,9 @@ unsafe impl ::windows_core::Interface for IDoubleAnimationUsingKeyFrames {
 #[doc(hidden)]
 pub struct IDoubleAnimationUsingKeyFrames_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub KeyFrames: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     KeyFrames: usize,
     pub EnableDependentAnimation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetEnableDependentAnimation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -7436,13 +7436,13 @@ pub struct IDragOverThemeAnimation_Vtbl {
     pub SetTargetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub ToOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetToOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub Direction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Controls::Primitives::AnimationDirection) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Direction: usize,
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub SetDirection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Controls::Primitives::AnimationDirection) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetDirection: usize,
 }
 #[doc(hidden)]
@@ -7703,13 +7703,13 @@ unsafe impl ::windows_core::Interface for IEdgeUIThemeTransition {
 #[doc(hidden)]
 pub struct IEdgeUIThemeTransition_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub Edge: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Controls::Primitives::EdgeTransitionLocation) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Edge: usize,
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub SetEdge: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Controls::Primitives::EdgeTransitionLocation) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetEdge: usize,
 }
 #[doc(hidden)]
@@ -8089,9 +8089,9 @@ unsafe impl ::windows_core::Interface for IObjectAnimationUsingKeyFrames {
 #[doc(hidden)]
 pub struct IObjectAnimationUsingKeyFrames_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub KeyFrames: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     KeyFrames: usize,
     pub EnableDependentAnimation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetEnableDependentAnimation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -8163,13 +8163,13 @@ unsafe impl ::windows_core::Interface for IPaneThemeTransition {
 #[doc(hidden)]
 pub struct IPaneThemeTransition_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub Edge: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Controls::Primitives::EdgeTransitionLocation) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Edge: usize,
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub SetEdge: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Controls::Primitives::EdgeTransitionLocation) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetEdge: usize,
 }
 #[doc(hidden)]
@@ -8235,9 +8235,9 @@ unsafe impl ::windows_core::Interface for IPointAnimationUsingKeyFrames {
 #[doc(hidden)]
 pub struct IPointAnimationUsingKeyFrames_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub KeyFrames: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     KeyFrames: usize,
     pub EnableDependentAnimation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetEnableDependentAnimation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -8780,13 +8780,13 @@ pub struct ISplitCloseThemeAnimation_Vtbl {
     pub SetClosedLength: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
     pub OffsetFromCenter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetOffsetFromCenter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub ContentTranslationDirection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Controls::Primitives::AnimationDirection) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    #[cfg(not(feature = "winrt-ui"))]
     ContentTranslationDirection: usize,
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub SetContentTranslationDirection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Controls::Primitives::AnimationDirection) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetContentTranslationDirection: usize,
     pub ContentTranslationOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetContentTranslationOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
@@ -8843,13 +8843,13 @@ pub struct ISplitOpenThemeAnimation_Vtbl {
     pub SetClosedLength: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
     pub OffsetFromCenter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetOffsetFromCenter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub ContentTranslationDirection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Controls::Primitives::AnimationDirection) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    #[cfg(not(feature = "winrt-ui"))]
     ContentTranslationDirection: usize,
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub SetContentTranslationDirection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Controls::Primitives::AnimationDirection) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetContentTranslationDirection: usize,
     pub ContentTranslationOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetContentTranslationOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
@@ -8888,9 +8888,9 @@ unsafe impl ::windows_core::Interface for IStoryboard {
 #[doc(hidden)]
 pub struct IStoryboard_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Children: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Children: usize,
     pub Seek: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -9947,7 +9947,7 @@ impl ObjectAnimationUsingKeyFrames {
         static mut SHARED: ::windows_core::FactoryCache<ObjectAnimationUsingKeyFrames, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn KeyFrames(&self) -> ::windows_core::Result<ObjectKeyFrameCollection> {
         let this = self;
         unsafe {
@@ -10223,10 +10223,10 @@ impl<'a> ::windows_core::IntoParam<'a, super::super::DependencyObject> for &Obje
 }
 unsafe impl ::core::marker::Send for ObjectKeyFrame {}
 unsafe impl ::core::marker::Sync for ObjectKeyFrame {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 #[repr(transparent)]
 pub struct ObjectKeyFrameCollection(::windows_core::IUnknown);
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ObjectKeyFrameCollection {
     pub fn new() -> ::windows_core::Result<Self> {
         Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
@@ -10235,7 +10235,7 @@ impl ObjectKeyFrameCollection {
         static mut SHARED: ::windows_core::FactoryCache<ObjectKeyFrameCollection, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<ObjectKeyFrame>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<ObjectKeyFrame>>(self)?;
         unsafe {
@@ -10243,7 +10243,7 @@ impl ObjectKeyFrameCollection {
             (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<ObjectKeyFrame>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetAt(&self, index: u32) -> ::windows_core::Result<ObjectKeyFrame> {
         let this = self;
         unsafe {
@@ -10251,7 +10251,7 @@ impl ObjectKeyFrameCollection {
             (::windows_core::Interface::vtable(this).GetAt)(::windows_core::Interface::as_raw(this), index, result__.as_mut_ptr()).from_abi::<ObjectKeyFrame>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -10259,7 +10259,7 @@ impl ObjectKeyFrameCollection {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ObjectKeyFrame>> {
         let this = self;
         unsafe {
@@ -10267,7 +10267,7 @@ impl ObjectKeyFrameCollection {
             (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<ObjectKeyFrame>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn IndexOf<'a, Param0: ::windows_core::IntoParam<'a, ObjectKeyFrame>>(&self, value: Param0, index: &mut u32) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
@@ -10275,37 +10275,37 @@ impl ObjectKeyFrameCollection {
             (::windows_core::Interface::vtable(this).IndexOf)(::windows_core::Interface::as_raw(this), value.into_param().abi(), index, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAt<'a, Param1: ::windows_core::IntoParam<'a, ObjectKeyFrame>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertAt<'a, Param1: ::windows_core::IntoParam<'a, ObjectKeyFrame>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAt(&self, index: u32) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAt)(::windows_core::Interface::as_raw(this), index).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Append<'a, Param0: ::windows_core::IntoParam<'a, ObjectKeyFrame>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Append)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAtEnd(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAtEnd)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Clear(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Clear)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetMany(&self, startindex: u32, items: &mut [::core::option::Option<ObjectKeyFrame>]) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -10313,33 +10313,33 @@ impl ObjectKeyFrameCollection {
             (::windows_core::Interface::vtable(this).GetMany)(::windows_core::Interface::as_raw(this), startindex, items.len() as u32, ::core::mem::transmute_copy(&items), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ReplaceAll(&self, items: &[::core::option::Option<ObjectKeyFrame>]) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ReplaceAll)(::windows_core::Interface::as_raw(this), items.len() as u32, ::core::mem::transmute(items.as_ptr())).ok() }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::clone::Clone for ObjectKeyFrameCollection {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::PartialEq for ObjectKeyFrameCollection {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::Eq for ObjectKeyFrameCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::fmt::Debug for ObjectKeyFrameCollection {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("ObjectKeyFrameCollection").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::RuntimeType for ObjectKeyFrameCollection {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Xaml.Media.Animation.ObjectKeyFrameCollection;pinterface({913337e9-11a1-4345-a3a2-4e7f956e222d};rc(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame;{9852a851-8593-48ee-a6a4-d5d4720f029a})))");
     type DefaultType = ::core::option::Option<Self>;
@@ -10347,16 +10347,16 @@ unsafe impl ::windows_core::RuntimeType for ObjectKeyFrameCollection {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::Interface for ObjectKeyFrameCollection {
     type Vtable = ::winrt_foundation::Collections::IVector_Vtbl<ObjectKeyFrame>;
     const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IVector<ObjectKeyFrame> as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::windows_core::RuntimeName for ObjectKeyFrameCollection {
     const NAME: &'static str = "Windows.UI.Xaml.Media.Animation.ObjectKeyFrameCollection";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for ObjectKeyFrameCollection {
     type Item = ObjectKeyFrame;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -10364,7 +10364,7 @@ impl ::core::iter::IntoIterator for ObjectKeyFrameCollection {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &ObjectKeyFrameCollection {
     type Item = ObjectKeyFrame;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -10372,109 +10372,109 @@ impl ::core::iter::IntoIterator for &ObjectKeyFrameCollection {
         ::winrt_foundation::Collections::VectorIterator::new(::core::convert::TryInto::try_into(self).ok())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<ObjectKeyFrameCollection> for ::windows_core::IUnknown {
     fn from(value: ObjectKeyFrameCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&ObjectKeyFrameCollection> for ::windows_core::IUnknown {
     fn from(value: &ObjectKeyFrameCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for ObjectKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ObjectKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<ObjectKeyFrameCollection> for ::windows_core::IInspectable {
     fn from(value: ObjectKeyFrameCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&ObjectKeyFrameCollection> for ::windows_core::IInspectable {
     fn from(value: &ObjectKeyFrameCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for ObjectKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a ObjectKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<ObjectKeyFrameCollection> for ::winrt_foundation::Collections::IIterable<ObjectKeyFrame> {
     type Error = ::windows_core::Error;
     fn try_from(value: ObjectKeyFrameCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&ObjectKeyFrameCollection> for ::winrt_foundation::Collections::IIterable<ObjectKeyFrame> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ObjectKeyFrameCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<ObjectKeyFrame>> for ObjectKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<ObjectKeyFrame>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<ObjectKeyFrame>> for &ObjectKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<ObjectKeyFrame>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<ObjectKeyFrame>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<ObjectKeyFrameCollection> for ::winrt_foundation::Collections::IVector<ObjectKeyFrame> {
     type Error = ::windows_core::Error;
     fn try_from(value: ObjectKeyFrameCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&ObjectKeyFrameCollection> for ::winrt_foundation::Collections::IVector<ObjectKeyFrame> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ObjectKeyFrameCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<ObjectKeyFrame>> for ObjectKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<ObjectKeyFrame>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<ObjectKeyFrame>> for &ObjectKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<ObjectKeyFrame>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IVector<ObjectKeyFrame>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Send for ObjectKeyFrameCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Sync for ObjectKeyFrameCollection {}
 #[repr(transparent)]
 pub struct PaneThemeTransition(::windows_core::IUnknown);
@@ -10486,7 +10486,7 @@ impl PaneThemeTransition {
         static mut SHARED: ::windows_core::FactoryCache<PaneThemeTransition, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Edge(&self) -> ::windows_core::Result<super::super::Controls::Primitives::EdgeTransitionLocation> {
         let this = self;
         unsafe {
@@ -10494,7 +10494,7 @@ impl PaneThemeTransition {
             (::windows_core::Interface::vtable(this).Edge)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Controls::Primitives::EdgeTransitionLocation>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetEdge(&self, value: super::super::Controls::Primitives::EdgeTransitionLocation) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetEdge)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -10844,7 +10844,7 @@ impl PointAnimationUsingKeyFrames {
         static mut SHARED: ::windows_core::FactoryCache<PointAnimationUsingKeyFrames, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn KeyFrames(&self) -> ::windows_core::Result<PointKeyFrameCollection> {
         let this = self;
         unsafe {
@@ -11120,10 +11120,10 @@ impl<'a> ::windows_core::IntoParam<'a, super::super::DependencyObject> for &Poin
 }
 unsafe impl ::core::marker::Send for PointKeyFrame {}
 unsafe impl ::core::marker::Sync for PointKeyFrame {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 #[repr(transparent)]
 pub struct PointKeyFrameCollection(::windows_core::IUnknown);
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl PointKeyFrameCollection {
     pub fn new() -> ::windows_core::Result<Self> {
         Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
@@ -11132,7 +11132,7 @@ impl PointKeyFrameCollection {
         static mut SHARED: ::windows_core::FactoryCache<PointKeyFrameCollection, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<PointKeyFrame>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<PointKeyFrame>>(self)?;
         unsafe {
@@ -11140,7 +11140,7 @@ impl PointKeyFrameCollection {
             (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<PointKeyFrame>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetAt(&self, index: u32) -> ::windows_core::Result<PointKeyFrame> {
         let this = self;
         unsafe {
@@ -11148,7 +11148,7 @@ impl PointKeyFrameCollection {
             (::windows_core::Interface::vtable(this).GetAt)(::windows_core::Interface::as_raw(this), index, result__.as_mut_ptr()).from_abi::<PointKeyFrame>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -11156,7 +11156,7 @@ impl PointKeyFrameCollection {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<PointKeyFrame>> {
         let this = self;
         unsafe {
@@ -11164,7 +11164,7 @@ impl PointKeyFrameCollection {
             (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<PointKeyFrame>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn IndexOf<'a, Param0: ::windows_core::IntoParam<'a, PointKeyFrame>>(&self, value: Param0, index: &mut u32) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
@@ -11172,37 +11172,37 @@ impl PointKeyFrameCollection {
             (::windows_core::Interface::vtable(this).IndexOf)(::windows_core::Interface::as_raw(this), value.into_param().abi(), index, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAt<'a, Param1: ::windows_core::IntoParam<'a, PointKeyFrame>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertAt<'a, Param1: ::windows_core::IntoParam<'a, PointKeyFrame>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAt(&self, index: u32) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAt)(::windows_core::Interface::as_raw(this), index).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Append<'a, Param0: ::windows_core::IntoParam<'a, PointKeyFrame>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Append)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAtEnd(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAtEnd)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Clear(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Clear)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetMany(&self, startindex: u32, items: &mut [::core::option::Option<PointKeyFrame>]) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -11210,33 +11210,33 @@ impl PointKeyFrameCollection {
             (::windows_core::Interface::vtable(this).GetMany)(::windows_core::Interface::as_raw(this), startindex, items.len() as u32, ::core::mem::transmute_copy(&items), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ReplaceAll(&self, items: &[::core::option::Option<PointKeyFrame>]) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ReplaceAll)(::windows_core::Interface::as_raw(this), items.len() as u32, ::core::mem::transmute(items.as_ptr())).ok() }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::clone::Clone for PointKeyFrameCollection {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::PartialEq for PointKeyFrameCollection {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::Eq for PointKeyFrameCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::fmt::Debug for PointKeyFrameCollection {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("PointKeyFrameCollection").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::RuntimeType for PointKeyFrameCollection {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Xaml.Media.Animation.PointKeyFrameCollection;pinterface({913337e9-11a1-4345-a3a2-4e7f956e222d};rc(Windows.UI.Xaml.Media.Animation.PointKeyFrame;{fcc88d01-7f82-4dae-8026-7b7e086878b3})))");
     type DefaultType = ::core::option::Option<Self>;
@@ -11244,16 +11244,16 @@ unsafe impl ::windows_core::RuntimeType for PointKeyFrameCollection {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::Interface for PointKeyFrameCollection {
     type Vtable = ::winrt_foundation::Collections::IVector_Vtbl<PointKeyFrame>;
     const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IVector<PointKeyFrame> as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::windows_core::RuntimeName for PointKeyFrameCollection {
     const NAME: &'static str = "Windows.UI.Xaml.Media.Animation.PointKeyFrameCollection";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for PointKeyFrameCollection {
     type Item = PointKeyFrame;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -11261,7 +11261,7 @@ impl ::core::iter::IntoIterator for PointKeyFrameCollection {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &PointKeyFrameCollection {
     type Item = PointKeyFrame;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -11269,109 +11269,109 @@ impl ::core::iter::IntoIterator for &PointKeyFrameCollection {
         ::winrt_foundation::Collections::VectorIterator::new(::core::convert::TryInto::try_into(self).ok())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<PointKeyFrameCollection> for ::windows_core::IUnknown {
     fn from(value: PointKeyFrameCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&PointKeyFrameCollection> for ::windows_core::IUnknown {
     fn from(value: &PointKeyFrameCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for PointKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a PointKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<PointKeyFrameCollection> for ::windows_core::IInspectable {
     fn from(value: PointKeyFrameCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&PointKeyFrameCollection> for ::windows_core::IInspectable {
     fn from(value: &PointKeyFrameCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for PointKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a PointKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<PointKeyFrameCollection> for ::winrt_foundation::Collections::IIterable<PointKeyFrame> {
     type Error = ::windows_core::Error;
     fn try_from(value: PointKeyFrameCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&PointKeyFrameCollection> for ::winrt_foundation::Collections::IIterable<PointKeyFrame> {
     type Error = ::windows_core::Error;
     fn try_from(value: &PointKeyFrameCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<PointKeyFrame>> for PointKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<PointKeyFrame>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<PointKeyFrame>> for &PointKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<PointKeyFrame>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<PointKeyFrame>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<PointKeyFrameCollection> for ::winrt_foundation::Collections::IVector<PointKeyFrame> {
     type Error = ::windows_core::Error;
     fn try_from(value: PointKeyFrameCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&PointKeyFrameCollection> for ::winrt_foundation::Collections::IVector<PointKeyFrame> {
     type Error = ::windows_core::Error;
     fn try_from(value: &PointKeyFrameCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<PointKeyFrame>> for PointKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<PointKeyFrame>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<PointKeyFrame>> for &PointKeyFrameCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<PointKeyFrame>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IVector<PointKeyFrame>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Send for PointKeyFrameCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Sync for PointKeyFrameCollection {}
 #[repr(transparent)]
 pub struct PointerDownThemeAnimation(::windows_core::IUnknown);
@@ -14132,7 +14132,7 @@ impl SplitCloseThemeAnimation {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetOffsetFromCenter)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ContentTranslationDirection(&self) -> ::windows_core::Result<super::super::Controls::Primitives::AnimationDirection> {
         let this = self;
         unsafe {
@@ -14140,7 +14140,7 @@ impl SplitCloseThemeAnimation {
             (::windows_core::Interface::vtable(this).ContentTranslationDirection)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Controls::Primitives::AnimationDirection>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetContentTranslationDirection(&self, value: super::super::Controls::Primitives::AnimationDirection) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetContentTranslationDirection)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -14448,7 +14448,7 @@ impl SplitOpenThemeAnimation {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetOffsetFromCenter)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ContentTranslationDirection(&self) -> ::windows_core::Result<super::super::Controls::Primitives::AnimationDirection> {
         let this = self;
         unsafe {
@@ -14456,7 +14456,7 @@ impl SplitOpenThemeAnimation {
             (::windows_core::Interface::vtable(this).ContentTranslationDirection)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Controls::Primitives::AnimationDirection>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetContentTranslationDirection(&self, value: super::super::Controls::Primitives::AnimationDirection) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetContentTranslationDirection)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -14665,7 +14665,7 @@ impl Storyboard {
         static mut SHARED: ::windows_core::FactoryCache<Storyboard, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Children(&self) -> ::windows_core::Result<TimelineCollection> {
         let this = self;
         unsafe {
@@ -15566,10 +15566,10 @@ impl<'a> ::windows_core::IntoParam<'a, super::super::DependencyObject> for &Time
 }
 unsafe impl ::core::marker::Send for Timeline {}
 unsafe impl ::core::marker::Sync for Timeline {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 #[repr(transparent)]
 pub struct TimelineCollection(::windows_core::IUnknown);
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl TimelineCollection {
     pub fn new() -> ::windows_core::Result<Self> {
         Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
@@ -15578,7 +15578,7 @@ impl TimelineCollection {
         static mut SHARED: ::windows_core::FactoryCache<TimelineCollection, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<Timeline>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<Timeline>>(self)?;
         unsafe {
@@ -15586,7 +15586,7 @@ impl TimelineCollection {
             (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<Timeline>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetAt(&self, index: u32) -> ::windows_core::Result<Timeline> {
         let this = self;
         unsafe {
@@ -15594,7 +15594,7 @@ impl TimelineCollection {
             (::windows_core::Interface::vtable(this).GetAt)(::windows_core::Interface::as_raw(this), index, result__.as_mut_ptr()).from_abi::<Timeline>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -15602,7 +15602,7 @@ impl TimelineCollection {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<Timeline>> {
         let this = self;
         unsafe {
@@ -15610,7 +15610,7 @@ impl TimelineCollection {
             (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<Timeline>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn IndexOf<'a, Param0: ::windows_core::IntoParam<'a, Timeline>>(&self, value: Param0, index: &mut u32) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
@@ -15618,37 +15618,37 @@ impl TimelineCollection {
             (::windows_core::Interface::vtable(this).IndexOf)(::windows_core::Interface::as_raw(this), value.into_param().abi(), index, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAt<'a, Param1: ::windows_core::IntoParam<'a, Timeline>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertAt<'a, Param1: ::windows_core::IntoParam<'a, Timeline>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAt(&self, index: u32) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAt)(::windows_core::Interface::as_raw(this), index).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Append<'a, Param0: ::windows_core::IntoParam<'a, Timeline>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Append)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAtEnd(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAtEnd)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Clear(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Clear)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetMany(&self, startindex: u32, items: &mut [::core::option::Option<Timeline>]) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -15656,33 +15656,33 @@ impl TimelineCollection {
             (::windows_core::Interface::vtable(this).GetMany)(::windows_core::Interface::as_raw(this), startindex, items.len() as u32, ::core::mem::transmute_copy(&items), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ReplaceAll(&self, items: &[::core::option::Option<Timeline>]) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ReplaceAll)(::windows_core::Interface::as_raw(this), items.len() as u32, ::core::mem::transmute(items.as_ptr())).ok() }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::clone::Clone for TimelineCollection {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::PartialEq for TimelineCollection {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::Eq for TimelineCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::fmt::Debug for TimelineCollection {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("TimelineCollection").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::RuntimeType for TimelineCollection {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Xaml.Media.Animation.TimelineCollection;pinterface({913337e9-11a1-4345-a3a2-4e7f956e222d};rc(Windows.UI.Xaml.Media.Animation.Timeline;{0bc465dc-be4d-4d0d-9549-2208b715f40d})))");
     type DefaultType = ::core::option::Option<Self>;
@@ -15690,16 +15690,16 @@ unsafe impl ::windows_core::RuntimeType for TimelineCollection {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::Interface for TimelineCollection {
     type Vtable = ::winrt_foundation::Collections::IVector_Vtbl<Timeline>;
     const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IVector<Timeline> as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::windows_core::RuntimeName for TimelineCollection {
     const NAME: &'static str = "Windows.UI.Xaml.Media.Animation.TimelineCollection";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for TimelineCollection {
     type Item = Timeline;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -15707,7 +15707,7 @@ impl ::core::iter::IntoIterator for TimelineCollection {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &TimelineCollection {
     type Item = Timeline;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -15715,109 +15715,109 @@ impl ::core::iter::IntoIterator for &TimelineCollection {
         ::winrt_foundation::Collections::VectorIterator::new(::core::convert::TryInto::try_into(self).ok())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<TimelineCollection> for ::windows_core::IUnknown {
     fn from(value: TimelineCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&TimelineCollection> for ::windows_core::IUnknown {
     fn from(value: &TimelineCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for TimelineCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a TimelineCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<TimelineCollection> for ::windows_core::IInspectable {
     fn from(value: TimelineCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&TimelineCollection> for ::windows_core::IInspectable {
     fn from(value: &TimelineCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for TimelineCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a TimelineCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<TimelineCollection> for ::winrt_foundation::Collections::IIterable<Timeline> {
     type Error = ::windows_core::Error;
     fn try_from(value: TimelineCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&TimelineCollection> for ::winrt_foundation::Collections::IIterable<Timeline> {
     type Error = ::windows_core::Error;
     fn try_from(value: &TimelineCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<Timeline>> for TimelineCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<Timeline>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<Timeline>> for &TimelineCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<Timeline>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<Timeline>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<TimelineCollection> for ::winrt_foundation::Collections::IVector<Timeline> {
     type Error = ::windows_core::Error;
     fn try_from(value: TimelineCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&TimelineCollection> for ::winrt_foundation::Collections::IVector<Timeline> {
     type Error = ::windows_core::Error;
     fn try_from(value: &TimelineCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<Timeline>> for TimelineCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<Timeline>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<Timeline>> for &TimelineCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<Timeline>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IVector<Timeline>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Send for TimelineCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Sync for TimelineCollection {}
 #[repr(transparent)]
 pub struct Transition(::windows_core::IUnknown);
@@ -15914,10 +15914,10 @@ impl<'a> ::windows_core::IntoParam<'a, super::super::DependencyObject> for &Tran
 }
 unsafe impl ::core::marker::Send for Transition {}
 unsafe impl ::core::marker::Sync for Transition {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 #[repr(transparent)]
 pub struct TransitionCollection(::windows_core::IUnknown);
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl TransitionCollection {
     pub fn new() -> ::windows_core::Result<Self> {
         Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
@@ -15926,7 +15926,7 @@ impl TransitionCollection {
         static mut SHARED: ::windows_core::FactoryCache<TransitionCollection, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<Transition>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<Transition>>(self)?;
         unsafe {
@@ -15934,7 +15934,7 @@ impl TransitionCollection {
             (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<Transition>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetAt(&self, index: u32) -> ::windows_core::Result<Transition> {
         let this = self;
         unsafe {
@@ -15942,7 +15942,7 @@ impl TransitionCollection {
             (::windows_core::Interface::vtable(this).GetAt)(::windows_core::Interface::as_raw(this), index, result__.as_mut_ptr()).from_abi::<Transition>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -15950,7 +15950,7 @@ impl TransitionCollection {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<Transition>> {
         let this = self;
         unsafe {
@@ -15958,7 +15958,7 @@ impl TransitionCollection {
             (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<Transition>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn IndexOf<'a, Param0: ::windows_core::IntoParam<'a, Transition>>(&self, value: Param0, index: &mut u32) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
@@ -15966,37 +15966,37 @@ impl TransitionCollection {
             (::windows_core::Interface::vtable(this).IndexOf)(::windows_core::Interface::as_raw(this), value.into_param().abi(), index, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAt<'a, Param1: ::windows_core::IntoParam<'a, Transition>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertAt<'a, Param1: ::windows_core::IntoParam<'a, Transition>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAt(&self, index: u32) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAt)(::windows_core::Interface::as_raw(this), index).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Append<'a, Param0: ::windows_core::IntoParam<'a, Transition>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Append)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAtEnd(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAtEnd)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Clear(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Clear)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetMany(&self, startindex: u32, items: &mut [::core::option::Option<Transition>]) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -16004,33 +16004,33 @@ impl TransitionCollection {
             (::windows_core::Interface::vtable(this).GetMany)(::windows_core::Interface::as_raw(this), startindex, items.len() as u32, ::core::mem::transmute_copy(&items), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ReplaceAll(&self, items: &[::core::option::Option<Transition>]) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ReplaceAll)(::windows_core::Interface::as_raw(this), items.len() as u32, ::core::mem::transmute(items.as_ptr())).ok() }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::clone::Clone for TransitionCollection {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::PartialEq for TransitionCollection {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::Eq for TransitionCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::fmt::Debug for TransitionCollection {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("TransitionCollection").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::RuntimeType for TransitionCollection {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Xaml.Media.Animation.TransitionCollection;pinterface({913337e9-11a1-4345-a3a2-4e7f956e222d};rc(Windows.UI.Xaml.Media.Animation.Transition;{3c677c7c-01d0-4dce-b333-976f93312b08})))");
     type DefaultType = ::core::option::Option<Self>;
@@ -16038,16 +16038,16 @@ unsafe impl ::windows_core::RuntimeType for TransitionCollection {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::Interface for TransitionCollection {
     type Vtable = ::winrt_foundation::Collections::IVector_Vtbl<Transition>;
     const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IVector<Transition> as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::windows_core::RuntimeName for TransitionCollection {
     const NAME: &'static str = "Windows.UI.Xaml.Media.Animation.TransitionCollection";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for TransitionCollection {
     type Item = Transition;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -16055,7 +16055,7 @@ impl ::core::iter::IntoIterator for TransitionCollection {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &TransitionCollection {
     type Item = Transition;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -16063,107 +16063,107 @@ impl ::core::iter::IntoIterator for &TransitionCollection {
         ::winrt_foundation::Collections::VectorIterator::new(::core::convert::TryInto::try_into(self).ok())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<TransitionCollection> for ::windows_core::IUnknown {
     fn from(value: TransitionCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&TransitionCollection> for ::windows_core::IUnknown {
     fn from(value: &TransitionCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for TransitionCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a TransitionCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<TransitionCollection> for ::windows_core::IInspectable {
     fn from(value: TransitionCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&TransitionCollection> for ::windows_core::IInspectable {
     fn from(value: &TransitionCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for TransitionCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a TransitionCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<TransitionCollection> for ::winrt_foundation::Collections::IIterable<Transition> {
     type Error = ::windows_core::Error;
     fn try_from(value: TransitionCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&TransitionCollection> for ::winrt_foundation::Collections::IIterable<Transition> {
     type Error = ::windows_core::Error;
     fn try_from(value: &TransitionCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<Transition>> for TransitionCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<Transition>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<Transition>> for &TransitionCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<Transition>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<Transition>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<TransitionCollection> for ::winrt_foundation::Collections::IVector<Transition> {
     type Error = ::windows_core::Error;
     fn try_from(value: TransitionCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&TransitionCollection> for ::winrt_foundation::Collections::IVector<Transition> {
     type Error = ::windows_core::Error;
     fn try_from(value: &TransitionCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<Transition>> for TransitionCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<Transition>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<Transition>> for &TransitionCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<Transition>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IVector<Transition>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Send for TransitionCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Sync for TransitionCollection {}

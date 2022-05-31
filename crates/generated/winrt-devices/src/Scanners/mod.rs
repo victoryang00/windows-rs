@@ -16,13 +16,13 @@ pub struct IImageScanner_Vtbl {
     pub FeederConfiguration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub AutoConfiguration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub IsPreviewSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scansource: ImageScannerScanSource, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub ScanPreviewToStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scansource: ImageScannerScanSource, targetstream: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     ScanPreviewToStreamAsync: usize,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub ScanFilesToFolderAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scansource: ImageScannerScanSource, storagefolder: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     ScanFilesToFolderAsync: usize,
 }
 #[doc(hidden)]
@@ -39,26 +39,26 @@ pub struct IImageScannerFeederConfiguration_Vtbl {
     pub CanAutoDetectPageSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub AutoDetectPageSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetAutoDetectPageSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Graphics_Printing")]
+    #[cfg(feature = "winrt-graphics")]
     pub PageSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::Printing::PrintMediaSize) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Printing"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     PageSize: usize,
-    #[cfg(feature = "Graphics_Printing")]
+    #[cfg(feature = "winrt-graphics")]
     pub SetPageSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_graphics::Printing::PrintMediaSize) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Printing"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     SetPageSize: usize,
-    #[cfg(feature = "Graphics_Printing")]
+    #[cfg(feature = "winrt-graphics")]
     pub PageOrientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::Printing::PrintOrientation) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Printing"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     PageOrientation: usize,
-    #[cfg(feature = "Graphics_Printing")]
+    #[cfg(feature = "winrt-graphics")]
     pub SetPageOrientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_graphics::Printing::PrintOrientation) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Printing"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     SetPageOrientation: usize,
     pub PageSizeDimensions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Size) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Graphics_Printing")]
+    #[cfg(feature = "winrt-graphics")]
     pub IsPageSizeSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pagesize: ::winrt_graphics::Printing::PrintMediaSize, pageorientation: ::winrt_graphics::Printing::PrintOrientation, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Printing"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     IsPageSizeSupported: usize,
     pub MaxNumberOfPages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub SetMaxNumberOfPages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
@@ -199,9 +199,9 @@ unsafe impl ::windows_core::Interface for IImageScannerScanResult {
 #[doc(hidden)]
 pub struct IImageScannerScanResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub ScannedFiles: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-storage")))]
     ScannedFiles: usize,
 }
 #[repr(transparent)]
@@ -607,7 +607,7 @@ impl ImageScanner {
             (::windows_core::Interface::vtable(this).IsPreviewSupported)(::windows_core::Interface::as_raw(this), scansource, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ScanPreviewToStreamAsync<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(&self, scansource: ImageScannerScanSource, targetstream: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ImageScannerPreviewResult>> {
         let this = self;
         unsafe {
@@ -615,7 +615,7 @@ impl ImageScanner {
             (::windows_core::Interface::vtable(this).ScanPreviewToStreamAsync)(::windows_core::Interface::as_raw(this), scansource, targetstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ImageScannerPreviewResult>>(result__)
         }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ScanFilesToFolderAsync<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::StorageFolder>>(&self, scansource: ImageScannerScanSource, storagefolder: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<ImageScannerScanResult, u32>> {
         let this = self;
         unsafe {
@@ -925,7 +925,7 @@ impl ImageScannerFeederConfiguration {
         let this = &::windows_core::Interface::cast::<IImageScannerFeederConfiguration>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetAutoDetectPageSize)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Graphics_Printing")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn PageSize(&self) -> ::windows_core::Result<::winrt_graphics::Printing::PrintMediaSize> {
         let this = &::windows_core::Interface::cast::<IImageScannerFeederConfiguration>(self)?;
         unsafe {
@@ -933,12 +933,12 @@ impl ImageScannerFeederConfiguration {
             (::windows_core::Interface::vtable(this).PageSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::Printing::PrintMediaSize>(result__)
         }
     }
-    #[cfg(feature = "Graphics_Printing")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn SetPageSize(&self, value: ::winrt_graphics::Printing::PrintMediaSize) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IImageScannerFeederConfiguration>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetPageSize)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Graphics_Printing")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn PageOrientation(&self) -> ::windows_core::Result<::winrt_graphics::Printing::PrintOrientation> {
         let this = &::windows_core::Interface::cast::<IImageScannerFeederConfiguration>(self)?;
         unsafe {
@@ -946,7 +946,7 @@ impl ImageScannerFeederConfiguration {
             (::windows_core::Interface::vtable(this).PageOrientation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::Printing::PrintOrientation>(result__)
         }
     }
-    #[cfg(feature = "Graphics_Printing")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn SetPageOrientation(&self, value: ::winrt_graphics::Printing::PrintOrientation) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IImageScannerFeederConfiguration>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetPageOrientation)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -958,7 +958,7 @@ impl ImageScannerFeederConfiguration {
             (::windows_core::Interface::vtable(this).PageSizeDimensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Size>(result__)
         }
     }
-    #[cfg(feature = "Graphics_Printing")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn IsPageSizeSupported(&self, pagesize: ::winrt_graphics::Printing::PrintMediaSize, pageorientation: ::winrt_graphics::Printing::PrintOrientation) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<IImageScannerFeederConfiguration>(self)?;
         unsafe {
@@ -1838,7 +1838,7 @@ impl ::core::default::Default for ImageScannerResolution {
 #[repr(transparent)]
 pub struct ImageScannerScanResult(::windows_core::IUnknown);
 impl ImageScannerScanResult {
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub fn ScannedFiles(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_storage::StorageFile>> {
         let this = self;
         unsafe {

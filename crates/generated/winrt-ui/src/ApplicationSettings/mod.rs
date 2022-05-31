@@ -33,14 +33,14 @@ impl AccountsSettingsPane {
             (::windows_core::Interface::vtable(this).ShowAddAccountAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn ShowManageAccountsForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>>(user: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IAccountsSettingsPaneStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).ShowManageAccountsForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn ShowAddAccountForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>>(user: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IAccountsSettingsPaneStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -133,7 +133,7 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Acc
 #[repr(transparent)]
 pub struct AccountsSettingsPaneCommandsRequestedEventArgs(::windows_core::IUnknown);
 impl AccountsSettingsPaneCommandsRequestedEventArgs {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn WebAccountProviderCommands(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<WebAccountProviderCommand>> {
         let this = self;
         unsafe {
@@ -141,7 +141,7 @@ impl AccountsSettingsPaneCommandsRequestedEventArgs {
             (::windows_core::Interface::vtable(this).WebAccountProviderCommands)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<WebAccountProviderCommand>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn WebAccountCommands(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<WebAccountCommand>> {
         let this = self;
         unsafe {
@@ -149,7 +149,7 @@ impl AccountsSettingsPaneCommandsRequestedEventArgs {
             (::windows_core::Interface::vtable(this).WebAccountCommands)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<WebAccountCommand>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CredentialCommands(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<CredentialCommand>> {
         let this = self;
         unsafe {
@@ -157,7 +157,7 @@ impl AccountsSettingsPaneCommandsRequestedEventArgs {
             (::windows_core::Interface::vtable(this).CredentialCommands)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<CredentialCommand>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Popups"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub fn Commands(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SettingsCommand>> {
         let this = self;
         unsafe {
@@ -183,7 +183,7 @@ impl AccountsSettingsPaneCommandsRequestedEventArgs {
             (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AccountsSettingsPaneEventDeferral>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IAccountsSettingsPaneCommandsRequestedEventArgs2>(self)?;
         unsafe {
@@ -343,7 +343,7 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Acc
 #[repr(transparent)]
 pub struct CredentialCommand(::windows_core::IUnknown);
 impl CredentialCommand {
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn PasswordCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = self;
         unsafe {
@@ -358,14 +358,14 @@ impl CredentialCommand {
             (::windows_core::Interface::vtable(this).CredentialDeleted)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<CredentialCommandCredentialDeletedHandler>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn CreateCredentialCommand<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(passwordcredential: Param0) -> ::windows_core::Result<CredentialCommand> {
         Self::ICredentialCommandFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateCredentialCommand)(::windows_core::Interface::as_raw(this), passwordcredential.into_param().abi(), result__.as_mut_ptr()).from_abi::<CredentialCommand>(result__)
         })
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn CreateCredentialCommandWithHandler<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>, Param1: ::windows_core::IntoParam<'a, CredentialCommandCredentialDeletedHandler>>(passwordcredential: Param0, deleted: Param1) -> ::windows_core::Result<CredentialCommand> {
         Self::ICredentialCommandFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -555,21 +555,21 @@ unsafe impl ::windows_core::Interface for IAccountsSettingsPaneCommandsRequested
 #[doc(hidden)]
 pub struct IAccountsSettingsPaneCommandsRequestedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub WebAccountProviderCommands: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     WebAccountProviderCommands: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub WebAccountCommands: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     WebAccountCommands: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub CredentialCommands: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CredentialCommands: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Popups"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub Commands: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "UI_Popups")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-ui")))]
     Commands: usize,
     pub HeaderText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetHeaderText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -586,9 +586,9 @@ unsafe impl ::windows_core::Interface for IAccountsSettingsPaneCommandsRequested
 #[doc(hidden)]
 pub struct IAccountsSettingsPaneCommandsRequestedEventArgs2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub User: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     User: usize,
 }
 #[doc(hidden)]
@@ -643,13 +643,13 @@ unsafe impl ::windows_core::Interface for IAccountsSettingsPaneStatics3 {
 #[doc(hidden)]
 pub struct IAccountsSettingsPaneStatics3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub ShowManageAccountsForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     ShowManageAccountsForUserAsync: usize,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub ShowAddAccountForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     ShowAddAccountForUserAsync: usize,
 }
 #[doc(hidden)]
@@ -663,9 +663,9 @@ unsafe impl ::windows_core::Interface for ICredentialCommand {
 #[doc(hidden)]
 pub struct ICredentialCommand_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub PasswordCredential: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     PasswordCredential: usize,
     pub CredentialDeleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -680,13 +680,13 @@ unsafe impl ::windows_core::Interface for ICredentialCommandFactory {
 #[doc(hidden)]
 pub struct ICredentialCommandFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub CreateCredentialCommand: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, passwordcredential: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     CreateCredentialCommand: usize,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub CreateCredentialCommandWithHandler: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, passwordcredential: ::windows_core::RawPtr, deleted: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     CreateCredentialCommandWithHandler: usize,
 }
 #[doc(hidden)]
@@ -700,9 +700,9 @@ unsafe impl ::windows_core::Interface for ISettingsCommandFactory {
 #[doc(hidden)]
 pub struct ISettingsCommandFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Popups")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateSettingsCommand: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, settingscommandid: *mut ::core::ffi::c_void, label: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, handler: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Popups"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateSettingsCommand: usize,
 }
 #[doc(hidden)]
@@ -716,97 +716,97 @@ unsafe impl ::windows_core::Interface for ISettingsCommandStatics {
 #[doc(hidden)]
 pub struct ISettingsCommandStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Popups")]
+    #[cfg(feature = "winrt-ui")]
     pub AccountsCommand: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Popups"))]
+    #[cfg(not(feature = "winrt-ui"))]
     AccountsCommand: usize,
 }
 #[doc(hidden)]
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct ISettingsPane(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for ISettingsPane {
     type Vtable = ISettingsPane_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb1cd0932_4570_4c69_8d38_89446561ace0);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct ISettingsPane_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub CommandsRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     CommandsRequested: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub RemoveCommandsRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     RemoveCommandsRequested: usize,
 }
 #[doc(hidden)]
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct ISettingsPaneCommandsRequest(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for ISettingsPaneCommandsRequest {
     type Vtable = ISettingsPaneCommandsRequest_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x44df23ae_5d6e_4068_a168_f47643182114);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct ISettingsPaneCommandsRequest_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Popups", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui", feature = "winrt-"))]
     pub ApplicationCommands: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "UI_Popups", feature = "deprecated")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-ui", feature = "winrt-")))]
     ApplicationCommands: usize,
 }
 #[doc(hidden)]
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct ISettingsPaneCommandsRequestedEventArgs(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for ISettingsPaneCommandsRequestedEventArgs {
     type Vtable = ISettingsPaneCommandsRequestedEventArgs_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x205f5d24_1b48_4629_a6ca_2fdfedafb75d);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct ISettingsPaneCommandsRequestedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub Request: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     Request: usize,
 }
 #[doc(hidden)]
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct ISettingsPaneStatics(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for ISettingsPaneStatics {
     type Vtable = ISettingsPaneStatics_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1c6a52c5_ff19_471b_ba6b_f8f35694ad9a);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct ISettingsPaneStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub GetForCurrentView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     GetForCurrentView: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub Show: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     Show: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub Edge: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SettingsEdgeLocation) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     Edge: usize,
 }
 #[doc(hidden)]
@@ -820,9 +820,9 @@ unsafe impl ::windows_core::Interface for IWebAccountCommand {
 #[doc(hidden)]
 pub struct IWebAccountCommand_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub WebAccount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     WebAccount: usize,
     pub Invoked: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Actions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SupportedWebAccountActions) -> ::windows_core::HRESULT,
@@ -838,9 +838,9 @@ unsafe impl ::windows_core::Interface for IWebAccountCommandFactory {
 #[doc(hidden)]
 pub struct IWebAccountCommandFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub CreateWebAccountCommand: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccount: ::windows_core::RawPtr, invoked: ::windows_core::RawPtr, actions: SupportedWebAccountActions, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     CreateWebAccountCommand: usize,
 }
 #[doc(hidden)]
@@ -867,9 +867,9 @@ unsafe impl ::windows_core::Interface for IWebAccountProviderCommand {
 #[doc(hidden)]
 pub struct IWebAccountProviderCommand_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub WebAccountProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     WebAccountProvider: usize,
     pub Invoked: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -884,31 +884,31 @@ unsafe impl ::windows_core::Interface for IWebAccountProviderCommandFactory {
 #[doc(hidden)]
 pub struct IWebAccountProviderCommandFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub CreateWebAccountProviderCommand: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccountprovider: ::windows_core::RawPtr, invoked: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     CreateWebAccountProviderCommand: usize,
 }
-#[cfg(feature = "UI_Popups")]
+#[cfg(feature = "winrt-ui")]
 #[repr(transparent)]
 pub struct SettingsCommand(::windows_core::IUnknown);
-#[cfg(feature = "UI_Popups")]
+#[cfg(feature = "winrt-ui")]
 impl SettingsCommand {
-    #[cfg(feature = "UI_Popups")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateSettingsCommand<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, super::Popups::UICommandInvokedHandler>>(settingscommandid: Param0, label: Param1, handler: Param2) -> ::windows_core::Result<SettingsCommand> {
         Self::ISettingsCommandFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateSettingsCommand)(::windows_core::Interface::as_raw(this), settingscommandid.into_param().abi(), label.into_param().abi(), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<SettingsCommand>(result__)
         })
     }
-    #[cfg(feature = "UI_Popups")]
+    #[cfg(feature = "winrt-ui")]
     pub fn AccountsCommand() -> ::windows_core::Result<SettingsCommand> {
         Self::ISettingsCommandStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).AccountsCommand)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SettingsCommand>(result__)
         })
     }
-    #[cfg(feature = "UI_Popups")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Label(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
@@ -916,12 +916,12 @@ impl SettingsCommand {
             (::windows_core::Interface::vtable(this).Label)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "UI_Popups")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetLabel<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetLabel)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Popups")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Invoked(&self) -> ::windows_core::Result<super::Popups::UICommandInvokedHandler> {
         let this = self;
         unsafe {
@@ -929,12 +929,12 @@ impl SettingsCommand {
             (::windows_core::Interface::vtable(this).Invoked)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Popups::UICommandInvokedHandler>(result__)
         }
     }
-    #[cfg(feature = "UI_Popups")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetInvoked<'a, Param0: ::windows_core::IntoParam<'a, super::Popups::UICommandInvokedHandler>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetInvoked)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Popups")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Id(&self) -> ::windows_core::Result<::windows_core::IInspectable> {
         let this = self;
         unsafe {
@@ -942,7 +942,7 @@ impl SettingsCommand {
             (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::IInspectable>(result__)
         }
     }
-    #[cfg(feature = "UI_Popups")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetId<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetId)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -956,27 +956,27 @@ impl SettingsCommand {
         unsafe { SHARED.call(callback) }
     }
 }
-#[cfg(feature = "UI_Popups")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::clone::Clone for SettingsCommand {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "UI_Popups")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::cmp::PartialEq for SettingsCommand {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "UI_Popups")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::cmp::Eq for SettingsCommand {}
-#[cfg(feature = "UI_Popups")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::fmt::Debug for SettingsCommand {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("SettingsCommand").field(&self.0).finish()
     }
 }
-#[cfg(feature = "UI_Popups")]
+#[cfg(feature = "winrt-ui")]
 unsafe impl ::windows_core::RuntimeType for SettingsCommand {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.ApplicationSettings.SettingsCommand;{4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f})");
     type DefaultType = ::core::option::Option<Self>;
@@ -984,123 +984,123 @@ unsafe impl ::windows_core::RuntimeType for SettingsCommand {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "UI_Popups")]
+#[cfg(feature = "winrt-ui")]
 unsafe impl ::windows_core::Interface for SettingsCommand {
     type Vtable = super::Popups::IUICommand_Vtbl;
     const IID: ::windows_core::GUID = <super::Popups::IUICommand as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "UI_Popups")]
+#[cfg(feature = "winrt-ui")]
 impl ::windows_core::RuntimeName for SettingsCommand {
     const NAME: &'static str = "Windows.UI.ApplicationSettings.SettingsCommand";
 }
-#[cfg(feature = "UI_Popups")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::From<SettingsCommand> for ::windows_core::IUnknown {
     fn from(value: SettingsCommand) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "UI_Popups")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::From<&SettingsCommand> for ::windows_core::IUnknown {
     fn from(value: &SettingsCommand) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "UI_Popups")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for SettingsCommand {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Popups")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a SettingsCommand {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Popups")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::From<SettingsCommand> for ::windows_core::IInspectable {
     fn from(value: SettingsCommand) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "UI_Popups")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::From<&SettingsCommand> for ::windows_core::IInspectable {
     fn from(value: &SettingsCommand) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "UI_Popups")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for SettingsCommand {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Popups")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a SettingsCommand {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Popups")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<SettingsCommand> for super::Popups::IUICommand {
     type Error = ::windows_core::Error;
     fn try_from(value: SettingsCommand) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Popups")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&SettingsCommand> for super::Popups::IUICommand {
     type Error = ::windows_core::Error;
     fn try_from(value: &SettingsCommand) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Popups")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Popups::IUICommand> for SettingsCommand {
     fn into_param(self) -> ::windows_core::Param<'a, super::Popups::IUICommand> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Popups")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Popups::IUICommand> for &SettingsCommand {
     fn into_param(self) -> ::windows_core::Param<'a, super::Popups::IUICommand> {
         ::core::convert::TryInto::<super::Popups::IUICommand>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
 pub struct SettingsEdgeLocation(pub i32);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl SettingsEdgeLocation {
     pub const Right: Self = Self(0i32);
     pub const Left: Self = Self(1i32);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::marker::Copy for SettingsEdgeLocation {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for SettingsEdgeLocation {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::default::Default for SettingsEdgeLocation {
     fn default() -> Self {
         Self(0)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Abi for SettingsEdgeLocation {
     type Abi = Self;
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::fmt::Debug for SettingsEdgeLocation {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("SettingsEdgeLocation").field(&self.0).finish()
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::RuntimeType for SettingsEdgeLocation {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.ApplicationSettings.SettingsEdgeLocation;i4)");
     type DefaultType = Self;
@@ -1108,12 +1108,12 @@ unsafe impl ::windows_core::RuntimeType for SettingsEdgeLocation {
         Ok(*from)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct SettingsPane(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl SettingsPane {
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn CommandsRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<SettingsPane, SettingsPaneCommandsRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
@@ -1121,56 +1121,56 @@ impl SettingsPane {
             (::windows_core::Interface::vtable(this).CommandsRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn RemoveCommandsRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveCommandsRequested)(::windows_core::Interface::as_raw(this), cookie.into_param().abi()).ok() }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn GetForCurrentView() -> ::windows_core::Result<SettingsPane> {
         Self::ISettingsPaneStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetForCurrentView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SettingsPane>(result__)
         })
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn Show() -> ::windows_core::Result<()> {
         Self::ISettingsPaneStatics(|this| unsafe { (::windows_core::Interface::vtable(this).Show)(::windows_core::Interface::as_raw(this)).ok() })
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn Edge() -> ::windows_core::Result<SettingsEdgeLocation> {
         Self::ISettingsPaneStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<SettingsEdgeLocation>::zeroed();
             (::windows_core::Interface::vtable(this).Edge)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SettingsEdgeLocation>(result__)
         })
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn ISettingsPaneStatics<R, F: FnOnce(&ISettingsPaneStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
         static mut SHARED: ::windows_core::FactoryCache<SettingsPane, ISettingsPaneStatics> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for SettingsPane {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::PartialEq for SettingsPane {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::Eq for SettingsPane {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::fmt::Debug for SettingsPane {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("SettingsPane").field(&self.0).finish()
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::RuntimeType for SettingsPane {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.ApplicationSettings.SettingsPane;{b1cd0932-4570-4c69-8d38-89446561ace0})");
     type DefaultType = ::core::option::Option<Self>;
@@ -1178,69 +1178,69 @@ unsafe impl ::windows_core::RuntimeType for SettingsPane {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for SettingsPane {
     type Vtable = ISettingsPane_Vtbl;
     const IID: ::windows_core::GUID = <ISettingsPane as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::windows_core::RuntimeName for SettingsPane {
     const NAME: &'static str = "Windows.UI.ApplicationSettings.SettingsPane";
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<SettingsPane> for ::windows_core::IUnknown {
     fn from(value: SettingsPane) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&SettingsPane> for ::windows_core::IUnknown {
     fn from(value: &SettingsPane) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for SettingsPane {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a SettingsPane {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<SettingsPane> for ::windows_core::IInspectable {
     fn from(value: SettingsPane) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&SettingsPane> for ::windows_core::IInspectable {
     fn from(value: &SettingsPane) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for SettingsPane {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a SettingsPane {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct SettingsPaneCommandsRequest(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl SettingsPaneCommandsRequest {
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Popups", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui", feature = "winrt-"))]
     pub fn ApplicationCommands(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SettingsCommand>> {
         let this = self;
         unsafe {
@@ -1249,27 +1249,27 @@ impl SettingsPaneCommandsRequest {
         }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for SettingsPaneCommandsRequest {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::PartialEq for SettingsPaneCommandsRequest {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::Eq for SettingsPaneCommandsRequest {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::fmt::Debug for SettingsPaneCommandsRequest {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("SettingsPaneCommandsRequest").field(&self.0).finish()
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::RuntimeType for SettingsPaneCommandsRequest {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.ApplicationSettings.SettingsPaneCommandsRequest;{44df23ae-5d6e-4068-a168-f47643182114})");
     type DefaultType = ::core::option::Option<Self>;
@@ -1277,69 +1277,69 @@ unsafe impl ::windows_core::RuntimeType for SettingsPaneCommandsRequest {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for SettingsPaneCommandsRequest {
     type Vtable = ISettingsPaneCommandsRequest_Vtbl;
     const IID: ::windows_core::GUID = <ISettingsPaneCommandsRequest as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::windows_core::RuntimeName for SettingsPaneCommandsRequest {
     const NAME: &'static str = "Windows.UI.ApplicationSettings.SettingsPaneCommandsRequest";
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<SettingsPaneCommandsRequest> for ::windows_core::IUnknown {
     fn from(value: SettingsPaneCommandsRequest) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&SettingsPaneCommandsRequest> for ::windows_core::IUnknown {
     fn from(value: &SettingsPaneCommandsRequest) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for SettingsPaneCommandsRequest {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a SettingsPaneCommandsRequest {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<SettingsPaneCommandsRequest> for ::windows_core::IInspectable {
     fn from(value: SettingsPaneCommandsRequest) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&SettingsPaneCommandsRequest> for ::windows_core::IInspectable {
     fn from(value: &SettingsPaneCommandsRequest) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for SettingsPaneCommandsRequest {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a SettingsPaneCommandsRequest {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct SettingsPaneCommandsRequestedEventArgs(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl SettingsPaneCommandsRequestedEventArgs {
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn Request(&self) -> ::windows_core::Result<SettingsPaneCommandsRequest> {
         let this = self;
         unsafe {
@@ -1348,27 +1348,27 @@ impl SettingsPaneCommandsRequestedEventArgs {
         }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for SettingsPaneCommandsRequestedEventArgs {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::PartialEq for SettingsPaneCommandsRequestedEventArgs {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::Eq for SettingsPaneCommandsRequestedEventArgs {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::fmt::Debug for SettingsPaneCommandsRequestedEventArgs {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("SettingsPaneCommandsRequestedEventArgs").field(&self.0).finish()
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::RuntimeType for SettingsPaneCommandsRequestedEventArgs {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs;{205f5d24-1b48-4629-a6ca-2fdfedafb75d})");
     type DefaultType = ::core::option::Option<Self>;
@@ -1376,58 +1376,58 @@ unsafe impl ::windows_core::RuntimeType for SettingsPaneCommandsRequestedEventAr
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for SettingsPaneCommandsRequestedEventArgs {
     type Vtable = ISettingsPaneCommandsRequestedEventArgs_Vtbl;
     const IID: ::windows_core::GUID = <ISettingsPaneCommandsRequestedEventArgs as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::windows_core::RuntimeName for SettingsPaneCommandsRequestedEventArgs {
     const NAME: &'static str = "Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs";
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<SettingsPaneCommandsRequestedEventArgs> for ::windows_core::IUnknown {
     fn from(value: SettingsPaneCommandsRequestedEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&SettingsPaneCommandsRequestedEventArgs> for ::windows_core::IUnknown {
     fn from(value: &SettingsPaneCommandsRequestedEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for SettingsPaneCommandsRequestedEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a SettingsPaneCommandsRequestedEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<SettingsPaneCommandsRequestedEventArgs> for ::windows_core::IInspectable {
     fn from(value: SettingsPaneCommandsRequestedEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&SettingsPaneCommandsRequestedEventArgs> for ::windows_core::IInspectable {
     fn from(value: &SettingsPaneCommandsRequestedEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for SettingsPaneCommandsRequestedEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a SettingsPaneCommandsRequestedEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
@@ -1537,7 +1537,7 @@ unsafe impl ::windows_core::RuntimeType for WebAccountAction {
 #[repr(transparent)]
 pub struct WebAccountCommand(::windows_core::IUnknown);
 impl WebAccountCommand {
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn WebAccount(&self) -> ::windows_core::Result<::winrt_security::Credentials::WebAccount> {
         let this = self;
         unsafe {
@@ -1559,7 +1559,7 @@ impl WebAccountCommand {
             (::windows_core::Interface::vtable(this).Actions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SupportedWebAccountActions>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn CreateWebAccountCommand<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::WebAccount>, Param1: ::windows_core::IntoParam<'a, WebAccountCommandInvokedHandler>>(webaccount: Param0, invoked: Param1, actions: SupportedWebAccountActions) -> ::windows_core::Result<WebAccountCommand> {
         Self::IWebAccountCommandFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1808,7 +1808,7 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Web
 #[repr(transparent)]
 pub struct WebAccountProviderCommand(::windows_core::IUnknown);
 impl WebAccountProviderCommand {
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn WebAccountProvider(&self) -> ::windows_core::Result<::winrt_security::Credentials::WebAccountProvider> {
         let this = self;
         unsafe {
@@ -1823,7 +1823,7 @@ impl WebAccountProviderCommand {
             (::windows_core::Interface::vtable(this).Invoked)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<WebAccountProviderCommandInvokedHandler>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn CreateWebAccountProviderCommand<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::WebAccountProvider>, Param1: ::windows_core::IntoParam<'a, WebAccountProviderCommandInvokedHandler>>(webaccountprovider: Param0, invoked: Param1) -> ::windows_core::Result<WebAccountProviderCommand> {
         Self::IWebAccountProviderCommandFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();

@@ -115,7 +115,7 @@ unsafe impl ::core::marker::Sync for CoreFrameworkInputView {}
 #[repr(transparent)]
 pub struct CoreFrameworkInputViewAnimationStartingEventArgs(::windows_core::IUnknown);
 impl CoreFrameworkInputViewAnimationStartingEventArgs {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Occlusions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<CoreInputViewOcclusion>> {
         let this = self;
         unsafe {
@@ -213,7 +213,7 @@ unsafe impl ::core::marker::Sync for CoreFrameworkInputViewAnimationStartingEven
 #[repr(transparent)]
 pub struct CoreFrameworkInputViewOcclusionsChangedEventArgs(::windows_core::IUnknown);
 impl CoreFrameworkInputViewOcclusionsChangedEventArgs {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Occlusions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<CoreInputViewOcclusion>> {
         let this = self;
         unsafe {
@@ -315,7 +315,7 @@ impl CoreInputView {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveOcclusionsChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetCoreInputViewOcclusions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<CoreInputViewOcclusion>> {
         let this = self;
         unsafe {
@@ -534,7 +534,7 @@ unsafe impl ::core::marker::Sync for CoreInputView {}
 #[repr(transparent)]
 pub struct CoreInputViewAnimationStartingEventArgs(::windows_core::IUnknown);
 impl CoreInputViewAnimationStartingEventArgs {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Occlusions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<CoreInputViewOcclusion>> {
         let this = self;
         unsafe {
@@ -881,7 +881,7 @@ unsafe impl ::windows_core::RuntimeType for CoreInputViewOcclusionKind {
 #[repr(transparent)]
 pub struct CoreInputViewOcclusionsChangedEventArgs(::windows_core::IUnknown);
 impl CoreInputViewOcclusionsChangedEventArgs {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Occlusions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<CoreInputViewOcclusion>> {
         let this = self;
         unsafe {
@@ -1230,9 +1230,9 @@ unsafe impl ::windows_core::Interface for ICoreFrameworkInputViewAnimationStarti
 #[doc(hidden)]
 pub struct ICoreFrameworkInputViewAnimationStartingEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Occlusions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Occlusions: usize,
     pub FrameworkAnimationRecommended: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub AnimationDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
@@ -1248,9 +1248,9 @@ unsafe impl ::windows_core::Interface for ICoreFrameworkInputViewOcclusionsChang
 #[doc(hidden)]
 pub struct ICoreFrameworkInputViewOcclusionsChangedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Occlusions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Occlusions: usize,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
 }
@@ -1281,9 +1281,9 @@ pub struct ICoreInputView_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub OcclusionsChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveOcclusionsChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetCoreInputViewOcclusions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetCoreInputViewOcclusions: usize,
     pub TryShowPrimaryView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub TryHidePrimaryView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -1364,9 +1364,9 @@ unsafe impl ::windows_core::Interface for ICoreInputViewAnimationStartingEventAr
 #[doc(hidden)]
 pub struct ICoreInputViewAnimationStartingEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Occlusions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Occlusions: usize,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -1410,9 +1410,9 @@ unsafe impl ::windows_core::Interface for ICoreInputViewOcclusionsChangedEventAr
 #[doc(hidden)]
 pub struct ICoreInputViewOcclusionsChangedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Occlusions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Occlusions: usize,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,

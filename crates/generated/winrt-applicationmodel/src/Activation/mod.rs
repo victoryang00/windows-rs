@@ -133,7 +133,7 @@ impl AppointmentsProviderAddAppointmentActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -148,7 +148,7 @@ impl AppointmentsProviderAddAppointmentActivatedEventArgs {
             (::windows_core::Interface::vtable(this).Verb)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Appointments_AppointmentsProvider")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn AddAppointmentOperation(&self) -> ::windows_core::Result<super::Appointments::AppointmentsProvider::AddAppointmentOperation> {
         let this = self;
         unsafe {
@@ -341,7 +341,7 @@ impl AppointmentsProviderRemoveAppointmentActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -356,7 +356,7 @@ impl AppointmentsProviderRemoveAppointmentActivatedEventArgs {
             (::windows_core::Interface::vtable(this).Verb)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Appointments_AppointmentsProvider")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn RemoveAppointmentOperation(&self) -> ::windows_core::Result<super::Appointments::AppointmentsProvider::RemoveAppointmentOperation> {
         let this = self;
         unsafe {
@@ -549,7 +549,7 @@ impl AppointmentsProviderReplaceAppointmentActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -564,7 +564,7 @@ impl AppointmentsProviderReplaceAppointmentActivatedEventArgs {
             (::windows_core::Interface::vtable(this).Verb)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Appointments_AppointmentsProvider")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn ReplaceAppointmentOperation(&self) -> ::windows_core::Result<super::Appointments::AppointmentsProvider::ReplaceAppointmentOperation> {
         let this = self;
         unsafe {
@@ -757,7 +757,7 @@ impl AppointmentsProviderShowAppointmentDetailsActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -978,7 +978,7 @@ impl AppointmentsProviderShowTimeFrameActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -1171,7 +1171,7 @@ unsafe impl ::core::marker::Sync for AppointmentsProviderShowTimeFrameActivatedE
 #[repr(transparent)]
 pub struct BackgroundActivatedEventArgs(::windows_core::IUnknown);
 impl BackgroundActivatedEventArgs {
-    #[cfg(feature = "ApplicationModel_Background")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn TaskInstance(&self) -> ::windows_core::Result<super::Background::IBackgroundTaskInstance> {
         let this = self;
         unsafe {
@@ -1298,7 +1298,7 @@ impl BarcodeScannerPreviewActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -1476,7 +1476,7 @@ impl CachedFileUpdaterActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -1484,7 +1484,7 @@ impl CachedFileUpdaterActivatedEventArgs {
             (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
-    #[cfg(feature = "Storage_Provider")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CachedFileUpdaterUI(&self) -> ::windows_core::Result<::winrt_storage::Provider::CachedFileUpdaterUI> {
         let this = self;
         unsafe {
@@ -1810,7 +1810,7 @@ impl CommandLineActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -2117,7 +2117,7 @@ impl ContactCallActivatedEventArgs {
             (::windows_core::Interface::vtable(this).ServiceUserId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Contacts")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn Contact(&self) -> ::windows_core::Result<super::Contacts::Contact> {
         let this = self;
         unsafe {
@@ -2295,7 +2295,7 @@ impl ContactMapActivatedEventArgs {
             (::windows_core::Interface::vtable(this).Verb)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Contacts")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn Address(&self) -> ::windows_core::Result<super::Contacts::ContactAddress> {
         let this = self;
         unsafe {
@@ -2303,7 +2303,7 @@ impl ContactMapActivatedEventArgs {
             (::windows_core::Interface::vtable(this).Address)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Contacts::ContactAddress>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Contacts")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn Contact(&self) -> ::windows_core::Result<super::Contacts::Contact> {
         let this = self;
         unsafe {
@@ -2495,7 +2495,7 @@ impl ContactMessageActivatedEventArgs {
             (::windows_core::Interface::vtable(this).ServiceUserId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Contacts")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn Contact(&self) -> ::windows_core::Result<super::Contacts::Contact> {
         let this = self;
         unsafe {
@@ -2666,7 +2666,7 @@ impl ContactPanelActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -2674,7 +2674,7 @@ impl ContactPanelActivatedEventArgs {
             (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Contacts")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn ContactPanel(&self) -> ::windows_core::Result<super::Contacts::ContactPanel> {
         let this = self;
         unsafe {
@@ -2682,7 +2682,7 @@ impl ContactPanelActivatedEventArgs {
             (::windows_core::Interface::vtable(this).ContactPanel)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Contacts::ContactPanel>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Contacts")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn Contact(&self) -> ::windows_core::Result<super::Contacts::Contact> {
         let this = self;
         unsafe {
@@ -2853,7 +2853,7 @@ impl ContactPickerActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Contacts_Provider")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn ContactPickerUI(&self) -> ::windows_core::Result<super::Contacts::Provider::ContactPickerUI> {
         let this = self;
         unsafe {
@@ -3023,7 +3023,7 @@ impl ContactPostActivatedEventArgs {
             (::windows_core::Interface::vtable(this).ServiceUserId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Contacts")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn Contact(&self) -> ::windows_core::Result<super::Contacts::Contact> {
         let this = self;
         unsafe {
@@ -3215,7 +3215,7 @@ impl ContactVideoCallActivatedEventArgs {
             (::windows_core::Interface::vtable(this).ServiceUserId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Contacts")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn Contact(&self) -> ::windows_core::Result<super::Contacts::Contact> {
         let this = self;
         unsafe {
@@ -3386,7 +3386,7 @@ impl DeviceActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -3415,7 +3415,7 @@ impl DeviceActivatedEventArgs {
             (::windows_core::Interface::vtable(this).Verb)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "UI_ViewManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ViewSwitcher(&self) -> ::windows_core::Result<::winrt_ui::ViewManagement::ActivationViewSwitcher> {
         let this = &::windows_core::Interface::cast::<IViewSwitcherProvider>(self)?;
         unsafe {
@@ -3630,7 +3630,7 @@ impl DevicePairingActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -3638,7 +3638,7 @@ impl DevicePairingActivatedEventArgs {
             (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub fn DeviceInformation(&self) -> ::windows_core::Result<::winrt_devices::Enumeration::DeviceInformation> {
         let this = self;
         unsafe {
@@ -3809,7 +3809,7 @@ impl DialReceiverActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -3845,7 +3845,7 @@ impl DialReceiverActivatedEventArgs {
             (::windows_core::Interface::vtable(this).TileId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "UI_ViewManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ViewSwitcher(&self) -> ::windows_core::Result<::winrt_ui::ViewManagement::ActivationViewSwitcher> {
         let this = &::windows_core::Interface::cast::<IViewSwitcherProvider>(self)?;
         unsafe {
@@ -4082,7 +4082,7 @@ impl FileActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -4097,7 +4097,7 @@ impl FileActivatedEventArgs {
             (::windows_core::Interface::vtable(this).CurrentlyShownApplicationViewId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub fn Files(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_storage::IStorageItem>> {
         let this = self;
         unsafe {
@@ -4119,7 +4119,7 @@ impl FileActivatedEventArgs {
             (::windows_core::Interface::vtable(this).CallerPackageFamilyName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Storage_Search")]
+    #[cfg(feature = "winrt-storage")]
     pub fn NeighboringFilesQuery(&self) -> ::windows_core::Result<::winrt_storage::Search::StorageFileQueryResult> {
         let this = &::windows_core::Interface::cast::<IFileActivatedEventArgsWithNeighboringFiles>(self)?;
         unsafe {
@@ -4127,7 +4127,7 @@ impl FileActivatedEventArgs {
             (::windows_core::Interface::vtable(this).NeighboringFilesQuery)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Search::StorageFileQueryResult>(result__)
         }
     }
-    #[cfg(feature = "UI_ViewManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ViewSwitcher(&self) -> ::windows_core::Result<::winrt_ui::ViewManagement::ActivationViewSwitcher> {
         let this = &::windows_core::Interface::cast::<IViewSwitcherProvider>(self)?;
         unsafe {
@@ -4386,7 +4386,7 @@ impl FileOpenPickerActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -4394,7 +4394,7 @@ impl FileOpenPickerActivatedEventArgs {
             (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
-    #[cfg(feature = "Storage_Pickers_Provider")]
+    #[cfg(feature = "winrt-storage")]
     pub fn FileOpenPickerUI(&self) -> ::windows_core::Result<::winrt_storage::Pickers::Provider::FileOpenPickerUI> {
         let this = self;
         unsafe {
@@ -4570,10 +4570,10 @@ impl<'a> ::windows_core::IntoParam<'a, IFileOpenPickerActivatedEventArgs2> for &
 }
 unsafe impl ::core::marker::Send for FileOpenPickerActivatedEventArgs {}
 unsafe impl ::core::marker::Sync for FileOpenPickerActivatedEventArgs {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct FileOpenPickerContinuationEventArgs(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl FileOpenPickerContinuationEventArgs {
     pub fn Kind(&self) -> ::windows_core::Result<ActivationKind> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgs>(self)?;
@@ -4596,7 +4596,7 @@ impl FileOpenPickerContinuationEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -4604,7 +4604,7 @@ impl FileOpenPickerContinuationEventArgs {
             (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ContinuationData(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = &::windows_core::Interface::cast::<IContinuationActivatedEventArgs>(self)?;
         unsafe {
@@ -4612,7 +4612,7 @@ impl FileOpenPickerContinuationEventArgs {
             (::windows_core::Interface::vtable(this).ContinuationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage", feature = "winrt-"))]
     pub fn Files(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_storage::StorageFile>> {
         let this = self;
         unsafe {
@@ -4621,27 +4621,27 @@ impl FileOpenPickerContinuationEventArgs {
         }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for FileOpenPickerContinuationEventArgs {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::PartialEq for FileOpenPickerContinuationEventArgs {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::Eq for FileOpenPickerContinuationEventArgs {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::fmt::Debug for FileOpenPickerContinuationEventArgs {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("FileOpenPickerContinuationEventArgs").field(&self.0).finish()
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::RuntimeType for FileOpenPickerContinuationEventArgs {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.ApplicationModel.Activation.FileOpenPickerContinuationEventArgs;{f0fa3f3a-d4e8-4ad3-9c34-2308f32fcec9})");
     type DefaultType = ::core::option::Option<Self>;
@@ -4649,170 +4649,170 @@ unsafe impl ::windows_core::RuntimeType for FileOpenPickerContinuationEventArgs 
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for FileOpenPickerContinuationEventArgs {
     type Vtable = IFileOpenPickerContinuationEventArgs_Vtbl;
     const IID: ::windows_core::GUID = <IFileOpenPickerContinuationEventArgs as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::windows_core::RuntimeName for FileOpenPickerContinuationEventArgs {
     const NAME: &'static str = "Windows.ApplicationModel.Activation.FileOpenPickerContinuationEventArgs";
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<FileOpenPickerContinuationEventArgs> for ::windows_core::IUnknown {
     fn from(value: FileOpenPickerContinuationEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&FileOpenPickerContinuationEventArgs> for ::windows_core::IUnknown {
     fn from(value: &FileOpenPickerContinuationEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for FileOpenPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a FileOpenPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<FileOpenPickerContinuationEventArgs> for ::windows_core::IInspectable {
     fn from(value: FileOpenPickerContinuationEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&FileOpenPickerContinuationEventArgs> for ::windows_core::IInspectable {
     fn from(value: &FileOpenPickerContinuationEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for FileOpenPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a FileOpenPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<FileOpenPickerContinuationEventArgs> for IActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: FileOpenPickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<&FileOpenPickerContinuationEventArgs> for IActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: &FileOpenPickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IActivatedEventArgs> for FileOpenPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IActivatedEventArgs> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IActivatedEventArgs> for &FileOpenPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IActivatedEventArgs> {
         ::core::convert::TryInto::<IActivatedEventArgs>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<FileOpenPickerContinuationEventArgs> for IActivatedEventArgsWithUser {
     type Error = ::windows_core::Error;
     fn try_from(value: FileOpenPickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<&FileOpenPickerContinuationEventArgs> for IActivatedEventArgsWithUser {
     type Error = ::windows_core::Error;
     fn try_from(value: &FileOpenPickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IActivatedEventArgsWithUser> for FileOpenPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IActivatedEventArgsWithUser> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IActivatedEventArgsWithUser> for &FileOpenPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IActivatedEventArgsWithUser> {
         ::core::convert::TryInto::<IActivatedEventArgsWithUser>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<FileOpenPickerContinuationEventArgs> for IContinuationActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: FileOpenPickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<&FileOpenPickerContinuationEventArgs> for IContinuationActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: &FileOpenPickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IContinuationActivatedEventArgs> for FileOpenPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IContinuationActivatedEventArgs> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IContinuationActivatedEventArgs> for &FileOpenPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IContinuationActivatedEventArgs> {
         ::core::convert::TryInto::<IContinuationActivatedEventArgs>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<FileOpenPickerContinuationEventArgs> for IFileOpenPickerContinuationEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: FileOpenPickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<&FileOpenPickerContinuationEventArgs> for IFileOpenPickerContinuationEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: &FileOpenPickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IFileOpenPickerContinuationEventArgs> for FileOpenPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IFileOpenPickerContinuationEventArgs> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IFileOpenPickerContinuationEventArgs> for &FileOpenPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IFileOpenPickerContinuationEventArgs> {
         ::core::convert::TryInto::<IFileOpenPickerContinuationEventArgs>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::core::marker::Send for FileOpenPickerContinuationEventArgs {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::core::marker::Sync for FileOpenPickerContinuationEventArgs {}
 #[repr(transparent)]
 pub struct FileSavePickerActivatedEventArgs(::windows_core::IUnknown);
@@ -4838,7 +4838,7 @@ impl FileSavePickerActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -4846,7 +4846,7 @@ impl FileSavePickerActivatedEventArgs {
             (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
-    #[cfg(feature = "Storage_Pickers_Provider")]
+    #[cfg(feature = "winrt-storage")]
     pub fn FileSavePickerUI(&self) -> ::windows_core::Result<::winrt_storage::Pickers::Provider::FileSavePickerUI> {
         let this = self;
         unsafe {
@@ -5029,10 +5029,10 @@ impl<'a> ::windows_core::IntoParam<'a, IFileSavePickerActivatedEventArgs2> for &
 }
 unsafe impl ::core::marker::Send for FileSavePickerActivatedEventArgs {}
 unsafe impl ::core::marker::Sync for FileSavePickerActivatedEventArgs {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct FileSavePickerContinuationEventArgs(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl FileSavePickerContinuationEventArgs {
     pub fn Kind(&self) -> ::windows_core::Result<ActivationKind> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgs>(self)?;
@@ -5055,7 +5055,7 @@ impl FileSavePickerContinuationEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -5063,7 +5063,7 @@ impl FileSavePickerContinuationEventArgs {
             (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ContinuationData(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = &::windows_core::Interface::cast::<IContinuationActivatedEventArgs>(self)?;
         unsafe {
@@ -5071,7 +5071,7 @@ impl FileSavePickerContinuationEventArgs {
             (::windows_core::Interface::vtable(this).ContinuationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
-    #[cfg(all(feature = "Storage", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-"))]
     pub fn File(&self) -> ::windows_core::Result<::winrt_storage::StorageFile> {
         let this = self;
         unsafe {
@@ -5080,27 +5080,27 @@ impl FileSavePickerContinuationEventArgs {
         }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for FileSavePickerContinuationEventArgs {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::PartialEq for FileSavePickerContinuationEventArgs {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::Eq for FileSavePickerContinuationEventArgs {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::fmt::Debug for FileSavePickerContinuationEventArgs {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("FileSavePickerContinuationEventArgs").field(&self.0).finish()
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::RuntimeType for FileSavePickerContinuationEventArgs {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.ApplicationModel.Activation.FileSavePickerContinuationEventArgs;{2c846fe1-3bad-4f33-8c8b-e46fae824b4b})");
     type DefaultType = ::core::option::Option<Self>;
@@ -5108,175 +5108,175 @@ unsafe impl ::windows_core::RuntimeType for FileSavePickerContinuationEventArgs 
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for FileSavePickerContinuationEventArgs {
     type Vtable = IFileSavePickerContinuationEventArgs_Vtbl;
     const IID: ::windows_core::GUID = <IFileSavePickerContinuationEventArgs as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::windows_core::RuntimeName for FileSavePickerContinuationEventArgs {
     const NAME: &'static str = "Windows.ApplicationModel.Activation.FileSavePickerContinuationEventArgs";
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<FileSavePickerContinuationEventArgs> for ::windows_core::IUnknown {
     fn from(value: FileSavePickerContinuationEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&FileSavePickerContinuationEventArgs> for ::windows_core::IUnknown {
     fn from(value: &FileSavePickerContinuationEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for FileSavePickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a FileSavePickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<FileSavePickerContinuationEventArgs> for ::windows_core::IInspectable {
     fn from(value: FileSavePickerContinuationEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&FileSavePickerContinuationEventArgs> for ::windows_core::IInspectable {
     fn from(value: &FileSavePickerContinuationEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for FileSavePickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a FileSavePickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<FileSavePickerContinuationEventArgs> for IActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: FileSavePickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<&FileSavePickerContinuationEventArgs> for IActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: &FileSavePickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IActivatedEventArgs> for FileSavePickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IActivatedEventArgs> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IActivatedEventArgs> for &FileSavePickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IActivatedEventArgs> {
         ::core::convert::TryInto::<IActivatedEventArgs>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<FileSavePickerContinuationEventArgs> for IActivatedEventArgsWithUser {
     type Error = ::windows_core::Error;
     fn try_from(value: FileSavePickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<&FileSavePickerContinuationEventArgs> for IActivatedEventArgsWithUser {
     type Error = ::windows_core::Error;
     fn try_from(value: &FileSavePickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IActivatedEventArgsWithUser> for FileSavePickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IActivatedEventArgsWithUser> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IActivatedEventArgsWithUser> for &FileSavePickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IActivatedEventArgsWithUser> {
         ::core::convert::TryInto::<IActivatedEventArgsWithUser>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<FileSavePickerContinuationEventArgs> for IContinuationActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: FileSavePickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<&FileSavePickerContinuationEventArgs> for IContinuationActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: &FileSavePickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IContinuationActivatedEventArgs> for FileSavePickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IContinuationActivatedEventArgs> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IContinuationActivatedEventArgs> for &FileSavePickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IContinuationActivatedEventArgs> {
         ::core::convert::TryInto::<IContinuationActivatedEventArgs>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<FileSavePickerContinuationEventArgs> for IFileSavePickerContinuationEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: FileSavePickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<&FileSavePickerContinuationEventArgs> for IFileSavePickerContinuationEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: &FileSavePickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IFileSavePickerContinuationEventArgs> for FileSavePickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IFileSavePickerContinuationEventArgs> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IFileSavePickerContinuationEventArgs> for &FileSavePickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IFileSavePickerContinuationEventArgs> {
         ::core::convert::TryInto::<IFileSavePickerContinuationEventArgs>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::core::marker::Send for FileSavePickerContinuationEventArgs {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::core::marker::Sync for FileSavePickerContinuationEventArgs {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct FolderPickerContinuationEventArgs(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl FolderPickerContinuationEventArgs {
     pub fn Kind(&self) -> ::windows_core::Result<ActivationKind> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgs>(self)?;
@@ -5299,7 +5299,7 @@ impl FolderPickerContinuationEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -5307,7 +5307,7 @@ impl FolderPickerContinuationEventArgs {
             (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ContinuationData(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = &::windows_core::Interface::cast::<IContinuationActivatedEventArgs>(self)?;
         unsafe {
@@ -5315,7 +5315,7 @@ impl FolderPickerContinuationEventArgs {
             (::windows_core::Interface::vtable(this).ContinuationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
-    #[cfg(all(feature = "Storage", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-"))]
     pub fn Folder(&self) -> ::windows_core::Result<::winrt_storage::StorageFolder> {
         let this = self;
         unsafe {
@@ -5324,27 +5324,27 @@ impl FolderPickerContinuationEventArgs {
         }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for FolderPickerContinuationEventArgs {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::PartialEq for FolderPickerContinuationEventArgs {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::Eq for FolderPickerContinuationEventArgs {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::fmt::Debug for FolderPickerContinuationEventArgs {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("FolderPickerContinuationEventArgs").field(&self.0).finish()
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::RuntimeType for FolderPickerContinuationEventArgs {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.ApplicationModel.Activation.FolderPickerContinuationEventArgs;{51882366-9f4b-498f-beb0-42684f6e1c29})");
     type DefaultType = ::core::option::Option<Self>;
@@ -5352,170 +5352,170 @@ unsafe impl ::windows_core::RuntimeType for FolderPickerContinuationEventArgs {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for FolderPickerContinuationEventArgs {
     type Vtable = IFolderPickerContinuationEventArgs_Vtbl;
     const IID: ::windows_core::GUID = <IFolderPickerContinuationEventArgs as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::windows_core::RuntimeName for FolderPickerContinuationEventArgs {
     const NAME: &'static str = "Windows.ApplicationModel.Activation.FolderPickerContinuationEventArgs";
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<FolderPickerContinuationEventArgs> for ::windows_core::IUnknown {
     fn from(value: FolderPickerContinuationEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&FolderPickerContinuationEventArgs> for ::windows_core::IUnknown {
     fn from(value: &FolderPickerContinuationEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for FolderPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a FolderPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<FolderPickerContinuationEventArgs> for ::windows_core::IInspectable {
     fn from(value: FolderPickerContinuationEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&FolderPickerContinuationEventArgs> for ::windows_core::IInspectable {
     fn from(value: &FolderPickerContinuationEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for FolderPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a FolderPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<FolderPickerContinuationEventArgs> for IActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: FolderPickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<&FolderPickerContinuationEventArgs> for IActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: &FolderPickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IActivatedEventArgs> for FolderPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IActivatedEventArgs> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IActivatedEventArgs> for &FolderPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IActivatedEventArgs> {
         ::core::convert::TryInto::<IActivatedEventArgs>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<FolderPickerContinuationEventArgs> for IActivatedEventArgsWithUser {
     type Error = ::windows_core::Error;
     fn try_from(value: FolderPickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<&FolderPickerContinuationEventArgs> for IActivatedEventArgsWithUser {
     type Error = ::windows_core::Error;
     fn try_from(value: &FolderPickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IActivatedEventArgsWithUser> for FolderPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IActivatedEventArgsWithUser> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IActivatedEventArgsWithUser> for &FolderPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IActivatedEventArgsWithUser> {
         ::core::convert::TryInto::<IActivatedEventArgsWithUser>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<FolderPickerContinuationEventArgs> for IContinuationActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: FolderPickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<&FolderPickerContinuationEventArgs> for IContinuationActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: &FolderPickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IContinuationActivatedEventArgs> for FolderPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IContinuationActivatedEventArgs> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IContinuationActivatedEventArgs> for &FolderPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IContinuationActivatedEventArgs> {
         ::core::convert::TryInto::<IContinuationActivatedEventArgs>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<FolderPickerContinuationEventArgs> for IFolderPickerContinuationEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: FolderPickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<&FolderPickerContinuationEventArgs> for IFolderPickerContinuationEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: &FolderPickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IFolderPickerContinuationEventArgs> for FolderPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IFolderPickerContinuationEventArgs> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IFolderPickerContinuationEventArgs> for &FolderPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IFolderPickerContinuationEventArgs> {
         ::core::convert::TryInto::<IFolderPickerContinuationEventArgs>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::core::marker::Send for FolderPickerContinuationEventArgs {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::core::marker::Sync for FolderPickerContinuationEventArgs {}
 #[repr(transparent)]
 pub struct IActivatedEventArgs(::windows_core::IUnknown);
@@ -5620,7 +5620,7 @@ pub struct IActivatedEventArgs_Vtbl {
 #[repr(transparent)]
 pub struct IActivatedEventArgsWithUser(::windows_core::IUnknown);
 impl IActivatedEventArgsWithUser {
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = self;
         unsafe {
@@ -5743,9 +5743,9 @@ unsafe impl ::windows_core::Interface for IActivatedEventArgsWithUser {
 #[doc(hidden)]
 pub struct IActivatedEventArgsWithUser_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub User: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     User: usize,
 }
 #[repr(transparent)]
@@ -6005,7 +6005,7 @@ pub struct IAppointmentsProviderActivatedEventArgs_Vtbl {
 #[repr(transparent)]
 pub struct IAppointmentsProviderAddAppointmentActivatedEventArgs(::windows_core::IUnknown);
 impl IAppointmentsProviderAddAppointmentActivatedEventArgs {
-    #[cfg(feature = "ApplicationModel_Appointments_AppointmentsProvider")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn AddAppointmentOperation(&self) -> ::windows_core::Result<super::Appointments::AppointmentsProvider::AddAppointmentOperation> {
         let this = self;
         unsafe {
@@ -6157,15 +6157,15 @@ unsafe impl ::windows_core::Interface for IAppointmentsProviderAddAppointmentAct
 #[doc(hidden)]
 pub struct IAppointmentsProviderAddAppointmentActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "ApplicationModel_Appointments_AppointmentsProvider")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub AddAppointmentOperation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Appointments_AppointmentsProvider"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     AddAppointmentOperation: usize,
 }
 #[repr(transparent)]
 pub struct IAppointmentsProviderRemoveAppointmentActivatedEventArgs(::windows_core::IUnknown);
 impl IAppointmentsProviderRemoveAppointmentActivatedEventArgs {
-    #[cfg(feature = "ApplicationModel_Appointments_AppointmentsProvider")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn RemoveAppointmentOperation(&self) -> ::windows_core::Result<super::Appointments::AppointmentsProvider::RemoveAppointmentOperation> {
         let this = self;
         unsafe {
@@ -6317,15 +6317,15 @@ unsafe impl ::windows_core::Interface for IAppointmentsProviderRemoveAppointment
 #[doc(hidden)]
 pub struct IAppointmentsProviderRemoveAppointmentActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "ApplicationModel_Appointments_AppointmentsProvider")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub RemoveAppointmentOperation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Appointments_AppointmentsProvider"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     RemoveAppointmentOperation: usize,
 }
 #[repr(transparent)]
 pub struct IAppointmentsProviderReplaceAppointmentActivatedEventArgs(::windows_core::IUnknown);
 impl IAppointmentsProviderReplaceAppointmentActivatedEventArgs {
-    #[cfg(feature = "ApplicationModel_Appointments_AppointmentsProvider")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn ReplaceAppointmentOperation(&self) -> ::windows_core::Result<super::Appointments::AppointmentsProvider::ReplaceAppointmentOperation> {
         let this = self;
         unsafe {
@@ -6477,9 +6477,9 @@ unsafe impl ::windows_core::Interface for IAppointmentsProviderReplaceAppointmen
 #[doc(hidden)]
 pub struct IAppointmentsProviderReplaceAppointmentActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "ApplicationModel_Appointments_AppointmentsProvider")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub ReplaceAppointmentOperation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Appointments_AppointmentsProvider"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     ReplaceAppointmentOperation: usize,
 }
 #[repr(transparent)]
@@ -6821,7 +6821,7 @@ pub struct IAppointmentsProviderShowTimeFrameActivatedEventArgs_Vtbl {
 #[repr(transparent)]
 pub struct IBackgroundActivatedEventArgs(::windows_core::IUnknown);
 impl IBackgroundActivatedEventArgs {
-    #[cfg(feature = "ApplicationModel_Background")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn TaskInstance(&self) -> ::windows_core::Result<super::Background::IBackgroundTaskInstance> {
         let this = self;
         unsafe {
@@ -6901,9 +6901,9 @@ unsafe impl ::windows_core::Interface for IBackgroundActivatedEventArgs {
 #[doc(hidden)]
 pub struct IBackgroundActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "ApplicationModel_Background")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub TaskInstance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Background"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     TaskInstance: usize,
 }
 #[repr(transparent)]
@@ -7036,7 +7036,7 @@ pub struct IBarcodeScannerPreviewActivatedEventArgs_Vtbl {
 #[repr(transparent)]
 pub struct ICachedFileUpdaterActivatedEventArgs(::windows_core::IUnknown);
 impl ICachedFileUpdaterActivatedEventArgs {
-    #[cfg(feature = "Storage_Provider")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CachedFileUpdaterUI(&self) -> ::windows_core::Result<::winrt_storage::Provider::CachedFileUpdaterUI> {
         let this = self;
         unsafe {
@@ -7159,9 +7159,9 @@ unsafe impl ::windows_core::Interface for ICachedFileUpdaterActivatedEventArgs {
 #[doc(hidden)]
 pub struct ICachedFileUpdaterActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Provider")]
+    #[cfg(feature = "winrt-storage")]
     pub CachedFileUpdaterUI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Provider"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CachedFileUpdaterUI: usize,
 }
 #[repr(transparent)]
@@ -7587,7 +7587,7 @@ impl IContactCallActivatedEventArgs {
             (::windows_core::Interface::vtable(this).ServiceUserId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Contacts")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn Contact(&self) -> ::windows_core::Result<super::Contacts::Contact> {
         let this = self;
         unsafe {
@@ -7741,15 +7741,15 @@ pub struct IContactCallActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ServiceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub ServiceUserId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "ApplicationModel_Contacts")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub Contact: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Contacts"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     Contact: usize,
 }
 #[repr(transparent)]
 pub struct IContactMapActivatedEventArgs(::windows_core::IUnknown);
 impl IContactMapActivatedEventArgs {
-    #[cfg(feature = "ApplicationModel_Contacts")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn Address(&self) -> ::windows_core::Result<super::Contacts::ContactAddress> {
         let this = self;
         unsafe {
@@ -7757,7 +7757,7 @@ impl IContactMapActivatedEventArgs {
             (::windows_core::Interface::vtable(this).Address)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Contacts::ContactAddress>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Contacts")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn Contact(&self) -> ::windows_core::Result<super::Contacts::Contact> {
         let this = self;
         unsafe {
@@ -7909,13 +7909,13 @@ unsafe impl ::windows_core::Interface for IContactMapActivatedEventArgs {
 #[doc(hidden)]
 pub struct IContactMapActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "ApplicationModel_Contacts")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub Address: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Contacts"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     Address: usize,
-    #[cfg(feature = "ApplicationModel_Contacts")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub Contact: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Contacts"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     Contact: usize,
 }
 #[repr(transparent)]
@@ -7935,7 +7935,7 @@ impl IContactMessageActivatedEventArgs {
             (::windows_core::Interface::vtable(this).ServiceUserId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Contacts")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn Contact(&self) -> ::windows_core::Result<super::Contacts::Contact> {
         let this = self;
         unsafe {
@@ -8089,15 +8089,15 @@ pub struct IContactMessageActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ServiceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub ServiceUserId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "ApplicationModel_Contacts")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub Contact: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Contacts"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     Contact: usize,
 }
 #[repr(transparent)]
 pub struct IContactPanelActivatedEventArgs(::windows_core::IUnknown);
 impl IContactPanelActivatedEventArgs {
-    #[cfg(feature = "ApplicationModel_Contacts")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn ContactPanel(&self) -> ::windows_core::Result<super::Contacts::ContactPanel> {
         let this = self;
         unsafe {
@@ -8105,7 +8105,7 @@ impl IContactPanelActivatedEventArgs {
             (::windows_core::Interface::vtable(this).ContactPanel)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Contacts::ContactPanel>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Contacts")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn Contact(&self) -> ::windows_core::Result<super::Contacts::Contact> {
         let this = self;
         unsafe {
@@ -8185,19 +8185,19 @@ unsafe impl ::windows_core::Interface for IContactPanelActivatedEventArgs {
 #[doc(hidden)]
 pub struct IContactPanelActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "ApplicationModel_Contacts")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub ContactPanel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Contacts"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     ContactPanel: usize,
-    #[cfg(feature = "ApplicationModel_Contacts")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub Contact: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Contacts"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     Contact: usize,
 }
 #[repr(transparent)]
 pub struct IContactPickerActivatedEventArgs(::windows_core::IUnknown);
 impl IContactPickerActivatedEventArgs {
-    #[cfg(feature = "ApplicationModel_Contacts_Provider")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn ContactPickerUI(&self) -> ::windows_core::Result<super::Contacts::Provider::ContactPickerUI> {
         let this = self;
         unsafe {
@@ -8320,9 +8320,9 @@ unsafe impl ::windows_core::Interface for IContactPickerActivatedEventArgs {
 #[doc(hidden)]
 pub struct IContactPickerActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "ApplicationModel_Contacts_Provider")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub ContactPickerUI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Contacts_Provider"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     ContactPickerUI: usize,
 }
 #[repr(transparent)]
@@ -8342,7 +8342,7 @@ impl IContactPostActivatedEventArgs {
             (::windows_core::Interface::vtable(this).ServiceUserId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Contacts")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn Contact(&self) -> ::windows_core::Result<super::Contacts::Contact> {
         let this = self;
         unsafe {
@@ -8496,9 +8496,9 @@ pub struct IContactPostActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ServiceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub ServiceUserId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "ApplicationModel_Contacts")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub Contact: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Contacts"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     Contact: usize,
 }
 #[repr(transparent)]
@@ -8518,7 +8518,7 @@ impl IContactVideoCallActivatedEventArgs {
             (::windows_core::Interface::vtable(this).ServiceUserId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Contacts")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn Contact(&self) -> ::windows_core::Result<super::Contacts::Contact> {
         let this = self;
         unsafe {
@@ -8672,9 +8672,9 @@ pub struct IContactVideoCallActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ServiceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub ServiceUserId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "ApplicationModel_Contacts")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub Contact: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Contacts"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     Contact: usize,
 }
 #[repr(transparent)]
@@ -8807,7 +8807,7 @@ pub struct IContactsProviderActivatedEventArgs_Vtbl {
 #[repr(transparent)]
 pub struct IContinuationActivatedEventArgs(::windows_core::IUnknown);
 impl IContinuationActivatedEventArgs {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ContinuationData(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = self;
         unsafe {
@@ -8930,9 +8930,9 @@ unsafe impl ::windows_core::Interface for IContinuationActivatedEventArgs {
 #[doc(hidden)]
 pub struct IContinuationActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub ContinuationData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ContinuationData: usize,
 }
 #[repr(transparent)]
@@ -9073,7 +9073,7 @@ pub struct IDeviceActivatedEventArgs_Vtbl {
 #[repr(transparent)]
 pub struct IDevicePairingActivatedEventArgs(::windows_core::IUnknown);
 impl IDevicePairingActivatedEventArgs {
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub fn DeviceInformation(&self) -> ::windows_core::Result<::winrt_devices::Enumeration::DeviceInformation> {
         let this = self;
         unsafe {
@@ -9196,9 +9196,9 @@ unsafe impl ::windows_core::Interface for IDevicePairingActivatedEventArgs {
 #[doc(hidden)]
 pub struct IDevicePairingActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub DeviceInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Enumeration"))]
+    #[cfg(not(feature = "winrt-devices"))]
     DeviceInformation: usize,
 }
 #[repr(transparent)]
@@ -9367,7 +9367,7 @@ pub struct IDialReceiverActivatedEventArgs_Vtbl {
 #[repr(transparent)]
 pub struct IFileActivatedEventArgs(::windows_core::IUnknown);
 impl IFileActivatedEventArgs {
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub fn Files(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_storage::IStorageItem>> {
         let this = self;
         unsafe {
@@ -9497,9 +9497,9 @@ unsafe impl ::windows_core::Interface for IFileActivatedEventArgs {
 #[doc(hidden)]
 pub struct IFileActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub Files: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-storage")))]
     Files: usize,
     pub Verb: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
@@ -9633,7 +9633,7 @@ pub struct IFileActivatedEventArgsWithCallerPackageFamilyName_Vtbl {
 #[repr(transparent)]
 pub struct IFileActivatedEventArgsWithNeighboringFiles(::windows_core::IUnknown);
 impl IFileActivatedEventArgsWithNeighboringFiles {
-    #[cfg(feature = "Storage_Search")]
+    #[cfg(feature = "winrt-storage")]
     pub fn NeighboringFilesQuery(&self) -> ::windows_core::Result<::winrt_storage::Search::StorageFileQueryResult> {
         let this = self;
         unsafe {
@@ -9662,7 +9662,7 @@ impl IFileActivatedEventArgsWithNeighboringFiles {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub fn Files(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_storage::IStorageItem>> {
         let this = &::windows_core::Interface::cast::<IFileActivatedEventArgs>(self)?;
         unsafe {
@@ -9793,15 +9793,15 @@ unsafe impl ::windows_core::Interface for IFileActivatedEventArgsWithNeighboring
 #[doc(hidden)]
 pub struct IFileActivatedEventArgsWithNeighboringFiles_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Search")]
+    #[cfg(feature = "winrt-storage")]
     pub NeighboringFilesQuery: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Search"))]
+    #[cfg(not(feature = "winrt-storage"))]
     NeighboringFilesQuery: usize,
 }
 #[repr(transparent)]
 pub struct IFileOpenPickerActivatedEventArgs(::windows_core::IUnknown);
 impl IFileOpenPickerActivatedEventArgs {
-    #[cfg(feature = "Storage_Pickers_Provider")]
+    #[cfg(feature = "winrt-storage")]
     pub fn FileOpenPickerUI(&self) -> ::windows_core::Result<::winrt_storage::Pickers::Provider::FileOpenPickerUI> {
         let this = self;
         unsafe {
@@ -9924,9 +9924,9 @@ unsafe impl ::windows_core::Interface for IFileOpenPickerActivatedEventArgs {
 #[doc(hidden)]
 pub struct IFileOpenPickerActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Pickers_Provider")]
+    #[cfg(feature = "winrt-storage")]
     pub FileOpenPickerUI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Pickers_Provider"))]
+    #[cfg(not(feature = "winrt-storage"))]
     FileOpenPickerUI: usize,
 }
 #[repr(transparent)]
@@ -10013,12 +10013,12 @@ pub struct IFileOpenPickerActivatedEventArgs2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub CallerPackageFamilyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct IFileOpenPickerContinuationEventArgs(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl IFileOpenPickerContinuationEventArgs {
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage", feature = "winrt-"))]
     pub fn Files(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_storage::StorageFile>> {
         let this = self;
         unsafe {
@@ -10047,7 +10047,7 @@ impl IFileOpenPickerContinuationEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ContinuationData(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = &::windows_core::Interface::cast::<IContinuationActivatedEventArgs>(self)?;
         unsafe {
@@ -10056,127 +10056,127 @@ impl IFileOpenPickerContinuationEventArgs {
         }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<IFileOpenPickerContinuationEventArgs> for ::windows_core::IUnknown {
     fn from(value: IFileOpenPickerContinuationEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&IFileOpenPickerContinuationEventArgs> for ::windows_core::IUnknown {
     fn from(value: &IFileOpenPickerContinuationEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IFileOpenPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFileOpenPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<IFileOpenPickerContinuationEventArgs> for ::windows_core::IInspectable {
     fn from(value: IFileOpenPickerContinuationEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&IFileOpenPickerContinuationEventArgs> for ::windows_core::IInspectable {
     fn from(value: &IFileOpenPickerContinuationEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for IFileOpenPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a IFileOpenPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<IFileOpenPickerContinuationEventArgs> for IActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: IFileOpenPickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<&IFileOpenPickerContinuationEventArgs> for IActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: &IFileOpenPickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IActivatedEventArgs> for IFileOpenPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IActivatedEventArgs> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IActivatedEventArgs> for &IFileOpenPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IActivatedEventArgs> {
         ::core::convert::TryInto::<IActivatedEventArgs>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<IFileOpenPickerContinuationEventArgs> for IContinuationActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: IFileOpenPickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<&IFileOpenPickerContinuationEventArgs> for IContinuationActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: &IFileOpenPickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IContinuationActivatedEventArgs> for IFileOpenPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IContinuationActivatedEventArgs> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IContinuationActivatedEventArgs> for &IFileOpenPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IContinuationActivatedEventArgs> {
         ::core::convert::TryInto::<IContinuationActivatedEventArgs>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for IFileOpenPickerContinuationEventArgs {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::PartialEq for IFileOpenPickerContinuationEventArgs {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::Eq for IFileOpenPickerContinuationEventArgs {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::fmt::Debug for IFileOpenPickerContinuationEventArgs {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("IFileOpenPickerContinuationEventArgs").field(&self.0).finish()
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::RuntimeType for IFileOpenPickerContinuationEventArgs {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"{f0fa3f3a-d4e8-4ad3-9c34-2308f32fcec9}");
     type DefaultType = ::core::option::Option<Self>;
@@ -10184,25 +10184,25 @@ unsafe impl ::windows_core::RuntimeType for IFileOpenPickerContinuationEventArgs
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for IFileOpenPickerContinuationEventArgs {
     type Vtable = IFileOpenPickerContinuationEventArgs_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf0fa3f3a_d4e8_4ad3_9c34_2308f32fcec9);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFileOpenPickerContinuationEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage", feature = "winrt-"))]
     pub Files: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage", feature = "deprecated")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-storage", feature = "winrt-")))]
     Files: usize,
 }
 #[repr(transparent)]
 pub struct IFileSavePickerActivatedEventArgs(::windows_core::IUnknown);
 impl IFileSavePickerActivatedEventArgs {
-    #[cfg(feature = "Storage_Pickers_Provider")]
+    #[cfg(feature = "winrt-storage")]
     pub fn FileSavePickerUI(&self) -> ::windows_core::Result<::winrt_storage::Pickers::Provider::FileSavePickerUI> {
         let this = self;
         unsafe {
@@ -10325,9 +10325,9 @@ unsafe impl ::windows_core::Interface for IFileSavePickerActivatedEventArgs {
 #[doc(hidden)]
 pub struct IFileSavePickerActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Pickers_Provider")]
+    #[cfg(feature = "winrt-storage")]
     pub FileSavePickerUI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Pickers_Provider"))]
+    #[cfg(not(feature = "winrt-storage"))]
     FileSavePickerUI: usize,
 }
 #[repr(transparent)]
@@ -10422,12 +10422,12 @@ pub struct IFileSavePickerActivatedEventArgs2_Vtbl {
     pub CallerPackageFamilyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub EnterpriseId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct IFileSavePickerContinuationEventArgs(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl IFileSavePickerContinuationEventArgs {
-    #[cfg(all(feature = "Storage", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-"))]
     pub fn File(&self) -> ::windows_core::Result<::winrt_storage::StorageFile> {
         let this = self;
         unsafe {
@@ -10456,7 +10456,7 @@ impl IFileSavePickerContinuationEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ContinuationData(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = &::windows_core::Interface::cast::<IContinuationActivatedEventArgs>(self)?;
         unsafe {
@@ -10465,127 +10465,127 @@ impl IFileSavePickerContinuationEventArgs {
         }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<IFileSavePickerContinuationEventArgs> for ::windows_core::IUnknown {
     fn from(value: IFileSavePickerContinuationEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&IFileSavePickerContinuationEventArgs> for ::windows_core::IUnknown {
     fn from(value: &IFileSavePickerContinuationEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IFileSavePickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFileSavePickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<IFileSavePickerContinuationEventArgs> for ::windows_core::IInspectable {
     fn from(value: IFileSavePickerContinuationEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&IFileSavePickerContinuationEventArgs> for ::windows_core::IInspectable {
     fn from(value: &IFileSavePickerContinuationEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for IFileSavePickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a IFileSavePickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<IFileSavePickerContinuationEventArgs> for IActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: IFileSavePickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<&IFileSavePickerContinuationEventArgs> for IActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: &IFileSavePickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IActivatedEventArgs> for IFileSavePickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IActivatedEventArgs> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IActivatedEventArgs> for &IFileSavePickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IActivatedEventArgs> {
         ::core::convert::TryInto::<IActivatedEventArgs>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<IFileSavePickerContinuationEventArgs> for IContinuationActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: IFileSavePickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<&IFileSavePickerContinuationEventArgs> for IContinuationActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: &IFileSavePickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IContinuationActivatedEventArgs> for IFileSavePickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IContinuationActivatedEventArgs> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IContinuationActivatedEventArgs> for &IFileSavePickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IContinuationActivatedEventArgs> {
         ::core::convert::TryInto::<IContinuationActivatedEventArgs>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for IFileSavePickerContinuationEventArgs {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::PartialEq for IFileSavePickerContinuationEventArgs {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::Eq for IFileSavePickerContinuationEventArgs {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::fmt::Debug for IFileSavePickerContinuationEventArgs {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("IFileSavePickerContinuationEventArgs").field(&self.0).finish()
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::RuntimeType for IFileSavePickerContinuationEventArgs {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"{2c846fe1-3bad-4f33-8c8b-e46fae824b4b}");
     type DefaultType = ::core::option::Option<Self>;
@@ -10593,27 +10593,27 @@ unsafe impl ::windows_core::RuntimeType for IFileSavePickerContinuationEventArgs
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for IFileSavePickerContinuationEventArgs {
     type Vtable = IFileSavePickerContinuationEventArgs_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2c846fe1_3bad_4f33_8c8b_e46fae824b4b);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFileSavePickerContinuationEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Storage", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-"))]
     pub File: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Storage", feature = "deprecated")))]
+    #[cfg(not(all(feature = "winrt-storage", feature = "winrt-")))]
     File: usize,
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct IFolderPickerContinuationEventArgs(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl IFolderPickerContinuationEventArgs {
-    #[cfg(all(feature = "Storage", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-"))]
     pub fn Folder(&self) -> ::windows_core::Result<::winrt_storage::StorageFolder> {
         let this = self;
         unsafe {
@@ -10642,7 +10642,7 @@ impl IFolderPickerContinuationEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ContinuationData(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = &::windows_core::Interface::cast::<IContinuationActivatedEventArgs>(self)?;
         unsafe {
@@ -10651,127 +10651,127 @@ impl IFolderPickerContinuationEventArgs {
         }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<IFolderPickerContinuationEventArgs> for ::windows_core::IUnknown {
     fn from(value: IFolderPickerContinuationEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&IFolderPickerContinuationEventArgs> for ::windows_core::IUnknown {
     fn from(value: &IFolderPickerContinuationEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IFolderPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFolderPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<IFolderPickerContinuationEventArgs> for ::windows_core::IInspectable {
     fn from(value: IFolderPickerContinuationEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&IFolderPickerContinuationEventArgs> for ::windows_core::IInspectable {
     fn from(value: &IFolderPickerContinuationEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for IFolderPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a IFolderPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<IFolderPickerContinuationEventArgs> for IActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: IFolderPickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<&IFolderPickerContinuationEventArgs> for IActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: &IFolderPickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IActivatedEventArgs> for IFolderPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IActivatedEventArgs> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IActivatedEventArgs> for &IFolderPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IActivatedEventArgs> {
         ::core::convert::TryInto::<IActivatedEventArgs>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<IFolderPickerContinuationEventArgs> for IContinuationActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: IFolderPickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<&IFolderPickerContinuationEventArgs> for IContinuationActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: &IFolderPickerContinuationEventArgs) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IContinuationActivatedEventArgs> for IFolderPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IContinuationActivatedEventArgs> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IContinuationActivatedEventArgs> for &IFolderPickerContinuationEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, IContinuationActivatedEventArgs> {
         ::core::convert::TryInto::<IContinuationActivatedEventArgs>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for IFolderPickerContinuationEventArgs {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::PartialEq for IFolderPickerContinuationEventArgs {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::Eq for IFolderPickerContinuationEventArgs {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::fmt::Debug for IFolderPickerContinuationEventArgs {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("IFolderPickerContinuationEventArgs").field(&self.0).finish()
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::RuntimeType for IFolderPickerContinuationEventArgs {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"{51882366-9f4b-498f-beb0-42684f6e1c29}");
     type DefaultType = ::core::option::Option<Self>;
@@ -10779,19 +10779,19 @@ unsafe impl ::windows_core::RuntimeType for IFolderPickerContinuationEventArgs {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for IFolderPickerContinuationEventArgs {
     type Vtable = IFolderPickerContinuationEventArgs_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x51882366_9f4b_498f_beb0_42684f6e1c29);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFolderPickerContinuationEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Storage", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-"))]
     pub Folder: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Storage", feature = "deprecated")))]
+    #[cfg(not(all(feature = "winrt-storage", feature = "winrt-")))]
     Folder: usize,
 }
 #[repr(transparent)]
@@ -11222,7 +11222,7 @@ pub struct ILockScreenActivatedEventArgs_Vtbl {
 #[repr(transparent)]
 pub struct ILockScreenCallActivatedEventArgs(::windows_core::IUnknown);
 impl ILockScreenCallActivatedEventArgs {
-    #[cfg(feature = "ApplicationModel_Calls")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn CallUI(&self) -> ::windows_core::Result<super::Calls::LockScreenCallUI> {
         let this = self;
         unsafe {
@@ -11381,9 +11381,9 @@ unsafe impl ::windows_core::Interface for ILockScreenCallActivatedEventArgs {
 #[doc(hidden)]
 pub struct ILockScreenCallActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "ApplicationModel_Calls")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub CallUI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Calls"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     CallUI: usize,
 }
 #[repr(transparent)]
@@ -11770,7 +11770,7 @@ pub struct IPrelaunchActivatedEventArgs_Vtbl {
 #[repr(transparent)]
 pub struct IPrint3DWorkflowActivatedEventArgs(::windows_core::IUnknown);
 impl IPrint3DWorkflowActivatedEventArgs {
-    #[cfg(feature = "Devices_Printers_Extensions")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Workflow(&self) -> ::windows_core::Result<::winrt_devices::Printers::Extensions::Print3DWorkflow> {
         let this = self;
         unsafe {
@@ -11893,15 +11893,15 @@ unsafe impl ::windows_core::Interface for IPrint3DWorkflowActivatedEventArgs {
 #[doc(hidden)]
 pub struct IPrint3DWorkflowActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Printers_Extensions")]
+    #[cfg(feature = "winrt-devices")]
     pub Workflow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Printers_Extensions"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Workflow: usize,
 }
 #[repr(transparent)]
 pub struct IPrintTaskSettingsActivatedEventArgs(::windows_core::IUnknown);
 impl IPrintTaskSettingsActivatedEventArgs {
-    #[cfg(feature = "Devices_Printers_Extensions")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Configuration(&self) -> ::windows_core::Result<::winrt_devices::Printers::Extensions::PrintTaskConfiguration> {
         let this = self;
         unsafe {
@@ -12024,9 +12024,9 @@ unsafe impl ::windows_core::Interface for IPrintTaskSettingsActivatedEventArgs {
 #[doc(hidden)]
 pub struct IPrintTaskSettingsActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Printers_Extensions")]
+    #[cfg(feature = "winrt-devices")]
     pub Configuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Printers_Extensions"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Configuration: usize,
 }
 #[repr(transparent)]
@@ -12166,7 +12166,7 @@ impl IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData {
             (::windows_core::Interface::vtable(this).CallerPackageFamilyName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Data(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = self;
         unsafe {
@@ -12290,15 +12290,15 @@ unsafe impl ::windows_core::Interface for IProtocolActivatedEventArgsWithCallerP
 pub struct IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub CallerPackageFamilyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Data: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Data: usize,
 }
 #[repr(transparent)]
 pub struct IProtocolForResultsActivatedEventArgs(::windows_core::IUnknown);
 impl IProtocolForResultsActivatedEventArgs {
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn ProtocolForResultsOperation(&self) -> ::windows_core::Result<::winrt_system::ProtocolForResultsOperation> {
         let this = self;
         unsafe {
@@ -12421,9 +12421,9 @@ unsafe impl ::windows_core::Interface for IProtocolForResultsActivatedEventArgs 
 #[doc(hidden)]
 pub struct IProtocolForResultsActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub ProtocolForResultsOperation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     ProtocolForResultsOperation: usize,
 }
 #[repr(transparent)]
@@ -12691,7 +12691,7 @@ pub struct ISearchActivatedEventArgs_Vtbl {
 #[repr(transparent)]
 pub struct ISearchActivatedEventArgsWithLinguisticDetails(::windows_core::IUnknown);
 impl ISearchActivatedEventArgsWithLinguisticDetails {
-    #[cfg(feature = "ApplicationModel_Search")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn LinguisticDetails(&self) -> ::windows_core::Result<super::Search::SearchPaneQueryLinguisticDetails> {
         let this = self;
         unsafe {
@@ -12771,15 +12771,15 @@ unsafe impl ::windows_core::Interface for ISearchActivatedEventArgsWithLinguisti
 #[doc(hidden)]
 pub struct ISearchActivatedEventArgsWithLinguisticDetails_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "ApplicationModel_Search")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub LinguisticDetails: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Search"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     LinguisticDetails: usize,
 }
 #[repr(transparent)]
 pub struct IShareTargetActivatedEventArgs(::windows_core::IUnknown);
 impl IShareTargetActivatedEventArgs {
-    #[cfg(feature = "ApplicationModel_DataTransfer_ShareTarget")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn ShareOperation(&self) -> ::windows_core::Result<super::DataTransfer::ShareTarget::ShareOperation> {
         let this = self;
         unsafe {
@@ -12902,9 +12902,9 @@ unsafe impl ::windows_core::Interface for IShareTargetActivatedEventArgs {
 #[doc(hidden)]
 pub struct IShareTargetActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "ApplicationModel_DataTransfer_ShareTarget")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub ShareOperation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_DataTransfer_ShareTarget"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     ShareOperation: usize,
 }
 #[doc(hidden)]
@@ -13060,9 +13060,9 @@ unsafe impl ::windows_core::Interface for ITileActivatedInfo {
 #[doc(hidden)]
 pub struct ITileActivatedInfo_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Notifications"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub RecentlyShownNotifications: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "UI_Notifications")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-ui")))]
     RecentlyShownNotifications: usize,
 }
 #[repr(transparent)]
@@ -13075,7 +13075,7 @@ impl IToastNotificationActivatedEventArgs {
             (::windows_core::Interface::vtable(this).Argument)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn UserInput(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = self;
         unsafe {
@@ -13199,15 +13199,15 @@ unsafe impl ::windows_core::Interface for IToastNotificationActivatedEventArgs {
 pub struct IToastNotificationActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Argument: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub UserInput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     UserInput: usize,
 }
 #[repr(transparent)]
 pub struct IUserDataAccountProviderActivatedEventArgs(::windows_core::IUnknown);
 impl IUserDataAccountProviderActivatedEventArgs {
-    #[cfg(feature = "ApplicationModel_UserDataAccounts_Provider")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn Operation(&self) -> ::windows_core::Result<super::UserDataAccounts::Provider::IUserDataAccountProviderOperation> {
         let this = self;
         unsafe {
@@ -13330,15 +13330,15 @@ unsafe impl ::windows_core::Interface for IUserDataAccountProviderActivatedEvent
 #[doc(hidden)]
 pub struct IUserDataAccountProviderActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "ApplicationModel_UserDataAccounts_Provider")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub Operation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_UserDataAccounts_Provider"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     Operation: usize,
 }
 #[repr(transparent)]
 pub struct IViewSwitcherProvider(::windows_core::IUnknown);
 impl IViewSwitcherProvider {
-    #[cfg(feature = "UI_ViewManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ViewSwitcher(&self) -> ::windows_core::Result<::winrt_ui::ViewManagement::ActivationViewSwitcher> {
         let this = self;
         unsafe {
@@ -13461,15 +13461,15 @@ unsafe impl ::windows_core::Interface for IViewSwitcherProvider {
 #[doc(hidden)]
 pub struct IViewSwitcherProvider_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_ViewManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub ViewSwitcher: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_ViewManagement"))]
+    #[cfg(not(feature = "winrt-ui"))]
     ViewSwitcher: usize,
 }
 #[repr(transparent)]
 pub struct IVoiceCommandActivatedEventArgs(::windows_core::IUnknown);
 impl IVoiceCommandActivatedEventArgs {
-    #[cfg(feature = "Media_SpeechRecognition")]
+    #[cfg(feature = "winrt-media")]
     pub fn Result(&self) -> ::windows_core::Result<::winrt_media::SpeechRecognition::SpeechRecognitionResult> {
         let this = self;
         unsafe {
@@ -13592,9 +13592,9 @@ unsafe impl ::windows_core::Interface for IVoiceCommandActivatedEventArgs {
 #[doc(hidden)]
 pub struct IVoiceCommandActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Media_SpeechRecognition")]
+    #[cfg(feature = "winrt-media")]
     pub Result: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_SpeechRecognition"))]
+    #[cfg(not(feature = "winrt-media"))]
     Result: usize,
 }
 #[repr(transparent)]
@@ -13607,7 +13607,7 @@ impl IWalletActionActivatedEventArgs {
             (::windows_core::Interface::vtable(this).ItemId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Wallet")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn ActionKind(&self) -> ::windows_core::Result<super::Wallet::WalletActionKind> {
         let this = self;
         unsafe {
@@ -13738,16 +13738,16 @@ unsafe impl ::windows_core::Interface for IWalletActionActivatedEventArgs {
 pub struct IWalletActionActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ItemId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "ApplicationModel_Wallet")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub ActionKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Wallet::WalletActionKind) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Wallet"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     ActionKind: usize,
     pub ActionId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IWebAccountProviderActivatedEventArgs(::windows_core::IUnknown);
 impl IWebAccountProviderActivatedEventArgs {
-    #[cfg(feature = "Security_Authentication_Web_Provider")]
+    #[cfg(feature = "winrt-security")]
     pub fn Operation(&self) -> ::windows_core::Result<::winrt_security::Authentication::Web::Provider::IWebAccountProviderOperation> {
         let this = self;
         unsafe {
@@ -13870,15 +13870,15 @@ unsafe impl ::windows_core::Interface for IWebAccountProviderActivatedEventArgs 
 #[doc(hidden)]
 pub struct IWebAccountProviderActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Security_Authentication_Web_Provider")]
+    #[cfg(feature = "winrt-security")]
     pub Operation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Authentication_Web_Provider"))]
+    #[cfg(not(feature = "winrt-security"))]
     Operation: usize,
 }
 #[repr(transparent)]
 pub struct IWebAuthenticationBrokerContinuationEventArgs(::windows_core::IUnknown);
 impl IWebAuthenticationBrokerContinuationEventArgs {
-    #[cfg(feature = "Security_Authentication_Web")]
+    #[cfg(feature = "winrt-security")]
     pub fn WebAuthenticationResult(&self) -> ::windows_core::Result<::winrt_security::Authentication::Web::WebAuthenticationResult> {
         let this = self;
         unsafe {
@@ -13907,7 +13907,7 @@ impl IWebAuthenticationBrokerContinuationEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ContinuationData(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = &::windows_core::Interface::cast::<IContinuationActivatedEventArgs>(self)?;
         unsafe {
@@ -14031,9 +14031,9 @@ unsafe impl ::windows_core::Interface for IWebAuthenticationBrokerContinuationEv
 #[doc(hidden)]
 pub struct IWebAuthenticationBrokerContinuationEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Security_Authentication_Web")]
+    #[cfg(feature = "winrt-security")]
     pub WebAuthenticationResult: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Authentication_Web"))]
+    #[cfg(not(feature = "winrt-security"))]
     WebAuthenticationResult: usize,
 }
 #[repr(transparent)]
@@ -14060,7 +14060,7 @@ impl LaunchActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -14103,7 +14103,7 @@ impl LaunchActivatedEventArgs {
             (::windows_core::Interface::vtable(this).PrelaunchActivated)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_ViewManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ViewSwitcher(&self) -> ::windows_core::Result<::winrt_ui::ViewManagement::ActivationViewSwitcher> {
         let this = &::windows_core::Interface::cast::<IViewSwitcherProvider>(self)?;
         unsafe {
@@ -14362,7 +14362,7 @@ impl LockScreenActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -14561,7 +14561,7 @@ impl LockScreenCallActivatedEventArgs {
             (::windows_core::Interface::vtable(this).TileId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Calls")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn CallUI(&self) -> ::windows_core::Result<super::Calls::LockScreenCallUI> {
         let this = self;
         unsafe {
@@ -14569,7 +14569,7 @@ impl LockScreenCallActivatedEventArgs {
             (::windows_core::Interface::vtable(this).CallUI)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Calls::LockScreenCallUI>(result__)
         }
     }
-    #[cfg(feature = "UI_ViewManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ViewSwitcher(&self) -> ::windows_core::Result<::winrt_ui::ViewManagement::ActivationViewSwitcher> {
         let this = &::windows_core::Interface::cast::<IViewSwitcherProvider>(self)?;
         unsafe {
@@ -14903,7 +14903,7 @@ impl PhoneCallActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -15229,7 +15229,7 @@ impl Print3DWorkflowActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "Devices_Printers_Extensions")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Workflow(&self) -> ::windows_core::Result<::winrt_devices::Printers::Extensions::Print3DWorkflow> {
         let this = self;
         unsafe {
@@ -15378,7 +15378,7 @@ impl PrintTaskSettingsActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "Devices_Printers_Extensions")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Configuration(&self) -> ::windows_core::Result<::winrt_devices::Printers::Extensions::PrintTaskConfiguration> {
         let this = self;
         unsafe {
@@ -15527,7 +15527,7 @@ impl ProtocolActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -15556,7 +15556,7 @@ impl ProtocolActivatedEventArgs {
             (::windows_core::Interface::vtable(this).CallerPackageFamilyName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Data(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = &::windows_core::Interface::cast::<IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData>(self)?;
         unsafe {
@@ -15564,7 +15564,7 @@ impl ProtocolActivatedEventArgs {
             (::windows_core::Interface::vtable(this).Data)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
-    #[cfg(feature = "UI_ViewManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ViewSwitcher(&self) -> ::windows_core::Result<::winrt_ui::ViewManagement::ActivationViewSwitcher> {
         let this = &::windows_core::Interface::cast::<IViewSwitcherProvider>(self)?;
         unsafe {
@@ -15801,7 +15801,7 @@ impl ProtocolForResultsActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -15830,7 +15830,7 @@ impl ProtocolForResultsActivatedEventArgs {
             (::windows_core::Interface::vtable(this).CallerPackageFamilyName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Data(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = &::windows_core::Interface::cast::<IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData>(self)?;
         unsafe {
@@ -15838,7 +15838,7 @@ impl ProtocolForResultsActivatedEventArgs {
             (::windows_core::Interface::vtable(this).Data)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn ProtocolForResultsOperation(&self) -> ::windows_core::Result<::winrt_system::ProtocolForResultsOperation> {
         let this = self;
         unsafe {
@@ -15846,7 +15846,7 @@ impl ProtocolForResultsActivatedEventArgs {
             (::windows_core::Interface::vtable(this).ProtocolForResultsOperation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::ProtocolForResultsOperation>(result__)
         }
     }
-    #[cfg(feature = "UI_ViewManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ViewSwitcher(&self) -> ::windows_core::Result<::winrt_ui::ViewManagement::ActivationViewSwitcher> {
         let this = &::windows_core::Interface::cast::<IViewSwitcherProvider>(self)?;
         unsafe {
@@ -16105,7 +16105,7 @@ impl RestrictedLaunchActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -16283,7 +16283,7 @@ impl SearchActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -16312,7 +16312,7 @@ impl SearchActivatedEventArgs {
             (::windows_core::Interface::vtable(this).Language)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Search")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn LinguisticDetails(&self) -> ::windows_core::Result<super::Search::SearchPaneQueryLinguisticDetails> {
         let this = &::windows_core::Interface::cast::<ISearchActivatedEventArgsWithLinguisticDetails>(self)?;
         unsafe {
@@ -16320,7 +16320,7 @@ impl SearchActivatedEventArgs {
             (::windows_core::Interface::vtable(this).LinguisticDetails)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Search::SearchPaneQueryLinguisticDetails>(result__)
         }
     }
-    #[cfg(feature = "UI_ViewManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ViewSwitcher(&self) -> ::windows_core::Result<::winrt_ui::ViewManagement::ActivationViewSwitcher> {
         let this = &::windows_core::Interface::cast::<IViewSwitcherProvider>(self)?;
         unsafe {
@@ -16557,7 +16557,7 @@ impl ShareTargetActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -16565,7 +16565,7 @@ impl ShareTargetActivatedEventArgs {
             (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_DataTransfer_ShareTarget")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn ShareOperation(&self) -> ::windows_core::Result<super::DataTransfer::ShareTarget::ShareOperation> {
         let this = self;
         unsafe {
@@ -16828,7 +16828,7 @@ impl StartupTaskActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -16985,7 +16985,7 @@ unsafe impl ::core::marker::Sync for StartupTaskActivatedEventArgs {}
 #[repr(transparent)]
 pub struct TileActivatedInfo(::windows_core::IUnknown);
 impl TileActivatedInfo {
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Notifications"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub fn RecentlyShownNotifications(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_ui::Notifications::ShownTileNotification>> {
         let this = self;
         unsafe {
@@ -17090,7 +17090,7 @@ impl ToastNotificationActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -17112,7 +17112,7 @@ impl ToastNotificationActivatedEventArgs {
             (::windows_core::Interface::vtable(this).Argument)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn UserInput(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = self;
         unsafe {
@@ -17305,7 +17305,7 @@ impl UserDataAccountProviderActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_UserDataAccounts_Provider")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn Operation(&self) -> ::windows_core::Result<super::UserDataAccounts::Provider::IUserDataAccountProviderOperation> {
         let this = self;
         unsafe {
@@ -17454,7 +17454,7 @@ impl VoiceCommandActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -17462,7 +17462,7 @@ impl VoiceCommandActivatedEventArgs {
             (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
-    #[cfg(feature = "Media_SpeechRecognition")]
+    #[cfg(feature = "winrt-media")]
     pub fn Result(&self) -> ::windows_core::Result<::winrt_media::SpeechRecognition::SpeechRecognitionResult> {
         let this = self;
         unsafe {
@@ -17640,7 +17640,7 @@ impl WalletActionActivatedEventArgs {
             (::windows_core::Interface::vtable(this).ItemId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Wallet")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn ActionKind(&self) -> ::windows_core::Result<super::Wallet::WalletActionKind> {
         let this = self;
         unsafe {
@@ -17796,7 +17796,7 @@ impl WebAccountProviderActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -17804,7 +17804,7 @@ impl WebAccountProviderActivatedEventArgs {
             (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
-    #[cfg(feature = "Security_Authentication_Web_Provider")]
+    #[cfg(feature = "winrt-security")]
     pub fn Operation(&self) -> ::windows_core::Result<::winrt_security::Authentication::Web::Provider::IWebAccountProviderOperation> {
         let this = self;
         unsafe {
@@ -17975,7 +17975,7 @@ impl WebAuthenticationBrokerContinuationEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SplashScreen>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ContinuationData(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = &::windows_core::Interface::cast::<IContinuationActivatedEventArgs>(self)?;
         unsafe {
@@ -17983,7 +17983,7 @@ impl WebAuthenticationBrokerContinuationEventArgs {
             (::windows_core::Interface::vtable(this).ContinuationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
-    #[cfg(feature = "Security_Authentication_Web")]
+    #[cfg(feature = "winrt-security")]
     pub fn WebAuthenticationResult(&self) -> ::windows_core::Result<::winrt_security::Authentication::Web::WebAuthenticationResult> {
         let this = self;
         unsafe {

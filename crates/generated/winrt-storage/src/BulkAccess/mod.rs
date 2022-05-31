@@ -1,7 +1,7 @@
 #[repr(transparent)]
 pub struct FileInformation(::windows_core::IUnknown);
 impl FileInformation {
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn OpenSequentialReadAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::Streams::IInputStream>> {
         let this = &::windows_core::Interface::cast::<super::Streams::IInputStreamReference>(self)?;
         unsafe {
@@ -9,7 +9,7 @@ impl FileInformation {
             (::windows_core::Interface::vtable(this).OpenSequentialReadAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::Streams::IInputStream>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn OpenReadAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::Streams::IRandomAccessStreamWithContentType>> {
         let this = &::windows_core::Interface::cast::<super::Streams::IRandomAccessStreamReference>(self)?;
         unsafe {
@@ -31,7 +31,7 @@ impl FileInformation {
             (::windows_core::Interface::vtable(this).ContentType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn OpenAsync(&self, accessmode: super::FileAccessMode) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::Streams::IRandomAccessStream>> {
         let this = &::windows_core::Interface::cast::<super::IStorageFile>(self)?;
         unsafe {
@@ -102,7 +102,7 @@ impl FileInformation {
             (::windows_core::Interface::vtable(this).MoveAndReplaceAsync)(::windows_core::Interface::as_raw(this), filetoreplace.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn OpenWithOptionsAsync(&self, accessmode: super::FileAccessMode, options: super::StorageOpenOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::Streams::IRandomAccessStream>> {
         let this = &::windows_core::Interface::cast::<super::IStorageFile2>(self)?;
         unsafe {
@@ -152,7 +152,7 @@ impl FileInformation {
             (::windows_core::Interface::vtable(this).DeleteAsync)(::windows_core::Interface::as_raw(this), option, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetBasicPropertiesAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::FileProperties::BasicProperties>> {
         let this = &::windows_core::Interface::cast::<super::IStorageItem>(self)?;
         unsafe {
@@ -209,7 +209,7 @@ impl FileInformation {
             (::windows_core::Interface::vtable(this).IsEqual)(::windows_core::Interface::as_raw(this), item.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub fn MusicProperties(&self) -> ::windows_core::Result<super::FileProperties::MusicProperties> {
         let this = self;
         unsafe {
@@ -217,7 +217,7 @@ impl FileInformation {
             (::windows_core::Interface::vtable(this).MusicProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::FileProperties::MusicProperties>(result__)
         }
     }
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub fn VideoProperties(&self) -> ::windows_core::Result<super::FileProperties::VideoProperties> {
         let this = self;
         unsafe {
@@ -225,7 +225,7 @@ impl FileInformation {
             (::windows_core::Interface::vtable(this).VideoProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::FileProperties::VideoProperties>(result__)
         }
     }
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ImageProperties(&self) -> ::windows_core::Result<super::FileProperties::ImageProperties> {
         let this = self;
         unsafe {
@@ -233,7 +233,7 @@ impl FileInformation {
             (::windows_core::Interface::vtable(this).ImageProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::FileProperties::ImageProperties>(result__)
         }
     }
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub fn DocumentProperties(&self) -> ::windows_core::Result<super::FileProperties::DocumentProperties> {
         let this = self;
         unsafe {
@@ -241,7 +241,7 @@ impl FileInformation {
             (::windows_core::Interface::vtable(this).DocumentProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::FileProperties::DocumentProperties>(result__)
         }
     }
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub fn BasicProperties(&self) -> ::windows_core::Result<super::FileProperties::BasicProperties> {
         let this = self;
         unsafe {
@@ -249,7 +249,7 @@ impl FileInformation {
             (::windows_core::Interface::vtable(this).BasicProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::FileProperties::BasicProperties>(result__)
         }
     }
-    #[cfg(all(feature = "Storage_FileProperties", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-storage"))]
     pub fn Thumbnail(&self) -> ::windows_core::Result<super::FileProperties::StorageItemThumbnail> {
         let this = self;
         unsafe {
@@ -279,7 +279,7 @@ impl FileInformation {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemovePropertiesUpdated)(::windows_core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Storage_FileProperties", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-storage"))]
     pub fn GetThumbnailAsyncOverloadDefaultSizeDefaultOptions(&self, mode: super::FileProperties::ThumbnailMode) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::FileProperties::StorageItemThumbnail>> {
         let this = &::windows_core::Interface::cast::<super::IStorageItemProperties>(self)?;
         unsafe {
@@ -287,7 +287,7 @@ impl FileInformation {
             (::windows_core::Interface::vtable(this).GetThumbnailAsyncOverloadDefaultSizeDefaultOptions)(::windows_core::Interface::as_raw(this), mode, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::FileProperties::StorageItemThumbnail>>(result__)
         }
     }
-    #[cfg(all(feature = "Storage_FileProperties", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-storage"))]
     pub fn GetThumbnailAsyncOverloadDefaultOptions(&self, mode: super::FileProperties::ThumbnailMode, requestedsize: u32) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::FileProperties::StorageItemThumbnail>> {
         let this = &::windows_core::Interface::cast::<super::IStorageItemProperties>(self)?;
         unsafe {
@@ -295,7 +295,7 @@ impl FileInformation {
             (::windows_core::Interface::vtable(this).GetThumbnailAsyncOverloadDefaultOptions)(::windows_core::Interface::as_raw(this), mode, requestedsize, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::FileProperties::StorageItemThumbnail>>(result__)
         }
     }
-    #[cfg(all(feature = "Storage_FileProperties", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-storage"))]
     pub fn GetThumbnailAsync(&self, mode: super::FileProperties::ThumbnailMode, requestedsize: u32, options: super::FileProperties::ThumbnailOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::FileProperties::StorageItemThumbnail>> {
         let this = &::windows_core::Interface::cast::<super::IStorageItemProperties>(self)?;
         unsafe {
@@ -324,7 +324,7 @@ impl FileInformation {
             (::windows_core::Interface::vtable(this).FolderRelativeId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Properties(&self) -> ::windows_core::Result<super::FileProperties::StorageItemContentProperties> {
         let this = &::windows_core::Interface::cast::<super::IStorageItemProperties>(self)?;
         unsafe {
@@ -410,53 +410,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Fil
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<FileInformation> for super::Streams::IInputStreamReference {
     type Error = ::windows_core::Error;
     fn try_from(value: FileInformation) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<&FileInformation> for super::Streams::IInputStreamReference {
     type Error = ::windows_core::Error;
     fn try_from(value: &FileInformation) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, super::Streams::IInputStreamReference> for FileInformation {
     fn into_param(self) -> ::windows_core::Param<'a, super::Streams::IInputStreamReference> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, super::Streams::IInputStreamReference> for &FileInformation {
     fn into_param(self) -> ::windows_core::Param<'a, super::Streams::IInputStreamReference> {
         ::core::convert::TryInto::<super::Streams::IInputStreamReference>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<FileInformation> for super::Streams::IRandomAccessStreamReference {
     type Error = ::windows_core::Error;
     fn try_from(value: FileInformation) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<&FileInformation> for super::Streams::IRandomAccessStreamReference {
     type Error = ::windows_core::Error;
     fn try_from(value: &FileInformation) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, super::Streams::IRandomAccessStreamReference> for FileInformation {
     fn into_param(self) -> ::windows_core::Param<'a, super::Streams::IRandomAccessStreamReference> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Storage_Streams")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, super::Streams::IRandomAccessStreamReference> for &FileInformation {
     fn into_param(self) -> ::windows_core::Param<'a, super::Streams::IRandomAccessStreamReference> {
         ::core::convert::TryInto::<super::Streams::IRandomAccessStreamReference>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -641,7 +641,7 @@ impl<'a> ::windows_core::IntoParam<'a, super::IStorageItemPropertiesWithProvider
 #[repr(transparent)]
 pub struct FileInformationFactory(::windows_core::IUnknown);
 impl FileInformationFactory {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetItemsAsync(&self, startindex: u32, maxitemstoretrieve: u32) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<IStorageItemInformation>>> {
         let this = self;
         unsafe {
@@ -649,7 +649,7 @@ impl FileInformationFactory {
             (::windows_core::Interface::vtable(this).GetItemsAsync)(::windows_core::Interface::as_raw(this), startindex, maxitemstoretrieve, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<IStorageItemInformation>>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetItemsAsyncDefaultStartAndCount(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<IStorageItemInformation>>> {
         let this = self;
         unsafe {
@@ -657,7 +657,7 @@ impl FileInformationFactory {
             (::windows_core::Interface::vtable(this).GetItemsAsyncDefaultStartAndCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<IStorageItemInformation>>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetFilesAsync(&self, startindex: u32, maxitemstoretrieve: u32) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<FileInformation>>> {
         let this = self;
         unsafe {
@@ -665,7 +665,7 @@ impl FileInformationFactory {
             (::windows_core::Interface::vtable(this).GetFilesAsync)(::windows_core::Interface::as_raw(this), startindex, maxitemstoretrieve, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<FileInformation>>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetFilesAsyncDefaultStartAndCount(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<FileInformation>>> {
         let this = self;
         unsafe {
@@ -673,7 +673,7 @@ impl FileInformationFactory {
             (::windows_core::Interface::vtable(this).GetFilesAsyncDefaultStartAndCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<FileInformation>>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetFoldersAsync(&self, startindex: u32, maxitemstoretrieve: u32) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<FolderInformation>>> {
         let this = self;
         unsafe {
@@ -681,7 +681,7 @@ impl FileInformationFactory {
             (::windows_core::Interface::vtable(this).GetFoldersAsync)(::windows_core::Interface::as_raw(this), startindex, maxitemstoretrieve, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<FolderInformation>>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetFoldersAsyncDefaultStartAndCount(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<FolderInformation>>> {
         let this = self;
         unsafe {
@@ -710,28 +710,28 @@ impl FileInformationFactory {
             (::windows_core::Interface::vtable(this).GetVirtualizedFoldersVector)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::IInspectable>(result__)
         }
     }
-    #[cfg(all(feature = "Storage_FileProperties", feature = "Storage_Search"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-storage"))]
     pub fn CreateWithMode<'a, Param0: ::windows_core::IntoParam<'a, super::Search::IStorageQueryResultBase>>(queryresult: Param0, mode: super::FileProperties::ThumbnailMode) -> ::windows_core::Result<FileInformationFactory> {
         Self::IFileInformationFactoryFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateWithMode)(::windows_core::Interface::as_raw(this), queryresult.into_param().abi(), mode, result__.as_mut_ptr()).from_abi::<FileInformationFactory>(result__)
         })
     }
-    #[cfg(all(feature = "Storage_FileProperties", feature = "Storage_Search"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-storage"))]
     pub fn CreateWithModeAndSize<'a, Param0: ::windows_core::IntoParam<'a, super::Search::IStorageQueryResultBase>>(queryresult: Param0, mode: super::FileProperties::ThumbnailMode, requestedthumbnailsize: u32) -> ::windows_core::Result<FileInformationFactory> {
         Self::IFileInformationFactoryFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateWithModeAndSize)(::windows_core::Interface::as_raw(this), queryresult.into_param().abi(), mode, requestedthumbnailsize, result__.as_mut_ptr()).from_abi::<FileInformationFactory>(result__)
         })
     }
-    #[cfg(all(feature = "Storage_FileProperties", feature = "Storage_Search"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-storage"))]
     pub fn CreateWithModeAndSizeAndOptions<'a, Param0: ::windows_core::IntoParam<'a, super::Search::IStorageQueryResultBase>>(queryresult: Param0, mode: super::FileProperties::ThumbnailMode, requestedthumbnailsize: u32, thumbnailoptions: super::FileProperties::ThumbnailOptions) -> ::windows_core::Result<FileInformationFactory> {
         Self::IFileInformationFactoryFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateWithModeAndSizeAndOptions)(::windows_core::Interface::as_raw(this), queryresult.into_param().abi(), mode, requestedthumbnailsize, thumbnailoptions, result__.as_mut_ptr()).from_abi::<FileInformationFactory>(result__)
         })
     }
-    #[cfg(all(feature = "Storage_FileProperties", feature = "Storage_Search"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-storage"))]
     pub fn CreateWithModeAndSizeAndOptionsAndFlags<'a, Param0: ::windows_core::IntoParam<'a, super::Search::IStorageQueryResultBase>>(queryresult: Param0, mode: super::FileProperties::ThumbnailMode, requestedthumbnailsize: u32, thumbnailoptions: super::FileProperties::ThumbnailOptions, delayload: bool) -> ::windows_core::Result<FileInformationFactory> {
         Self::IFileInformationFactoryFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -867,7 +867,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).GetItemAsync)(::windows_core::Interface::as_raw(this), name.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::IStorageItem>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetFilesAsyncOverloadDefaultOptionsStartAndCount(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::StorageFile>>> {
         let this = &::windows_core::Interface::cast::<super::IStorageFolder>(self)?;
         unsafe {
@@ -875,7 +875,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).GetFilesAsyncOverloadDefaultOptionsStartAndCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::StorageFile>>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetFoldersAsyncOverloadDefaultOptionsStartAndCount(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::StorageFolder>>> {
         let this = &::windows_core::Interface::cast::<super::IStorageFolder>(self)?;
         unsafe {
@@ -883,7 +883,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).GetFoldersAsyncOverloadDefaultOptionsStartAndCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::StorageFolder>>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetItemsAsyncOverloadDefaultStartAndCount(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::IStorageItem>>> {
         let this = &::windows_core::Interface::cast::<super::IStorageFolder>(self)?;
         unsafe {
@@ -898,7 +898,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).TryGetItemAsync)(::windows_core::Interface::as_raw(this), name.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::IStorageItem>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Search")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetIndexedStateAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::Search::IndexedState>> {
         let this = &::windows_core::Interface::cast::<super::Search::IStorageFolderQueryOperations>(self)?;
         unsafe {
@@ -906,7 +906,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).GetIndexedStateAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::Search::IndexedState>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Search")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFileQueryOverloadDefault(&self) -> ::windows_core::Result<super::Search::StorageFileQueryResult> {
         let this = &::windows_core::Interface::cast::<super::Search::IStorageFolderQueryOperations>(self)?;
         unsafe {
@@ -914,7 +914,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).CreateFileQueryOverloadDefault)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Search::StorageFileQueryResult>(result__)
         }
     }
-    #[cfg(feature = "Storage_Search")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFileQuery(&self, query: super::Search::CommonFileQuery) -> ::windows_core::Result<super::Search::StorageFileQueryResult> {
         let this = &::windows_core::Interface::cast::<super::Search::IStorageFolderQueryOperations>(self)?;
         unsafe {
@@ -922,7 +922,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).CreateFileQuery)(::windows_core::Interface::as_raw(this), query, result__.as_mut_ptr()).from_abi::<super::Search::StorageFileQueryResult>(result__)
         }
     }
-    #[cfg(feature = "Storage_Search")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFileQueryWithOptions<'a, Param0: ::windows_core::IntoParam<'a, super::Search::QueryOptions>>(&self, queryoptions: Param0) -> ::windows_core::Result<super::Search::StorageFileQueryResult> {
         let this = &::windows_core::Interface::cast::<super::Search::IStorageFolderQueryOperations>(self)?;
         unsafe {
@@ -930,7 +930,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).CreateFileQueryWithOptions)(::windows_core::Interface::as_raw(this), queryoptions.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Search::StorageFileQueryResult>(result__)
         }
     }
-    #[cfg(feature = "Storage_Search")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFolderQueryOverloadDefault(&self) -> ::windows_core::Result<super::Search::StorageFolderQueryResult> {
         let this = &::windows_core::Interface::cast::<super::Search::IStorageFolderQueryOperations>(self)?;
         unsafe {
@@ -938,7 +938,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).CreateFolderQueryOverloadDefault)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Search::StorageFolderQueryResult>(result__)
         }
     }
-    #[cfg(feature = "Storage_Search")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFolderQuery(&self, query: super::Search::CommonFolderQuery) -> ::windows_core::Result<super::Search::StorageFolderQueryResult> {
         let this = &::windows_core::Interface::cast::<super::Search::IStorageFolderQueryOperations>(self)?;
         unsafe {
@@ -946,7 +946,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).CreateFolderQuery)(::windows_core::Interface::as_raw(this), query, result__.as_mut_ptr()).from_abi::<super::Search::StorageFolderQueryResult>(result__)
         }
     }
-    #[cfg(feature = "Storage_Search")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFolderQueryWithOptions<'a, Param0: ::windows_core::IntoParam<'a, super::Search::QueryOptions>>(&self, queryoptions: Param0) -> ::windows_core::Result<super::Search::StorageFolderQueryResult> {
         let this = &::windows_core::Interface::cast::<super::Search::IStorageFolderQueryOperations>(self)?;
         unsafe {
@@ -954,7 +954,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).CreateFolderQueryWithOptions)(::windows_core::Interface::as_raw(this), queryoptions.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Search::StorageFolderQueryResult>(result__)
         }
     }
-    #[cfg(feature = "Storage_Search")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateItemQuery(&self) -> ::windows_core::Result<super::Search::StorageItemQueryResult> {
         let this = &::windows_core::Interface::cast::<super::Search::IStorageFolderQueryOperations>(self)?;
         unsafe {
@@ -962,7 +962,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).CreateItemQuery)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Search::StorageItemQueryResult>(result__)
         }
     }
-    #[cfg(feature = "Storage_Search")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateItemQueryWithOptions<'a, Param0: ::windows_core::IntoParam<'a, super::Search::QueryOptions>>(&self, queryoptions: Param0) -> ::windows_core::Result<super::Search::StorageItemQueryResult> {
         let this = &::windows_core::Interface::cast::<super::Search::IStorageFolderQueryOperations>(self)?;
         unsafe {
@@ -970,7 +970,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).CreateItemQueryWithOptions)(::windows_core::Interface::as_raw(this), queryoptions.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Search::StorageItemQueryResult>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Search"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub fn GetFilesAsync(&self, query: super::Search::CommonFileQuery, startindex: u32, maxitemstoretrieve: u32) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::StorageFile>>> {
         let this = &::windows_core::Interface::cast::<super::Search::IStorageFolderQueryOperations>(self)?;
         unsafe {
@@ -978,7 +978,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).GetFilesAsync)(::windows_core::Interface::as_raw(this), query, startindex, maxitemstoretrieve, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::StorageFile>>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Search"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub fn GetFilesAsyncOverloadDefaultStartAndCount(&self, query: super::Search::CommonFileQuery) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::StorageFile>>> {
         let this = &::windows_core::Interface::cast::<super::Search::IStorageFolderQueryOperations>(self)?;
         unsafe {
@@ -986,7 +986,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).GetFilesAsyncOverloadDefaultStartAndCount)(::windows_core::Interface::as_raw(this), query, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::StorageFile>>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Search"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub fn GetFoldersAsync(&self, query: super::Search::CommonFolderQuery, startindex: u32, maxitemstoretrieve: u32) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::StorageFolder>>> {
         let this = &::windows_core::Interface::cast::<super::Search::IStorageFolderQueryOperations>(self)?;
         unsafe {
@@ -994,7 +994,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).GetFoldersAsync)(::windows_core::Interface::as_raw(this), query, startindex, maxitemstoretrieve, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::StorageFolder>>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Search"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub fn GetFoldersAsyncOverloadDefaultStartAndCount(&self, query: super::Search::CommonFolderQuery) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::StorageFolder>>> {
         let this = &::windows_core::Interface::cast::<super::Search::IStorageFolderQueryOperations>(self)?;
         unsafe {
@@ -1002,7 +1002,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).GetFoldersAsyncOverloadDefaultStartAndCount)(::windows_core::Interface::as_raw(this), query, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::StorageFolder>>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Search"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub fn GetItemsAsync(&self, startindex: u32, maxitemstoretrieve: u32) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::IStorageItem>>> {
         let this = &::windows_core::Interface::cast::<super::Search::IStorageFolderQueryOperations>(self)?;
         unsafe {
@@ -1010,7 +1010,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).GetItemsAsync)(::windows_core::Interface::as_raw(this), startindex, maxitemstoretrieve, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::IStorageItem>>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Search")]
+    #[cfg(feature = "winrt-storage")]
     pub fn AreQueryOptionsSupported<'a, Param0: ::windows_core::IntoParam<'a, super::Search::QueryOptions>>(&self, queryoptions: Param0) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Search::IStorageFolderQueryOperations>(self)?;
         unsafe {
@@ -1018,7 +1018,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).AreQueryOptionsSupported)(::windows_core::Interface::as_raw(this), queryoptions.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Storage_Search")]
+    #[cfg(feature = "winrt-storage")]
     pub fn IsCommonFolderQuerySupported(&self, query: super::Search::CommonFolderQuery) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Search::IStorageFolderQueryOperations>(self)?;
         unsafe {
@@ -1026,7 +1026,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).IsCommonFolderQuerySupported)(::windows_core::Interface::as_raw(this), query, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Storage_Search")]
+    #[cfg(feature = "winrt-storage")]
     pub fn IsCommonFileQuerySupported(&self, query: super::Search::CommonFileQuery) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Search::IStorageFolderQueryOperations>(self)?;
         unsafe {
@@ -1062,7 +1062,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).DeleteAsync)(::windows_core::Interface::as_raw(this), option, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetBasicPropertiesAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::FileProperties::BasicProperties>> {
         let this = &::windows_core::Interface::cast::<super::IStorageItem>(self)?;
         unsafe {
@@ -1119,7 +1119,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).IsEqual)(::windows_core::Interface::as_raw(this), item.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub fn MusicProperties(&self) -> ::windows_core::Result<super::FileProperties::MusicProperties> {
         let this = self;
         unsafe {
@@ -1127,7 +1127,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).MusicProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::FileProperties::MusicProperties>(result__)
         }
     }
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub fn VideoProperties(&self) -> ::windows_core::Result<super::FileProperties::VideoProperties> {
         let this = self;
         unsafe {
@@ -1135,7 +1135,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).VideoProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::FileProperties::VideoProperties>(result__)
         }
     }
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ImageProperties(&self) -> ::windows_core::Result<super::FileProperties::ImageProperties> {
         let this = self;
         unsafe {
@@ -1143,7 +1143,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).ImageProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::FileProperties::ImageProperties>(result__)
         }
     }
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub fn DocumentProperties(&self) -> ::windows_core::Result<super::FileProperties::DocumentProperties> {
         let this = self;
         unsafe {
@@ -1151,7 +1151,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).DocumentProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::FileProperties::DocumentProperties>(result__)
         }
     }
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub fn BasicProperties(&self) -> ::windows_core::Result<super::FileProperties::BasicProperties> {
         let this = self;
         unsafe {
@@ -1159,7 +1159,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).BasicProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::FileProperties::BasicProperties>(result__)
         }
     }
-    #[cfg(all(feature = "Storage_FileProperties", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-storage"))]
     pub fn Thumbnail(&self) -> ::windows_core::Result<super::FileProperties::StorageItemThumbnail> {
         let this = self;
         unsafe {
@@ -1189,7 +1189,7 @@ impl FolderInformation {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemovePropertiesUpdated)(::windows_core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Storage_FileProperties", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-storage"))]
     pub fn GetThumbnailAsyncOverloadDefaultSizeDefaultOptions(&self, mode: super::FileProperties::ThumbnailMode) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::FileProperties::StorageItemThumbnail>> {
         let this = &::windows_core::Interface::cast::<super::IStorageItemProperties>(self)?;
         unsafe {
@@ -1197,7 +1197,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).GetThumbnailAsyncOverloadDefaultSizeDefaultOptions)(::windows_core::Interface::as_raw(this), mode, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::FileProperties::StorageItemThumbnail>>(result__)
         }
     }
-    #[cfg(all(feature = "Storage_FileProperties", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-storage"))]
     pub fn GetThumbnailAsyncOverloadDefaultOptions(&self, mode: super::FileProperties::ThumbnailMode, requestedsize: u32) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::FileProperties::StorageItemThumbnail>> {
         let this = &::windows_core::Interface::cast::<super::IStorageItemProperties>(self)?;
         unsafe {
@@ -1205,7 +1205,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).GetThumbnailAsyncOverloadDefaultOptions)(::windows_core::Interface::as_raw(this), mode, requestedsize, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::FileProperties::StorageItemThumbnail>>(result__)
         }
     }
-    #[cfg(all(feature = "Storage_FileProperties", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-storage"))]
     pub fn GetThumbnailAsync(&self, mode: super::FileProperties::ThumbnailMode, requestedsize: u32, options: super::FileProperties::ThumbnailOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::FileProperties::StorageItemThumbnail>> {
         let this = &::windows_core::Interface::cast::<super::IStorageItemProperties>(self)?;
         unsafe {
@@ -1234,7 +1234,7 @@ impl FolderInformation {
             (::windows_core::Interface::vtable(this).FolderRelativeId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Properties(&self) -> ::windows_core::Result<super::FileProperties::StorageItemContentProperties> {
         let this = &::windows_core::Interface::cast::<super::IStorageItemProperties>(self)?;
         unsafe {
@@ -1364,27 +1364,27 @@ impl<'a> ::windows_core::IntoParam<'a, super::IStorageFolder2> for &FolderInform
         ::core::convert::TryInto::<super::IStorageFolder2>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Storage_Search")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<FolderInformation> for super::Search::IStorageFolderQueryOperations {
     type Error = ::windows_core::Error;
     fn try_from(value: FolderInformation) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Storage_Search")]
+#[cfg(feature = "winrt-storage")]
 impl ::core::convert::TryFrom<&FolderInformation> for super::Search::IStorageFolderQueryOperations {
     type Error = ::windows_core::Error;
     fn try_from(value: &FolderInformation) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Storage_Search")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, super::Search::IStorageFolderQueryOperations> for FolderInformation {
     fn into_param(self) -> ::windows_core::Param<'a, super::Search::IStorageFolderQueryOperations> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Storage_Search")]
+#[cfg(feature = "winrt-storage")]
 impl<'a> ::windows_core::IntoParam<'a, super::Search::IStorageFolderQueryOperations> for &FolderInformation {
     fn into_param(self) -> ::windows_core::Param<'a, super::Search::IStorageFolderQueryOperations> {
         ::core::convert::TryInto::<super::Search::IStorageFolderQueryOperations>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -1511,29 +1511,29 @@ unsafe impl ::windows_core::Interface for IFileInformationFactory {
 #[doc(hidden)]
 pub struct IFileInformationFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetItemsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startindex: u32, maxitemstoretrieve: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetItemsAsync: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetItemsAsyncDefaultStartAndCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetItemsAsyncDefaultStartAndCount: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetFilesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startindex: u32, maxitemstoretrieve: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetFilesAsync: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetFilesAsyncDefaultStartAndCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetFilesAsyncDefaultStartAndCount: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetFoldersAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startindex: u32, maxitemstoretrieve: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetFoldersAsync: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetFoldersAsyncDefaultStartAndCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetFoldersAsyncDefaultStartAndCount: usize,
     pub GetVirtualizedItemsVector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub GetVirtualizedFilesVector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -1550,27 +1550,27 @@ unsafe impl ::windows_core::Interface for IFileInformationFactoryFactory {
 #[doc(hidden)]
 pub struct IFileInformationFactoryFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Storage_FileProperties", feature = "Storage_Search"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-storage"))]
     pub CreateWithMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, queryresult: ::windows_core::RawPtr, mode: super::FileProperties::ThumbnailMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Storage_FileProperties", feature = "Storage_Search")))]
+    #[cfg(not(all(feature = "winrt-storage", feature = "winrt-storage")))]
     CreateWithMode: usize,
-    #[cfg(all(feature = "Storage_FileProperties", feature = "Storage_Search"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-storage"))]
     pub CreateWithModeAndSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, queryresult: ::windows_core::RawPtr, mode: super::FileProperties::ThumbnailMode, requestedthumbnailsize: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Storage_FileProperties", feature = "Storage_Search")))]
+    #[cfg(not(all(feature = "winrt-storage", feature = "winrt-storage")))]
     CreateWithModeAndSize: usize,
-    #[cfg(all(feature = "Storage_FileProperties", feature = "Storage_Search"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-storage"))]
     pub CreateWithModeAndSizeAndOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, queryresult: ::windows_core::RawPtr, mode: super::FileProperties::ThumbnailMode, requestedthumbnailsize: u32, thumbnailoptions: super::FileProperties::ThumbnailOptions, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Storage_FileProperties", feature = "Storage_Search")))]
+    #[cfg(not(all(feature = "winrt-storage", feature = "winrt-storage")))]
     CreateWithModeAndSizeAndOptions: usize,
-    #[cfg(all(feature = "Storage_FileProperties", feature = "Storage_Search"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-storage"))]
     pub CreateWithModeAndSizeAndOptionsAndFlags: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, queryresult: ::windows_core::RawPtr, mode: super::FileProperties::ThumbnailMode, requestedthumbnailsize: u32, thumbnailoptions: super::FileProperties::ThumbnailOptions, delayload: bool, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Storage_FileProperties", feature = "Storage_Search")))]
+    #[cfg(not(all(feature = "winrt-storage", feature = "winrt-storage")))]
     CreateWithModeAndSizeAndOptionsAndFlags: usize,
 }
 #[repr(transparent)]
 pub struct IStorageItemInformation(::windows_core::IUnknown);
 impl IStorageItemInformation {
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub fn MusicProperties(&self) -> ::windows_core::Result<super::FileProperties::MusicProperties> {
         let this = self;
         unsafe {
@@ -1578,7 +1578,7 @@ impl IStorageItemInformation {
             (::windows_core::Interface::vtable(this).MusicProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::FileProperties::MusicProperties>(result__)
         }
     }
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub fn VideoProperties(&self) -> ::windows_core::Result<super::FileProperties::VideoProperties> {
         let this = self;
         unsafe {
@@ -1586,7 +1586,7 @@ impl IStorageItemInformation {
             (::windows_core::Interface::vtable(this).VideoProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::FileProperties::VideoProperties>(result__)
         }
     }
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ImageProperties(&self) -> ::windows_core::Result<super::FileProperties::ImageProperties> {
         let this = self;
         unsafe {
@@ -1594,7 +1594,7 @@ impl IStorageItemInformation {
             (::windows_core::Interface::vtable(this).ImageProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::FileProperties::ImageProperties>(result__)
         }
     }
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub fn DocumentProperties(&self) -> ::windows_core::Result<super::FileProperties::DocumentProperties> {
         let this = self;
         unsafe {
@@ -1602,7 +1602,7 @@ impl IStorageItemInformation {
             (::windows_core::Interface::vtable(this).DocumentProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::FileProperties::DocumentProperties>(result__)
         }
     }
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub fn BasicProperties(&self) -> ::windows_core::Result<super::FileProperties::BasicProperties> {
         let this = self;
         unsafe {
@@ -1610,7 +1610,7 @@ impl IStorageItemInformation {
             (::windows_core::Interface::vtable(this).BasicProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::FileProperties::BasicProperties>(result__)
         }
     }
-    #[cfg(all(feature = "Storage_FileProperties", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-storage"))]
     pub fn Thumbnail(&self) -> ::windows_core::Result<super::FileProperties::StorageItemThumbnail> {
         let this = self;
         unsafe {
@@ -1712,29 +1712,29 @@ unsafe impl ::windows_core::Interface for IStorageItemInformation {
 #[doc(hidden)]
 pub struct IStorageItemInformation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub MusicProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_FileProperties"))]
+    #[cfg(not(feature = "winrt-storage"))]
     MusicProperties: usize,
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub VideoProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_FileProperties"))]
+    #[cfg(not(feature = "winrt-storage"))]
     VideoProperties: usize,
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub ImageProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_FileProperties"))]
+    #[cfg(not(feature = "winrt-storage"))]
     ImageProperties: usize,
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub DocumentProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_FileProperties"))]
+    #[cfg(not(feature = "winrt-storage"))]
     DocumentProperties: usize,
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub BasicProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_FileProperties"))]
+    #[cfg(not(feature = "winrt-storage"))]
     BasicProperties: usize,
-    #[cfg(all(feature = "Storage_FileProperties", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-storage", feature = "winrt-storage"))]
     pub Thumbnail: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Storage_FileProperties", feature = "Storage_Streams")))]
+    #[cfg(not(all(feature = "winrt-storage", feature = "winrt-storage")))]
     Thumbnail: usize,
     pub ThumbnailUpdated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, changedhandler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveThumbnailUpdated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,

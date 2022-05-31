@@ -523,14 +523,14 @@ impl ::core::clone::Clone for CSV_QUERY_FILE_REVISION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 pub struct CSV_QUERY_FILE_REVISION_FILE_ID_128 {
     pub FileId: ::win32_storage_sys::FileSystem::FILE_ID_128,
     pub FileRevision: [i64; 3],
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::marker::Copy for CSV_QUERY_FILE_REVISION_FILE_ID_128 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::clone::Clone for CSV_QUERY_FILE_REVISION_FILE_ID_128 {
     fn clone(&self) -> Self {
         *self
@@ -1312,35 +1312,35 @@ impl ::core::clone::Clone for DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 pub struct DEVICE_MEDIA_INFO {
     pub DeviceSpecific: DEVICE_MEDIA_INFO_0,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::marker::Copy for DEVICE_MEDIA_INFO {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::clone::Clone for DEVICE_MEDIA_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 pub union DEVICE_MEDIA_INFO_0 {
     pub DiskInfo: DEVICE_MEDIA_INFO_0_0,
     pub RemovableDiskInfo: DEVICE_MEDIA_INFO_0_1,
     pub TapeInfo: DEVICE_MEDIA_INFO_0_2,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::marker::Copy for DEVICE_MEDIA_INFO_0 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::clone::Clone for DEVICE_MEDIA_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 pub struct DEVICE_MEDIA_INFO_0_0 {
     pub Cylinders: i64,
     pub MediaType: STORAGE_MEDIA_TYPE,
@@ -1350,16 +1350,16 @@ pub struct DEVICE_MEDIA_INFO_0_0 {
     pub NumberMediaSides: u32,
     pub MediaCharacteristics: u32,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::marker::Copy for DEVICE_MEDIA_INFO_0_0 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::clone::Clone for DEVICE_MEDIA_INFO_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 pub struct DEVICE_MEDIA_INFO_0_1 {
     pub Cylinders: i64,
     pub MediaType: STORAGE_MEDIA_TYPE,
@@ -1369,16 +1369,16 @@ pub struct DEVICE_MEDIA_INFO_0_1 {
     pub NumberMediaSides: u32,
     pub MediaCharacteristics: u32,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::marker::Copy for DEVICE_MEDIA_INFO_0_1 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::clone::Clone for DEVICE_MEDIA_INFO_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 pub struct DEVICE_MEDIA_INFO_0_2 {
     pub MediaType: STORAGE_MEDIA_TYPE,
     pub MediaCharacteristics: u32,
@@ -1386,36 +1386,36 @@ pub struct DEVICE_MEDIA_INFO_0_2 {
     pub BusType: ::win32_storage_sys::FileSystem::STORAGE_BUS_TYPE,
     pub BusSpecificData: DEVICE_MEDIA_INFO_0_2_0,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::marker::Copy for DEVICE_MEDIA_INFO_0_2 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::clone::Clone for DEVICE_MEDIA_INFO_0_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 pub union DEVICE_MEDIA_INFO_0_2_0 {
     pub ScsiInformation: DEVICE_MEDIA_INFO_0_2_0_0,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::marker::Copy for DEVICE_MEDIA_INFO_0_2_0 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::clone::Clone for DEVICE_MEDIA_INFO_0_2_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 pub struct DEVICE_MEDIA_INFO_0_2_0_0 {
     pub MediumType: u8,
     pub DensityCode: u8,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::marker::Copy for DEVICE_MEDIA_INFO_0_2_0_0 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::clone::Clone for DEVICE_MEDIA_INFO_0_2_0_0 {
     fn clone(&self) -> Self {
         *self
@@ -1521,21 +1521,21 @@ impl ::core::clone::Clone for DEVICE_WRITE_AGGREGATION_DESCRIPTOR {
         *self
     }
 }
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices-sys")]
 pub const DEVPKEY_Storage_Disk_Number: ::win32_devices_sys::Properties::DEVPROPKEY = ::win32_devices_sys::Properties::DEVPROPKEY { fmtid: ::windows_core_sys::GUID { data1: 1293860584, data2: 2051, data3: 18292, data4: [152, 66, 183, 125, 181, 2, 101, 233] }, pid: 5u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices-sys")]
 pub const DEVPKEY_Storage_Gpt_Name: ::win32_devices_sys::Properties::DEVPROPKEY = ::win32_devices_sys::Properties::DEVPROPKEY { fmtid: ::windows_core_sys::GUID { data1: 1293860584, data2: 2051, data3: 18292, data4: [152, 66, 183, 125, 181, 2, 101, 233] }, pid: 9u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices-sys")]
 pub const DEVPKEY_Storage_Gpt_Type: ::win32_devices_sys::Properties::DEVPROPKEY = ::win32_devices_sys::Properties::DEVPROPKEY { fmtid: ::windows_core_sys::GUID { data1: 1293860584, data2: 2051, data3: 18292, data4: [152, 66, 183, 125, 181, 2, 101, 233] }, pid: 8u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices-sys")]
 pub const DEVPKEY_Storage_Mbr_Type: ::win32_devices_sys::Properties::DEVPROPKEY = ::win32_devices_sys::Properties::DEVPROPKEY { fmtid: ::windows_core_sys::GUID { data1: 1293860584, data2: 2051, data3: 18292, data4: [152, 66, 183, 125, 181, 2, 101, 233] }, pid: 7u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices-sys")]
 pub const DEVPKEY_Storage_Partition_Number: ::win32_devices_sys::Properties::DEVPROPKEY = ::win32_devices_sys::Properties::DEVPROPKEY { fmtid: ::windows_core_sys::GUID { data1: 1293860584, data2: 2051, data3: 18292, data4: [152, 66, 183, 125, 181, 2, 101, 233] }, pid: 6u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices-sys")]
 pub const DEVPKEY_Storage_Portable: ::win32_devices_sys::Properties::DEVPROPKEY = ::win32_devices_sys::Properties::DEVPROPKEY { fmtid: ::windows_core_sys::GUID { data1: 1293860584, data2: 2051, data3: 18292, data4: [152, 66, 183, 125, 181, 2, 101, 233] }, pid: 2u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices-sys")]
 pub const DEVPKEY_Storage_Removable_Media: ::win32_devices_sys::Properties::DEVPROPKEY = ::win32_devices_sys::Properties::DEVPROPKEY { fmtid: ::windows_core_sys::GUID { data1: 1293860584, data2: 2051, data3: 18292, data4: [152, 66, 183, 125, 181, 2, 101, 233] }, pid: 3u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices-sys")]
 pub const DEVPKEY_Storage_System_Critical: ::win32_devices_sys::Properties::DEVPROPKEY = ::win32_devices_sys::Properties::DEVPROPKEY { fmtid: ::windows_core_sys::GUID { data1: 1293860584, data2: 2051, data3: 18292, data4: [152, 66, 183, 125, 181, 2, 101, 233] }, pid: 4u32 };
 pub const DISABLE_SMART: u32 = 217u32;
 pub const DISK_ATTRIBUTE_OFFLINE: u64 = 1u64;
@@ -2738,14 +2738,14 @@ impl ::core::clone::Clone for FILE_ZERO_DATA_INFORMATION_EX {
 }
 pub const FILE_ZERO_DATA_INFORMATION_FLAG_PRESERVE_CACHED_DATA: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct FIND_BY_SID_DATA {
     pub Restart: u32,
     pub Sid: ::win32_security_sys::SID,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for FIND_BY_SID_DATA {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for FIND_BY_SID_DATA {
     fn clone(&self) -> Self {
         *self
@@ -3365,15 +3365,15 @@ impl ::core::clone::Clone for GET_LENGTH_INFORMATION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 pub struct GET_MEDIA_TYPES {
     pub DeviceType: u32,
     pub MediaInfoCount: u32,
     pub MediaInfo: [DEVICE_MEDIA_INFO; 1],
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::marker::Copy for GET_MEDIA_TYPES {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::clone::Clone for GET_MEDIA_TYPES {
     fn clone(&self) -> Self {
         *self
@@ -6178,7 +6178,7 @@ impl ::core::clone::Clone for STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 pub struct STORAGE_DEVICE_DESCRIPTOR {
     pub Version: u32,
     pub Size: u32,
@@ -6194,9 +6194,9 @@ pub struct STORAGE_DEVICE_DESCRIPTOR {
     pub RawPropertiesLength: u32,
     pub RawDeviceProperties: [u8; 1],
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::marker::Copy for STORAGE_DEVICE_DESCRIPTOR {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::clone::Clone for STORAGE_DEVICE_DESCRIPTOR {
     fn clone(&self) -> Self {
         *self
@@ -7361,23 +7361,23 @@ pub const UfsDataTypeQueryDmeAttribute: STORAGE_PROTOCOL_UFS_DATA_TYPE = 4i32;
 pub const UfsDataTypeQueryDmePeerAttribute: STORAGE_PROTOCOL_UFS_DATA_TYPE = 5i32;
 pub const UfsDataTypeMax: STORAGE_PROTOCOL_UFS_DATA_TYPE = 6i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage-sys")]
 pub struct STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY {
     pub EntryLength: u32,
     pub DependencyTypeFlags: u32,
     pub ProviderSpecificFlags: u32,
     pub VirtualStorageType: ::win32_storage_sys::Vhd::VIRTUAL_STORAGE_TYPE,
 }
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::marker::Copy for STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY {}
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::clone::Clone for STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage-sys")]
 pub struct STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY {
     pub EntryLength: u32,
     pub DependencyTypeFlags: u32,
@@ -7393,9 +7393,9 @@ pub struct STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY {
     pub DependentDeviceNameOffset: u32,
     pub DependentDeviceNameSize: u32,
 }
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::marker::Copy for STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY {}
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::clone::Clone for STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY {
     fn clone(&self) -> Self {
         *self
@@ -7413,29 +7413,29 @@ impl ::core::clone::Clone for STORAGE_QUERY_DEPENDENT_VOLUME_REQUEST {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage-sys")]
 pub struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE {
     pub ResponseLevel: u32,
     pub NumberEntries: u32,
     pub Anonymous: STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE_0,
 }
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::marker::Copy for STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE {}
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::clone::Clone for STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage-sys")]
 pub union STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE_0 {
     pub Lev1Depends: [STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY; 1],
     pub Lev2Depends: [STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY; 1],
 }
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::marker::Copy for STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE_0 {}
-#[cfg(feature = "Win32_Storage_Vhd")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::clone::Clone for STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE_0 {
     fn clone(&self) -> Self {
         *self
@@ -8429,16 +8429,16 @@ impl ::core::clone::Clone for USN_RECORD_EXTENT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 pub union USN_RECORD_UNION {
     pub Header: USN_RECORD_COMMON_HEADER,
     pub V2: USN_RECORD_V2,
     pub V3: USN_RECORD_V3,
     pub V4: USN_RECORD_V4,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::marker::Copy for USN_RECORD_UNION {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::clone::Clone for USN_RECORD_UNION {
     fn clone(&self) -> Self {
         *self
@@ -8468,7 +8468,7 @@ impl ::core::clone::Clone for USN_RECORD_V2 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 pub struct USN_RECORD_V3 {
     pub RecordLength: u32,
     pub MajorVersion: u16,
@@ -8485,16 +8485,16 @@ pub struct USN_RECORD_V3 {
     pub FileNameOffset: u16,
     pub FileName: [u16; 1],
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::marker::Copy for USN_RECORD_V3 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::clone::Clone for USN_RECORD_V3 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 pub struct USN_RECORD_V4 {
     pub Header: USN_RECORD_COMMON_HEADER,
     pub FileReferenceNumber: ::win32_storage_sys::FileSystem::FILE_ID_128,
@@ -8507,9 +8507,9 @@ pub struct USN_RECORD_V4 {
     pub ExtentSize: u16,
     pub Extents: [USN_RECORD_EXTENT; 1],
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::marker::Copy for USN_RECORD_V4 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::clone::Clone for USN_RECORD_V4 {
     fn clone(&self) -> Self {
         *self
@@ -8713,13 +8713,13 @@ impl ::core::clone::Clone for WIM_PROVIDER_UPDATE_OVERLAY_INPUT {
 }
 pub const WOF_CURRENT_VERSION: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 pub struct WOF_EXTERNAL_FILE_ID {
     pub FileId: ::win32_storage_sys::FileSystem::FILE_ID_128,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::marker::Copy for WOF_EXTERNAL_FILE_ID {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::clone::Clone for WOF_EXTERNAL_FILE_ID {
     fn clone(&self) -> Self {
         *self

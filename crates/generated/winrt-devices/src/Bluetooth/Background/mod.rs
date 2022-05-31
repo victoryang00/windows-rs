@@ -35,7 +35,7 @@ unsafe impl ::windows_core::RuntimeType for BluetoothEventTriggeringMode {
 #[repr(transparent)]
 pub struct BluetoothLEAdvertisementPublisherTriggerDetails(::windows_core::IUnknown);
 impl BluetoothLEAdvertisementPublisherTriggerDetails {
-    #[cfg(feature = "Devices_Bluetooth_Advertisement")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Status(&self) -> ::windows_core::Result<super::Advertisement::BluetoothLEAdvertisementPublisherStatus> {
         let this = self;
         unsafe {
@@ -140,7 +140,7 @@ impl BluetoothLEAdvertisementWatcherTriggerDetails {
             (::windows_core::Interface::vtable(this).Error)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::BluetoothError>(result__)
         }
     }
-    #[cfg(all(feature = "Devices_Bluetooth_Advertisement", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-foundation"))]
     pub fn Advertisements(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<super::Advertisement::BluetoothLEAdvertisementReceivedEventArgs>> {
         let this = self;
         unsafe {
@@ -231,7 +231,7 @@ unsafe impl ::core::marker::Sync for BluetoothLEAdvertisementWatcherTriggerDetai
 #[repr(transparent)]
 pub struct GattCharacteristicNotificationTriggerDetails(::windows_core::IUnknown);
 impl GattCharacteristicNotificationTriggerDetails {
-    #[cfg(feature = "Devices_Bluetooth_GenericAttributeProfile")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Characteristic(&self) -> ::windows_core::Result<super::GenericAttributeProfile::GattCharacteristic> {
         let this = self;
         unsafe {
@@ -239,7 +239,7 @@ impl GattCharacteristicNotificationTriggerDetails {
             (::windows_core::Interface::vtable(this).Characteristic)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::GenericAttributeProfile::GattCharacteristic>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Value(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
@@ -261,7 +261,7 @@ impl GattCharacteristicNotificationTriggerDetails {
             (::windows_core::Interface::vtable(this).EventTriggeringMode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<BluetoothEventTriggeringMode>(result__)
         }
     }
-    #[cfg(all(feature = "Devices_Bluetooth_GenericAttributeProfile", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-foundation"))]
     pub fn ValueChangedEvents(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<super::GenericAttributeProfile::GattValueChangedEventArgs>> {
         let this = &::windows_core::Interface::cast::<IGattCharacteristicNotificationTriggerDetails2>(self)?;
         unsafe {
@@ -352,7 +352,7 @@ impl GattServiceProviderConnection {
             (::windows_core::Interface::vtable(this).TriggerId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Devices_Bluetooth_GenericAttributeProfile")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Service(&self) -> ::windows_core::Result<super::GenericAttributeProfile::GattLocalService> {
         let this = self;
         unsafe {
@@ -364,7 +364,7 @@ impl GattServiceProviderConnection {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Start)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AllServices() -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, GattServiceProviderConnection>> {
         Self::IGattServiceProviderConnectionStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -542,9 +542,9 @@ unsafe impl ::windows_core::Interface for IBluetoothLEAdvertisementPublisherTrig
 #[doc(hidden)]
 pub struct IBluetoothLEAdvertisementPublisherTriggerDetails_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Bluetooth_Advertisement")]
+    #[cfg(feature = "winrt-devices")]
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Advertisement::BluetoothLEAdvertisementPublisherStatus) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_Advertisement"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Status: usize,
     pub Error: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::BluetoothError) -> ::windows_core::HRESULT,
 }
@@ -573,9 +573,9 @@ unsafe impl ::windows_core::Interface for IBluetoothLEAdvertisementWatcherTrigge
 pub struct IBluetoothLEAdvertisementWatcherTriggerDetails_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Error: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::BluetoothError) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Devices_Bluetooth_Advertisement", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-foundation"))]
     pub Advertisements: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Bluetooth_Advertisement", feature = "Foundation_Collections")))]
+    #[cfg(not(all(feature = "winrt-devices", feature = "winrt-foundation")))]
     Advertisements: usize,
     pub SignalStrengthFilter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -590,13 +590,13 @@ unsafe impl ::windows_core::Interface for IGattCharacteristicNotificationTrigger
 #[doc(hidden)]
 pub struct IGattCharacteristicNotificationTriggerDetails_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Bluetooth_GenericAttributeProfile")]
+    #[cfg(feature = "winrt-devices")]
     pub Characteristic: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_GenericAttributeProfile"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Characteristic: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub Value: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Value: usize,
 }
 #[doc(hidden)]
@@ -612,9 +612,9 @@ pub struct IGattCharacteristicNotificationTriggerDetails2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Error: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::BluetoothError) -> ::windows_core::HRESULT,
     pub EventTriggeringMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut BluetoothEventTriggeringMode) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Devices_Bluetooth_GenericAttributeProfile", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-foundation"))]
     pub ValueChangedEvents: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Bluetooth_GenericAttributeProfile", feature = "Foundation_Collections")))]
+    #[cfg(not(all(feature = "winrt-devices", feature = "winrt-foundation")))]
     ValueChangedEvents: usize,
 }
 #[doc(hidden)]
@@ -629,9 +629,9 @@ unsafe impl ::windows_core::Interface for IGattServiceProviderConnection {
 pub struct IGattServiceProviderConnection_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub TriggerId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Bluetooth_GenericAttributeProfile")]
+    #[cfg(feature = "winrt-devices")]
     pub Service: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_GenericAttributeProfile"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Service: usize,
     pub Start: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -646,9 +646,9 @@ unsafe impl ::windows_core::Interface for IGattServiceProviderConnectionStatics 
 #[doc(hidden)]
 pub struct IGattServiceProviderConnectionStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub AllServices: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     AllServices: usize,
 }
 #[doc(hidden)]
@@ -675,9 +675,9 @@ unsafe impl ::windows_core::Interface for IRfcommConnectionTriggerDetails {
 #[doc(hidden)]
 pub struct IRfcommConnectionTriggerDetails_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Networking_Sockets")]
+    #[cfg(feature = "winrt-networking")]
     pub Socket: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking_Sockets"))]
+    #[cfg(not(feature = "winrt-networking"))]
     Socket: usize,
     pub Incoming: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub RemoteDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -693,21 +693,21 @@ unsafe impl ::windows_core::Interface for IRfcommInboundConnectionInformation {
 #[doc(hidden)]
 pub struct IRfcommInboundConnectionInformation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub SdpRecord: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SdpRecord: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub SetSdpRecord: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SetSdpRecord: usize,
-    #[cfg(feature = "Devices_Bluetooth_Rfcomm")]
+    #[cfg(feature = "winrt-devices")]
     pub LocalServiceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_Rfcomm"))]
+    #[cfg(not(feature = "winrt-devices"))]
     LocalServiceId: usize,
-    #[cfg(feature = "Devices_Bluetooth_Rfcomm")]
+    #[cfg(feature = "winrt-devices")]
     pub SetLocalServiceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_Rfcomm"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SetLocalServiceId: usize,
     pub ServiceCapabilities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::BluetoothServiceCapabilities) -> ::windows_core::HRESULT,
     pub SetServiceCapabilities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::BluetoothServiceCapabilities) -> ::windows_core::HRESULT,
@@ -723,19 +723,19 @@ unsafe impl ::windows_core::Interface for IRfcommOutboundConnectionInformation {
 #[doc(hidden)]
 pub struct IRfcommOutboundConnectionInformation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Bluetooth_Rfcomm")]
+    #[cfg(feature = "winrt-devices")]
     pub RemoteServiceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_Rfcomm"))]
+    #[cfg(not(feature = "winrt-devices"))]
     RemoteServiceId: usize,
-    #[cfg(feature = "Devices_Bluetooth_Rfcomm")]
+    #[cfg(feature = "winrt-devices")]
     pub SetRemoteServiceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_Rfcomm"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SetRemoteServiceId: usize,
 }
 #[repr(transparent)]
 pub struct RfcommConnectionTriggerDetails(::windows_core::IUnknown);
 impl RfcommConnectionTriggerDetails {
-    #[cfg(feature = "Networking_Sockets")]
+    #[cfg(feature = "winrt-networking")]
     pub fn Socket(&self) -> ::windows_core::Result<::winrt_networking::Sockets::StreamSocket> {
         let this = self;
         unsafe {
@@ -833,7 +833,7 @@ unsafe impl ::core::marker::Sync for RfcommConnectionTriggerDetails {}
 #[repr(transparent)]
 pub struct RfcommInboundConnectionInformation(::windows_core::IUnknown);
 impl RfcommInboundConnectionInformation {
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SdpRecord(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
@@ -841,12 +841,12 @@ impl RfcommInboundConnectionInformation {
             (::windows_core::Interface::vtable(this).SdpRecord)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SetSdpRecord<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSdpRecord)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Devices_Bluetooth_Rfcomm")]
+    #[cfg(feature = "winrt-devices")]
     pub fn LocalServiceId(&self) -> ::windows_core::Result<super::Rfcomm::RfcommServiceId> {
         let this = self;
         unsafe {
@@ -854,7 +854,7 @@ impl RfcommInboundConnectionInformation {
             (::windows_core::Interface::vtable(this).LocalServiceId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Rfcomm::RfcommServiceId>(result__)
         }
     }
-    #[cfg(feature = "Devices_Bluetooth_Rfcomm")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SetLocalServiceId<'a, Param0: ::windows_core::IntoParam<'a, super::Rfcomm::RfcommServiceId>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetLocalServiceId)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -946,7 +946,7 @@ unsafe impl ::core::marker::Sync for RfcommInboundConnectionInformation {}
 #[repr(transparent)]
 pub struct RfcommOutboundConnectionInformation(::windows_core::IUnknown);
 impl RfcommOutboundConnectionInformation {
-    #[cfg(feature = "Devices_Bluetooth_Rfcomm")]
+    #[cfg(feature = "winrt-devices")]
     pub fn RemoteServiceId(&self) -> ::windows_core::Result<super::Rfcomm::RfcommServiceId> {
         let this = self;
         unsafe {
@@ -954,7 +954,7 @@ impl RfcommOutboundConnectionInformation {
             (::windows_core::Interface::vtable(this).RemoteServiceId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Rfcomm::RfcommServiceId>(result__)
         }
     }
-    #[cfg(feature = "Devices_Bluetooth_Rfcomm")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SetRemoteServiceId<'a, Param0: ::windows_core::IntoParam<'a, super::Rfcomm::RfcommServiceId>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetRemoteServiceId)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }

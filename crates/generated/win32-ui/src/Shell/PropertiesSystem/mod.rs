@@ -1,4 +1,4 @@
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn ClearPropVariantArray(rgpropvar: &mut [::win32_system::Com::StructuredStorage::PROPVARIANT]) {
     #[cfg(windows)]
@@ -12,7 +12,7 @@ pub unsafe fn ClearPropVariantArray(rgpropvar: &mut [::win32_system::Com::Struct
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn ClearVariantArray(pvars: &mut [::win32_system::Com::VARIANT]) {
     #[cfg(windows)]
@@ -339,7 +339,7 @@ pub struct IInitializeWithFile_Vtbl {
 #[repr(transparent)]
 pub struct IInitializeWithStream(::windows_core::IUnknown);
 impl IInitializeWithStream {
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, pstream: Param0, grfmode: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Initialize)(::windows_core::Interface::as_raw(self), pstream.into_param().abi(), ::core::mem::transmute(grfmode)).ok()
     }
@@ -388,20 +388,20 @@ unsafe impl ::windows_core::Interface for IInitializeWithStream {
 #[doc(hidden)]
 pub struct IInitializeWithStream_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstream: ::windows_core::RawPtr, grfmode: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     Initialize: usize,
 }
 #[repr(transparent)]
 pub struct INamedPropertyStore(::windows_core::IUnknown);
 impl INamedPropertyStore {
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetNamedValue<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszname: Param0) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::StructuredStorage::PROPVARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).GetNamedValue)(::windows_core::Interface::as_raw(self), pszname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::StructuredStorage::PROPVARIANT>(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn SetNamedValue<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszname: Param0, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetNamedValue)(::windows_core::Interface::as_raw(self), pszname.into_param().abi(), ::core::mem::transmute(propvar)).ok()
     }
@@ -458,13 +458,13 @@ unsafe impl ::windows_core::Interface for INamedPropertyStore {
 #[doc(hidden)]
 pub struct INamedPropertyStore_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub GetNamedValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszname: ::windows_core::PCWSTR, ppropvar: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(not(feature = "win32-system"))]
     GetNamedValue: usize,
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub SetNamedValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszname: ::windows_core::PCWSTR, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(not(feature = "win32-system"))]
     SetNamedValue: usize,
     pub GetNameCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwcount: *mut u32) -> ::windows_core::HRESULT,
     pub GetNameAt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, iprop: u32, pbstrname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
@@ -685,7 +685,7 @@ impl IPropertyChange {
         let mut result__ = ::core::mem::MaybeUninit::<PROPERTYKEY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetPropertyKey)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<PROPERTYKEY>(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn ApplyToPropVariant(&self, propvarin: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::StructuredStorage::PROPVARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).ApplyToPropVariant)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propvarin), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::StructuredStorage::PROPVARIANT>(result__)
@@ -755,9 +755,9 @@ unsafe impl ::windows_core::Interface for IPropertyChange {
 #[doc(hidden)]
 pub struct IPropertyChange_Vtbl {
     pub base__: IObjectWithPropertyKey_Vtbl,
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub ApplyToPropVariant: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propvarin: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ppropvarout: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(not(feature = "win32-system"))]
     ApplyToPropVariant: usize,
 }
 #[repr(transparent)]
@@ -890,7 +890,7 @@ impl IPropertyDescription {
         let mut result__ = ::core::mem::MaybeUninit::<PROPDESC_RELATIVEDESCRIPTION_TYPE>::zeroed();
         (::windows_core::Interface::vtable(self).GetRelativeDescriptionType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<PROPDESC_RELATIVEDESCRIPTION_TYPE>(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetRelativeDescription(&self, propvar1: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, propvar2: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ppszdesc1: *mut ::windows_core::PWSTR, ppszdesc2: *mut ::windows_core::PWSTR) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetRelativeDescription)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propvar1), ::core::mem::transmute(propvar2), ::core::mem::transmute(ppszdesc1), ::core::mem::transmute(ppszdesc2)).ok()
     }
@@ -906,7 +906,7 @@ impl IPropertyDescription {
         let mut result__ = ::core::mem::MaybeUninit::<PROPDESC_AGGREGATION_TYPE>::zeroed();
         (::windows_core::Interface::vtable(self).GetAggregationType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<PROPDESC_AGGREGATION_TYPE>(result__)
     }
-    #[cfg(feature = "Win32_System_Search_Common")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetConditionType(&self, pcontype: *mut PROPDESC_CONDITION_TYPE, popdefault: *mut ::win32_system::Search::Common::CONDITION_OPERATION) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetConditionType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pcontype), ::core::mem::transmute(popdefault)).ok()
     }
@@ -914,16 +914,16 @@ impl IPropertyDescription {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).GetEnumTypeList)(::windows_core::Interface::as_raw(self), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CoerceToCanonicalValue(&self, ppropvar: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).CoerceToCanonicalValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppropvar)).ok()
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn FormatForDisplay(&self, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pdfflags: PROPDESC_FORMAT_FLAGS) -> ::windows_core::Result<::windows_core::PWSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         (::windows_core::Interface::vtable(self).FormatForDisplay)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propvar), ::core::mem::transmute(pdfflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn IsValueCanonical(&self, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).IsValueCanonical)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propvar)).ok()
     }
@@ -984,29 +984,29 @@ pub struct IPropertyDescription_Vtbl {
     pub GetColumnState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcsflags: *mut u32) -> ::windows_core::HRESULT,
     pub GetGroupingRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pgr: *mut PROPDESC_GROUPING_RANGE) -> ::windows_core::HRESULT,
     pub GetRelativeDescriptionType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, prdt: *mut PROPDESC_RELATIVEDESCRIPTION_TYPE) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub GetRelativeDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propvar1: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, propvar2: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ppszdesc1: *mut ::windows_core::PWSTR, ppszdesc2: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(not(feature = "win32-system"))]
     GetRelativeDescription: usize,
     pub GetSortDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psd: *mut PROPDESC_SORTDESCRIPTION) -> ::windows_core::HRESULT,
     pub GetSortDescriptionLabel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fdescending: ::win32_foundation::BOOL, ppszdescription: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub GetAggregationType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, paggtype: *mut PROPDESC_AGGREGATION_TYPE) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Search_Common")]
+    #[cfg(feature = "win32-system")]
     pub GetConditionType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcontype: *mut PROPDESC_CONDITION_TYPE, popdefault: *mut ::win32_system::Search::Common::CONDITION_OPERATION) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Search_Common"))]
+    #[cfg(not(feature = "win32-system"))]
     GetConditionType: usize,
     pub GetEnumTypeList: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub CoerceToCanonicalValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppropvar: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(not(feature = "win32-system"))]
     CoerceToCanonicalValue: usize,
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub FormatForDisplay: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pdfflags: PROPDESC_FORMAT_FLAGS, ppszdisplay: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(not(feature = "win32-system"))]
     FormatForDisplay: usize,
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub IsValueCanonical: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(not(feature = "win32-system"))]
     IsValueCanonical: usize,
 }
 #[repr(transparent)]
@@ -1060,7 +1060,7 @@ impl IPropertyDescription2 {
         let mut result__ = ::core::mem::MaybeUninit::<PROPDESC_RELATIVEDESCRIPTION_TYPE>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetRelativeDescriptionType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<PROPDESC_RELATIVEDESCRIPTION_TYPE>(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetRelativeDescription(&self, propvar1: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, propvar2: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ppszdesc1: *mut ::windows_core::PWSTR, ppszdesc2: *mut ::windows_core::PWSTR) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetRelativeDescription)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propvar1), ::core::mem::transmute(propvar2), ::core::mem::transmute(ppszdesc1), ::core::mem::transmute(ppszdesc2)).ok()
     }
@@ -1076,7 +1076,7 @@ impl IPropertyDescription2 {
         let mut result__ = ::core::mem::MaybeUninit::<PROPDESC_AGGREGATION_TYPE>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetAggregationType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<PROPDESC_AGGREGATION_TYPE>(result__)
     }
-    #[cfg(feature = "Win32_System_Search_Common")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetConditionType(&self, pcontype: *mut PROPDESC_CONDITION_TYPE, popdefault: *mut ::win32_system::Search::Common::CONDITION_OPERATION) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetConditionType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pcontype), ::core::mem::transmute(popdefault)).ok()
     }
@@ -1084,20 +1084,20 @@ impl IPropertyDescription2 {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).base__.GetEnumTypeList)(::windows_core::Interface::as_raw(self), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CoerceToCanonicalValue(&self, ppropvar: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.CoerceToCanonicalValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppropvar)).ok()
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn FormatForDisplay(&self, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pdfflags: PROPDESC_FORMAT_FLAGS) -> ::windows_core::Result<::windows_core::PWSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         (::windows_core::Interface::vtable(self).base__.FormatForDisplay)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propvar), ::core::mem::transmute(pdfflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn IsValueCanonical(&self, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.IsValueCanonical)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propvar)).ok()
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetImageReferenceForValue(&self, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<::windows_core::PWSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         (::windows_core::Interface::vtable(self).GetImageReferenceForValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propvar), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
@@ -1167,9 +1167,9 @@ unsafe impl ::windows_core::Interface for IPropertyDescription2 {
 #[doc(hidden)]
 pub struct IPropertyDescription2_Vtbl {
     pub base__: IPropertyDescription_Vtbl,
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub GetImageReferenceForValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ppszimageres: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(not(feature = "win32-system"))]
     GetImageReferenceForValue: usize,
 }
 #[repr(transparent)]
@@ -1223,7 +1223,7 @@ impl IPropertyDescriptionAliasInfo {
         let mut result__ = ::core::mem::MaybeUninit::<PROPDESC_RELATIVEDESCRIPTION_TYPE>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetRelativeDescriptionType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<PROPDESC_RELATIVEDESCRIPTION_TYPE>(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetRelativeDescription(&self, propvar1: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, propvar2: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ppszdesc1: *mut ::windows_core::PWSTR, ppszdesc2: *mut ::windows_core::PWSTR) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetRelativeDescription)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propvar1), ::core::mem::transmute(propvar2), ::core::mem::transmute(ppszdesc1), ::core::mem::transmute(ppszdesc2)).ok()
     }
@@ -1239,7 +1239,7 @@ impl IPropertyDescriptionAliasInfo {
         let mut result__ = ::core::mem::MaybeUninit::<PROPDESC_AGGREGATION_TYPE>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetAggregationType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<PROPDESC_AGGREGATION_TYPE>(result__)
     }
-    #[cfg(feature = "Win32_System_Search_Common")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetConditionType(&self, pcontype: *mut PROPDESC_CONDITION_TYPE, popdefault: *mut ::win32_system::Search::Common::CONDITION_OPERATION) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetConditionType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pcontype), ::core::mem::transmute(popdefault)).ok()
     }
@@ -1247,16 +1247,16 @@ impl IPropertyDescriptionAliasInfo {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).base__.GetEnumTypeList)(::windows_core::Interface::as_raw(self), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CoerceToCanonicalValue(&self, ppropvar: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.CoerceToCanonicalValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppropvar)).ok()
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn FormatForDisplay(&self, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pdfflags: PROPDESC_FORMAT_FLAGS) -> ::windows_core::Result<::windows_core::PWSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         (::windows_core::Interface::vtable(self).base__.FormatForDisplay)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propvar), ::core::mem::transmute(pdfflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn IsValueCanonical(&self, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.IsValueCanonical)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propvar)).ok()
     }
@@ -1446,7 +1446,7 @@ impl IPropertyDescriptionRelatedPropertyInfo {
         let mut result__ = ::core::mem::MaybeUninit::<PROPDESC_RELATIVEDESCRIPTION_TYPE>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetRelativeDescriptionType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<PROPDESC_RELATIVEDESCRIPTION_TYPE>(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetRelativeDescription(&self, propvar1: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, propvar2: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ppszdesc1: *mut ::windows_core::PWSTR, ppszdesc2: *mut ::windows_core::PWSTR) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetRelativeDescription)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propvar1), ::core::mem::transmute(propvar2), ::core::mem::transmute(ppszdesc1), ::core::mem::transmute(ppszdesc2)).ok()
     }
@@ -1462,7 +1462,7 @@ impl IPropertyDescriptionRelatedPropertyInfo {
         let mut result__ = ::core::mem::MaybeUninit::<PROPDESC_AGGREGATION_TYPE>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetAggregationType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<PROPDESC_AGGREGATION_TYPE>(result__)
     }
-    #[cfg(feature = "Win32_System_Search_Common")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetConditionType(&self, pcontype: *mut PROPDESC_CONDITION_TYPE, popdefault: *mut ::win32_system::Search::Common::CONDITION_OPERATION) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetConditionType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pcontype), ::core::mem::transmute(popdefault)).ok()
     }
@@ -1470,16 +1470,16 @@ impl IPropertyDescriptionRelatedPropertyInfo {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).base__.GetEnumTypeList)(::windows_core::Interface::as_raw(self), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CoerceToCanonicalValue(&self, ppropvar: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.CoerceToCanonicalValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppropvar)).ok()
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn FormatForDisplay(&self, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pdfflags: PROPDESC_FORMAT_FLAGS) -> ::windows_core::Result<::windows_core::PWSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         (::windows_core::Interface::vtable(self).base__.FormatForDisplay)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propvar), ::core::mem::transmute(pdfflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn IsValueCanonical(&self, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.IsValueCanonical)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propvar)).ok()
     }
@@ -1605,7 +1605,7 @@ impl IPropertyDescriptionSearchInfo {
         let mut result__ = ::core::mem::MaybeUninit::<PROPDESC_RELATIVEDESCRIPTION_TYPE>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetRelativeDescriptionType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<PROPDESC_RELATIVEDESCRIPTION_TYPE>(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetRelativeDescription(&self, propvar1: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, propvar2: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ppszdesc1: *mut ::windows_core::PWSTR, ppszdesc2: *mut ::windows_core::PWSTR) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetRelativeDescription)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propvar1), ::core::mem::transmute(propvar2), ::core::mem::transmute(ppszdesc1), ::core::mem::transmute(ppszdesc2)).ok()
     }
@@ -1621,7 +1621,7 @@ impl IPropertyDescriptionSearchInfo {
         let mut result__ = ::core::mem::MaybeUninit::<PROPDESC_AGGREGATION_TYPE>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetAggregationType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<PROPDESC_AGGREGATION_TYPE>(result__)
     }
-    #[cfg(feature = "Win32_System_Search_Common")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetConditionType(&self, pcontype: *mut PROPDESC_CONDITION_TYPE, popdefault: *mut ::win32_system::Search::Common::CONDITION_OPERATION) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetConditionType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pcontype), ::core::mem::transmute(popdefault)).ok()
     }
@@ -1629,16 +1629,16 @@ impl IPropertyDescriptionSearchInfo {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).base__.GetEnumTypeList)(::windows_core::Interface::as_raw(self), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CoerceToCanonicalValue(&self, ppropvar: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.CoerceToCanonicalValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppropvar)).ok()
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn FormatForDisplay(&self, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pdfflags: PROPDESC_FORMAT_FLAGS) -> ::windows_core::Result<::windows_core::PWSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         (::windows_core::Interface::vtable(self).base__.FormatForDisplay)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propvar), ::core::mem::transmute(pdfflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn IsValueCanonical(&self, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.IsValueCanonical)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propvar)).ok()
     }
@@ -1735,17 +1735,17 @@ impl IPropertyEnumType {
         let mut result__ = ::core::mem::MaybeUninit::<PROPENUMTYPE>::zeroed();
         (::windows_core::Interface::vtable(self).GetEnumType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<PROPENUMTYPE>(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetValue(&self) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::StructuredStorage::PROPVARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).GetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::StructuredStorage::PROPVARIANT>(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetRangeMinValue(&self) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::StructuredStorage::PROPVARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).GetRangeMinValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::StructuredStorage::PROPVARIANT>(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetRangeSetValue(&self) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::StructuredStorage::PROPVARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).GetRangeSetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::StructuredStorage::PROPVARIANT>(result__)
@@ -1800,17 +1800,17 @@ unsafe impl ::windows_core::Interface for IPropertyEnumType {
 pub struct IPropertyEnumType_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetEnumType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, penumtype: *mut PROPENUMTYPE) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub GetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppropvar: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(not(feature = "win32-system"))]
     GetValue: usize,
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub GetRangeMinValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppropvarmin: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(not(feature = "win32-system"))]
     GetRangeMinValue: usize,
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub GetRangeSetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppropvarset: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(not(feature = "win32-system"))]
     GetRangeSetValue: usize,
     pub GetDisplayText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppszdisplay: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
 }
@@ -1821,17 +1821,17 @@ impl IPropertyEnumType2 {
         let mut result__ = ::core::mem::MaybeUninit::<PROPENUMTYPE>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetEnumType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<PROPENUMTYPE>(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetValue(&self) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::StructuredStorage::PROPVARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::StructuredStorage::PROPVARIANT>(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetRangeMinValue(&self) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::StructuredStorage::PROPVARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetRangeMinValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::StructuredStorage::PROPVARIANT>(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetRangeSetValue(&self) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::StructuredStorage::PROPVARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetRangeSetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::StructuredStorage::PROPVARIANT>(result__)
@@ -1926,7 +1926,7 @@ impl IPropertyEnumTypeList {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).GetConditionAt)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(nindex), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn FindMatchingIndex(&self, propvarcmp: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).FindMatchingIndex)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propvarcmp), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
@@ -1979,9 +1979,9 @@ pub struct IPropertyEnumTypeList_Vtbl {
     pub GetCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pctypes: *mut u32) -> ::windows_core::HRESULT,
     pub GetAt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, itype: u32, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub GetConditionAt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, nindex: u32, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub FindMatchingIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propvarcmp: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pnindex: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(not(feature = "win32-system"))]
     FindMatchingIndex: usize,
 }
 #[repr(transparent)]
@@ -1995,12 +1995,12 @@ impl IPropertyStore {
         let mut result__ = ::core::mem::MaybeUninit::<PROPERTYKEY>::zeroed();
         (::windows_core::Interface::vtable(self).GetAt)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(iprop), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<PROPERTYKEY>(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetValue(&self, key: *const PROPERTYKEY) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::StructuredStorage::PROPVARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).GetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(key), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::StructuredStorage::PROPVARIANT>(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn SetValue(&self, key: *const PROPERTYKEY, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(key), ::core::mem::transmute(propvar)).ok()
     }
@@ -2054,13 +2054,13 @@ pub struct IPropertyStore_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cprops: *mut u32) -> ::windows_core::HRESULT,
     pub GetAt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, iprop: u32, pkey: *mut PROPERTYKEY) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub GetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: *const PROPERTYKEY, pv: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(not(feature = "win32-system"))]
     GetValue: usize,
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub SetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: *const PROPERTYKEY, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(not(feature = "win32-system"))]
     SetValue: usize,
     pub Commit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -2075,12 +2075,12 @@ impl IPropertyStoreCache {
         let mut result__ = ::core::mem::MaybeUninit::<PROPERTYKEY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetAt)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(iprop), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<PROPERTYKEY>(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetValue(&self, key: *const PROPERTYKEY) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::StructuredStorage::PROPVARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(key), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::StructuredStorage::PROPVARIANT>(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn SetValue(&self, key: *const PROPERTYKEY, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(key), ::core::mem::transmute(propvar)).ok()
     }
@@ -2091,14 +2091,14 @@ impl IPropertyStoreCache {
         let mut result__ = ::core::mem::MaybeUninit::<PSC_STATE>::zeroed();
         (::windows_core::Interface::vtable(self).GetState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(key), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<PSC_STATE>(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetValueAndState(&self, key: *const PROPERTYKEY, ppropvar: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT, pstate: *mut PSC_STATE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetValueAndState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(key), ::core::mem::transmute(ppropvar), ::core::mem::transmute(pstate)).ok()
     }
     pub unsafe fn SetState(&self, key: *const PROPERTYKEY, state: PSC_STATE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(key), ::core::mem::transmute(state)).ok()
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn SetValueAndState(&self, key: *const PROPERTYKEY, ppropvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, state: PSC_STATE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetValueAndState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(key), ::core::mem::transmute(ppropvar), ::core::mem::transmute(state)).ok()
     }
@@ -2168,14 +2168,14 @@ unsafe impl ::windows_core::Interface for IPropertyStoreCache {
 pub struct IPropertyStoreCache_Vtbl {
     pub base__: IPropertyStore_Vtbl,
     pub GetState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: *const PROPERTYKEY, pstate: *mut PSC_STATE) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub GetValueAndState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: *const PROPERTYKEY, ppropvar: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT, pstate: *mut PSC_STATE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(not(feature = "win32-system"))]
     GetValueAndState: usize,
     pub SetState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: *const PROPERTYKEY, state: PSC_STATE) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub SetValueAndState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: *const PROPERTYKEY, ppropvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, state: PSC_STATE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(not(feature = "win32-system"))]
     SetValueAndState: usize,
 }
 #[repr(transparent)]
@@ -2309,11 +2309,11 @@ impl IPropertySystem {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).EnumeratePropertyDescriptions)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(filteron), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn FormatForDisplay(&self, key: *const PROPERTYKEY, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pdff: PROPDESC_FORMAT_FLAGS, psztext: &mut [u16]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).FormatForDisplay)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(key), ::core::mem::transmute(propvar), ::core::mem::transmute(pdff), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(psztext)), psztext.len() as _).ok()
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn FormatForDisplayAlloc(&self, key: *const PROPERTYKEY, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pdff: PROPDESC_FORMAT_FLAGS) -> ::windows_core::Result<::windows_core::PWSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         (::windows_core::Interface::vtable(self).FormatForDisplayAlloc)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(key), ::core::mem::transmute(propvar), ::core::mem::transmute(pdff), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
@@ -2376,13 +2376,13 @@ pub struct IPropertySystem_Vtbl {
     pub GetPropertyDescriptionByName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszcanonicalname: ::windows_core::PCWSTR, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub GetPropertyDescriptionListFromString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszproplist: ::windows_core::PCWSTR, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub EnumeratePropertyDescriptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filteron: PROPDESC_ENUMFILTER, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub FormatForDisplay: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: *const PROPERTYKEY, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pdff: PROPDESC_FORMAT_FLAGS, psztext: ::windows_core::PWSTR, cchtext: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(not(feature = "win32-system"))]
     FormatForDisplay: usize,
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub FormatForDisplayAlloc: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: *const PROPERTYKEY, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pdff: PROPDESC_FORMAT_FLAGS, ppszdisplay: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(not(feature = "win32-system"))]
     FormatForDisplayAlloc: usize,
     pub RegisterPropertySchema: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszpath: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     pub UnregisterPropertySchema: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszpath: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
@@ -2464,7 +2464,7 @@ impl IPropertyUI {
         let mut result__ = ::core::mem::MaybeUninit::<PROPERTYUI_FLAGS>::zeroed();
         (::windows_core::Interface::vtable(self).GetFlags)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(fmtid), ::core::mem::transmute(pid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<PROPERTYUI_FLAGS>(result__)
     }
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn FormatForDisplay(&self, fmtid: *const ::windows_core::GUID, pid: u32, ppropvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, puiff: PROPERTYUI_FORMAT_FLAGS, pwsztext: &mut [u16]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).FormatForDisplay)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(fmtid), ::core::mem::transmute(pid), ::core::mem::transmute(ppropvar), ::core::mem::transmute(puiff), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pwsztext)), pwsztext.len() as _).ok()
     }
@@ -2522,15 +2522,15 @@ pub struct IPropertyUI_Vtbl {
     pub GetPropertyDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fmtid: *const ::windows_core::GUID, pid: u32, pwsztext: ::windows_core::PWSTR, cchtext: u32) -> ::windows_core::HRESULT,
     pub GetDefaultWidth: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fmtid: *const ::windows_core::GUID, pid: u32, pcxchars: *mut u32) -> ::windows_core::HRESULT,
     pub GetFlags: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fmtid: *const ::windows_core::GUID, pid: u32, pflags: *mut PROPERTYUI_FLAGS) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    #[cfg(feature = "win32-system")]
     pub FormatForDisplay: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fmtid: *const ::windows_core::GUID, pid: u32, ppropvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, puiff: PROPERTYUI_FORMAT_FLAGS, pwsztext: ::windows_core::PWSTR, cchtext: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(not(feature = "win32-system"))]
     FormatForDisplay: usize,
     pub GetHelpInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fmtid: *const ::windows_core::GUID, pid: u32, pwszhelpfile: ::windows_core::PWSTR, cch: u32, puhelpid: *mut u32) -> ::windows_core::HRESULT,
 }
 pub const InMemoryPropertyStore: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9a02e012_6303_4e1e_b9a1_630f802592c5);
 pub const InMemoryPropertyStoreMarshalByValue: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd4ca0e2d_6da7_4b75_a97c_5f306f0eaedc);
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InitPropVariantFromBooleanVector(prgf: &[::win32_foundation::BOOL]) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -2545,7 +2545,7 @@ pub unsafe fn InitPropVariantFromBooleanVector(prgf: &[::win32_foundation::BOOL]
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InitPropVariantFromBuffer(pv: *const ::core::ffi::c_void, cb: u32) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -2560,7 +2560,7 @@ pub unsafe fn InitPropVariantFromBuffer(pv: *const ::core::ffi::c_void, cb: u32)
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InitPropVariantFromCLSID(clsid: *const ::windows_core::GUID) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -2575,7 +2575,7 @@ pub unsafe fn InitPropVariantFromCLSID(clsid: *const ::windows_core::GUID) -> ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InitPropVariantFromDoubleVector(prgn: &[f64]) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -2590,7 +2590,7 @@ pub unsafe fn InitPropVariantFromDoubleVector(prgn: &[f64]) -> ::windows_core::R
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InitPropVariantFromFileTime(pftin: *const ::win32_foundation::FILETIME) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -2605,7 +2605,7 @@ pub unsafe fn InitPropVariantFromFileTime(pftin: *const ::win32_foundation::FILE
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InitPropVariantFromFileTimeVector(prgft: &[::win32_foundation::FILETIME]) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -2620,7 +2620,7 @@ pub unsafe fn InitPropVariantFromFileTimeVector(prgft: &[::win32_foundation::FIL
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InitPropVariantFromGUIDAsString(guid: *const ::windows_core::GUID) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -2635,7 +2635,7 @@ pub unsafe fn InitPropVariantFromGUIDAsString(guid: *const ::windows_core::GUID)
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InitPropVariantFromInt16Vector(prgn: &[i16]) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -2650,7 +2650,7 @@ pub unsafe fn InitPropVariantFromInt16Vector(prgn: &[i16]) -> ::windows_core::Re
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InitPropVariantFromInt32Vector(prgn: &[i32]) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -2665,7 +2665,7 @@ pub unsafe fn InitPropVariantFromInt32Vector(prgn: &[i32]) -> ::windows_core::Re
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InitPropVariantFromInt64Vector(prgn: &[i64]) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -2680,7 +2680,7 @@ pub unsafe fn InitPropVariantFromInt64Vector(prgn: &[i64]) -> ::windows_core::Re
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InitPropVariantFromPropVariantVectorElem(propvarin: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ielem: u32) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -2695,7 +2695,7 @@ pub unsafe fn InitPropVariantFromPropVariantVectorElem(propvarin: *const ::win32
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InitPropVariantFromResource<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HINSTANCE>>(hinst: Param0, id: u32) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -2710,7 +2710,7 @@ pub unsafe fn InitPropVariantFromResource<'a, Param0: ::windows_core::IntoParam<
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_Common"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn InitPropVariantFromStrRet(pstrret: *mut super::Common::STRRET, pidl: *const super::Common::ITEMIDLIST, ppropvar: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -2724,7 +2724,7 @@ pub unsafe fn InitPropVariantFromStrRet(pstrret: *mut super::Common::STRRET, pid
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InitPropVariantFromStringAsVector<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(psz: Param0) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -2739,7 +2739,7 @@ pub unsafe fn InitPropVariantFromStringAsVector<'a, Param0: ::windows_core::Into
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InitPropVariantFromStringVector(prgsz: &[::windows_core::PWSTR]) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -2754,7 +2754,7 @@ pub unsafe fn InitPropVariantFromStringVector(prgsz: &[::windows_core::PWSTR]) -
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InitPropVariantFromUInt16Vector(prgn: &[u16]) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -2769,7 +2769,7 @@ pub unsafe fn InitPropVariantFromUInt16Vector(prgn: &[u16]) -> ::windows_core::R
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InitPropVariantFromUInt32Vector(prgn: &[u32]) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -2784,7 +2784,7 @@ pub unsafe fn InitPropVariantFromUInt32Vector(prgn: &[u32]) -> ::windows_core::R
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InitPropVariantFromUInt64Vector(prgn: &[u64]) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -2799,7 +2799,7 @@ pub unsafe fn InitPropVariantFromUInt64Vector(prgn: &[u64]) -> ::windows_core::R
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InitPropVariantVectorFromPropVariant(propvarsingle: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -2814,7 +2814,7 @@ pub unsafe fn InitPropVariantVectorFromPropVariant(propvarsingle: *const ::win32
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn InitVariantFromBooleanArray(prgf: &[::win32_foundation::BOOL]) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
     #[cfg(windows)]
@@ -2829,7 +2829,7 @@ pub unsafe fn InitVariantFromBooleanArray(prgf: &[::win32_foundation::BOOL]) -> 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn InitVariantFromBuffer(pv: *const ::core::ffi::c_void, cb: u32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
     #[cfg(windows)]
@@ -2844,7 +2844,7 @@ pub unsafe fn InitVariantFromBuffer(pv: *const ::core::ffi::c_void, cb: u32) -> 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn InitVariantFromDoubleArray(prgn: &[f64]) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
     #[cfg(windows)]
@@ -2859,7 +2859,7 @@ pub unsafe fn InitVariantFromDoubleArray(prgn: &[f64]) -> ::windows_core::Result
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn InitVariantFromFileTime(pft: *const ::win32_foundation::FILETIME) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
     #[cfg(windows)]
@@ -2874,7 +2874,7 @@ pub unsafe fn InitVariantFromFileTime(pft: *const ::win32_foundation::FILETIME) 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn InitVariantFromFileTimeArray(prgft: &[::win32_foundation::FILETIME]) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
     #[cfg(windows)]
@@ -2889,7 +2889,7 @@ pub unsafe fn InitVariantFromFileTimeArray(prgft: &[::win32_foundation::FILETIME
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn InitVariantFromGUIDAsString(guid: *const ::windows_core::GUID) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
     #[cfg(windows)]
@@ -2904,7 +2904,7 @@ pub unsafe fn InitVariantFromGUIDAsString(guid: *const ::windows_core::GUID) -> 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn InitVariantFromInt16Array(prgn: &[i16]) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
     #[cfg(windows)]
@@ -2919,7 +2919,7 @@ pub unsafe fn InitVariantFromInt16Array(prgn: &[i16]) -> ::windows_core::Result<
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn InitVariantFromInt32Array(prgn: &[i32]) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
     #[cfg(windows)]
@@ -2934,7 +2934,7 @@ pub unsafe fn InitVariantFromInt32Array(prgn: &[i32]) -> ::windows_core::Result<
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn InitVariantFromInt64Array(prgn: &[i64]) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
     #[cfg(windows)]
@@ -2949,7 +2949,7 @@ pub unsafe fn InitVariantFromInt64Array(prgn: &[i64]) -> ::windows_core::Result<
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn InitVariantFromResource<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HINSTANCE>>(hinst: Param0, id: u32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
     #[cfg(windows)]
@@ -2964,7 +2964,7 @@ pub unsafe fn InitVariantFromResource<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn InitVariantFromStrRet(pstrret: *const super::Common::STRRET, pidl: *const super::Common::ITEMIDLIST) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
     #[cfg(windows)]
@@ -2979,7 +2979,7 @@ pub unsafe fn InitVariantFromStrRet(pstrret: *const super::Common::STRRET, pidl:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn InitVariantFromStringArray(prgsz: &[::windows_core::PWSTR]) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
     #[cfg(windows)]
@@ -2994,7 +2994,7 @@ pub unsafe fn InitVariantFromStringArray(prgsz: &[::windows_core::PWSTR]) -> ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn InitVariantFromUInt16Array(prgn: &[u16]) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
     #[cfg(windows)]
@@ -3009,7 +3009,7 @@ pub unsafe fn InitVariantFromUInt16Array(prgn: &[u16]) -> ::windows_core::Result
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn InitVariantFromUInt32Array(prgn: &[u32]) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
     #[cfg(windows)]
@@ -3024,7 +3024,7 @@ pub unsafe fn InitVariantFromUInt32Array(prgn: &[u32]) -> ::windows_core::Result
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn InitVariantFromUInt64Array(prgn: &[u64]) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
     #[cfg(windows)]
@@ -3039,7 +3039,7 @@ pub unsafe fn InitVariantFromUInt64Array(prgn: &[u64]) -> ::windows_core::Result
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn InitVariantFromVariantArrayElem(varin: *const ::win32_system::Com::VARIANT, ielem: u32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
     #[cfg(windows)]
@@ -4093,7 +4093,7 @@ impl ::core::fmt::Debug for PSC_STATE {
         f.debug_tuple("PSC_STATE").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSCoerceToCanonicalValue(key: *const PROPERTYKEY, ppropvar: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4159,7 +4159,7 @@ pub unsafe fn PSCreateMultiplexPropertyStore(prgpunkstores: &[::core::option::Op
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSCreatePropertyChangeArray(rgpropkey: *const PROPERTYKEY, rgflags: *const PKA_FLAGS, rgpropvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, cchanges: u32, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4186,7 +4186,7 @@ pub unsafe fn PSCreatePropertyStoreFromObject<'a, Param0: ::windows_core::IntoPa
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSCreatePropertyStoreFromPropertySetStorage<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertySetStorage>>(ppss: Param0, grfmode: u32, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4200,7 +4200,7 @@ pub unsafe fn PSCreatePropertyStoreFromPropertySetStorage<'a, Param0: ::windows_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSCreateSimplePropertyChange(flags: PKA_FLAGS, key: *const PROPERTYKEY, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4227,7 +4227,7 @@ pub unsafe fn PSEnumeratePropertyDescriptions(filteron: PROPDESC_ENUMFILTER, rii
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSFormatForDisplay(propkey: *const PROPERTYKEY, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pdfflags: PROPDESC_FORMAT_FLAGS, pwsztext: &mut [u16]) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4241,7 +4241,7 @@ pub unsafe fn PSFormatForDisplay(propkey: *const PROPERTYKEY, propvar: *const ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSFormatForDisplayAlloc(key: *const PROPERTYKEY, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pdff: PROPDESC_FORMAT_FLAGS) -> ::windows_core::Result<::windows_core::PWSTR> {
     #[cfg(windows)]
@@ -4270,7 +4270,7 @@ pub unsafe fn PSFormatPropertyValue<'a, Param0: ::windows_core::IntoParam<'a, IP
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSGetImageReferenceForValue(propkey: *const PROPERTYKEY, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<::windows_core::PWSTR> {
     #[cfg(windows)]
@@ -4325,7 +4325,7 @@ pub unsafe fn PSGetNameFromPropertyKey(propkey: *const PROPERTYKEY) -> ::windows
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSGetNamedPropertyFromPropertyStorage<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(psps: *const SERIALIZEDPROPSTORAGE, cb: u32, pszname: Param2) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -4379,7 +4379,7 @@ pub unsafe fn PSGetPropertyDescriptionListFromString<'a, Param0: ::windows_core:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSGetPropertyFromPropertyStorage(psps: *const SERIALIZEDPROPSTORAGE, cb: u32, rpkey: *const PROPERTYKEY) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -4421,7 +4421,7 @@ pub unsafe fn PSGetPropertySystem(riid: *const ::windows_core::GUID, ppv: *mut *
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSGetPropertyValue<'a, Param0: ::windows_core::IntoParam<'a, IPropertyStore>, Param1: ::windows_core::IntoParam<'a, IPropertyDescription>>(pps: Param0, ppd: Param1) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -4450,7 +4450,7 @@ pub unsafe fn PSLookupPropertyHandlerCLSID<'a, Param0: ::windows_core::IntoParam
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_Delete<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4464,7 +4464,7 @@ pub unsafe fn PSPropertyBag_Delete<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_ReadBOOL<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1) -> ::windows_core::Result<::win32_foundation::BOOL> {
     #[cfg(windows)]
@@ -4479,7 +4479,7 @@ pub unsafe fn PSPropertyBag_ReadBOOL<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_ReadBSTR<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1) -> ::windows_core::Result<::win32_foundation::BSTR> {
     #[cfg(windows)]
@@ -4494,7 +4494,7 @@ pub unsafe fn PSPropertyBag_ReadBSTR<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_ReadDWORD<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1) -> ::windows_core::Result<u32> {
     #[cfg(windows)]
@@ -4509,7 +4509,7 @@ pub unsafe fn PSPropertyBag_ReadDWORD<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_ReadGUID<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1) -> ::windows_core::Result<::windows_core::GUID> {
     #[cfg(windows)]
@@ -4524,7 +4524,7 @@ pub unsafe fn PSPropertyBag_ReadGUID<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_ReadInt<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1) -> ::windows_core::Result<i32> {
     #[cfg(windows)]
@@ -4539,7 +4539,7 @@ pub unsafe fn PSPropertyBag_ReadInt<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_ReadLONG<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1) -> ::windows_core::Result<i32> {
     #[cfg(windows)]
@@ -4554,7 +4554,7 @@ pub unsafe fn PSPropertyBag_ReadLONG<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_ReadPOINTL<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1) -> ::windows_core::Result<::win32_foundation::POINTL> {
     #[cfg(windows)]
@@ -4569,7 +4569,7 @@ pub unsafe fn PSPropertyBag_ReadPOINTL<'a, Param0: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_ReadPOINTS<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1) -> ::windows_core::Result<::win32_foundation::POINTS> {
     #[cfg(windows)]
@@ -4584,7 +4584,7 @@ pub unsafe fn PSPropertyBag_ReadPOINTS<'a, Param0: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_ReadPropertyKey<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1) -> ::windows_core::Result<PROPERTYKEY> {
     #[cfg(windows)]
@@ -4599,7 +4599,7 @@ pub unsafe fn PSPropertyBag_ReadPropertyKey<'a, Param0: ::windows_core::IntoPara
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_ReadRECTL<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1) -> ::windows_core::Result<::win32_foundation::RECTL> {
     #[cfg(windows)]
@@ -4614,7 +4614,7 @@ pub unsafe fn PSPropertyBag_ReadRECTL<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_ReadSHORT<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1) -> ::windows_core::Result<i16> {
     #[cfg(windows)]
@@ -4629,7 +4629,7 @@ pub unsafe fn PSPropertyBag_ReadSHORT<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_ReadStr<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1, value: &mut [u16]) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4643,7 +4643,7 @@ pub unsafe fn PSPropertyBag_ReadStr<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_ReadStrAlloc<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1) -> ::windows_core::Result<::windows_core::PWSTR> {
     #[cfg(windows)]
@@ -4658,7 +4658,7 @@ pub unsafe fn PSPropertyBag_ReadStrAlloc<'a, Param0: ::windows_core::IntoParam<'
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_ReadStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1) -> ::windows_core::Result<::win32_system::Com::IStream> {
     #[cfg(windows)]
@@ -4673,7 +4673,7 @@ pub unsafe fn PSPropertyBag_ReadStream<'a, Param0: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn PSPropertyBag_ReadType<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1, var: *mut ::win32_system::Com::VARIANT, r#type: u16) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4687,7 +4687,7 @@ pub unsafe fn PSPropertyBag_ReadType<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_ReadULONGLONG<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1) -> ::windows_core::Result<u64> {
     #[cfg(windows)]
@@ -4702,7 +4702,7 @@ pub unsafe fn PSPropertyBag_ReadULONGLONG<'a, Param0: ::windows_core::IntoParam<
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_ReadUnknown<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4716,7 +4716,7 @@ pub unsafe fn PSPropertyBag_ReadUnknown<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_WriteBOOL<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(propbag: Param0, propname: Param1, value: Param2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4730,7 +4730,7 @@ pub unsafe fn PSPropertyBag_WriteBOOL<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_WriteBSTR<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(propbag: Param0, propname: Param1, value: Param2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4744,7 +4744,7 @@ pub unsafe fn PSPropertyBag_WriteBSTR<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_WriteDWORD<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1, value: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4758,7 +4758,7 @@ pub unsafe fn PSPropertyBag_WriteDWORD<'a, Param0: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_WriteGUID<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1, value: *const ::windows_core::GUID) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4772,7 +4772,7 @@ pub unsafe fn PSPropertyBag_WriteGUID<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_WriteInt<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1, value: i32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4786,7 +4786,7 @@ pub unsafe fn PSPropertyBag_WriteInt<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_WriteLONG<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1, value: i32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4800,7 +4800,7 @@ pub unsafe fn PSPropertyBag_WriteLONG<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_WritePOINTL<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1, value: *const ::win32_foundation::POINTL) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4814,7 +4814,7 @@ pub unsafe fn PSPropertyBag_WritePOINTL<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_WritePOINTS<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1, value: *const ::win32_foundation::POINTS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4828,7 +4828,7 @@ pub unsafe fn PSPropertyBag_WritePOINTS<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_WritePropertyKey<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1, value: *const PROPERTYKEY) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4842,7 +4842,7 @@ pub unsafe fn PSPropertyBag_WritePropertyKey<'a, Param0: ::windows_core::IntoPar
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_WriteRECTL<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1, value: *const ::win32_foundation::RECTL) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4856,7 +4856,7 @@ pub unsafe fn PSPropertyBag_WriteRECTL<'a, Param0: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_WriteSHORT<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1, value: i16) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4870,7 +4870,7 @@ pub unsafe fn PSPropertyBag_WriteSHORT<'a, Param0: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_WriteStr<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1, value: Param2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4884,7 +4884,7 @@ pub unsafe fn PSPropertyBag_WriteStr<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_WriteStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(propbag: Param0, propname: Param1, value: Param2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4898,7 +4898,7 @@ pub unsafe fn PSPropertyBag_WriteStream<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_WriteULONGLONG<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propbag: Param0, propname: Param1, value: u64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4912,7 +4912,7 @@ pub unsafe fn PSPropertyBag_WriteULONGLONG<'a, Param0: ::windows_core::IntoParam
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSPropertyBag_WriteUnknown<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(propbag: Param0, propname: Param1, punk: Param2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4966,7 +4966,7 @@ pub unsafe fn PSRegisterPropertySchema<'a, Param0: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PSSetPropertyValue<'a, Param0: ::windows_core::IntoParam<'a, IPropertyStore>, Param1: ::windows_core::IntoParam<'a, IPropertyDescription>>(pps: Param0, ppd: Param1, propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5110,7 +5110,7 @@ pub unsafe fn PifMgr_SetProperties<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantChangeType(ppropvardest: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT, propvarsrc: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, flags: PROPVAR_CHANGE_FLAGS, vt: u16) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5124,7 +5124,7 @@ pub unsafe fn PropVariantChangeType(ppropvardest: *mut ::win32_system::Com::Stru
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantCompareEx(propvar1: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, propvar2: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, unit: PROPVAR_COMPARE_UNIT, flags: PROPVAR_COMPARE_FLAGS) -> i32 {
     #[cfg(windows)]
@@ -5138,7 +5138,7 @@ pub unsafe fn PropVariantCompareEx(propvar1: *const ::win32_system::Com::Structu
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantGetBooleanElem(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ielem: u32) -> ::windows_core::Result<::win32_foundation::BOOL> {
     #[cfg(windows)]
@@ -5153,7 +5153,7 @@ pub unsafe fn PropVariantGetBooleanElem(propvar: *const ::win32_system::Com::Str
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantGetDoubleElem(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ielem: u32) -> ::windows_core::Result<f64> {
     #[cfg(windows)]
@@ -5168,7 +5168,7 @@ pub unsafe fn PropVariantGetDoubleElem(propvar: *const ::win32_system::Com::Stru
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantGetElementCount(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> u32 {
     #[cfg(windows)]
@@ -5182,7 +5182,7 @@ pub unsafe fn PropVariantGetElementCount(propvar: *const ::win32_system::Com::St
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantGetFileTimeElem(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ielem: u32) -> ::windows_core::Result<::win32_foundation::FILETIME> {
     #[cfg(windows)]
@@ -5197,7 +5197,7 @@ pub unsafe fn PropVariantGetFileTimeElem(propvar: *const ::win32_system::Com::St
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantGetInt16Elem(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ielem: u32) -> ::windows_core::Result<i16> {
     #[cfg(windows)]
@@ -5212,7 +5212,7 @@ pub unsafe fn PropVariantGetInt16Elem(propvar: *const ::win32_system::Com::Struc
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantGetInt32Elem(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ielem: u32) -> ::windows_core::Result<i32> {
     #[cfg(windows)]
@@ -5227,7 +5227,7 @@ pub unsafe fn PropVariantGetInt32Elem(propvar: *const ::win32_system::Com::Struc
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantGetInt64Elem(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ielem: u32) -> ::windows_core::Result<i64> {
     #[cfg(windows)]
@@ -5242,7 +5242,7 @@ pub unsafe fn PropVariantGetInt64Elem(propvar: *const ::win32_system::Com::Struc
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantGetStringElem(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ielem: u32) -> ::windows_core::Result<::windows_core::PWSTR> {
     #[cfg(windows)]
@@ -5257,7 +5257,7 @@ pub unsafe fn PropVariantGetStringElem(propvar: *const ::win32_system::Com::Stru
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantGetUInt16Elem(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ielem: u32) -> ::windows_core::Result<u16> {
     #[cfg(windows)]
@@ -5272,7 +5272,7 @@ pub unsafe fn PropVariantGetUInt16Elem(propvar: *const ::win32_system::Com::Stru
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantGetUInt32Elem(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ielem: u32) -> ::windows_core::Result<u32> {
     #[cfg(windows)]
@@ -5287,7 +5287,7 @@ pub unsafe fn PropVariantGetUInt32Elem(propvar: *const ::win32_system::Com::Stru
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantGetUInt64Elem(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ielem: u32) -> ::windows_core::Result<u64> {
     #[cfg(windows)]
@@ -5302,7 +5302,7 @@ pub unsafe fn PropVariantGetUInt64Elem(propvar: *const ::win32_system::Com::Stru
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToBSTR(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<::win32_foundation::BSTR> {
     #[cfg(windows)]
@@ -5317,7 +5317,7 @@ pub unsafe fn PropVariantToBSTR(propvar: *const ::win32_system::Com::StructuredS
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToBoolean(propvarin: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<::win32_foundation::BOOL> {
     #[cfg(windows)]
@@ -5332,7 +5332,7 @@ pub unsafe fn PropVariantToBoolean(propvarin: *const ::win32_system::Com::Struct
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToBooleanVector(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, prgf: &mut [::win32_foundation::BOOL], pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5346,7 +5346,7 @@ pub unsafe fn PropVariantToBooleanVector(propvar: *const ::win32_system::Com::St
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToBooleanVectorAlloc(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pprgf: *mut *mut ::win32_foundation::BOOL, pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5360,7 +5360,7 @@ pub unsafe fn PropVariantToBooleanVectorAlloc(propvar: *const ::win32_system::Co
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToBooleanWithDefault<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(propvarin: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, fdefault: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -5374,7 +5374,7 @@ pub unsafe fn PropVariantToBooleanWithDefault<'a, Param1: ::windows_core::IntoPa
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToBuffer(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pv: *mut ::core::ffi::c_void, cb: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5388,7 +5388,7 @@ pub unsafe fn PropVariantToBuffer(propvar: *const ::win32_system::Com::Structure
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToDouble(propvarin: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<f64> {
     #[cfg(windows)]
@@ -5403,7 +5403,7 @@ pub unsafe fn PropVariantToDouble(propvarin: *const ::win32_system::Com::Structu
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToDoubleVector(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, prgn: &mut [f64], pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5417,7 +5417,7 @@ pub unsafe fn PropVariantToDoubleVector(propvar: *const ::win32_system::Com::Str
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToDoubleVectorAlloc(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pprgn: *mut *mut f64, pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5431,7 +5431,7 @@ pub unsafe fn PropVariantToDoubleVectorAlloc(propvar: *const ::win32_system::Com
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToDoubleWithDefault(propvarin: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, dbldefault: f64) -> f64 {
     #[cfg(windows)]
@@ -5445,7 +5445,7 @@ pub unsafe fn PropVariantToDoubleWithDefault(propvarin: *const ::win32_system::C
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToFileTime(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pstfout: PSTIME_FLAGS) -> ::windows_core::Result<::win32_foundation::FILETIME> {
     #[cfg(windows)]
@@ -5460,7 +5460,7 @@ pub unsafe fn PropVariantToFileTime(propvar: *const ::win32_system::Com::Structu
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToFileTimeVector(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, prgft: &mut [::win32_foundation::FILETIME], pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5474,7 +5474,7 @@ pub unsafe fn PropVariantToFileTimeVector(propvar: *const ::win32_system::Com::S
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToFileTimeVectorAlloc(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pprgft: *mut *mut ::win32_foundation::FILETIME, pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5488,7 +5488,7 @@ pub unsafe fn PropVariantToFileTimeVectorAlloc(propvar: *const ::win32_system::C
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToGUID(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<::windows_core::GUID> {
     #[cfg(windows)]
@@ -5503,7 +5503,7 @@ pub unsafe fn PropVariantToGUID(propvar: *const ::win32_system::Com::StructuredS
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToInt16(propvarin: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<i16> {
     #[cfg(windows)]
@@ -5518,7 +5518,7 @@ pub unsafe fn PropVariantToInt16(propvarin: *const ::win32_system::Com::Structur
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToInt16Vector(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, prgn: &mut [i16], pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5532,7 +5532,7 @@ pub unsafe fn PropVariantToInt16Vector(propvar: *const ::win32_system::Com::Stru
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToInt16VectorAlloc(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pprgn: *mut *mut i16, pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5546,7 +5546,7 @@ pub unsafe fn PropVariantToInt16VectorAlloc(propvar: *const ::win32_system::Com:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToInt16WithDefault(propvarin: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, idefault: i16) -> i16 {
     #[cfg(windows)]
@@ -5560,7 +5560,7 @@ pub unsafe fn PropVariantToInt16WithDefault(propvarin: *const ::win32_system::Co
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToInt32(propvarin: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<i32> {
     #[cfg(windows)]
@@ -5575,7 +5575,7 @@ pub unsafe fn PropVariantToInt32(propvarin: *const ::win32_system::Com::Structur
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToInt32Vector(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, prgn: &mut [i32], pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5589,7 +5589,7 @@ pub unsafe fn PropVariantToInt32Vector(propvar: *const ::win32_system::Com::Stru
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToInt32VectorAlloc(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pprgn: *mut *mut i32, pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5603,7 +5603,7 @@ pub unsafe fn PropVariantToInt32VectorAlloc(propvar: *const ::win32_system::Com:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToInt32WithDefault(propvarin: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ldefault: i32) -> i32 {
     #[cfg(windows)]
@@ -5617,7 +5617,7 @@ pub unsafe fn PropVariantToInt32WithDefault(propvarin: *const ::win32_system::Co
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToInt64(propvarin: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<i64> {
     #[cfg(windows)]
@@ -5632,7 +5632,7 @@ pub unsafe fn PropVariantToInt64(propvarin: *const ::win32_system::Com::Structur
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToInt64Vector(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, prgn: &mut [i64], pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5646,7 +5646,7 @@ pub unsafe fn PropVariantToInt64Vector(propvar: *const ::win32_system::Com::Stru
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToInt64VectorAlloc(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pprgn: *mut *mut i64, pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5660,7 +5660,7 @@ pub unsafe fn PropVariantToInt64VectorAlloc(propvar: *const ::win32_system::Com:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToInt64WithDefault(propvarin: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, lldefault: i64) -> i64 {
     #[cfg(windows)]
@@ -5674,7 +5674,7 @@ pub unsafe fn PropVariantToInt64WithDefault(propvarin: *const ::win32_system::Co
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_Common"))]
+#[cfg(all(feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn PropVariantToStrRet(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<super::Common::STRRET> {
     #[cfg(windows)]
@@ -5689,7 +5689,7 @@ pub unsafe fn PropVariantToStrRet(propvar: *const ::win32_system::Com::Structure
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToString(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, psz: &mut [u16]) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5703,7 +5703,7 @@ pub unsafe fn PropVariantToString(propvar: *const ::win32_system::Com::Structure
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToStringAlloc(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<::windows_core::PWSTR> {
     #[cfg(windows)]
@@ -5718,7 +5718,7 @@ pub unsafe fn PropVariantToStringAlloc(propvar: *const ::win32_system::Com::Stru
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToStringVector(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, prgsz: &mut [::windows_core::PWSTR], pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5732,7 +5732,7 @@ pub unsafe fn PropVariantToStringVector(propvar: *const ::win32_system::Com::Str
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToStringVectorAlloc(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pprgsz: *mut *mut ::windows_core::PWSTR, pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5746,7 +5746,7 @@ pub unsafe fn PropVariantToStringVectorAlloc(propvar: *const ::win32_system::Com
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToStringWithDefault<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(propvarin: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pszdefault: Param1) -> ::windows_core::PWSTR {
     #[cfg(windows)]
@@ -5760,7 +5760,7 @@ pub unsafe fn PropVariantToStringWithDefault<'a, Param1: ::windows_core::IntoPar
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToUInt16(propvarin: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<u16> {
     #[cfg(windows)]
@@ -5775,7 +5775,7 @@ pub unsafe fn PropVariantToUInt16(propvarin: *const ::win32_system::Com::Structu
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToUInt16Vector(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, prgn: &mut [u16], pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5789,7 +5789,7 @@ pub unsafe fn PropVariantToUInt16Vector(propvar: *const ::win32_system::Com::Str
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToUInt16VectorAlloc(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pprgn: *mut *mut u16, pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5803,7 +5803,7 @@ pub unsafe fn PropVariantToUInt16VectorAlloc(propvar: *const ::win32_system::Com
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToUInt16WithDefault(propvarin: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, uidefault: u16) -> u16 {
     #[cfg(windows)]
@@ -5817,7 +5817,7 @@ pub unsafe fn PropVariantToUInt16WithDefault(propvarin: *const ::win32_system::C
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToUInt32(propvarin: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<u32> {
     #[cfg(windows)]
@@ -5832,7 +5832,7 @@ pub unsafe fn PropVariantToUInt32(propvarin: *const ::win32_system::Com::Structu
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToUInt32Vector(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, prgn: &mut [u32], pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5846,7 +5846,7 @@ pub unsafe fn PropVariantToUInt32Vector(propvar: *const ::win32_system::Com::Str
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToUInt32VectorAlloc(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pprgn: *mut *mut u32, pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5860,7 +5860,7 @@ pub unsafe fn PropVariantToUInt32VectorAlloc(propvar: *const ::win32_system::Com
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToUInt32WithDefault(propvarin: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, uldefault: u32) -> u32 {
     #[cfg(windows)]
@@ -5874,7 +5874,7 @@ pub unsafe fn PropVariantToUInt32WithDefault(propvarin: *const ::win32_system::C
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToUInt64(propvarin: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<u64> {
     #[cfg(windows)]
@@ -5889,7 +5889,7 @@ pub unsafe fn PropVariantToUInt64(propvarin: *const ::win32_system::Com::Structu
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToUInt64Vector(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, prgn: &mut [u64], pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5903,7 +5903,7 @@ pub unsafe fn PropVariantToUInt64Vector(propvar: *const ::win32_system::Com::Str
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToUInt64VectorAlloc(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pprgn: *mut *mut u64, pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5917,7 +5917,7 @@ pub unsafe fn PropVariantToUInt64VectorAlloc(propvar: *const ::win32_system::Com
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToUInt64WithDefault(propvarin: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ulldefault: u64) -> u64 {
     #[cfg(windows)]
@@ -5931,7 +5931,7 @@ pub unsafe fn PropVariantToUInt64WithDefault(propvarin: *const ::win32_system::C
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn PropVariantToVariant(ppropvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
     #[cfg(windows)]
@@ -5946,7 +5946,7 @@ pub unsafe fn PropVariantToVariant(ppropvar: *const ::win32_system::Com::Structu
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn PropVariantToWinRTPropertyValue<T: ::windows_core::Interface>(propvar: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, result__: *mut ::core::option::Option<T>) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5989,7 +5989,7 @@ pub unsafe fn SHGetPropertyStoreForWindow<'a, Param0: ::windows_core::IntoParam<
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_Shell_Common")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn SHGetPropertyStoreFromIDList(pidl: *const super::Common::ITEMIDLIST, flags: GETPROPERTYSTOREFLAGS, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6003,7 +6003,7 @@ pub unsafe fn SHGetPropertyStoreFromIDList(pidl: *const super::Common::ITEMIDLIS
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn SHGetPropertyStoreFromParsingName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::IBindCtx>>(pszpath: Param0, pbc: Param1, flags: GETPROPERTYSTOREFLAGS, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6017,7 +6017,7 @@ pub unsafe fn SHGetPropertyStoreFromParsingName<'a, Param0: ::windows_core::Into
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn SHPropStgCreate<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertySetStorage>>(psstg: Param0, fmtid: *const ::windows_core::GUID, pclsid: *const ::windows_core::GUID, grfflags: u32, grfmode: u32, dwdisposition: u32, ppstg: *mut ::core::option::Option<::win32_system::Com::StructuredStorage::IPropertyStorage>, pucodepage: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6031,7 +6031,7 @@ pub unsafe fn SHPropStgCreate<'a, Param0: ::windows_core::IntoParam<'a, ::win32_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn SHPropStgReadMultiple<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyStorage>>(pps: Param0, ucodepage: u32, rgpspec: &[::win32_system::Com::StructuredStorage::PROPSPEC]) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -6046,7 +6046,7 @@ pub unsafe fn SHPropStgReadMultiple<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn SHPropStgWriteMultiple<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyStorage>>(pps: Param0, pucodepage: *mut u32, cpspec: u32, rgpspec: *const ::win32_system::Com::StructuredStorage::PROPSPEC, rgvar: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT, propidnamefirst: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6183,7 +6183,7 @@ impl ::core::ops::Not for SYNC_TRANSFER_STATUS {
         Self(self.0.not())
     }
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantCompare(var1: *const ::win32_system::Com::VARIANT, var2: *const ::win32_system::Com::VARIANT) -> i32 {
     #[cfg(windows)]
@@ -6197,7 +6197,7 @@ pub unsafe fn VariantCompare(var1: *const ::win32_system::Com::VARIANT, var2: *c
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantGetBooleanElem(var: *const ::win32_system::Com::VARIANT, ielem: u32) -> ::windows_core::Result<::win32_foundation::BOOL> {
     #[cfg(windows)]
@@ -6212,7 +6212,7 @@ pub unsafe fn VariantGetBooleanElem(var: *const ::win32_system::Com::VARIANT, ie
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantGetDoubleElem(var: *const ::win32_system::Com::VARIANT, ielem: u32) -> ::windows_core::Result<f64> {
     #[cfg(windows)]
@@ -6227,7 +6227,7 @@ pub unsafe fn VariantGetDoubleElem(var: *const ::win32_system::Com::VARIANT, iel
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantGetElementCount(varin: *const ::win32_system::Com::VARIANT) -> u32 {
     #[cfg(windows)]
@@ -6241,7 +6241,7 @@ pub unsafe fn VariantGetElementCount(varin: *const ::win32_system::Com::VARIANT)
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantGetInt16Elem(var: *const ::win32_system::Com::VARIANT, ielem: u32) -> ::windows_core::Result<i16> {
     #[cfg(windows)]
@@ -6256,7 +6256,7 @@ pub unsafe fn VariantGetInt16Elem(var: *const ::win32_system::Com::VARIANT, iele
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantGetInt32Elem(var: *const ::win32_system::Com::VARIANT, ielem: u32) -> ::windows_core::Result<i32> {
     #[cfg(windows)]
@@ -6271,7 +6271,7 @@ pub unsafe fn VariantGetInt32Elem(var: *const ::win32_system::Com::VARIANT, iele
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantGetInt64Elem(var: *const ::win32_system::Com::VARIANT, ielem: u32) -> ::windows_core::Result<i64> {
     #[cfg(windows)]
@@ -6286,7 +6286,7 @@ pub unsafe fn VariantGetInt64Elem(var: *const ::win32_system::Com::VARIANT, iele
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantGetStringElem(var: *const ::win32_system::Com::VARIANT, ielem: u32) -> ::windows_core::Result<::windows_core::PWSTR> {
     #[cfg(windows)]
@@ -6301,7 +6301,7 @@ pub unsafe fn VariantGetStringElem(var: *const ::win32_system::Com::VARIANT, iel
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantGetUInt16Elem(var: *const ::win32_system::Com::VARIANT, ielem: u32) -> ::windows_core::Result<u16> {
     #[cfg(windows)]
@@ -6316,7 +6316,7 @@ pub unsafe fn VariantGetUInt16Elem(var: *const ::win32_system::Com::VARIANT, iel
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantGetUInt32Elem(var: *const ::win32_system::Com::VARIANT, ielem: u32) -> ::windows_core::Result<u32> {
     #[cfg(windows)]
@@ -6331,7 +6331,7 @@ pub unsafe fn VariantGetUInt32Elem(var: *const ::win32_system::Com::VARIANT, iel
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantGetUInt64Elem(var: *const ::win32_system::Com::VARIANT, ielem: u32) -> ::windows_core::Result<u64> {
     #[cfg(windows)]
@@ -6346,7 +6346,7 @@ pub unsafe fn VariantGetUInt64Elem(var: *const ::win32_system::Com::VARIANT, iel
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToBoolean(varin: *const ::win32_system::Com::VARIANT) -> ::windows_core::Result<::win32_foundation::BOOL> {
     #[cfg(windows)]
@@ -6361,7 +6361,7 @@ pub unsafe fn VariantToBoolean(varin: *const ::win32_system::Com::VARIANT) -> ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToBooleanArray(var: *const ::win32_system::Com::VARIANT, prgf: &mut [::win32_foundation::BOOL], pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6375,7 +6375,7 @@ pub unsafe fn VariantToBooleanArray(var: *const ::win32_system::Com::VARIANT, pr
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToBooleanArrayAlloc(var: *const ::win32_system::Com::VARIANT, pprgf: *mut *mut ::win32_foundation::BOOL, pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6389,7 +6389,7 @@ pub unsafe fn VariantToBooleanArrayAlloc(var: *const ::win32_system::Com::VARIAN
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToBooleanWithDefault<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(varin: *const ::win32_system::Com::VARIANT, fdefault: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -6403,7 +6403,7 @@ pub unsafe fn VariantToBooleanWithDefault<'a, Param1: ::windows_core::IntoParam<
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToBuffer(varin: *const ::win32_system::Com::VARIANT, pv: *mut ::core::ffi::c_void, cb: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6417,7 +6417,7 @@ pub unsafe fn VariantToBuffer(varin: *const ::win32_system::Com::VARIANT, pv: *m
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToDosDateTime(varin: *const ::win32_system::Com::VARIANT, pwdate: *mut u16, pwtime: *mut u16) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6431,7 +6431,7 @@ pub unsafe fn VariantToDosDateTime(varin: *const ::win32_system::Com::VARIANT, p
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToDouble(varin: *const ::win32_system::Com::VARIANT) -> ::windows_core::Result<f64> {
     #[cfg(windows)]
@@ -6446,7 +6446,7 @@ pub unsafe fn VariantToDouble(varin: *const ::win32_system::Com::VARIANT) -> ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToDoubleArray(var: *const ::win32_system::Com::VARIANT, prgn: &mut [f64], pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6460,7 +6460,7 @@ pub unsafe fn VariantToDoubleArray(var: *const ::win32_system::Com::VARIANT, prg
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToDoubleArrayAlloc(var: *const ::win32_system::Com::VARIANT, pprgn: *mut *mut f64, pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6474,7 +6474,7 @@ pub unsafe fn VariantToDoubleArrayAlloc(var: *const ::win32_system::Com::VARIANT
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToDoubleWithDefault(varin: *const ::win32_system::Com::VARIANT, dbldefault: f64) -> f64 {
     #[cfg(windows)]
@@ -6488,7 +6488,7 @@ pub unsafe fn VariantToDoubleWithDefault(varin: *const ::win32_system::Com::VARI
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToFileTime(varin: *const ::win32_system::Com::VARIANT, stfout: PSTIME_FLAGS) -> ::windows_core::Result<::win32_foundation::FILETIME> {
     #[cfg(windows)]
@@ -6503,7 +6503,7 @@ pub unsafe fn VariantToFileTime(varin: *const ::win32_system::Com::VARIANT, stfo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToGUID(varin: *const ::win32_system::Com::VARIANT) -> ::windows_core::Result<::windows_core::GUID> {
     #[cfg(windows)]
@@ -6518,7 +6518,7 @@ pub unsafe fn VariantToGUID(varin: *const ::win32_system::Com::VARIANT) -> ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToInt16(varin: *const ::win32_system::Com::VARIANT) -> ::windows_core::Result<i16> {
     #[cfg(windows)]
@@ -6533,7 +6533,7 @@ pub unsafe fn VariantToInt16(varin: *const ::win32_system::Com::VARIANT) -> ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToInt16Array(var: *const ::win32_system::Com::VARIANT, prgn: &mut [i16], pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6547,7 +6547,7 @@ pub unsafe fn VariantToInt16Array(var: *const ::win32_system::Com::VARIANT, prgn
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToInt16ArrayAlloc(var: *const ::win32_system::Com::VARIANT, pprgn: *mut *mut i16, pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6561,7 +6561,7 @@ pub unsafe fn VariantToInt16ArrayAlloc(var: *const ::win32_system::Com::VARIANT,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToInt16WithDefault(varin: *const ::win32_system::Com::VARIANT, idefault: i16) -> i16 {
     #[cfg(windows)]
@@ -6575,7 +6575,7 @@ pub unsafe fn VariantToInt16WithDefault(varin: *const ::win32_system::Com::VARIA
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToInt32(varin: *const ::win32_system::Com::VARIANT) -> ::windows_core::Result<i32> {
     #[cfg(windows)]
@@ -6590,7 +6590,7 @@ pub unsafe fn VariantToInt32(varin: *const ::win32_system::Com::VARIANT) -> ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToInt32Array(var: *const ::win32_system::Com::VARIANT, prgn: &mut [i32], pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6604,7 +6604,7 @@ pub unsafe fn VariantToInt32Array(var: *const ::win32_system::Com::VARIANT, prgn
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToInt32ArrayAlloc(var: *const ::win32_system::Com::VARIANT, pprgn: *mut *mut i32, pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6618,7 +6618,7 @@ pub unsafe fn VariantToInt32ArrayAlloc(var: *const ::win32_system::Com::VARIANT,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToInt32WithDefault(varin: *const ::win32_system::Com::VARIANT, ldefault: i32) -> i32 {
     #[cfg(windows)]
@@ -6632,7 +6632,7 @@ pub unsafe fn VariantToInt32WithDefault(varin: *const ::win32_system::Com::VARIA
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToInt64(varin: *const ::win32_system::Com::VARIANT) -> ::windows_core::Result<i64> {
     #[cfg(windows)]
@@ -6647,7 +6647,7 @@ pub unsafe fn VariantToInt64(varin: *const ::win32_system::Com::VARIANT) -> ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToInt64Array(var: *const ::win32_system::Com::VARIANT, prgn: &mut [i64], pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6661,7 +6661,7 @@ pub unsafe fn VariantToInt64Array(var: *const ::win32_system::Com::VARIANT, prgn
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToInt64ArrayAlloc(var: *const ::win32_system::Com::VARIANT, pprgn: *mut *mut i64, pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6675,7 +6675,7 @@ pub unsafe fn VariantToInt64ArrayAlloc(var: *const ::win32_system::Com::VARIANT,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToInt64WithDefault(varin: *const ::win32_system::Com::VARIANT, lldefault: i64) -> i64 {
     #[cfg(windows)]
@@ -6689,7 +6689,7 @@ pub unsafe fn VariantToInt64WithDefault(varin: *const ::win32_system::Com::VARIA
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToPropVariant(pvar: *const ::win32_system::Com::VARIANT) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]
@@ -6704,7 +6704,7 @@ pub unsafe fn VariantToPropVariant(pvar: *const ::win32_system::Com::VARIANT) ->
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn VariantToStrRet(varin: *const ::win32_system::Com::VARIANT) -> ::windows_core::Result<super::Common::STRRET> {
     #[cfg(windows)]
@@ -6719,7 +6719,7 @@ pub unsafe fn VariantToStrRet(varin: *const ::win32_system::Com::VARIANT) -> ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToString(varin: *const ::win32_system::Com::VARIANT, pszbuf: &mut [u16]) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6733,7 +6733,7 @@ pub unsafe fn VariantToString(varin: *const ::win32_system::Com::VARIANT, pszbuf
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToStringAlloc(varin: *const ::win32_system::Com::VARIANT) -> ::windows_core::Result<::windows_core::PWSTR> {
     #[cfg(windows)]
@@ -6748,7 +6748,7 @@ pub unsafe fn VariantToStringAlloc(varin: *const ::win32_system::Com::VARIANT) -
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToStringArray(var: *const ::win32_system::Com::VARIANT, prgsz: &mut [::windows_core::PWSTR], pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6762,7 +6762,7 @@ pub unsafe fn VariantToStringArray(var: *const ::win32_system::Com::VARIANT, prg
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToStringArrayAlloc(var: *const ::win32_system::Com::VARIANT, pprgsz: *mut *mut ::windows_core::PWSTR, pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6776,7 +6776,7 @@ pub unsafe fn VariantToStringArrayAlloc(var: *const ::win32_system::Com::VARIANT
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToStringWithDefault<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(varin: *const ::win32_system::Com::VARIANT, pszdefault: Param1) -> ::windows_core::PWSTR {
     #[cfg(windows)]
@@ -6790,7 +6790,7 @@ pub unsafe fn VariantToStringWithDefault<'a, Param1: ::windows_core::IntoParam<'
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToUInt16(varin: *const ::win32_system::Com::VARIANT) -> ::windows_core::Result<u16> {
     #[cfg(windows)]
@@ -6805,7 +6805,7 @@ pub unsafe fn VariantToUInt16(varin: *const ::win32_system::Com::VARIANT) -> ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToUInt16Array(var: *const ::win32_system::Com::VARIANT, prgn: &mut [u16], pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6819,7 +6819,7 @@ pub unsafe fn VariantToUInt16Array(var: *const ::win32_system::Com::VARIANT, prg
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToUInt16ArrayAlloc(var: *const ::win32_system::Com::VARIANT, pprgn: *mut *mut u16, pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6833,7 +6833,7 @@ pub unsafe fn VariantToUInt16ArrayAlloc(var: *const ::win32_system::Com::VARIANT
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToUInt16WithDefault(varin: *const ::win32_system::Com::VARIANT, uidefault: u16) -> u16 {
     #[cfg(windows)]
@@ -6847,7 +6847,7 @@ pub unsafe fn VariantToUInt16WithDefault(varin: *const ::win32_system::Com::VARI
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToUInt32(varin: *const ::win32_system::Com::VARIANT) -> ::windows_core::Result<u32> {
     #[cfg(windows)]
@@ -6862,7 +6862,7 @@ pub unsafe fn VariantToUInt32(varin: *const ::win32_system::Com::VARIANT) -> ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToUInt32Array(var: *const ::win32_system::Com::VARIANT, prgn: &mut [u32], pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6876,7 +6876,7 @@ pub unsafe fn VariantToUInt32Array(var: *const ::win32_system::Com::VARIANT, prg
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToUInt32ArrayAlloc(var: *const ::win32_system::Com::VARIANT, pprgn: *mut *mut u32, pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6890,7 +6890,7 @@ pub unsafe fn VariantToUInt32ArrayAlloc(var: *const ::win32_system::Com::VARIANT
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToUInt32WithDefault(varin: *const ::win32_system::Com::VARIANT, uldefault: u32) -> u32 {
     #[cfg(windows)]
@@ -6904,7 +6904,7 @@ pub unsafe fn VariantToUInt32WithDefault(varin: *const ::win32_system::Com::VARI
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToUInt64(varin: *const ::win32_system::Com::VARIANT) -> ::windows_core::Result<u64> {
     #[cfg(windows)]
@@ -6919,7 +6919,7 @@ pub unsafe fn VariantToUInt64(varin: *const ::win32_system::Com::VARIANT) -> ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToUInt64Array(var: *const ::win32_system::Com::VARIANT, prgn: &mut [u64], pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6933,7 +6933,7 @@ pub unsafe fn VariantToUInt64Array(var: *const ::win32_system::Com::VARIANT, prg
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToUInt64ArrayAlloc(var: *const ::win32_system::Com::VARIANT, pprgn: *mut *mut u64, pcelem: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -6947,7 +6947,7 @@ pub unsafe fn VariantToUInt64ArrayAlloc(var: *const ::win32_system::Com::VARIANT
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn VariantToUInt64WithDefault(varin: *const ::win32_system::Com::VARIANT, ulldefault: u64) -> u64 {
     #[cfg(windows)]
@@ -6961,7 +6961,7 @@ pub unsafe fn VariantToUInt64WithDefault(varin: *const ::win32_system::Com::VARI
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn WinRTPropertyValueToPropVariant<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(punkpropertyvalue: Param0) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
     #[cfg(windows)]

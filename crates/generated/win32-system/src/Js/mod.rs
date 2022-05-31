@@ -145,7 +145,7 @@ pub unsafe fn JsCreateArray(length: u32, result: *mut *mut ::core::ffi::c_void) 
     unimplemented!("Unsupported target OS");
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn JsCreateContext<'a, Param1: ::windows_core::IntoParam<'a, super::Diagnostics::Debug::IDebugApplication64>>(runtime: *const ::core::ffi::c_void, debugapplication: Param1, newcontext: *mut *mut ::core::ffi::c_void) -> JsErrorCode {
     #[cfg(windows)]
@@ -160,7 +160,7 @@ pub unsafe fn JsCreateContext<'a, Param1: ::windows_core::IntoParam<'a, super::D
     unimplemented!("Unsupported target OS");
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn JsCreateContext<'a, Param1: ::windows_core::IntoParam<'a, super::Diagnostics::Debug::IDebugApplication32>>(runtime: *const ::core::ffi::c_void, debugapplication: Param1, newcontext: *mut *mut ::core::ffi::c_void) -> JsErrorCode {
     #[cfg(windows)]
@@ -395,7 +395,7 @@ pub unsafe fn JsEnableRuntimeExecution(runtime: *const ::core::ffi::c_void) -> J
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn JsEnumerateHeap(enumerator: *mut ::core::option::Option<super::Diagnostics::Debug::IActiveScriptProfilerHeapEnum>) -> JsErrorCode {
     #[cfg(windows)]
@@ -1166,7 +1166,7 @@ pub unsafe fn JsSetRuntimeMemoryLimit(runtime: *const ::core::ffi::c_void, memor
     unimplemented!("Unsupported target OS");
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn JsStartDebugging<'a, Param0: ::windows_core::IntoParam<'a, super::Diagnostics::Debug::IDebugApplication64>>(debugapplication: Param0) -> JsErrorCode {
     #[cfg(windows)]
@@ -1181,7 +1181,7 @@ pub unsafe fn JsStartDebugging<'a, Param0: ::windows_core::IntoParam<'a, super::
     unimplemented!("Unsupported target OS");
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn JsStartDebugging<'a, Param0: ::windows_core::IntoParam<'a, super::Diagnostics::Debug::IDebugApplication32>>(debugapplication: Param0) -> JsErrorCode {
     #[cfg(windows)]
@@ -1195,7 +1195,7 @@ pub unsafe fn JsStartDebugging<'a, Param0: ::windows_core::IntoParam<'a, super::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn JsStartProfiling<'a, Param0: ::windows_core::IntoParam<'a, super::Diagnostics::Debug::IActiveScriptProfilerCallback>>(callback: Param0, eventmask: super::Diagnostics::Debug::PROFILER_EVENT_MASK, context: u32) -> JsErrorCode {
     #[cfg(windows)]
@@ -1249,7 +1249,7 @@ pub unsafe fn JsStringToPointer(value: *const ::core::ffi::c_void, stringvalue: 
     unimplemented!("Unsupported target OS");
 }
 pub type JsThreadServiceCallback = ::core::option::Option<unsafe extern "system" fn(callback: JsBackgroundWorkItemCallback, callbackstate: *const ::core::ffi::c_void) -> bool>;
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn JsValueToVariant(object: *const ::core::ffi::c_void, variant: *mut super::Com::VARIANT) -> JsErrorCode {
     #[cfg(windows)]
@@ -1294,7 +1294,7 @@ impl ::core::fmt::Debug for JsValueType {
         f.debug_tuple("JsValueType").field(&self.0).finish()
     }
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn JsVariantToValue(variant: *const super::Com::VARIANT, value: *mut *mut ::core::ffi::c_void) -> JsErrorCode {
     #[cfg(windows)]

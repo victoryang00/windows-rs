@@ -3152,7 +3152,7 @@ pub struct ITransactionDispenser_Vtbl {
 #[repr(transparent)]
 pub struct ITransactionEnlistmentAsync(::windows_core::IUnknown);
 impl ITransactionEnlistmentAsync {
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn PrepareRequestDone<'a, Param1: ::windows_core::IntoParam<'a, super::Com::IMoniker>>(&self, hr: ::windows_core::HRESULT, pmk: Param1, pboidreason: *const BOID) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).PrepareRequestDone)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hr), pmk.into_param().abi(), ::core::mem::transmute(pboidreason)).ok()
     }
@@ -3207,9 +3207,9 @@ unsafe impl ::windows_core::Interface for ITransactionEnlistmentAsync {
 #[doc(hidden)]
 pub struct ITransactionEnlistmentAsync_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub PrepareRequestDone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hr: ::windows_core::HRESULT, pmk: ::windows_core::RawPtr, pboidreason: *const BOID) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     PrepareRequestDone: usize,
     pub CommitRequestDone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hr: ::windows_core::HRESULT) -> ::windows_core::HRESULT,
     pub AbortRequestDone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hr: ::windows_core::HRESULT) -> ::windows_core::HRESULT,

@@ -57,21 +57,21 @@ impl ::core::ops::Not for ACCEPT_SECURITY_CONTEXT_CONTEXT_REQ {
         Self(self.0.not())
     }
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type ACCEPT_SECURITY_CONTEXT_FN = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: *mut super::super::Credentials::SecHandle, param2: *mut SecBufferDesc, param3: u32, param4: u32, param5: *mut super::super::Credentials::SecHandle, param6: *mut SecBufferDesc, param7: *mut u32, param8: *mut i64) -> ::windows_core::HRESULT>;
 pub const ACCOUNT_ADJUST_PRIVILEGES: i32 = 2i32;
 pub const ACCOUNT_ADJUST_QUOTAS: i32 = 4i32;
 pub const ACCOUNT_ADJUST_SYSTEM_ACCESS: i32 = 8i32;
 pub const ACCOUNT_VIEW: i32 = 1i32;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type ACQUIRE_CREDENTIALS_HANDLE_FN_A = ::core::option::Option<unsafe extern "system" fn(param0: *mut i8, param1: *mut i8, param2: u32, param3: *mut ::core::ffi::c_void, param4: *mut ::core::ffi::c_void, param5: SEC_GET_KEY_FN, param6: *mut ::core::ffi::c_void, param7: *mut super::super::Credentials::SecHandle, param8: *mut i64) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type ACQUIRE_CREDENTIALS_HANDLE_FN_W = ::core::option::Option<unsafe extern "system" fn(param0: *mut u16, param1: *mut u16, param2: u32, param3: *mut ::core::ffi::c_void, param4: *mut ::core::ffi::c_void, param5: SEC_GET_KEY_FN, param6: *mut ::core::ffi::c_void, param7: *mut super::super::Credentials::SecHandle, param8: *mut i64) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type ADD_CREDENTIALS_FN_A = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: *mut i8, param2: *mut i8, param3: u32, param4: *mut ::core::ffi::c_void, param5: SEC_GET_KEY_FN, param6: *mut ::core::ffi::c_void, param7: *mut i64) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type ADD_CREDENTIALS_FN_W = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: *mut u16, param2: *mut u16, param3: u32, param4: *mut ::core::ffi::c_void, param5: SEC_GET_KEY_FN, param6: *mut ::core::ffi::c_void, param7: *mut i64) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type APPLY_CONTROL_TOKEN_FN = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: *mut SecBufferDesc) -> ::windows_core::HRESULT>;
 pub const ASC_REQ_ALLOW_CONTEXT_REPLAY: u32 = 4194304u32;
 pub const ASC_REQ_ALLOW_MISSING_BINDINGS: u32 = 268435456u32;
@@ -167,7 +167,7 @@ pub const AUTH_REQ_OK_AS_DELEGATE: u32 = 256u32;
 pub const AUTH_REQ_PREAUTH_REQUIRED: u32 = 512u32;
 pub const AUTH_REQ_TRANSITIVE_TRUST: u32 = 1024u32;
 pub const AUTH_REQ_VALIDATE_CLIENT: u32 = 128u32;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn AcceptSecurityContext(phcredential: *const super::super::Credentials::SecHandle, phcontext: *const super::super::Credentials::SecHandle, pinput: *const SecBufferDesc, fcontextreq: ACCEPT_SECURITY_CONTEXT_CONTEXT_REQ, targetdatarep: u32, phnewcontext: *mut super::super::Credentials::SecHandle, poutput: *mut SecBufferDesc, pfcontextattr: *mut u32, ptsexpiry: *mut i64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -181,7 +181,7 @@ pub unsafe fn AcceptSecurityContext(phcredential: *const super::super::Credentia
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn AcquireCredentialsHandleA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszprincipal: Param0, pszpackage: Param1, fcredentialuse: SECPKG_CRED, pvlogonid: *const ::core::ffi::c_void, pauthdata: *const ::core::ffi::c_void, pgetkeyfn: SEC_GET_KEY_FN, pvgetkeyargument: *const ::core::ffi::c_void, phcredential: *mut super::super::Credentials::SecHandle, ptsexpiry: *mut i64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -195,7 +195,7 @@ pub unsafe fn AcquireCredentialsHandleA<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn AcquireCredentialsHandleW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszprincipal: Param0, pszpackage: Param1, fcredentialuse: SECPKG_CRED, pvlogonid: *const ::core::ffi::c_void, pauthdata: *const ::core::ffi::c_void, pgetkeyfn: SEC_GET_KEY_FN, pvgetkeyargument: *const ::core::ffi::c_void, phcredential: *mut super::super::Credentials::SecHandle, ptsexpiry: *mut i64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -209,7 +209,7 @@ pub unsafe fn AcquireCredentialsHandleW<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn AddCredentialsA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hcredentials: *const super::super::Credentials::SecHandle, pszprincipal: Param1, pszpackage: Param2, fcredentialuse: u32, pauthdata: *const ::core::ffi::c_void, pgetkeyfn: SEC_GET_KEY_FN, pvgetkeyargument: *const ::core::ffi::c_void) -> ::windows_core::Result<i64> {
     #[cfg(windows)]
@@ -224,7 +224,7 @@ pub unsafe fn AddCredentialsA<'a, Param1: ::windows_core::IntoParam<'a, ::window
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn AddCredentialsW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hcredentials: *const super::super::Credentials::SecHandle, pszprincipal: Param1, pszpackage: Param2, fcredentialuse: u32, pauthdata: *const ::core::ffi::c_void, pgetkeyfn: SEC_GET_KEY_FN, pvgetkeyargument: *const ::core::ffi::c_void) -> ::windows_core::Result<i64> {
     #[cfg(windows)]
@@ -265,7 +265,7 @@ pub unsafe fn AddSecurityPackageW<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn ApplyControlToken(phcontext: *const super::super::Credentials::SecHandle, pinput: *const SecBufferDesc) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -743,7 +743,7 @@ impl ::core::default::Default for CLEAR_BLOCK {
 pub const CLEAR_BLOCK_LENGTH: u32 = 8u32;
 pub const CLOUDAP_NAME: &str = "CloudAP";
 pub const CLOUDAP_NAME_W: &str = "CloudAP";
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type COMPLETE_AUTH_TOKEN_FN = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: *mut SecBufferDesc) -> ::windows_core::HRESULT>;
 pub const CREDP_FLAGS_CLEAR_PASSWORD: u32 = 8u32;
 pub const CREDP_FLAGS_DONT_CACHE_TI: u32 = 4u32;
@@ -806,7 +806,7 @@ pub unsafe fn ChangeAccountPasswordW<'a, Param5: ::windows_core::IntoParam<'a, :
     unimplemented!("Unsupported target OS");
 }
 pub const ClOUDAP_NAME_A: &str = "CloudAP";
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CompleteAuthToken(phcontext: *const super::super::Credentials::SecHandle, ptoken: *const SecBufferDesc) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -820,9 +820,9 @@ pub unsafe fn CompleteAuthToken(phcontext: *const super::super::Credentials::Sec
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type CredFreeCredentialsFn = ::core::option::Option<unsafe extern "system" fn(count: u32, credentials: *mut *mut ENCRYPTED_CREDENTIALW)>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CredMarshalTargetInfo(intargetinfo: *const super::super::Credentials::CREDENTIAL_TARGET_INFORMATIONW, buffer: *mut *mut u16, buffersize: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -836,11 +836,11 @@ pub unsafe fn CredMarshalTargetInfo(intargetinfo: *const super::super::Credentia
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type CredReadDomainCredentialsFn = ::core::option::Option<unsafe extern "system" fn(logonid: *const ::win32_foundation::LUID, credflags: u32, targetinfo: *const super::super::Credentials::CREDENTIAL_TARGET_INFORMATIONW, flags: u32, count: *mut u32, credential: *mut *mut *mut ENCRYPTED_CREDENTIALW) -> ::win32_foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type CredReadFn = ::core::option::Option<unsafe extern "system" fn(logonid: *const ::win32_foundation::LUID, credflags: u32, targetname: ::windows_core::PCWSTR, r#type: u32, flags: u32, credential: *mut *mut ENCRYPTED_CREDENTIALW) -> ::win32_foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CredUnmarshalTargetInfo(buffer: *const u16, buffersize: u32, rettargetinfo: *mut *mut super::super::Credentials::CREDENTIAL_TARGET_INFORMATIONW, retactualsize: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -854,15 +854,15 @@ pub unsafe fn CredUnmarshalTargetInfo(buffer: *const u16, buffersize: u32, retta
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type CredWriteFn = ::core::option::Option<unsafe extern "system" fn(logonid: *const ::win32_foundation::LUID, credflags: u32, credential: *const ENCRYPTED_CREDENTIALW, flags: u32) -> ::win32_foundation::NTSTATUS>;
 pub type CrediUnmarshalandDecodeStringFn = ::core::option::Option<unsafe extern "system" fn(marshaledstring: ::windows_core::PCWSTR, blob: *mut *mut u8, blobsize: *mut u32, isfailurefatal: *mut u8) -> ::win32_foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type DECRYPT_MESSAGE_FN = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: *mut SecBufferDesc, param2: u32, param3: *mut u32) -> ::windows_core::HRESULT>;
 pub const DEFAULT_TLS_SSP_NAME: &str = "Default TLS SSP";
 pub const DEFAULT_TLS_SSP_NAME_A: &str = "Default TLS SSP";
 pub const DEFAULT_TLS_SSP_NAME_W: &str = "Default TLS SSP";
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type DELETE_SECURITY_CONTEXT_FN = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle) -> ::windows_core::HRESULT>;
 pub const DOMAIN_NO_LM_OWF_CHANGE: i32 = 64i32;
 #[repr(C)]
@@ -955,7 +955,7 @@ impl ::core::ops::Not for DOMAIN_PASSWORD_PROPERTIES {
     }
 }
 pub const DS_UNKNOWN_ADDRESS_TYPE: u32 = 0u32;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn DecryptMessage(phcontext: *const super::super::Credentials::SecHandle, pmessage: *const SecBufferDesc, messageseqno: u32) -> ::windows_core::Result<u32> {
     #[cfg(windows)]
@@ -970,7 +970,7 @@ pub unsafe fn DecryptMessage(phcontext: *const super::super::Credentials::SecHan
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn DeleteSecurityContext(phcontext: *const super::super::Credentials::SecHandle) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1012,44 +1012,44 @@ pub unsafe fn DeleteSecurityPackageW<'a, Param0: ::windows_core::IntoParam<'a, :
 }
 pub const ENABLE_TLS_CLIENT_EARLY_START: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub struct ENCRYPTED_CREDENTIALW {
     pub Cred: super::super::Credentials::CREDENTIALW,
     pub ClearCredentialBlobSize: u32,
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for ENCRYPTED_CREDENTIALW {}
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for ENCRYPTED_CREDENTIALW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for ENCRYPTED_CREDENTIALW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ENCRYPTED_CREDENTIALW").field("Cred", &self.Cred).field("ClearCredentialBlobSize", &self.ClearCredentialBlobSize).finish()
     }
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for ENCRYPTED_CREDENTIALW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for ENCRYPTED_CREDENTIALW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENCRYPTED_CREDENTIALW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for ENCRYPTED_CREDENTIALW {}
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for ENCRYPTED_CREDENTIALW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type ENCRYPT_MESSAGE_FN = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: u32, param2: *mut SecBufferDesc, param3: u32) -> ::windows_core::HRESULT>;
 pub type ENUMERATE_SECURITY_PACKAGES_FN_A = ::core::option::Option<unsafe extern "system" fn(param0: *mut u32, param1: *mut *mut SecPkgInfoA) -> ::windows_core::HRESULT>;
 pub type ENUMERATE_SECURITY_PACKAGES_FN_W = ::core::option::Option<unsafe extern "system" fn(param0: *mut u32, param1: *mut *mut SecPkgInfoW) -> ::windows_core::HRESULT>;
@@ -1106,7 +1106,7 @@ impl ::core::ops::Not for EXPORT_SECURITY_CONTEXT_FLAGS {
         Self(self.0.not())
     }
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type EXPORT_SECURITY_CONTEXT_FN = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: u32, param2: *mut SecBuffer, param3: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT>;
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -1143,7 +1143,7 @@ impl ::core::fmt::Debug for EXTENDED_NAME_FORMAT {
     }
 }
 pub const E_RM_UNKNOWN_ERROR: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073415165i32);
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn EncryptMessage(phcontext: *const super::super::Credentials::SecHandle, fqop: u32, pmessage: *const SecBufferDesc, messageseqno: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1183,7 +1183,7 @@ pub unsafe fn EnumerateSecurityPackagesW(pcpackages: *mut u32, pppackageinfo: *m
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn ExportSecurityContext(phcontext: *const super::super::Credentials::SecHandle, fflags: EXPORT_SECURITY_CONTEXT_FLAGS, ppackedcontext: *mut SecBuffer, ptoken: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1199,7 +1199,7 @@ pub unsafe fn ExportSecurityContext(phcontext: *const super::super::Credentials:
 }
 pub const FACILITY_SL_ITF: u32 = 4u32;
 pub type FREE_CONTEXT_BUFFER_FN = ::core::option::Option<unsafe extern "system" fn(param0: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type FREE_CREDENTIALS_HANDLE_FN = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle) -> ::windows_core::HRESULT>;
 #[inline]
 pub unsafe fn FreeContextBuffer(pvcontextbuffer: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
@@ -1214,7 +1214,7 @@ pub unsafe fn FreeContextBuffer(pvcontextbuffer: *mut ::core::ffi::c_void) -> ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn FreeCredentialsHandle(phcredential: *const super::super::Credentials::SecHandle) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1334,19 +1334,19 @@ pub struct ICcgDomainAuthCredentials_Vtbl {
     pub GetPasswordCredentials: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plugininput: ::windows_core::PCWSTR, domainname: *mut ::windows_core::PWSTR, username: *mut ::windows_core::PWSTR, password: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
 }
 pub const ID_CAP_SLAPI: &str = "slapiQueryLicenseValue";
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type IMPERSONATE_SECURITY_CONTEXT_FN = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type IMPORT_SECURITY_CONTEXT_FN_A = ::core::option::Option<unsafe extern "system" fn(param0: *mut i8, param1: *mut SecBuffer, param2: *mut ::core::ffi::c_void, param3: *mut super::super::Credentials::SecHandle) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type IMPORT_SECURITY_CONTEXT_FN_W = ::core::option::Option<unsafe extern "system" fn(param0: *mut u16, param1: *mut SecBuffer, param2: *mut ::core::ffi::c_void, param3: *mut super::super::Credentials::SecHandle) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type INITIALIZE_SECURITY_CONTEXT_FN_A = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: *mut super::super::Credentials::SecHandle, param2: *mut i8, param3: u32, param4: u32, param5: u32, param6: *mut SecBufferDesc, param7: u32, param8: *mut super::super::Credentials::SecHandle, param9: *mut SecBufferDesc, param10: *mut u32, param11: *mut i64) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type INITIALIZE_SECURITY_CONTEXT_FN_W = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: *mut super::super::Credentials::SecHandle, param2: *mut u16, param3: u32, param4: u32, param5: u32, param6: *mut SecBufferDesc, param7: u32, param8: *mut super::super::Credentials::SecHandle, param9: *mut SecBufferDesc, param10: *mut u32, param11: *mut i64) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type INIT_SECURITY_INTERFACE_A = ::core::option::Option<unsafe extern "system" fn() -> *mut SecurityFunctionTableA>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type INIT_SECURITY_INTERFACE_W = ::core::option::Option<unsafe extern "system" fn() -> *mut SecurityFunctionTableW>;
 pub const ISC_REQ_ALLOCATE_MEMORY: u32 = 256u32;
 pub const ISC_REQ_CALL_LEVEL: u32 = 4096u32;
@@ -1408,7 +1408,7 @@ pub const ISC_RET_USED_SUPPLIED_CREDS: u32 = 128u32;
 pub const ISC_RET_USE_SESSION_KEY: u32 = 32u32;
 pub const ISSP_LEVEL: u32 = 32u32;
 pub const ISSP_MODE: u32 = 1u32;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn ImpersonateSecurityContext(phcontext: *const super::super::Credentials::SecHandle) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1422,7 +1422,7 @@ pub unsafe fn ImpersonateSecurityContext(phcontext: *const super::super::Credent
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn ImportSecurityContextA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszpackage: Param0, ppackedcontext: *const SecBuffer, token: *const ::core::ffi::c_void) -> ::windows_core::Result<super::super::Credentials::SecHandle> {
     #[cfg(windows)]
@@ -1437,7 +1437,7 @@ pub unsafe fn ImportSecurityContextA<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn ImportSecurityContextW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszpackage: Param0, ppackedcontext: *const SecBuffer, token: *const ::core::ffi::c_void) -> ::windows_core::Result<super::super::Credentials::SecHandle> {
     #[cfg(windows)]
@@ -1452,7 +1452,7 @@ pub unsafe fn ImportSecurityContextW<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn InitSecurityInterfaceA() -> *mut SecurityFunctionTableA {
     #[cfg(windows)]
@@ -1466,7 +1466,7 @@ pub unsafe fn InitSecurityInterfaceA() -> *mut SecurityFunctionTableA {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn InitSecurityInterfaceW() -> *mut SecurityFunctionTableW {
     #[cfg(windows)]
@@ -1480,7 +1480,7 @@ pub unsafe fn InitSecurityInterfaceW() -> *mut SecurityFunctionTableW {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn InitializeSecurityContextA(phcredential: *const super::super::Credentials::SecHandle, phcontext: *const super::super::Credentials::SecHandle, psztargetname: *const i8, fcontextreq: u32, reserved1: u32, targetdatarep: u32, pinput: *const SecBufferDesc, reserved2: u32, phnewcontext: *mut super::super::Credentials::SecHandle, poutput: *mut SecBufferDesc, pfcontextattr: *mut u32, ptsexpiry: *mut i64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1494,7 +1494,7 @@ pub unsafe fn InitializeSecurityContextA(phcredential: *const super::super::Cred
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn InitializeSecurityContextW(phcredential: *const super::super::Credentials::SecHandle, phcontext: *const super::super::Credentials::SecHandle, psztargetname: *const u16, fcontextreq: u32, reserved1: u32, targetdatarep: u32, pinput: *const SecBufferDesc, reserved2: u32, phnewcontext: *mut super::super::Credentials::SecHandle, poutput: *mut SecBufferDesc, pfcontextattr: *mut u32, ptsexpiry: *mut i64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -3474,7 +3474,7 @@ pub const KERB_RETRIEVE_TICKET_USE_CACHE_ONLY: u32 = 2u32;
 pub const KERB_RETRIEVE_TICKET_USE_CREDHANDLE: u32 = 4u32;
 pub const KERB_RETRIEVE_TICKET_WITH_SEC_CRED: u32 = 16u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub struct KERB_RETRIEVE_TKT_REQUEST {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
     pub LogonId: ::win32_foundation::LUID,
@@ -3484,33 +3484,33 @@ pub struct KERB_RETRIEVE_TKT_REQUEST {
     pub EncryptionType: KERB_CRYPTO_KEY_TYPE,
     pub CredentialsHandle: super::super::Credentials::SecHandle,
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for KERB_RETRIEVE_TKT_REQUEST {}
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for KERB_RETRIEVE_TKT_REQUEST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for KERB_RETRIEVE_TKT_REQUEST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KERB_RETRIEVE_TKT_REQUEST").field("MessageType", &self.MessageType).field("LogonId", &self.LogonId).field("TargetName", &self.TargetName).field("TicketFlags", &self.TicketFlags).field("CacheOptions", &self.CacheOptions).field("EncryptionType", &self.EncryptionType).field("CredentialsHandle", &self.CredentialsHandle).finish()
     }
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for KERB_RETRIEVE_TKT_REQUEST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for KERB_RETRIEVE_TKT_REQUEST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KERB_RETRIEVE_TKT_REQUEST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for KERB_RETRIEVE_TKT_REQUEST {}
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for KERB_RETRIEVE_TKT_REQUEST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3649,7 +3649,7 @@ impl ::core::default::Default for KERB_S4U_LOGON {
 pub const KERB_S4U_LOGON_FLAG_CHECK_LOGONHOURS: u32 = 2u32;
 pub const KERB_S4U_LOGON_FLAG_IDENTIFY: u32 = 8u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub struct KERB_SETPASSWORD_EX_REQUEST {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
     pub LogonId: ::win32_foundation::LUID,
@@ -3664,15 +3664,15 @@ pub struct KERB_SETPASSWORD_EX_REQUEST {
     pub KdcAddress: ::win32_foundation::UNICODE_STRING,
     pub KdcAddressType: u32,
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for KERB_SETPASSWORD_EX_REQUEST {}
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for KERB_SETPASSWORD_EX_REQUEST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for KERB_SETPASSWORD_EX_REQUEST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KERB_SETPASSWORD_EX_REQUEST")
@@ -3691,26 +3691,26 @@ impl ::core::fmt::Debug for KERB_SETPASSWORD_EX_REQUEST {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for KERB_SETPASSWORD_EX_REQUEST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for KERB_SETPASSWORD_EX_REQUEST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KERB_SETPASSWORD_EX_REQUEST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for KERB_SETPASSWORD_EX_REQUEST {}
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for KERB_SETPASSWORD_EX_REQUEST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub struct KERB_SETPASSWORD_REQUEST {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
     pub LogonId: ::win32_foundation::LUID,
@@ -3720,33 +3720,33 @@ pub struct KERB_SETPASSWORD_REQUEST {
     pub AccountName: ::win32_foundation::UNICODE_STRING,
     pub Password: ::win32_foundation::UNICODE_STRING,
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for KERB_SETPASSWORD_REQUEST {}
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for KERB_SETPASSWORD_REQUEST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for KERB_SETPASSWORD_REQUEST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KERB_SETPASSWORD_REQUEST").field("MessageType", &self.MessageType).field("LogonId", &self.LogonId).field("CredentialsHandle", &self.CredentialsHandle).field("Flags", &self.Flags).field("DomainName", &self.DomainName).field("AccountName", &self.AccountName).field("Password", &self.Password).finish()
     }
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for KERB_SETPASSWORD_REQUEST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for KERB_SETPASSWORD_REQUEST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KERB_SETPASSWORD_REQUEST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for KERB_SETPASSWORD_REQUEST {}
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for KERB_SETPASSWORD_REQUEST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4287,7 +4287,7 @@ impl ::core::fmt::Debug for KSEC_CONTEXT_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 pub struct KSEC_LIST_ENTRY {
     pub List: ::win32_system::Kernel::LIST_ENTRY,
     pub RefCount: i32,
@@ -4295,33 +4295,33 @@ pub struct KSEC_LIST_ENTRY {
     pub OwningList: *mut ::core::ffi::c_void,
     pub Reserved: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for KSEC_LIST_ENTRY {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for KSEC_LIST_ENTRY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for KSEC_LIST_ENTRY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSEC_LIST_ENTRY").field("List", &self.List).field("RefCount", &self.RefCount).field("Signature", &self.Signature).field("OwningList", &self.OwningList).field("Reserved", &self.Reserved).finish()
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for KSEC_LIST_ENTRY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for KSEC_LIST_ENTRY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEC_LIST_ENTRY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for KSEC_LIST_ENTRY {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for KSEC_LIST_ENTRY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4331,7 +4331,7 @@ pub type KspCompleteTokenFn = ::core::option::Option<unsafe extern "system" fn(c
 pub type KspDeleteContextFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, lsacontextid: *mut usize) -> ::win32_foundation::NTSTATUS>;
 pub type KspGetTokenFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, impersonationtoken: *mut ::win32_foundation::HANDLE, rawtoken: *mut *mut ::core::ffi::c_void) -> ::win32_foundation::NTSTATUS>;
 pub type KspInitContextFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, contextdata: *const SecBuffer, newcontextid: *mut usize) -> ::win32_foundation::NTSTATUS>;
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 pub type KspInitPackageFn = ::core::option::Option<unsafe extern "system" fn(functiontable: *const SECPKG_KERNEL_FUNCTIONS) -> ::win32_foundation::NTSTATUS>;
 pub type KspMakeSignatureFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, fqop: u32, message: *const SecBufferDesc, messageseqno: u32) -> ::win32_foundation::NTSTATUS>;
 pub type KspMapHandleFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, lsacontextid: *mut usize) -> ::win32_foundation::NTSTATUS>;
@@ -4460,7 +4460,7 @@ impl ::core::fmt::Debug for LSA_AUTH_INFORMATION_AUTH_TYPE {
 }
 pub const LSA_CALL_LICENSE_SERVER: u32 = 2147483648u32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 pub struct LSA_DISPATCH_TABLE {
     pub CreateLogonSession: PLSA_CREATE_LOGON_SESSION,
     pub DeleteLogonSession: PLSA_DELETE_LOGON_SESSION,
@@ -4474,15 +4474,15 @@ pub struct LSA_DISPATCH_TABLE {
     pub CopyToClientBuffer: PLSA_COPY_TO_CLIENT_BUFFER,
     pub CopyFromClientBuffer: PLSA_COPY_FROM_CLIENT_BUFFER,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for LSA_DISPATCH_TABLE {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for LSA_DISPATCH_TABLE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for LSA_DISPATCH_TABLE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("LSA_DISPATCH_TABLE")
@@ -4500,19 +4500,19 @@ impl ::core::fmt::Debug for LSA_DISPATCH_TABLE {
             .finish()
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for LSA_DISPATCH_TABLE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for LSA_DISPATCH_TABLE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LSA_DISPATCH_TABLE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for LSA_DISPATCH_TABLE {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for LSA_DISPATCH_TABLE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4909,7 +4909,7 @@ impl ::core::default::Default for LSA_REFERENCED_DOMAIN_LIST {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "win32-security", feature = "win32-system", feature = "win32-system"))]
 pub struct LSA_SECPKG_FUNCTION_TABLE {
     pub CreateLogonSession: PLSA_CREATE_LOGON_SESSION,
     pub DeleteLogonSession: PLSA_DELETE_LOGON_SESSION,
@@ -4975,15 +4975,15 @@ pub struct LSA_SECPKG_FUNCTION_TABLE {
     pub GetAppModeInfo: PLSA_GET_APP_MODE_INFO,
     pub SetAppModeInfo: PLSA_SET_APP_MODE_INFO,
 }
-#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "win32-security", feature = "win32-system", feature = "win32-system"))]
 impl ::core::marker::Copy for LSA_SECPKG_FUNCTION_TABLE {}
-#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "win32-security", feature = "win32-system", feature = "win32-system"))]
 impl ::core::clone::Clone for LSA_SECPKG_FUNCTION_TABLE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "win32-security", feature = "win32-system", feature = "win32-system"))]
 impl ::core::fmt::Debug for LSA_SECPKG_FUNCTION_TABLE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("LSA_SECPKG_FUNCTION_TABLE")
@@ -5053,19 +5053,19 @@ impl ::core::fmt::Debug for LSA_SECPKG_FUNCTION_TABLE {
             .finish()
     }
 }
-#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "win32-security", feature = "win32-system", feature = "win32-system"))]
 unsafe impl ::windows_core::Abi for LSA_SECPKG_FUNCTION_TABLE {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "win32-security", feature = "win32-system", feature = "win32-system"))]
 impl ::core::cmp::PartialEq for LSA_SECPKG_FUNCTION_TABLE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LSA_SECPKG_FUNCTION_TABLE>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "win32-security", feature = "win32-system", feature = "win32-system"))]
 impl ::core::cmp::Eq for LSA_SECPKG_FUNCTION_TABLE {}
-#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "win32-security", feature = "win32-system", feature = "win32-system"))]
 impl ::core::default::Default for LSA_SECPKG_FUNCTION_TABLE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5566,7 +5566,7 @@ impl ::core::fmt::Debug for LsaHandle {
 unsafe impl ::windows_core::Abi for LsaHandle {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn LsaLogonUser<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(lsahandle: Param0, originname: *const ::win32_system::Kernel::STRING, logontype: SECURITY_LOGON_TYPE, authenticationpackage: u32, authenticationinformation: *const ::core::ffi::c_void, authenticationinformationlength: u32, localgroups: *const super::super::TOKEN_GROUPS, sourcecontext: *const super::super::TOKEN_SOURCE, profilebuffer: *mut *mut ::core::ffi::c_void, profilebufferlength: *mut u32, logonid: *mut ::win32_foundation::LUID, token: *mut ::win32_foundation::HANDLE, quotas: *mut super::super::QUOTA_LIMITS, substatus: *mut i32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5596,7 +5596,7 @@ pub unsafe fn LsaLogonUser<'a, Param0: ::windows_core::IntoParam<'a, ::win32_fou
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn LsaLookupAuthenticationPackage<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(lsahandle: Param0, packagename: *const ::win32_system::Kernel::STRING, authenticationpackage: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5675,7 +5675,7 @@ pub unsafe fn LsaNtStatusToWinError<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_WindowsProgramming")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn LsaOpenPolicy(systemname: *const ::win32_foundation::UNICODE_STRING, objectattributes: *const ::win32_system::WindowsProgramming::OBJECT_ATTRIBUTES, desiredaccess: u32, policyhandle: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5780,7 +5780,7 @@ pub unsafe fn LsaQueryTrustedDomainInfoByName(policyhandle: *const ::core::ffi::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn LsaRegisterLogonProcess(logonprocessname: *const ::win32_system::Kernel::STRING, lsahandle: *mut LsaHandle, securitymode: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5937,7 +5937,7 @@ pub unsafe fn LsaUnregisterPolicyChangeNotification<'a, Param1: ::windows_core::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type MAKE_SIGNATURE_FN = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: u32, param2: *mut SecBufferDesc, param3: u32) -> ::windows_core::HRESULT>;
 pub const MAXIMUM_CAPES_PER_CAP: u32 = 127u32;
 pub const MAX_CRED_SIZE: u32 = 1024u32;
@@ -6302,7 +6302,7 @@ impl ::core::default::Default for MSV1_0_IUM_SUPPLEMENTAL_CREDENTIAL {
 }
 pub const MSV1_0_LANMAN_SESSION_KEY_LENGTH: u32 = 8u32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 pub struct MSV1_0_LM20_LOGON {
     pub MessageType: MSV1_0_LOGON_SUBMIT_TYPE,
     pub LogonDomainName: ::win32_foundation::UNICODE_STRING,
@@ -6313,33 +6313,33 @@ pub struct MSV1_0_LM20_LOGON {
     pub CaseInsensitiveChallengeResponse: ::win32_system::Kernel::STRING,
     pub ParameterControl: u32,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for MSV1_0_LM20_LOGON {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for MSV1_0_LM20_LOGON {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for MSV1_0_LM20_LOGON {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MSV1_0_LM20_LOGON").field("MessageType", &self.MessageType).field("LogonDomainName", &self.LogonDomainName).field("UserName", &self.UserName).field("Workstation", &self.Workstation).field("ChallengeToClient", &self.ChallengeToClient).field("CaseSensitiveChallengeResponse", &self.CaseSensitiveChallengeResponse).field("CaseInsensitiveChallengeResponse", &self.CaseInsensitiveChallengeResponse).field("ParameterControl", &self.ParameterControl).finish()
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for MSV1_0_LM20_LOGON {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for MSV1_0_LM20_LOGON {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MSV1_0_LM20_LOGON>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for MSV1_0_LM20_LOGON {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for MSV1_0_LM20_LOGON {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6673,7 +6673,7 @@ pub const MSV1_0_SUBAUTH_ACCOUNT_EXPIRY: u32 = 16u32;
 pub const MSV1_0_SUBAUTH_ACCOUNT_TYPE: u32 = 64u32;
 pub const MSV1_0_SUBAUTH_LOCKOUT: u32 = 128u32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 pub struct MSV1_0_SUBAUTH_LOGON {
     pub MessageType: MSV1_0_LOGON_SUBMIT_TYPE,
     pub LogonDomainName: ::win32_foundation::UNICODE_STRING,
@@ -6685,33 +6685,33 @@ pub struct MSV1_0_SUBAUTH_LOGON {
     pub ParameterControl: MSV_SUBAUTH_LOGON_PARAMETER_CONTROL,
     pub SubAuthPackageId: u32,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for MSV1_0_SUBAUTH_LOGON {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for MSV1_0_SUBAUTH_LOGON {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for MSV1_0_SUBAUTH_LOGON {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MSV1_0_SUBAUTH_LOGON").field("MessageType", &self.MessageType).field("LogonDomainName", &self.LogonDomainName).field("UserName", &self.UserName).field("Workstation", &self.Workstation).field("ChallengeToClient", &self.ChallengeToClient).field("AuthenticationInfo1", &self.AuthenticationInfo1).field("AuthenticationInfo2", &self.AuthenticationInfo2).field("ParameterControl", &self.ParameterControl).field("SubAuthPackageId", &self.SubAuthPackageId).finish()
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for MSV1_0_SUBAUTH_LOGON {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for MSV1_0_SUBAUTH_LOGON {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MSV1_0_SUBAUTH_LOGON>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for MSV1_0_SUBAUTH_LOGON {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for MSV1_0_SUBAUTH_LOGON {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6886,7 +6886,7 @@ pub const MSV1_0_USER_SESSION_KEY_LENGTH: u32 = 16u32;
 pub const MSV1_0_USE_CLIENT_CHALLENGE: u32 = 128u32;
 pub const MSV1_0_USE_DOMAIN_FOR_ROUTING_ONLY: u32 = 32768u32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 pub struct MSV1_0_VALIDATION_INFO {
     pub LogoffTime: i64,
     pub KickoffTime: i64,
@@ -6898,33 +6898,33 @@ pub struct MSV1_0_VALIDATION_INFO {
     pub WhichFields: u32,
     pub UserId: u32,
 }
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for MSV1_0_VALIDATION_INFO {}
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for MSV1_0_VALIDATION_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for MSV1_0_VALIDATION_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MSV1_0_VALIDATION_INFO").field("LogoffTime", &self.LogoffTime).field("KickoffTime", &self.KickoffTime).field("LogonServer", &self.LogonServer).field("LogonDomainName", &self.LogonDomainName).field("SessionKey", &self.SessionKey).field("Authoritative", &self.Authoritative).field("UserFlags", &self.UserFlags).field("WhichFields", &self.WhichFields).field("UserId", &self.UserId).finish()
     }
 }
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for MSV1_0_VALIDATION_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for MSV1_0_VALIDATION_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MSV1_0_VALIDATION_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for MSV1_0_VALIDATION_INFO {}
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for MSV1_0_VALIDATION_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7081,7 +7081,7 @@ impl ::core::ops::Not for MSV_SUPPLEMENTAL_CREDENTIAL_FLAGS {
         Self(self.0.not())
     }
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn MakeSignature(phcontext: *const super::super::Credentials::SecHandle, fqop: u32, pmessage: *const SecBufferDesc, messageseqno: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -7286,39 +7286,39 @@ impl ::core::default::Default for NETLOGON_GENERIC_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 pub struct NETLOGON_INTERACTIVE_INFO {
     pub Identity: NETLOGON_LOGON_IDENTITY_INFO,
     pub LmOwfPassword: ::win32_system::PasswordManagement::LM_OWF_PASSWORD,
     pub NtOwfPassword: ::win32_system::PasswordManagement::LM_OWF_PASSWORD,
 }
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for NETLOGON_INTERACTIVE_INFO {}
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for NETLOGON_INTERACTIVE_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for NETLOGON_INTERACTIVE_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("NETLOGON_INTERACTIVE_INFO").field("Identity", &self.Identity).field("LmOwfPassword", &self.LmOwfPassword).field("NtOwfPassword", &self.NtOwfPassword).finish()
     }
 }
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for NETLOGON_INTERACTIVE_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for NETLOGON_INTERACTIVE_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NETLOGON_INTERACTIVE_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for NETLOGON_INTERACTIVE_INFO {}
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for NETLOGON_INTERACTIVE_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7387,79 +7387,79 @@ impl ::core::fmt::Debug for NETLOGON_LOGON_INFO_CLASS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 pub struct NETLOGON_NETWORK_INFO {
     pub Identity: NETLOGON_LOGON_IDENTITY_INFO,
     pub LmChallenge: CLEAR_BLOCK,
     pub NtChallengeResponse: ::win32_system::Kernel::STRING,
     pub LmChallengeResponse: ::win32_system::Kernel::STRING,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for NETLOGON_NETWORK_INFO {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for NETLOGON_NETWORK_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for NETLOGON_NETWORK_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("NETLOGON_NETWORK_INFO").field("Identity", &self.Identity).field("LmChallenge", &self.LmChallenge).field("NtChallengeResponse", &self.NtChallengeResponse).field("LmChallengeResponse", &self.LmChallengeResponse).finish()
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for NETLOGON_NETWORK_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for NETLOGON_NETWORK_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NETLOGON_NETWORK_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for NETLOGON_NETWORK_INFO {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for NETLOGON_NETWORK_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 pub struct NETLOGON_SERVICE_INFO {
     pub Identity: NETLOGON_LOGON_IDENTITY_INFO,
     pub LmOwfPassword: ::win32_system::PasswordManagement::LM_OWF_PASSWORD,
     pub NtOwfPassword: ::win32_system::PasswordManagement::LM_OWF_PASSWORD,
 }
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for NETLOGON_SERVICE_INFO {}
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for NETLOGON_SERVICE_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for NETLOGON_SERVICE_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("NETLOGON_SERVICE_INFO").field("Identity", &self.Identity).field("LmOwfPassword", &self.LmOwfPassword).field("NtOwfPassword", &self.NtOwfPassword).finish()
     }
 }
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for NETLOGON_SERVICE_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for NETLOGON_SERVICE_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NETLOGON_SERVICE_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for NETLOGON_SERVICE_INFO {}
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for NETLOGON_SERVICE_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7494,12 +7494,12 @@ pub const PER_USER_AUDIT_SUCCESS_EXCLUDE: u32 = 2u32;
 pub const PER_USER_AUDIT_SUCCESS_INCLUDE: u32 = 1u32;
 pub const PER_USER_POLICY_UNCHANGED: u32 = 0u32;
 pub type PKSEC_CREATE_CONTEXT_LIST = ::core::option::Option<unsafe extern "system" fn(r#type: KSEC_CONTEXT_TYPE) -> *mut ::core::ffi::c_void>;
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 pub type PKSEC_DEREFERENCE_LIST_ENTRY = ::core::option::Option<unsafe extern "system" fn(entry: *const KSEC_LIST_ENTRY, delete: *mut u8)>;
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 pub type PKSEC_INSERT_LIST_ENTRY = ::core::option::Option<unsafe extern "system" fn(list: *const ::core::ffi::c_void, entry: *const KSEC_LIST_ENTRY)>;
 pub type PKSEC_LOCATE_PKG_BY_ID = ::core::option::Option<unsafe extern "system" fn(packageid: u32) -> *mut ::core::ffi::c_void>;
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 pub type PKSEC_REFERENCE_LIST_ENTRY = ::core::option::Option<unsafe extern "system" fn(entry: *const KSEC_LIST_ENTRY, signature: u32, removenoref: ::win32_foundation::BOOLEAN) -> ::win32_foundation::NTSTATUS>;
 pub type PKSEC_SERIALIZE_SCHANNEL_AUTH_DATA = ::core::option::Option<unsafe extern "system" fn(pvauthdata: *const ::core::ffi::c_void, size: *mut u32, serializeddata: *mut *mut ::core::ffi::c_void) -> ::win32_foundation::NTSTATUS>;
 pub type PKSEC_SERIALIZE_WINNT_AUTH_DATA = ::core::option::Option<unsafe extern "system" fn(pvauthdata: *const ::core::ffi::c_void, size: *mut u32, serializeddata: *mut *mut ::core::ffi::c_void) -> ::win32_foundation::NTSTATUS>;
@@ -7626,7 +7626,7 @@ impl ::core::fmt::Debug for PKU2U_LOGON_SUBMIT_TYPE {
 pub const PKU2U_PACKAGE_NAME: &str = "pku2u";
 pub const PKU2U_PACKAGE_NAME_A: &str = "pku2u";
 pub const PKU2U_PACKAGE_NAME_W: &str = "pku2u";
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 pub type PLSA_ADD_CREDENTIAL = ::core::option::Option<unsafe extern "system" fn(logonid: *const ::win32_foundation::LUID, authenticationpackage: u32, primarykeyvalue: *const ::win32_system::Kernel::STRING, credentials: *const ::win32_system::Kernel::STRING) -> ::win32_foundation::NTSTATUS>;
 pub type PLSA_ALLOCATE_CLIENT_BUFFER = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, lengthrequired: u32, clientbaseaddress: *mut *mut ::core::ffi::c_void) -> ::win32_foundation::NTSTATUS>;
 pub type PLSA_ALLOCATE_LSA_HEAP = ::core::option::Option<unsafe extern "system" fn(length: u32) -> *mut ::core::ffi::c_void>;
@@ -7634,7 +7634,7 @@ pub type PLSA_ALLOCATE_PRIVATE_HEAP = ::core::option::Option<unsafe extern "syst
 pub type PLSA_ALLOCATE_SHARED_MEMORY = ::core::option::Option<unsafe extern "system" fn(sharedmem: *const ::core::ffi::c_void, size: u32) -> *mut ::core::ffi::c_void>;
 pub type PLSA_AP_CALL_PACKAGE = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, protocolsubmitbuffer: *const ::core::ffi::c_void, clientbufferbase: *const ::core::ffi::c_void, submitbufferlength: u32, protocolreturnbuffer: *mut *mut ::core::ffi::c_void, returnbufferlength: *mut u32, protocolstatus: *mut i32) -> ::win32_foundation::NTSTATUS>;
 pub type PLSA_AP_CALL_PACKAGE_PASSTHROUGH = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, protocolsubmitbuffer: *const ::core::ffi::c_void, clientbufferbase: *const ::core::ffi::c_void, submitbufferlength: u32, protocolreturnbuffer: *mut *mut ::core::ffi::c_void, returnbufferlength: *mut u32, protocolstatus: *mut i32) -> ::win32_foundation::NTSTATUS>;
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 pub type PLSA_AP_INITIALIZE_PACKAGE = ::core::option::Option<unsafe extern "system" fn(authenticationpackageid: u32, lsadispatchtable: *const LSA_DISPATCH_TABLE, database: *const ::win32_system::Kernel::STRING, confidentiality: *const ::win32_system::Kernel::STRING, authenticationpackagename: *mut *mut ::win32_system::Kernel::STRING) -> ::win32_foundation::NTSTATUS>;
 pub type PLSA_AP_LOGON_TERMINATED = ::core::option::Option<unsafe extern "system" fn(logonid: *const ::win32_foundation::LUID)>;
 pub type PLSA_AP_LOGON_USER = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, logontype: SECURITY_LOGON_TYPE, authenticationinformation: *const ::core::ffi::c_void, clientauthenticationbase: *const ::core::ffi::c_void, authenticationinformationlength: u32, profilebuffer: *mut *mut ::core::ffi::c_void, profilebufferlength: *mut u32, logonid: *mut ::win32_foundation::LUID, substatus: *mut i32, tokeninformationtype: *mut LSA_TOKEN_INFORMATION_TYPE, tokeninformation: *mut *mut ::core::ffi::c_void, accountname: *mut *mut ::win32_foundation::UNICODE_STRING, authenticatingauthority: *mut *mut ::win32_foundation::UNICODE_STRING) -> ::win32_foundation::NTSTATUS>;
@@ -7720,11 +7720,11 @@ pub type PLSA_COPY_TO_CLIENT_BUFFER = ::core::option::Option<unsafe extern "syst
 pub type PLSA_CRACK_SINGLE_NAME = ::core::option::Option<unsafe extern "system" fn(formatoffered: u32, performatgc: ::win32_foundation::BOOLEAN, nameinput: *const ::win32_foundation::UNICODE_STRING, prefix: *const ::win32_foundation::UNICODE_STRING, requestedformat: u32, crackedname: *mut ::win32_foundation::UNICODE_STRING, dnsdomainname: *mut ::win32_foundation::UNICODE_STRING, substatus: *mut u32) -> ::win32_foundation::NTSTATUS>;
 pub type PLSA_CREATE_LOGON_SESSION = ::core::option::Option<unsafe extern "system" fn(logonid: *mut ::win32_foundation::LUID) -> ::win32_foundation::NTSTATUS>;
 pub type PLSA_CREATE_SHARED_MEMORY = ::core::option::Option<unsafe extern "system" fn(maxsize: u32, initialsize: u32) -> *mut ::core::ffi::c_void>;
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system")]
 pub type PLSA_CREATE_THREAD = ::core::option::Option<unsafe extern "system" fn(securityattributes: *const super::super::SECURITY_ATTRIBUTES, stacksize: u32, startfunction: ::win32_system::Threading::LPTHREAD_START_ROUTINE, threadparameter: *const ::core::ffi::c_void, creationflags: u32, threadid: *mut u32) -> ::win32_foundation::HANDLE>;
 pub type PLSA_CREATE_TOKEN = ::core::option::Option<unsafe extern "system" fn(logonid: *const ::win32_foundation::LUID, tokensource: *const super::super::TOKEN_SOURCE, logontype: SECURITY_LOGON_TYPE, impersonationlevel: super::super::SECURITY_IMPERSONATION_LEVEL, tokeninformationtype: LSA_TOKEN_INFORMATION_TYPE, tokeninformation: *const ::core::ffi::c_void, tokengroups: *const super::super::TOKEN_GROUPS, accountname: *const ::win32_foundation::UNICODE_STRING, authorityname: *const ::win32_foundation::UNICODE_STRING, workstation: *const ::win32_foundation::UNICODE_STRING, profilepath: *const ::win32_foundation::UNICODE_STRING, token: *mut ::win32_foundation::HANDLE, substatus: *mut i32) -> ::win32_foundation::NTSTATUS>;
 pub type PLSA_CREATE_TOKEN_EX = ::core::option::Option<unsafe extern "system" fn(logonid: *const ::win32_foundation::LUID, tokensource: *const super::super::TOKEN_SOURCE, logontype: SECURITY_LOGON_TYPE, impersonationlevel: super::super::SECURITY_IMPERSONATION_LEVEL, tokeninformationtype: LSA_TOKEN_INFORMATION_TYPE, tokeninformation: *const ::core::ffi::c_void, tokengroups: *const super::super::TOKEN_GROUPS, workstation: *const ::win32_foundation::UNICODE_STRING, profilepath: *const ::win32_foundation::UNICODE_STRING, sessioninformation: *const ::core::ffi::c_void, sessioninformationtype: SECPKG_SESSIONINFO_TYPE, token: *mut ::win32_foundation::HANDLE, substatus: *mut i32) -> ::win32_foundation::NTSTATUS>;
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 pub type PLSA_DELETE_CREDENTIAL = ::core::option::Option<unsafe extern "system" fn(logonid: *const ::win32_foundation::LUID, authenticationpackage: u32, primarykeyvalue: *const ::win32_system::Kernel::STRING) -> ::win32_foundation::NTSTATUS>;
 pub type PLSA_DELETE_LOGON_SESSION = ::core::option::Option<unsafe extern "system" fn(logonid: *const ::win32_foundation::LUID) -> ::win32_foundation::NTSTATUS>;
 pub type PLSA_DELETE_SHARED_MEMORY = ::core::option::Option<unsafe extern "system" fn(sharedmem: *const ::core::ffi::c_void) -> ::win32_foundation::BOOLEAN>;
@@ -7738,7 +7738,7 @@ pub type PLSA_GET_APP_MODE_INFO = ::core::option::Option<unsafe extern "system" 
 pub type PLSA_GET_AUTH_DATA_FOR_USER = ::core::option::Option<unsafe extern "system" fn(name: *const ::win32_foundation::UNICODE_STRING, nametype: SECPKG_NAME_TYPE, prefix: *const ::win32_foundation::UNICODE_STRING, userauthdata: *mut *mut u8, userauthdatasize: *mut u32, userflatname: *mut ::win32_foundation::UNICODE_STRING) -> ::win32_foundation::NTSTATUS>;
 pub type PLSA_GET_CALL_INFO = ::core::option::Option<unsafe extern "system" fn(info: *mut SECPKG_CALL_INFO) -> ::win32_foundation::BOOLEAN>;
 pub type PLSA_GET_CLIENT_INFO = ::core::option::Option<unsafe extern "system" fn(clientinfo: *mut SECPKG_CLIENT_INFO) -> ::win32_foundation::NTSTATUS>;
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 pub type PLSA_GET_CREDENTIALS = ::core::option::Option<unsafe extern "system" fn(logonid: *const ::win32_foundation::LUID, authenticationpackage: u32, querycontext: *mut u32, retrieveallcredentials: ::win32_foundation::BOOLEAN, primarykeyvalue: *const ::win32_system::Kernel::STRING, primarykeylength: *mut u32, credentials: *const ::win32_system::Kernel::STRING) -> ::win32_foundation::NTSTATUS>;
 pub type PLSA_GET_EXTENDED_CALL_FLAGS = ::core::option::Option<unsafe extern "system" fn(flags: *mut u32) -> ::win32_foundation::NTSTATUS>;
 pub type PLSA_GET_SERVICE_ACCOUNT_PASSWORD = ::core::option::Option<unsafe extern "system" fn(accountname: *const ::win32_foundation::UNICODE_STRING, domainname: *const ::win32_foundation::UNICODE_STRING, credfetch: CRED_FETCH, filetimeexpiry: *mut ::win32_foundation::FILETIME, currentpassword: *mut ::win32_foundation::UNICODE_STRING, previouspassword: *mut ::win32_foundation::UNICODE_STRING, filetimecurrpwdvalidforoutbound: *mut ::win32_foundation::FILETIME) -> ::win32_foundation::NTSTATUS>;
@@ -7757,7 +7757,7 @@ pub type PLSA_REDIRECTED_LOGON_GET_LOGON_CREDS = ::core::option::Option<unsafe e
 pub type PLSA_REDIRECTED_LOGON_GET_SUPP_CREDS = ::core::option::Option<unsafe extern "system" fn(redirectedlogonhandle: ::win32_foundation::HANDLE, supplementalcredentials: *mut *mut SECPKG_SUPPLEMENTAL_CRED_ARRAY) -> ::win32_foundation::NTSTATUS>;
 pub type PLSA_REDIRECTED_LOGON_INIT = ::core::option::Option<unsafe extern "system" fn(redirectedlogonhandle: ::win32_foundation::HANDLE, packagename: *const ::win32_foundation::UNICODE_STRING, sessionid: u32, logonid: *const ::win32_foundation::LUID) -> ::win32_foundation::NTSTATUS>;
 pub type PLSA_REGISTER_CALLBACK = ::core::option::Option<unsafe extern "system" fn(callbackid: u32, callback: PLSA_CALLBACK_FUNCTION) -> ::win32_foundation::NTSTATUS>;
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system")]
 pub type PLSA_REGISTER_NOTIFICATION = ::core::option::Option<unsafe extern "system" fn(startfunction: ::win32_system::Threading::LPTHREAD_START_ROUTINE, parameter: *const ::core::ffi::c_void, notificationtype: u32, notificationclass: u32, notificationflags: u32, intervalminutes: u32, waitevent: ::win32_foundation::HANDLE) -> ::win32_foundation::HANDLE>;
 pub type PLSA_SAVE_SUPPLEMENTAL_CREDENTIALS = ::core::option::Option<unsafe extern "system" fn(logonid: *const ::win32_foundation::LUID, supplementalcredsize: u32, supplementalcreds: *const ::core::ffi::c_void, synchronous: ::win32_foundation::BOOLEAN) -> ::win32_foundation::NTSTATUS>;
 pub type PLSA_SET_APP_MODE_INFO = ::core::option::Option<unsafe extern "system" fn(userfunction: u32, argument1: usize, argument2: usize, userdata: *const SecBuffer, returntolsa: ::win32_foundation::BOOLEAN) -> ::win32_foundation::NTSTATUS>;
@@ -8548,27 +8548,27 @@ impl ::core::default::Default for PctPublicKey {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type QUERY_CONTEXT_ATTRIBUTES_EX_FN_A = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: u32, param2: *mut ::core::ffi::c_void, param3: u32) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type QUERY_CONTEXT_ATTRIBUTES_EX_FN_W = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: u32, param2: *mut ::core::ffi::c_void, param3: u32) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type QUERY_CONTEXT_ATTRIBUTES_FN_A = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: u32, param2: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type QUERY_CONTEXT_ATTRIBUTES_FN_W = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: u32, param2: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type QUERY_CREDENTIALS_ATTRIBUTES_EX_FN_A = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: u32, param2: *mut ::core::ffi::c_void, param3: u32) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type QUERY_CREDENTIALS_ATTRIBUTES_EX_FN_W = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: u32, param2: *mut ::core::ffi::c_void, param3: u32) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type QUERY_CREDENTIALS_ATTRIBUTES_FN_A = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: u32, param2: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type QUERY_CREDENTIALS_ATTRIBUTES_FN_W = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: u32, param2: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type QUERY_SECURITY_CONTEXT_TOKEN_FN = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT>;
 pub type QUERY_SECURITY_PACKAGE_INFO_FN_A = ::core::option::Option<unsafe extern "system" fn(param0: *mut i8, param1: *mut *mut SecPkgInfoA) -> ::windows_core::HRESULT>;
 pub type QUERY_SECURITY_PACKAGE_INFO_FN_W = ::core::option::Option<unsafe extern "system" fn(param0: *mut u16, param1: *mut *mut SecPkgInfoW) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn QueryContextAttributesA(phcontext: *const super::super::Credentials::SecHandle, ulattribute: SECPKG_ATTR, pbuffer: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -8582,7 +8582,7 @@ pub unsafe fn QueryContextAttributesA(phcontext: *const super::super::Credential
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn QueryContextAttributesExA(phcontext: *const super::super::Credentials::SecHandle, ulattribute: SECPKG_ATTR, pbuffer: *mut ::core::ffi::c_void, cbbuffer: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -8596,7 +8596,7 @@ pub unsafe fn QueryContextAttributesExA(phcontext: *const super::super::Credenti
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn QueryContextAttributesExW(phcontext: *const super::super::Credentials::SecHandle, ulattribute: SECPKG_ATTR, pbuffer: *mut ::core::ffi::c_void, cbbuffer: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -8610,7 +8610,7 @@ pub unsafe fn QueryContextAttributesExW(phcontext: *const super::super::Credenti
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn QueryContextAttributesW(phcontext: *const super::super::Credentials::SecHandle, ulattribute: SECPKG_ATTR, pbuffer: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -8624,7 +8624,7 @@ pub unsafe fn QueryContextAttributesW(phcontext: *const super::super::Credential
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn QueryCredentialsAttributesA(phcredential: *const super::super::Credentials::SecHandle, ulattribute: u32, pbuffer: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -8638,7 +8638,7 @@ pub unsafe fn QueryCredentialsAttributesA(phcredential: *const super::super::Cre
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn QueryCredentialsAttributesExA(phcredential: *const super::super::Credentials::SecHandle, ulattribute: u32, pbuffer: *mut ::core::ffi::c_void, cbbuffer: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -8652,7 +8652,7 @@ pub unsafe fn QueryCredentialsAttributesExA(phcredential: *const super::super::C
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn QueryCredentialsAttributesExW(phcredential: *const super::super::Credentials::SecHandle, ulattribute: u32, pbuffer: *mut ::core::ffi::c_void, cbbuffer: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -8666,7 +8666,7 @@ pub unsafe fn QueryCredentialsAttributesExW(phcredential: *const super::super::C
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn QueryCredentialsAttributesW(phcredential: *const super::super::Credentials::SecHandle, ulattribute: u32, pbuffer: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -8680,7 +8680,7 @@ pub unsafe fn QueryCredentialsAttributesW(phcredential: *const super::super::Cre
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn QuerySecurityContextToken(phcontext: *const super::super::Credentials::SecHandle, token: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -8725,13 +8725,13 @@ pub unsafe fn QuerySecurityPackageInfoW<'a, Param0: ::windows_core::IntoParam<'a
 pub const RCRED_CRED_EXISTS: u32 = 1u32;
 pub const RCRED_STATUS_NOCRED: u32 = 0u32;
 pub const RCRED_STATUS_UNKNOWN_ISSUER: u32 = 2u32;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type REVERT_SECURITY_CONTEXT_FN = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle) -> ::windows_core::HRESULT>;
 pub const RTL_ENCRYPT_MEMORY_SIZE: u32 = 8u32;
 pub const RTL_ENCRYPT_OPTION_CROSS_PROCESS: u32 = 1u32;
 pub const RTL_ENCRYPT_OPTION_FOR_SYSTEM: u32 = 4u32;
 pub const RTL_ENCRYPT_OPTION_SAME_LOGON: u32 = 2u32;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn RevertSecurityContext(phcontext: *const super::super::Credentials::SecHandle) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -9027,7 +9027,7 @@ impl ::core::default::Default for SCHANNEL_CLIENT_SIGNATURE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 pub struct SCHANNEL_CRED {
     pub dwVersion: u32,
     pub cCreds: u32,
@@ -9044,15 +9044,15 @@ pub struct SCHANNEL_CRED {
     pub dwFlags: SCHANNEL_CRED_FLAGS,
     pub dwCredFormat: u32,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for SCHANNEL_CRED {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for SCHANNEL_CRED {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for SCHANNEL_CRED {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SCHANNEL_CRED")
@@ -9073,19 +9073,19 @@ impl ::core::fmt::Debug for SCHANNEL_CRED {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for SCHANNEL_CRED {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for SCHANNEL_CRED {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCHANNEL_CRED>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for SCHANNEL_CRED {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for SCHANNEL_CRED {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -10281,7 +10281,7 @@ pub const SECPKG_FLAG_RESTRICTED_TOKENS: u32 = 524288u32;
 pub const SECPKG_FLAG_STREAM: u32 = 1024u32;
 pub const SECPKG_FLAG_TOKEN_ONLY: u32 = 4u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "win32-security", feature = "win32-system", feature = "win32-system"))]
 pub struct SECPKG_FUNCTION_TABLE {
     pub InitializePackage: PLSA_AP_INITIALIZE_PACKAGE,
     pub LogonUserA: PLSA_AP_LOGON_USER,
@@ -10326,15 +10326,15 @@ pub struct SECPKG_FUNCTION_TABLE {
     pub PreLogonUserSurrogate: PLSA_AP_PRE_LOGON_USER_SURROGATE,
     pub PostLogonUserSurrogate: PLSA_AP_POST_LOGON_USER_SURROGATE,
 }
-#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "win32-security", feature = "win32-system", feature = "win32-system"))]
 impl ::core::marker::Copy for SECPKG_FUNCTION_TABLE {}
-#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "win32-security", feature = "win32-system", feature = "win32-system"))]
 impl ::core::clone::Clone for SECPKG_FUNCTION_TABLE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "win32-security", feature = "win32-system", feature = "win32-system"))]
 impl ::core::fmt::Debug for SECPKG_FUNCTION_TABLE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SECPKG_FUNCTION_TABLE")
@@ -10383,19 +10383,19 @@ impl ::core::fmt::Debug for SECPKG_FUNCTION_TABLE {
             .finish()
     }
 }
-#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "win32-security", feature = "win32-system", feature = "win32-system"))]
 unsafe impl ::windows_core::Abi for SECPKG_FUNCTION_TABLE {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "win32-security", feature = "win32-system", feature = "win32-system"))]
 impl ::core::cmp::PartialEq for SECPKG_FUNCTION_TABLE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SECPKG_FUNCTION_TABLE>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "win32-security", feature = "win32-system", feature = "win32-system"))]
 impl ::core::cmp::Eq for SECPKG_FUNCTION_TABLE {}
-#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "win32-security", feature = "win32-system", feature = "win32-system"))]
 impl ::core::default::Default for SECPKG_FUNCTION_TABLE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -10443,7 +10443,7 @@ pub const SECPKG_INTERFACE_VERSION_7: u32 = 4194304u32;
 pub const SECPKG_INTERFACE_VERSION_8: u32 = 8388608u32;
 pub const SECPKG_INTERFACE_VERSION_9: u32 = 16777216u32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 pub struct SECPKG_KERNEL_FUNCTIONS {
     pub AllocateHeap: PLSA_ALLOCATE_LSA_HEAP,
     pub FreeHeap: PLSA_FREE_LSA_HEAP,
@@ -10455,15 +10455,15 @@ pub struct SECPKG_KERNEL_FUNCTIONS {
     pub SerializeSchannelAuthData: PKSEC_SERIALIZE_SCHANNEL_AUTH_DATA,
     pub LocatePackageById: PKSEC_LOCATE_PKG_BY_ID,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for SECPKG_KERNEL_FUNCTIONS {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for SECPKG_KERNEL_FUNCTIONS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for SECPKG_KERNEL_FUNCTIONS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SECPKG_KERNEL_FUNCTIONS")
@@ -10479,26 +10479,26 @@ impl ::core::fmt::Debug for SECPKG_KERNEL_FUNCTIONS {
             .finish()
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for SECPKG_KERNEL_FUNCTIONS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for SECPKG_KERNEL_FUNCTIONS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SECPKG_KERNEL_FUNCTIONS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for SECPKG_KERNEL_FUNCTIONS {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for SECPKG_KERNEL_FUNCTIONS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 pub struct SECPKG_KERNEL_FUNCTION_TABLE {
     pub Initialize: KspInitPackageFn,
     pub DeleteContext: KspDeleteContextFn,
@@ -10516,15 +10516,15 @@ pub struct SECPKG_KERNEL_FUNCTION_TABLE {
     pub SetPackagePagingMode: KspSetPagingModeFn,
     pub SerializeAuthData: KspSerializeAuthDataFn,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for SECPKG_KERNEL_FUNCTION_TABLE {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for SECPKG_KERNEL_FUNCTION_TABLE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for SECPKG_KERNEL_FUNCTION_TABLE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SECPKG_KERNEL_FUNCTION_TABLE")
@@ -10546,19 +10546,19 @@ impl ::core::fmt::Debug for SECPKG_KERNEL_FUNCTION_TABLE {
             .finish()
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for SECPKG_KERNEL_FUNCTION_TABLE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for SECPKG_KERNEL_FUNCTION_TABLE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SECPKG_KERNEL_FUNCTION_TABLE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for SECPKG_KERNEL_FUNCTION_TABLE {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for SECPKG_KERNEL_FUNCTION_TABLE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -12185,7 +12185,7 @@ pub const SEC_WINNT_AUTH_IDENTITY_FLAGS_SYSTEM_ENCRYPTED: u32 = 128u32;
 pub const SEC_WINNT_AUTH_IDENTITY_FLAGS_SYSTEM_PROTECTED: u32 = 32u32;
 pub const SEC_WINNT_AUTH_IDENTITY_FLAGS_USER_PROTECTED: u32 = 64u32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Rpc")]
+#[cfg(feature = "win32-system")]
 pub union SEC_WINNT_AUTH_IDENTITY_INFO {
     pub AuthIdExw: SEC_WINNT_AUTH_IDENTITY_EXW,
     pub AuthIdExa: SEC_WINNT_AUTH_IDENTITY_EXA,
@@ -12193,27 +12193,27 @@ pub union SEC_WINNT_AUTH_IDENTITY_INFO {
     pub AuthId_w: ::win32_system::Rpc::SEC_WINNT_AUTH_IDENTITY_W,
     pub AuthIdEx2: SEC_WINNT_AUTH_IDENTITY_EX2,
 }
-#[cfg(feature = "Win32_System_Rpc")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for SEC_WINNT_AUTH_IDENTITY_INFO {}
-#[cfg(feature = "Win32_System_Rpc")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for SEC_WINNT_AUTH_IDENTITY_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Rpc")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for SEC_WINNT_AUTH_IDENTITY_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Rpc")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for SEC_WINNT_AUTH_IDENTITY_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SEC_WINNT_AUTH_IDENTITY_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Rpc")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for SEC_WINNT_AUTH_IDENTITY_INFO {}
-#[cfg(feature = "Win32_System_Rpc")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for SEC_WINNT_AUTH_IDENTITY_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -12258,13 +12258,13 @@ impl ::core::default::Default for SEND_GENERIC_TLS_EXTENSION {
 }
 pub const SESSION_TICKET_INFO_V0: u32 = 0u32;
 pub const SESSION_TICKET_INFO_VERSION: u32 = 0u32;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type SET_CONTEXT_ATTRIBUTES_FN_A = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: u32, param2: *mut ::core::ffi::c_void, param3: u32) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type SET_CONTEXT_ATTRIBUTES_FN_W = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: u32, param2: *mut ::core::ffi::c_void, param3: u32) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type SET_CREDENTIALS_ATTRIBUTES_FN_A = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: u32, param2: *mut ::core::ffi::c_void, param3: u32) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type SET_CREDENTIALS_ATTRIBUTES_FN_W = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: u32, param2: *mut ::core::ffi::c_void, param3: u32) -> ::windows_core::HRESULT>;
 #[repr(C)]
 pub struct SE_ADT_ACCESS_REASON {
@@ -13980,7 +13980,7 @@ impl ::core::default::Default for SUBSCRIBE_GENERIC_TLS_EXTENSION {
     }
 }
 pub const SZ_ALG_MAX_SIZE: u32 = 64u32;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn SaslAcceptSecurityContext(phcredential: *const super::super::Credentials::SecHandle, phcontext: *const super::super::Credentials::SecHandle, pinput: *const SecBufferDesc, fcontextreq: u32, targetdatarep: u32, phnewcontext: *mut super::super::Credentials::SecHandle, poutput: *mut SecBufferDesc, pfcontextattr: *mut u32, ptsexpiry: *mut i64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -14020,7 +14020,7 @@ pub unsafe fn SaslEnumerateProfilesW(profilelist: *mut ::windows_core::PWSTR, pr
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn SaslGetContextOption(contexthandle: *const super::super::Credentials::SecHandle, option: u32, value: *mut ::core::ffi::c_void, size: u32, needed: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -14090,7 +14090,7 @@ pub unsafe fn SaslIdentifyPackageW(pinput: *const SecBufferDesc) -> ::windows_co
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn SaslInitializeSecurityContextA<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(phcredential: *const super::super::Credentials::SecHandle, phcontext: *const super::super::Credentials::SecHandle, psztargetname: Param2, fcontextreq: u32, reserved1: u32, targetdatarep: u32, pinput: *const SecBufferDesc, reserved2: u32, phnewcontext: *mut super::super::Credentials::SecHandle, poutput: *mut SecBufferDesc, pfcontextattr: *mut u32, ptsexpiry: *mut i64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -14104,7 +14104,7 @@ pub unsafe fn SaslInitializeSecurityContextA<'a, Param2: ::windows_core::IntoPar
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn SaslInitializeSecurityContextW<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(phcredential: *const super::super::Credentials::SecHandle, phcontext: *const super::super::Credentials::SecHandle, psztargetname: Param2, fcontextreq: u32, reserved1: u32, targetdatarep: u32, pinput: *const SecBufferDesc, reserved2: u32, phnewcontext: *mut super::super::Credentials::SecHandle, poutput: *mut SecBufferDesc, pfcontextattr: *mut u32, ptsexpiry: *mut i64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -14118,7 +14118,7 @@ pub unsafe fn SaslInitializeSecurityContextW<'a, Param2: ::windows_core::IntoPar
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn SaslSetContextOption(contexthandle: *const super::super::Credentials::SecHandle, option: u32, value: *const ::core::ffi::c_void, size: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -14976,38 +14976,38 @@ impl ::core::default::Default for SecPkgContext_Flags {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 pub struct SecPkgContext_IssuerListInfoEx {
     pub aIssuers: *mut super::super::Cryptography::CRYPTOAPI_BLOB,
     pub cIssuers: u32,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for SecPkgContext_IssuerListInfoEx {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for SecPkgContext_IssuerListInfoEx {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for SecPkgContext_IssuerListInfoEx {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SecPkgContext_IssuerListInfoEx").field("aIssuers", &self.aIssuers).field("cIssuers", &self.cIssuers).finish()
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for SecPkgContext_IssuerListInfoEx {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for SecPkgContext_IssuerListInfoEx {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SecPkgContext_IssuerListInfoEx>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for SecPkgContext_IssuerListInfoEx {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for SecPkgContext_IssuerListInfoEx {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -16686,7 +16686,7 @@ impl ::core::default::Default for SecPkgInfoW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub struct SecurityFunctionTableA {
     pub dwVersion: u32,
     pub EnumerateSecurityPackagesA: ENUMERATE_SECURITY_PACKAGES_FN_A,
@@ -16721,15 +16721,15 @@ pub struct SecurityFunctionTableA {
     pub QueryContextAttributesExA: QUERY_CONTEXT_ATTRIBUTES_EX_FN_A,
     pub QueryCredentialsAttributesExA: QUERY_CREDENTIALS_ATTRIBUTES_EX_FN_A,
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for SecurityFunctionTableA {}
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for SecurityFunctionTableA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for SecurityFunctionTableA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SecurityFunctionTableA")
@@ -16768,26 +16768,26 @@ impl ::core::fmt::Debug for SecurityFunctionTableA {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for SecurityFunctionTableA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for SecurityFunctionTableA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SecurityFunctionTableA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for SecurityFunctionTableA {}
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for SecurityFunctionTableA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub struct SecurityFunctionTableW {
     pub dwVersion: u32,
     pub EnumerateSecurityPackagesW: ENUMERATE_SECURITY_PACKAGES_FN_W,
@@ -16822,15 +16822,15 @@ pub struct SecurityFunctionTableW {
     pub QueryContextAttributesExW: QUERY_CONTEXT_ATTRIBUTES_EX_FN_W,
     pub QueryCredentialsAttributesExW: QUERY_CREDENTIALS_ATTRIBUTES_EX_FN_W,
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for SecurityFunctionTableW {}
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for SecurityFunctionTableW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for SecurityFunctionTableW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SecurityFunctionTableW")
@@ -16869,25 +16869,25 @@ impl ::core::fmt::Debug for SecurityFunctionTableW {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for SecurityFunctionTableW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for SecurityFunctionTableW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SecurityFunctionTableW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for SecurityFunctionTableW {}
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for SecurityFunctionTableW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn SetContextAttributesA(phcontext: *const super::super::Credentials::SecHandle, ulattribute: SECPKG_ATTR, pbuffer: *const ::core::ffi::c_void, cbbuffer: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -16901,7 +16901,7 @@ pub unsafe fn SetContextAttributesA(phcontext: *const super::super::Credentials:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn SetContextAttributesW(phcontext: *const super::super::Credentials::SecHandle, ulattribute: SECPKG_ATTR, pbuffer: *const ::core::ffi::c_void, cbbuffer: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -16915,7 +16915,7 @@ pub unsafe fn SetContextAttributesW(phcontext: *const super::super::Credentials:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn SetCredentialsAttributesA(phcredential: *const super::super::Credentials::SecHandle, ulattribute: u32, pbuffer: *const ::core::ffi::c_void, cbbuffer: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -16929,7 +16929,7 @@ pub unsafe fn SetCredentialsAttributesA(phcredential: *const super::super::Crede
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn SetCredentialsAttributesW(phcredential: *const super::super::Credentials::SecHandle, ulattribute: u32, pbuffer: *const ::core::ffi::c_void, cbbuffer: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -16968,10 +16968,10 @@ pub type SpGetUserInfoFn = ::core::option::Option<unsafe extern "system" fn(logo
 pub type SpImportSecurityContextFn = ::core::option::Option<unsafe extern "system" fn(ppackedcontext: *const SecBuffer, token: ::win32_foundation::HANDLE, phcontext: *mut usize) -> ::win32_foundation::NTSTATUS>;
 pub type SpInitLsaModeContextFn = ::core::option::Option<unsafe extern "system" fn(credentialhandle: usize, contexthandle: usize, targetname: *const ::win32_foundation::UNICODE_STRING, contextrequirements: u32, targetdatarep: u32, inputbuffers: *const SecBufferDesc, newcontexthandle: *mut usize, outputbuffers: *mut SecBufferDesc, contextattributes: *mut u32, expirationtime: *mut i64, mappedcontext: *mut ::win32_foundation::BOOLEAN, contextdata: *mut SecBuffer) -> ::win32_foundation::NTSTATUS>;
 pub type SpInitUserModeContextFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, packedcontext: *const SecBuffer) -> ::win32_foundation::NTSTATUS>;
-#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "win32-security", feature = "win32-system", feature = "win32-system"))]
 pub type SpInitializeFn = ::core::option::Option<unsafe extern "system" fn(packageid: usize, parameters: *const SECPKG_PARAMETERS, functiontable: *const LSA_SECPKG_FUNCTION_TABLE) -> ::win32_foundation::NTSTATUS>;
 pub type SpInstanceInitFn = ::core::option::Option<unsafe extern "system" fn(version: u32, functiontable: *const SECPKG_DLL_FUNCTIONS, userfunctions: *mut *mut ::core::ffi::c_void) -> ::win32_foundation::NTSTATUS>;
-#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "win32-security", feature = "win32-system", feature = "win32-system"))]
 pub type SpLsaModeInitializeFn = ::core::option::Option<unsafe extern "system" fn(lsaversion: u32, packageversion: *mut u32, pptables: *mut *mut SECPKG_FUNCTION_TABLE, pctables: *mut u32) -> ::win32_foundation::NTSTATUS>;
 pub type SpMakeSignatureFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, qualityofprotection: u32, messagebuffers: *const SecBufferDesc, messagesequencenumber: u32) -> ::win32_foundation::NTSTATUS>;
 pub type SpMarshalAttributeDataFn = ::core::option::Option<unsafe extern "system" fn(attributeinfo: u32, attribute: u32, attributedatasize: u32, attributedata: *const u8, marshaledattributedatasize: *mut u32, marshaledattributedata: *mut *mut u8) -> ::win32_foundation::NTSTATUS>;
@@ -18370,37 +18370,37 @@ pub const USER_PASSWORD_EXPIRED: u32 = 131072u32;
 pub const USER_PASSWORD_NOT_REQUIRED: u32 = 4u32;
 pub const USER_SERVER_TRUST_ACCOUNT: u32 = 256u32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 pub struct USER_SESSION_KEY {
     pub data: [::win32_system::PasswordManagement::CYPHER_BLOCK; 2],
 }
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for USER_SESSION_KEY {}
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for USER_SESSION_KEY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for USER_SESSION_KEY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("USER_SESSION_KEY").field("data", &self.data).finish()
     }
 }
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for USER_SESSION_KEY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for USER_SESSION_KEY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_SESSION_KEY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for USER_SESSION_KEY {}
-#[cfg(feature = "Win32_System_PasswordManagement")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for USER_SESSION_KEY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -18413,9 +18413,9 @@ pub const USER_TRUSTED_TO_AUTHENTICATE_FOR_DELEGATION: u32 = 262144u32;
 pub const USER_USE_AES_KEYS: u32 = 2097152u32;
 pub const USER_USE_DES_KEY_ONLY: u32 = 32768u32;
 pub const USER_WORKSTATION_TRUST_ACCOUNT: u32 = 128u32;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 pub type VERIFY_SIGNATURE_FN = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: *mut SecBufferDesc, param2: u32, param3: *mut u32) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Security_Credentials")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn VerifySignature(phcontext: *const super::super::Credentials::SecHandle, pmessage: *const SecBufferDesc, messageseqno: u32) -> ::windows_core::Result<u32> {
     #[cfg(windows)]

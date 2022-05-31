@@ -79,7 +79,7 @@ impl GuidanceAudioNotificationRequestedEventArgs {
             (::windows_core::Interface::vtable(this).AudioNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GuidanceAudioNotificationKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AudioFilePaths(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -396,7 +396,7 @@ unsafe impl ::windows_core::RuntimeType for GuidanceLaneMarkers {
 #[repr(transparent)]
 pub struct GuidanceManeuver(::windows_core::IUnknown);
 impl GuidanceManeuver {
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn StartLocation(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
@@ -636,7 +636,7 @@ unsafe impl ::windows_core::RuntimeType for GuidanceManeuverKind {
 #[repr(transparent)]
 pub struct GuidanceMapMatchedCoordinate(::windows_core::IUnknown);
 impl GuidanceMapMatchedCoordinate {
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
@@ -914,12 +914,12 @@ impl GuidanceNavigator {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetGuidanceVoice)(::windows_core::Interface::as_raw(this), voiceid, voicefolder.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn UpdateUserLocation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geocoordinate>>(&self, userlocation: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).UpdateUserLocation)(::windows_core::Interface::as_raw(this), userlocation.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn UpdateUserLocationWithPositionOverride<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geocoordinate>, Param1: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::BasicGeoposition>>(&self, userlocation: Param0, positionoverride: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).UpdateUserLocationWithPositionOverride)(::windows_core::Interface::as_raw(this), userlocation.into_param().abi(), positionoverride.into_param().abi()).ok() }
@@ -1153,7 +1153,7 @@ impl GuidanceRoadSegment {
             (::windows_core::Interface::vtable(this).TravelTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Path(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopath> {
         let this = self;
         unsafe {
@@ -1286,7 +1286,7 @@ impl GuidanceRoadSignpost {
             (::windows_core::Interface::vtable(this).Exit)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub fn BackgroundColor(&self) -> ::windows_core::Result<::winrt_ui::Color> {
         let this = self;
         unsafe {
@@ -1294,7 +1294,7 @@ impl GuidanceRoadSignpost {
             (::windows_core::Interface::vtable(this).BackgroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Color>(result__)
         }
     }
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ForegroundColor(&self) -> ::windows_core::Result<::winrt_ui::Color> {
         let this = self;
         unsafe {
@@ -1302,7 +1302,7 @@ impl GuidanceRoadSignpost {
             (::windows_core::Interface::vtable(this).ForegroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Color>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ExitDirections(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -1400,7 +1400,7 @@ impl GuidanceRoute {
             (::windows_core::Interface::vtable(this).Distance)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Maneuvers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<GuidanceManeuver>> {
         let this = self;
         unsafe {
@@ -1408,7 +1408,7 @@ impl GuidanceRoute {
             (::windows_core::Interface::vtable(this).Maneuvers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<GuidanceManeuver>>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn BoundingBox(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::GeoboundingBox> {
         let this = self;
         unsafe {
@@ -1416,7 +1416,7 @@ impl GuidanceRoute {
             (::windows_core::Interface::vtable(this).BoundingBox)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::GeoboundingBox>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Path(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopath> {
         let this = self;
         unsafe {
@@ -1424,7 +1424,7 @@ impl GuidanceRoute {
             (::windows_core::Interface::vtable(this).Path)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopath>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RoadSegments(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<GuidanceRoadSegment>> {
         let this = self;
         unsafe {
@@ -1745,7 +1745,7 @@ impl GuidanceUpdatedEventArgs {
             (::windows_core::Interface::vtable(this).IsNewManeuver)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn LaneInfo(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<GuidanceLaneInfo>> {
         let this = self;
         unsafe {
@@ -1838,9 +1838,9 @@ unsafe impl ::windows_core::Interface for IGuidanceAudioNotificationRequestedEve
 pub struct IGuidanceAudioNotificationRequestedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub AudioNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GuidanceAudioNotificationKind) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub AudioFilePaths: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     AudioFilePaths: usize,
     pub AudioText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
@@ -1869,9 +1869,9 @@ unsafe impl ::windows_core::Interface for IGuidanceManeuver {
 #[doc(hidden)]
 pub struct IGuidanceManeuver_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub StartLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     StartLocation: usize,
     pub DistanceFromRouteStart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
     pub DistanceFromPreviousManeuver: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
@@ -1896,9 +1896,9 @@ unsafe impl ::windows_core::Interface for IGuidanceMapMatchedCoordinate {
 #[doc(hidden)]
 pub struct IGuidanceMapMatchedCoordinate_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Location: usize,
     pub CurrentHeading: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub CurrentSpeed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
@@ -1942,13 +1942,13 @@ pub struct IGuidanceNavigator_Vtbl {
     pub UserLocationRestored: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveUserLocationRestored: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub SetGuidanceVoice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, voiceid: i32, voicefolder: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub UpdateUserLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, userlocation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     UpdateUserLocation: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub UpdateUserLocationWithPositionOverride: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, userlocation: ::windows_core::RawPtr, positionoverride: ::winrt_devices::Geolocation::BasicGeoposition) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     UpdateUserLocationWithPositionOverride: usize,
 }
 #[doc(hidden)]
@@ -2021,9 +2021,9 @@ pub struct IGuidanceRoadSegment_Vtbl {
     pub ShortRoadName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SpeedLimit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub TravelTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Path: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Path: usize,
     pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub IsHighway: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -2056,17 +2056,17 @@ pub struct IGuidanceRoadSignpost_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ExitNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Exit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub BackgroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_ui::Color) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI"))]
+    #[cfg(not(feature = "winrt-ui"))]
     BackgroundColor: usize,
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub ForegroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_ui::Color) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI"))]
+    #[cfg(not(feature = "winrt-ui"))]
     ForegroundColor: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub ExitDirections: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ExitDirections: usize,
 }
 #[doc(hidden)]
@@ -2082,21 +2082,21 @@ pub struct IGuidanceRoute_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Duration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub Distance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Maneuvers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Maneuvers: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub BoundingBox: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     BoundingBox: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Path: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Path: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub RoadSegments: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     RoadSegments: usize,
     pub ConvertToMapRoute: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -2170,8 +2170,8 @@ pub struct IGuidanceUpdatedEventArgs_Vtbl {
     pub Route: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CurrentLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub IsNewManeuver: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub LaneInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     LaneInfo: usize,
 }

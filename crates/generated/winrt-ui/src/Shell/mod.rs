@@ -258,14 +258,14 @@ pub struct ITaskbarManager_Vtbl {
     pub IsSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsPinningAllowed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsCurrentAppPinnedAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "ApplicationModel_Core")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub IsAppListEntryPinnedAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, applistentry: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Core"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     IsAppListEntryPinnedAsync: usize,
     pub RequestPinCurrentAppAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "ApplicationModel_Core")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub RequestPinAppListEntryAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, applistentry: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Core"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     RequestPinAppListEntryAsync: usize,
 }
 #[doc(hidden)]
@@ -280,9 +280,9 @@ unsafe impl ::windows_core::Interface for ITaskbarManager2 {
 pub struct ITaskbarManager2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsSecondaryTilePinnedAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, tileid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_StartScreen")]
+    #[cfg(feature = "winrt-ui")]
     pub RequestPinSecondaryTileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, secondarytile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_StartScreen"))]
+    #[cfg(not(feature = "winrt-ui"))]
     RequestPinSecondaryTileAsync: usize,
     pub TryUnpinSecondaryTileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, tileid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -769,7 +769,7 @@ impl TaskbarManager {
             (::windows_core::Interface::vtable(this).IsCurrentAppPinnedAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Core")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn IsAppListEntryPinnedAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_applicationmodel::Core::AppListEntry>>(&self, applistentry: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
@@ -784,7 +784,7 @@ impl TaskbarManager {
             (::windows_core::Interface::vtable(this).RequestPinCurrentAppAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Core")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn RequestPinAppListEntryAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_applicationmodel::Core::AppListEntry>>(&self, applistentry: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
@@ -799,7 +799,7 @@ impl TaskbarManager {
             (::windows_core::Interface::vtable(this).IsSecondaryTilePinnedAsync)(::windows_core::Interface::as_raw(this), tileid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "UI_StartScreen")]
+    #[cfg(feature = "winrt-ui")]
     pub fn RequestPinSecondaryTileAsync<'a, Param0: ::windows_core::IntoParam<'a, super::StartScreen::SecondaryTile>>(&self, secondarytile: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<ITaskbarManager2>(self)?;
         unsafe {

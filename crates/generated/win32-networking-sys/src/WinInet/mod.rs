@@ -64,9 +64,9 @@ extern "system" {
     pub fn FtpCreateDirectoryW(hconnect: *const ::core::ffi::c_void, lpszdirectory: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
     pub fn FtpDeleteFileA(hconnect: *const ::core::ffi::c_void, lpszfilename: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
     pub fn FtpDeleteFileW(hconnect: *const ::core::ffi::c_void, lpszfilename: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Storage_FileSystem")]
+    #[cfg(feature = "win32-storage-sys")]
     pub fn FtpFindFirstFileA(hconnect: *const ::core::ffi::c_void, lpszsearchfile: ::windows_core_sys::PCSTR, lpfindfiledata: *mut ::win32_storage_sys::FileSystem::WIN32_FIND_DATAA, dwflags: u32, dwcontext: usize) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Storage_FileSystem")]
+    #[cfg(feature = "win32-storage-sys")]
     pub fn FtpFindFirstFileW(hconnect: *const ::core::ffi::c_void, lpszsearchfile: ::windows_core_sys::PCWSTR, lpfindfiledata: *mut ::win32_storage_sys::FileSystem::WIN32_FIND_DATAW, dwflags: u32, dwcontext: usize) -> *mut ::core::ffi::c_void;
     pub fn FtpGetCurrentDirectoryA(hconnect: *const ::core::ffi::c_void, lpszcurrentdirectory: ::windows_core_sys::PSTR, lpdwcurrentdirectory: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn FtpGetCurrentDirectoryW(hconnect: *const ::core::ffi::c_void, lpszcurrentdirectory: ::windows_core_sys::PWSTR, lpdwcurrentdirectory: *mut u32) -> ::win32_foundation_sys::BOOL;
@@ -158,9 +158,9 @@ extern "system" {
     pub fn InternetConnectA(hinternet: *const ::core::ffi::c_void, lpszservername: ::windows_core_sys::PCSTR, nserverport: u16, lpszusername: ::windows_core_sys::PCSTR, lpszpassword: ::windows_core_sys::PCSTR, dwservice: u32, dwflags: u32, dwcontext: usize) -> *mut ::core::ffi::c_void;
     pub fn InternetConnectW(hinternet: *const ::core::ffi::c_void, lpszservername: ::windows_core_sys::PCWSTR, nserverport: u16, lpszusername: ::windows_core_sys::PCWSTR, lpszpassword: ::windows_core_sys::PCWSTR, dwservice: u32, dwflags: u32, dwcontext: usize) -> *mut ::core::ffi::c_void;
     pub fn InternetConvertUrlFromWireToWideChar(pcszurl: ::windows_core_sys::PCSTR, cchurl: u32, pcwszbaseurl: ::windows_core_sys::PCWSTR, dwcodepagehost: u32, dwcodepagepath: u32, fencodepathextra: ::win32_foundation_sys::BOOL, dwcodepageextra: u32, ppwszconvertedurl: *mut ::windows_core_sys::PWSTR) -> u32;
-    #[cfg(feature = "Win32_Networking_WinHttp")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn InternetCrackUrlA(lpszurl: ::windows_core_sys::PCSTR, dwurllength: u32, dwflags: super::WinHttp::WIN_HTTP_CREATE_URL_FLAGS, lpurlcomponents: *mut URL_COMPONENTSA) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Networking_WinHttp")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn InternetCrackUrlW(lpszurl: ::windows_core_sys::PCWSTR, dwurllength: u32, dwflags: super::WinHttp::WIN_HTTP_CREATE_URL_FLAGS, lpurlcomponents: *mut URL_COMPONENTSW) -> ::win32_foundation_sys::BOOL;
     pub fn InternetCreateUrlA(lpurlcomponents: *const URL_COMPONENTSA, dwflags: u32, lpszurl: ::windows_core_sys::PSTR, lpdwurllength: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn InternetCreateUrlW(lpurlcomponents: *const URL_COMPONENTSW, dwflags: u32, lpszurl: ::windows_core_sys::PWSTR, lpdwurllength: *mut u32) -> ::win32_foundation_sys::BOOL;
@@ -189,11 +189,11 @@ extern "system" {
     pub fn InternetGetPerSiteCookieDecisionA(pchhostname: ::windows_core_sys::PCSTR, presult: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn InternetGetPerSiteCookieDecisionW(pchhostname: ::windows_core_sys::PCWSTR, presult: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn InternetGetProxyForUrl(hinternet: *const ::core::ffi::c_void, pcwszurl: ::windows_core_sys::PCWSTR, pproxyinfolist: *mut WININET_PROXY_INFO_LIST) -> u32;
-    #[cfg(feature = "Win32_Security_Cryptography")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn InternetGetSecurityInfoByURL(lpszurl: ::windows_core_sys::PCSTR, ppcertchain: *mut *mut ::win32_security_sys::Cryptography::CERT_CHAIN_CONTEXT, pdwsecureflags: *mut u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security_Cryptography")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn InternetGetSecurityInfoByURLA(lpszurl: ::windows_core_sys::PCSTR, ppcertchain: *mut *mut ::win32_security_sys::Cryptography::CERT_CHAIN_CONTEXT, pdwsecureflags: *mut u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security_Cryptography")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn InternetGetSecurityInfoByURLW(lpszurl: ::windows_core_sys::PCWSTR, ppcertchain: *mut *mut ::win32_security_sys::Cryptography::CERT_CHAIN_CONTEXT, pdwsecureflags: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn InternetGoOnline(lpszurl: ::windows_core_sys::PCSTR, hwndparent: ::win32_foundation_sys::HWND, dwflags: u32) -> ::win32_foundation_sys::BOOL;
     pub fn InternetGoOnlineA(lpszurl: ::windows_core_sys::PCSTR, hwndparent: ::win32_foundation_sys::HWND, dwflags: u32) -> ::win32_foundation_sys::BOOL;
@@ -277,7 +277,7 @@ extern "system" {
     pub fn SetUrlCacheGroupAttributeW(gid: i64, dwflags: u32, dwattributes: u32, lpgroupinfo: *const INTERNET_CACHE_GROUP_INFOW, lpreserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn SetUrlCacheHeaderData(nidx: u32, dwdata: u32) -> ::win32_foundation_sys::BOOL;
     pub fn ShowClientAuthCerts(hwndparent: ::win32_foundation_sys::HWND) -> u32;
-    #[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+    #[cfg(all(feature = "win32-security-sys", feature = "win32-security-sys"))]
     pub fn ShowSecurityInfo(hwndparent: ::win32_foundation_sys::HWND, psecurityinfo: *const INTERNET_SECURITY_INFO) -> u32;
     pub fn ShowX509EncodedCertificate(hwndparent: ::win32_foundation_sys::HWND, lpcert: *const u8, cbcert: u32) -> u32;
     pub fn UnlockUrlCacheEntryFile(lpszurlname: ::windows_core_sys::PCSTR, dwreserved: u32) -> ::win32_foundation_sys::BOOL;
@@ -2214,23 +2214,23 @@ pub const INTERNET_SCHEME_RES: INTERNET_SCHEME = 11i32;
 pub const INTERNET_SCHEME_FIRST: INTERNET_SCHEME = 1i32;
 pub const INTERNET_SCHEME_LAST: INTERNET_SCHEME = 11i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Authentication_Identity")]
+#[cfg(feature = "win32-security-sys")]
 pub struct INTERNET_SECURITY_CONNECTION_INFO {
     pub dwSize: u32,
     pub fSecure: ::win32_foundation_sys::BOOL,
     pub connectionInfo: ::win32_security_sys::Authentication::Identity::SecPkgContext_ConnectionInfo,
     pub cipherInfo: ::win32_security_sys::Authentication::Identity::SecPkgContext_CipherInfo,
 }
-#[cfg(feature = "Win32_Security_Authentication_Identity")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for INTERNET_SECURITY_CONNECTION_INFO {}
-#[cfg(feature = "Win32_Security_Authentication_Identity")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for INTERNET_SECURITY_CONNECTION_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-security-sys", feature = "win32-security-sys"))]
 pub struct INTERNET_SECURITY_INFO {
     pub dwSize: u32,
     pub pCertificate: *const ::win32_security_sys::Cryptography::CERT_CONTEXT,
@@ -2240,9 +2240,9 @@ pub struct INTERNET_SECURITY_INFO {
     pub pcUnverifiedCertChain: *mut ::win32_security_sys::Cryptography::CERT_CHAIN_CONTEXT,
     pub channelBindingToken: ::win32_security_sys::Authentication::Identity::SecPkgContext_Bindings,
 }
-#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-security-sys", feature = "win32-security-sys"))]
 impl ::core::marker::Copy for INTERNET_SECURITY_INFO {}
-#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-security-sys", feature = "win32-security-sys"))]
 impl ::core::clone::Clone for INTERNET_SECURITY_INFO {
     fn clone(&self) -> Self {
         *self

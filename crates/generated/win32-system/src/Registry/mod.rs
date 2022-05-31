@@ -1422,7 +1422,7 @@ pub unsafe fn RegCreateKeyA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Par
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn RegCreateKeyExA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, reserved: u32, lpclass: Param3, dwoptions: REG_OPEN_CREATE_OPTIONS, samdesired: REG_SAM_FLAGS, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, phkresult: *mut HKEY, lpdwdisposition: *mut REG_CREATE_KEY_DISPOSITION) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
@@ -1436,7 +1436,7 @@ pub unsafe fn RegCreateKeyExA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, P
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn RegCreateKeyExW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, reserved: u32, lpclass: Param3, dwoptions: REG_OPEN_CREATE_OPTIONS, samdesired: REG_SAM_FLAGS, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, phkresult: *mut HKEY, lpdwdisposition: *mut REG_CREATE_KEY_DISPOSITION) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
@@ -1450,7 +1450,7 @@ pub unsafe fn RegCreateKeyExW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, P
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn RegCreateKeyTransactedA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param9: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hkey: Param0, lpsubkey: Param1, reserved: u32, lpclass: Param3, dwoptions: REG_OPEN_CREATE_OPTIONS, samdesired: REG_SAM_FLAGS, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, phkresult: *mut HKEY, lpdwdisposition: *mut REG_CREATE_KEY_DISPOSITION, htransaction: Param9, pextendedparemeter: *mut ::core::ffi::c_void) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
@@ -1464,7 +1464,7 @@ pub unsafe fn RegCreateKeyTransactedA<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn RegCreateKeyTransactedW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param9: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hkey: Param0, lpsubkey: Param1, reserved: u32, lpclass: Param3, dwoptions: REG_OPEN_CREATE_OPTIONS, samdesired: REG_SAM_FLAGS, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, phkresult: *mut HKEY, lpdwdisposition: *mut REG_CREATE_KEY_DISPOSITION, htransaction: Param9, pextendedparemeter: *mut ::core::ffi::c_void) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
@@ -1790,7 +1790,7 @@ pub unsafe fn RegFlushKey<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn RegGetKeySecurity<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, securityinformation: u32, psecuritydescriptor: ::win32_security::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
@@ -2220,7 +2220,7 @@ pub unsafe fn RegRestoreKeyW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Pa
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn RegSaveKeyA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpfile: Param1, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
@@ -2234,7 +2234,7 @@ pub unsafe fn RegSaveKeyA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn RegSaveKeyExA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpfile: Param1, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, flags: REG_SAVE_FORMAT) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
@@ -2248,7 +2248,7 @@ pub unsafe fn RegSaveKeyExA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Par
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn RegSaveKeyExW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpfile: Param1, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, flags: REG_SAVE_FORMAT) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
@@ -2262,7 +2262,7 @@ pub unsafe fn RegSaveKeyExW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Par
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn RegSaveKeyW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpfile: Param1, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
@@ -2276,7 +2276,7 @@ pub unsafe fn RegSaveKeyW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn RegSetKeySecurity<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param2: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(hkey: Param0, securityinformation: u32, psecuritydescriptor: Param2) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]

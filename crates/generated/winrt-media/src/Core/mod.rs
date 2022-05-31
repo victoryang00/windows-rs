@@ -72,7 +72,7 @@ unsafe impl ::windows_core::RuntimeType for AudioDecoderDegradationReason {
 #[repr(transparent)]
 pub struct AudioStreamDescriptor(::windows_core::IUnknown);
 impl AudioStreamDescriptor {
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn EncodingProperties(&self) -> ::windows_core::Result<super::MediaProperties::AudioEncodingProperties> {
         let this = self;
         unsafe {
@@ -109,7 +109,7 @@ impl AudioStreamDescriptor {
             (::windows_core::Interface::vtable(this).Copy)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AudioStreamDescriptor>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, super::MediaProperties::AudioEncodingProperties>>(encodingproperties: Param0) -> ::windows_core::Result<AudioStreamDescriptor> {
         Self::IAudioStreamDescriptorFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -291,7 +291,7 @@ impl AudioTrack {
         let this = &::windows_core::Interface::cast::<IAudioTrack>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveOpenFailed)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn GetEncodingProperties(&self) -> ::windows_core::Result<super::MediaProperties::AudioEncodingProperties> {
         let this = &::windows_core::Interface::cast::<IAudioTrack>(self)?;
         unsafe {
@@ -299,7 +299,7 @@ impl AudioTrack {
             (::windows_core::Interface::vtable(this).GetEncodingProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::MediaProperties::AudioEncodingProperties>(result__)
         }
     }
-    #[cfg(feature = "Media_Playback")]
+    #[cfg(feature = "winrt-media")]
     pub fn PlaybackItem(&self) -> ::windows_core::Result<super::Playback::MediaPlaybackItem> {
         let this = &::windows_core::Interface::cast::<IAudioTrack>(self)?;
         unsafe {
@@ -834,7 +834,7 @@ impl CodecInfo {
             (::windows_core::Interface::vtable(this).Category)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<CodecCategory>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Subtypes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -972,7 +972,7 @@ impl CodecQuery {
         static mut SHARED: ::windows_core::FactoryCache<CodecQuery, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn FindAllAsync<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, kind: CodecKind, category: CodecCategory, subtype: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<CodecInfo>>> {
         let this = self;
         unsafe {
@@ -1379,12 +1379,12 @@ impl DataCue {
         static mut SHARED: ::windows_core::FactoryCache<DataCue, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SetData<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetData)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Data(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
@@ -1392,7 +1392,7 @@ impl DataCue {
             (::windows_core::Interface::vtable(this).Data)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::PropertySet> {
         let this = &::windows_core::Interface::cast::<IDataCue2>(self)?;
         unsafe {
@@ -1647,7 +1647,7 @@ impl FaceDetectionEffect {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveFaceDetected)(::windows_core::Interface::as_raw(this), cookie.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetProperties<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IPropertySet>>(&self, configuration: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::IMediaExtension>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetProperties)(::windows_core::Interface::as_raw(this), configuration.into_param().abi()).ok() }
@@ -1747,10 +1747,10 @@ impl<'a> ::windows_core::IntoParam<'a, super::IMediaExtension> for &FaceDetectio
 }
 unsafe impl ::core::marker::Send for FaceDetectionEffect {}
 unsafe impl ::core::marker::Sync for FaceDetectionEffect {}
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 #[repr(transparent)]
 pub struct FaceDetectionEffectDefinition(::windows_core::IUnknown);
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl FaceDetectionEffectDefinition {
     pub fn new() -> ::windows_core::Result<Self> {
         Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
@@ -1781,7 +1781,7 @@ impl FaceDetectionEffectDefinition {
             (::windows_core::Interface::vtable(this).SynchronousDetectionEnabled)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn ActivatableClassId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
@@ -1789,7 +1789,7 @@ impl FaceDetectionEffectDefinition {
             (::windows_core::Interface::vtable(this).ActivatableClassId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IPropertySet> {
         let this = self;
         unsafe {
@@ -1798,27 +1798,27 @@ impl FaceDetectionEffectDefinition {
         }
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::clone::Clone for FaceDetectionEffectDefinition {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::cmp::PartialEq for FaceDetectionEffectDefinition {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::cmp::Eq for FaceDetectionEffectDefinition {}
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::fmt::Debug for FaceDetectionEffectDefinition {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("FaceDetectionEffectDefinition").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 unsafe impl ::windows_core::RuntimeType for FaceDetectionEffectDefinition {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Media.Core.FaceDetectionEffectDefinition;{39f38cf0-8d0f-4f3e-84fc-2d46a5297943})");
     type DefaultType = ::core::option::Option<Self>;
@@ -1826,92 +1826,92 @@ unsafe impl ::windows_core::RuntimeType for FaceDetectionEffectDefinition {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 unsafe impl ::windows_core::Interface for FaceDetectionEffectDefinition {
     type Vtable = super::Effects::IVideoEffectDefinition_Vtbl;
     const IID: ::windows_core::GUID = <super::Effects::IVideoEffectDefinition as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::windows_core::RuntimeName for FaceDetectionEffectDefinition {
     const NAME: &'static str = "Windows.Media.Core.FaceDetectionEffectDefinition";
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::From<FaceDetectionEffectDefinition> for ::windows_core::IUnknown {
     fn from(value: FaceDetectionEffectDefinition) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::From<&FaceDetectionEffectDefinition> for ::windows_core::IUnknown {
     fn from(value: &FaceDetectionEffectDefinition) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for FaceDetectionEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a FaceDetectionEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::From<FaceDetectionEffectDefinition> for ::windows_core::IInspectable {
     fn from(value: FaceDetectionEffectDefinition) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::From<&FaceDetectionEffectDefinition> for ::windows_core::IInspectable {
     fn from(value: &FaceDetectionEffectDefinition) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for FaceDetectionEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a FaceDetectionEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::TryFrom<FaceDetectionEffectDefinition> for super::Effects::IVideoEffectDefinition {
     type Error = ::windows_core::Error;
     fn try_from(value: FaceDetectionEffectDefinition) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::TryFrom<&FaceDetectionEffectDefinition> for super::Effects::IVideoEffectDefinition {
     type Error = ::windows_core::Error;
     fn try_from(value: &FaceDetectionEffectDefinition) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, super::Effects::IVideoEffectDefinition> for FaceDetectionEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, super::Effects::IVideoEffectDefinition> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, super::Effects::IVideoEffectDefinition> for &FaceDetectionEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, super::Effects::IVideoEffectDefinition> {
         ::core::convert::TryInto::<super::Effects::IVideoEffectDefinition>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 unsafe impl ::core::marker::Send for FaceDetectionEffectDefinition {}
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 unsafe impl ::core::marker::Sync for FaceDetectionEffectDefinition {}
 #[repr(transparent)]
 pub struct FaceDetectionEffectFrame(::windows_core::IUnknown);
@@ -1920,7 +1920,7 @@ impl FaceDetectionEffectFrame {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_FaceAnalysis"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub fn DetectedFaces(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<super::FaceAnalysis::DetectedFace>> {
         let this = self;
         unsafe {
@@ -1986,7 +1986,7 @@ impl FaceDetectionEffectFrame {
             (::windows_core::Interface::vtable(this).IsDiscontinuous)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ExtendedProperties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IPropertySet> {
         let this = &::windows_core::Interface::cast::<super::IMediaFrame>(self)?;
         unsafe {
@@ -2242,7 +2242,7 @@ impl HighDynamicRangeOutput {
             (::windows_core::Interface::vtable(this).Certainty)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Devices_Core"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub fn FrameControllers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<super::Devices::Core::FrameController>> {
         let this = self;
         unsafe {
@@ -2334,9 +2334,9 @@ unsafe impl ::windows_core::Interface for IAudioStreamDescriptor {
 #[doc(hidden)]
 pub struct IAudioStreamDescriptor_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub EncodingProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     EncodingProperties: usize,
 }
 #[doc(hidden)]
@@ -2379,9 +2379,9 @@ unsafe impl ::windows_core::Interface for IAudioStreamDescriptorFactory {
 #[doc(hidden)]
 pub struct IAudioStreamDescriptorFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, encodingproperties: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     Create: usize,
 }
 #[doc(hidden)]
@@ -2397,13 +2397,13 @@ pub struct IAudioTrack_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub OpenFailed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveOpenFailed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub GetEncodingProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     GetEncodingProperties: usize,
-    #[cfg(feature = "Media_Playback")]
+    #[cfg(feature = "winrt-media")]
     pub PlaybackItem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Playback"))]
+    #[cfg(not(feature = "winrt-media"))]
     PlaybackItem: usize,
     pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SupportInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -2464,9 +2464,9 @@ pub struct ICodecInfo_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Kind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut CodecKind) -> ::windows_core::HRESULT,
     pub Category: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut CodecCategory) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Subtypes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Subtypes: usize,
     pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub IsTrusted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -2482,9 +2482,9 @@ unsafe impl ::windows_core::Interface for ICodecQuery {
 #[doc(hidden)]
 pub struct ICodecQuery_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub FindAllAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, kind: CodecKind, category: CodecCategory, subtype: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     FindAllAsync: usize,
 }
 #[doc(hidden)]
@@ -2561,13 +2561,13 @@ unsafe impl ::windows_core::Interface for IDataCue {
 #[doc(hidden)]
 pub struct IDataCue_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub SetData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SetData: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub Data: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Data: usize,
 }
 #[doc(hidden)]
@@ -2581,9 +2581,9 @@ unsafe impl ::windows_core::Interface for IDataCue2 {
 #[doc(hidden)]
 pub struct IDataCue2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Properties: usize,
 }
 #[doc(hidden)]
@@ -2644,9 +2644,9 @@ unsafe impl ::windows_core::Interface for IFaceDetectionEffectFrame {
 #[doc(hidden)]
 pub struct IFaceDetectionEffectFrame_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_FaceAnalysis"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub DetectedFaces: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Media_FaceAnalysis")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-media")))]
     DetectedFaces: usize,
 }
 #[doc(hidden)]
@@ -2675,9 +2675,9 @@ unsafe impl ::windows_core::Interface for IHighDynamicRangeOutput {
 pub struct IHighDynamicRangeOutput_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Certainty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Devices_Core"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub FrameControllers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Media_Devices_Core")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-media")))]
     FrameControllers: usize,
 }
 #[doc(hidden)]
@@ -2695,13 +2695,13 @@ pub struct IImageCue_Vtbl {
     pub SetPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: TimedTextPoint) -> ::windows_core::HRESULT,
     pub Extent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut TimedTextSize) -> ::windows_core::HRESULT,
     pub SetExtent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: TimedTextSize) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Graphics_Imaging")]
+    #[cfg(feature = "winrt-graphics")]
     pub SetSoftwareBitmap: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Imaging"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     SetSoftwareBitmap: usize,
-    #[cfg(feature = "Graphics_Imaging")]
+    #[cfg(feature = "winrt-graphics")]
     pub SoftwareBitmap: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Imaging"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     SoftwareBitmap: usize,
 }
 #[doc(hidden)]
@@ -2716,9 +2716,9 @@ unsafe impl ::windows_core::Interface for IInitializeMediaStreamSourceRequestedE
 pub struct IInitializeMediaStreamSourceRequestedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Source: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub RandomAccessStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     RandomAccessStream: usize,
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -2733,9 +2733,9 @@ unsafe impl ::windows_core::Interface for ILowLightFusionResult {
 #[doc(hidden)]
 pub struct ILowLightFusionResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_Imaging")]
+    #[cfg(feature = "winrt-graphics")]
     pub Frame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Imaging"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     Frame: usize,
 }
 #[doc(hidden)]
@@ -2749,14 +2749,14 @@ unsafe impl ::windows_core::Interface for ILowLightFusionStatics {
 #[doc(hidden)]
 pub struct ILowLightFusionStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Graphics_Imaging"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-graphics"))]
     pub SupportedBitmapPixelFormats: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Graphics_Imaging")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-graphics")))]
     SupportedBitmapPixelFormats: usize,
     pub MaxSupportedFrameCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Graphics_Imaging"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-graphics"))]
     pub FuseAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, frameset: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Graphics_Imaging")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-graphics")))]
     FuseAsync: usize,
 }
 #[doc(hidden)]
@@ -2792,13 +2792,13 @@ pub struct IMediaBindingEventArgs_Vtbl {
     pub MediaBinder: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub SetStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr, contenttype: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SetStream: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub SetStreamReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr, contenttype: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SetStreamReference: usize,
 }
 #[doc(hidden)]
@@ -2812,13 +2812,13 @@ unsafe impl ::windows_core::Interface for IMediaBindingEventArgs2 {
 #[doc(hidden)]
 pub struct IMediaBindingEventArgs2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Media_Streaming_Adaptive")]
+    #[cfg(feature = "winrt-media")]
     pub SetAdaptiveMediaSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mediasource: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Streaming_Adaptive"))]
+    #[cfg(not(feature = "winrt-media"))]
     SetAdaptiveMediaSource: usize,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub SetStorageFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SetStorageFile: usize,
 }
 #[doc(hidden)]
@@ -2832,9 +2832,9 @@ unsafe impl ::windows_core::Interface for IMediaBindingEventArgs3 {
 #[doc(hidden)]
 pub struct IMediaBindingEventArgs3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Networking_BackgroundTransfer")]
+    #[cfg(feature = "winrt-networking")]
     pub SetDownloadOperation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, downloadoperation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking_BackgroundTransfer"))]
+    #[cfg(not(feature = "winrt-networking"))]
     SetDownloadOperation: usize,
 }
 #[repr(transparent)]
@@ -3053,19 +3053,19 @@ pub struct IMediaSource2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub OpenOperationCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveOpenOperationCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub CustomProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CustomProperties: usize,
     pub Duration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub IsOpen: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub ExternalTimedTextSources: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ExternalTimedTextSources: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub ExternalTimedMetadataTracks: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ExternalTimedMetadataTracks: usize,
 }
 #[doc(hidden)]
@@ -3095,9 +3095,9 @@ unsafe impl ::windows_core::Interface for IMediaSource4 {
 #[doc(hidden)]
 pub struct IMediaSource4_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Media_Streaming_Adaptive")]
+    #[cfg(feature = "winrt-media")]
     pub AdaptiveMediaSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Streaming_Adaptive"))]
+    #[cfg(not(feature = "winrt-media"))]
     AdaptiveMediaSource: usize,
     pub MediaStreamSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub MseStreamSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -3115,9 +3115,9 @@ unsafe impl ::windows_core::Interface for IMediaSource5 {
 #[doc(hidden)]
 pub struct IMediaSource5_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Networking_BackgroundTransfer")]
+    #[cfg(feature = "winrt-networking")]
     pub DownloadOperation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking_BackgroundTransfer"))]
+    #[cfg(not(feature = "winrt-networking"))]
     DownloadOperation: usize,
 }
 #[doc(hidden)]
@@ -3146,9 +3146,9 @@ unsafe impl ::windows_core::Interface for IMediaSourceAppServiceConnectionFactor
 #[doc(hidden)]
 pub struct IMediaSourceAppServiceConnectionFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "ApplicationModel_AppService")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appserviceconnection: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_AppService"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     Create: usize,
 }
 #[doc(hidden)]
@@ -3202,24 +3202,24 @@ unsafe impl ::windows_core::Interface for IMediaSourceStatics {
 #[doc(hidden)]
 pub struct IMediaSourceStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Media_Streaming_Adaptive")]
+    #[cfg(feature = "winrt-media")]
     pub CreateFromAdaptiveMediaSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mediasource: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Streaming_Adaptive"))]
+    #[cfg(not(feature = "winrt-media"))]
     CreateFromAdaptiveMediaSource: usize,
     pub CreateFromMediaStreamSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mediasource: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateFromMseStreamSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mediasource: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateFromIMediaSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mediasource: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateFromStorageFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateFromStorageFile: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateFromStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr, contenttype: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateFromStream: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateFromStreamReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr, contenttype: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateFromStreamReference: usize,
     pub CreateFromUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -3247,9 +3247,9 @@ unsafe impl ::windows_core::Interface for IMediaSourceStatics3 {
 #[doc(hidden)]
 pub struct IMediaSourceStatics3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Media_Capture_Frames")]
+    #[cfg(feature = "winrt-media")]
     pub CreateFromMediaFrameSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, framesource: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Capture_Frames"))]
+    #[cfg(not(feature = "winrt-media"))]
     CreateFromMediaFrameSource: usize,
 }
 #[doc(hidden)]
@@ -3263,9 +3263,9 @@ unsafe impl ::windows_core::Interface for IMediaSourceStatics4 {
 #[doc(hidden)]
 pub struct IMediaSourceStatics4_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Networking_BackgroundTransfer")]
+    #[cfg(feature = "winrt-networking")]
     pub CreateFromDownloadOperation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, downloadoperation: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking_BackgroundTransfer"))]
+    #[cfg(not(feature = "winrt-networking"))]
     CreateFromDownloadOperation: usize,
 }
 #[repr(transparent)]
@@ -3531,14 +3531,14 @@ pub struct IMediaStreamSample_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Processed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveProcessed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub Buffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Buffer: usize,
     pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub ExtendedProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ExtendedProperties: usize,
     pub Protection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetDecodeTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
@@ -3561,9 +3561,9 @@ unsafe impl ::windows_core::Interface for IMediaStreamSample2 {
 #[doc(hidden)]
 pub struct IMediaStreamSample2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub Direct3D11Surface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX_Direct3D11"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     Direct3D11Surface: usize,
 }
 #[doc(hidden)]
@@ -3595,13 +3595,13 @@ unsafe impl ::windows_core::Interface for IMediaStreamSampleStatics {
 #[doc(hidden)]
 pub struct IMediaStreamSampleStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateFromBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, buffer: ::windows_core::RawPtr, timestamp: ::winrt_foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateFromBuffer: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateFromStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr, count: u32, timestamp: ::winrt_foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateFromStreamAsync: usize,
 }
 #[doc(hidden)]
@@ -3615,9 +3615,9 @@ unsafe impl ::windows_core::Interface for IMediaStreamSampleStatics2 {
 #[doc(hidden)]
 pub struct IMediaStreamSampleStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub CreateFromDirect3D11Surface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, surface: ::windows_core::RawPtr, timestamp: ::winrt_foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX_Direct3D11"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     CreateFromDirect3D11Surface: usize,
 }
 #[doc(hidden)]
@@ -3643,13 +3643,13 @@ pub struct IMediaStreamSource_Vtbl {
     pub RemoveSwitchStreamsRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub NotifyError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, errorstatus: MediaStreamSourceErrorStatus) -> ::windows_core::HRESULT,
     pub AddStreamDescriptor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, descriptor: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_Protection")]
+    #[cfg(feature = "winrt-media")]
     pub SetMediaProtectionManager: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Protection"))]
+    #[cfg(not(feature = "winrt-media"))]
     SetMediaProtectionManager: usize,
-    #[cfg(feature = "Media_Protection")]
+    #[cfg(feature = "winrt-media")]
     pub MediaProtectionManager: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Protection"))]
+    #[cfg(not(feature = "winrt-media"))]
     MediaProtectionManager: usize,
     pub SetDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub Duration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
@@ -3658,21 +3658,21 @@ pub struct IMediaStreamSource_Vtbl {
     pub SetBufferTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub BufferTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub SetBufferedRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startoffset: ::winrt_foundation::TimeSpan, endoffset: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub MusicProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_FileProperties"))]
+    #[cfg(not(feature = "winrt-storage"))]
     MusicProperties: usize,
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub VideoProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_FileProperties"))]
+    #[cfg(not(feature = "winrt-storage"))]
     VideoProperties: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub SetThumbnail: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SetThumbnail: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub Thumbnail: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Thumbnail: usize,
     pub AddProtectionKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, streamdescriptor: ::windows_core::RawPtr, keyIdentifier_array_size: u32, keyidentifier: *const u8, licenseData_array_size: u32, licensedata: *const u8) -> ::windows_core::HRESULT,
 }
@@ -4033,9 +4033,9 @@ pub struct IMseSourceBuffer_Vtbl {
     pub Mode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MseAppendMode) -> ::windows_core::HRESULT,
     pub SetMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: MseAppendMode) -> ::windows_core::HRESULT,
     pub IsUpdating: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Buffered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Buffered: usize,
     pub TimestampOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub SetTimestampOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
@@ -4043,17 +4043,17 @@ pub struct IMseSourceBuffer_Vtbl {
     pub SetAppendWindowStart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub AppendWindowEnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetAppendWindowEnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub AppendBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, buffer: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     AppendBuffer: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub AppendStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     AppendStream: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub AppendStreamMaxSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr, maxsize: u64) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     AppendStreamMaxSize: usize,
     pub Abort: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Remove: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, start: ::winrt_foundation::TimeSpan, end: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -4073,9 +4073,9 @@ pub struct IMseSourceBufferList_Vtbl {
     pub RemoveSourceBufferAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub SourceBufferRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveSourceBufferRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Buffers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Buffers: usize,
 }
 #[doc(hidden)]
@@ -4159,9 +4159,9 @@ unsafe impl ::windows_core::Interface for ISceneAnalysisEffectFrame {
 #[doc(hidden)]
 pub struct ISceneAnalysisEffectFrame_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Media_Capture")]
+    #[cfg(feature = "winrt-media")]
     pub FrameControlValues: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Capture"))]
+    #[cfg(not(feature = "winrt-media"))]
     FrameControlValues: usize,
     pub HighDynamicRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -4322,9 +4322,9 @@ unsafe impl ::windows_core::Interface for ITimedMetadataStreamDescriptor {
 #[doc(hidden)]
 pub struct ITimedMetadataStreamDescriptor_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub EncodingProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     EncodingProperties: usize,
     pub Copy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -4339,9 +4339,9 @@ unsafe impl ::windows_core::Interface for ITimedMetadataStreamDescriptorFactory 
 #[doc(hidden)]
 pub struct ITimedMetadataStreamDescriptorFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, encodingproperties: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     Create: usize,
 }
 #[doc(hidden)]
@@ -4361,13 +4361,13 @@ pub struct ITimedMetadataTrack_Vtbl {
     pub RemoveCueExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub TrackFailed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveTrackFailed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Cues: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Cues: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub ActiveCues: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ActiveCues: usize,
     pub TimedMetadataKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut TimedMetadataKind) -> ::windows_core::HRESULT,
     pub DispatchType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -4385,9 +4385,9 @@ unsafe impl ::windows_core::Interface for ITimedMetadataTrack2 {
 #[doc(hidden)]
 pub struct ITimedMetadataTrack2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Media_Playback")]
+    #[cfg(feature = "winrt-media")]
     pub PlaybackItem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Playback"))]
+    #[cfg(not(feature = "winrt-media"))]
     PlaybackItem: usize,
     pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
@@ -4434,7 +4434,7 @@ pub struct ITimedMetadataTrackFailedEventArgs_Vtbl {
 #[repr(transparent)]
 pub struct ITimedMetadataTrackProvider(::windows_core::IUnknown);
 impl ITimedMetadataTrackProvider {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TimedMetadataTracks(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<TimedMetadataTrack>> {
         let this = self;
         unsafe {
@@ -4514,9 +4514,9 @@ unsafe impl ::windows_core::Interface for ITimedMetadataTrackProvider {
 #[doc(hidden)]
 pub struct ITimedMetadataTrackProvider_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub TimedMetadataTracks: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TimedMetadataTracks: usize,
 }
 #[doc(hidden)]
@@ -4532,13 +4532,13 @@ pub struct ITimedTextBouten_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Type: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut TimedTextBoutenType) -> ::windows_core::HRESULT,
     pub SetType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: TimedTextBoutenType) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub Color: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_ui::Color) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Color: usize,
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub SetColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_ui::Color) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetColor: usize,
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut TimedTextBoutenPosition) -> ::windows_core::HRESULT,
     pub SetPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: TimedTextBoutenPosition) -> ::windows_core::HRESULT,
@@ -4558,9 +4558,9 @@ pub struct ITimedTextCue_Vtbl {
     pub SetCueRegion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CueStyle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetCueStyle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Lines: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Lines: usize,
 }
 #[doc(hidden)]
@@ -4576,9 +4576,9 @@ pub struct ITimedTextLine_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Text: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Subformats: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Subformats: usize,
 }
 #[doc(hidden)]
@@ -4598,13 +4598,13 @@ pub struct ITimedTextRegion_Vtbl {
     pub SetPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: TimedTextPoint) -> ::windows_core::HRESULT,
     pub Extent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut TimedTextSize) -> ::windows_core::HRESULT,
     pub SetExtent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: TimedTextSize) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub Background: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_ui::Color) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Background: usize,
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub SetBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_ui::Color) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetBackground: usize,
     pub WritingMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut TimedTextWritingMode) -> ::windows_core::HRESULT,
     pub SetWritingMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: TimedTextWritingMode) -> ::windows_core::HRESULT,
@@ -4669,9 +4669,9 @@ unsafe impl ::windows_core::Interface for ITimedTextSourceResolveResultEventArgs
 pub struct ITimedTextSourceResolveResultEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Error: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Tracks: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Tracks: usize,
 }
 #[doc(hidden)]
@@ -4685,14 +4685,14 @@ unsafe impl ::windows_core::Interface for ITimedTextSourceStatics {
 #[doc(hidden)]
 pub struct ITimedTextSourceStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateFromStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateFromStream: usize,
     pub CreateFromUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateFromStreamWithLanguage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr, defaultlanguage: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateFromStreamWithLanguage: usize,
     pub CreateFromUriWithLanguage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, defaultlanguage: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -4707,14 +4707,14 @@ unsafe impl ::windows_core::Interface for ITimedTextSourceStatics2 {
 #[doc(hidden)]
 pub struct ITimedTextSourceStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateFromStreamWithIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr, indexstream: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateFromStreamWithIndex: usize,
     pub CreateFromUriWithIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, indexuri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateFromStreamWithIndexAndLanguage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr, indexstream: ::windows_core::RawPtr, defaultlanguage: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateFromStreamWithIndexAndLanguage: usize,
     pub CreateFromUriWithIndexAndLanguage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, indexuri: ::windows_core::RawPtr, defaultlanguage: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -4737,21 +4737,21 @@ pub struct ITimedTextStyle_Vtbl {
     pub SetFontSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: TimedTextDouble) -> ::windows_core::HRESULT,
     pub FontWeight: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut TimedTextWeight) -> ::windows_core::HRESULT,
     pub SetFontWeight: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: TimedTextWeight) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub Foreground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_ui::Color) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Foreground: usize,
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub SetForeground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_ui::Color) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetForeground: usize,
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub Background: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_ui::Color) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Background: usize,
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub SetBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_ui::Color) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetBackground: usize,
     pub IsBackgroundAlwaysShown: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetIsBackgroundAlwaysShown: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -4759,13 +4759,13 @@ pub struct ITimedTextStyle_Vtbl {
     pub SetFlowDirection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: TimedTextFlowDirection) -> ::windows_core::HRESULT,
     pub LineAlignment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut TimedTextLineAlignment) -> ::windows_core::HRESULT,
     pub SetLineAlignment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: TimedTextLineAlignment) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub OutlineColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_ui::Color) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI"))]
+    #[cfg(not(feature = "winrt-ui"))]
     OutlineColor: usize,
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub SetOutlineColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_ui::Color) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetOutlineColor: usize,
     pub OutlineThickness: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut TimedTextDouble) -> ::windows_core::HRESULT,
     pub SetOutlineThickness: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: TimedTextDouble) -> ::windows_core::HRESULT,
@@ -4843,9 +4843,9 @@ pub struct IVideoStabilizationEffect_Vtbl {
     pub Enabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub EnabledChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveEnabledChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Media_Capture", feature = "Media_Devices", feature = "Media_MediaProperties"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-media", feature = "winrt-media"))]
     pub GetRecommendedStreamConfiguration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, controller: ::windows_core::RawPtr, desiredproperties: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Media_Capture", feature = "Media_Devices", feature = "Media_MediaProperties")))]
+    #[cfg(not(all(feature = "winrt-media", feature = "winrt-media", feature = "winrt-media")))]
     GetRecommendedStreamConfiguration: usize,
 }
 #[doc(hidden)]
@@ -4872,9 +4872,9 @@ unsafe impl ::windows_core::Interface for IVideoStreamDescriptor {
 #[doc(hidden)]
 pub struct IVideoStreamDescriptor_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub EncodingProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     EncodingProperties: usize,
 }
 #[doc(hidden)]
@@ -4901,9 +4901,9 @@ unsafe impl ::windows_core::Interface for IVideoStreamDescriptorFactory {
 #[doc(hidden)]
 pub struct IVideoStreamDescriptorFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, encodingproperties: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     Create: usize,
 }
 #[doc(hidden)]
@@ -4919,13 +4919,13 @@ pub struct IVideoTrack_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub OpenFailed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveOpenFailed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub GetEncodingProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     GetEncodingProperties: usize,
-    #[cfg(feature = "Media_Playback")]
+    #[cfg(feature = "winrt-media")]
     pub PlaybackItem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Playback"))]
+    #[cfg(not(feature = "winrt-media"))]
     PlaybackItem: usize,
     pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SupportInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -4989,12 +4989,12 @@ impl ImageCue {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetExtent)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Graphics_Imaging")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn SetSoftwareBitmap<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::Imaging::SoftwareBitmap>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSoftwareBitmap)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Graphics_Imaging")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn SoftwareBitmap(&self) -> ::windows_core::Result<::winrt_graphics::Imaging::SoftwareBitmap> {
         let this = self;
         unsafe {
@@ -5140,7 +5140,7 @@ impl InitializeMediaStreamSourceRequestedEventArgs {
             (::windows_core::Interface::vtable(this).Source)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaStreamSource>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn RandomAccessStream(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStream> {
         let this = self;
         unsafe {
@@ -5230,7 +5230,7 @@ unsafe impl ::core::marker::Send for InitializeMediaStreamSourceRequestedEventAr
 unsafe impl ::core::marker::Sync for InitializeMediaStreamSourceRequestedEventArgs {}
 pub struct LowLightFusion;
 impl LowLightFusion {
-    #[cfg(all(feature = "Foundation_Collections", feature = "Graphics_Imaging"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-graphics"))]
     pub fn SupportedBitmapPixelFormats() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_graphics::Imaging::BitmapPixelFormat>> {
         Self::ILowLightFusionStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -5243,7 +5243,7 @@ impl LowLightFusion {
             (::windows_core::Interface::vtable(this).MaxSupportedFrameCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Graphics_Imaging"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-graphics"))]
     pub fn FuseAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_graphics::Imaging::SoftwareBitmap>>>(frameset: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<LowLightFusionResult, f64>> {
         Self::ILowLightFusionStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -5265,7 +5265,7 @@ impl LowLightFusionResult {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Graphics_Imaging")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn Frame(&self) -> ::windows_core::Result<::winrt_graphics::Imaging::SoftwareBitmap> {
         let this = self;
         unsafe {
@@ -5512,27 +5512,27 @@ impl MediaBindingEventArgs {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetUri)(::windows_core::Interface::as_raw(this), uri.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SetStream<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, stream: Param0, contenttype: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetStream)(::windows_core::Interface::as_raw(this), stream.into_param().abi(), contenttype.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SetStreamReference<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, stream: Param0, contenttype: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetStreamReference)(::windows_core::Interface::as_raw(this), stream.into_param().abi(), contenttype.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Media_Streaming_Adaptive")]
+    #[cfg(feature = "winrt-media")]
     pub fn SetAdaptiveMediaSource<'a, Param0: ::windows_core::IntoParam<'a, super::Streaming::Adaptive::AdaptiveMediaSource>>(&self, mediasource: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMediaBindingEventArgs2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetAdaptiveMediaSource)(::windows_core::Interface::as_raw(this), mediasource.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SetStorageFile<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(&self, file: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMediaBindingEventArgs2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetStorageFile)(::windows_core::Interface::as_raw(this), file.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Networking_BackgroundTransfer")]
+    #[cfg(feature = "winrt-networking")]
     pub fn SetDownloadOperation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_networking::BackgroundTransfer::DownloadOperation>>(&self, downloadoperation: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMediaBindingEventArgs3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetDownloadOperation)(::windows_core::Interface::as_raw(this), downloadoperation.into_param().abi()).ok() }
@@ -5746,7 +5746,7 @@ impl MediaSource {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveOpenOperationCompleted)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CustomProperties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = self;
         unsafe {
@@ -5768,7 +5768,7 @@ impl MediaSource {
             (::windows_core::Interface::vtable(this).IsOpen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ExternalTimedTextSources(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IObservableVector<TimedTextSource>> {
         let this = self;
         unsafe {
@@ -5776,7 +5776,7 @@ impl MediaSource {
             (::windows_core::Interface::vtable(this).ExternalTimedTextSources)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IObservableVector<TimedTextSource>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ExternalTimedMetadataTracks(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IObservableVector<TimedMetadataTrack>> {
         let this = self;
         unsafe {
@@ -5806,7 +5806,7 @@ impl MediaSource {
         let this = &::windows_core::Interface::cast::<IMediaSource3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Reset)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Media_Streaming_Adaptive")]
+    #[cfg(feature = "winrt-media")]
     pub fn AdaptiveMediaSource(&self) -> ::windows_core::Result<super::Streaming::Adaptive::AdaptiveMediaSource> {
         let this = &::windows_core::Interface::cast::<IMediaSource4>(self)?;
         unsafe {
@@ -5842,7 +5842,7 @@ impl MediaSource {
             (::windows_core::Interface::vtable(this).OpenAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Networking_BackgroundTransfer")]
+    #[cfg(feature = "winrt-networking")]
     pub fn DownloadOperation(&self) -> ::windows_core::Result<::winrt_networking::BackgroundTransfer::DownloadOperation> {
         let this = &::windows_core::Interface::cast::<IMediaSource5>(self)?;
         unsafe {
@@ -5850,7 +5850,7 @@ impl MediaSource {
             (::windows_core::Interface::vtable(this).DownloadOperation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_networking::BackgroundTransfer::DownloadOperation>(result__)
         }
     }
-    #[cfg(feature = "Media_Streaming_Adaptive")]
+    #[cfg(feature = "winrt-media")]
     pub fn CreateFromAdaptiveMediaSource<'a, Param0: ::windows_core::IntoParam<'a, super::Streaming::Adaptive::AdaptiveMediaSource>>(mediasource: Param0) -> ::windows_core::Result<MediaSource> {
         Self::IMediaSourceStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -5875,21 +5875,21 @@ impl MediaSource {
             (::windows_core::Interface::vtable(this).CreateFromIMediaSource)(::windows_core::Interface::as_raw(this), mediasource.into_param().abi(), result__.as_mut_ptr()).from_abi::<MediaSource>(result__)
         })
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFromStorageFile<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(file: Param0) -> ::windows_core::Result<MediaSource> {
         Self::IMediaSourceStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromStorageFile)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<MediaSource>(result__)
         })
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFromStream<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(stream: Param0, contenttype: Param1) -> ::windows_core::Result<MediaSource> {
         Self::IMediaSourceStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromStream)(::windows_core::Interface::as_raw(this), stream.into_param().abi(), contenttype.into_param().abi(), result__.as_mut_ptr()).from_abi::<MediaSource>(result__)
         })
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFromStreamReference<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(stream: Param0, contenttype: Param1) -> ::windows_core::Result<MediaSource> {
         Self::IMediaSourceStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -5908,14 +5908,14 @@ impl MediaSource {
             (::windows_core::Interface::vtable(this).CreateFromMediaBinder)(::windows_core::Interface::as_raw(this), binder.into_param().abi(), result__.as_mut_ptr()).from_abi::<MediaSource>(result__)
         })
     }
-    #[cfg(feature = "Media_Capture_Frames")]
+    #[cfg(feature = "winrt-media")]
     pub fn CreateFromMediaFrameSource<'a, Param0: ::windows_core::IntoParam<'a, super::Capture::Frames::MediaFrameSource>>(framesource: Param0) -> ::windows_core::Result<MediaSource> {
         Self::IMediaSourceStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromMediaFrameSource)(::windows_core::Interface::as_raw(this), framesource.into_param().abi(), result__.as_mut_ptr()).from_abi::<MediaSource>(result__)
         })
     }
-    #[cfg(feature = "Networking_BackgroundTransfer")]
+    #[cfg(feature = "winrt-networking")]
     pub fn CreateFromDownloadOperation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_networking::BackgroundTransfer::DownloadOperation>>(downloadoperation: Param0) -> ::windows_core::Result<MediaSource> {
         Self::IMediaSourceStatics4(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -6031,27 +6031,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &Media
         ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Media_Playback")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::TryFrom<MediaSource> for super::Playback::IMediaPlaybackSource {
     type Error = ::windows_core::Error;
     fn try_from(value: MediaSource) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Media_Playback")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::TryFrom<&MediaSource> for super::Playback::IMediaPlaybackSource {
     type Error = ::windows_core::Error;
     fn try_from(value: &MediaSource) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Media_Playback")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, super::Playback::IMediaPlaybackSource> for MediaSource {
     fn into_param(self) -> ::windows_core::Param<'a, super::Playback::IMediaPlaybackSource> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Media_Playback")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, super::Playback::IMediaPlaybackSource> for &MediaSource {
     fn into_param(self) -> ::windows_core::Param<'a, super::Playback::IMediaPlaybackSource> {
         ::core::convert::TryInto::<super::Playback::IMediaPlaybackSource>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -6077,7 +6077,7 @@ impl MediaSourceAppServiceConnection {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Start)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "ApplicationModel_AppService")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_applicationmodel::AppService::AppServiceConnection>>(appserviceconnection: Param0) -> ::windows_core::Result<MediaSourceAppServiceConnection> {
         Self::IMediaSourceAppServiceConnectionFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -6498,7 +6498,7 @@ impl MediaStreamSample {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveProcessed)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Buffer(&self) -> ::windows_core::Result<::winrt_storage::Streams::Buffer> {
         let this = self;
         unsafe {
@@ -6513,7 +6513,7 @@ impl MediaStreamSample {
             (::windows_core::Interface::vtable(this).Timestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ExtendedProperties(&self) -> ::windows_core::Result<MediaStreamSamplePropertySet> {
         let this = self;
         unsafe {
@@ -6572,7 +6572,7 @@ impl MediaStreamSample {
             (::windows_core::Interface::vtable(this).Discontinuous)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn Direct3D11Surface(&self) -> ::windows_core::Result<::winrt_graphics::DirectX::Direct3D11::IDirect3DSurface> {
         let this = &::windows_core::Interface::cast::<IMediaStreamSample2>(self)?;
         unsafe {
@@ -6580,21 +6580,21 @@ impl MediaStreamSample {
             (::windows_core::Interface::vtable(this).Direct3D11Surface)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::DirectX::Direct3D11::IDirect3DSurface>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFromBuffer<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(buffer: Param0, timestamp: Param1) -> ::windows_core::Result<MediaStreamSample> {
         Self::IMediaStreamSampleStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromBuffer)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), timestamp.into_param().abi(), result__.as_mut_ptr()).from_abi::<MediaStreamSample>(result__)
         })
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFromStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IInputStream>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(stream: Param0, count: u32, timestamp: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MediaStreamSample>> {
         Self::IMediaStreamSampleStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromStreamAsync)(::windows_core::Interface::as_raw(this), stream.into_param().abi(), count, timestamp.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MediaStreamSample>>(result__)
         })
     }
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn CreateFromDirect3D11Surface<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::DirectX::Direct3D11::IDirect3DSurface>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(surface: Param0, timestamp: Param1) -> ::windows_core::Result<MediaStreamSample> {
         Self::IMediaStreamSampleStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -6682,12 +6682,12 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Med
 }
 unsafe impl ::core::marker::Send for MediaStreamSample {}
 unsafe impl ::core::marker::Sync for MediaStreamSample {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 #[repr(transparent)]
 pub struct MediaStreamSamplePropertySet(::windows_core::IUnknown);
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl MediaStreamSamplePropertySet {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>>(self)?;
         unsafe {
@@ -6695,7 +6695,7 @@ impl MediaStreamSamplePropertySet {
             (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Lookup<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, key: Param0) -> ::windows_core::Result<::windows_core::IInspectable> {
         let this = self;
         unsafe {
@@ -6703,7 +6703,7 @@ impl MediaStreamSamplePropertySet {
             (::windows_core::Interface::vtable(this).Lookup)(::windows_core::Interface::as_raw(this), key.into_param().abi(), result__.as_mut_ptr()).from_abi::<::windows_core::IInspectable>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -6711,7 +6711,7 @@ impl MediaStreamSamplePropertySet {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn HasKey<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, key: Param0) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
@@ -6719,7 +6719,7 @@ impl MediaStreamSamplePropertySet {
             (::windows_core::Interface::vtable(this).HasKey)(::windows_core::Interface::as_raw(this), key.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
@@ -6727,7 +6727,7 @@ impl MediaStreamSamplePropertySet {
             (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Insert<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
@@ -6735,38 +6735,38 @@ impl MediaStreamSamplePropertySet {
             (::windows_core::Interface::vtable(this).Insert)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Remove<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, key: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Remove)(::windows_core::Interface::as_raw(this), key.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Clear(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Clear)(::windows_core::Interface::as_raw(this)).ok() }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::clone::Clone for MediaStreamSamplePropertySet {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::PartialEq for MediaStreamSamplePropertySet {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::Eq for MediaStreamSamplePropertySet {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::fmt::Debug for MediaStreamSamplePropertySet {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("MediaStreamSamplePropertySet").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::RuntimeType for MediaStreamSamplePropertySet {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Media.Core.MediaStreamSamplePropertySet;pinterface({3c2925fe-8519-45c1-aa79-197b6718c1c1};g16;cinterface(IInspectable)))");
     type DefaultType = ::core::option::Option<Self>;
@@ -6774,16 +6774,16 @@ unsafe impl ::windows_core::RuntimeType for MediaStreamSamplePropertySet {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::Interface for MediaStreamSamplePropertySet {
     type Vtable = ::winrt_foundation::Collections::IMap_Vtbl<::windows_core::GUID, ::windows_core::IInspectable>;
     const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable> as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::windows_core::RuntimeName for MediaStreamSamplePropertySet {
     const NAME: &'static str = "Windows.Media.Core.MediaStreamSamplePropertySet";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for MediaStreamSamplePropertySet {
     type Item = ::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>;
     type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
@@ -6791,7 +6791,7 @@ impl ::core::iter::IntoIterator for MediaStreamSamplePropertySet {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &MediaStreamSamplePropertySet {
     type Item = ::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>;
     type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
@@ -6799,109 +6799,109 @@ impl ::core::iter::IntoIterator for &MediaStreamSamplePropertySet {
         self.First().unwrap()
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<MediaStreamSamplePropertySet> for ::windows_core::IUnknown {
     fn from(value: MediaStreamSamplePropertySet) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&MediaStreamSamplePropertySet> for ::windows_core::IUnknown {
     fn from(value: &MediaStreamSamplePropertySet) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for MediaStreamSamplePropertySet {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a MediaStreamSamplePropertySet {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<MediaStreamSamplePropertySet> for ::windows_core::IInspectable {
     fn from(value: MediaStreamSamplePropertySet) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&MediaStreamSamplePropertySet> for ::windows_core::IInspectable {
     fn from(value: &MediaStreamSamplePropertySet) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for MediaStreamSamplePropertySet {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a MediaStreamSamplePropertySet {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<MediaStreamSamplePropertySet> for ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>> {
     type Error = ::windows_core::Error;
     fn try_from(value: MediaStreamSamplePropertySet) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&MediaStreamSamplePropertySet> for ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>> {
     type Error = ::windows_core::Error;
     fn try_from(value: &MediaStreamSamplePropertySet) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>> for MediaStreamSamplePropertySet {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>> for &MediaStreamSamplePropertySet {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<MediaStreamSamplePropertySet> for ::winrt_foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable> {
     type Error = ::windows_core::Error;
     fn try_from(value: MediaStreamSamplePropertySet) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&MediaStreamSamplePropertySet> for ::winrt_foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable> {
     type Error = ::windows_core::Error;
     fn try_from(value: &MediaStreamSamplePropertySet) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>> for MediaStreamSamplePropertySet {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>> for &MediaStreamSamplePropertySet {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Send for MediaStreamSamplePropertySet {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Sync for MediaStreamSamplePropertySet {}
 #[repr(transparent)]
 pub struct MediaStreamSampleProtectionProperties(::windows_core::IUnknown);
@@ -7069,12 +7069,12 @@ impl MediaStreamSource {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).AddStreamDescriptor)(::windows_core::Interface::as_raw(this), descriptor.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Media_Protection")]
+    #[cfg(feature = "winrt-media")]
     pub fn SetMediaProtectionManager<'a, Param0: ::windows_core::IntoParam<'a, super::Protection::MediaProtectionManager>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetMediaProtectionManager)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Media_Protection")]
+    #[cfg(feature = "winrt-media")]
     pub fn MediaProtectionManager(&self) -> ::windows_core::Result<super::Protection::MediaProtectionManager> {
         let this = self;
         unsafe {
@@ -7119,7 +7119,7 @@ impl MediaStreamSource {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetBufferedRange)(::windows_core::Interface::as_raw(this), startoffset.into_param().abi(), endoffset.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub fn MusicProperties(&self) -> ::windows_core::Result<::winrt_storage::FileProperties::MusicProperties> {
         let this = self;
         unsafe {
@@ -7127,7 +7127,7 @@ impl MediaStreamSource {
             (::windows_core::Interface::vtable(this).MusicProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::FileProperties::MusicProperties>(result__)
         }
     }
-    #[cfg(feature = "Storage_FileProperties")]
+    #[cfg(feature = "winrt-storage")]
     pub fn VideoProperties(&self) -> ::windows_core::Result<::winrt_storage::FileProperties::VideoProperties> {
         let this = self;
         unsafe {
@@ -7135,12 +7135,12 @@ impl MediaStreamSource {
             (::windows_core::Interface::vtable(this).VideoProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::FileProperties::VideoProperties>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SetThumbnail<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetThumbnail)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Thumbnail(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStreamReference> {
         let this = self;
         unsafe {
@@ -8619,7 +8619,7 @@ impl MseSourceBuffer {
             (::windows_core::Interface::vtable(this).IsUpdating)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Buffered(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MseTimeRange>> {
         let this = self;
         unsafe {
@@ -8660,17 +8660,17 @@ impl MseSourceBuffer {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetAppendWindowEnd)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn AppendBuffer<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, buffer: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).AppendBuffer)(::windows_core::Interface::as_raw(this), buffer.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn AppendStream<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IInputStream>>(&self, stream: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).AppendStream)(::windows_core::Interface::as_raw(this), stream.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn AppendStreamMaxSize<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IInputStream>>(&self, stream: Param0, maxsize: u64) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).AppendStreamMaxSize)(::windows_core::Interface::as_raw(this), stream.into_param().abi(), maxsize).ok() }
@@ -8781,7 +8781,7 @@ impl MseSourceBufferList {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveSourceBufferRemoved)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Buffers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MseSourceBuffer>> {
         let this = self;
         unsafe {
@@ -9108,7 +9108,7 @@ impl ::core::default::Default for MseTimeRange {
 #[repr(transparent)]
 pub struct SceneAnalysisEffect(::windows_core::IUnknown);
 impl SceneAnalysisEffect {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetProperties<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IPropertySet>>(&self, configuration: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::IMediaExtension>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetProperties)(::windows_core::Interface::as_raw(this), configuration.into_param().abi()).ok() }
@@ -9237,10 +9237,10 @@ impl<'a> ::windows_core::IntoParam<'a, super::IMediaExtension> for &SceneAnalysi
 }
 unsafe impl ::core::marker::Send for SceneAnalysisEffect {}
 unsafe impl ::core::marker::Sync for SceneAnalysisEffect {}
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 #[repr(transparent)]
 pub struct SceneAnalysisEffectDefinition(::windows_core::IUnknown);
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl SceneAnalysisEffectDefinition {
     pub fn new() -> ::windows_core::Result<Self> {
         Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
@@ -9249,7 +9249,7 @@ impl SceneAnalysisEffectDefinition {
         static mut SHARED: ::windows_core::FactoryCache<SceneAnalysisEffectDefinition, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn ActivatableClassId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
@@ -9257,7 +9257,7 @@ impl SceneAnalysisEffectDefinition {
             (::windows_core::Interface::vtable(this).ActivatableClassId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IPropertySet> {
         let this = self;
         unsafe {
@@ -9266,27 +9266,27 @@ impl SceneAnalysisEffectDefinition {
         }
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::clone::Clone for SceneAnalysisEffectDefinition {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::cmp::PartialEq for SceneAnalysisEffectDefinition {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::cmp::Eq for SceneAnalysisEffectDefinition {}
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::fmt::Debug for SceneAnalysisEffectDefinition {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("SceneAnalysisEffectDefinition").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 unsafe impl ::windows_core::RuntimeType for SceneAnalysisEffectDefinition {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Media.Core.SceneAnalysisEffectDefinition;{39f38cf0-8d0f-4f3e-84fc-2d46a5297943})");
     type DefaultType = ::core::option::Option<Self>;
@@ -9294,92 +9294,92 @@ unsafe impl ::windows_core::RuntimeType for SceneAnalysisEffectDefinition {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 unsafe impl ::windows_core::Interface for SceneAnalysisEffectDefinition {
     type Vtable = super::Effects::IVideoEffectDefinition_Vtbl;
     const IID: ::windows_core::GUID = <super::Effects::IVideoEffectDefinition as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::windows_core::RuntimeName for SceneAnalysisEffectDefinition {
     const NAME: &'static str = "Windows.Media.Core.SceneAnalysisEffectDefinition";
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::From<SceneAnalysisEffectDefinition> for ::windows_core::IUnknown {
     fn from(value: SceneAnalysisEffectDefinition) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::From<&SceneAnalysisEffectDefinition> for ::windows_core::IUnknown {
     fn from(value: &SceneAnalysisEffectDefinition) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for SceneAnalysisEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a SceneAnalysisEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::From<SceneAnalysisEffectDefinition> for ::windows_core::IInspectable {
     fn from(value: SceneAnalysisEffectDefinition) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::From<&SceneAnalysisEffectDefinition> for ::windows_core::IInspectable {
     fn from(value: &SceneAnalysisEffectDefinition) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for SceneAnalysisEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a SceneAnalysisEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::TryFrom<SceneAnalysisEffectDefinition> for super::Effects::IVideoEffectDefinition {
     type Error = ::windows_core::Error;
     fn try_from(value: SceneAnalysisEffectDefinition) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::TryFrom<&SceneAnalysisEffectDefinition> for super::Effects::IVideoEffectDefinition {
     type Error = ::windows_core::Error;
     fn try_from(value: &SceneAnalysisEffectDefinition) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, super::Effects::IVideoEffectDefinition> for SceneAnalysisEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, super::Effects::IVideoEffectDefinition> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, super::Effects::IVideoEffectDefinition> for &SceneAnalysisEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, super::Effects::IVideoEffectDefinition> {
         ::core::convert::TryInto::<super::Effects::IVideoEffectDefinition>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 unsafe impl ::core::marker::Send for SceneAnalysisEffectDefinition {}
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 unsafe impl ::core::marker::Sync for SceneAnalysisEffectDefinition {}
 #[repr(transparent)]
 pub struct SceneAnalysisEffectFrame(::windows_core::IUnknown);
@@ -9446,7 +9446,7 @@ impl SceneAnalysisEffectFrame {
             (::windows_core::Interface::vtable(this).IsDiscontinuous)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ExtendedProperties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IPropertySet> {
         let this = &::windows_core::Interface::cast::<super::IMediaFrame>(self)?;
         unsafe {
@@ -9454,7 +9454,7 @@ impl SceneAnalysisEffectFrame {
             (::windows_core::Interface::vtable(this).ExtendedProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IPropertySet>(result__)
         }
     }
-    #[cfg(feature = "Media_Capture")]
+    #[cfg(feature = "winrt-media")]
     pub fn FrameControlValues(&self) -> ::windows_core::Result<super::Capture::CapturedFrameControlValues> {
         let this = self;
         unsafe {
@@ -9963,7 +9963,7 @@ impl TimedMetadataStreamDescriptor {
             (::windows_core::Interface::vtable(this).Label)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn EncodingProperties(&self) -> ::windows_core::Result<super::MediaProperties::TimedMetadataEncodingProperties> {
         let this = &::windows_core::Interface::cast::<ITimedMetadataStreamDescriptor>(self)?;
         unsafe {
@@ -9978,7 +9978,7 @@ impl TimedMetadataStreamDescriptor {
             (::windows_core::Interface::vtable(this).Copy)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<TimedMetadataStreamDescriptor>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, super::MediaProperties::TimedMetadataEncodingProperties>>(encodingproperties: Param0) -> ::windows_core::Result<TimedMetadataStreamDescriptor> {
         Self::ITimedMetadataStreamDescriptorFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -10174,7 +10174,7 @@ impl TimedMetadataTrack {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveTrackFailed)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Cues(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<IMediaCue>> {
         let this = self;
         unsafe {
@@ -10182,7 +10182,7 @@ impl TimedMetadataTrack {
             (::windows_core::Interface::vtable(this).Cues)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<IMediaCue>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ActiveCues(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<IMediaCue>> {
         let this = self;
         unsafe {
@@ -10212,7 +10212,7 @@ impl TimedMetadataTrack {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveCue)(::windows_core::Interface::as_raw(this), cue.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Media_Playback")]
+    #[cfg(feature = "winrt-media")]
     pub fn PlaybackItem(&self) -> ::windows_core::Result<super::Playback::MediaPlaybackItem> {
         let this = &::windows_core::Interface::cast::<ITimedMetadataTrack2>(self)?;
         unsafe {
@@ -10554,7 +10554,7 @@ impl TimedTextBouten {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetType)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Color(&self) -> ::windows_core::Result<::winrt_ui::Color> {
         let this = self;
         unsafe {
@@ -10562,7 +10562,7 @@ impl TimedTextBouten {
             (::windows_core::Interface::vtable(this).Color)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Color>(result__)
         }
     }
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetColor<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Color>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -10789,7 +10789,7 @@ impl TimedTextCue {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCueStyle)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Lines(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<TimedTextLine>> {
         let this = self;
         unsafe {
@@ -11051,7 +11051,7 @@ impl TimedTextLine {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetText)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Subformats(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<TimedTextSubformat>> {
         let this = self;
         unsafe {
@@ -11287,7 +11287,7 @@ impl TimedTextRegion {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetExtent)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Background(&self) -> ::windows_core::Result<::winrt_ui::Color> {
         let this = self;
         unsafe {
@@ -11295,7 +11295,7 @@ impl TimedTextRegion {
             (::windows_core::Interface::vtable(this).Background)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Color>(result__)
         }
     }
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetBackground<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Color>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetBackground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -11773,7 +11773,7 @@ impl TimedTextSource {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveResolved)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFromStream<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(stream: Param0) -> ::windows_core::Result<TimedTextSource> {
         Self::ITimedTextSourceStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -11786,7 +11786,7 @@ impl TimedTextSource {
             (::windows_core::Interface::vtable(this).CreateFromUri)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<TimedTextSource>(result__)
         })
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFromStreamWithLanguage<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(stream: Param0, defaultlanguage: Param1) -> ::windows_core::Result<TimedTextSource> {
         Self::ITimedTextSourceStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -11799,7 +11799,7 @@ impl TimedTextSource {
             (::windows_core::Interface::vtable(this).CreateFromUriWithLanguage)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), defaultlanguage.into_param().abi(), result__.as_mut_ptr()).from_abi::<TimedTextSource>(result__)
         })
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFromStreamWithIndex<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(stream: Param0, indexstream: Param1) -> ::windows_core::Result<TimedTextSource> {
         Self::ITimedTextSourceStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -11812,7 +11812,7 @@ impl TimedTextSource {
             (::windows_core::Interface::vtable(this).CreateFromUriWithIndex)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), indexuri.into_param().abi(), result__.as_mut_ptr()).from_abi::<TimedTextSource>(result__)
         })
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFromStreamWithIndexAndLanguage<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(stream: Param0, indexstream: Param1, defaultlanguage: Param2) -> ::windows_core::Result<TimedTextSource> {
         Self::ITimedTextSourceStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -11916,7 +11916,7 @@ impl TimedTextSourceResolveResultEventArgs {
             (::windows_core::Interface::vtable(this).Error)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<TimedMetadataTrackError>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Tracks(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<TimedMetadataTrack>> {
         let this = self;
         unsafe {
@@ -12051,7 +12051,7 @@ impl TimedTextStyle {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFontWeight)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Foreground(&self) -> ::windows_core::Result<::winrt_ui::Color> {
         let this = self;
         unsafe {
@@ -12059,12 +12059,12 @@ impl TimedTextStyle {
             (::windows_core::Interface::vtable(this).Foreground)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Color>(result__)
         }
     }
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetForeground<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Color>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetForeground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Background(&self) -> ::windows_core::Result<::winrt_ui::Color> {
         let this = self;
         unsafe {
@@ -12072,7 +12072,7 @@ impl TimedTextStyle {
             (::windows_core::Interface::vtable(this).Background)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Color>(result__)
         }
     }
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetBackground<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Color>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetBackground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -12110,7 +12110,7 @@ impl TimedTextStyle {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetLineAlignment)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub fn OutlineColor(&self) -> ::windows_core::Result<::winrt_ui::Color> {
         let this = self;
         unsafe {
@@ -12118,7 +12118,7 @@ impl TimedTextStyle {
             (::windows_core::Interface::vtable(this).OutlineColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Color>(result__)
         }
     }
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetOutlineColor<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Color>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetOutlineColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -12554,7 +12554,7 @@ unsafe impl ::windows_core::RuntimeType for TimedTextWritingMode {
 #[repr(transparent)]
 pub struct VideoStabilizationEffect(::windows_core::IUnknown);
 impl VideoStabilizationEffect {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetProperties<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IPropertySet>>(&self, configuration: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::IMediaExtension>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetProperties)(::windows_core::Interface::as_raw(this), configuration.into_param().abi()).ok() }
@@ -12581,7 +12581,7 @@ impl VideoStabilizationEffect {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveEnabledChanged)(::windows_core::Interface::as_raw(this), cookie.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Media_Capture", feature = "Media_Devices", feature = "Media_MediaProperties"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-media", feature = "winrt-media"))]
     pub fn GetRecommendedStreamConfiguration<'a, Param0: ::windows_core::IntoParam<'a, super::Devices::VideoDeviceController>, Param1: ::windows_core::IntoParam<'a, super::MediaProperties::VideoEncodingProperties>>(&self, controller: Param0, desiredproperties: Param1) -> ::windows_core::Result<super::Capture::VideoStreamConfiguration> {
         let this = self;
         unsafe {
@@ -12684,10 +12684,10 @@ impl<'a> ::windows_core::IntoParam<'a, super::IMediaExtension> for &VideoStabili
 }
 unsafe impl ::core::marker::Send for VideoStabilizationEffect {}
 unsafe impl ::core::marker::Sync for VideoStabilizationEffect {}
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 #[repr(transparent)]
 pub struct VideoStabilizationEffectDefinition(::windows_core::IUnknown);
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl VideoStabilizationEffectDefinition {
     pub fn new() -> ::windows_core::Result<Self> {
         Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
@@ -12696,7 +12696,7 @@ impl VideoStabilizationEffectDefinition {
         static mut SHARED: ::windows_core::FactoryCache<VideoStabilizationEffectDefinition, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn ActivatableClassId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
@@ -12704,7 +12704,7 @@ impl VideoStabilizationEffectDefinition {
             (::windows_core::Interface::vtable(this).ActivatableClassId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IPropertySet> {
         let this = self;
         unsafe {
@@ -12713,27 +12713,27 @@ impl VideoStabilizationEffectDefinition {
         }
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::clone::Clone for VideoStabilizationEffectDefinition {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::cmp::PartialEq for VideoStabilizationEffectDefinition {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::cmp::Eq for VideoStabilizationEffectDefinition {}
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::fmt::Debug for VideoStabilizationEffectDefinition {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("VideoStabilizationEffectDefinition").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 unsafe impl ::windows_core::RuntimeType for VideoStabilizationEffectDefinition {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Media.Core.VideoStabilizationEffectDefinition;{39f38cf0-8d0f-4f3e-84fc-2d46a5297943})");
     type DefaultType = ::core::option::Option<Self>;
@@ -12741,92 +12741,92 @@ unsafe impl ::windows_core::RuntimeType for VideoStabilizationEffectDefinition {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 unsafe impl ::windows_core::Interface for VideoStabilizationEffectDefinition {
     type Vtable = super::Effects::IVideoEffectDefinition_Vtbl;
     const IID: ::windows_core::GUID = <super::Effects::IVideoEffectDefinition as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::windows_core::RuntimeName for VideoStabilizationEffectDefinition {
     const NAME: &'static str = "Windows.Media.Core.VideoStabilizationEffectDefinition";
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::From<VideoStabilizationEffectDefinition> for ::windows_core::IUnknown {
     fn from(value: VideoStabilizationEffectDefinition) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::From<&VideoStabilizationEffectDefinition> for ::windows_core::IUnknown {
     fn from(value: &VideoStabilizationEffectDefinition) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for VideoStabilizationEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a VideoStabilizationEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::From<VideoStabilizationEffectDefinition> for ::windows_core::IInspectable {
     fn from(value: VideoStabilizationEffectDefinition) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::From<&VideoStabilizationEffectDefinition> for ::windows_core::IInspectable {
     fn from(value: &VideoStabilizationEffectDefinition) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for VideoStabilizationEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a VideoStabilizationEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::TryFrom<VideoStabilizationEffectDefinition> for super::Effects::IVideoEffectDefinition {
     type Error = ::windows_core::Error;
     fn try_from(value: VideoStabilizationEffectDefinition) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::TryFrom<&VideoStabilizationEffectDefinition> for super::Effects::IVideoEffectDefinition {
     type Error = ::windows_core::Error;
     fn try_from(value: &VideoStabilizationEffectDefinition) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, super::Effects::IVideoEffectDefinition> for VideoStabilizationEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, super::Effects::IVideoEffectDefinition> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, super::Effects::IVideoEffectDefinition> for &VideoStabilizationEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, super::Effects::IVideoEffectDefinition> {
         ::core::convert::TryInto::<super::Effects::IVideoEffectDefinition>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 unsafe impl ::core::marker::Send for VideoStabilizationEffectDefinition {}
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 unsafe impl ::core::marker::Sync for VideoStabilizationEffectDefinition {}
 #[repr(transparent)]
 pub struct VideoStabilizationEffectEnabledChangedEventArgs(::windows_core::IUnknown);
@@ -12988,7 +12988,7 @@ impl VideoStreamDescriptor {
             (::windows_core::Interface::vtable(this).Label)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn EncodingProperties(&self) -> ::windows_core::Result<super::MediaProperties::VideoEncodingProperties> {
         let this = self;
         unsafe {
@@ -13003,7 +13003,7 @@ impl VideoStreamDescriptor {
             (::windows_core::Interface::vtable(this).Copy)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VideoStreamDescriptor>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, super::MediaProperties::VideoEncodingProperties>>(encodingproperties: Param0) -> ::windows_core::Result<VideoStreamDescriptor> {
         Self::IVideoStreamDescriptorFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -13177,7 +13177,7 @@ impl VideoTrack {
         let this = &::windows_core::Interface::cast::<IVideoTrack>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveOpenFailed)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn GetEncodingProperties(&self) -> ::windows_core::Result<super::MediaProperties::VideoEncodingProperties> {
         let this = &::windows_core::Interface::cast::<IVideoTrack>(self)?;
         unsafe {
@@ -13185,7 +13185,7 @@ impl VideoTrack {
             (::windows_core::Interface::vtable(this).GetEncodingProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::MediaProperties::VideoEncodingProperties>(result__)
         }
     }
-    #[cfg(feature = "Media_Playback")]
+    #[cfg(feature = "winrt-media")]
     pub fn PlaybackItem(&self) -> ::windows_core::Result<super::Playback::MediaPlaybackItem> {
         let this = &::windows_core::Interface::cast::<IVideoTrack>(self)?;
         unsafe {

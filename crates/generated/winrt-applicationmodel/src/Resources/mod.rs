@@ -81,9 +81,9 @@ unsafe impl ::windows_core::Interface for IResourceLoaderStatics3 {
 #[doc(hidden)]
 pub struct IResourceLoaderStatics3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub GetForUIContext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, context: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI"))]
+    #[cfg(not(feature = "winrt-ui"))]
     GetForUIContext: usize,
 }
 #[doc(hidden)]
@@ -159,7 +159,7 @@ impl ResourceLoader {
             (::windows_core::Interface::vtable(this).GetForViewIndependentUseWithName)(::windows_core::Interface::as_raw(this), name.into_param().abi(), result__.as_mut_ptr()).from_abi::<ResourceLoader>(result__)
         })
     }
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GetForUIContext<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::UIContext>>(context: Param0) -> ::windows_core::Result<ResourceLoader> {
         Self::IResourceLoaderStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();

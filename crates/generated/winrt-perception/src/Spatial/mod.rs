@@ -58,9 +58,9 @@ unsafe impl ::windows_core::Interface for ISpatialAnchorExporter {
 pub struct ISpatialAnchorExporter_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub GetAnchorExportSufficiencyAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, anchor: ::windows_core::RawPtr, purpose: SpatialAnchorExportPurpose, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub TryExportAnchorAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, anchor: ::windows_core::RawPtr, purpose: SpatialAnchorExportPurpose, stream: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     TryExportAnchorAsync: usize,
 }
 #[doc(hidden)]
@@ -101,9 +101,9 @@ unsafe impl ::windows_core::Interface for ISpatialAnchorRawCoordinateSystemAdjus
 #[doc(hidden)]
 pub struct ISpatialAnchorRawCoordinateSystemAdjustedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub OldRawCoordinateSystemToNewRawCoordinateSystemTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Matrix4x4) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     OldRawCoordinateSystemToNewRawCoordinateSystemTransform: usize,
 }
 #[doc(hidden)]
@@ -118,13 +118,13 @@ unsafe impl ::windows_core::Interface for ISpatialAnchorStatics {
 pub struct ISpatialAnchorStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub TryCreateRelativeTo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub TryCreateWithPositionRelativeTo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, position: ::winrt_foundation::Numerics::Vector3, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TryCreateWithPositionRelativeTo: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub TryCreateWithPositionAndOrientationRelativeTo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, position: ::winrt_foundation::Numerics::Vector3, orientation: ::winrt_foundation::Numerics::Quaternion, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TryCreateWithPositionAndOrientationRelativeTo: usize,
 }
 #[doc(hidden)]
@@ -138,39 +138,39 @@ unsafe impl ::windows_core::Interface for ISpatialAnchorStore {
 #[doc(hidden)]
 pub struct ISpatialAnchorStore_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetAllSavedAnchors: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetAllSavedAnchors: usize,
     pub TrySave: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, anchor: ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
     pub Remove: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Clear: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct ISpatialAnchorTransferManagerStatics(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for ISpatialAnchorTransferManagerStatics {
     type Vtable = ISpatialAnchorTransferManagerStatics_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x03bbf9b9_12d8_4bce_8835_c5df3ac0adab);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct ISpatialAnchorTransferManagerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage", feature = "winrt-"))]
     pub TryImportAnchorsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage_Streams", feature = "deprecated")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-storage", feature = "winrt-")))]
     TryImportAnchorsAsync: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage", feature = "winrt-"))]
     pub TryExportAnchorsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, anchors: ::windows_core::RawPtr, stream: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage_Streams", feature = "deprecated")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-storage", feature = "winrt-")))]
     TryExportAnchorsAsync: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub RequestAccessAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     RequestAccessAsync: usize,
 }
 #[doc(hidden)]
@@ -196,21 +196,21 @@ unsafe impl ::windows_core::Interface for ISpatialBoundingVolumeStatics {
 #[doc(hidden)]
 pub struct ISpatialBoundingVolumeStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub FromBox: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, r#box: SpatialBoundingBox, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     FromBox: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub FromOrientedBox: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, r#box: SpatialBoundingOrientedBox, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     FromOrientedBox: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub FromSphere: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, sphere: SpatialBoundingSphere, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     FromSphere: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub FromFrustum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, frustum: SpatialBoundingFrustum, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     FromFrustum: usize,
 }
 #[doc(hidden)]
@@ -224,9 +224,9 @@ unsafe impl ::windows_core::Interface for ISpatialCoordinateSystem {
 #[doc(hidden)]
 pub struct ISpatialCoordinateSystem_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub TryGetTransformTo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, target: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TryGetTransformTo: usize,
 }
 #[doc(hidden)]
@@ -242,9 +242,9 @@ pub struct ISpatialEntity_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Anchor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Properties: usize,
 }
 #[doc(hidden)]
@@ -272,9 +272,9 @@ unsafe impl ::windows_core::Interface for ISpatialEntityFactory {
 pub struct ISpatialEntityFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub CreateWithSpatialAnchor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, spatialanchor: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub CreateWithSpatialAnchorAndProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, spatialanchor: ::windows_core::RawPtr, propertyset: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CreateWithSpatialAnchorAndProperties: usize,
 }
 #[doc(hidden)]
@@ -317,9 +317,9 @@ unsafe impl ::windows_core::Interface for ISpatialEntityStoreStatics {
 pub struct ISpatialEntityStoreStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "System_RemoteSystems")]
+    #[cfg(feature = "winrt-system")]
     pub TryGetForRemoteSystemSession: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, session: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System_RemoteSystems"))]
+    #[cfg(not(feature = "winrt-system"))]
     TryGetForRemoteSystemSession: usize,
 }
 #[doc(hidden)]
@@ -369,29 +369,29 @@ unsafe impl ::windows_core::Interface for ISpatialLocation {
 #[doc(hidden)]
 pub struct ISpatialLocation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Position: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Orientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Quaternion) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Orientation: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub AbsoluteLinearVelocity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     AbsoluteLinearVelocity: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub AbsoluteLinearAcceleration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     AbsoluteLinearAcceleration: usize,
-    #[cfg(all(feature = "Foundation_Numerics", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-"))]
     pub AbsoluteAngularVelocity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Quaternion) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Numerics", feature = "deprecated")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-")))]
     AbsoluteAngularVelocity: usize,
-    #[cfg(all(feature = "Foundation_Numerics", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-"))]
     pub AbsoluteAngularAcceleration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Quaternion) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Numerics", feature = "deprecated")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-")))]
     AbsoluteAngularAcceleration: usize,
 }
 #[doc(hidden)]
@@ -405,13 +405,13 @@ unsafe impl ::windows_core::Interface for ISpatialLocation2 {
 #[doc(hidden)]
 pub struct ISpatialLocation2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub AbsoluteAngularVelocityAxisAngle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     AbsoluteAngularVelocityAxisAngle: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub AbsoluteAngularAccelerationAxisAngle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     AbsoluteAngularAccelerationAxisAngle: usize,
 }
 #[doc(hidden)]
@@ -432,30 +432,30 @@ pub struct ISpatialLocator_Vtbl {
     pub RemovePositionalTrackingDeactivating: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub TryLocateAtTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, timestamp: ::windows_core::RawPtr, coordinatesystem: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateAttachedFrameOfReferenceAtCurrentHeading: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub CreateAttachedFrameOfReferenceAtCurrentHeadingWithPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relativeposition: ::winrt_foundation::Numerics::Vector3, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CreateAttachedFrameOfReferenceAtCurrentHeadingWithPosition: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relativeposition: ::winrt_foundation::Numerics::Vector3, relativeorientation: ::winrt_foundation::Numerics::Quaternion, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientation: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientationAndRelativeHeading: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relativeposition: ::winrt_foundation::Numerics::Vector3, relativeorientation: ::winrt_foundation::Numerics::Quaternion, relativeheadinginradians: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientationAndRelativeHeading: usize,
     pub CreateStationaryFrameOfReferenceAtCurrentLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub CreateStationaryFrameOfReferenceAtCurrentLocationWithPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relativeposition: ::winrt_foundation::Numerics::Vector3, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CreateStationaryFrameOfReferenceAtCurrentLocationWithPosition: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relativeposition: ::winrt_foundation::Numerics::Vector3, relativeorientation: ::winrt_foundation::Numerics::Quaternion, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientation: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientationAndRelativeHeading: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relativeposition: ::winrt_foundation::Numerics::Vector3, relativeorientation: ::winrt_foundation::Numerics::Quaternion, relativeheadinginradians: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientationAndRelativeHeading: usize,
 }
 #[doc(hidden)]
@@ -469,21 +469,21 @@ unsafe impl ::windows_core::Interface for ISpatialLocatorAttachedFrameOfReferenc
 #[doc(hidden)]
 pub struct ISpatialLocatorAttachedFrameOfReference_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub RelativePosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     RelativePosition: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetRelativePosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetRelativePosition: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub RelativeOrientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Quaternion) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     RelativeOrientation: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetRelativeOrientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Quaternion) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetRelativeOrientation: usize,
     pub AdjustHeading: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, headingoffsetinradians: f64) -> ::windows_core::HRESULT,
     pub GetStationaryCoordinateSystemAtTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, timestamp: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -531,9 +531,9 @@ pub struct ISpatialStageFrameOfReference_Vtbl {
     pub MovementRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SpatialMovementRange) -> ::windows_core::HRESULT,
     pub LookDirectionRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SpatialLookDirectionRange) -> ::windows_core::HRESULT,
     pub GetCoordinateSystemAtCurrentLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, locator: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub TryGetMovementBounds: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, result_size__: *mut u32, result__: *mut *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TryGetMovementBounds: usize,
 }
 #[doc(hidden)]
@@ -606,14 +606,14 @@ impl SpatialAnchor {
             (::windows_core::Interface::vtable(this).TryCreateRelativeTo)(::windows_core::Interface::as_raw(this), coordinatesystem.into_param().abi(), result__.as_mut_ptr()).from_abi::<SpatialAnchor>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TryCreateWithPositionRelativeTo<'a, Param0: ::windows_core::IntoParam<'a, SpatialCoordinateSystem>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(coordinatesystem: Param0, position: Param1) -> ::windows_core::Result<SpatialAnchor> {
         Self::ISpatialAnchorStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).TryCreateWithPositionRelativeTo)(::windows_core::Interface::as_raw(this), coordinatesystem.into_param().abi(), position.into_param().abi(), result__.as_mut_ptr()).from_abi::<SpatialAnchor>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TryCreateWithPositionAndOrientationRelativeTo<'a, Param0: ::windows_core::IntoParam<'a, SpatialCoordinateSystem>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(coordinatesystem: Param0, position: Param1, orientation: Param2) -> ::windows_core::Result<SpatialAnchor> {
         Self::ISpatialAnchorStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -837,7 +837,7 @@ impl SpatialAnchorExporter {
             (::windows_core::Interface::vtable(this).GetAnchorExportSufficiencyAsync)(::windows_core::Interface::as_raw(this), anchor.into_param().abi(), purpose, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SpatialAnchorExportSufficiency>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn TryExportAnchorAsync<'a, Param0: ::windows_core::IntoParam<'a, SpatialAnchor>, Param2: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream>>(&self, anchor: Param0, purpose: SpatialAnchorExportPurpose, stream: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
@@ -953,7 +953,7 @@ impl ::windows_core::RuntimeName for SpatialAnchorManager {
 #[repr(transparent)]
 pub struct SpatialAnchorRawCoordinateSystemAdjustedEventArgs(::windows_core::IUnknown);
 impl SpatialAnchorRawCoordinateSystemAdjustedEventArgs {
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn OldRawCoordinateSystemToNewRawCoordinateSystemTransform(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix4x4> {
         let this = self;
         unsafe {
@@ -1037,7 +1037,7 @@ unsafe impl ::core::marker::Sync for SpatialAnchorRawCoordinateSystemAdjustedEve
 #[repr(transparent)]
 pub struct SpatialAnchorStore(::windows_core::IUnknown);
 impl SpatialAnchorStore {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetAllSavedAnchors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, SpatialAnchor>> {
         let this = self;
         unsafe {
@@ -1133,66 +1133,66 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Spa
 }
 unsafe impl ::core::marker::Send for SpatialAnchorStore {}
 unsafe impl ::core::marker::Sync for SpatialAnchorStore {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 pub struct SpatialAnchorTransferManager;
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl SpatialAnchorTransferManager {
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage", feature = "winrt-"))]
     pub fn TryImportAnchorsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IInputStream>>(stream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, SpatialAnchor>>> {
         Self::ISpatialAnchorTransferManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).TryImportAnchorsAsync)(::windows_core::Interface::as_raw(this), stream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, SpatialAnchor>>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage", feature = "winrt-"))]
     pub fn TryExportAnchorsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, SpatialAnchor>>>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream>>(anchors: Param0, stream: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::ISpatialAnchorTransferManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).TryExportAnchorsAsync)(::windows_core::Interface::as_raw(this), anchors.into_param().abi(), stream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn RequestAccessAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SpatialPerceptionAccessStatus>> {
         Self::ISpatialAnchorTransferManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).RequestAccessAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SpatialPerceptionAccessStatus>>(result__)
         })
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn ISpatialAnchorTransferManagerStatics<R, F: FnOnce(&ISpatialAnchorTransferManagerStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
         static mut SHARED: ::windows_core::FactoryCache<SpatialAnchorTransferManager, ISpatialAnchorTransferManagerStatics> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::windows_core::RuntimeName for SpatialAnchorTransferManager {
     const NAME: &'static str = "Windows.Perception.Spatial.SpatialAnchorTransferManager";
 }
 #[repr(C)]
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 pub struct SpatialBoundingBox {
     pub Center: ::winrt_foundation::Numerics::Vector3,
     pub Extents: ::winrt_foundation::Numerics::Vector3,
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::marker::Copy for SpatialBoundingBox {}
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::clone::Clone for SpatialBoundingBox {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::fmt::Debug for SpatialBoundingBox {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SpatialBoundingBox").field("Center", &self.Center).field("Extents", &self.Extents).finish()
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::Abi for SpatialBoundingBox {
     type Abi = Self;
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::RuntimeType for SpatialBoundingBox {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"struct(Windows.Perception.Spatial.SpatialBoundingBox;struct(Windows.Foundation.Numerics.Vector3;f4;f4;f4);struct(Windows.Foundation.Numerics.Vector3;f4;f4;f4))");
     type DefaultType = Self;
@@ -1200,22 +1200,22 @@ unsafe impl ::windows_core::RuntimeType for SpatialBoundingBox {
         Ok(*from)
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::PartialEq for SpatialBoundingBox {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SpatialBoundingBox>()) == 0 }
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::Eq for SpatialBoundingBox {}
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::default::Default for SpatialBoundingBox {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 pub struct SpatialBoundingFrustum {
     pub Near: ::winrt_foundation::Numerics::Plane,
     pub Far: ::winrt_foundation::Numerics::Plane,
@@ -1224,25 +1224,25 @@ pub struct SpatialBoundingFrustum {
     pub Top: ::winrt_foundation::Numerics::Plane,
     pub Bottom: ::winrt_foundation::Numerics::Plane,
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::marker::Copy for SpatialBoundingFrustum {}
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::clone::Clone for SpatialBoundingFrustum {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::fmt::Debug for SpatialBoundingFrustum {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SpatialBoundingFrustum").field("Near", &self.Near).field("Far", &self.Far).field("Right", &self.Right).field("Left", &self.Left).field("Top", &self.Top).field("Bottom", &self.Bottom).finish()
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::Abi for SpatialBoundingFrustum {
     type Abi = Self;
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::RuntimeType for SpatialBoundingFrustum {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"struct(Windows.Perception.Spatial.SpatialBoundingFrustum;struct(Windows.Foundation.Numerics.Plane;struct(Windows.Foundation.Numerics.Vector3;f4;f4;f4);f4);struct(Windows.Foundation.Numerics.Plane;struct(Windows.Foundation.Numerics.Vector3;f4;f4;f4);f4);struct(Windows.Foundation.Numerics.Plane;struct(Windows.Foundation.Numerics.Vector3;f4;f4;f4);f4);struct(Windows.Foundation.Numerics.Plane;struct(Windows.Foundation.Numerics.Vector3;f4;f4;f4);f4);struct(Windows.Foundation.Numerics.Plane;struct(Windows.Foundation.Numerics.Vector3;f4;f4;f4);f4);struct(Windows.Foundation.Numerics.Plane;struct(Windows.Foundation.Numerics.Vector3;f4;f4;f4);f4))");
     type DefaultType = Self;
@@ -1250,46 +1250,46 @@ unsafe impl ::windows_core::RuntimeType for SpatialBoundingFrustum {
         Ok(*from)
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::PartialEq for SpatialBoundingFrustum {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SpatialBoundingFrustum>()) == 0 }
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::Eq for SpatialBoundingFrustum {}
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::default::Default for SpatialBoundingFrustum {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 pub struct SpatialBoundingOrientedBox {
     pub Center: ::winrt_foundation::Numerics::Vector3,
     pub Extents: ::winrt_foundation::Numerics::Vector3,
     pub Orientation: ::winrt_foundation::Numerics::Quaternion,
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::marker::Copy for SpatialBoundingOrientedBox {}
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::clone::Clone for SpatialBoundingOrientedBox {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::fmt::Debug for SpatialBoundingOrientedBox {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SpatialBoundingOrientedBox").field("Center", &self.Center).field("Extents", &self.Extents).field("Orientation", &self.Orientation).finish()
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::Abi for SpatialBoundingOrientedBox {
     type Abi = Self;
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::RuntimeType for SpatialBoundingOrientedBox {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"struct(Windows.Perception.Spatial.SpatialBoundingOrientedBox;struct(Windows.Foundation.Numerics.Vector3;f4;f4;f4);struct(Windows.Foundation.Numerics.Vector3;f4;f4;f4);struct(Windows.Foundation.Numerics.Quaternion;f4;f4;f4;f4))");
     type DefaultType = Self;
@@ -1297,45 +1297,45 @@ unsafe impl ::windows_core::RuntimeType for SpatialBoundingOrientedBox {
         Ok(*from)
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::PartialEq for SpatialBoundingOrientedBox {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SpatialBoundingOrientedBox>()) == 0 }
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::Eq for SpatialBoundingOrientedBox {}
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::default::Default for SpatialBoundingOrientedBox {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 pub struct SpatialBoundingSphere {
     pub Center: ::winrt_foundation::Numerics::Vector3,
     pub Radius: f32,
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::marker::Copy for SpatialBoundingSphere {}
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::clone::Clone for SpatialBoundingSphere {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::fmt::Debug for SpatialBoundingSphere {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SpatialBoundingSphere").field("Center", &self.Center).field("Radius", &self.Radius).finish()
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::Abi for SpatialBoundingSphere {
     type Abi = Self;
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::RuntimeType for SpatialBoundingSphere {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"struct(Windows.Perception.Spatial.SpatialBoundingSphere;struct(Windows.Foundation.Numerics.Vector3;f4;f4;f4);f4)");
     type DefaultType = Self;
@@ -1343,15 +1343,15 @@ unsafe impl ::windows_core::RuntimeType for SpatialBoundingSphere {
         Ok(*from)
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::PartialEq for SpatialBoundingSphere {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SpatialBoundingSphere>()) == 0 }
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::Eq for SpatialBoundingSphere {}
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::default::Default for SpatialBoundingSphere {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1360,28 +1360,28 @@ impl ::core::default::Default for SpatialBoundingSphere {
 #[repr(transparent)]
 pub struct SpatialBoundingVolume(::windows_core::IUnknown);
 impl SpatialBoundingVolume {
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn FromBox<'a, Param0: ::windows_core::IntoParam<'a, SpatialCoordinateSystem>, Param1: ::windows_core::IntoParam<'a, SpatialBoundingBox>>(coordinatesystem: Param0, r#box: Param1) -> ::windows_core::Result<SpatialBoundingVolume> {
         Self::ISpatialBoundingVolumeStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).FromBox)(::windows_core::Interface::as_raw(this), coordinatesystem.into_param().abi(), r#box.into_param().abi(), result__.as_mut_ptr()).from_abi::<SpatialBoundingVolume>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn FromOrientedBox<'a, Param0: ::windows_core::IntoParam<'a, SpatialCoordinateSystem>, Param1: ::windows_core::IntoParam<'a, SpatialBoundingOrientedBox>>(coordinatesystem: Param0, r#box: Param1) -> ::windows_core::Result<SpatialBoundingVolume> {
         Self::ISpatialBoundingVolumeStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).FromOrientedBox)(::windows_core::Interface::as_raw(this), coordinatesystem.into_param().abi(), r#box.into_param().abi(), result__.as_mut_ptr()).from_abi::<SpatialBoundingVolume>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn FromSphere<'a, Param0: ::windows_core::IntoParam<'a, SpatialCoordinateSystem>, Param1: ::windows_core::IntoParam<'a, SpatialBoundingSphere>>(coordinatesystem: Param0, sphere: Param1) -> ::windows_core::Result<SpatialBoundingVolume> {
         Self::ISpatialBoundingVolumeStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).FromSphere)(::windows_core::Interface::as_raw(this), coordinatesystem.into_param().abi(), sphere.into_param().abi(), result__.as_mut_ptr()).from_abi::<SpatialBoundingVolume>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn FromFrustum<'a, Param0: ::windows_core::IntoParam<'a, SpatialCoordinateSystem>, Param1: ::windows_core::IntoParam<'a, SpatialBoundingFrustum>>(coordinatesystem: Param0, frustum: Param1) -> ::windows_core::Result<SpatialBoundingVolume> {
         Self::ISpatialBoundingVolumeStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1468,7 +1468,7 @@ unsafe impl ::core::marker::Sync for SpatialBoundingVolume {}
 #[repr(transparent)]
 pub struct SpatialCoordinateSystem(::windows_core::IUnknown);
 impl SpatialCoordinateSystem {
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TryGetTransformTo<'a, Param0: ::windows_core::IntoParam<'a, SpatialCoordinateSystem>>(&self, target: Param0) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::Numerics::Matrix4x4>> {
         let this = self;
         unsafe {
@@ -1566,7 +1566,7 @@ impl SpatialEntity {
             (::windows_core::Interface::vtable(this).Anchor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SpatialAnchor>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = self;
         unsafe {
@@ -1580,7 +1580,7 @@ impl SpatialEntity {
             (::windows_core::Interface::vtable(this).CreateWithSpatialAnchor)(::windows_core::Interface::as_raw(this), spatialanchor.into_param().abi(), result__.as_mut_ptr()).from_abi::<SpatialEntity>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CreateWithSpatialAnchorAndProperties<'a, Param0: ::windows_core::IntoParam<'a, SpatialAnchor>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::ValueSet>>(spatialanchor: Param0, propertyset: Param1) -> ::windows_core::Result<SpatialEntity> {
         Self::ISpatialEntityFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1860,7 +1860,7 @@ impl SpatialEntityStore {
             (::windows_core::Interface::vtable(this).IsSupported)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         })
     }
-    #[cfg(feature = "System_RemoteSystems")]
+    #[cfg(feature = "winrt-system")]
     pub fn TryGetForRemoteSystemSession<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::RemoteSystems::RemoteSystemSession>>(session: Param0) -> ::windows_core::Result<SpatialEntityStore> {
         Self::ISpatialEntityStoreStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -2238,7 +2238,7 @@ unsafe impl ::windows_core::RuntimeType for SpatialLocatability {
 #[repr(transparent)]
 pub struct SpatialLocation(::windows_core::IUnknown);
 impl SpatialLocation {
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -2246,7 +2246,7 @@ impl SpatialLocation {
             (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Orientation(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Quaternion> {
         let this = self;
         unsafe {
@@ -2254,7 +2254,7 @@ impl SpatialLocation {
             (::windows_core::Interface::vtable(this).Orientation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Quaternion>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AbsoluteLinearVelocity(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -2262,7 +2262,7 @@ impl SpatialLocation {
             (::windows_core::Interface::vtable(this).AbsoluteLinearVelocity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AbsoluteLinearAcceleration(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -2270,7 +2270,7 @@ impl SpatialLocation {
             (::windows_core::Interface::vtable(this).AbsoluteLinearAcceleration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Numerics", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-"))]
     pub fn AbsoluteAngularVelocity(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Quaternion> {
         let this = self;
         unsafe {
@@ -2278,7 +2278,7 @@ impl SpatialLocation {
             (::windows_core::Interface::vtable(this).AbsoluteAngularVelocity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Quaternion>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Numerics", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-"))]
     pub fn AbsoluteAngularAcceleration(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Quaternion> {
         let this = self;
         unsafe {
@@ -2286,7 +2286,7 @@ impl SpatialLocation {
             (::windows_core::Interface::vtable(this).AbsoluteAngularAcceleration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Quaternion>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AbsoluteAngularVelocityAxisAngle(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<ISpatialLocation2>(self)?;
         unsafe {
@@ -2294,7 +2294,7 @@ impl SpatialLocation {
             (::windows_core::Interface::vtable(this).AbsoluteAngularVelocityAxisAngle)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AbsoluteAngularAccelerationAxisAngle(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<ISpatialLocation2>(self)?;
         unsafe {
@@ -2421,7 +2421,7 @@ impl SpatialLocator {
             (::windows_core::Interface::vtable(this).CreateAttachedFrameOfReferenceAtCurrentHeading)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SpatialLocatorAttachedFrameOfReference>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CreateAttachedFrameOfReferenceAtCurrentHeadingWithPosition<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, relativeposition: Param0) -> ::windows_core::Result<SpatialLocatorAttachedFrameOfReference> {
         let this = self;
         unsafe {
@@ -2429,7 +2429,7 @@ impl SpatialLocator {
             (::windows_core::Interface::vtable(this).CreateAttachedFrameOfReferenceAtCurrentHeadingWithPosition)(::windows_core::Interface::as_raw(this), relativeposition.into_param().abi(), result__.as_mut_ptr()).from_abi::<SpatialLocatorAttachedFrameOfReference>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, relativeposition: Param0, relativeorientation: Param1) -> ::windows_core::Result<SpatialLocatorAttachedFrameOfReference> {
         let this = self;
         unsafe {
@@ -2437,7 +2437,7 @@ impl SpatialLocator {
             (::windows_core::Interface::vtable(this).CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientation)(::windows_core::Interface::as_raw(this), relativeposition.into_param().abi(), relativeorientation.into_param().abi(), result__.as_mut_ptr()).from_abi::<SpatialLocatorAttachedFrameOfReference>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientationAndRelativeHeading<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, relativeposition: Param0, relativeorientation: Param1, relativeheadinginradians: f64) -> ::windows_core::Result<SpatialLocatorAttachedFrameOfReference> {
         let this = self;
         unsafe {
@@ -2452,7 +2452,7 @@ impl SpatialLocator {
             (::windows_core::Interface::vtable(this).CreateStationaryFrameOfReferenceAtCurrentLocation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SpatialStationaryFrameOfReference>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CreateStationaryFrameOfReferenceAtCurrentLocationWithPosition<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, relativeposition: Param0) -> ::windows_core::Result<SpatialStationaryFrameOfReference> {
         let this = self;
         unsafe {
@@ -2460,7 +2460,7 @@ impl SpatialLocator {
             (::windows_core::Interface::vtable(this).CreateStationaryFrameOfReferenceAtCurrentLocationWithPosition)(::windows_core::Interface::as_raw(this), relativeposition.into_param().abi(), result__.as_mut_ptr()).from_abi::<SpatialStationaryFrameOfReference>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, relativeposition: Param0, relativeorientation: Param1) -> ::windows_core::Result<SpatialStationaryFrameOfReference> {
         let this = self;
         unsafe {
@@ -2468,7 +2468,7 @@ impl SpatialLocator {
             (::windows_core::Interface::vtable(this).CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientation)(::windows_core::Interface::as_raw(this), relativeposition.into_param().abi(), relativeorientation.into_param().abi(), result__.as_mut_ptr()).from_abi::<SpatialStationaryFrameOfReference>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientationAndRelativeHeading<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, relativeposition: Param0, relativeorientation: Param1, relativeheadinginradians: f64) -> ::windows_core::Result<SpatialStationaryFrameOfReference> {
         let this = self;
         unsafe {
@@ -2562,7 +2562,7 @@ unsafe impl ::core::marker::Sync for SpatialLocator {}
 #[repr(transparent)]
 pub struct SpatialLocatorAttachedFrameOfReference(::windows_core::IUnknown);
 impl SpatialLocatorAttachedFrameOfReference {
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RelativePosition(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -2570,12 +2570,12 @@ impl SpatialLocatorAttachedFrameOfReference {
             (::windows_core::Interface::vtable(this).RelativePosition)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRelativePosition<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetRelativePosition)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RelativeOrientation(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Quaternion> {
         let this = self;
         unsafe {
@@ -2583,7 +2583,7 @@ impl SpatialLocatorAttachedFrameOfReference {
             (::windows_core::Interface::vtable(this).RelativeOrientation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Quaternion>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRelativeOrientation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetRelativeOrientation)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -2868,30 +2868,30 @@ unsafe impl ::windows_core::RuntimeType for SpatialPerceptionAccessStatus {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 pub struct SpatialRay {
     pub Origin: ::winrt_foundation::Numerics::Vector3,
     pub Direction: ::winrt_foundation::Numerics::Vector3,
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::marker::Copy for SpatialRay {}
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::clone::Clone for SpatialRay {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::fmt::Debug for SpatialRay {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SpatialRay").field("Origin", &self.Origin).field("Direction", &self.Direction).finish()
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::Abi for SpatialRay {
     type Abi = Self;
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::RuntimeType for SpatialRay {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"struct(Windows.Perception.Spatial.SpatialRay;struct(Windows.Foundation.Numerics.Vector3;f4;f4;f4);struct(Windows.Foundation.Numerics.Vector3;f4;f4;f4))");
     type DefaultType = Self;
@@ -2899,15 +2899,15 @@ unsafe impl ::windows_core::RuntimeType for SpatialRay {
         Ok(*from)
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::PartialEq for SpatialRay {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SpatialRay>()) == 0 }
     }
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::Eq for SpatialRay {}
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::default::Default for SpatialRay {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2944,7 +2944,7 @@ impl SpatialStageFrameOfReference {
             (::windows_core::Interface::vtable(this).GetCoordinateSystemAtCurrentLocation)(::windows_core::Interface::as_raw(this), locator.into_param().abi(), result__.as_mut_ptr()).from_abi::<SpatialCoordinateSystem>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TryGetMovementBounds<'a, Param0: ::windows_core::IntoParam<'a, SpatialCoordinateSystem>>(&self, coordinatesystem: Param0) -> ::windows_core::Result<::windows_core::Array<::winrt_foundation::Numerics::Vector3>> {
         let this = self;
         unsafe {

@@ -325,7 +325,7 @@ impl ::core::default::Default for CERT_VERIFY_CERTIFICATE_TRUST {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-ui", feature = "win32-ui"))]
 pub struct CERT_VIEWPROPERTIES_STRUCT_A {
     pub dwSize: u32,
     pub hwndParent: ::win32_foundation::HWND,
@@ -350,15 +350,15 @@ pub struct CERT_VIEWPROPERTIES_STRUCT_A {
     pub cArrayPropSheetPages: u32,
     pub arrayPropSheetPages: *mut ::win32_ui::Controls::PROPSHEETPAGEA,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::marker::Copy for CERT_VIEWPROPERTIES_STRUCT_A {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::clone::Clone for CERT_VIEWPROPERTIES_STRUCT_A {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::fmt::Debug for CERT_VIEWPROPERTIES_STRUCT_A {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CERT_VIEWPROPERTIES_STRUCT_A")
@@ -387,19 +387,19 @@ impl ::core::fmt::Debug for CERT_VIEWPROPERTIES_STRUCT_A {
             .finish()
     }
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-ui", feature = "win32-ui"))]
 unsafe impl ::windows_core::Abi for CERT_VIEWPROPERTIES_STRUCT_A {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::cmp::PartialEq for CERT_VIEWPROPERTIES_STRUCT_A {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_VIEWPROPERTIES_STRUCT_A>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::cmp::Eq for CERT_VIEWPROPERTIES_STRUCT_A {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::default::Default for CERT_VIEWPROPERTIES_STRUCT_A {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -466,7 +466,7 @@ impl ::core::ops::Not for CERT_VIEWPROPERTIES_STRUCT_FLAGS {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-ui", feature = "win32-ui"))]
 pub struct CERT_VIEWPROPERTIES_STRUCT_W {
     pub dwSize: u32,
     pub hwndParent: ::win32_foundation::HWND,
@@ -491,15 +491,15 @@ pub struct CERT_VIEWPROPERTIES_STRUCT_W {
     pub cArrayPropSheetPages: u32,
     pub arrayPropSheetPages: *mut ::win32_ui::Controls::PROPSHEETPAGEA,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::marker::Copy for CERT_VIEWPROPERTIES_STRUCT_W {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::clone::Clone for CERT_VIEWPROPERTIES_STRUCT_W {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::fmt::Debug for CERT_VIEWPROPERTIES_STRUCT_W {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CERT_VIEWPROPERTIES_STRUCT_W")
@@ -528,19 +528,19 @@ impl ::core::fmt::Debug for CERT_VIEWPROPERTIES_STRUCT_W {
             .finish()
     }
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-ui", feature = "win32-ui"))]
 unsafe impl ::windows_core::Abi for CERT_VIEWPROPERTIES_STRUCT_W {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::cmp::PartialEq for CERT_VIEWPROPERTIES_STRUCT_W {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_VIEWPROPERTIES_STRUCT_W>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::cmp::Eq for CERT_VIEWPROPERTIES_STRUCT_W {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::default::Default for CERT_VIEWPROPERTIES_STRUCT_W {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -762,7 +762,7 @@ impl ::core::ops::Not for CRYPTUI_VIEWCERTIFICATE_FLAGS {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 pub struct CRYPTUI_VIEWCERTIFICATE_STRUCTA {
     pub dwSize: u32,
     pub hwndParent: ::win32_foundation::HWND,
@@ -783,66 +783,66 @@ pub struct CRYPTUI_VIEWCERTIFICATE_STRUCTA {
     pub rgPropSheetPages: *mut ::win32_ui::Controls::PROPSHEETPAGEA,
     pub nStartPage: u32,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::marker::Copy for CRYPTUI_VIEWCERTIFICATE_STRUCTA {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::clone::Clone for CRYPTUI_VIEWCERTIFICATE_STRUCTA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 unsafe impl ::windows_core::Abi for CRYPTUI_VIEWCERTIFICATE_STRUCTA {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::cmp::PartialEq for CRYPTUI_VIEWCERTIFICATE_STRUCTA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPTUI_VIEWCERTIFICATE_STRUCTA>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::cmp::Eq for CRYPTUI_VIEWCERTIFICATE_STRUCTA {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::default::Default for CRYPTUI_VIEWCERTIFICATE_STRUCTA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 pub union CRYPTUI_VIEWCERTIFICATE_STRUCTA_0 {
     pub pCryptProviderData: *const super::super::WinTrust::CRYPT_PROVIDER_DATA,
     pub hWVTStateData: ::win32_foundation::HANDLE,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::marker::Copy for CRYPTUI_VIEWCERTIFICATE_STRUCTA_0 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::clone::Clone for CRYPTUI_VIEWCERTIFICATE_STRUCTA_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 unsafe impl ::windows_core::Abi for CRYPTUI_VIEWCERTIFICATE_STRUCTA_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::cmp::PartialEq for CRYPTUI_VIEWCERTIFICATE_STRUCTA_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPTUI_VIEWCERTIFICATE_STRUCTA_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::cmp::Eq for CRYPTUI_VIEWCERTIFICATE_STRUCTA_0 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::default::Default for CRYPTUI_VIEWCERTIFICATE_STRUCTA_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 pub struct CRYPTUI_VIEWCERTIFICATE_STRUCTW {
     pub dwSize: u32,
     pub hwndParent: ::win32_foundation::HWND,
@@ -863,59 +863,59 @@ pub struct CRYPTUI_VIEWCERTIFICATE_STRUCTW {
     pub rgPropSheetPages: *mut ::win32_ui::Controls::PROPSHEETPAGEW,
     pub nStartPage: u32,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::marker::Copy for CRYPTUI_VIEWCERTIFICATE_STRUCTW {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::clone::Clone for CRYPTUI_VIEWCERTIFICATE_STRUCTW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 unsafe impl ::windows_core::Abi for CRYPTUI_VIEWCERTIFICATE_STRUCTW {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::cmp::PartialEq for CRYPTUI_VIEWCERTIFICATE_STRUCTW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPTUI_VIEWCERTIFICATE_STRUCTW>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::cmp::Eq for CRYPTUI_VIEWCERTIFICATE_STRUCTW {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::default::Default for CRYPTUI_VIEWCERTIFICATE_STRUCTW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 pub union CRYPTUI_VIEWCERTIFICATE_STRUCTW_0 {
     pub pCryptProviderData: *const super::super::WinTrust::CRYPT_PROVIDER_DATA,
     pub hWVTStateData: ::win32_foundation::HANDLE,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::marker::Copy for CRYPTUI_VIEWCERTIFICATE_STRUCTW_0 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::clone::Clone for CRYPTUI_VIEWCERTIFICATE_STRUCTW_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 unsafe impl ::windows_core::Abi for CRYPTUI_VIEWCERTIFICATE_STRUCTW_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::cmp::PartialEq for CRYPTUI_VIEWCERTIFICATE_STRUCTW_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPTUI_VIEWCERTIFICATE_STRUCTW_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::cmp::Eq for CRYPTUI_VIEWCERTIFICATE_STRUCTW_0 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 impl ::core::default::Default for CRYPTUI_VIEWCERTIFICATE_STRUCTW_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1745,7 +1745,7 @@ pub unsafe fn CryptUIDlgSelectCertificateFromStore<'a, Param0: ::windows_core::I
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn CryptUIDlgViewCertificateA(pcertviewinfo: *const CRYPTUI_VIEWCERTIFICATE_STRUCTA, pfpropertieschanged: *mut ::win32_foundation::BOOL) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -1759,7 +1759,7 @@ pub unsafe fn CryptUIDlgViewCertificateA(pcertviewinfo: *const CRYPTUI_VIEWCERTI
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-security", feature = "win32-security", feature = "win32-security", feature = "win32-ui", feature = "win32-ui"))]
 #[inline]
 pub unsafe fn CryptUIDlgViewCertificateW(pcertviewinfo: *const CRYPTUI_VIEWCERTIFICATE_STRUCTW, pfpropertieschanged: *mut ::win32_foundation::BOOL) -> ::win32_foundation::BOOL {
     #[cfg(windows)]

@@ -65,7 +65,7 @@ pub mod WiFiDirect;
 #[repr(transparent)]
 pub struct ILowLevelDevicesAggregateProvider(::windows_core::IUnknown);
 impl ILowLevelDevicesAggregateProvider {
-    #[cfg(feature = "Devices_Adc_Provider")]
+    #[cfg(feature = "winrt-devices")]
     pub fn AdcControllerProvider(&self) -> ::windows_core::Result<Adc::Provider::IAdcControllerProvider> {
         let this = self;
         unsafe {
@@ -73,7 +73,7 @@ impl ILowLevelDevicesAggregateProvider {
             (::windows_core::Interface::vtable(this).AdcControllerProvider)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Adc::Provider::IAdcControllerProvider>(result__)
         }
     }
-    #[cfg(feature = "Devices_Pwm_Provider")]
+    #[cfg(feature = "winrt-devices")]
     pub fn PwmControllerProvider(&self) -> ::windows_core::Result<Pwm::Provider::IPwmControllerProvider> {
         let this = self;
         unsafe {
@@ -81,7 +81,7 @@ impl ILowLevelDevicesAggregateProvider {
             (::windows_core::Interface::vtable(this).PwmControllerProvider)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Pwm::Provider::IPwmControllerProvider>(result__)
         }
     }
-    #[cfg(feature = "Devices_Gpio_Provider")]
+    #[cfg(feature = "winrt-devices")]
     pub fn GpioControllerProvider(&self) -> ::windows_core::Result<Gpio::Provider::IGpioControllerProvider> {
         let this = self;
         unsafe {
@@ -89,7 +89,7 @@ impl ILowLevelDevicesAggregateProvider {
             (::windows_core::Interface::vtable(this).GpioControllerProvider)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Gpio::Provider::IGpioControllerProvider>(result__)
         }
     }
-    #[cfg(feature = "Devices_I2c_Provider")]
+    #[cfg(feature = "winrt-devices")]
     pub fn I2cControllerProvider(&self) -> ::windows_core::Result<I2c::Provider::II2cControllerProvider> {
         let this = self;
         unsafe {
@@ -97,7 +97,7 @@ impl ILowLevelDevicesAggregateProvider {
             (::windows_core::Interface::vtable(this).I2cControllerProvider)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<I2c::Provider::II2cControllerProvider>(result__)
         }
     }
-    #[cfg(feature = "Devices_Spi_Provider")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SpiControllerProvider(&self) -> ::windows_core::Result<Spi::Provider::ISpiControllerProvider> {
         let this = self;
         unsafe {
@@ -177,25 +177,25 @@ unsafe impl ::windows_core::Interface for ILowLevelDevicesAggregateProvider {
 #[doc(hidden)]
 pub struct ILowLevelDevicesAggregateProvider_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Adc_Provider")]
+    #[cfg(feature = "winrt-devices")]
     pub AdcControllerProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Adc_Provider"))]
+    #[cfg(not(feature = "winrt-devices"))]
     AdcControllerProvider: usize,
-    #[cfg(feature = "Devices_Pwm_Provider")]
+    #[cfg(feature = "winrt-devices")]
     pub PwmControllerProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Pwm_Provider"))]
+    #[cfg(not(feature = "winrt-devices"))]
     PwmControllerProvider: usize,
-    #[cfg(feature = "Devices_Gpio_Provider")]
+    #[cfg(feature = "winrt-devices")]
     pub GpioControllerProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Gpio_Provider"))]
+    #[cfg(not(feature = "winrt-devices"))]
     GpioControllerProvider: usize,
-    #[cfg(feature = "Devices_I2c_Provider")]
+    #[cfg(feature = "winrt-devices")]
     pub I2cControllerProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_I2c_Provider"))]
+    #[cfg(not(feature = "winrt-devices"))]
     I2cControllerProvider: usize,
-    #[cfg(feature = "Devices_Spi_Provider")]
+    #[cfg(feature = "winrt-devices")]
     pub SpiControllerProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Spi_Provider"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SpiControllerProvider: usize,
 }
 #[doc(hidden)]
@@ -209,9 +209,9 @@ unsafe impl ::windows_core::Interface for ILowLevelDevicesAggregateProviderFacto
 #[doc(hidden)]
 pub struct ILowLevelDevicesAggregateProviderFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Devices_Adc_Provider", feature = "Devices_Gpio_Provider", feature = "Devices_I2c_Provider", feature = "Devices_Pwm_Provider", feature = "Devices_Spi_Provider"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-devices", feature = "winrt-devices", feature = "winrt-devices", feature = "winrt-devices"))]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, adc: ::windows_core::RawPtr, pwm: ::windows_core::RawPtr, gpio: ::windows_core::RawPtr, i2c: ::windows_core::RawPtr, spi: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Adc_Provider", feature = "Devices_Gpio_Provider", feature = "Devices_I2c_Provider", feature = "Devices_Pwm_Provider", feature = "Devices_Spi_Provider")))]
+    #[cfg(not(all(feature = "winrt-devices", feature = "winrt-devices", feature = "winrt-devices", feature = "winrt-devices", feature = "winrt-devices")))]
     Create: usize,
 }
 #[doc(hidden)]
@@ -243,7 +243,7 @@ pub struct ILowLevelDevicesControllerStatics_Vtbl {
 #[repr(transparent)]
 pub struct LowLevelDevicesAggregateProvider(::windows_core::IUnknown);
 impl LowLevelDevicesAggregateProvider {
-    #[cfg(feature = "Devices_Adc_Provider")]
+    #[cfg(feature = "winrt-devices")]
     pub fn AdcControllerProvider(&self) -> ::windows_core::Result<Adc::Provider::IAdcControllerProvider> {
         let this = self;
         unsafe {
@@ -251,7 +251,7 @@ impl LowLevelDevicesAggregateProvider {
             (::windows_core::Interface::vtable(this).AdcControllerProvider)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Adc::Provider::IAdcControllerProvider>(result__)
         }
     }
-    #[cfg(feature = "Devices_Pwm_Provider")]
+    #[cfg(feature = "winrt-devices")]
     pub fn PwmControllerProvider(&self) -> ::windows_core::Result<Pwm::Provider::IPwmControllerProvider> {
         let this = self;
         unsafe {
@@ -259,7 +259,7 @@ impl LowLevelDevicesAggregateProvider {
             (::windows_core::Interface::vtable(this).PwmControllerProvider)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Pwm::Provider::IPwmControllerProvider>(result__)
         }
     }
-    #[cfg(feature = "Devices_Gpio_Provider")]
+    #[cfg(feature = "winrt-devices")]
     pub fn GpioControllerProvider(&self) -> ::windows_core::Result<Gpio::Provider::IGpioControllerProvider> {
         let this = self;
         unsafe {
@@ -267,7 +267,7 @@ impl LowLevelDevicesAggregateProvider {
             (::windows_core::Interface::vtable(this).GpioControllerProvider)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Gpio::Provider::IGpioControllerProvider>(result__)
         }
     }
-    #[cfg(feature = "Devices_I2c_Provider")]
+    #[cfg(feature = "winrt-devices")]
     pub fn I2cControllerProvider(&self) -> ::windows_core::Result<I2c::Provider::II2cControllerProvider> {
         let this = self;
         unsafe {
@@ -275,7 +275,7 @@ impl LowLevelDevicesAggregateProvider {
             (::windows_core::Interface::vtable(this).I2cControllerProvider)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<I2c::Provider::II2cControllerProvider>(result__)
         }
     }
-    #[cfg(feature = "Devices_Spi_Provider")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SpiControllerProvider(&self) -> ::windows_core::Result<Spi::Provider::ISpiControllerProvider> {
         let this = self;
         unsafe {
@@ -283,7 +283,7 @@ impl LowLevelDevicesAggregateProvider {
             (::windows_core::Interface::vtable(this).SpiControllerProvider)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Spi::Provider::ISpiControllerProvider>(result__)
         }
     }
-    #[cfg(all(feature = "Devices_Adc_Provider", feature = "Devices_Gpio_Provider", feature = "Devices_I2c_Provider", feature = "Devices_Pwm_Provider", feature = "Devices_Spi_Provider"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-devices", feature = "winrt-devices", feature = "winrt-devices", feature = "winrt-devices"))]
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, Adc::Provider::IAdcControllerProvider>, Param1: ::windows_core::IntoParam<'a, Pwm::Provider::IPwmControllerProvider>, Param2: ::windows_core::IntoParam<'a, Gpio::Provider::IGpioControllerProvider>, Param3: ::windows_core::IntoParam<'a, I2c::Provider::II2cControllerProvider>, Param4: ::windows_core::IntoParam<'a, Spi::Provider::ISpiControllerProvider>>(adc: Param0, pwm: Param1, gpio: Param2, i2c: Param3, spi: Param4) -> ::windows_core::Result<LowLevelDevicesAggregateProvider> {
         Self::ILowLevelDevicesAggregateProviderFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();

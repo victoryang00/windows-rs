@@ -52,7 +52,7 @@ extern "system" {
     pub fn CopyImage(h: ::win32_foundation_sys::HANDLE, r#type: GDI_IMAGE_TYPE, cx: i32, cy: i32, flags: IMAGE_FLAGS) -> ::win32_foundation_sys::HANDLE;
     pub fn CreateAcceleratorTableA(paccel: *const ACCEL, caccel: i32) -> HACCEL;
     pub fn CreateAcceleratorTableW(paccel: *const ACCEL, caccel: i32) -> HACCEL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn CreateCaret(hwnd: ::win32_foundation_sys::HWND, hbitmap: ::win32_graphics_sys::Gdi::HBITMAP, nwidth: i32, nheight: i32) -> ::win32_foundation_sys::BOOL;
     pub fn CreateCursor(hinst: ::win32_foundation_sys::HINSTANCE, xhotspot: i32, yhotspot: i32, nwidth: i32, nheight: i32, pvandplane: *const ::core::ffi::c_void, pvxorplane: *const ::core::ffi::c_void) -> HCURSOR;
     pub fn CreateDialogIndirectParamA(hinstance: ::win32_foundation_sys::HINSTANCE, lptemplate: *const DLGTEMPLATE, hwndparent: ::win32_foundation_sys::HWND, lpdialogfunc: DLGPROC, dwinitparam: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::HWND;
@@ -62,7 +62,7 @@ extern "system" {
     pub fn CreateIcon(hinstance: ::win32_foundation_sys::HINSTANCE, nwidth: i32, nheight: i32, cplanes: u8, cbitspixel: u8, lpbandbits: *const u8, lpbxorbits: *const u8) -> HICON;
     pub fn CreateIconFromResource(presbits: *const u8, dwressize: u32, ficon: ::win32_foundation_sys::BOOL, dwver: u32) -> HICON;
     pub fn CreateIconFromResourceEx(presbits: *const u8, dwressize: u32, ficon: ::win32_foundation_sys::BOOL, dwver: u32, cxdesired: i32, cydesired: i32, flags: IMAGE_FLAGS) -> HICON;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn CreateIconIndirect(piconinfo: *const ICONINFO) -> HICON;
     pub fn CreateMDIWindowA(lpclassname: ::windows_core_sys::PCSTR, lpwindowname: ::windows_core_sys::PCSTR, dwstyle: WINDOW_STYLE, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: ::win32_foundation_sys::HWND, hinstance: ::win32_foundation_sys::HINSTANCE, lparam: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::HWND;
     pub fn CreateMDIWindowW(lpclassname: ::windows_core_sys::PCWSTR, lpwindowname: ::windows_core_sys::PCWSTR, dwstyle: WINDOW_STYLE, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: ::win32_foundation_sys::HWND, hinstance: ::win32_foundation_sys::HINSTANCE, lparam: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::HWND;
@@ -98,9 +98,9 @@ extern "system" {
     pub fn DispatchMessageA(lpmsg: *const MSG) -> ::win32_foundation_sys::LRESULT;
     pub fn DispatchMessageW(lpmsg: *const MSG) -> ::win32_foundation_sys::LRESULT;
     pub fn DragObject(hwndparent: ::win32_foundation_sys::HWND, hwndfrom: ::win32_foundation_sys::HWND, fmt: u32, data: usize, hcur: HCURSOR) -> u32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DrawIcon(hdc: ::win32_graphics_sys::Gdi::HDC, x: i32, y: i32, hicon: HICON) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DrawIconEx(hdc: ::win32_graphics_sys::Gdi::HDC, xleft: i32, ytop: i32, hicon: HICON, cxwidth: i32, cywidth: i32, istepifanicur: u32, hbrflickerfreedraw: ::win32_graphics_sys::Gdi::HBRUSH, diflags: DI_FLAGS) -> ::win32_foundation_sys::BOOL;
     pub fn DrawMenuBar(hwnd: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::BOOL;
     pub fn EnableMenuItem(hmenu: HMENU, uidenableitem: u32, uenable: MENU_ITEM_FLAGS) -> ::win32_foundation_sys::BOOL;
@@ -125,13 +125,13 @@ extern "system" {
     pub fn GetAncestor(hwnd: ::win32_foundation_sys::HWND, gaflags: GET_ANCESTOR_FLAGS) -> ::win32_foundation_sys::HWND;
     pub fn GetCaretBlinkTime() -> u32;
     pub fn GetCaretPos(lppoint: *mut ::win32_foundation_sys::POINT) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetClassInfoA(hinstance: ::win32_foundation_sys::HINSTANCE, lpclassname: ::windows_core_sys::PCSTR, lpwndclass: *mut WNDCLASSA) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetClassInfoExA(hinstance: ::win32_foundation_sys::HINSTANCE, lpszclass: ::windows_core_sys::PCSTR, lpwcx: *mut WNDCLASSEXA) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetClassInfoExW(hinstance: ::win32_foundation_sys::HINSTANCE, lpszclass: ::windows_core_sys::PCWSTR, lpwcx: *mut WNDCLASSEXW) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetClassInfoW(hinstance: ::win32_foundation_sys::HINSTANCE, lpclassname: ::windows_core_sys::PCWSTR, lpwndclass: *mut WNDCLASSW) -> ::win32_foundation_sys::BOOL;
     pub fn GetClassLongA(hwnd: ::win32_foundation_sys::HWND, nindex: GET_CLASS_LONG_INDEX) -> u32;
     #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -156,11 +156,11 @@ extern "system" {
     pub fn GetDlgItemTextW(hdlg: ::win32_foundation_sys::HWND, niddlgitem: i32, lpstring: ::windows_core_sys::PWSTR, cchmax: i32) -> u32;
     pub fn GetForegroundWindow() -> ::win32_foundation_sys::HWND;
     pub fn GetGUIThreadInfo(idthread: u32, pgui: *mut GUITHREADINFO) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetIconInfo(hicon: HICON, piconinfo: *mut ICONINFO) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetIconInfoExA(hicon: HICON, piconinfo: *mut ICONINFOEXA) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetIconInfoExW(hicon: HICON, piconinfo: *mut ICONINFOEXW) -> ::win32_foundation_sys::BOOL;
     pub fn GetInputState() -> ::win32_foundation_sys::BOOL;
     pub fn GetLastActivePopup(hwnd: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::HWND;
@@ -169,13 +169,13 @@ extern "system" {
     pub fn GetMenuBarInfo(hwnd: ::win32_foundation_sys::HWND, idobject: OBJECT_IDENTIFIER, iditem: i32, pmbi: *mut MENUBARINFO) -> ::win32_foundation_sys::BOOL;
     pub fn GetMenuCheckMarkDimensions() -> i32;
     pub fn GetMenuDefaultItem(hmenu: HMENU, fbypos: u32, gmdiflags: GET_MENU_DEFAULT_ITEM_FLAGS) -> u32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetMenuInfo(param0: HMENU, param1: *mut MENUINFO) -> ::win32_foundation_sys::BOOL;
     pub fn GetMenuItemCount(hmenu: HMENU) -> i32;
     pub fn GetMenuItemID(hmenu: HMENU, npos: i32) -> u32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetMenuItemInfoA(hmenu: HMENU, item: u32, fbyposition: ::win32_foundation_sys::BOOL, lpmii: *mut MENUITEMINFOA) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetMenuItemInfoW(hmenu: HMENU, item: u32, fbyposition: ::win32_foundation_sys::BOOL, lpmii: *mut MENUITEMINFOW) -> ::win32_foundation_sys::BOOL;
     pub fn GetMenuItemRect(hwnd: ::win32_foundation_sys::HWND, hmenu: HMENU, uitem: u32, lprcitem: *mut ::win32_foundation_sys::RECT) -> ::win32_foundation_sys::BOOL;
     pub fn GetMenuState(hmenu: HMENU, uid: u32, uflags: MENU_ITEM_FLAGS) -> u32;
@@ -231,9 +231,9 @@ extern "system" {
     pub fn IndexFilePath(resourceindexer: *const ::core::ffi::c_void, filepath: ::windows_core_sys::PCWSTR, ppresourceuri: *mut ::windows_core_sys::PWSTR, pqualifiercount: *mut u32, ppqualifiers: *mut *mut IndexedResourceQualifier) -> ::windows_core_sys::HRESULT;
     pub fn InheritWindowMonitor(hwnd: ::win32_foundation_sys::HWND, hwndinherit: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::BOOL;
     pub fn InsertMenuA(hmenu: HMENU, uposition: u32, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn InsertMenuItemA(hmenu: HMENU, item: u32, fbyposition: ::win32_foundation_sys::BOOL, lpmi: *const MENUITEMINFOA) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn InsertMenuItemW(hmenu: HMENU, item: u32, fbyposition: ::win32_foundation_sys::BOOL, lpmi: *const MENUITEMINFOW) -> ::win32_foundation_sys::BOOL;
     pub fn InsertMenuW(hmenu: HMENU, uposition: u32, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
     pub fn InternalGetWindowText(hwnd: ::win32_foundation_sys::HWND, pstring: ::windows_core_sys::PWSTR, cchmaxcount: i32) -> i32;
@@ -283,9 +283,9 @@ extern "system" {
     pub fn MessageBoxA(hwnd: ::win32_foundation_sys::HWND, lptext: ::windows_core_sys::PCSTR, lpcaption: ::windows_core_sys::PCSTR, utype: MESSAGEBOX_STYLE) -> MESSAGEBOX_RESULT;
     pub fn MessageBoxExA(hwnd: ::win32_foundation_sys::HWND, lptext: ::windows_core_sys::PCSTR, lpcaption: ::windows_core_sys::PCSTR, utype: MESSAGEBOX_STYLE, wlanguageid: u16) -> MESSAGEBOX_RESULT;
     pub fn MessageBoxExW(hwnd: ::win32_foundation_sys::HWND, lptext: ::windows_core_sys::PCWSTR, lpcaption: ::windows_core_sys::PCWSTR, utype: MESSAGEBOX_STYLE, wlanguageid: u16) -> MESSAGEBOX_RESULT;
-    #[cfg(feature = "Win32_UI_Shell")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn MessageBoxIndirectA(lpmbp: *const MSGBOXPARAMSA) -> MESSAGEBOX_RESULT;
-    #[cfg(feature = "Win32_UI_Shell")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn MessageBoxIndirectW(lpmbp: *const MSGBOXPARAMSW) -> MESSAGEBOX_RESULT;
     pub fn MessageBoxW(hwnd: ::win32_foundation_sys::HWND, lptext: ::windows_core_sys::PCWSTR, lpcaption: ::windows_core_sys::PCWSTR, utype: MESSAGEBOX_STYLE) -> MESSAGEBOX_RESULT;
     pub fn ModifyMenuA(hmnu: HMENU, uposition: u32, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
@@ -334,17 +334,17 @@ extern "system" {
     pub fn RealChildWindowFromPoint(hwndparent: ::win32_foundation_sys::HWND, ptparentclientcoords: ::win32_foundation_sys::POINT) -> ::win32_foundation_sys::HWND;
     pub fn RealGetWindowClassA(hwnd: ::win32_foundation_sys::HWND, ptszclassname: ::windows_core_sys::PSTR, cchclassnamemax: u32) -> u32;
     pub fn RealGetWindowClassW(hwnd: ::win32_foundation_sys::HWND, ptszclassname: ::windows_core_sys::PWSTR, cchclassnamemax: u32) -> u32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn RegisterClassA(lpwndclass: *const WNDCLASSA) -> u16;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn RegisterClassExA(param0: *const WNDCLASSEXA) -> u16;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn RegisterClassExW(param0: *const WNDCLASSEXW) -> u16;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn RegisterClassW(lpwndclass: *const WNDCLASSW) -> u16;
-    #[cfg(feature = "Win32_System_Power")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RegisterDeviceNotificationA(hrecipient: ::win32_foundation_sys::HANDLE, notificationfilter: *const ::core::ffi::c_void, flags: ::win32_system_sys::Power::POWER_SETTING_REGISTER_NOTIFICATION_FLAGS) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_System_Power")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RegisterDeviceNotificationW(hrecipient: ::win32_foundation_sys::HANDLE, notificationfilter: *const ::core::ffi::c_void, flags: ::win32_system_sys::Power::POWER_SETTING_REGISTER_NOTIFICATION_FLAGS) -> *mut ::core::ffi::c_void;
     pub fn RegisterShellHookWindow(hwnd: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::BOOL;
     pub fn RegisterWindowMessageA(lpstring: ::windows_core_sys::PCSTR) -> u32;
@@ -353,10 +353,10 @@ extern "system" {
     pub fn RemovePropA(hwnd: ::win32_foundation_sys::HWND, lpstring: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::HANDLE;
     pub fn RemovePropW(hwnd: ::win32_foundation_sys::HWND, lpstring: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HANDLE;
     pub fn ReplyMessage(lresult: ::win32_foundation_sys::LRESULT) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ScrollDC(hdc: ::win32_graphics_sys::Gdi::HDC, dx: i32, dy: i32, lprcscroll: *const ::win32_foundation_sys::RECT, lprcclip: *const ::win32_foundation_sys::RECT, hrgnupdate: ::win32_graphics_sys::Gdi::HRGN, lprcupdate: *mut ::win32_foundation_sys::RECT) -> ::win32_foundation_sys::BOOL;
     pub fn ScrollWindow(hwnd: ::win32_foundation_sys::HWND, xamount: i32, yamount: i32, lprect: *const ::win32_foundation_sys::RECT, lpcliprect: *const ::win32_foundation_sys::RECT) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ScrollWindowEx(hwnd: ::win32_foundation_sys::HWND, dx: i32, dy: i32, prcscroll: *const ::win32_foundation_sys::RECT, prcclip: *const ::win32_foundation_sys::RECT, hrgnupdate: ::win32_graphics_sys::Gdi::HRGN, prcupdate: *mut ::win32_foundation_sys::RECT, flags: SHOW_WINDOW_CMD) -> i32;
     pub fn SendDlgItemMessageA(hdlg: ::win32_foundation_sys::HWND, niddlgitem: i32, msg: u32, wparam: ::win32_foundation_sys::WPARAM, lparam: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::LRESULT;
     pub fn SendDlgItemMessageW(hdlg: ::win32_foundation_sys::HWND, niddlgitem: i32, msg: u32, wparam: ::win32_foundation_sys::WPARAM, lparam: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::LRESULT;
@@ -388,13 +388,13 @@ extern "system" {
     pub fn SetLayeredWindowAttributes(hwnd: ::win32_foundation_sys::HWND, crkey: u32, balpha: u8, dwflags: LAYERED_WINDOW_ATTRIBUTES_FLAGS) -> ::win32_foundation_sys::BOOL;
     pub fn SetMenu(hwnd: ::win32_foundation_sys::HWND, hmenu: HMENU) -> ::win32_foundation_sys::BOOL;
     pub fn SetMenuDefaultItem(hmenu: HMENU, uitem: u32, fbypos: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn SetMenuInfo(param0: HMENU, param1: *const MENUINFO) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn SetMenuItemBitmaps(hmenu: HMENU, uposition: u32, uflags: MENU_ITEM_FLAGS, hbitmapunchecked: ::win32_graphics_sys::Gdi::HBITMAP, hbitmapchecked: ::win32_graphics_sys::Gdi::HBITMAP) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn SetMenuItemInfoA(hmenu: HMENU, item: u32, fbypositon: ::win32_foundation_sys::BOOL, lpmii: *const MENUITEMINFOA) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn SetMenuItemInfoW(hmenu: HMENU, item: u32, fbypositon: ::win32_foundation_sys::BOOL, lpmii: *const MENUITEMINFOW) -> ::win32_foundation_sys::BOOL;
     pub fn SetMessageExtraInfo(lparam: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::LPARAM;
     pub fn SetMessageQueue(cmessagesmax: i32) -> ::win32_foundation_sys::BOOL;
@@ -443,9 +443,9 @@ extern "system" {
     pub fn UnhookWindowsHookEx(hhk: HHOOK) -> ::win32_foundation_sys::BOOL;
     pub fn UnregisterClassA(lpclassname: ::windows_core_sys::PCSTR, hinstance: ::win32_foundation_sys::HINSTANCE) -> ::win32_foundation_sys::BOOL;
     pub fn UnregisterClassW(lpclassname: ::windows_core_sys::PCWSTR, hinstance: ::win32_foundation_sys::HINSTANCE) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn UpdateLayeredWindow(hwnd: ::win32_foundation_sys::HWND, hdcdst: ::win32_graphics_sys::Gdi::HDC, pptdst: *const ::win32_foundation_sys::POINT, psize: *const ::win32_foundation_sys::SIZE, hdcsrc: ::win32_graphics_sys::Gdi::HDC, pptsrc: *const ::win32_foundation_sys::POINT, crkey: u32, pblend: *const ::win32_graphics_sys::Gdi::BLENDFUNCTION, dwflags: UPDATE_LAYERED_WINDOW_FLAGS) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn UpdateLayeredWindowIndirect(hwnd: ::win32_foundation_sys::HWND, pulwinfo: *const UPDATELAYEREDWINDOWINFO) -> ::win32_foundation_sys::BOOL;
     pub fn WaitMessage() -> ::win32_foundation_sys::BOOL;
     pub fn WindowFromPhysicalPoint(point: ::win32_foundation_sys::POINT) -> ::win32_foundation_sys::HWND;
@@ -1253,27 +1253,27 @@ impl ::core::clone::Clone for HARDWAREHOOKSTRUCT {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub const HBMMENU_CALLBACK: ::win32_graphics_sys::Gdi::HBITMAP = -1i32 as _;
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub const HBMMENU_MBAR_CLOSE: ::win32_graphics_sys::Gdi::HBITMAP = 5i32 as _;
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub const HBMMENU_MBAR_CLOSE_D: ::win32_graphics_sys::Gdi::HBITMAP = 6i32 as _;
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub const HBMMENU_MBAR_MINIMIZE: ::win32_graphics_sys::Gdi::HBITMAP = 3i32 as _;
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub const HBMMENU_MBAR_MINIMIZE_D: ::win32_graphics_sys::Gdi::HBITMAP = 7i32 as _;
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub const HBMMENU_MBAR_RESTORE: ::win32_graphics_sys::Gdi::HBITMAP = 2i32 as _;
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub const HBMMENU_POPUP_CLOSE: ::win32_graphics_sys::Gdi::HBITMAP = 8i32 as _;
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub const HBMMENU_POPUP_MAXIMIZE: ::win32_graphics_sys::Gdi::HBITMAP = 10i32 as _;
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub const HBMMENU_POPUP_MINIMIZE: ::win32_graphics_sys::Gdi::HBITMAP = 11i32 as _;
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub const HBMMENU_POPUP_RESTORE: ::win32_graphics_sys::Gdi::HBITMAP = 9i32 as _;
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub const HBMMENU_SYSTEM: ::win32_graphics_sys::Gdi::HBITMAP = 1i32 as _;
 pub const HCBT_ACTIVATE: u32 = 5u32;
 pub const HCBT_CLICKSKIPPED: u32 = 6u32;
@@ -1377,7 +1377,7 @@ pub const HWND_NOTOPMOST: ::win32_foundation_sys::HWND = -2i32 as _;
 pub const HWND_TOP: ::win32_foundation_sys::HWND = 0i32 as _;
 pub const HWND_TOPMOST: ::win32_foundation_sys::HWND = -1i32 as _;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct ICONINFO {
     pub fIcon: ::win32_foundation_sys::BOOL,
     pub xHotspot: u32,
@@ -1385,16 +1385,16 @@ pub struct ICONINFO {
     pub hbmMask: ::win32_graphics_sys::Gdi::HBITMAP,
     pub hbmColor: ::win32_graphics_sys::Gdi::HBITMAP,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for ICONINFO {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for ICONINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct ICONINFOEXA {
     pub cbSize: u32,
     pub fIcon: ::win32_foundation_sys::BOOL,
@@ -1406,16 +1406,16 @@ pub struct ICONINFOEXA {
     pub szModName: [::win32_foundation_sys::CHAR; 260],
     pub szResName: [::win32_foundation_sys::CHAR; 260],
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for ICONINFOEXA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for ICONINFOEXA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct ICONINFOEXW {
     pub cbSize: u32,
     pub fIcon: ::win32_foundation_sys::BOOL,
@@ -1427,16 +1427,16 @@ pub struct ICONINFOEXW {
     pub szModName: [u16; 260],
     pub szResName: [u16; 260],
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for ICONINFOEXW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for ICONINFOEXW {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct ICONMETRICSA {
     pub cbSize: u32,
     pub iHorzSpacing: i32,
@@ -1444,16 +1444,16 @@ pub struct ICONMETRICSA {
     pub iTitleWrap: i32,
     pub lfFont: ::win32_graphics_sys::Gdi::LOGFONTA,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for ICONMETRICSA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for ICONMETRICSA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct ICONMETRICSW {
     pub cbSize: u32,
     pub iHorzSpacing: i32,
@@ -1461,9 +1461,9 @@ pub struct ICONMETRICSW {
     pub iTitleWrap: i32,
     pub lfFont: ::win32_graphics_sys::Gdi::LOGFONTW,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for ICONMETRICSW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for ICONMETRICSW {
     fn clone(&self) -> Self {
         *self
@@ -1747,7 +1747,7 @@ pub type MENUGETOBJECTINFO_FLAGS = u32;
 pub const MNGOF_BOTTOMGAP: MENUGETOBJECTINFO_FLAGS = 2u32;
 pub const MNGOF_TOPGAP: MENUGETOBJECTINFO_FLAGS = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct MENUINFO {
     pub cbSize: u32,
     pub fMask: MENUINFO_MASK,
@@ -1757,9 +1757,9 @@ pub struct MENUINFO {
     pub dwContextHelpID: u32,
     pub dwMenuData: usize,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for MENUINFO {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for MENUINFO {
     fn clone(&self) -> Self {
         *self
@@ -1780,7 +1780,7 @@ pub const MNS_MODELESS: MENUINFO_STYLE = 1073741824u32;
 pub const MNS_NOCHECK: MENUINFO_STYLE = 2147483648u32;
 pub const MNS_NOTIFYBYPOS: MENUINFO_STYLE = 134217728u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct MENUITEMINFOA {
     pub cbSize: u32,
     pub fMask: MENU_ITEM_MASK,
@@ -1795,16 +1795,16 @@ pub struct MENUITEMINFOA {
     pub cch: u32,
     pub hbmpItem: ::win32_graphics_sys::Gdi::HBITMAP,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for MENUITEMINFOA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for MENUITEMINFOA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct MENUITEMINFOW {
     pub cbSize: u32,
     pub fMask: MENU_ITEM_MASK,
@@ -1819,9 +1819,9 @@ pub struct MENUITEMINFOW {
     pub cch: u32,
     pub hbmpItem: ::win32_graphics_sys::Gdi::HBITMAP,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for MENUITEMINFOW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for MENUITEMINFOW {
     fn clone(&self) -> Self {
         *self
@@ -2106,10 +2106,10 @@ impl ::core::clone::Clone for MSG {
         *self
     }
 }
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui-sys")]
 pub type MSGBOXCALLBACK = ::core::option::Option<unsafe extern "system" fn(lphelpinfo: *mut super::Shell::HELPINFO)>;
 #[repr(C)]
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct MSGBOXPARAMSA {
     pub cbSize: u32,
     pub hwndOwner: ::win32_foundation_sys::HWND,
@@ -2122,16 +2122,16 @@ pub struct MSGBOXPARAMSA {
     pub lpfnMsgBoxCallback: MSGBOXCALLBACK,
     pub dwLanguageId: u32,
 }
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for MSGBOXPARAMSA {}
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for MSGBOXPARAMSA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct MSGBOXPARAMSW {
     pub cbSize: u32,
     pub hwndOwner: ::win32_foundation_sys::HWND,
@@ -2144,9 +2144,9 @@ pub struct MSGBOXPARAMSW {
     pub lpfnMsgBoxCallback: MSGBOXCALLBACK,
     pub dwLanguageId: u32,
 }
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for MSGBOXPARAMSW {}
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for MSGBOXPARAMSW {
     fn clone(&self) -> Self {
         *self
@@ -2254,7 +2254,7 @@ pub const NID_INTEGRATED_TOUCH: u32 = 1u32;
 pub const NID_MULTI_INPUT: u32 = 64u32;
 pub const NID_READY: u32 = 128u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct NONCLIENTMETRICSA {
     pub cbSize: u32,
     pub iBorderWidth: i32,
@@ -2273,16 +2273,16 @@ pub struct NONCLIENTMETRICSA {
     pub lfMessageFont: ::win32_graphics_sys::Gdi::LOGFONTA,
     pub iPaddedBorderWidth: i32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for NONCLIENTMETRICSA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for NONCLIENTMETRICSA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct NONCLIENTMETRICSW {
     pub cbSize: u32,
     pub iBorderWidth: i32,
@@ -2301,9 +2301,9 @@ pub struct NONCLIENTMETRICSW {
     pub lfMessageFont: ::win32_graphics_sys::Gdi::LOGFONTW,
     pub iPaddedBorderWidth: i32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for NONCLIENTMETRICSW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for NONCLIENTMETRICSW {
     fn clone(&self) -> Self {
         *self
@@ -3333,7 +3333,7 @@ pub const UIS_SET: u32 = 1u32;
 pub const UNICODE_NOCHAR: u32 = 65535u32;
 pub const UOI_TIMERPROC_EXCEPTION_SUPPRESSION: u32 = 7u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct UPDATELAYEREDWINDOWINFO {
     pub cbSize: u32,
     pub hdcDst: ::win32_graphics_sys::Gdi::HDC,
@@ -3346,9 +3346,9 @@ pub struct UPDATELAYEREDWINDOWINFO {
     pub dwFlags: UPDATE_LAYERED_WINDOW_FLAGS,
     pub prcDirty: *const ::win32_foundation_sys::RECT,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for UPDATELAYEREDWINDOWINFO {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for UPDATELAYEREDWINDOWINFO {
     fn clone(&self) -> Self {
         *self
@@ -3795,7 +3795,7 @@ pub const WM_XBUTTONDBLCLK: u32 = 525u32;
 pub const WM_XBUTTONDOWN: u32 = 523u32;
 pub const WM_XBUTTONUP: u32 = 524u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct WNDCLASSA {
     pub style: WNDCLASS_STYLES,
     pub lpfnWndProc: WNDPROC,
@@ -3808,16 +3808,16 @@ pub struct WNDCLASSA {
     pub lpszMenuName: ::windows_core_sys::PCSTR,
     pub lpszClassName: ::windows_core_sys::PCSTR,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for WNDCLASSA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for WNDCLASSA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct WNDCLASSEXA {
     pub cbSize: u32,
     pub style: WNDCLASS_STYLES,
@@ -3832,16 +3832,16 @@ pub struct WNDCLASSEXA {
     pub lpszClassName: ::windows_core_sys::PCSTR,
     pub hIconSm: HICON,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for WNDCLASSEXA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for WNDCLASSEXA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct WNDCLASSEXW {
     pub cbSize: u32,
     pub style: WNDCLASS_STYLES,
@@ -3856,16 +3856,16 @@ pub struct WNDCLASSEXW {
     pub lpszClassName: ::windows_core_sys::PCWSTR,
     pub hIconSm: HICON,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for WNDCLASSEXW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for WNDCLASSEXW {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct WNDCLASSW {
     pub style: WNDCLASS_STYLES,
     pub lpfnWndProc: WNDPROC,
@@ -3878,9 +3878,9 @@ pub struct WNDCLASSW {
     pub lpszMenuName: ::windows_core_sys::PCWSTR,
     pub lpszClassName: ::windows_core_sys::PCWSTR,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for WNDCLASSW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for WNDCLASSW {
     fn clone(&self) -> Self {
         *self

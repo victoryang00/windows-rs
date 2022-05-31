@@ -1,38 +1,38 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn QOSAddSocketToFlow(qoshandle: ::win32_foundation_sys::HANDLE, socket: ::win32_networking_sys::WinSock::SOCKET, destaddr: *const ::win32_networking_sys::WinSock::SOCKADDR, traffictype: QOS_TRAFFIC_TYPE, flags: u32, flowid: *mut u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn QOSCancel(qoshandle: ::win32_foundation_sys::HANDLE, overlapped: *const ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
     pub fn QOSCloseHandle(qoshandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn QOSCreateHandle(version: *const QOS_VERSION, qoshandle: *mut ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn QOSEnumerateFlows(qoshandle: ::win32_foundation_sys::HANDLE, size: *mut u32, buffer: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn QOSNotifyFlow(qoshandle: ::win32_foundation_sys::HANDLE, flowid: u32, operation: QOS_NOTIFY_FLOW, size: *mut u32, buffer: *mut ::core::ffi::c_void, flags: u32, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn QOSQueryFlow(qoshandle: ::win32_foundation_sys::HANDLE, flowid: u32, operation: QOS_QUERY_FLOW, size: *mut u32, buffer: *mut ::core::ffi::c_void, flags: u32, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn QOSRemoveSocketFromFlow(qoshandle: ::win32_foundation_sys::HANDLE, socket: ::win32_networking_sys::WinSock::SOCKET, flowid: u32, flags: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn QOSSetFlow(qoshandle: ::win32_foundation_sys::HANDLE, flowid: u32, operation: QOS_SET_FLOW, size: u32, buffer: *const ::core::ffi::c_void, flags: u32, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn QOSStartTrackingClient(qoshandle: ::win32_foundation_sys::HANDLE, destaddr: *const ::win32_networking_sys::WinSock::SOCKADDR, flags: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn QOSStopTrackingClient(qoshandle: ::win32_foundation_sys::HANDLE, destaddr: *const ::win32_networking_sys::WinSock::SOCKADDR, flags: u32) -> ::win32_foundation_sys::BOOL;
     pub fn TcAddFilter(flowhandle: ::win32_foundation_sys::HANDLE, pgenericfilter: *const TC_GEN_FILTER, pfilterhandle: *mut ::win32_foundation_sys::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn TcAddFlow(ifchandle: ::win32_foundation_sys::HANDLE, clflowctx: ::win32_foundation_sys::HANDLE, flags: u32, pgenericflow: *const TC_GEN_FLOW, pflowhandle: *mut ::win32_foundation_sys::HANDLE) -> u32;
     pub fn TcCloseInterface(ifchandle: ::win32_foundation_sys::HANDLE) -> u32;
     pub fn TcDeleteFilter(filterhandle: ::win32_foundation_sys::HANDLE) -> u32;
     pub fn TcDeleteFlow(flowhandle: ::win32_foundation_sys::HANDLE) -> u32;
     pub fn TcDeregisterClient(clienthandle: ::win32_foundation_sys::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn TcEnumerateFlows(ifchandle: ::win32_foundation_sys::HANDLE, penumhandle: *mut ::win32_foundation_sys::HANDLE, pflowcount: *mut u32, pbufsize: *mut u32, buffer: *mut ENUMERATION_BUFFER) -> u32;
-    #[cfg(feature = "Win32_NetworkManagement_Ndis")]
+    #[cfg(feature = "win32-networkmanagement-sys")]
     pub fn TcEnumerateInterfaces(clienthandle: ::win32_foundation_sys::HANDLE, pbuffersize: *mut u32, interfacebuffer: *mut TC_IFC_DESCRIPTOR) -> u32;
     pub fn TcGetFlowNameA(flowhandle: ::win32_foundation_sys::HANDLE, strsize: u32, pflowname: ::windows_core_sys::PSTR) -> u32;
     pub fn TcGetFlowNameW(flowhandle: ::win32_foundation_sys::HANDLE, strsize: u32, pflowname: ::windows_core_sys::PWSTR) -> u32;
-    #[cfg(feature = "Win32_Networking_WinSock")]
+    #[cfg(feature = "win32-networking-sys")]
     pub fn TcModifyFlow(flowhandle: ::win32_foundation_sys::HANDLE, pgenericflow: *const TC_GEN_FLOW) -> u32;
     pub fn TcOpenInterfaceA(pinterfacename: ::windows_core_sys::PCSTR, clienthandle: ::win32_foundation_sys::HANDLE, clifcctx: ::win32_foundation_sys::HANDLE, pifchandle: *mut ::win32_foundation_sys::HANDLE) -> u32;
     pub fn TcOpenInterfaceW(pinterfacename: ::windows_core_sys::PCWSTR, clienthandle: ::win32_foundation_sys::HANDLE, clifcctx: ::win32_foundation_sys::HANDLE, pifchandle: *mut ::win32_foundation_sys::HANDLE) -> u32;
@@ -46,14 +46,14 @@ extern "system" {
 }
 pub const ABLE_TO_RECV_RSVP: u32 = 50002u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement-sys")]
 pub struct ADDRESS_LIST_DESCRIPTOR {
     pub MediaType: u32,
     pub AddressList: super::Ndis::NETWORK_ADDRESS_LIST,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement-sys")]
 impl ::core::marker::Copy for ADDRESS_LIST_DESCRIPTOR {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement-sys")]
 impl ::core::clone::Clone for ADDRESS_LIST_DESCRIPTOR {
     fn clone(&self) -> Self {
         *self
@@ -151,7 +151,7 @@ pub const DD_TCP_DEVICE_NAME: &str = "\\Device\\Tcp";
 pub const DUP_RESULTS: u32 = 4u32;
 pub const END_TO_END_QOSABILITY: u32 = 50006u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct ENUMERATION_BUFFER {
     pub Length: u32,
     pub OwnerProcessId: u32,
@@ -161,9 +161,9 @@ pub struct ENUMERATION_BUFFER {
     pub NumberOfFilters: u32,
     pub GenericFilter: [TC_GEN_FILTER; 1],
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for ENUMERATION_BUFFER {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for ENUMERATION_BUFFER {
     fn clone(&self) -> Self {
         *self
@@ -188,27 +188,27 @@ pub const ERROR_INVALID_TOKEN_RATE: u32 = 7503u32;
 pub const ERROR_INVALID_TRAFFIC_CLASS: u32 = 7507u32;
 pub const ERROR_NO_MORE_INFO: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct ERROR_SPEC {
     pub errs_header: RsvpObjHdr,
     pub errs_u: ERROR_SPEC_0,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for ERROR_SPEC {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for ERROR_SPEC {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub union ERROR_SPEC_0 {
     pub errs_ipv4: Error_Spec_IPv4,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for ERROR_SPEC_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for ERROR_SPEC_0 {
     fn clone(&self) -> Self {
         *self
@@ -227,59 +227,59 @@ pub const ERR_Usage_serv: u32 = 17u32;
 pub const ERR_global_mask: u32 = 4095u32;
 pub const EXPIRED_CREDENTIAL: u32 = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct Error_Spec_IPv4 {
     pub errs_errnode: ::win32_networking_sys::WinSock::IN_ADDR,
     pub errs_flags: u8,
     pub errs_code: u8,
     pub errs_value: u16,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for Error_Spec_IPv4 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for Error_Spec_IPv4 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct FILTER_SPEC {
     pub filt_header: RsvpObjHdr,
     pub filt_u: FILTER_SPEC_0,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for FILTER_SPEC {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for FILTER_SPEC {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub union FILTER_SPEC_0 {
     pub filt_ipv4: Filter_Spec_IPv4,
     pub filt_ipv4gpi: Filter_Spec_IPv4GPI,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for FILTER_SPEC_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for FILTER_SPEC_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct FLOWDESCRIPTOR {
     pub FlowSpec: ::win32_networking_sys::WinSock::FLOWSPEC,
     pub NumFilters: u32,
     pub FilterList: *mut RSVP_FILTERSPEC,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for FLOWDESCRIPTOR {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for FLOWDESCRIPTOR {
     fn clone(&self) -> Self {
         *self
@@ -306,29 +306,29 @@ pub const FILTERSPECV4_GPI: FilterType = 4i32;
 pub const FILTERSPECV6_GPI: FilterType = 5i32;
 pub const FILTERSPEC_END: FilterType = 6i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct Filter_Spec_IPv4 {
     pub filt_ipaddr: ::win32_networking_sys::WinSock::IN_ADDR,
     pub filt_unused: u16,
     pub filt_port: u16,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for Filter_Spec_IPv4 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for Filter_Spec_IPv4 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct Filter_Spec_IPv4GPI {
     pub filt_ipaddr: ::win32_networking_sys::WinSock::IN_ADDR,
     pub filt_gpi: u32,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for Filter_Spec_IPv4GPI {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for Filter_Spec_IPv4GPI {
     fn clone(&self) -> Self {
         *self
@@ -867,15 +867,15 @@ pub const PREDICTIVE_SERV: u32 = 3u32;
 pub const QOSSPBASE: u32 = 50000u32;
 pub const QOSSP_ERR_BASE: u32 = 56000u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct QOS_DESTADDR {
     pub ObjectHdr: QOS_OBJECT_HDR,
     pub SocketAddress: *const ::win32_networking_sys::WinSock::SOCKADDR,
     pub SocketAddressLength: u32,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for QOS_DESTADDR {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for QOS_DESTADDR {
     fn clone(&self) -> Self {
         *self
@@ -1252,34 +1252,34 @@ impl ::core::clone::Clone for RSVP_FILTERSPEC_V6_GPI {
 }
 pub const RSVP_FIXED_FILTER_STYLE: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct RSVP_HOP {
     pub hop_header: RsvpObjHdr,
     pub hop_u: RSVP_HOP_0,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for RSVP_HOP {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for RSVP_HOP {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub union RSVP_HOP_0 {
     pub hop_ipv4: Rsvp_Hop_IPv4,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for RSVP_HOP_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for RSVP_HOP_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct RSVP_MSG_OBJS {
     pub RsvpMsgType: i32,
     pub pRsvpSession: *mut RSVP_SESSION,
@@ -1294,9 +1294,9 @@ pub struct RSVP_MSG_OBJS {
     pub pErrorSpec: *mut ERROR_SPEC,
     pub pAdspec: *mut ADSPEC,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for RSVP_MSG_OBJS {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for RSVP_MSG_OBJS {
     fn clone(&self) -> Self {
         *self
@@ -1331,7 +1331,7 @@ impl ::core::clone::Clone for RSVP_POLICY_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct RSVP_RESERVE_INFO {
     pub ObjectHdr: QOS_OBJECT_HDR,
     pub Style: u32,
@@ -1340,9 +1340,9 @@ pub struct RSVP_RESERVE_INFO {
     pub NumFlowDesc: u32,
     pub FlowDescList: *mut FLOWDESCRIPTOR,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for RSVP_RESERVE_INFO {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for RSVP_RESERVE_INFO {
     fn clone(&self) -> Self {
         *self
@@ -1352,54 +1352,54 @@ pub const RSVP_RESV: u32 = 2u32;
 pub const RSVP_RESV_ERR: u32 = 4u32;
 pub const RSVP_RESV_TEAR: u32 = 6u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct RSVP_SCOPE {
     pub scopl_header: RsvpObjHdr,
     pub scope_u: RSVP_SCOPE_0,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for RSVP_SCOPE {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for RSVP_SCOPE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub union RSVP_SCOPE_0 {
     pub scopl_ipv4: Scope_list_ipv4,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for RSVP_SCOPE_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for RSVP_SCOPE_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct RSVP_SESSION {
     pub sess_header: RsvpObjHdr,
     pub sess_u: RSVP_SESSION_0,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for RSVP_SESSION {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for RSVP_SESSION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub union RSVP_SESSION_0 {
     pub sess_ipv4: Session_IPv4,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for RSVP_SESSION_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for RSVP_SESSION_0 {
     fn clone(&self) -> Self {
         *self
@@ -1433,14 +1433,14 @@ impl ::core::clone::Clone for RsvpObjHdr {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct Rsvp_Hop_IPv4 {
     pub hop_ipaddr: ::win32_networking_sys::WinSock::IN_ADDR,
     pub hop_LIH: u32,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for Rsvp_Hop_IPv4 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for Rsvp_Hop_IPv4 {
     fn clone(&self) -> Self {
         *self
@@ -1638,29 +1638,29 @@ pub const SIPAKSRHDRSIGNATURE: u32 = 1297240907u32;
 pub const SIPALOGVERSION: u32 = 1u32;
 pub const STATE_TIMEOUT: u32 = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct Scope_list_ipv4 {
     pub scopl_ipaddr: [::win32_networking_sys::WinSock::IN_ADDR; 1],
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for Scope_list_ipv4 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for Scope_list_ipv4 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct Session_IPv4 {
     pub sess_destaddr: ::win32_networking_sys::WinSock::IN_ADDR,
     pub sess_protid: u8,
     pub sess_flags: u8,
     pub sess_destport: u16,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for Session_IPv4 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for Session_IPv4 {
     fn clone(&self) -> Self {
         *self
@@ -1724,32 +1724,32 @@ impl ::core::clone::Clone for TC_GEN_FILTER {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct TC_GEN_FLOW {
     pub SendingFlowspec: ::win32_networking_sys::WinSock::FLOWSPEC,
     pub ReceivingFlowspec: ::win32_networking_sys::WinSock::FLOWSPEC,
     pub TcObjectsLength: u32,
     pub TcObjects: [QOS_OBJECT_HDR; 1],
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for TC_GEN_FLOW {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for TC_GEN_FLOW {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement-sys")]
 pub struct TC_IFC_DESCRIPTOR {
     pub Length: u32,
     pub pInterfaceName: ::windows_core_sys::PWSTR,
     pub pInterfaceID: ::windows_core_sys::PWSTR,
     pub AddressListDesc: ADDRESS_LIST_DESCRIPTOR,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement-sys")]
 impl ::core::marker::Copy for TC_IFC_DESCRIPTOR {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement-sys")]
 impl ::core::clone::Clone for TC_IFC_DESCRIPTOR {
     fn clone(&self) -> Self {
         *self
@@ -1765,16 +1765,16 @@ pub const TC_NOTIFY_IFC_CLOSE: u32 = 2u32;
 pub const TC_NOTIFY_IFC_UP: u32 = 1u32;
 pub const TC_NOTIFY_PARAM_CHANGED: u32 = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement-sys")]
 pub struct TC_SUPPORTED_INFO_BUFFER {
     pub InstanceIDLength: u16,
     pub InstanceID: [u16; 256],
     pub InterfaceLuid: u64,
     pub AddrListDesc: ADDRESS_LIST_DESCRIPTOR,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement-sys")]
 impl ::core::marker::Copy for TC_SUPPORTED_INFO_BUFFER {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement-sys")]
 impl ::core::clone::Clone for TC_SUPPORTED_INFO_BUFFER {
     fn clone(&self) -> Self {
         *self
@@ -1863,42 +1863,42 @@ pub const ctype_SESSION_ipv4: u32 = 1u32;
 pub const ctype_SESSION_ipv4GPI: u32 = 3u32;
 pub const ctype_STYLE: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct flow_desc {
     pub u1: flow_desc_0,
     pub u2: flow_desc_1,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for flow_desc {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for flow_desc {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub union flow_desc_0 {
     pub stspec: *mut SENDER_TSPEC,
     pub isflow: *mut IS_FLOWSPEC,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for flow_desc_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for flow_desc_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub union flow_desc_1 {
     pub stemp: *mut FILTER_SPEC,
     pub fspec: *mut FILTER_SPEC,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for flow_desc_1 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for flow_desc_1 {
     fn clone(&self) -> Self {
         *self
@@ -1913,16 +1913,16 @@ pub const IS_WKP_TB_TSPEC: int_serv_wkp = 127i32;
 pub const IS_WKP_Q_TSPEC: int_serv_wkp = 128i32;
 pub const ioctl_code: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct lpmiptable {
     pub ulIfIndex: u32,
     pub MediaType: u32,
     pub IfIpAddr: ::win32_networking_sys::WinSock::IN_ADDR,
     pub IfNetMask: ::win32_networking_sys::WinSock::IN_ADDR,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for lpmiptable {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for lpmiptable {
     fn clone(&self) -> Self {
         *self

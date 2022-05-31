@@ -1,15 +1,15 @@
 #[link(name = "windows")]
 extern "system" {
     pub fn NetworkIsolationDiagnoseConnectFailureAndGetInfo(wszservername: ::windows_core_sys::PCWSTR, netisoerror: *mut NETISO_ERROR_TYPE) -> u32;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn NetworkIsolationEnumAppContainers(flags: u32, pdwnumpublicappcs: *mut u32, pppublicappcs: *mut *mut INET_FIREWALL_APP_CONTAINER) -> u32;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn NetworkIsolationFreeAppContainers(ppublicappcs: *const INET_FIREWALL_APP_CONTAINER) -> u32;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn NetworkIsolationGetAppContainerConfig(pdwnumpublicappcs: *mut u32, appcontainersids: *mut *mut ::win32_security_sys::SID_AND_ATTRIBUTES) -> u32;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn NetworkIsolationRegisterForAppContainerChanges(flags: u32, callback: PAC_CHANGES_CALLBACK_FN, context: *const ::core::ffi::c_void, registrationobject: *mut ::win32_foundation_sys::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn NetworkIsolationSetAppContainerConfig(dwnumpublicappcs: u32, appcontainersids: *const ::win32_security_sys::SID_AND_ATTRIBUTES) -> u32;
     pub fn NetworkIsolationSetupAppContainerBinaries(applicationcontainersid: ::win32_foundation_sys::PSID, packagefullname: ::windows_core_sys::PCWSTR, packagefolder: ::windows_core_sys::PCWSTR, displayname: ::windows_core_sys::PCWSTR, bbinariesfullycomputed: ::win32_foundation_sys::BOOL, binaries: *const ::windows_core_sys::PWSTR, binariescount: u32) -> ::windows_core_sys::HRESULT;
     pub fn NetworkIsolationUnregisterForAppContainerChanges(registrationobject: ::win32_foundation_sys::HANDLE) -> u32;
@@ -39,21 +39,21 @@ impl ::core::clone::Clone for INET_FIREWALL_AC_BINARIES {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct INET_FIREWALL_AC_CAPABILITIES {
     pub count: u32,
     pub capabilities: *mut ::win32_security_sys::SID_AND_ATTRIBUTES,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for INET_FIREWALL_AC_CAPABILITIES {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for INET_FIREWALL_AC_CAPABILITIES {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct INET_FIREWALL_AC_CHANGE {
     pub changeType: INET_FIREWALL_AC_CHANGE_TYPE,
     pub createType: INET_FIREWALL_AC_CREATION_TYPE,
@@ -62,23 +62,23 @@ pub struct INET_FIREWALL_AC_CHANGE {
     pub displayName: ::windows_core_sys::PWSTR,
     pub Anonymous: INET_FIREWALL_AC_CHANGE_0,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for INET_FIREWALL_AC_CHANGE {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for INET_FIREWALL_AC_CHANGE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub union INET_FIREWALL_AC_CHANGE_0 {
     pub capabilities: INET_FIREWALL_AC_CAPABILITIES,
     pub binaries: INET_FIREWALL_AC_BINARIES,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for INET_FIREWALL_AC_CHANGE_0 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for INET_FIREWALL_AC_CHANGE_0 {
     fn clone(&self) -> Self {
         *self
@@ -95,7 +95,7 @@ pub const INET_FIREWALL_AC_PACKAGE_ID_ONLY: INET_FIREWALL_AC_CREATION_TYPE = 1i3
 pub const INET_FIREWALL_AC_BINARY: INET_FIREWALL_AC_CREATION_TYPE = 2i32;
 pub const INET_FIREWALL_AC_MAX: INET_FIREWALL_AC_CREATION_TYPE = 4i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct INET_FIREWALL_APP_CONTAINER {
     pub appContainerSid: *mut ::win32_security_sys::SID,
     pub userSid: *mut ::win32_security_sys::SID,
@@ -107,9 +107,9 @@ pub struct INET_FIREWALL_APP_CONTAINER {
     pub workingDirectory: ::windows_core_sys::PWSTR,
     pub packageFullName: ::windows_core_sys::PWSTR,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for INET_FIREWALL_APP_CONTAINER {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for INET_FIREWALL_APP_CONTAINER {
     fn clone(&self) -> Self {
         *self
@@ -315,7 +315,7 @@ pub const NetFwProduct: ::windows_core_sys::GUID = ::windows_core_sys::GUID { da
 pub const NetFwProducts: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3424192411, data2: 33394, data3: 19827, data4: [187, 112, 205, 181, 51, 82, 123, 97] };
 pub const NetFwRule: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 744211518, data2: 13161, data3: 19507, data4: [171, 12, 190, 148, 105, 103, 122, 244] };
 pub const NetSharingManager: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1550041517, data2: 14678, data3: 20472, data4: [132, 134, 64, 3, 71, 88, 49, 91] };
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub type PAC_CHANGES_CALLBACK_FN = ::core::option::Option<unsafe extern "system" fn(context: *const ::core::ffi::c_void, pchange: *const INET_FIREWALL_AC_CHANGE)>;
 pub type PFN_FWADDDYNAMICKEYWORDADDRESS0 = ::core::option::Option<unsafe extern "system" fn(dynamickeywordaddress: *const _tag_FW_DYNAMIC_KEYWORD_ADDRESS0) -> u32>;
 pub type PFN_FWDELETEDYNAMICKEYWORDADDRESS0 = ::core::option::Option<unsafe extern "system" fn(dynamickeywordaddressid: ::windows_core_sys::GUID) -> u32>;

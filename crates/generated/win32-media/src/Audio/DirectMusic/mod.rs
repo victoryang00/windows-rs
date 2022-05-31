@@ -1674,7 +1674,7 @@ impl IDirectMusic {
     pub unsafe fn GetDefaultPort(&self, pguidport: *mut ::windows_core::GUID) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetDefaultPort)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pguidport)).ok()
     }
-    #[cfg(feature = "Win32_Media_Audio_DirectSound")]
+    #[cfg(feature = "win32-media")]
     pub unsafe fn SetDirectSound<'a, Param0: ::windows_core::IntoParam<'a, super::DirectSound::IDirectSound>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, pdirectsound: Param0, hwnd: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDirectSound)(::windows_core::Interface::as_raw(self), pdirectsound.into_param().abi(), hwnd.into_param().abi()).ok()
     }
@@ -1731,9 +1731,9 @@ pub struct IDirectMusic_Vtbl {
     pub SetMasterClock: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, rguidclock: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub Activate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fenable: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetDefaultPort: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidport: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Media_Audio_DirectSound")]
+    #[cfg(feature = "win32-media")]
     pub SetDirectSound: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdirectsound: ::windows_core::RawPtr, hwnd: ::win32_foundation::HWND) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Media_Audio_DirectSound"))]
+    #[cfg(not(feature = "win32-media"))]
     SetDirectSound: usize,
 }
 #[repr(transparent)]
@@ -1763,7 +1763,7 @@ impl IDirectMusic8 {
     pub unsafe fn GetDefaultPort(&self, pguidport: *mut ::windows_core::GUID) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetDefaultPort)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pguidport)).ok()
     }
-    #[cfg(feature = "Win32_Media_Audio_DirectSound")]
+    #[cfg(feature = "win32-media")]
     pub unsafe fn SetDirectSound<'a, Param0: ::windows_core::IntoParam<'a, super::DirectSound::IDirectSound>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, pdirectsound: Param0, hwnd: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetDirectSound)(::windows_core::Interface::as_raw(self), pdirectsound.into_param().abi(), hwnd.into_param().abi()).ok()
     }
@@ -2185,7 +2185,7 @@ impl IDirectMusicPort {
     pub unsafe fn GetCaps(&self, pportcaps: *mut DMUS_PORTCAPS) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetCaps)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pportcaps)).ok()
     }
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn DeviceIoControl(&self, dwiocontrolcode: u32, lpinbuffer: *mut ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesreturned: *mut u32, lpoverlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).DeviceIoControl)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwiocontrolcode), ::core::mem::transmute(lpinbuffer), ::core::mem::transmute(ninbuffersize), ::core::mem::transmute(lpoutbuffer), ::core::mem::transmute(noutbuffersize), ::core::mem::transmute(lpbytesreturned), ::core::mem::transmute(lpoverlapped)).ok()
     }
@@ -2204,7 +2204,7 @@ impl IDirectMusicPort {
     pub unsafe fn GetChannelPriority(&self, dwchannelgroup: u32, dwchannel: u32, pdwpriority: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetChannelPriority)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwchannelgroup), ::core::mem::transmute(dwchannel), ::core::mem::transmute(pdwpriority)).ok()
     }
-    #[cfg(feature = "Win32_Media_Audio_DirectSound")]
+    #[cfg(feature = "win32-media")]
     pub unsafe fn SetDirectSound<'a, Param0: ::windows_core::IntoParam<'a, super::DirectSound::IDirectSound>, Param1: ::windows_core::IntoParam<'a, super::DirectSound::IDirectSoundBuffer>>(&self, pdirectsound: Param0, pdirectsoundbuffer: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDirectSound)(::windows_core::Interface::as_raw(self), pdirectsound.into_param().abi(), pdirectsoundbuffer.into_param().abi()).ok()
     }
@@ -2265,18 +2265,18 @@ pub struct IDirectMusicPort_Vtbl {
     pub GetRunningStats: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstats: *mut DMUS_SYNTHSTATS) -> ::windows_core::HRESULT,
     pub Compact: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub GetCaps: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pportcaps: *mut DMUS_PORTCAPS) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system")]
     pub DeviceIoControl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwiocontrolcode: u32, lpinbuffer: *mut ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesreturned: *mut u32, lpoverlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_IO"))]
+    #[cfg(not(feature = "win32-system"))]
     DeviceIoControl: usize,
     pub SetNumChannelGroups: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwchannelgroups: u32) -> ::windows_core::HRESULT,
     pub GetNumChannelGroups: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwchannelgroups: *mut u32) -> ::windows_core::HRESULT,
     pub Activate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, factive: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub SetChannelPriority: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwchannelgroup: u32, dwchannel: u32, dwpriority: u32) -> ::windows_core::HRESULT,
     pub GetChannelPriority: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwchannelgroup: u32, dwchannel: u32, pdwpriority: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Media_Audio_DirectSound")]
+    #[cfg(feature = "win32-media")]
     pub SetDirectSound: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdirectsound: ::windows_core::RawPtr, pdirectsoundbuffer: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Media_Audio_DirectSound"))]
+    #[cfg(not(feature = "win32-media"))]
     SetDirectSound: usize,
     pub GetFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwaveformatex: *mut super::WAVEFORMATEX, pdwwaveformatexsize: *mut u32, pdwbuffersize: *mut u32) -> ::windows_core::HRESULT,
 }
@@ -2636,7 +2636,7 @@ impl IDirectMusicSynthSink {
     pub unsafe fn RefTimeToSample(&self, rftime: i64, pllsampletime: *mut i64) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RefTimeToSample)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(rftime), ::core::mem::transmute(pllsampletime)).ok()
     }
-    #[cfg(feature = "Win32_Media_Audio_DirectSound")]
+    #[cfg(feature = "win32-media")]
     pub unsafe fn SetDirectSound<'a, Param0: ::windows_core::IntoParam<'a, super::DirectSound::IDirectSound>, Param1: ::windows_core::IntoParam<'a, super::DirectSound::IDirectSoundBuffer>>(&self, pdirectsound: Param0, pdirectsoundbuffer: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDirectSound)(::windows_core::Interface::as_raw(self), pdirectsound.into_param().abi(), pdirectsoundbuffer.into_param().abi()).ok()
     }
@@ -2694,9 +2694,9 @@ pub struct IDirectMusicSynthSink_Vtbl {
     pub Activate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fenable: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub SampleToRefTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, llsampletime: i64, prftime: *mut i64) -> ::windows_core::HRESULT,
     pub RefTimeToSample: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, rftime: i64, pllsampletime: *mut i64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Media_Audio_DirectSound")]
+    #[cfg(feature = "win32-media")]
     pub SetDirectSound: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdirectsound: ::windows_core::RawPtr, pdirectsoundbuffer: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Media_Audio_DirectSound"))]
+    #[cfg(not(feature = "win32-media"))]
     SetDirectSound: usize,
     pub GetDesiredBufferSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwbuffersizeinsamples: *mut u32) -> ::windows_core::HRESULT,
 }
@@ -2842,7 +2842,7 @@ impl ::core::default::Default for MIDILOCALE {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Multimedia")]
+#[cfg(feature = "win32-media")]
 pub struct MIDIOPENDESC {
     pub hMidi: super::HMIDI,
     pub dwCallback: usize,
@@ -2851,27 +2851,27 @@ pub struct MIDIOPENDESC {
     pub cIds: u32,
     pub rgIds: [super::super::Multimedia::MIDIOPENSTRMID; 1],
 }
-#[cfg(feature = "Win32_Media_Multimedia")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for MIDIOPENDESC {}
-#[cfg(feature = "Win32_Media_Multimedia")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for MIDIOPENDESC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Multimedia")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for MIDIOPENDESC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Multimedia")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for MIDIOPENDESC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDIOPENDESC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Multimedia")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for MIDIOPENDESC {}
-#[cfg(feature = "Win32_Media_Multimedia")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for MIDIOPENDESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

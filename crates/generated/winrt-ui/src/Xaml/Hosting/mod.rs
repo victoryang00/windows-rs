@@ -730,54 +730,54 @@ unsafe impl ::core::marker::Sync for DesktopWindowXamlSourceTakeFocusRequestedEv
 #[repr(transparent)]
 pub struct ElementCompositionPreview(::windows_core::IUnknown);
 impl ElementCompositionPreview {
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GetElementVisual<'a, Param0: ::windows_core::IntoParam<'a, super::UIElement>>(element: Param0) -> ::windows_core::Result<super::super::Composition::Visual> {
         Self::IElementCompositionPreviewStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetElementVisual)(::windows_core::Interface::as_raw(this), element.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Composition::Visual>(result__)
         })
     }
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GetElementChildVisual<'a, Param0: ::windows_core::IntoParam<'a, super::UIElement>>(element: Param0) -> ::windows_core::Result<super::super::Composition::Visual> {
         Self::IElementCompositionPreviewStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetElementChildVisual)(::windows_core::Interface::as_raw(this), element.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Composition::Visual>(result__)
         })
     }
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetElementChildVisual<'a, Param0: ::windows_core::IntoParam<'a, super::UIElement>, Param1: ::windows_core::IntoParam<'a, super::super::Composition::Visual>>(element: Param0, visual: Param1) -> ::windows_core::Result<()> {
         Self::IElementCompositionPreviewStatics(|this| unsafe { (::windows_core::Interface::vtable(this).SetElementChildVisual)(::windows_core::Interface::as_raw(this), element.into_param().abi(), visual.into_param().abi()).ok() })
     }
-    #[cfg(all(feature = "UI_Composition", feature = "UI_Xaml_Controls"))]
+    #[cfg(all(feature = "winrt-ui", feature = "winrt-ui"))]
     pub fn GetScrollViewerManipulationPropertySet<'a, Param0: ::windows_core::IntoParam<'a, super::Controls::ScrollViewer>>(scrollviewer: Param0) -> ::windows_core::Result<super::super::Composition::CompositionPropertySet> {
         Self::IElementCompositionPreviewStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetScrollViewerManipulationPropertySet)(::windows_core::Interface::as_raw(this), scrollviewer.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Composition::CompositionPropertySet>(result__)
         })
     }
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetImplicitShowAnimation<'a, Param0: ::windows_core::IntoParam<'a, super::UIElement>, Param1: ::windows_core::IntoParam<'a, super::super::Composition::ICompositionAnimationBase>>(element: Param0, animation: Param1) -> ::windows_core::Result<()> {
         Self::IElementCompositionPreviewStatics2(|this| unsafe { (::windows_core::Interface::vtable(this).SetImplicitShowAnimation)(::windows_core::Interface::as_raw(this), element.into_param().abi(), animation.into_param().abi()).ok() })
     }
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetImplicitHideAnimation<'a, Param0: ::windows_core::IntoParam<'a, super::UIElement>, Param1: ::windows_core::IntoParam<'a, super::super::Composition::ICompositionAnimationBase>>(element: Param0, animation: Param1) -> ::windows_core::Result<()> {
         Self::IElementCompositionPreviewStatics2(|this| unsafe { (::windows_core::Interface::vtable(this).SetImplicitHideAnimation)(::windows_core::Interface::as_raw(this), element.into_param().abi(), animation.into_param().abi()).ok() })
     }
     pub fn SetIsTranslationEnabled<'a, Param0: ::windows_core::IntoParam<'a, super::UIElement>>(element: Param0, value: bool) -> ::windows_core::Result<()> {
         Self::IElementCompositionPreviewStatics2(|this| unsafe { (::windows_core::Interface::vtable(this).SetIsTranslationEnabled)(::windows_core::Interface::as_raw(this), element.into_param().abi(), value).ok() })
     }
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GetPointerPositionPropertySet<'a, Param0: ::windows_core::IntoParam<'a, super::UIElement>>(targetelement: Param0) -> ::windows_core::Result<super::super::Composition::CompositionPropertySet> {
         Self::IElementCompositionPreviewStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetPointerPositionPropertySet)(::windows_core::Interface::as_raw(this), targetelement.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Composition::CompositionPropertySet>(result__)
         })
     }
-    #[cfg(feature = "UI_WindowManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetAppWindowContent<'a, Param0: ::windows_core::IntoParam<'a, super::super::WindowManagement::AppWindow>, Param1: ::windows_core::IntoParam<'a, super::UIElement>>(appwindow: Param0, xamlcontent: Param1) -> ::windows_core::Result<()> {
         Self::IElementCompositionPreviewStatics3(|this| unsafe { (::windows_core::Interface::vtable(this).SetAppWindowContent)(::windows_core::Interface::as_raw(this), appwindow.into_param().abi(), xamlcontent.into_param().abi()).ok() })
     }
-    #[cfg(feature = "UI_WindowManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GetAppWindowContent<'a, Param0: ::windows_core::IntoParam<'a, super::super::WindowManagement::AppWindow>>(appwindow: Param0) -> ::windows_core::Result<super::UIElement> {
         Self::IElementCompositionPreviewStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1011,21 +1011,21 @@ unsafe impl ::windows_core::Interface for IElementCompositionPreviewStatics {
 #[doc(hidden)]
 pub struct IElementCompositionPreviewStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub GetElementVisual: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Composition"))]
+    #[cfg(not(feature = "winrt-ui"))]
     GetElementVisual: usize,
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub GetElementChildVisual: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Composition"))]
+    #[cfg(not(feature = "winrt-ui"))]
     GetElementChildVisual: usize,
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub SetElementChildVisual: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, visual: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Composition"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetElementChildVisual: usize,
-    #[cfg(all(feature = "UI_Composition", feature = "UI_Xaml_Controls"))]
+    #[cfg(all(feature = "winrt-ui", feature = "winrt-ui"))]
     pub GetScrollViewerManipulationPropertySet: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scrollviewer: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "UI_Composition", feature = "UI_Xaml_Controls")))]
+    #[cfg(not(all(feature = "winrt-ui", feature = "winrt-ui")))]
     GetScrollViewerManipulationPropertySet: usize,
 }
 #[doc(hidden)]
@@ -1039,18 +1039,18 @@ unsafe impl ::windows_core::Interface for IElementCompositionPreviewStatics2 {
 #[doc(hidden)]
 pub struct IElementCompositionPreviewStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub SetImplicitShowAnimation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Composition"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetImplicitShowAnimation: usize,
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub SetImplicitHideAnimation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Composition"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetImplicitHideAnimation: usize,
     pub SetIsTranslationEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub GetPointerPositionPropertySet: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, targetelement: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Composition"))]
+    #[cfg(not(feature = "winrt-ui"))]
     GetPointerPositionPropertySet: usize,
 }
 #[doc(hidden)]
@@ -1064,13 +1064,13 @@ unsafe impl ::windows_core::Interface for IElementCompositionPreviewStatics3 {
 #[doc(hidden)]
 pub struct IElementCompositionPreviewStatics3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_WindowManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub SetAppWindowContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: ::windows_core::RawPtr, xamlcontent: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_WindowManagement"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetAppWindowContent: usize,
-    #[cfg(feature = "UI_WindowManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub GetAppWindowContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_WindowManagement"))]
+    #[cfg(not(feature = "winrt-ui"))]
     GetAppWindowContent: usize,
 }
 #[doc(hidden)]
@@ -1454,13 +1454,13 @@ unsafe impl ::windows_core::Interface for IXamlUIPresenterStatics2 {
 #[doc(hidden)]
 pub struct IXamlUIPresenterStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub GetFlyoutPlacementTargetInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, placementtarget: ::windows_core::RawPtr, preferredplacement: super::Controls::Primitives::FlyoutPlacementMode, targetpreferredplacement: *mut super::Controls::Primitives::FlyoutPlacementMode, allowfallbacks: *mut bool, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    #[cfg(not(feature = "winrt-ui"))]
     GetFlyoutPlacementTargetInfo: usize,
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub GetFlyoutPlacement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, placementtargetbounds: ::winrt_foundation::Rect, controlsize: ::winrt_foundation::Size, mincontrolsize: ::winrt_foundation::Size, containerrect: ::winrt_foundation::Rect, targetpreferredplacement: super::Controls::Primitives::FlyoutPlacementMode, allowfallbacks: bool, chosenplacement: *mut super::Controls::Primitives::FlyoutPlacementMode, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    #[cfg(not(feature = "winrt-ui"))]
     GetFlyoutPlacement: usize,
 }
 #[repr(transparent)]
@@ -1889,14 +1889,14 @@ impl XamlUIPresenter {
     pub fn NotifyWindowSizeChanged() -> ::windows_core::Result<()> {
         Self::IXamlUIPresenterStatics(|this| unsafe { (::windows_core::Interface::vtable(this).NotifyWindowSizeChanged)(::windows_core::Interface::as_raw(this)).ok() })
     }
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GetFlyoutPlacementTargetInfo<'a, Param0: ::windows_core::IntoParam<'a, super::FrameworkElement>>(placementtarget: Param0, preferredplacement: super::Controls::Primitives::FlyoutPlacementMode, targetpreferredplacement: &mut super::Controls::Primitives::FlyoutPlacementMode, allowfallbacks: &mut bool) -> ::windows_core::Result<::winrt_foundation::Rect> {
         Self::IXamlUIPresenterStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
             (::windows_core::Interface::vtable(this).GetFlyoutPlacementTargetInfo)(::windows_core::Interface::as_raw(this), placementtarget.into_param().abi(), preferredplacement, targetpreferredplacement, allowfallbacks, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GetFlyoutPlacement<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Rect>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Size>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Size>, Param3: ::windows_core::IntoParam<'a, ::winrt_foundation::Rect>>(placementtargetbounds: Param0, controlsize: Param1, mincontrolsize: Param2, containerrect: Param3, targetpreferredplacement: super::Controls::Primitives::FlyoutPlacementMode, allowfallbacks: bool, chosenplacement: &mut super::Controls::Primitives::FlyoutPlacementMode) -> ::windows_core::Result<::winrt_foundation::Rect> {
         Self::IXamlUIPresenterStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();

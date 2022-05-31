@@ -1205,7 +1205,7 @@ pub const DFS_WARN_METADATA_LINK_INFO_INVALID: i32 = -2147469106i32;
 pub const DFS_WARN_METADATA_LINK_TYPE_INCORRECT: i32 = -2147469107i32;
 pub const DNLEN: u32 = 15u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 pub struct DSREG_JOIN_INFO {
     pub joinType: DSREG_JOIN_TYPE,
     pub pJoinCertificate: *const ::win32_security::Cryptography::CERT_CONTEXT,
@@ -1220,15 +1220,15 @@ pub struct DSREG_JOIN_INFO {
     pub pszUserSettingSyncUrl: ::windows_core::PWSTR,
     pub pUserInfo: *mut DSREG_USER_INFO,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for DSREG_JOIN_INFO {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for DSREG_JOIN_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for DSREG_JOIN_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DSREG_JOIN_INFO")
@@ -1247,19 +1247,19 @@ impl ::core::fmt::Debug for DSREG_JOIN_INFO {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for DSREG_JOIN_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for DSREG_JOIN_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DSREG_JOIN_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for DSREG_JOIN_INFO {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for DSREG_JOIN_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2966,7 +2966,7 @@ impl INetCfgComponent {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).GetDeviceStatus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(feature = "Win32_System_Registry")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn OpenParamKey(&self) -> ::windows_core::Result<::win32_system::Registry::HKEY> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_system::Registry::HKEY>::zeroed();
         (::windows_core::Interface::vtable(self).OpenParamKey)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Registry::HKEY>(result__)
@@ -3029,9 +3029,9 @@ pub struct INetCfgComponent_Vtbl {
     pub GetClassGuid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguid: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub GetBindName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppszwbindname: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub GetDeviceStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pulstatus: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Registry")]
+    #[cfg(feature = "win32-system")]
     pub OpenParamKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phkey: *mut ::win32_system::Registry::HKEY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Registry"))]
+    #[cfg(not(feature = "win32-system"))]
     OpenParamKey: usize,
     pub RaisePropertyUi: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwndparent: ::win32_foundation::HWND, dwflags: u32, punkcontext: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -3858,7 +3858,7 @@ impl IProvisioningDomain {
     pub unsafe fn Add<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszwpathtofolder: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Add)(::windows_core::Interface::as_raw(self), pszwpathtofolder.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
+    #[cfg(all(feature = "win32-data", feature = "win32-system"))]
     pub unsafe fn Query<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszwdomain: Param0, pszwlanguage: Param1, pszwxpathquery: Param2) -> ::windows_core::Result<::win32_data::Xml::MsXml::IXMLDOMNodeList> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).Query)(::windows_core::Interface::as_raw(self), pszwdomain.into_param().abi(), pszwlanguage.into_param().abi(), pszwxpathquery.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_data::Xml::MsXml::IXMLDOMNodeList>(result__)
@@ -3909,9 +3909,9 @@ unsafe impl ::windows_core::Interface for IProvisioningDomain {
 pub struct IProvisioningDomain_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszwpathtofolder: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
+    #[cfg(all(feature = "win32-data", feature = "win32-system"))]
     pub Query: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszwdomain: ::windows_core::PCWSTR, pszwlanguage: ::windows_core::PCWSTR, pszwxpathquery: ::windows_core::PCWSTR, nodes: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com")))]
+    #[cfg(not(all(feature = "win32-data", feature = "win32-system")))]
     Query: usize,
 }
 #[repr(transparent)]
@@ -4127,78 +4127,78 @@ impl ::core::default::Default for LOCALGROUP_MEMBERS_INFO_0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct LOCALGROUP_MEMBERS_INFO_1 {
     pub lgrmi1_sid: ::win32_foundation::PSID,
     pub lgrmi1_sidusage: ::win32_security::SID_NAME_USE,
     pub lgrmi1_name: ::windows_core::PWSTR,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for LOCALGROUP_MEMBERS_INFO_1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for LOCALGROUP_MEMBERS_INFO_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for LOCALGROUP_MEMBERS_INFO_1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("LOCALGROUP_MEMBERS_INFO_1").field("lgrmi1_sid", &self.lgrmi1_sid).field("lgrmi1_sidusage", &self.lgrmi1_sidusage).field("lgrmi1_name", &self.lgrmi1_name).finish()
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for LOCALGROUP_MEMBERS_INFO_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for LOCALGROUP_MEMBERS_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOCALGROUP_MEMBERS_INFO_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for LOCALGROUP_MEMBERS_INFO_1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for LOCALGROUP_MEMBERS_INFO_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 pub struct LOCALGROUP_MEMBERS_INFO_2 {
     pub lgrmi2_sid: ::win32_foundation::PSID,
     pub lgrmi2_sidusage: ::win32_security::SID_NAME_USE,
     pub lgrmi2_domainandname: ::windows_core::PWSTR,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for LOCALGROUP_MEMBERS_INFO_2 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for LOCALGROUP_MEMBERS_INFO_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for LOCALGROUP_MEMBERS_INFO_2 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("LOCALGROUP_MEMBERS_INFO_2").field("lgrmi2_sid", &self.lgrmi2_sid).field("lgrmi2_sidusage", &self.lgrmi2_sidusage).field("lgrmi2_domainandname", &self.lgrmi2_domainandname).finish()
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for LOCALGROUP_MEMBERS_INFO_2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for LOCALGROUP_MEMBERS_INFO_2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOCALGROUP_MEMBERS_INFO_2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for LOCALGROUP_MEMBERS_INFO_2 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for LOCALGROUP_MEMBERS_INFO_2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6659,7 +6659,7 @@ pub unsafe fn NetErrorLogWrite<'a, Param2: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn NetFreeAadJoinInformation(pjoininfo: *const DSREG_JOIN_INFO) {
     #[cfg(windows)]
@@ -6673,7 +6673,7 @@ pub unsafe fn NetFreeAadJoinInformation(pjoininfo: *const DSREG_JOIN_INFO) {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn NetGetAadJoinInformation<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pcsztenantid: Param0) -> ::windows_core::Result<*mut DSREG_JOIN_INFO> {
     #[cfg(windows)]

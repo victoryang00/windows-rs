@@ -34,12 +34,12 @@ impl ::core::fmt::Debug for GRAPHICS_EFFECT_PROPERTY_MAPPING {
 #[repr(transparent)]
 pub struct IGeometrySource2DInterop(::windows_core::IUnknown);
 impl IGeometrySource2DInterop {
-    #[cfg(feature = "Win32_Graphics_Direct2D")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetGeometry(&self) -> ::windows_core::Result<::win32_graphics::Direct2D::ID2D1Geometry> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetGeometry)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_graphics::Direct2D::ID2D1Geometry>(result__)
     }
-    #[cfg(feature = "Win32_Graphics_Direct2D")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn TryGetGeometryUsingFactory<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Direct2D::ID2D1Factory>>(&self, factory: Param0) -> ::windows_core::Result<::win32_graphics::Direct2D::ID2D1Geometry> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).TryGetGeometryUsingFactory)(::windows_core::Interface::as_raw(self), factory.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_graphics::Direct2D::ID2D1Geometry>(result__)
@@ -89,13 +89,13 @@ unsafe impl ::windows_core::Interface for IGeometrySource2DInterop {
 #[doc(hidden)]
 pub struct IGeometrySource2DInterop_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Graphics_Direct2D")]
+    #[cfg(feature = "win32-graphics")]
     pub GetGeometry: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct2D"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetGeometry: usize,
-    #[cfg(feature = "Win32_Graphics_Direct2D")]
+    #[cfg(feature = "win32-graphics")]
     pub TryGetGeometryUsingFactory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, factory: ::windows_core::RawPtr, value: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct2D"))]
+    #[cfg(not(feature = "win32-graphics"))]
     TryGetGeometryUsingFactory: usize,
 }
 #[repr(transparent)]
@@ -116,7 +116,7 @@ impl IGraphicsEffectD2D1Interop {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::winrt_foundation::IPropertyValue>(result__)
     }
-    #[cfg(feature = "Graphics_Effects")]
+    #[cfg(feature = "winrt-graphics")]
     pub unsafe fn GetSource(&self, index: u32) -> ::windows_core::Result<::winrt_graphics::Effects::IGraphicsEffectSource> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetSource)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::winrt_graphics::Effects::IGraphicsEffectSource>(result__)
@@ -174,9 +174,9 @@ pub struct IGraphicsEffectD2D1Interop_Vtbl {
     pub GetNamedPropertyMapping: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::windows_core::PCWSTR, index: *mut u32, mapping: *mut GRAPHICS_EFFECT_PROPERTY_MAPPING) -> ::windows_core::HRESULT,
     pub GetPropertyCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, count: *mut u32) -> ::windows_core::HRESULT,
     pub GetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32, value: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Graphics_Effects")]
+    #[cfg(feature = "winrt-graphics")]
     pub GetSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32, source: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Effects"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     GetSource: usize,
     pub GetSourceCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, count: *mut u32) -> ::windows_core::HRESULT,
 }

@@ -1,4 +1,4 @@
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn AdjustWindowRectExForDpi<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(lprect: *mut ::win32_foundation::RECT, dwstyle: super::WindowsAndMessaging::WINDOW_STYLE, bmenu: Param2, dwexstyle: super::WindowsAndMessaging::WINDOW_EX_STYLE, dpi: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -280,7 +280,7 @@ pub unsafe fn GetDpiAwarenessContextForProcess<'a, Param0: ::windows_core::IntoP
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn GetDpiForMonitor<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HMONITOR>>(hmonitor: Param0, dpitype: MONITOR_DPI_TYPE, dpix: *mut u32, dpiy: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]

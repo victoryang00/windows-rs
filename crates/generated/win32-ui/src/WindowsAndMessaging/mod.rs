@@ -1535,7 +1535,7 @@ pub unsafe fn CreateAcceleratorTableW(paccel: &[ACCEL]) -> ::windows_core::Resul
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn CreateCaret<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HBITMAP>>(hwnd: Param0, hbitmap: Param1, nwidth: i32, nheight: i32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -1657,7 +1657,7 @@ pub unsafe fn CreateIconFromResourceEx<'a, Param2: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn CreateIconIndirect(piconinfo: *const ICONINFO) -> ::windows_core::Result<HICON> {
     #[cfg(windows)]
@@ -2357,7 +2357,7 @@ pub unsafe fn DragObject<'a, Param0: ::windows_core::IntoParam<'a, ::win32_found
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn DrawIcon<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HDC>, Param3: ::windows_core::IntoParam<'a, HICON>>(hdc: Param0, x: i32, y: i32, hicon: Param3) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -2371,7 +2371,7 @@ pub unsafe fn DrawIcon<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphic
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn DrawIconEx<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HDC>, Param3: ::windows_core::IntoParam<'a, HICON>, Param7: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HBRUSH>>(hdc: Param0, xleft: i32, ytop: i32, hicon: Param3, cxwidth: i32, cywidth: i32, istepifanicur: u32, hbrflickerfreedraw: Param7, diflags: DI_FLAGS) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -3286,7 +3286,7 @@ pub unsafe fn GetCaretPos(lppoint: *mut ::win32_foundation::POINT) -> ::win32_fo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn GetClassInfoA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hinstance: Param0, lpclassname: Param1, lpwndclass: *mut WNDCLASSA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -3300,7 +3300,7 @@ pub unsafe fn GetClassInfoA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_fo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn GetClassInfoExA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hinstance: Param0, lpszclass: Param1, lpwcx: *mut WNDCLASSEXA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -3314,7 +3314,7 @@ pub unsafe fn GetClassInfoExA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn GetClassInfoExW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hinstance: Param0, lpszclass: Param1, lpwcx: *mut WNDCLASSEXW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -3328,7 +3328,7 @@ pub unsafe fn GetClassInfoExW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn GetClassInfoW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hinstance: Param0, lpclassname: Param1, lpwndclass: *mut WNDCLASSW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -3617,7 +3617,7 @@ pub unsafe fn GetGUIThreadInfo(idthread: u32, pgui: *mut GUITHREADINFO) -> ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn GetIconInfo<'a, Param0: ::windows_core::IntoParam<'a, HICON>>(hicon: Param0, piconinfo: *mut ICONINFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -3631,7 +3631,7 @@ pub unsafe fn GetIconInfo<'a, Param0: ::windows_core::IntoParam<'a, HICON>>(hico
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn GetIconInfoExA<'a, Param0: ::windows_core::IntoParam<'a, HICON>>(hicon: Param0, piconinfo: *mut ICONINFOEXA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -3645,7 +3645,7 @@ pub unsafe fn GetIconInfoExA<'a, Param0: ::windows_core::IntoParam<'a, HICON>>(h
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn GetIconInfoExW<'a, Param0: ::windows_core::IntoParam<'a, HICON>>(hicon: Param0, piconinfo: *mut ICONINFOEXW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -3750,7 +3750,7 @@ pub unsafe fn GetMenuDefaultItem<'a, Param0: ::windows_core::IntoParam<'a, HMENU
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn GetMenuInfo<'a, Param0: ::windows_core::IntoParam<'a, HMENU>>(param0: Param0, param1: *mut MENUINFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -3790,7 +3790,7 @@ pub unsafe fn GetMenuItemID<'a, Param0: ::windows_core::IntoParam<'a, HMENU>>(hm
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn GetMenuItemInfoA<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(hmenu: Param0, item: u32, fbyposition: Param2, lpmii: *mut MENUITEMINFOA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -3804,7 +3804,7 @@ pub unsafe fn GetMenuItemInfoA<'a, Param0: ::windows_core::IntoParam<'a, HMENU>,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn GetMenuItemInfoW<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(hmenu: Param0, item: u32, fbyposition: Param2, lpmii: *mut MENUITEMINFOW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -4488,27 +4488,27 @@ impl ::core::default::Default for HARDWAREHOOKSTRUCT {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub const HBMMENU_CALLBACK: ::win32_graphics::Gdi::HBITMAP = ::win32_graphics::Gdi::HBITMAP(-1i32 as _);
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub const HBMMENU_MBAR_CLOSE: ::win32_graphics::Gdi::HBITMAP = ::win32_graphics::Gdi::HBITMAP(5i32 as _);
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub const HBMMENU_MBAR_CLOSE_D: ::win32_graphics::Gdi::HBITMAP = ::win32_graphics::Gdi::HBITMAP(6i32 as _);
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub const HBMMENU_MBAR_MINIMIZE: ::win32_graphics::Gdi::HBITMAP = ::win32_graphics::Gdi::HBITMAP(3i32 as _);
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub const HBMMENU_MBAR_MINIMIZE_D: ::win32_graphics::Gdi::HBITMAP = ::win32_graphics::Gdi::HBITMAP(7i32 as _);
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub const HBMMENU_MBAR_RESTORE: ::win32_graphics::Gdi::HBITMAP = ::win32_graphics::Gdi::HBITMAP(2i32 as _);
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub const HBMMENU_POPUP_CLOSE: ::win32_graphics::Gdi::HBITMAP = ::win32_graphics::Gdi::HBITMAP(8i32 as _);
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub const HBMMENU_POPUP_MAXIMIZE: ::win32_graphics::Gdi::HBITMAP = ::win32_graphics::Gdi::HBITMAP(10i32 as _);
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub const HBMMENU_POPUP_MINIMIZE: ::win32_graphics::Gdi::HBITMAP = ::win32_graphics::Gdi::HBITMAP(11i32 as _);
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub const HBMMENU_POPUP_RESTORE: ::win32_graphics::Gdi::HBITMAP = ::win32_graphics::Gdi::HBITMAP(9i32 as _);
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub const HBMMENU_SYSTEM: ::win32_graphics::Gdi::HBITMAP = ::win32_graphics::Gdi::HBITMAP(1i32 as _);
 pub const HCBT_ACTIVATE: u32 = 5u32;
 pub const HCBT_CLICKSKIPPED: u32 = 6u32;
@@ -4747,7 +4747,7 @@ pub unsafe fn HiliteMenuItem<'a, Param0: ::windows_core::IntoParam<'a, ::win32_f
     unimplemented!("Unsupported target OS");
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct ICONINFO {
     pub fIcon: ::win32_foundation::BOOL,
     pub xHotspot: u32,
@@ -4755,40 +4755,40 @@ pub struct ICONINFO {
     pub hbmMask: ::win32_graphics::Gdi::HBITMAP,
     pub hbmColor: ::win32_graphics::Gdi::HBITMAP,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for ICONINFO {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for ICONINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for ICONINFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ICONINFO").field("fIcon", &self.fIcon).field("xHotspot", &self.xHotspot).field("yHotspot", &self.yHotspot).field("hbmMask", &self.hbmMask).field("hbmColor", &self.hbmColor).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for ICONINFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for ICONINFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ICONINFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for ICONINFO {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for ICONINFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct ICONINFOEXA {
     pub cbSize: u32,
     pub fIcon: ::win32_foundation::BOOL,
@@ -4800,40 +4800,40 @@ pub struct ICONINFOEXA {
     pub szModName: [::win32_foundation::CHAR; 260],
     pub szResName: [::win32_foundation::CHAR; 260],
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for ICONINFOEXA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for ICONINFOEXA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for ICONINFOEXA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ICONINFOEXA").field("cbSize", &self.cbSize).field("fIcon", &self.fIcon).field("xHotspot", &self.xHotspot).field("yHotspot", &self.yHotspot).field("hbmMask", &self.hbmMask).field("hbmColor", &self.hbmColor).field("wResID", &self.wResID).field("szModName", &self.szModName).field("szResName", &self.szResName).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for ICONINFOEXA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for ICONINFOEXA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ICONINFOEXA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for ICONINFOEXA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for ICONINFOEXA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct ICONINFOEXW {
     pub cbSize: u32,
     pub fIcon: ::win32_foundation::BOOL,
@@ -4845,40 +4845,40 @@ pub struct ICONINFOEXW {
     pub szModName: [u16; 260],
     pub szResName: [u16; 260],
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for ICONINFOEXW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for ICONINFOEXW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for ICONINFOEXW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ICONINFOEXW").field("cbSize", &self.cbSize).field("fIcon", &self.fIcon).field("xHotspot", &self.xHotspot).field("yHotspot", &self.yHotspot).field("hbmMask", &self.hbmMask).field("hbmColor", &self.hbmColor).field("wResID", &self.wResID).field("szModName", &self.szModName).field("szResName", &self.szResName).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for ICONINFOEXW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for ICONINFOEXW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ICONINFOEXW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for ICONINFOEXW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for ICONINFOEXW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct ICONMETRICSA {
     pub cbSize: u32,
     pub iHorzSpacing: i32,
@@ -4886,40 +4886,40 @@ pub struct ICONMETRICSA {
     pub iTitleWrap: i32,
     pub lfFont: ::win32_graphics::Gdi::LOGFONTA,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for ICONMETRICSA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for ICONMETRICSA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for ICONMETRICSA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ICONMETRICSA").field("cbSize", &self.cbSize).field("iHorzSpacing", &self.iHorzSpacing).field("iVertSpacing", &self.iVertSpacing).field("iTitleWrap", &self.iTitleWrap).field("lfFont", &self.lfFont).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for ICONMETRICSA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for ICONMETRICSA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ICONMETRICSA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for ICONMETRICSA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for ICONMETRICSA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct ICONMETRICSW {
     pub cbSize: u32,
     pub iHorzSpacing: i32,
@@ -4927,33 +4927,33 @@ pub struct ICONMETRICSW {
     pub iTitleWrap: i32,
     pub lfFont: ::win32_graphics::Gdi::LOGFONTW,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for ICONMETRICSW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for ICONMETRICSW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for ICONMETRICSW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ICONMETRICSW").field("cbSize", &self.cbSize).field("iHorzSpacing", &self.iHorzSpacing).field("iVertSpacing", &self.iVertSpacing).field("iTitleWrap", &self.iTitleWrap).field("lfFont", &self.lfFont).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for ICONMETRICSW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for ICONMETRICSW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ICONMETRICSW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for ICONMETRICSW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for ICONMETRICSW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5172,7 +5172,7 @@ pub unsafe fn InsertMenuA<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Para
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn InsertMenuItemA<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(hmenu: Param0, item: u32, fbyposition: Param2, lpmi: *const MENUITEMINFOA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -5186,7 +5186,7 @@ pub unsafe fn InsertMenuItemA<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn InsertMenuItemW<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(hmenu: Param0, item: u32, fbyposition: Param2, lpmi: *const MENUITEMINFOW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -6204,7 +6204,7 @@ impl ::core::fmt::Debug for MENUGETOBJECTINFO_FLAGS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct MENUINFO {
     pub cbSize: u32,
     pub fMask: MENUINFO_MASK,
@@ -6214,33 +6214,33 @@ pub struct MENUINFO {
     pub dwContextHelpID: u32,
     pub dwMenuData: usize,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for MENUINFO {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for MENUINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for MENUINFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MENUINFO").field("cbSize", &self.cbSize).field("fMask", &self.fMask).field("dwStyle", &self.dwStyle).field("cyMax", &self.cyMax).field("hbrBack", &self.hbrBack).field("dwContextHelpID", &self.dwContextHelpID).field("dwMenuData", &self.dwMenuData).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for MENUINFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for MENUINFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MENUINFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for MENUINFO {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for MENUINFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6359,7 +6359,7 @@ impl ::core::ops::Not for MENUINFO_STYLE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct MENUITEMINFOA {
     pub cbSize: u32,
     pub fMask: MENU_ITEM_MASK,
@@ -6374,40 +6374,40 @@ pub struct MENUITEMINFOA {
     pub cch: u32,
     pub hbmpItem: ::win32_graphics::Gdi::HBITMAP,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for MENUITEMINFOA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for MENUITEMINFOA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for MENUITEMINFOA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MENUITEMINFOA").field("cbSize", &self.cbSize).field("fMask", &self.fMask).field("fType", &self.fType).field("fState", &self.fState).field("wID", &self.wID).field("hSubMenu", &self.hSubMenu).field("hbmpChecked", &self.hbmpChecked).field("hbmpUnchecked", &self.hbmpUnchecked).field("dwItemData", &self.dwItemData).field("dwTypeData", &self.dwTypeData).field("cch", &self.cch).field("hbmpItem", &self.hbmpItem).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for MENUITEMINFOA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for MENUITEMINFOA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MENUITEMINFOA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for MENUITEMINFOA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for MENUITEMINFOA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct MENUITEMINFOW {
     pub cbSize: u32,
     pub fMask: MENU_ITEM_MASK,
@@ -6422,33 +6422,33 @@ pub struct MENUITEMINFOW {
     pub cch: u32,
     pub hbmpItem: ::win32_graphics::Gdi::HBITMAP,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for MENUITEMINFOW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for MENUITEMINFOW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for MENUITEMINFOW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MENUITEMINFOW").field("cbSize", &self.cbSize).field("fMask", &self.fMask).field("fType", &self.fType).field("fState", &self.fState).field("wID", &self.wID).field("hSubMenu", &self.hSubMenu).field("hbmpChecked", &self.hbmpChecked).field("hbmpUnchecked", &self.hbmpUnchecked).field("dwItemData", &self.dwItemData).field("dwTypeData", &self.dwTypeData).field("cch", &self.cch).field("hbmpItem", &self.hbmpItem).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for MENUITEMINFOW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for MENUITEMINFOW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MENUITEMINFOW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for MENUITEMINFOW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for MENUITEMINFOW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7259,10 +7259,10 @@ impl ::core::default::Default for MSG {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui")]
 pub type MSGBOXCALLBACK = ::core::option::Option<unsafe extern "system" fn(lphelpinfo: *mut super::Shell::HELPINFO)>;
 #[repr(C)]
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui")]
 pub struct MSGBOXPARAMSA {
     pub cbSize: u32,
     pub hwndOwner: ::win32_foundation::HWND,
@@ -7275,40 +7275,40 @@ pub struct MSGBOXPARAMSA {
     pub lpfnMsgBoxCallback: MSGBOXCALLBACK,
     pub dwLanguageId: u32,
 }
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui")]
 impl ::core::marker::Copy for MSGBOXPARAMSA {}
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui")]
 impl ::core::clone::Clone for MSGBOXPARAMSA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui")]
 impl ::core::fmt::Debug for MSGBOXPARAMSA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MSGBOXPARAMSA").field("cbSize", &self.cbSize).field("hwndOwner", &self.hwndOwner).field("hInstance", &self.hInstance).field("lpszText", &self.lpszText).field("lpszCaption", &self.lpszCaption).field("dwStyle", &self.dwStyle).field("lpszIcon", &self.lpszIcon).field("dwContextHelpId", &self.dwContextHelpId).field("lpfnMsgBoxCallback", &self.lpfnMsgBoxCallback.map(|f| f as usize)).field("dwLanguageId", &self.dwLanguageId).finish()
     }
 }
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui")]
 unsafe impl ::windows_core::Abi for MSGBOXPARAMSA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui")]
 impl ::core::cmp::PartialEq for MSGBOXPARAMSA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MSGBOXPARAMSA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui")]
 impl ::core::cmp::Eq for MSGBOXPARAMSA {}
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui")]
 impl ::core::default::Default for MSGBOXPARAMSA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui")]
 pub struct MSGBOXPARAMSW {
     pub cbSize: u32,
     pub hwndOwner: ::win32_foundation::HWND,
@@ -7321,33 +7321,33 @@ pub struct MSGBOXPARAMSW {
     pub lpfnMsgBoxCallback: MSGBOXCALLBACK,
     pub dwLanguageId: u32,
 }
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui")]
 impl ::core::marker::Copy for MSGBOXPARAMSW {}
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui")]
 impl ::core::clone::Clone for MSGBOXPARAMSW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui")]
 impl ::core::fmt::Debug for MSGBOXPARAMSW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MSGBOXPARAMSW").field("cbSize", &self.cbSize).field("hwndOwner", &self.hwndOwner).field("hInstance", &self.hInstance).field("lpszText", &self.lpszText).field("lpszCaption", &self.lpszCaption).field("dwStyle", &self.dwStyle).field("lpszIcon", &self.lpszIcon).field("dwContextHelpId", &self.dwContextHelpId).field("lpfnMsgBoxCallback", &self.lpfnMsgBoxCallback.map(|f| f as usize)).field("dwLanguageId", &self.dwLanguageId).finish()
     }
 }
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui")]
 unsafe impl ::windows_core::Abi for MSGBOXPARAMSW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui")]
 impl ::core::cmp::PartialEq for MSGBOXPARAMSW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MSGBOXPARAMSW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui")]
 impl ::core::cmp::Eq for MSGBOXPARAMSW {}
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui")]
 impl ::core::default::Default for MSGBOXPARAMSW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7538,7 +7538,7 @@ pub unsafe fn MessageBoxExW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_fo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn MessageBoxIndirectA(lpmbp: *const MSGBOXPARAMSA) -> MESSAGEBOX_RESULT {
     #[cfg(windows)]
@@ -7552,7 +7552,7 @@ pub unsafe fn MessageBoxIndirectA(lpmbp: *const MSGBOXPARAMSA) -> MESSAGEBOX_RES
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_Shell")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn MessageBoxIndirectW(lpmbp: *const MSGBOXPARAMSW) -> MESSAGEBOX_RESULT {
     #[cfg(windows)]
@@ -8198,7 +8198,7 @@ pub const NID_INTEGRATED_TOUCH: u32 = 1u32;
 pub const NID_MULTI_INPUT: u32 = 64u32;
 pub const NID_READY: u32 = 128u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct NONCLIENTMETRICSA {
     pub cbSize: u32,
     pub iBorderWidth: i32,
@@ -8217,15 +8217,15 @@ pub struct NONCLIENTMETRICSA {
     pub lfMessageFont: ::win32_graphics::Gdi::LOGFONTA,
     pub iPaddedBorderWidth: i32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for NONCLIENTMETRICSA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for NONCLIENTMETRICSA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for NONCLIENTMETRICSA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("NONCLIENTMETRICSA")
@@ -8248,26 +8248,26 @@ impl ::core::fmt::Debug for NONCLIENTMETRICSA {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for NONCLIENTMETRICSA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for NONCLIENTMETRICSA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NONCLIENTMETRICSA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for NONCLIENTMETRICSA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for NONCLIENTMETRICSA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct NONCLIENTMETRICSW {
     pub cbSize: u32,
     pub iBorderWidth: i32,
@@ -8286,15 +8286,15 @@ pub struct NONCLIENTMETRICSW {
     pub lfMessageFont: ::win32_graphics::Gdi::LOGFONTW,
     pub iPaddedBorderWidth: i32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for NONCLIENTMETRICSW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for NONCLIENTMETRICSW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for NONCLIENTMETRICSW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("NONCLIENTMETRICSW")
@@ -8317,19 +8317,19 @@ impl ::core::fmt::Debug for NONCLIENTMETRICSW {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for NONCLIENTMETRICSW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for NONCLIENTMETRICSW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NONCLIENTMETRICSW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for NONCLIENTMETRICSW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for NONCLIENTMETRICSW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8944,7 +8944,7 @@ pub unsafe fn RealGetWindowClassW<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn RegisterClassA(lpwndclass: *const WNDCLASSA) -> u16 {
     #[cfg(windows)]
@@ -8958,7 +8958,7 @@ pub unsafe fn RegisterClassA(lpwndclass: *const WNDCLASSA) -> u16 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn RegisterClassExA(param0: *const WNDCLASSEXA) -> u16 {
     #[cfg(windows)]
@@ -8972,7 +8972,7 @@ pub unsafe fn RegisterClassExA(param0: *const WNDCLASSEXA) -> u16 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn RegisterClassExW(param0: *const WNDCLASSEXW) -> u16 {
     #[cfg(windows)]
@@ -8986,7 +8986,7 @@ pub unsafe fn RegisterClassExW(param0: *const WNDCLASSEXW) -> u16 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn RegisterClassW(lpwndclass: *const WNDCLASSW) -> u16 {
     #[cfg(windows)]
@@ -9000,7 +9000,7 @@ pub unsafe fn RegisterClassW(lpwndclass: *const WNDCLASSW) -> u16 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Power")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn RegisterDeviceNotificationA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hrecipient: Param0, notificationfilter: *const ::core::ffi::c_void, flags: ::win32_system::Power::POWER_SETTING_REGISTER_NOTIFICATION_FLAGS) -> *mut ::core::ffi::c_void {
     #[cfg(windows)]
@@ -9014,7 +9014,7 @@ pub unsafe fn RegisterDeviceNotificationA<'a, Param0: ::windows_core::IntoParam<
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Power")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn RegisterDeviceNotificationW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hrecipient: Param0, notificationfilter: *const ::core::ffi::c_void, flags: ::win32_system::Power::POWER_SETTING_REGISTER_NOTIFICATION_FLAGS) -> *mut ::core::ffi::c_void {
     #[cfg(windows)]
@@ -10281,7 +10281,7 @@ impl ::core::fmt::Debug for SYS_COLOR_INDEX {
         f.debug_tuple("SYS_COLOR_INDEX").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn ScrollDC<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HDC>, Param5: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HRGN>>(hdc: Param0, dx: i32, dy: i32, lprcscroll: *const ::win32_foundation::RECT, lprcclip: *const ::win32_foundation::RECT, hrgnupdate: Param5, lprcupdate: *mut ::win32_foundation::RECT) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -10308,7 +10308,7 @@ pub unsafe fn ScrollWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_fou
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn ScrollWindowEx<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param5: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HRGN>>(hwnd: Param0, dx: i32, dy: i32, prcscroll: *const ::win32_foundation::RECT, prcclip: *const ::win32_foundation::RECT, hrgnupdate: Param5, prcupdate: *mut ::win32_foundation::RECT, flags: SHOW_WINDOW_CMD) -> i32 {
     #[cfg(windows)]
@@ -10688,7 +10688,7 @@ pub unsafe fn SetMenuDefaultItem<'a, Param0: ::windows_core::IntoParam<'a, HMENU
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn SetMenuInfo<'a, Param0: ::windows_core::IntoParam<'a, HMENU>>(param0: Param0, param1: *const MENUINFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -10702,7 +10702,7 @@ pub unsafe fn SetMenuInfo<'a, Param0: ::windows_core::IntoParam<'a, HMENU>>(para
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn SetMenuItemBitmaps<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Param3: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HBITMAP>, Param4: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HBITMAP>>(hmenu: Param0, uposition: u32, uflags: MENU_ITEM_FLAGS, hbitmapunchecked: Param3, hbitmapchecked: Param4) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -10716,7 +10716,7 @@ pub unsafe fn SetMenuItemBitmaps<'a, Param0: ::windows_core::IntoParam<'a, HMENU
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn SetMenuItemInfoA<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(hmenu: Param0, item: u32, fbypositon: Param2, lpmii: *const MENUITEMINFOA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -10730,7 +10730,7 @@ pub unsafe fn SetMenuItemInfoA<'a, Param0: ::windows_core::IntoParam<'a, HMENU>,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn SetMenuItemInfoW<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(hmenu: Param0, item: u32, fbypositon: Param2, lpmii: *const MENUITEMINFOW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -11538,7 +11538,7 @@ pub const UIS_SET: u32 = 1u32;
 pub const UNICODE_NOCHAR: u32 = 65535u32;
 pub const UOI_TIMERPROC_EXCEPTION_SUPPRESSION: u32 = 7u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct UPDATELAYEREDWINDOWINFO {
     pub cbSize: u32,
     pub hdcDst: ::win32_graphics::Gdi::HDC,
@@ -11551,33 +11551,33 @@ pub struct UPDATELAYEREDWINDOWINFO {
     pub dwFlags: UPDATE_LAYERED_WINDOW_FLAGS,
     pub prcDirty: *const ::win32_foundation::RECT,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for UPDATELAYEREDWINDOWINFO {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for UPDATELAYEREDWINDOWINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for UPDATELAYEREDWINDOWINFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("UPDATELAYEREDWINDOWINFO").field("cbSize", &self.cbSize).field("hdcDst", &self.hdcDst).field("pptDst", &self.pptDst).field("psize", &self.psize).field("hdcSrc", &self.hdcSrc).field("pptSrc", &self.pptSrc).field("crKey", &self.crKey).field("pblend", &self.pblend).field("dwFlags", &self.dwFlags).field("prcDirty", &self.prcDirty).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for UPDATELAYEREDWINDOWINFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for UPDATELAYEREDWINDOWINFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<UPDATELAYEREDWINDOWINFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for UPDATELAYEREDWINDOWINFO {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for UPDATELAYEREDWINDOWINFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11664,7 +11664,7 @@ pub unsafe fn UnregisterClassW<'a, Param0: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn UpdateLayeredWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HDC>, Param4: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HDC>>(hwnd: Param0, hdcdst: Param1, pptdst: *const ::win32_foundation::POINT, psize: *const ::win32_foundation::SIZE, hdcsrc: Param4, pptsrc: *const ::win32_foundation::POINT, crkey: u32, pblend: *const ::win32_graphics::Gdi::BLENDFUNCTION, dwflags: UPDATE_LAYERED_WINDOW_FLAGS) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -11678,7 +11678,7 @@ pub unsafe fn UpdateLayeredWindow<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn UpdateLayeredWindowIndirect<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0, pulwinfo: *const UPDATELAYEREDWINDOWINFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -12413,7 +12413,7 @@ pub const WM_XBUTTONDBLCLK: u32 = 525u32;
 pub const WM_XBUTTONDOWN: u32 = 523u32;
 pub const WM_XBUTTONUP: u32 = 524u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct WNDCLASSA {
     pub style: WNDCLASS_STYLES,
     pub lpfnWndProc: WNDPROC,
@@ -12426,40 +12426,40 @@ pub struct WNDCLASSA {
     pub lpszMenuName: ::windows_core::PCSTR,
     pub lpszClassName: ::windows_core::PCSTR,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for WNDCLASSA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for WNDCLASSA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for WNDCLASSA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WNDCLASSA").field("style", &self.style).field("lpfnWndProc", &self.lpfnWndProc.map(|f| f as usize)).field("cbClsExtra", &self.cbClsExtra).field("cbWndExtra", &self.cbWndExtra).field("hInstance", &self.hInstance).field("hIcon", &self.hIcon).field("hCursor", &self.hCursor).field("hbrBackground", &self.hbrBackground).field("lpszMenuName", &self.lpszMenuName).field("lpszClassName", &self.lpszClassName).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for WNDCLASSA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for WNDCLASSA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNDCLASSA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for WNDCLASSA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for WNDCLASSA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct WNDCLASSEXA {
     pub cbSize: u32,
     pub style: WNDCLASS_STYLES,
@@ -12474,15 +12474,15 @@ pub struct WNDCLASSEXA {
     pub lpszClassName: ::windows_core::PCSTR,
     pub hIconSm: HICON,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for WNDCLASSEXA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for WNDCLASSEXA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for WNDCLASSEXA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WNDCLASSEXA")
@@ -12501,26 +12501,26 @@ impl ::core::fmt::Debug for WNDCLASSEXA {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for WNDCLASSEXA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for WNDCLASSEXA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNDCLASSEXA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for WNDCLASSEXA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for WNDCLASSEXA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct WNDCLASSEXW {
     pub cbSize: u32,
     pub style: WNDCLASS_STYLES,
@@ -12535,15 +12535,15 @@ pub struct WNDCLASSEXW {
     pub lpszClassName: ::windows_core::PCWSTR,
     pub hIconSm: HICON,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for WNDCLASSEXW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for WNDCLASSEXW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for WNDCLASSEXW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WNDCLASSEXW")
@@ -12562,26 +12562,26 @@ impl ::core::fmt::Debug for WNDCLASSEXW {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for WNDCLASSEXW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for WNDCLASSEXW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNDCLASSEXW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for WNDCLASSEXW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for WNDCLASSEXW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct WNDCLASSW {
     pub style: WNDCLASS_STYLES,
     pub lpfnWndProc: WNDPROC,
@@ -12594,33 +12594,33 @@ pub struct WNDCLASSW {
     pub lpszMenuName: ::windows_core::PCWSTR,
     pub lpszClassName: ::windows_core::PCWSTR,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for WNDCLASSW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for WNDCLASSW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for WNDCLASSW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WNDCLASSW").field("style", &self.style).field("lpfnWndProc", &self.lpfnWndProc.map(|f| f as usize)).field("cbClsExtra", &self.cbClsExtra).field("cbWndExtra", &self.cbWndExtra).field("hInstance", &self.hInstance).field("hIcon", &self.hIcon).field("hCursor", &self.hCursor).field("hbrBackground", &self.hbrBackground).field("lpszMenuName", &self.lpszMenuName).field("lpszClassName", &self.lpszClassName).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for WNDCLASSW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for WNDCLASSW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNDCLASSW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for WNDCLASSW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for WNDCLASSW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

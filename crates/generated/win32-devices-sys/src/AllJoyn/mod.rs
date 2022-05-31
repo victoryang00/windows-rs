@@ -3,7 +3,7 @@ extern "system" {
     pub fn AllJoynAcceptBusConnection(serverbushandle: ::win32_foundation_sys::HANDLE, abortevent: ::win32_foundation_sys::HANDLE) -> u32;
     pub fn AllJoynCloseBusHandle(bushandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn AllJoynConnectToBus(connectionspec: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn AllJoynCreateBus(outbuffersize: u32, inbuffersize: u32, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> ::win32_foundation_sys::HANDLE;
     pub fn AllJoynEnumEvents(connectedbushandle: ::win32_foundation_sys::HANDLE, eventtoreset: ::win32_foundation_sys::HANDLE, eventtypes: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn AllJoynEventSelect(connectedbushandle: ::win32_foundation_sys::HANDLE, eventhandle: ::win32_foundation_sys::HANDLE, eventtypes: u32) -> ::win32_foundation_sys::BOOL;

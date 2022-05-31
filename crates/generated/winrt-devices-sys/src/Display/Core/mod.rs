@@ -126,14 +126,14 @@ impl ::core::clone::Clone for DisplayPresentStatus {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation-sys")]
 pub struct DisplayPresentationRate {
     pub VerticalSyncRate: ::winrt_foundation_sys::Numerics::Rational,
     pub VerticalSyncsPerPresentation: i32,
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation-sys")]
 impl ::core::marker::Copy for DisplayPresentationRate {}
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation-sys")]
 impl ::core::clone::Clone for DisplayPresentationRate {
     fn clone(&self) -> Self {
         *self

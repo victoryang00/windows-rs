@@ -106,14 +106,14 @@ pub const D2D1_PATH_SEGMENT_FORCE_UNSTROKED: D2D1_PATH_SEGMENT = 1u32;
 pub const D2D1_PATH_SEGMENT_FORCE_ROUND_LINE_JOIN: D2D1_PATH_SEGMENT = 2u32;
 pub const D2D1_PATH_SEGMENT_FORCE_DWORD: D2D1_PATH_SEGMENT = 4294967295u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct D2D1_PIXEL_FORMAT {
     pub format: super::super::Dxgi::Common::DXGI_FORMAT,
     pub alphaMode: D2D1_ALPHA_MODE,
 }
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for D2D1_PIXEL_FORMAT {}
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for D2D1_PIXEL_FORMAT {
     fn clone(&self) -> Self {
         *self

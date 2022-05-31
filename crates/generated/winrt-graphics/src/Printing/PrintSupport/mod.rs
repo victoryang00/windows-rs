@@ -9,9 +9,9 @@ unsafe impl ::windows_core::Interface for IPrintSupportExtensionSession {
 #[doc(hidden)]
 pub struct IPrintSupportExtensionSession_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Printers")]
+    #[cfg(feature = "winrt-devices")]
     pub Printer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Printers"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Printer: usize,
     pub PrintTicketValidationRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemovePrintTicketValidationRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -43,13 +43,13 @@ unsafe impl ::windows_core::Interface for IPrintSupportPrintDeviceCapabilitiesCh
 #[doc(hidden)]
 pub struct IPrintSupportPrintDeviceCapabilitiesChangedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub GetCurrentPrintDeviceCapabilities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     GetCurrentPrintDeviceCapabilities: usize,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub UpdatePrintDeviceCapabilities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, updatedpdc: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     UpdatePrintDeviceCapabilities: usize,
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -64,9 +64,9 @@ unsafe impl ::windows_core::Interface for IPrintSupportPrintTicketValidationRequ
 #[doc(hidden)]
 pub struct IPrintSupportPrintTicketValidationRequestedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_Printing_PrintTicket")]
+    #[cfg(feature = "winrt-graphics")]
     pub PrintTicket: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Printing_PrintTicket"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     PrintTicket: usize,
     pub SetPrintTicketValidationStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, status: WorkflowPrintTicketValidationStatus) -> ::windows_core::HRESULT,
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -82,13 +82,13 @@ unsafe impl ::windows_core::Interface for IPrintSupportSessionInfo {
 #[doc(hidden)]
 pub struct IPrintSupportSessionInfo_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "ApplicationModel")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub SourceAppInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     SourceAppInfo: usize,
-    #[cfg(feature = "Devices_Printers")]
+    #[cfg(feature = "winrt-devices")]
     pub Printer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Printers"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Printer: usize,
 }
 #[doc(hidden)]
@@ -116,22 +116,22 @@ unsafe impl ::windows_core::Interface for IPrintSupportSettingsUISession {
 #[doc(hidden)]
 pub struct IPrintSupportSettingsUISession_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_Printing_PrintTicket")]
+    #[cfg(feature = "winrt-graphics")]
     pub SessionPrintTicket: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Printing_PrintTicket"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     SessionPrintTicket: usize,
     pub DocumentTitle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub LaunchKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SettingsLaunchKind) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Graphics_Printing_PrintTicket")]
+    #[cfg(feature = "winrt-graphics")]
     pub UpdatePrintTicket: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, printticket: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Printing_PrintTicket"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     UpdatePrintTicket: usize,
     pub SessionInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct PrintSupportExtensionSession(::windows_core::IUnknown);
 impl PrintSupportExtensionSession {
-    #[cfg(feature = "Devices_Printers")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Printer(&self) -> ::windows_core::Result<::winrt_devices::Printers::IppPrintDevice> {
         let this = self;
         unsafe {
@@ -324,7 +324,7 @@ unsafe impl ::core::marker::Sync for PrintSupportExtensionTriggerDetails {}
 #[repr(transparent)]
 pub struct PrintSupportPrintDeviceCapabilitiesChangedEventArgs(::windows_core::IUnknown);
 impl PrintSupportPrintDeviceCapabilitiesChangedEventArgs {
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn GetCurrentPrintDeviceCapabilities(&self) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         let this = self;
         unsafe {
@@ -332,7 +332,7 @@ impl PrintSupportPrintDeviceCapabilitiesChangedEventArgs {
             (::windows_core::Interface::vtable(this).GetCurrentPrintDeviceCapabilities)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_data::Xml::Dom::XmlDocument>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn UpdatePrintDeviceCapabilities<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_data::Xml::Dom::XmlDocument>>(&self, updatedpdc: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).UpdatePrintDeviceCapabilities)(::windows_core::Interface::as_raw(this), updatedpdc.into_param().abi()).ok() }
@@ -420,7 +420,7 @@ unsafe impl ::core::marker::Sync for PrintSupportPrintDeviceCapabilitiesChangedE
 #[repr(transparent)]
 pub struct PrintSupportPrintTicketValidationRequestedEventArgs(::windows_core::IUnknown);
 impl PrintSupportPrintTicketValidationRequestedEventArgs {
-    #[cfg(feature = "Graphics_Printing_PrintTicket")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn PrintTicket(&self) -> ::windows_core::Result<super::PrintTicket::WorkflowPrintTicket> {
         let this = self;
         unsafe {
@@ -515,7 +515,7 @@ unsafe impl ::core::marker::Sync for PrintSupportPrintTicketValidationRequestedE
 #[repr(transparent)]
 pub struct PrintSupportSessionInfo(::windows_core::IUnknown);
 impl PrintSupportSessionInfo {
-    #[cfg(feature = "ApplicationModel")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn SourceAppInfo(&self) -> ::windows_core::Result<::winrt_applicationmodel::AppInfo> {
         let this = self;
         unsafe {
@@ -523,7 +523,7 @@ impl PrintSupportSessionInfo {
             (::windows_core::Interface::vtable(this).SourceAppInfo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_applicationmodel::AppInfo>(result__)
         }
     }
-    #[cfg(feature = "Devices_Printers")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Printer(&self) -> ::windows_core::Result<::winrt_devices::Printers::IppPrintDevice> {
         let this = self;
         unsafe {
@@ -607,7 +607,7 @@ unsafe impl ::core::marker::Sync for PrintSupportSessionInfo {}
 #[repr(transparent)]
 pub struct PrintSupportSettingsActivatedEventArgs(::windows_core::IUnknown);
 impl PrintSupportSettingsActivatedEventArgs {
-    #[cfg(feature = "ApplicationModel_Activation")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn Kind(&self) -> ::windows_core::Result<::winrt_applicationmodel::Activation::ActivationKind> {
         let this = &::windows_core::Interface::cast::<::winrt_applicationmodel::Activation::IActivatedEventArgs>(self)?;
         unsafe {
@@ -615,7 +615,7 @@ impl PrintSupportSettingsActivatedEventArgs {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_applicationmodel::Activation::ActivationKind>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Activation")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn PreviousExecutionState(&self) -> ::windows_core::Result<::winrt_applicationmodel::Activation::ApplicationExecutionState> {
         let this = &::windows_core::Interface::cast::<::winrt_applicationmodel::Activation::IActivatedEventArgs>(self)?;
         unsafe {
@@ -623,7 +623,7 @@ impl PrintSupportSettingsActivatedEventArgs {
             (::windows_core::Interface::vtable(this).PreviousExecutionState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_applicationmodel::Activation::ApplicationExecutionState>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Activation")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn SplashScreen(&self) -> ::windows_core::Result<::winrt_applicationmodel::Activation::SplashScreen> {
         let this = &::windows_core::Interface::cast::<::winrt_applicationmodel::Activation::IActivatedEventArgs>(self)?;
         unsafe {
@@ -631,7 +631,7 @@ impl PrintSupportSettingsActivatedEventArgs {
             (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_applicationmodel::Activation::SplashScreen>(result__)
         }
     }
-    #[cfg(all(feature = "ApplicationModel_Activation", feature = "System"))]
+    #[cfg(all(feature = "winrt-applicationmodel", feature = "winrt-system"))]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<::winrt_applicationmodel::Activation::IActivatedEventArgsWithUser>(self)?;
         unsafe {
@@ -724,53 +724,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Pri
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "ApplicationModel_Activation")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl ::core::convert::TryFrom<PrintSupportSettingsActivatedEventArgs> for ::winrt_applicationmodel::Activation::IActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: PrintSupportSettingsActivatedEventArgs) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "ApplicationModel_Activation")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl ::core::convert::TryFrom<&PrintSupportSettingsActivatedEventArgs> for ::winrt_applicationmodel::Activation::IActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: &PrintSupportSettingsActivatedEventArgs) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "ApplicationModel_Activation")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_applicationmodel::Activation::IActivatedEventArgs> for PrintSupportSettingsActivatedEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_applicationmodel::Activation::IActivatedEventArgs> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "ApplicationModel_Activation")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_applicationmodel::Activation::IActivatedEventArgs> for &PrintSupportSettingsActivatedEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_applicationmodel::Activation::IActivatedEventArgs> {
         ::core::convert::TryInto::<::winrt_applicationmodel::Activation::IActivatedEventArgs>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "ApplicationModel_Activation")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl ::core::convert::TryFrom<PrintSupportSettingsActivatedEventArgs> for ::winrt_applicationmodel::Activation::IActivatedEventArgsWithUser {
     type Error = ::windows_core::Error;
     fn try_from(value: PrintSupportSettingsActivatedEventArgs) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "ApplicationModel_Activation")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl ::core::convert::TryFrom<&PrintSupportSettingsActivatedEventArgs> for ::winrt_applicationmodel::Activation::IActivatedEventArgsWithUser {
     type Error = ::windows_core::Error;
     fn try_from(value: &PrintSupportSettingsActivatedEventArgs) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "ApplicationModel_Activation")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_applicationmodel::Activation::IActivatedEventArgsWithUser> for PrintSupportSettingsActivatedEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_applicationmodel::Activation::IActivatedEventArgsWithUser> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "ApplicationModel_Activation")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_applicationmodel::Activation::IActivatedEventArgsWithUser> for &PrintSupportSettingsActivatedEventArgs {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_applicationmodel::Activation::IActivatedEventArgsWithUser> {
         ::core::convert::TryInto::<::winrt_applicationmodel::Activation::IActivatedEventArgsWithUser>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -781,7 +781,7 @@ unsafe impl ::core::marker::Sync for PrintSupportSettingsActivatedEventArgs {}
 #[repr(transparent)]
 pub struct PrintSupportSettingsUISession(::windows_core::IUnknown);
 impl PrintSupportSettingsUISession {
-    #[cfg(feature = "Graphics_Printing_PrintTicket")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn SessionPrintTicket(&self) -> ::windows_core::Result<super::PrintTicket::WorkflowPrintTicket> {
         let this = self;
         unsafe {
@@ -803,7 +803,7 @@ impl PrintSupportSettingsUISession {
             (::windows_core::Interface::vtable(this).LaunchKind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SettingsLaunchKind>(result__)
         }
     }
-    #[cfg(feature = "Graphics_Printing_PrintTicket")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn UpdatePrintTicket<'a, Param0: ::windows_core::IntoParam<'a, super::PrintTicket::WorkflowPrintTicket>>(&self, printticket: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).UpdatePrintTicket)(::windows_core::Interface::as_raw(this), printticket.into_param().abi()).ok() }

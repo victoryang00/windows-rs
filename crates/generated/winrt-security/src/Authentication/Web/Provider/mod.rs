@@ -38,45 +38,45 @@ unsafe impl ::windows_core::Interface for IWebAccountManagerStatics {
 #[doc(hidden)]
 pub struct IWebAccountManagerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub UpdateWebAccountPropertiesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccount: ::windows_core::RawPtr, webaccountusername: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, additionalproperties: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Credentials")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security")))]
     UpdateWebAccountPropertiesAsync: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub AddWebAccountAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccountid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, webaccountusername: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, props: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Credentials")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security")))]
     AddWebAccountAsync: usize,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub DeleteWebAccountAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccount: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     DeleteWebAccountAsync: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub FindAllProviderWebAccountsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Credentials")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security")))]
     FindAllProviderWebAccountsAsync: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Web_Http"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-web"))]
     pub PushCookiesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, cookies: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Web_Http")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-web")))]
     PushCookiesAsync: usize,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub SetViewAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccount: ::windows_core::RawPtr, view: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     SetViewAsync: usize,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub ClearViewAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccount: ::windows_core::RawPtr, applicationcallbackuri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     ClearViewAsync: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub GetViewsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccount: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Credentials")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security")))]
     GetViewsAsync: usize,
-    #[cfg(all(feature = "Security_Credentials", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-security", feature = "winrt-storage"))]
     pub SetWebAccountPictureAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccount: ::windows_core::RawPtr, webaccountpicture: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Security_Credentials", feature = "Storage_Streams")))]
+    #[cfg(not(all(feature = "winrt-security", feature = "winrt-storage")))]
     SetWebAccountPictureAsync: usize,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub ClearWebAccountPictureAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccount: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     ClearWebAccountPictureAsync: usize,
 }
 #[doc(hidden)]
@@ -103,21 +103,21 @@ unsafe impl ::windows_core::Interface for IWebAccountManagerStatics3 {
 #[doc(hidden)]
 pub struct IWebAccountManagerStatics3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials", feature = "System"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security", feature = "winrt-system"))]
     pub FindAllProviderWebAccountsForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Credentials", feature = "System")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security", feature = "winrt-system")))]
     FindAllProviderWebAccountsForUserAsync: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials", feature = "System"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security", feature = "winrt-system"))]
     pub AddWebAccountForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, webaccountid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, webaccountusername: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, props: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Credentials", feature = "System")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security", feature = "winrt-system")))]
     AddWebAccountForUserAsync: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials", feature = "System"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security", feature = "winrt-system"))]
     pub AddWebAccountWithScopeForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, webaccountid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, webaccountusername: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, props: ::windows_core::RawPtr, scope: WebAccountScope, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Credentials", feature = "System")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security", feature = "winrt-system")))]
     AddWebAccountWithScopeForUserAsync: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials", feature = "System"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security", feature = "winrt-system"))]
     pub AddWebAccountWithScopeAndMapForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, webaccountid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, webaccountusername: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, props: ::windows_core::RawPtr, scope: WebAccountScope, peruserwebaccountid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Credentials", feature = "System")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security", feature = "winrt-system")))]
     AddWebAccountWithScopeAndMapForUserAsync: usize,
 }
 #[doc(hidden)]
@@ -132,9 +132,9 @@ unsafe impl ::windows_core::Interface for IWebAccountManagerStatics4 {
 pub struct IWebAccountManagerStatics4_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub InvalidateAppCacheForAllAccountsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub InvalidateAppCacheForAccountAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccount: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     InvalidateAppCacheForAccountAsync: usize,
 }
 #[doc(hidden)]
@@ -148,21 +148,21 @@ unsafe impl ::windows_core::Interface for IWebAccountMapManagerStatics {
 #[doc(hidden)]
 pub struct IWebAccountMapManagerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub AddWebAccountWithScopeAndMapAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccountid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, webaccountusername: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, props: ::windows_core::RawPtr, scope: WebAccountScope, peruserwebaccountid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Credentials")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security")))]
     AddWebAccountWithScopeAndMapAsync: usize,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub SetPerAppToPerUserAccountAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, perappaccount: ::windows_core::RawPtr, peruserwebaccountid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     SetPerAppToPerUserAccountAsync: usize,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub GetPerUserFromPerAppAccountAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, perappaccount: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     GetPerUserFromPerAppAccountAsync: usize,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub ClearPerUserFromPerAppAccountAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, perappaccount: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     ClearPerUserFromPerAppAccountAsync: usize,
 }
 #[doc(hidden)]
@@ -185,7 +185,7 @@ impl IWebAccountProviderBaseReportOperation {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ReportCompleted)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Security_Authentication_Web_Core")]
+    #[cfg(feature = "winrt-security")]
     pub fn ReportError<'a, Param0: ::windows_core::IntoParam<'a, super::Core::WebProviderError>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ReportError)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -263,9 +263,9 @@ unsafe impl ::windows_core::Interface for IWebAccountProviderBaseReportOperation
 pub struct IWebAccountProviderBaseReportOperation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ReportCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Security_Authentication_Web_Core")]
+    #[cfg(feature = "winrt-security")]
     pub ReportError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Authentication_Web_Core"))]
+    #[cfg(not(feature = "winrt-security"))]
     ReportError: usize,
 }
 #[doc(hidden)]
@@ -279,9 +279,9 @@ unsafe impl ::windows_core::Interface for IWebAccountProviderDeleteAccountOperat
 #[doc(hidden)]
 pub struct IWebAccountProviderDeleteAccountOperation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub WebAccount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     WebAccount: usize,
 }
 #[doc(hidden)]
@@ -295,9 +295,9 @@ unsafe impl ::windows_core::Interface for IWebAccountProviderManageAccountOperat
 #[doc(hidden)]
 pub struct IWebAccountProviderManageAccountOperation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub WebAccount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     WebAccount: usize,
     pub ReportCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -397,9 +397,9 @@ unsafe impl ::windows_core::Interface for IWebAccountProviderRetrieveCookiesOper
 pub struct IWebAccountProviderRetrieveCookiesOperation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Context: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Web_Http"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-web"))]
     pub Cookies: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Web_Http")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-web")))]
     Cookies: usize,
     pub SetUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Uri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -416,9 +416,9 @@ unsafe impl ::windows_core::Interface for IWebAccountProviderSignOutAccountOpera
 #[doc(hidden)]
 pub struct IWebAccountProviderSignOutAccountOperation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub WebAccount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     WebAccount: usize,
     pub ApplicationCallbackUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ClientId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -430,7 +430,7 @@ impl IWebAccountProviderSilentReportOperation {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ReportUserInteractionRequired)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Security_Authentication_Web_Core")]
+    #[cfg(feature = "winrt-security")]
     pub fn ReportUserInteractionRequiredWithError<'a, Param0: ::windows_core::IntoParam<'a, super::Core::WebProviderError>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ReportUserInteractionRequiredWithError)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -439,7 +439,7 @@ impl IWebAccountProviderSilentReportOperation {
         let this = &::windows_core::Interface::cast::<IWebAccountProviderBaseReportOperation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ReportCompleted)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Security_Authentication_Web_Core")]
+    #[cfg(feature = "winrt-security")]
     pub fn ReportError<'a, Param0: ::windows_core::IntoParam<'a, super::Core::WebProviderError>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IWebAccountProviderBaseReportOperation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ReportError)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -539,9 +539,9 @@ unsafe impl ::windows_core::Interface for IWebAccountProviderSilentReportOperati
 pub struct IWebAccountProviderSilentReportOperation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ReportUserInteractionRequired: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Security_Authentication_Web_Core")]
+    #[cfg(feature = "winrt-security")]
     pub ReportUserInteractionRequiredWithError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Authentication_Web_Core"))]
+    #[cfg(not(feature = "winrt-security"))]
     ReportUserInteractionRequiredWithError: usize,
 }
 #[repr(transparent)]
@@ -631,7 +631,7 @@ pub struct IWebAccountProviderTokenObjects_Vtbl {
 #[repr(transparent)]
 pub struct IWebAccountProviderTokenObjects2(::windows_core::IUnknown);
 impl IWebAccountProviderTokenObjects2 {
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = self;
         unsafe {
@@ -740,9 +740,9 @@ unsafe impl ::windows_core::Interface for IWebAccountProviderTokenObjects2 {
 #[doc(hidden)]
 pub struct IWebAccountProviderTokenObjects2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub User: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     User: usize,
 }
 #[repr(transparent)]
@@ -755,7 +755,7 @@ impl IWebAccountProviderTokenOperation {
             (::windows_core::Interface::vtable(this).ProviderRequest)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<WebProviderTokenRequest>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ProviderResponses(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<WebProviderTokenResponse>> {
         let this = self;
         unsafe {
@@ -876,9 +876,9 @@ unsafe impl ::windows_core::Interface for IWebAccountProviderTokenOperation {
 pub struct IWebAccountProviderTokenOperation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ProviderRequest: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub ProviderResponses: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ProviderResponses: usize,
     pub SetCacheExpirationTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub CacheExpirationTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
@@ -894,7 +894,7 @@ impl IWebAccountProviderUIReportOperation {
         let this = &::windows_core::Interface::cast::<IWebAccountProviderBaseReportOperation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ReportCompleted)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Security_Authentication_Web_Core")]
+    #[cfg(feature = "winrt-security")]
     pub fn ReportError<'a, Param0: ::windows_core::IntoParam<'a, super::Core::WebProviderError>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IWebAccountProviderBaseReportOperation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ReportError)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -1006,17 +1006,17 @@ unsafe impl ::windows_core::Interface for IWebAccountScopeManagerStatics {
 #[doc(hidden)]
 pub struct IWebAccountScopeManagerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub AddWebAccountWithScopeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccountid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, webaccountusername: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, props: ::windows_core::RawPtr, scope: WebAccountScope, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Credentials")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security")))]
     AddWebAccountWithScopeAsync: usize,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub SetScopeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccount: ::windows_core::RawPtr, scope: WebAccountScope, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     SetScopeAsync: usize,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub GetScope: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccount: ::windows_core::RawPtr, result__: *mut WebAccountScope) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     GetScope: usize,
 }
 #[doc(hidden)]
@@ -1030,19 +1030,19 @@ unsafe impl ::windows_core::Interface for IWebProviderTokenRequest {
 #[doc(hidden)]
 pub struct IWebProviderTokenRequest_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Security_Authentication_Web_Core")]
+    #[cfg(feature = "winrt-security")]
     pub ClientRequest: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Authentication_Web_Core"))]
+    #[cfg(not(feature = "winrt-security"))]
     ClientRequest: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub WebAccounts: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Credentials")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security")))]
     WebAccounts: usize,
     pub WebAccountSelectionOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut WebAccountSelectionOptions) -> ::windows_core::HRESULT,
     pub ApplicationCallbackUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Security_Cryptography_Core")]
+    #[cfg(feature = "winrt-security")]
     pub GetApplicationTokenBindingKeyAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, keytype: super::TokenBindingKeyType, target: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Cryptography_Core"))]
+    #[cfg(not(feature = "winrt-security"))]
     GetApplicationTokenBindingKeyAsync: usize,
 }
 #[doc(hidden)]
@@ -1056,9 +1056,9 @@ unsafe impl ::windows_core::Interface for IWebProviderTokenRequest2 {
 #[doc(hidden)]
 pub struct IWebProviderTokenRequest2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub GetApplicationTokenBindingKeyIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, keytype: super::TokenBindingKeyType, target: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     GetApplicationTokenBindingKeyIdAsync: usize,
 }
 #[doc(hidden)]
@@ -1087,9 +1087,9 @@ unsafe impl ::windows_core::Interface for IWebProviderTokenResponse {
 #[doc(hidden)]
 pub struct IWebProviderTokenResponse_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Security_Authentication_Web_Core")]
+    #[cfg(feature = "winrt-security")]
     pub ClientResponse: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Authentication_Web_Core"))]
+    #[cfg(not(feature = "winrt-security"))]
     ClientResponse: usize,
 }
 #[doc(hidden)]
@@ -1103,9 +1103,9 @@ unsafe impl ::windows_core::Interface for IWebProviderTokenResponseFactory {
 #[doc(hidden)]
 pub struct IWebProviderTokenResponseFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Security_Authentication_Web_Core")]
+    #[cfg(feature = "winrt-security")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webtokenresponse: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Authentication_Web_Core"))]
+    #[cfg(not(feature = "winrt-security"))]
     Create: usize,
 }
 #[repr(transparent)]
@@ -1256,70 +1256,70 @@ unsafe impl ::windows_core::RuntimeType for WebAccountClientViewType {
 }
 pub struct WebAccountManager;
 impl WebAccountManager {
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn UpdateWebAccountPropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>>(webaccount: Param0, webaccountusername: Param1, additionalproperties: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IWebAccountManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).UpdateWebAccountPropertiesAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), webaccountusername.into_param().abi(), additionalproperties.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn AddWebAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>>(webaccountid: Param0, webaccountusername: Param1, props: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>> {
         Self::IWebAccountManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).AddWebAccountAsync)(::windows_core::Interface::as_raw(this), webaccountid.into_param().abi(), webaccountusername.into_param().abi(), props.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>>(result__)
         })
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn DeleteWebAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>>(webaccount: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IWebAccountManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).DeleteWebAccountAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn FindAllProviderWebAccountsAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::super::super::Credentials::WebAccount>>> {
         Self::IWebAccountManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).FindAllProviderWebAccountsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::super::super::Credentials::WebAccount>>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Web_Http"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-web"))]
     pub fn PushCookiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<::winrt_web::Http::HttpCookie>>>(uri: Param0, cookies: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IWebAccountManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).PushCookiesAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), cookies.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetViewAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>, Param1: ::windows_core::IntoParam<'a, WebAccountClientView>>(webaccount: Param0, view: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IWebAccountManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).SetViewAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), view.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn ClearViewAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(webaccount: Param0, applicationcallbackuri: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IWebAccountManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).ClearViewAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), applicationcallbackuri.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn GetViewsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>>(webaccount: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<WebAccountClientView>>> {
         Self::IWebAccountManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetViewsAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<WebAccountClientView>>>(result__)
         })
     }
-    #[cfg(all(feature = "Security_Credentials", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-security", feature = "winrt-storage"))]
     pub fn SetWebAccountPictureAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(webaccount: Param0, webaccountpicture: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IWebAccountManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).SetWebAccountPictureAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), webaccountpicture.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn ClearWebAccountPictureAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>>(webaccount: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IWebAccountManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1332,28 +1332,28 @@ impl WebAccountManager {
             (::windows_core::Interface::vtable(this).PullCookiesAsync)(::windows_core::Interface::as_raw(this), uristring.into_param().abi(), callerpfn.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials", feature = "System"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security", feature = "winrt-system"))]
     pub fn FindAllProviderWebAccountsForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>>(user: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::super::super::Credentials::WebAccount>>> {
         Self::IWebAccountManagerStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).FindAllProviderWebAccountsForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::super::super::Credentials::WebAccount>>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials", feature = "System"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security", feature = "winrt-system"))]
     pub fn AddWebAccountForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>>(user: Param0, webaccountid: Param1, webaccountusername: Param2, props: Param3) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>> {
         Self::IWebAccountManagerStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).AddWebAccountForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), webaccountid.into_param().abi(), webaccountusername.into_param().abi(), props.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials", feature = "System"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security", feature = "winrt-system"))]
     pub fn AddWebAccountWithScopeForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>>(user: Param0, webaccountid: Param1, webaccountusername: Param2, props: Param3, scope: WebAccountScope) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>> {
         Self::IWebAccountManagerStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).AddWebAccountWithScopeForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), webaccountid.into_param().abi(), webaccountusername.into_param().abi(), props.into_param().abi(), scope, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials", feature = "System"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security", feature = "winrt-system"))]
     pub fn AddWebAccountWithScopeAndMapForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>, Param5: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(user: Param0, webaccountid: Param1, webaccountusername: Param2, props: Param3, scope: WebAccountScope, peruserwebaccountid: Param5) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>> {
         Self::IWebAccountManagerStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1366,56 +1366,56 @@ impl WebAccountManager {
             (::windows_core::Interface::vtable(this).InvalidateAppCacheForAllAccountsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn InvalidateAppCacheForAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>>(webaccount: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IWebAccountManagerStatics4(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).InvalidateAppCacheForAccountAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn AddWebAccountWithScopeAndMapAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>, Param4: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(webaccountid: Param0, webaccountusername: Param1, props: Param2, scope: WebAccountScope, peruserwebaccountid: Param4) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>> {
         Self::IWebAccountMapManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).AddWebAccountWithScopeAndMapAsync)(::windows_core::Interface::as_raw(this), webaccountid.into_param().abi(), webaccountusername.into_param().abi(), props.into_param().abi(), scope, peruserwebaccountid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>>(result__)
         })
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetPerAppToPerUserAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(perappaccount: Param0, peruserwebaccountid: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IWebAccountMapManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).SetPerAppToPerUserAccountAsync)(::windows_core::Interface::as_raw(this), perappaccount.into_param().abi(), peruserwebaccountid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn GetPerUserFromPerAppAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>>(perappaccount: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>> {
         Self::IWebAccountMapManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetPerUserFromPerAppAccountAsync)(::windows_core::Interface::as_raw(this), perappaccount.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>>(result__)
         })
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn ClearPerUserFromPerAppAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>>(perappaccount: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IWebAccountMapManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).ClearPerUserFromPerAppAccountAsync)(::windows_core::Interface::as_raw(this), perappaccount.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn AddWebAccountWithScopeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>>(webaccountid: Param0, webaccountusername: Param1, props: Param2, scope: WebAccountScope) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>> {
         Self::IWebAccountScopeManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).AddWebAccountWithScopeAsync)(::windows_core::Interface::as_raw(this), webaccountid.into_param().abi(), webaccountusername.into_param().abi(), props.into_param().abi(), scope, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>>(result__)
         })
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetScopeAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>>(webaccount: Param0, scope: WebAccountScope) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IWebAccountScopeManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).SetScopeAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), scope, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn GetScope<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>>(webaccount: Param0) -> ::windows_core::Result<WebAccountScope> {
         Self::IWebAccountScopeManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<WebAccountScope>::zeroed();
@@ -1566,12 +1566,12 @@ impl WebAccountProviderDeleteAccountOperation {
         let this = &::windows_core::Interface::cast::<IWebAccountProviderBaseReportOperation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ReportCompleted)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Security_Authentication_Web_Core")]
+    #[cfg(feature = "winrt-security")]
     pub fn ReportError<'a, Param0: ::windows_core::IntoParam<'a, super::Core::WebProviderError>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IWebAccountProviderBaseReportOperation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ReportError)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn WebAccount(&self) -> ::windows_core::Result<super::super::super::Credentials::WebAccount> {
         let this = self;
         unsafe {
@@ -1710,7 +1710,7 @@ impl WebAccountProviderGetTokenSilentOperation {
         let this = &::windows_core::Interface::cast::<IWebAccountProviderBaseReportOperation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ReportCompleted)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Security_Authentication_Web_Core")]
+    #[cfg(feature = "winrt-security")]
     pub fn ReportError<'a, Param0: ::windows_core::IntoParam<'a, super::Core::WebProviderError>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IWebAccountProviderBaseReportOperation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ReportError)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -1726,7 +1726,7 @@ impl WebAccountProviderGetTokenSilentOperation {
         let this = &::windows_core::Interface::cast::<IWebAccountProviderSilentReportOperation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ReportUserInteractionRequired)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Security_Authentication_Web_Core")]
+    #[cfg(feature = "winrt-security")]
     pub fn ReportUserInteractionRequiredWithError<'a, Param0: ::windows_core::IntoParam<'a, super::Core::WebProviderError>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IWebAccountProviderSilentReportOperation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ReportUserInteractionRequiredWithError)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -1738,7 +1738,7 @@ impl WebAccountProviderGetTokenSilentOperation {
             (::windows_core::Interface::vtable(this).ProviderRequest)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<WebProviderTokenRequest>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ProviderResponses(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<WebProviderTokenResponse>> {
         let this = self;
         unsafe {
@@ -1921,7 +1921,7 @@ unsafe impl ::core::marker::Sync for WebAccountProviderGetTokenSilentOperation {
 #[repr(transparent)]
 pub struct WebAccountProviderManageAccountOperation(::windows_core::IUnknown);
 impl WebAccountProviderManageAccountOperation {
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn WebAccount(&self) -> ::windows_core::Result<super::super::super::Credentials::WebAccount> {
         let this = self;
         unsafe {
@@ -2080,7 +2080,7 @@ impl WebAccountProviderRequestTokenOperation {
         let this = &::windows_core::Interface::cast::<IWebAccountProviderBaseReportOperation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ReportCompleted)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Security_Authentication_Web_Core")]
+    #[cfg(feature = "winrt-security")]
     pub fn ReportError<'a, Param0: ::windows_core::IntoParam<'a, super::Core::WebProviderError>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IWebAccountProviderBaseReportOperation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ReportError)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -2099,7 +2099,7 @@ impl WebAccountProviderRequestTokenOperation {
             (::windows_core::Interface::vtable(this).ProviderRequest)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<WebProviderTokenRequest>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ProviderResponses(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<WebProviderTokenResponse>> {
         let this = self;
         unsafe {
@@ -2290,7 +2290,7 @@ impl WebAccountProviderRetrieveCookiesOperation {
         let this = &::windows_core::Interface::cast::<IWebAccountProviderBaseReportOperation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ReportCompleted)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Security_Authentication_Web_Core")]
+    #[cfg(feature = "winrt-security")]
     pub fn ReportError<'a, Param0: ::windows_core::IntoParam<'a, super::Core::WebProviderError>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IWebAccountProviderBaseReportOperation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ReportError)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -2309,7 +2309,7 @@ impl WebAccountProviderRetrieveCookiesOperation {
             (::windows_core::Interface::vtable(this).Context)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Web_Http"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-web"))]
     pub fn Cookies(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_web::Http::HttpCookie>> {
         let this = self;
         unsafe {
@@ -2459,7 +2459,7 @@ impl WebAccountProviderSignOutAccountOperation {
         let this = &::windows_core::Interface::cast::<IWebAccountProviderBaseReportOperation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ReportCompleted)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Security_Authentication_Web_Core")]
+    #[cfg(feature = "winrt-security")]
     pub fn ReportError<'a, Param0: ::windows_core::IntoParam<'a, super::Core::WebProviderError>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IWebAccountProviderBaseReportOperation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ReportError)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -2471,7 +2471,7 @@ impl WebAccountProviderSignOutAccountOperation {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<WebAccountProviderOperationKind>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn WebAccount(&self) -> ::windows_core::Result<super::super::super::Credentials::WebAccount> {
         let this = self;
         unsafe {
@@ -2620,7 +2620,7 @@ impl WebAccountProviderTriggerDetails {
             (::windows_core::Interface::vtable(this).Operation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IWebAccountProviderOperation>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IWebAccountProviderTokenObjects2>(self)?;
         unsafe {
@@ -2842,7 +2842,7 @@ unsafe impl ::windows_core::RuntimeType for WebAccountSelectionOptions {
 #[repr(transparent)]
 pub struct WebProviderTokenRequest(::windows_core::IUnknown);
 impl WebProviderTokenRequest {
-    #[cfg(feature = "Security_Authentication_Web_Core")]
+    #[cfg(feature = "winrt-security")]
     pub fn ClientRequest(&self) -> ::windows_core::Result<super::Core::WebTokenRequest> {
         let this = self;
         unsafe {
@@ -2850,7 +2850,7 @@ impl WebProviderTokenRequest {
             (::windows_core::Interface::vtable(this).ClientRequest)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Core::WebTokenRequest>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn WebAccounts(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<super::super::super::Credentials::WebAccount>> {
         let this = self;
         unsafe {
@@ -2872,7 +2872,7 @@ impl WebProviderTokenRequest {
             (::windows_core::Interface::vtable(this).ApplicationCallbackUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(feature = "Security_Cryptography_Core")]
+    #[cfg(feature = "winrt-security")]
     pub fn GetApplicationTokenBindingKeyAsync<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, keytype: super::TokenBindingKeyType, target: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::super::super::Cryptography::Core::CryptographicKey>> {
         let this = self;
         unsafe {
@@ -2880,7 +2880,7 @@ impl WebProviderTokenRequest {
             (::windows_core::Interface::vtable(this).GetApplicationTokenBindingKeyAsync)(::windows_core::Interface::as_raw(this), keytype, target.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::super::super::Cryptography::Core::CryptographicKey>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetApplicationTokenBindingKeyIdAsync<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, keytype: super::TokenBindingKeyType, target: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>> {
         let this = &::windows_core::Interface::cast::<IWebProviderTokenRequest2>(self)?;
         unsafe {
@@ -2985,7 +2985,7 @@ unsafe impl ::core::marker::Sync for WebProviderTokenRequest {}
 #[repr(transparent)]
 pub struct WebProviderTokenResponse(::windows_core::IUnknown);
 impl WebProviderTokenResponse {
-    #[cfg(feature = "Security_Authentication_Web_Core")]
+    #[cfg(feature = "winrt-security")]
     pub fn ClientResponse(&self) -> ::windows_core::Result<super::Core::WebTokenResponse> {
         let this = self;
         unsafe {
@@ -2993,7 +2993,7 @@ impl WebProviderTokenResponse {
             (::windows_core::Interface::vtable(this).ClientResponse)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Core::WebTokenResponse>(result__)
         }
     }
-    #[cfg(feature = "Security_Authentication_Web_Core")]
+    #[cfg(feature = "winrt-security")]
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, super::Core::WebTokenResponse>>(webtokenresponse: Param0) -> ::windows_core::Result<WebProviderTokenResponse> {
         Self::IWebProviderTokenResponseFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();

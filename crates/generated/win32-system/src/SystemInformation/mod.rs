@@ -532,7 +532,7 @@ pub unsafe fn GetLogicalProcessorInformationEx(relationshiptype: LOGICAL_PROCESS
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn GetNativeSystemInfo(lpsysteminfo: *mut SYSTEM_INFO) {
     #[cfg(windows)]
@@ -676,7 +676,7 @@ pub unsafe fn GetSystemFirmwareTable<'a, Param1: ::windows_core::IntoParam<'a, F
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn GetSystemInfo(lpsysteminfo: *mut SYSTEM_INFO) {
     #[cfg(windows)]
@@ -1884,7 +1884,7 @@ pub const SYSTEM_CPU_SET_INFORMATION_ALLOCATED_TO_TARGET_PROCESS: u32 = 4u32;
 pub const SYSTEM_CPU_SET_INFORMATION_PARKED: u32 = 1u32;
 pub const SYSTEM_CPU_SET_INFORMATION_REALTIME: u32 = 8u32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 pub struct SYSTEM_INFO {
     pub Anonymous: SYSTEM_INFO_0,
     pub dwPageSize: u32,
@@ -1897,97 +1897,97 @@ pub struct SYSTEM_INFO {
     pub wProcessorLevel: u16,
     pub wProcessorRevision: u16,
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for SYSTEM_INFO {}
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for SYSTEM_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for SYSTEM_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for SYSTEM_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SYSTEM_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for SYSTEM_INFO {}
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for SYSTEM_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 pub union SYSTEM_INFO_0 {
     pub dwOemId: u32,
     pub Anonymous: SYSTEM_INFO_0_0,
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for SYSTEM_INFO_0 {}
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for SYSTEM_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for SYSTEM_INFO_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for SYSTEM_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SYSTEM_INFO_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for SYSTEM_INFO_0 {}
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for SYSTEM_INFO_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 pub struct SYSTEM_INFO_0_0 {
     pub wProcessorArchitecture: super::Diagnostics::Debug::PROCESSOR_ARCHITECTURE,
     pub wReserved: u16,
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for SYSTEM_INFO_0_0 {}
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for SYSTEM_INFO_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for SYSTEM_INFO_0_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SYSTEM_INFO_0_0").field("wProcessorArchitecture", &self.wProcessorArchitecture).field("wReserved", &self.wReserved).finish()
     }
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for SYSTEM_INFO_0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for SYSTEM_INFO_0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SYSTEM_INFO_0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for SYSTEM_INFO_0_0 {}
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for SYSTEM_INFO_0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

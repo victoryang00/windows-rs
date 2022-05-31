@@ -78,7 +78,7 @@ impl ControlChannelTrigger {
             (::windows_core::Interface::vtable(this).TransportObject)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::IInspectable>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Background")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn KeepAliveTrigger(&self) -> ::windows_core::Result<::winrt_applicationmodel::Background::IBackgroundTrigger> {
         let this = self;
         unsafe {
@@ -86,7 +86,7 @@ impl ControlChannelTrigger {
             (::windows_core::Interface::vtable(this).KeepAliveTrigger)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_applicationmodel::Background::IBackgroundTrigger>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Background")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn PushNotificationTrigger(&self) -> ::windows_core::Result<::winrt_applicationmodel::Background::IBackgroundTrigger> {
         let this = self;
         unsafe {
@@ -365,7 +365,7 @@ impl DatagramSocket {
             (::windows_core::Interface::vtable(this).Information)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<DatagramSocketInformation>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn OutputStream(&self) -> ::windows_core::Result<::winrt_storage::Streams::IOutputStream> {
         let this = self;
         unsafe {
@@ -405,7 +405,7 @@ impl DatagramSocket {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).JoinMulticastGroup)(::windows_core::Interface::as_raw(this), host.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetOutputStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, super::HostName>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, remotehostname: Param0, remoteservicename: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IOutputStream>> {
         let this = self;
         unsafe {
@@ -413,7 +413,7 @@ impl DatagramSocket {
             (::windows_core::Interface::vtable(this).GetOutputStreamAsync)(::windows_core::Interface::as_raw(this), remotehostname.into_param().abi(), remoteservicename.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IOutputStream>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetOutputStreamWithEndpointPairAsync<'a, Param0: ::windows_core::IntoParam<'a, super::EndpointPair>>(&self, endpointpair: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IOutputStream>> {
         let this = self;
         unsafe {
@@ -432,7 +432,7 @@ impl DatagramSocket {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveMessageReceived)(::windows_core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Networking_Connectivity")]
+    #[cfg(feature = "winrt-networking")]
     pub fn BindServiceNameAndAdapterAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::Connectivity::NetworkAdapter>>(&self, localservicename: Param0, adapter: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = &::windows_core::Interface::cast::<IDatagramSocket2>(self)?;
         unsafe {
@@ -467,14 +467,14 @@ impl DatagramSocket {
         let this = &::windows_core::Interface::cast::<IDatagramSocket3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).TransferOwnershipWithContextAndKeepAliveTime)(::windows_core::Interface::as_raw(this), socketid.into_param().abi(), data.into_param().abi(), keepalivetime.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetEndpointPairsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::HostName>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(remotehostname: Param0, remoteservicename: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::EndpointPair>>> {
         Self::IDatagramSocketStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetEndpointPairsAsync)(::windows_core::Interface::as_raw(this), remotehostname.into_param().abi(), remoteservicename.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::EndpointPair>>>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetEndpointPairsWithSortOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::HostName>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(remotehostname: Param0, remoteservicename: Param1, sortoptions: super::HostNameSortOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::EndpointPair>>> {
         Self::IDatagramSocketStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -839,7 +839,7 @@ impl DatagramSocketMessageReceivedEventArgs {
             (::windows_core::Interface::vtable(this).LocalAddress)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::HostName>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetDataReader(&self) -> ::windows_core::Result<::winrt_storage::Streams::DataReader> {
         let this = self;
         unsafe {
@@ -847,7 +847,7 @@ impl DatagramSocketMessageReceivedEventArgs {
             (::windows_core::Interface::vtable(this).GetDataReader)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::DataReader>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetDataStream(&self) -> ::windows_core::Result<::winrt_storage::Streams::IInputStream> {
         let this = self;
         unsafe {
@@ -944,13 +944,13 @@ pub struct IControlChannelTrigger_Vtbl {
     pub SetServerKeepAliveIntervalInMinutes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
     pub CurrentKeepAliveIntervalInMinutes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub TransportObject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "ApplicationModel_Background")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub KeepAliveTrigger: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Background"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     KeepAliveTrigger: usize,
-    #[cfg(feature = "ApplicationModel_Background")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub PushNotificationTrigger: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Background"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     PushNotificationTrigger: usize,
     pub UsingTransport: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, transport: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub WaitForPushEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ControlChannelTriggerStatus) -> ::windows_core::HRESULT,
@@ -1181,22 +1181,22 @@ pub struct IDatagramSocket_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Control: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Information: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub OutputStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     OutputStream: usize,
     pub ConnectAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, remotehostname: ::windows_core::RawPtr, remoteservicename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ConnectWithEndpointPairAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, endpointpair: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub BindServiceNameAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, localservicename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub BindEndpointAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, localhostname: ::windows_core::RawPtr, localservicename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub JoinMulticastGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, host: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub GetOutputStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, remotehostname: ::windows_core::RawPtr, remoteservicename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     GetOutputStreamAsync: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub GetOutputStreamWithEndpointPairAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, endpointpair: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     GetOutputStreamWithEndpointPairAsync: usize,
     pub MessageReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveMessageReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -1212,9 +1212,9 @@ unsafe impl ::windows_core::Interface for IDatagramSocket2 {
 #[doc(hidden)]
 pub struct IDatagramSocket2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Networking_Connectivity")]
+    #[cfg(feature = "winrt-networking")]
     pub BindServiceNameAndAdapterAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, localservicename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, adapter: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking_Connectivity"))]
+    #[cfg(not(feature = "winrt-networking"))]
     BindServiceNameAndAdapterAsync: usize,
 }
 #[doc(hidden)]
@@ -1311,13 +1311,13 @@ pub struct IDatagramSocketMessageReceivedEventArgs_Vtbl {
     pub RemoteAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RemotePort: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub LocalAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub GetDataReader: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     GetDataReader: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub GetDataStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     GetDataStream: usize,
 }
 #[doc(hidden)]
@@ -1331,13 +1331,13 @@ unsafe impl ::windows_core::Interface for IDatagramSocketStatics {
 #[doc(hidden)]
 pub struct IDatagramSocketStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetEndpointPairsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, remotehostname: ::windows_core::RawPtr, remoteservicename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetEndpointPairsAsync: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetEndpointPairsWithSortOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, remotehostname: ::windows_core::RawPtr, remoteservicename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, sortoptions: super::HostNameSortOptions, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetEndpointPairsWithSortOptionsAsync: usize,
 }
 #[doc(hidden)]
@@ -1381,13 +1381,13 @@ unsafe impl ::windows_core::Interface for IMessageWebSocket3 {
 #[doc(hidden)]
 pub struct IMessageWebSocket3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub SendNonfinalFrameAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, data: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SendNonfinalFrameAsync: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub SendFinalFrameAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, data: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SendFinalFrameAsync: usize,
 }
 #[doc(hidden)]
@@ -1422,13 +1422,13 @@ pub struct IMessageWebSocketControl2_Vtbl {
     pub ActualUnsolicitedPongInterval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub ReceiveMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MessageWebSocketReceiveMode) -> ::windows_core::HRESULT,
     pub SetReceiveMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: MessageWebSocketReceiveMode) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub ClientCertificate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Cryptography_Certificates"))]
+    #[cfg(not(feature = "winrt-security"))]
     ClientCertificate: usize,
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub SetClientCertificate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Cryptography_Certificates"))]
+    #[cfg(not(feature = "winrt-security"))]
     SetClientCertificate: usize,
 }
 #[doc(hidden)]
@@ -1443,13 +1443,13 @@ unsafe impl ::windows_core::Interface for IMessageWebSocketMessageReceivedEventA
 pub struct IMessageWebSocketMessageReceivedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub MessageType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SocketMessageType) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub GetDataReader: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     GetDataReader: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub GetDataStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     GetDataStream: usize,
 }
 #[doc(hidden)]
@@ -1480,9 +1480,9 @@ pub struct IServerMessageWebSocket_Vtbl {
     pub RemoveMessageReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub Control: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Information: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub OutputStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     OutputStream: usize,
     pub Closed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveClosed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -1529,13 +1529,13 @@ unsafe impl ::windows_core::Interface for IServerStreamWebSocket {
 pub struct IServerStreamWebSocket_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Information: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub InputStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     InputStream: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub OutputStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     OutputStream: usize,
     pub Closed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveClosed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -1567,9 +1567,9 @@ unsafe impl ::windows_core::Interface for ISocketActivityContext {
 #[doc(hidden)]
 pub struct ISocketActivityContext_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub Data: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Data: usize,
 }
 #[doc(hidden)]
@@ -1583,9 +1583,9 @@ unsafe impl ::windows_core::Interface for ISocketActivityContextFactory {
 #[doc(hidden)]
 pub struct ISocketActivityContextFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, data: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Create: usize,
 }
 #[doc(hidden)]
@@ -1618,9 +1618,9 @@ unsafe impl ::windows_core::Interface for ISocketActivityInformationStatics {
 #[doc(hidden)]
 pub struct ISocketActivityInformationStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub AllSockets: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     AllSockets: usize,
 }
 #[doc(hidden)]
@@ -1663,13 +1663,13 @@ pub struct IStreamSocket_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Control: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Information: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub InputStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     InputStream: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub OutputStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     OutputStream: usize,
     pub ConnectWithEndpointPairAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, endpointpair: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ConnectAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, remotehostname: ::windows_core::RawPtr, remoteservicename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -1688,9 +1688,9 @@ unsafe impl ::windows_core::Interface for IStreamSocket2 {
 #[doc(hidden)]
 pub struct IStreamSocket2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Networking_Connectivity")]
+    #[cfg(feature = "winrt-networking")]
     pub ConnectWithProtectionLevelAndAdapterAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, remotehostname: ::windows_core::RawPtr, remoteservicename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, protectionlevel: SocketProtectionLevel, adapter: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking_Connectivity"))]
+    #[cfg(not(feature = "winrt-networking"))]
     ConnectWithProtectionLevelAndAdapterAsync: usize,
 }
 #[doc(hidden)]
@@ -1744,9 +1744,9 @@ unsafe impl ::windows_core::Interface for IStreamSocketControl2 {
 #[doc(hidden)]
 pub struct IStreamSocketControl2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub IgnorableServerCertificateErrors: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security")))]
     IgnorableServerCertificateErrors: usize,
 }
 #[doc(hidden)]
@@ -1762,13 +1762,13 @@ pub struct IStreamSocketControl3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub SerializeConnectionAttempts: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetSerializeConnectionAttempts: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub ClientCertificate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Cryptography_Certificates"))]
+    #[cfg(not(feature = "winrt-security"))]
     ClientCertificate: usize,
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub SetClientCertificate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Cryptography_Certificates"))]
+    #[cfg(not(feature = "winrt-security"))]
     SetClientCertificate: usize,
 }
 #[doc(hidden)]
@@ -1805,9 +1805,9 @@ pub struct IStreamSocketInformation_Vtbl {
     pub RoundTripTimeStatistics: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut RoundTripTimeStatistics) -> ::windows_core::HRESULT,
     pub BandwidthStatistics: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut BandwidthStatistics) -> ::windows_core::HRESULT,
     pub ProtectionLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SocketProtectionLevel) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub SessionKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SessionKey: usize,
 }
 #[doc(hidden)]
@@ -1822,17 +1822,17 @@ unsafe impl ::windows_core::Interface for IStreamSocketInformation2 {
 pub struct IStreamSocketInformation2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ServerCertificateErrorSeverity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SocketSslErrorSeverity) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub ServerCertificateErrors: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security")))]
     ServerCertificateErrors: usize,
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub ServerCertificate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Cryptography_Certificates"))]
+    #[cfg(not(feature = "winrt-security"))]
     ServerCertificate: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub ServerIntermediateCertificates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security")))]
     ServerIntermediateCertificates: usize,
 }
 #[doc(hidden)]
@@ -1865,9 +1865,9 @@ unsafe impl ::windows_core::Interface for IStreamSocketListener2 {
 pub struct IStreamSocketListener2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub BindServiceNameWithProtectionLevelAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, localservicename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, protectionlevel: SocketProtectionLevel, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Networking_Connectivity")]
+    #[cfg(feature = "winrt-networking")]
     pub BindServiceNameWithProtectionLevelAndAdapterAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, localservicename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, protectionlevel: SocketProtectionLevel, adapter: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking_Connectivity"))]
+    #[cfg(not(feature = "winrt-networking"))]
     BindServiceNameWithProtectionLevelAndAdapterAsync: usize,
 }
 #[doc(hidden)]
@@ -1958,13 +1958,13 @@ unsafe impl ::windows_core::Interface for IStreamSocketStatics {
 #[doc(hidden)]
 pub struct IStreamSocketStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetEndpointPairsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, remotehostname: ::windows_core::RawPtr, remoteservicename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetEndpointPairsAsync: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetEndpointPairsWithSortOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, remotehostname: ::windows_core::RawPtr, remoteservicename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, sortoptions: super::HostNameSortOptions, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetEndpointPairsWithSortOptionsAsync: usize,
 }
 #[doc(hidden)]
@@ -1980,9 +1980,9 @@ pub struct IStreamWebSocket_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Control: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Information: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub InputStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     InputStream: usize,
 }
 #[doc(hidden)]
@@ -2027,19 +2027,19 @@ pub struct IStreamWebSocketControl2_Vtbl {
     pub DesiredUnsolicitedPongInterval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub SetDesiredUnsolicitedPongInterval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub ActualUnsolicitedPongInterval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub ClientCertificate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Cryptography_Certificates"))]
+    #[cfg(not(feature = "winrt-security"))]
     ClientCertificate: usize,
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub SetClientCertificate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Cryptography_Certificates"))]
+    #[cfg(not(feature = "winrt-security"))]
     SetClientCertificate: usize,
 }
 #[repr(transparent)]
 pub struct IWebSocket(::windows_core::IUnknown);
 impl IWebSocket {
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn OutputStream(&self) -> ::windows_core::Result<::winrt_storage::Streams::IOutputStream> {
         let this = self;
         unsafe {
@@ -2171,9 +2171,9 @@ unsafe impl ::windows_core::Interface for IWebSocket {
 #[doc(hidden)]
 pub struct IWebSocket_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub OutputStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     OutputStream: usize,
     pub ConnectAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetRequestHeader: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, headername: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, headervalue: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -2209,7 +2209,7 @@ impl IWebSocketControl {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetOutboundBufferSizeInBytes)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn ServerCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = self;
         unsafe {
@@ -2217,12 +2217,12 @@ impl IWebSocketControl {
             (::windows_core::Interface::vtable(this).ServerCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetServerCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetServerCredential)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn ProxyCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = self;
         unsafe {
@@ -2230,12 +2230,12 @@ impl IWebSocketControl {
             (::windows_core::Interface::vtable(this).ProxyCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetProxyCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetProxyCredential)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SupportedProtocols(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -2317,31 +2317,31 @@ pub struct IWebSocketControl_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub OutboundBufferSizeInBytes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub SetOutboundBufferSizeInBytes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub ServerCredential: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     ServerCredential: usize,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub SetServerCredential: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     SetServerCredential: usize,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub ProxyCredential: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     ProxyCredential: usize,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub SetProxyCredential: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     SetProxyCredential: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SupportedProtocols: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SupportedProtocols: usize,
 }
 #[repr(transparent)]
 pub struct IWebSocketControl2(::windows_core::IUnknown);
 impl IWebSocketControl2 {
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn IgnorableServerCertificateErrors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_security::Cryptography::Certificates::ChainValidationResult>> {
         let this = self;
         unsafe {
@@ -2360,7 +2360,7 @@ impl IWebSocketControl2 {
         let this = &::windows_core::Interface::cast::<IWebSocketControl>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOutboundBufferSizeInBytes)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn ServerCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = &::windows_core::Interface::cast::<IWebSocketControl>(self)?;
         unsafe {
@@ -2368,12 +2368,12 @@ impl IWebSocketControl2 {
             (::windows_core::Interface::vtable(this).ServerCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetServerCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IWebSocketControl>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetServerCredential)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn ProxyCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = &::windows_core::Interface::cast::<IWebSocketControl>(self)?;
         unsafe {
@@ -2381,12 +2381,12 @@ impl IWebSocketControl2 {
             (::windows_core::Interface::vtable(this).ProxyCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetProxyCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IWebSocketControl>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetProxyCredential)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SupportedProtocols(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<IWebSocketControl>(self)?;
         unsafe {
@@ -2488,9 +2488,9 @@ unsafe impl ::windows_core::Interface for IWebSocketControl2 {
 #[doc(hidden)]
 pub struct IWebSocketControl2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub IgnorableServerCertificateErrors: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security")))]
     IgnorableServerCertificateErrors: usize,
 }
 #[doc(hidden)]
@@ -2504,9 +2504,9 @@ unsafe impl ::windows_core::Interface for IWebSocketErrorStatics {
 #[doc(hidden)]
 pub struct IWebSocketErrorStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Web")]
+    #[cfg(feature = "winrt-web")]
     pub GetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hresult: i32, result__: *mut ::winrt_web::WebErrorStatus) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Web"))]
+    #[cfg(not(feature = "winrt-web"))]
     GetStatus: usize,
 }
 #[repr(transparent)]
@@ -2612,7 +2612,7 @@ pub struct IWebSocketInformation_Vtbl {
 #[repr(transparent)]
 pub struct IWebSocketInformation2(::windows_core::IUnknown);
 impl IWebSocketInformation2 {
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub fn ServerCertificate(&self) -> ::windows_core::Result<::winrt_security::Cryptography::Certificates::Certificate> {
         let this = self;
         unsafe {
@@ -2627,7 +2627,7 @@ impl IWebSocketInformation2 {
             (::windows_core::Interface::vtable(this).ServerCertificateErrorSeverity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SocketSslErrorSeverity>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn ServerCertificateErrors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::ChainValidationResult>> {
         let this = self;
         unsafe {
@@ -2635,7 +2635,7 @@ impl IWebSocketInformation2 {
             (::windows_core::Interface::vtable(this).ServerCertificateErrors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::ChainValidationResult>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn ServerIntermediateCertificates(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::Certificate>> {
         let this = self;
         unsafe {
@@ -2758,18 +2758,18 @@ unsafe impl ::windows_core::Interface for IWebSocketInformation2 {
 #[doc(hidden)]
 pub struct IWebSocketInformation2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub ServerCertificate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Cryptography_Certificates"))]
+    #[cfg(not(feature = "winrt-security"))]
     ServerCertificate: usize,
     pub ServerCertificateErrorSeverity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SocketSslErrorSeverity) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub ServerCertificateErrors: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security")))]
     ServerCertificateErrors: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub ServerIntermediateCertificates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security")))]
     ServerIntermediateCertificates: usize,
 }
 #[doc(hidden)]
@@ -2783,18 +2783,18 @@ unsafe impl ::windows_core::Interface for IWebSocketServerCustomValidationReques
 #[doc(hidden)]
 pub struct IWebSocketServerCustomValidationRequestedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub ServerCertificate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Cryptography_Certificates"))]
+    #[cfg(not(feature = "winrt-security"))]
     ServerCertificate: usize,
     pub ServerCertificateErrorSeverity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SocketSslErrorSeverity) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub ServerCertificateErrors: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security")))]
     ServerCertificateErrors: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub ServerIntermediateCertificates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-security")))]
     ServerIntermediateCertificates: usize,
     pub Reject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -2849,7 +2849,7 @@ impl MessageWebSocket {
         let this = &::windows_core::Interface::cast::<IMessageWebSocket2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveServerCustomValidationRequested)(::windows_core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SendNonfinalFrameAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, data: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>> {
         let this = &::windows_core::Interface::cast::<IMessageWebSocket3>(self)?;
         unsafe {
@@ -2857,7 +2857,7 @@ impl MessageWebSocket {
             (::windows_core::Interface::vtable(this).SendNonfinalFrameAsync)(::windows_core::Interface::as_raw(this), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SendFinalFrameAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, data: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>> {
         let this = &::windows_core::Interface::cast::<IMessageWebSocket3>(self)?;
         unsafe {
@@ -2865,7 +2865,7 @@ impl MessageWebSocket {
             (::windows_core::Interface::vtable(this).SendFinalFrameAsync)(::windows_core::Interface::as_raw(this), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn OutputStream(&self) -> ::windows_core::Result<::winrt_storage::Streams::IOutputStream> {
         let this = &::windows_core::Interface::cast::<IWebSocket>(self)?;
         unsafe {
@@ -3070,7 +3070,7 @@ impl MessageWebSocketControl {
         let this = &::windows_core::Interface::cast::<IMessageWebSocketControl2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetReceiveMode)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub fn ClientCertificate(&self) -> ::windows_core::Result<::winrt_security::Cryptography::Certificates::Certificate> {
         let this = &::windows_core::Interface::cast::<IMessageWebSocketControl2>(self)?;
         unsafe {
@@ -3078,7 +3078,7 @@ impl MessageWebSocketControl {
             (::windows_core::Interface::vtable(this).ClientCertificate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Cryptography::Certificates::Certificate>(result__)
         }
     }
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetClientCertificate<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Cryptography::Certificates::Certificate>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMessageWebSocketControl2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetClientCertificate)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -3094,7 +3094,7 @@ impl MessageWebSocketControl {
         let this = &::windows_core::Interface::cast::<IWebSocketControl>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOutboundBufferSizeInBytes)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn ServerCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = &::windows_core::Interface::cast::<IWebSocketControl>(self)?;
         unsafe {
@@ -3102,12 +3102,12 @@ impl MessageWebSocketControl {
             (::windows_core::Interface::vtable(this).ServerCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetServerCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IWebSocketControl>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetServerCredential)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn ProxyCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = &::windows_core::Interface::cast::<IWebSocketControl>(self)?;
         unsafe {
@@ -3115,12 +3115,12 @@ impl MessageWebSocketControl {
             (::windows_core::Interface::vtable(this).ProxyCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetProxyCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IWebSocketControl>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetProxyCredential)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SupportedProtocols(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<IWebSocketControl>(self)?;
         unsafe {
@@ -3128,7 +3128,7 @@ impl MessageWebSocketControl {
             (::windows_core::Interface::vtable(this).SupportedProtocols)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn IgnorableServerCertificateErrors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_security::Cryptography::Certificates::ChainValidationResult>> {
         let this = &::windows_core::Interface::cast::<IWebSocketControl2>(self)?;
         unsafe {
@@ -3277,7 +3277,7 @@ impl MessageWebSocketInformation {
             (::windows_core::Interface::vtable(this).Protocol)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub fn ServerCertificate(&self) -> ::windows_core::Result<::winrt_security::Cryptography::Certificates::Certificate> {
         let this = &::windows_core::Interface::cast::<IWebSocketInformation2>(self)?;
         unsafe {
@@ -3292,7 +3292,7 @@ impl MessageWebSocketInformation {
             (::windows_core::Interface::vtable(this).ServerCertificateErrorSeverity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SocketSslErrorSeverity>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn ServerCertificateErrors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::ChainValidationResult>> {
         let this = &::windows_core::Interface::cast::<IWebSocketInformation2>(self)?;
         unsafe {
@@ -3300,7 +3300,7 @@ impl MessageWebSocketInformation {
             (::windows_core::Interface::vtable(this).ServerCertificateErrors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::ChainValidationResult>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn ServerIntermediateCertificates(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::Certificate>> {
         let this = &::windows_core::Interface::cast::<IWebSocketInformation2>(self)?;
         unsafe {
@@ -3435,7 +3435,7 @@ impl MessageWebSocketMessageReceivedEventArgs {
             (::windows_core::Interface::vtable(this).MessageType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SocketMessageType>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetDataReader(&self) -> ::windows_core::Result<::winrt_storage::Streams::DataReader> {
         let this = self;
         unsafe {
@@ -3443,7 +3443,7 @@ impl MessageWebSocketMessageReceivedEventArgs {
             (::windows_core::Interface::vtable(this).GetDataReader)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::DataReader>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetDataStream(&self) -> ::windows_core::Result<::winrt_storage::Streams::IInputStream> {
         let this = self;
         unsafe {
@@ -3635,7 +3635,7 @@ impl ServerMessageWebSocket {
             (::windows_core::Interface::vtable(this).Information)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ServerMessageWebSocketInformation>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn OutputStream(&self) -> ::windows_core::Result<::winrt_storage::Streams::IOutputStream> {
         let this = self;
         unsafe {
@@ -3951,7 +3951,7 @@ impl ServerStreamWebSocket {
             (::windows_core::Interface::vtable(this).Information)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ServerStreamWebSocketInformation>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn InputStream(&self) -> ::windows_core::Result<::winrt_storage::Streams::IInputStream> {
         let this = self;
         unsafe {
@@ -3959,7 +3959,7 @@ impl ServerStreamWebSocket {
             (::windows_core::Interface::vtable(this).InputStream)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IInputStream>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn OutputStream(&self) -> ::windows_core::Result<::winrt_storage::Streams::IOutputStream> {
         let this = self;
         unsafe {
@@ -4210,7 +4210,7 @@ unsafe impl ::windows_core::RuntimeType for SocketActivityConnectedStandbyAction
 #[repr(transparent)]
 pub struct SocketActivityContext(::windows_core::IUnknown);
 impl SocketActivityContext {
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Data(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
@@ -4218,7 +4218,7 @@ impl SocketActivityContext {
             (::windows_core::Interface::vtable(this).Data)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(data: Param0) -> ::windows_core::Result<SocketActivityContext> {
         Self::ISocketActivityContextFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -4354,7 +4354,7 @@ impl SocketActivityInformation {
             (::windows_core::Interface::vtable(this).StreamSocketListener)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<StreamSocketListener>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AllSockets() -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, SocketActivityInformation>> {
         Self::ISocketActivityInformationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -4846,7 +4846,7 @@ impl StreamSocket {
             (::windows_core::Interface::vtable(this).Information)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<StreamSocketInformation>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn InputStream(&self) -> ::windows_core::Result<::winrt_storage::Streams::IInputStream> {
         let this = self;
         unsafe {
@@ -4854,7 +4854,7 @@ impl StreamSocket {
             (::windows_core::Interface::vtable(this).InputStream)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IInputStream>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn OutputStream(&self) -> ::windows_core::Result<::winrt_storage::Streams::IOutputStream> {
         let this = self;
         unsafe {
@@ -4897,7 +4897,7 @@ impl StreamSocket {
             (::windows_core::Interface::vtable(this).UpgradeToSslAsync)(::windows_core::Interface::as_raw(this), protectionlevel, validationhostname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Networking_Connectivity")]
+    #[cfg(feature = "winrt-networking")]
     pub fn ConnectWithProtectionLevelAndAdapterAsync<'a, Param0: ::windows_core::IntoParam<'a, super::HostName>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, super::Connectivity::NetworkAdapter>>(&self, remotehostname: Param0, remoteservicename: Param1, protectionlevel: SocketProtectionLevel, adapter: Param3) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = &::windows_core::Interface::cast::<IStreamSocket2>(self)?;
         unsafe {
@@ -4932,14 +4932,14 @@ impl StreamSocket {
         let this = &::windows_core::Interface::cast::<IStreamSocket3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).TransferOwnershipWithContextAndKeepAliveTime)(::windows_core::Interface::as_raw(this), socketid.into_param().abi(), data.into_param().abi(), keepalivetime.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetEndpointPairsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::HostName>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(remotehostname: Param0, remoteservicename: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::EndpointPair>>> {
         Self::IStreamSocketStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetEndpointPairsAsync)(::windows_core::Interface::as_raw(this), remotehostname.into_param().abi(), remoteservicename.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::EndpointPair>>>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetEndpointPairsWithSortOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::HostName>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(remotehostname: Param0, remoteservicename: Param1, sortoptions: super::HostNameSortOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::EndpointPair>>> {
         Self::IStreamSocketStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -5103,7 +5103,7 @@ impl StreamSocketControl {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetOutboundUnicastHopLimit)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn IgnorableServerCertificateErrors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_security::Cryptography::Certificates::ChainValidationResult>> {
         let this = &::windows_core::Interface::cast::<IStreamSocketControl2>(self)?;
         unsafe {
@@ -5122,7 +5122,7 @@ impl StreamSocketControl {
         let this = &::windows_core::Interface::cast::<IStreamSocketControl3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSerializeConnectionAttempts)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub fn ClientCertificate(&self) -> ::windows_core::Result<::winrt_security::Cryptography::Certificates::Certificate> {
         let this = &::windows_core::Interface::cast::<IStreamSocketControl3>(self)?;
         unsafe {
@@ -5130,7 +5130,7 @@ impl StreamSocketControl {
             (::windows_core::Interface::vtable(this).ClientCertificate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Cryptography::Certificates::Certificate>(result__)
         }
     }
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetClientCertificate<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Cryptography::Certificates::Certificate>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IStreamSocketControl3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetClientCertificate)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -5285,7 +5285,7 @@ impl StreamSocketInformation {
             (::windows_core::Interface::vtable(this).ProtectionLevel)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SocketProtectionLevel>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SessionKey(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
@@ -5300,7 +5300,7 @@ impl StreamSocketInformation {
             (::windows_core::Interface::vtable(this).ServerCertificateErrorSeverity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SocketSslErrorSeverity>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn ServerCertificateErrors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::ChainValidationResult>> {
         let this = &::windows_core::Interface::cast::<IStreamSocketInformation2>(self)?;
         unsafe {
@@ -5308,7 +5308,7 @@ impl StreamSocketInformation {
             (::windows_core::Interface::vtable(this).ServerCertificateErrors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::ChainValidationResult>>(result__)
         }
     }
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub fn ServerCertificate(&self) -> ::windows_core::Result<::winrt_security::Cryptography::Certificates::Certificate> {
         let this = &::windows_core::Interface::cast::<IStreamSocketInformation2>(self)?;
         unsafe {
@@ -5316,7 +5316,7 @@ impl StreamSocketInformation {
             (::windows_core::Interface::vtable(this).ServerCertificate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Cryptography::Certificates::Certificate>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn ServerIntermediateCertificates(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::Certificate>> {
         let this = &::windows_core::Interface::cast::<IStreamSocketInformation2>(self)?;
         unsafe {
@@ -5457,7 +5457,7 @@ impl StreamSocketListener {
             (::windows_core::Interface::vtable(this).BindServiceNameWithProtectionLevelAsync)(::windows_core::Interface::as_raw(this), localservicename.into_param().abi(), protectionlevel, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Networking_Connectivity")]
+    #[cfg(feature = "winrt-networking")]
     pub fn BindServiceNameWithProtectionLevelAndAdapterAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, super::Connectivity::NetworkAdapter>>(&self, localservicename: Param0, protectionlevel: SocketProtectionLevel, adapter: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = &::windows_core::Interface::cast::<IStreamSocketListener2>(self)?;
         unsafe {
@@ -5908,7 +5908,7 @@ impl StreamWebSocket {
             (::windows_core::Interface::vtable(this).Information)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<StreamWebSocketInformation>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn InputStream(&self) -> ::windows_core::Result<::winrt_storage::Streams::IInputStream> {
         let this = self;
         unsafe {
@@ -5927,7 +5927,7 @@ impl StreamWebSocket {
         let this = &::windows_core::Interface::cast::<IStreamWebSocket2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveServerCustomValidationRequested)(::windows_core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn OutputStream(&self) -> ::windows_core::Result<::winrt_storage::Streams::IOutputStream> {
         let this = &::windows_core::Interface::cast::<IWebSocket>(self)?;
         unsafe {
@@ -6110,7 +6110,7 @@ impl StreamWebSocketControl {
             (::windows_core::Interface::vtable(this).ActualUnsolicitedPongInterval)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub fn ClientCertificate(&self) -> ::windows_core::Result<::winrt_security::Cryptography::Certificates::Certificate> {
         let this = &::windows_core::Interface::cast::<IStreamWebSocketControl2>(self)?;
         unsafe {
@@ -6118,7 +6118,7 @@ impl StreamWebSocketControl {
             (::windows_core::Interface::vtable(this).ClientCertificate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Cryptography::Certificates::Certificate>(result__)
         }
     }
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetClientCertificate<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Cryptography::Certificates::Certificate>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IStreamWebSocketControl2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetClientCertificate)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -6134,7 +6134,7 @@ impl StreamWebSocketControl {
         let this = &::windows_core::Interface::cast::<IWebSocketControl>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOutboundBufferSizeInBytes)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn ServerCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = &::windows_core::Interface::cast::<IWebSocketControl>(self)?;
         unsafe {
@@ -6142,12 +6142,12 @@ impl StreamWebSocketControl {
             (::windows_core::Interface::vtable(this).ServerCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetServerCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IWebSocketControl>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetServerCredential)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn ProxyCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = &::windows_core::Interface::cast::<IWebSocketControl>(self)?;
         unsafe {
@@ -6155,12 +6155,12 @@ impl StreamWebSocketControl {
             (::windows_core::Interface::vtable(this).ProxyCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetProxyCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IWebSocketControl>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetProxyCredential)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SupportedProtocols(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<IWebSocketControl>(self)?;
         unsafe {
@@ -6168,7 +6168,7 @@ impl StreamWebSocketControl {
             (::windows_core::Interface::vtable(this).SupportedProtocols)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn IgnorableServerCertificateErrors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_security::Cryptography::Certificates::ChainValidationResult>> {
         let this = &::windows_core::Interface::cast::<IWebSocketControl2>(self)?;
         unsafe {
@@ -6317,7 +6317,7 @@ impl StreamWebSocketInformation {
             (::windows_core::Interface::vtable(this).Protocol)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub fn ServerCertificate(&self) -> ::windows_core::Result<::winrt_security::Cryptography::Certificates::Certificate> {
         let this = &::windows_core::Interface::cast::<IWebSocketInformation2>(self)?;
         unsafe {
@@ -6332,7 +6332,7 @@ impl StreamWebSocketInformation {
             (::windows_core::Interface::vtable(this).ServerCertificateErrorSeverity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SocketSslErrorSeverity>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn ServerCertificateErrors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::ChainValidationResult>> {
         let this = &::windows_core::Interface::cast::<IWebSocketInformation2>(self)?;
         unsafe {
@@ -6340,7 +6340,7 @@ impl StreamWebSocketInformation {
             (::windows_core::Interface::vtable(this).ServerCertificateErrors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::ChainValidationResult>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn ServerIntermediateCertificates(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::Certificate>> {
         let this = &::windows_core::Interface::cast::<IWebSocketInformation2>(self)?;
         unsafe {
@@ -6557,7 +6557,7 @@ unsafe impl ::core::marker::Send for WebSocketClosedEventArgs {}
 unsafe impl ::core::marker::Sync for WebSocketClosedEventArgs {}
 pub struct WebSocketError;
 impl WebSocketError {
-    #[cfg(feature = "Web")]
+    #[cfg(feature = "winrt-web")]
     pub fn GetStatus(hresult: i32) -> ::windows_core::Result<::winrt_web::WebErrorStatus> {
         Self::IWebSocketErrorStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::winrt_web::WebErrorStatus>::zeroed();
@@ -6572,10 +6572,10 @@ impl WebSocketError {
 impl ::windows_core::RuntimeName for WebSocketError {
     const NAME: &'static str = "Windows.Networking.Sockets.WebSocketError";
 }
-#[cfg(feature = "ApplicationModel_Background")]
+#[cfg(feature = "winrt-applicationmodel")]
 #[repr(transparent)]
 pub struct WebSocketKeepAlive(::windows_core::IUnknown);
-#[cfg(feature = "ApplicationModel_Background")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl WebSocketKeepAlive {
     pub fn new() -> ::windows_core::Result<Self> {
         Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
@@ -6584,33 +6584,33 @@ impl WebSocketKeepAlive {
         static mut SHARED: ::windows_core::FactoryCache<WebSocketKeepAlive, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "ApplicationModel_Background")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn Run<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_applicationmodel::Background::IBackgroundTaskInstance>>(&self, taskinstance: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Run)(::windows_core::Interface::as_raw(this), taskinstance.into_param().abi()).ok() }
     }
 }
-#[cfg(feature = "ApplicationModel_Background")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl ::core::clone::Clone for WebSocketKeepAlive {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "ApplicationModel_Background")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl ::core::cmp::PartialEq for WebSocketKeepAlive {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "ApplicationModel_Background")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl ::core::cmp::Eq for WebSocketKeepAlive {}
-#[cfg(feature = "ApplicationModel_Background")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl ::core::fmt::Debug for WebSocketKeepAlive {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("WebSocketKeepAlive").field(&self.0).finish()
     }
 }
-#[cfg(feature = "ApplicationModel_Background")]
+#[cfg(feature = "winrt-applicationmodel")]
 unsafe impl ::windows_core::RuntimeType for WebSocketKeepAlive {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Networking.Sockets.WebSocketKeepAlive;{7d13d534-fd12-43ce-8c22-ea1ff13c06df})");
     type DefaultType = ::core::option::Option<Self>;
@@ -6618,97 +6618,97 @@ unsafe impl ::windows_core::RuntimeType for WebSocketKeepAlive {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "ApplicationModel_Background")]
+#[cfg(feature = "winrt-applicationmodel")]
 unsafe impl ::windows_core::Interface for WebSocketKeepAlive {
     type Vtable = ::winrt_applicationmodel::Background::IBackgroundTask_Vtbl;
     const IID: ::windows_core::GUID = <::winrt_applicationmodel::Background::IBackgroundTask as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "ApplicationModel_Background")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl ::windows_core::RuntimeName for WebSocketKeepAlive {
     const NAME: &'static str = "Windows.Networking.Sockets.WebSocketKeepAlive";
 }
-#[cfg(feature = "ApplicationModel_Background")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl ::core::convert::From<WebSocketKeepAlive> for ::windows_core::IUnknown {
     fn from(value: WebSocketKeepAlive) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "ApplicationModel_Background")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl ::core::convert::From<&WebSocketKeepAlive> for ::windows_core::IUnknown {
     fn from(value: &WebSocketKeepAlive) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "ApplicationModel_Background")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for WebSocketKeepAlive {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "ApplicationModel_Background")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a WebSocketKeepAlive {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "ApplicationModel_Background")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl ::core::convert::From<WebSocketKeepAlive> for ::windows_core::IInspectable {
     fn from(value: WebSocketKeepAlive) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "ApplicationModel_Background")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl ::core::convert::From<&WebSocketKeepAlive> for ::windows_core::IInspectable {
     fn from(value: &WebSocketKeepAlive) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "ApplicationModel_Background")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for WebSocketKeepAlive {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "ApplicationModel_Background")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a WebSocketKeepAlive {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "ApplicationModel_Background")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl ::core::convert::TryFrom<WebSocketKeepAlive> for ::winrt_applicationmodel::Background::IBackgroundTask {
     type Error = ::windows_core::Error;
     fn try_from(value: WebSocketKeepAlive) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "ApplicationModel_Background")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl ::core::convert::TryFrom<&WebSocketKeepAlive> for ::winrt_applicationmodel::Background::IBackgroundTask {
     type Error = ::windows_core::Error;
     fn try_from(value: &WebSocketKeepAlive) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "ApplicationModel_Background")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_applicationmodel::Background::IBackgroundTask> for WebSocketKeepAlive {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_applicationmodel::Background::IBackgroundTask> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "ApplicationModel_Background")]
+#[cfg(feature = "winrt-applicationmodel")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_applicationmodel::Background::IBackgroundTask> for &WebSocketKeepAlive {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_applicationmodel::Background::IBackgroundTask> {
         ::core::convert::TryInto::<::winrt_applicationmodel::Background::IBackgroundTask>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "ApplicationModel_Background")]
+#[cfg(feature = "winrt-applicationmodel")]
 unsafe impl ::core::marker::Send for WebSocketKeepAlive {}
-#[cfg(feature = "ApplicationModel_Background")]
+#[cfg(feature = "winrt-applicationmodel")]
 unsafe impl ::core::marker::Sync for WebSocketKeepAlive {}
 #[repr(transparent)]
 pub struct WebSocketServerCustomValidationRequestedEventArgs(::windows_core::IUnknown);
 impl WebSocketServerCustomValidationRequestedEventArgs {
-    #[cfg(feature = "Security_Cryptography_Certificates")]
+    #[cfg(feature = "winrt-security")]
     pub fn ServerCertificate(&self) -> ::windows_core::Result<::winrt_security::Cryptography::Certificates::Certificate> {
         let this = self;
         unsafe {
@@ -6723,7 +6723,7 @@ impl WebSocketServerCustomValidationRequestedEventArgs {
             (::windows_core::Interface::vtable(this).ServerCertificateErrorSeverity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SocketSslErrorSeverity>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn ServerCertificateErrors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::ChainValidationResult>> {
         let this = self;
         unsafe {
@@ -6731,7 +6731,7 @@ impl WebSocketServerCustomValidationRequestedEventArgs {
             (::windows_core::Interface::vtable(this).ServerCertificateErrors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::ChainValidationResult>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-security"))]
     pub fn ServerIntermediateCertificates(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::Certificate>> {
         let this = self;
         unsafe {

@@ -41,19 +41,19 @@ impl ::core::clone::Clone for ApplicationViewOrientation {
     }
 }
 pub type ApplicationViewScaling = *mut ::core::ffi::c_void;
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct ApplicationViewState(pub i32);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ApplicationViewState {
     pub const FullScreenLandscape: Self = Self(0i32);
     pub const Filled: Self = Self(1i32);
     pub const Snapped: Self = Self(2i32);
     pub const FullScreenPortrait: Self = Self(3i32);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::marker::Copy for ApplicationViewState {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for ApplicationViewState {
     fn clone(&self) -> Self {
         *self

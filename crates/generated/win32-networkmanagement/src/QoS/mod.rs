@@ -1,37 +1,37 @@
 pub const ABLE_TO_RECV_RSVP: u32 = 50002u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct ADDRESS_LIST_DESCRIPTOR {
     pub MediaType: u32,
     pub AddressList: super::Ndis::NETWORK_ADDRESS_LIST,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for ADDRESS_LIST_DESCRIPTOR {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for ADDRESS_LIST_DESCRIPTOR {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for ADDRESS_LIST_DESCRIPTOR {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ADDRESS_LIST_DESCRIPTOR").field("MediaType", &self.MediaType).field("AddressList", &self.AddressList).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for ADDRESS_LIST_DESCRIPTOR {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for ADDRESS_LIST_DESCRIPTOR {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ADDRESS_LIST_DESCRIPTOR>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for ADDRESS_LIST_DESCRIPTOR {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for ADDRESS_LIST_DESCRIPTOR {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -233,7 +233,7 @@ pub const DD_TCP_DEVICE_NAME: &str = "\\Device\\Tcp";
 pub const DUP_RESULTS: u32 = 4u32;
 pub const END_TO_END_QOSABILITY: u32 = 50006u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct ENUMERATION_BUFFER {
     pub Length: u32,
     pub OwnerProcessId: u32,
@@ -243,33 +243,33 @@ pub struct ENUMERATION_BUFFER {
     pub NumberOfFilters: u32,
     pub GenericFilter: [TC_GEN_FILTER; 1],
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for ENUMERATION_BUFFER {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for ENUMERATION_BUFFER {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::fmt::Debug for ENUMERATION_BUFFER {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ENUMERATION_BUFFER").field("Length", &self.Length).field("OwnerProcessId", &self.OwnerProcessId).field("FlowNameLength", &self.FlowNameLength).field("FlowName", &self.FlowName).field("pFlow", &self.pFlow).field("NumberOfFilters", &self.NumberOfFilters).field("GenericFilter", &self.GenericFilter).finish()
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for ENUMERATION_BUFFER {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for ENUMERATION_BUFFER {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENUMERATION_BUFFER>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for ENUMERATION_BUFFER {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for ENUMERATION_BUFFER {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -294,63 +294,63 @@ pub const ERROR_INVALID_TOKEN_RATE: u32 = 7503u32;
 pub const ERROR_INVALID_TRAFFIC_CLASS: u32 = 7507u32;
 pub const ERROR_NO_MORE_INFO: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct ERROR_SPEC {
     pub errs_header: RsvpObjHdr,
     pub errs_u: ERROR_SPEC_0,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for ERROR_SPEC {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for ERROR_SPEC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for ERROR_SPEC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for ERROR_SPEC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ERROR_SPEC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for ERROR_SPEC {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for ERROR_SPEC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub union ERROR_SPEC_0 {
     pub errs_ipv4: Error_Spec_IPv4,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for ERROR_SPEC_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for ERROR_SPEC_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for ERROR_SPEC_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for ERROR_SPEC_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ERROR_SPEC_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for ERROR_SPEC_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for ERROR_SPEC_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -369,137 +369,137 @@ pub const ERR_Usage_serv: u32 = 17u32;
 pub const ERR_global_mask: u32 = 4095u32;
 pub const EXPIRED_CREDENTIAL: u32 = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct Error_Spec_IPv4 {
     pub errs_errnode: ::win32_networking::WinSock::IN_ADDR,
     pub errs_flags: u8,
     pub errs_code: u8,
     pub errs_value: u16,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for Error_Spec_IPv4 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for Error_Spec_IPv4 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for Error_Spec_IPv4 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for Error_Spec_IPv4 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Error_Spec_IPv4>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for Error_Spec_IPv4 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for Error_Spec_IPv4 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct FILTER_SPEC {
     pub filt_header: RsvpObjHdr,
     pub filt_u: FILTER_SPEC_0,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for FILTER_SPEC {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for FILTER_SPEC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for FILTER_SPEC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for FILTER_SPEC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_SPEC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for FILTER_SPEC {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for FILTER_SPEC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub union FILTER_SPEC_0 {
     pub filt_ipv4: Filter_Spec_IPv4,
     pub filt_ipv4gpi: Filter_Spec_IPv4GPI,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for FILTER_SPEC_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for FILTER_SPEC_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for FILTER_SPEC_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for FILTER_SPEC_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_SPEC_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for FILTER_SPEC_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for FILTER_SPEC_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct FLOWDESCRIPTOR {
     pub FlowSpec: ::win32_networking::WinSock::FLOWSPEC,
     pub NumFilters: u32,
     pub FilterList: *mut RSVP_FILTERSPEC,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for FLOWDESCRIPTOR {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for FLOWDESCRIPTOR {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::fmt::Debug for FLOWDESCRIPTOR {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FLOWDESCRIPTOR").field("FlowSpec", &self.FlowSpec).field("NumFilters", &self.NumFilters).field("FilterList", &self.FilterList).finish()
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for FLOWDESCRIPTOR {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for FLOWDESCRIPTOR {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FLOWDESCRIPTOR>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for FLOWDESCRIPTOR {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for FLOWDESCRIPTOR {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -547,65 +547,65 @@ impl ::core::fmt::Debug for FilterType {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct Filter_Spec_IPv4 {
     pub filt_ipaddr: ::win32_networking::WinSock::IN_ADDR,
     pub filt_unused: u16,
     pub filt_port: u16,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for Filter_Spec_IPv4 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for Filter_Spec_IPv4 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for Filter_Spec_IPv4 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for Filter_Spec_IPv4 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Filter_Spec_IPv4>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for Filter_Spec_IPv4 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for Filter_Spec_IPv4 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct Filter_Spec_IPv4GPI {
     pub filt_ipaddr: ::win32_networking::WinSock::IN_ADDR,
     pub filt_gpi: u32,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for Filter_Spec_IPv4GPI {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for Filter_Spec_IPv4GPI {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for Filter_Spec_IPv4GPI {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for Filter_Spec_IPv4GPI {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Filter_Spec_IPv4GPI>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for Filter_Spec_IPv4GPI {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for Filter_Spec_IPv4GPI {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1688,7 +1688,7 @@ pub const POLICY_LOCATOR_SUB_TYPE_UNICODE_DN: u32 = 2u32;
 pub const POLICY_LOCATOR_SUB_TYPE_UNICODE_DN_ENC: u32 = 4u32;
 pub const POSITIVE_INFINITY_RATE: u32 = 4294967294u32;
 pub const PREDICTIVE_SERV: u32 = 3u32;
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 #[inline]
 pub unsafe fn QOSAddSocketToFlow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_networking::WinSock::SOCKET>>(qoshandle: Param0, socket: Param1, destaddr: *const ::win32_networking::WinSock::SOCKADDR, traffictype: QOS_TRAFFIC_TYPE, flags: u32, flowid: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -1702,7 +1702,7 @@ pub unsafe fn QOSAddSocketToFlow<'a, Param0: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_IO")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn QOSCancel<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(qoshandle: Param0, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -1755,7 +1755,7 @@ pub unsafe fn QOSEnumerateFlows<'a, Param0: ::windows_core::IntoParam<'a, ::win3
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_IO")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn QOSNotifyFlow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(qoshandle: Param0, flowid: u32, operation: QOS_NOTIFY_FLOW, size: *mut u32, buffer: *mut ::core::ffi::c_void, flags: u32, overlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -1769,7 +1769,7 @@ pub unsafe fn QOSNotifyFlow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_fo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_IO")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn QOSQueryFlow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(qoshandle: Param0, flowid: u32, operation: QOS_QUERY_FLOW, size: *mut u32, buffer: *mut ::core::ffi::c_void, flags: u32, overlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -1783,7 +1783,7 @@ pub unsafe fn QOSQueryFlow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_fou
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 #[inline]
 pub unsafe fn QOSRemoveSocketFromFlow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_networking::WinSock::SOCKET>>(qoshandle: Param0, socket: Param1, flowid: u32, flags: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -1799,7 +1799,7 @@ pub unsafe fn QOSRemoveSocketFromFlow<'a, Param0: ::windows_core::IntoParam<'a, 
 }
 pub const QOSSPBASE: u32 = 50000u32;
 pub const QOSSP_ERR_BASE: u32 = 56000u32;
-#[cfg(feature = "Win32_System_IO")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn QOSSetFlow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(qoshandle: Param0, flowid: u32, operation: QOS_SET_FLOW, size: u32, buffer: *const ::core::ffi::c_void, flags: u32, overlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -1813,7 +1813,7 @@ pub unsafe fn QOSSetFlow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_found
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 #[inline]
 pub unsafe fn QOSStartTrackingClient<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(qoshandle: Param0, destaddr: *const ::win32_networking::WinSock::SOCKADDR, flags: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -1827,7 +1827,7 @@ pub unsafe fn QOSStartTrackingClient<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 #[inline]
 pub unsafe fn QOSStopTrackingClient<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(qoshandle: Param0, destaddr: *const ::win32_networking::WinSock::SOCKADDR, flags: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -1842,39 +1842,39 @@ pub unsafe fn QOSStopTrackingClient<'a, Param0: ::windows_core::IntoParam<'a, ::
     unimplemented!("Unsupported target OS");
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct QOS_DESTADDR {
     pub ObjectHdr: QOS_OBJECT_HDR,
     pub SocketAddress: *const ::win32_networking::WinSock::SOCKADDR,
     pub SocketAddressLength: u32,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for QOS_DESTADDR {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for QOS_DESTADDR {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::fmt::Debug for QOS_DESTADDR {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("QOS_DESTADDR").field("ObjectHdr", &self.ObjectHdr).field("SocketAddress", &self.SocketAddress).field("SocketAddressLength", &self.SocketAddressLength).finish()
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for QOS_DESTADDR {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for QOS_DESTADDR {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<QOS_DESTADDR>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for QOS_DESTADDR {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for QOS_DESTADDR {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2853,70 +2853,70 @@ impl ::core::default::Default for RSVP_FILTERSPEC_V6_GPI {
 }
 pub const RSVP_FIXED_FILTER_STYLE: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct RSVP_HOP {
     pub hop_header: RsvpObjHdr,
     pub hop_u: RSVP_HOP_0,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for RSVP_HOP {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for RSVP_HOP {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for RSVP_HOP {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for RSVP_HOP {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RSVP_HOP>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for RSVP_HOP {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for RSVP_HOP {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub union RSVP_HOP_0 {
     pub hop_ipv4: Rsvp_Hop_IPv4,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for RSVP_HOP_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for RSVP_HOP_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for RSVP_HOP_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for RSVP_HOP_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RSVP_HOP_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for RSVP_HOP_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for RSVP_HOP_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct RSVP_MSG_OBJS {
     pub RsvpMsgType: i32,
     pub pRsvpSession: *mut RSVP_SESSION,
@@ -2931,15 +2931,15 @@ pub struct RSVP_MSG_OBJS {
     pub pErrorSpec: *mut ERROR_SPEC,
     pub pAdspec: *mut ADSPEC,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for RSVP_MSG_OBJS {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for RSVP_MSG_OBJS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::fmt::Debug for RSVP_MSG_OBJS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RSVP_MSG_OBJS")
@@ -2958,19 +2958,19 @@ impl ::core::fmt::Debug for RSVP_MSG_OBJS {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for RSVP_MSG_OBJS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for RSVP_MSG_OBJS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RSVP_MSG_OBJS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for RSVP_MSG_OBJS {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for RSVP_MSG_OBJS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3043,7 +3043,7 @@ impl ::core::default::Default for RSVP_POLICY_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct RSVP_RESERVE_INFO {
     pub ObjectHdr: QOS_OBJECT_HDR,
     pub Style: u32,
@@ -3052,33 +3052,33 @@ pub struct RSVP_RESERVE_INFO {
     pub NumFlowDesc: u32,
     pub FlowDescList: *mut FLOWDESCRIPTOR,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for RSVP_RESERVE_INFO {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for RSVP_RESERVE_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::fmt::Debug for RSVP_RESERVE_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RSVP_RESERVE_INFO").field("ObjectHdr", &self.ObjectHdr).field("Style", &self.Style).field("ConfirmRequest", &self.ConfirmRequest).field("PolicyElementList", &self.PolicyElementList).field("NumFlowDesc", &self.NumFlowDesc).field("FlowDescList", &self.FlowDescList).finish()
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for RSVP_RESERVE_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for RSVP_RESERVE_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RSVP_RESERVE_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for RSVP_RESERVE_INFO {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for RSVP_RESERVE_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3088,126 +3088,126 @@ pub const RSVP_RESV: u32 = 2u32;
 pub const RSVP_RESV_ERR: u32 = 4u32;
 pub const RSVP_RESV_TEAR: u32 = 6u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct RSVP_SCOPE {
     pub scopl_header: RsvpObjHdr,
     pub scope_u: RSVP_SCOPE_0,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for RSVP_SCOPE {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for RSVP_SCOPE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for RSVP_SCOPE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for RSVP_SCOPE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RSVP_SCOPE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for RSVP_SCOPE {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for RSVP_SCOPE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub union RSVP_SCOPE_0 {
     pub scopl_ipv4: Scope_list_ipv4,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for RSVP_SCOPE_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for RSVP_SCOPE_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for RSVP_SCOPE_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for RSVP_SCOPE_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RSVP_SCOPE_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for RSVP_SCOPE_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for RSVP_SCOPE_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct RSVP_SESSION {
     pub sess_header: RsvpObjHdr,
     pub sess_u: RSVP_SESSION_0,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for RSVP_SESSION {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for RSVP_SESSION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for RSVP_SESSION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for RSVP_SESSION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RSVP_SESSION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for RSVP_SESSION {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for RSVP_SESSION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub union RSVP_SESSION_0 {
     pub sess_ipv4: Session_IPv4,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for RSVP_SESSION_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for RSVP_SESSION_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for RSVP_SESSION_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for RSVP_SESSION_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RSVP_SESSION_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for RSVP_SESSION_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for RSVP_SESSION_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3279,32 +3279,32 @@ impl ::core::default::Default for RsvpObjHdr {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct Rsvp_Hop_IPv4 {
     pub hop_ipaddr: ::win32_networking::WinSock::IN_ADDR,
     pub hop_LIH: u32,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for Rsvp_Hop_IPv4 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for Rsvp_Hop_IPv4 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for Rsvp_Hop_IPv4 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for Rsvp_Hop_IPv4 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Rsvp_Hop_IPv4>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for Rsvp_Hop_IPv4 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for Rsvp_Hop_IPv4 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3516,65 +3516,65 @@ pub const SIPAKSRHDRSIGNATURE: u32 = 1297240907u32;
 pub const SIPALOGVERSION: u32 = 1u32;
 pub const STATE_TIMEOUT: u32 = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct Scope_list_ipv4 {
     pub scopl_ipaddr: [::win32_networking::WinSock::IN_ADDR; 1],
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for Scope_list_ipv4 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for Scope_list_ipv4 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for Scope_list_ipv4 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for Scope_list_ipv4 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Scope_list_ipv4>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for Scope_list_ipv4 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for Scope_list_ipv4 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct Session_IPv4 {
     pub sess_destaddr: ::win32_networking::WinSock::IN_ADDR,
     pub sess_protid: u8,
     pub sess_flags: u8,
     pub sess_destport: u16,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for Session_IPv4 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for Session_IPv4 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for Session_IPv4 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for Session_IPv4 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Session_IPv4>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for Session_IPv4 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for Session_IPv4 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3704,80 +3704,80 @@ impl ::core::default::Default for TC_GEN_FILTER {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct TC_GEN_FLOW {
     pub SendingFlowspec: ::win32_networking::WinSock::FLOWSPEC,
     pub ReceivingFlowspec: ::win32_networking::WinSock::FLOWSPEC,
     pub TcObjectsLength: u32,
     pub TcObjects: [QOS_OBJECT_HDR; 1],
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for TC_GEN_FLOW {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for TC_GEN_FLOW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::fmt::Debug for TC_GEN_FLOW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("TC_GEN_FLOW").field("SendingFlowspec", &self.SendingFlowspec).field("ReceivingFlowspec", &self.ReceivingFlowspec).field("TcObjectsLength", &self.TcObjectsLength).field("TcObjects", &self.TcObjects).finish()
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for TC_GEN_FLOW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for TC_GEN_FLOW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TC_GEN_FLOW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for TC_GEN_FLOW {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for TC_GEN_FLOW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct TC_IFC_DESCRIPTOR {
     pub Length: u32,
     pub pInterfaceName: ::windows_core::PWSTR,
     pub pInterfaceID: ::windows_core::PWSTR,
     pub AddressListDesc: ADDRESS_LIST_DESCRIPTOR,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for TC_IFC_DESCRIPTOR {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for TC_IFC_DESCRIPTOR {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for TC_IFC_DESCRIPTOR {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("TC_IFC_DESCRIPTOR").field("Length", &self.Length).field("pInterfaceName", &self.pInterfaceName).field("pInterfaceID", &self.pInterfaceID).field("AddressListDesc", &self.AddressListDesc).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for TC_IFC_DESCRIPTOR {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for TC_IFC_DESCRIPTOR {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TC_IFC_DESCRIPTOR>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for TC_IFC_DESCRIPTOR {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for TC_IFC_DESCRIPTOR {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3793,40 +3793,40 @@ pub const TC_NOTIFY_IFC_CLOSE: u32 = 2u32;
 pub const TC_NOTIFY_IFC_UP: u32 = 1u32;
 pub const TC_NOTIFY_PARAM_CHANGED: u32 = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 pub struct TC_SUPPORTED_INFO_BUFFER {
     pub InstanceIDLength: u16,
     pub InstanceID: [u16; 256],
     pub InterfaceLuid: u64,
     pub AddrListDesc: ADDRESS_LIST_DESCRIPTOR,
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::marker::Copy for TC_SUPPORTED_INFO_BUFFER {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::clone::Clone for TC_SUPPORTED_INFO_BUFFER {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::fmt::Debug for TC_SUPPORTED_INFO_BUFFER {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("TC_SUPPORTED_INFO_BUFFER").field("InstanceIDLength", &self.InstanceIDLength).field("InstanceID", &self.InstanceID).field("InterfaceLuid", &self.InterfaceLuid).field("AddrListDesc", &self.AddrListDesc).finish()
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 unsafe impl ::windows_core::Abi for TC_SUPPORTED_INFO_BUFFER {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::PartialEq for TC_SUPPORTED_INFO_BUFFER {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TC_SUPPORTED_INFO_BUFFER>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::cmp::Eq for TC_SUPPORTED_INFO_BUFFER {}
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 impl ::core::default::Default for TC_SUPPORTED_INFO_BUFFER {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3845,7 +3845,7 @@ pub unsafe fn TcAddFilter<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foun
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 #[inline]
 pub unsafe fn TcAddFlow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(ifchandle: Param0, clflowctx: Param1, flags: u32, pgenericflow: *const TC_GEN_FLOW, pflowhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
@@ -3911,7 +3911,7 @@ pub unsafe fn TcDeregisterClient<'a, Param0: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 #[inline]
 pub unsafe fn TcEnumerateFlows<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(ifchandle: Param0, penumhandle: *mut ::win32_foundation::HANDLE, pflowcount: *mut u32, pbufsize: *mut u32, buffer: *mut ENUMERATION_BUFFER) -> u32 {
     #[cfg(windows)]
@@ -3925,7 +3925,7 @@ pub unsafe fn TcEnumerateFlows<'a, Param0: ::windows_core::IntoParam<'a, ::win32
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_NetworkManagement_Ndis")]
+#[cfg(feature = "win32-networkmanagement")]
 #[inline]
 pub unsafe fn TcEnumerateInterfaces<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(clienthandle: Param0, pbuffersize: *mut u32, interfacebuffer: *mut TC_IFC_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
@@ -3965,7 +3965,7 @@ pub unsafe fn TcGetFlowNameW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_f
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 #[inline]
 pub unsafe fn TcModifyFlow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(flowhandle: Param0, pgenericflow: *const TC_GEN_FLOW) -> u32 {
     #[cfg(windows)]
@@ -4207,96 +4207,96 @@ pub const ctype_SESSION_ipv4: u32 = 1u32;
 pub const ctype_SESSION_ipv4GPI: u32 = 3u32;
 pub const ctype_STYLE: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct flow_desc {
     pub u1: flow_desc_0,
     pub u2: flow_desc_1,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for flow_desc {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for flow_desc {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for flow_desc {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for flow_desc {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<flow_desc>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for flow_desc {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for flow_desc {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub union flow_desc_0 {
     pub stspec: *mut SENDER_TSPEC,
     pub isflow: *mut IS_FLOWSPEC,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for flow_desc_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for flow_desc_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for flow_desc_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for flow_desc_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<flow_desc_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for flow_desc_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for flow_desc_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub union flow_desc_1 {
     pub stemp: *mut FILTER_SPEC,
     pub fspec: *mut FILTER_SPEC,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for flow_desc_1 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for flow_desc_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for flow_desc_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for flow_desc_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<flow_desc_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for flow_desc_1 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for flow_desc_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4332,34 +4332,34 @@ impl ::core::fmt::Debug for int_serv_wkp {
 }
 pub const ioctl_code: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct lpmiptable {
     pub ulIfIndex: u32,
     pub MediaType: u32,
     pub IfIpAddr: ::win32_networking::WinSock::IN_ADDR,
     pub IfNetMask: ::win32_networking::WinSock::IN_ADDR,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for lpmiptable {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for lpmiptable {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for lpmiptable {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for lpmiptable {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<lpmiptable>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for lpmiptable {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for lpmiptable {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

@@ -4,7 +4,7 @@ extern "system" {
     pub fn SrpCloseThreadNetworkContext(threadnetworkcontext: *mut HTHREAD_NETWORK_CONTEXT) -> ::windows_core_sys::HRESULT;
     pub fn SrpCreateThreadNetworkContext(enterpriseid: ::windows_core_sys::PCWSTR, threadnetworkcontext: *mut HTHREAD_NETWORK_CONTEXT) -> ::windows_core_sys::HRESULT;
     pub fn SrpDisablePermissiveModeFileEncryption() -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Storage_Packaging_Appx")]
+    #[cfg(feature = "win32-storage-sys")]
     pub fn SrpDoesPolicyAllowAppExecution(packageid: *const ::win32_storage_sys::Packaging::Appx::PACKAGE_ID, isallowed: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn SrpEnablePermissiveModeFileEncryption(enterpriseid: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn SrpGetEnterpriseIds(tokenhandle: ::win32_foundation_sys::HANDLE, numberofbytes: *mut u32, enterpriseids: *mut ::windows_core_sys::PWSTR, enterpriseidcount: *mut u32) -> ::windows_core_sys::HRESULT;

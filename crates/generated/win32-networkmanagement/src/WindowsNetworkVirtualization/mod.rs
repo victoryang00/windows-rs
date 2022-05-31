@@ -27,7 +27,7 @@ impl ::core::fmt::Debug for WNV_CA_NOTIFICATION_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct WNV_CUSTOMER_ADDRESS_CHANGE_PARAM {
     pub MACAddress: ::win32_networking::WinSock::DL_EUI48,
     pub CAFamily: u16,
@@ -37,91 +37,91 @@ pub struct WNV_CUSTOMER_ADDRESS_CHANGE_PARAM {
     pub PA: WNV_IP_ADDRESS,
     pub NotificationReason: WNV_CA_NOTIFICATION_TYPE,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for WNV_CUSTOMER_ADDRESS_CHANGE_PARAM {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for WNV_CUSTOMER_ADDRESS_CHANGE_PARAM {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for WNV_CUSTOMER_ADDRESS_CHANGE_PARAM {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for WNV_CUSTOMER_ADDRESS_CHANGE_PARAM {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNV_CUSTOMER_ADDRESS_CHANGE_PARAM>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for WNV_CUSTOMER_ADDRESS_CHANGE_PARAM {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for WNV_CUSTOMER_ADDRESS_CHANGE_PARAM {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct WNV_IP_ADDRESS {
     pub IP: WNV_IP_ADDRESS_0,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for WNV_IP_ADDRESS {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for WNV_IP_ADDRESS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for WNV_IP_ADDRESS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for WNV_IP_ADDRESS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNV_IP_ADDRESS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for WNV_IP_ADDRESS {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for WNV_IP_ADDRESS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub union WNV_IP_ADDRESS_0 {
     pub v4: ::win32_networking::WinSock::IN_ADDR,
     pub v6: ::win32_networking::WinSock::IN6_ADDR,
     pub Addr: [u8; 16],
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for WNV_IP_ADDRESS_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for WNV_IP_ADDRESS_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for WNV_IP_ADDRESS_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for WNV_IP_ADDRESS_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNV_IP_ADDRESS_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for WNV_IP_ADDRESS_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for WNV_IP_ADDRESS_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -186,64 +186,64 @@ impl ::core::fmt::Debug for WNV_NOTIFICATION_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct WNV_OBJECT_CHANGE_PARAM {
     pub ObjectType: WNV_OBJECT_TYPE,
     pub ObjectParam: WNV_OBJECT_CHANGE_PARAM_0,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for WNV_OBJECT_CHANGE_PARAM {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for WNV_OBJECT_CHANGE_PARAM {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for WNV_OBJECT_CHANGE_PARAM {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for WNV_OBJECT_CHANGE_PARAM {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNV_OBJECT_CHANGE_PARAM>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for WNV_OBJECT_CHANGE_PARAM {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for WNV_OBJECT_CHANGE_PARAM {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub union WNV_OBJECT_CHANGE_PARAM_0 {
     pub ProviderAddressChange: WNV_PROVIDER_ADDRESS_CHANGE_PARAM,
     pub CustomerAddressChange: WNV_CUSTOMER_ADDRESS_CHANGE_PARAM,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for WNV_OBJECT_CHANGE_PARAM_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for WNV_OBJECT_CHANGE_PARAM_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for WNV_OBJECT_CHANGE_PARAM_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for WNV_OBJECT_CHANGE_PARAM_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNV_OBJECT_CHANGE_PARAM_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for WNV_OBJECT_CHANGE_PARAM_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for WNV_OBJECT_CHANGE_PARAM_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -306,7 +306,7 @@ impl ::core::fmt::Debug for WNV_OBJECT_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct WNV_POLICY_MISMATCH_PARAM {
     pub CAFamily: u16,
     pub PAFamily: u16,
@@ -314,67 +314,67 @@ pub struct WNV_POLICY_MISMATCH_PARAM {
     pub CA: WNV_IP_ADDRESS,
     pub PA: WNV_IP_ADDRESS,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for WNV_POLICY_MISMATCH_PARAM {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for WNV_POLICY_MISMATCH_PARAM {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for WNV_POLICY_MISMATCH_PARAM {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for WNV_POLICY_MISMATCH_PARAM {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNV_POLICY_MISMATCH_PARAM>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for WNV_POLICY_MISMATCH_PARAM {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for WNV_POLICY_MISMATCH_PARAM {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct WNV_PROVIDER_ADDRESS_CHANGE_PARAM {
     pub PAFamily: u16,
     pub PA: WNV_IP_ADDRESS,
     pub AddressState: ::win32_networking::WinSock::NL_DAD_STATE,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for WNV_PROVIDER_ADDRESS_CHANGE_PARAM {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for WNV_PROVIDER_ADDRESS_CHANGE_PARAM {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for WNV_PROVIDER_ADDRESS_CHANGE_PARAM {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for WNV_PROVIDER_ADDRESS_CHANGE_PARAM {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNV_PROVIDER_ADDRESS_CHANGE_PARAM>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for WNV_PROVIDER_ADDRESS_CHANGE_PARAM {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for WNV_PROVIDER_ADDRESS_CHANGE_PARAM {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct WNV_REDIRECT_PARAM {
     pub CAFamily: u16,
     pub PAFamily: u16,
@@ -384,27 +384,27 @@ pub struct WNV_REDIRECT_PARAM {
     pub PA: WNV_IP_ADDRESS,
     pub NewPA: WNV_IP_ADDRESS,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for WNV_REDIRECT_PARAM {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for WNV_REDIRECT_PARAM {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for WNV_REDIRECT_PARAM {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for WNV_REDIRECT_PARAM {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNV_REDIRECT_PARAM>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for WNV_REDIRECT_PARAM {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for WNV_REDIRECT_PARAM {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -423,7 +423,7 @@ pub unsafe fn WnvOpen() -> ::win32_foundation::HANDLE {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_IO")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn WnvRequestNotification<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(wnvhandle: Param0, notificationparam: *mut WNV_NOTIFICATION_PARAM, overlapped: *mut ::win32_system::IO::OVERLAPPED, bytestransferred: *mut u32) -> u32 {
     #[cfg(windows)]

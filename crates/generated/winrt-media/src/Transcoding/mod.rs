@@ -18,23 +18,23 @@ pub struct IMediaTranscoder_Vtbl {
     pub SetHardwareAccelerationEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub HardwareAccelerationEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub AddAudioEffect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, activatableclassid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub AddAudioEffectWithSettings: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, activatableclassid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, effectrequired: bool, configuration: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     AddAudioEffectWithSettings: usize,
     pub AddVideoEffect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, activatableclassid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub AddVideoEffectWithSettings: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, activatableclassid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, effectrequired: bool, configuration: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     AddVideoEffectWithSettings: usize,
     pub ClearEffects: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Media_MediaProperties", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-storage"))]
     pub PrepareFileTranscodeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, source: ::windows_core::RawPtr, destination: ::windows_core::RawPtr, profile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Media_MediaProperties", feature = "Storage")))]
+    #[cfg(not(all(feature = "winrt-media", feature = "winrt-storage")))]
     PrepareFileTranscodeAsync: usize,
-    #[cfg(all(feature = "Media_MediaProperties", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-storage"))]
     pub PrepareStreamTranscodeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, source: ::windows_core::RawPtr, destination: ::windows_core::RawPtr, profile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Media_MediaProperties", feature = "Storage_Streams")))]
+    #[cfg(not(all(feature = "winrt-media", feature = "winrt-storage")))]
     PrepareStreamTranscodeAsync: usize,
 }
 #[doc(hidden)]
@@ -48,9 +48,9 @@ unsafe impl ::windows_core::Interface for IMediaTranscoder2 {
 #[doc(hidden)]
 pub struct IMediaTranscoder2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Media_Core", feature = "Media_MediaProperties", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-media", feature = "winrt-storage"))]
     pub PrepareMediaStreamSourceTranscodeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, source: ::windows_core::RawPtr, destination: ::windows_core::RawPtr, profile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Media_Core", feature = "Media_MediaProperties", feature = "Storage_Streams")))]
+    #[cfg(not(all(feature = "winrt-media", feature = "winrt-media", feature = "winrt-storage")))]
     PrepareMediaStreamSourceTranscodeAsync: usize,
     pub SetVideoProcessingAlgorithm: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: MediaVideoProcessingAlgorithm) -> ::windows_core::HRESULT,
     pub VideoProcessingAlgorithm: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MediaVideoProcessingAlgorithm) -> ::windows_core::HRESULT,
@@ -128,7 +128,7 @@ impl MediaTranscoder {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).AddAudioEffect)(::windows_core::Interface::as_raw(this), activatableclassid.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AddAudioEffectWithSettings<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IPropertySet>>(&self, activatableclassid: Param0, effectrequired: bool, configuration: Param2) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).AddAudioEffectWithSettings)(::windows_core::Interface::as_raw(this), activatableclassid.into_param().abi(), effectrequired, configuration.into_param().abi()).ok() }
@@ -137,7 +137,7 @@ impl MediaTranscoder {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).AddVideoEffect)(::windows_core::Interface::as_raw(this), activatableclassid.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AddVideoEffectWithSettings<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IPropertySet>>(&self, activatableclassid: Param0, effectrequired: bool, configuration: Param2) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).AddVideoEffectWithSettings)(::windows_core::Interface::as_raw(this), activatableclassid.into_param().abi(), effectrequired, configuration.into_param().abi()).ok() }
@@ -146,7 +146,7 @@ impl MediaTranscoder {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ClearEffects)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(all(feature = "Media_MediaProperties", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-storage"))]
     pub fn PrepareFileTranscodeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>, Param2: ::windows_core::IntoParam<'a, super::MediaProperties::MediaEncodingProfile>>(&self, source: Param0, destination: Param1, profile: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<PrepareTranscodeResult>> {
         let this = self;
         unsafe {
@@ -154,7 +154,7 @@ impl MediaTranscoder {
             (::windows_core::Interface::vtable(this).PrepareFileTranscodeAsync)(::windows_core::Interface::as_raw(this), source.into_param().abi(), destination.into_param().abi(), profile.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<PrepareTranscodeResult>>(result__)
         }
     }
-    #[cfg(all(feature = "Media_MediaProperties", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-storage"))]
     pub fn PrepareStreamTranscodeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>, Param2: ::windows_core::IntoParam<'a, super::MediaProperties::MediaEncodingProfile>>(&self, source: Param0, destination: Param1, profile: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<PrepareTranscodeResult>> {
         let this = self;
         unsafe {
@@ -162,7 +162,7 @@ impl MediaTranscoder {
             (::windows_core::Interface::vtable(this).PrepareStreamTranscodeAsync)(::windows_core::Interface::as_raw(this), source.into_param().abi(), destination.into_param().abi(), profile.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<PrepareTranscodeResult>>(result__)
         }
     }
-    #[cfg(all(feature = "Media_Core", feature = "Media_MediaProperties", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-media", feature = "winrt-storage"))]
     pub fn PrepareMediaStreamSourceTranscodeAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Core::IMediaSource>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>, Param2: ::windows_core::IntoParam<'a, super::MediaProperties::MediaEncodingProfile>>(&self, source: Param0, destination: Param1, profile: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<PrepareTranscodeResult>> {
         let this = &::windows_core::Interface::cast::<IMediaTranscoder2>(self)?;
         unsafe {

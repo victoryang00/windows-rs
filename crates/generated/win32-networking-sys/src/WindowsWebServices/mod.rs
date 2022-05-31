@@ -767,17 +767,17 @@ impl ::core::clone::Clone for WS_CAPI_ASYMMETRIC_SECURITY_KEY_HANDLE {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 pub type WS_CERTIFICATE_VALIDATION_CALLBACK = ::core::option::Option<unsafe extern "system" fn(certcontext: *const ::win32_security_sys::Cryptography::CERT_CONTEXT, state: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT>;
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 pub struct WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT {
     pub callback: WS_CERTIFICATE_VALIDATION_CALLBACK,
     pub state: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT {
     fn clone(&self) -> Self {
         *self
@@ -813,7 +813,7 @@ pub const WS_CERT_FAILURE_INVALID_DATE: i32 = 2i32;
 pub const WS_CERT_FAILURE_REVOCATION_OFFLINE: i32 = 16i32;
 pub const WS_CERT_FAILURE_UNTRUSTED_ROOT: i32 = 4i32;
 pub const WS_CERT_FAILURE_WRONG_USAGE: i32 = 8i32;
-#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-security-sys", feature = "win32-security-sys"))]
 pub type WS_CERT_ISSUER_LIST_NOTIFICATION_CALLBACK = ::core::option::Option<unsafe extern "system" fn(certissuerlistnotificationcallbackstate: *const ::core::ffi::c_void, issuerlist: *const ::win32_security_sys::Authentication::Identity::SecPkgContext_IssuerListInfoEx, error: *const WS_ERROR) -> ::windows_core_sys::HRESULT>;
 #[repr(C)]
 pub struct WS_CERT_MESSAGE_SECURITY_BINDING_CONSTRAINT {
@@ -827,7 +827,7 @@ impl ::core::clone::Clone for WS_CERT_MESSAGE_SECURITY_BINDING_CONSTRAINT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 pub struct WS_CERT_SIGNED_SAML_AUTHENTICATOR {
     pub authenticator: WS_SAML_AUTHENTICATOR,
     pub trustedIssuerCerts: *const *const ::win32_security_sys::Cryptography::CERT_CONTEXT,
@@ -836,9 +836,9 @@ pub struct WS_CERT_SIGNED_SAML_AUTHENTICATOR {
     pub samlValidator: WS_VALIDATE_SAML_CALLBACK,
     pub samlValidatorCallbackState: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for WS_CERT_SIGNED_SAML_AUTHENTICATOR {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for WS_CERT_SIGNED_SAML_AUTHENTICATOR {
     fn clone(&self) -> Self {
         *self
@@ -1037,7 +1037,7 @@ pub type WS_CREATE_DECODER_CALLBACK = ::core::option::Option<unsafe extern "syst
 pub type WS_CREATE_ENCODER_CALLBACK = ::core::option::Option<unsafe extern "system" fn(createcontext: *const ::core::ffi::c_void, writecallback: WS_WRITE_CALLBACK, writecontext: *const ::core::ffi::c_void, encodercontext: *mut *mut ::core::ffi::c_void, error: *const WS_ERROR) -> ::windows_core_sys::HRESULT>;
 pub type WS_CREATE_LISTENER_CALLBACK = ::core::option::Option<unsafe extern "system" fn(channeltype: WS_CHANNEL_TYPE, listenerparameters: *const ::core::ffi::c_void, listenerparameterssize: u32, listenerinstance: *mut *mut ::core::ffi::c_void, error: *const WS_ERROR) -> ::windows_core_sys::HRESULT>;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-security-sys", feature = "win32-security-sys"))]
 pub struct WS_CUSTOM_CERT_CREDENTIAL {
     pub credential: WS_CERT_CREDENTIAL,
     pub getCertCallback: WS_GET_CERT_CALLBACK,
@@ -1045,9 +1045,9 @@ pub struct WS_CUSTOM_CERT_CREDENTIAL {
     pub certIssuerListNotificationCallback: WS_CERT_ISSUER_LIST_NOTIFICATION_CALLBACK,
     pub certIssuerListNotificationCallbackState: *mut ::core::ffi::c_void,
 }
-#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-security-sys", feature = "win32-security-sys"))]
 impl ::core::marker::Copy for WS_CUSTOM_CERT_CREDENTIAL {}
-#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-security-sys", feature = "win32-security-sys"))]
 impl ::core::clone::Clone for WS_CUSTOM_CERT_CREDENTIAL {
     fn clone(&self) -> Self {
         *self
@@ -1516,7 +1516,7 @@ pub type WS_FREE_CHANNEL_CALLBACK = ::core::option::Option<unsafe extern "system
 pub type WS_FREE_DECODER_CALLBACK = ::core::option::Option<unsafe extern "system" fn(decodercontext: *const ::core::ffi::c_void)>;
 pub type WS_FREE_ENCODER_CALLBACK = ::core::option::Option<unsafe extern "system" fn(encodercontext: *const ::core::ffi::c_void)>;
 pub type WS_FREE_LISTENER_CALLBACK = ::core::option::Option<unsafe extern "system" fn(listenerinstance: *const ::core::ffi::c_void)>;
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 pub type WS_GET_CERT_CALLBACK = ::core::option::Option<unsafe extern "system" fn(getcertcallbackstate: *const ::core::ffi::c_void, targetaddress: *const WS_ENDPOINT_ADDRESS, viauri: *const WS_STRING, cert: *mut *mut ::win32_security_sys::Cryptography::CERT_CONTEXT, error: *const WS_ERROR) -> ::windows_core_sys::HRESULT>;
 pub type WS_GET_CHANNEL_PROPERTY_CALLBACK = ::core::option::Option<unsafe extern "system" fn(channelinstance: *const ::core::ffi::c_void, id: WS_CHANNEL_PROPERTY_ID, value: *mut ::core::ffi::c_void, valuesize: u32, error: *const WS_ERROR) -> ::windows_core_sys::HRESULT>;
 pub type WS_GET_LISTENER_PROPERTY_CALLBACK = ::core::option::Option<unsafe extern "system" fn(listenerinstance: *const ::core::ffi::c_void, id: WS_LISTENER_PROPERTY_ID, value: *mut ::core::ffi::c_void, valuesize: u32, error: *const WS_ERROR) -> ::windows_core_sys::HRESULT>;
@@ -2263,14 +2263,14 @@ impl ::core::clone::Clone for WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 pub struct WS_NCRYPT_ASYMMETRIC_SECURITY_KEY_HANDLE {
     pub keyHandle: WS_SECURITY_KEY_HANDLE,
     pub asymmetricKey: ::win32_security_sys::Cryptography::NCRYPT_KEY_HANDLE,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for WS_NCRYPT_ASYMMETRIC_SECURITY_KEY_HANDLE {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for WS_NCRYPT_ASYMMETRIC_SECURITY_KEY_HANDLE {
     fn clone(&self) -> Self {
         *self

@@ -11,9 +11,9 @@ pub struct ISpatialSurfaceInfo_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub UpdateTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub TryGetBounds: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TryGetBounds: usize,
     pub TryComputeLatestMeshAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, maxtrianglespercubicmeter: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub TryComputeLatestMeshWithOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, maxtrianglespercubicmeter: f64, options: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -33,9 +33,9 @@ pub struct ISpatialSurfaceMesh_Vtbl {
     pub CoordinateSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub TriangleIndices: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub VertexPositions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub VertexPositionScale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     VertexPositionScale: usize,
     pub VertexNormals: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -50,15 +50,15 @@ unsafe impl ::windows_core::Interface for ISpatialSurfaceMeshBuffer {
 #[doc(hidden)]
 pub struct ISpatialSurfaceMeshBuffer_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub Format: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::DirectX::DirectXPixelFormat) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     Format: usize,
     pub Stride: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub ElementCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub Data: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Data: usize,
 }
 #[doc(hidden)]
@@ -72,29 +72,29 @@ unsafe impl ::windows_core::Interface for ISpatialSurfaceMeshOptions {
 #[doc(hidden)]
 pub struct ISpatialSurfaceMeshOptions_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub VertexPositionFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::DirectX::DirectXPixelFormat) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     VertexPositionFormat: usize,
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub SetVertexPositionFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_graphics::DirectX::DirectXPixelFormat) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     SetVertexPositionFormat: usize,
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub TriangleIndexFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::DirectX::DirectXPixelFormat) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     TriangleIndexFormat: usize,
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub SetTriangleIndexFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_graphics::DirectX::DirectXPixelFormat) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     SetTriangleIndexFormat: usize,
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub VertexNormalFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::DirectX::DirectXPixelFormat) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     VertexNormalFormat: usize,
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub SetVertexNormalFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_graphics::DirectX::DirectXPixelFormat) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     SetVertexNormalFormat: usize,
     pub IncludeVertexNormals: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetIncludeVertexNormals: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -110,17 +110,17 @@ unsafe impl ::windows_core::Interface for ISpatialSurfaceMeshOptionsStatics {
 #[doc(hidden)]
 pub struct ISpatialSurfaceMeshOptionsStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Graphics_DirectX"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-graphics"))]
     pub SupportedVertexPositionFormats: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Graphics_DirectX")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-graphics")))]
     SupportedVertexPositionFormats: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Graphics_DirectX"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-graphics"))]
     pub SupportedTriangleIndexFormats: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Graphics_DirectX")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-graphics")))]
     SupportedTriangleIndexFormats: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Graphics_DirectX"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-graphics"))]
     pub SupportedVertexNormalFormats: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Graphics_DirectX")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-graphics")))]
     SupportedVertexNormalFormats: usize,
 }
 #[doc(hidden)]
@@ -134,14 +134,14 @@ unsafe impl ::windows_core::Interface for ISpatialSurfaceObserver {
 #[doc(hidden)]
 pub struct ISpatialSurfaceObserver_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetObservedSurfaces: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetObservedSurfaces: usize,
     pub SetBoundingVolume: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bounds: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetBoundingVolumes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bounds: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetBoundingVolumes: usize,
     pub ObservedSurfacesChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveObservedSurfacesChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -189,7 +189,7 @@ impl SpatialSurfaceInfo {
             (::windows_core::Interface::vtable(this).UpdateTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TryGetBounds<'a, Param0: ::windows_core::IntoParam<'a, super::SpatialCoordinateSystem>>(&self, coordinatesystem: Param0) -> ::windows_core::Result<::winrt_foundation::IReference<super::SpatialBoundingOrientedBox>> {
         let this = self;
         unsafe {
@@ -315,7 +315,7 @@ impl SpatialSurfaceMesh {
             (::windows_core::Interface::vtable(this).VertexPositions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SpatialSurfaceMeshBuffer>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn VertexPositionScale(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -406,7 +406,7 @@ unsafe impl ::core::marker::Sync for SpatialSurfaceMesh {}
 #[repr(transparent)]
 pub struct SpatialSurfaceMeshBuffer(::windows_core::IUnknown);
 impl SpatialSurfaceMeshBuffer {
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn Format(&self) -> ::windows_core::Result<::winrt_graphics::DirectX::DirectXPixelFormat> {
         let this = self;
         unsafe {
@@ -428,7 +428,7 @@ impl SpatialSurfaceMeshBuffer {
             (::windows_core::Interface::vtable(this).ElementCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Data(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
@@ -519,7 +519,7 @@ impl SpatialSurfaceMeshOptions {
         static mut SHARED: ::windows_core::FactoryCache<SpatialSurfaceMeshOptions, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn VertexPositionFormat(&self) -> ::windows_core::Result<::winrt_graphics::DirectX::DirectXPixelFormat> {
         let this = self;
         unsafe {
@@ -527,12 +527,12 @@ impl SpatialSurfaceMeshOptions {
             (::windows_core::Interface::vtable(this).VertexPositionFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::DirectX::DirectXPixelFormat>(result__)
         }
     }
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn SetVertexPositionFormat(&self, value: ::winrt_graphics::DirectX::DirectXPixelFormat) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetVertexPositionFormat)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn TriangleIndexFormat(&self) -> ::windows_core::Result<::winrt_graphics::DirectX::DirectXPixelFormat> {
         let this = self;
         unsafe {
@@ -540,12 +540,12 @@ impl SpatialSurfaceMeshOptions {
             (::windows_core::Interface::vtable(this).TriangleIndexFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::DirectX::DirectXPixelFormat>(result__)
         }
     }
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn SetTriangleIndexFormat(&self, value: ::winrt_graphics::DirectX::DirectXPixelFormat) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetTriangleIndexFormat)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn VertexNormalFormat(&self) -> ::windows_core::Result<::winrt_graphics::DirectX::DirectXPixelFormat> {
         let this = self;
         unsafe {
@@ -553,7 +553,7 @@ impl SpatialSurfaceMeshOptions {
             (::windows_core::Interface::vtable(this).VertexNormalFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::DirectX::DirectXPixelFormat>(result__)
         }
     }
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn SetVertexNormalFormat(&self, value: ::winrt_graphics::DirectX::DirectXPixelFormat) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetVertexNormalFormat)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -569,21 +569,21 @@ impl SpatialSurfaceMeshOptions {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetIncludeVertexNormals)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Graphics_DirectX"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-graphics"))]
     pub fn SupportedVertexPositionFormats() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_graphics::DirectX::DirectXPixelFormat>> {
         Self::ISpatialSurfaceMeshOptionsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).SupportedVertexPositionFormats)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_graphics::DirectX::DirectXPixelFormat>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Graphics_DirectX"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-graphics"))]
     pub fn SupportedTriangleIndexFormats() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_graphics::DirectX::DirectXPixelFormat>> {
         Self::ISpatialSurfaceMeshOptionsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).SupportedTriangleIndexFormats)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_graphics::DirectX::DirectXPixelFormat>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Graphics_DirectX"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-graphics"))]
     pub fn SupportedVertexNormalFormats() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_graphics::DirectX::DirectXPixelFormat>> {
         Self::ISpatialSurfaceMeshOptionsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -677,7 +677,7 @@ impl SpatialSurfaceObserver {
         static mut SHARED: ::windows_core::FactoryCache<SpatialSurfaceObserver, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetObservedSurfaces(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::GUID, SpatialSurfaceInfo>> {
         let this = self;
         unsafe {
@@ -689,7 +689,7 @@ impl SpatialSurfaceObserver {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetBoundingVolume)(::windows_core::Interface::as_raw(this), bounds.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetBoundingVolumes<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<super::SpatialBoundingVolume>>>(&self, bounds: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetBoundingVolumes)(::windows_core::Interface::as_raw(this), bounds.into_param().abi()).ok() }

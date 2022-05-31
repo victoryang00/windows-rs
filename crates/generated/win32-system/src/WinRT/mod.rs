@@ -232,7 +232,7 @@ pub unsafe fn CreateControlInputEx<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "System")]
+#[cfg(feature = "winrt-system")]
 #[inline]
 pub unsafe fn CreateDispatcherQueueController<'a, Param0: ::windows_core::IntoParam<'a, DispatcherQueueOptions>>(options: Param0) -> ::windows_core::Result<::winrt_system::DispatcherQueueController> {
     #[cfg(windows)]
@@ -261,7 +261,7 @@ pub unsafe fn CreateRandomAccessStreamOnFile<'a, Param0: ::windows_core::IntoPar
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn CreateRandomAccessStreamOverStream<'a, Param0: ::windows_core::IntoParam<'a, super::Com::IStream>, T: ::windows_core::Interface>(stream: Param0, options: BSOS_OPTIONS) -> ::windows_core::Result<T> {
     #[cfg(windows)]
@@ -1084,7 +1084,7 @@ impl ICastingSourceInfo {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetController)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ICastingController>(result__)
     }
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn GetProperties(&self) -> ::windows_core::Result<::win32_ui::Shell::PropertiesSystem::INamedPropertyStore> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_ui::Shell::PropertiesSystem::INamedPropertyStore>(result__)
@@ -1135,9 +1135,9 @@ unsafe impl ::windows_core::Interface for ICastingSourceInfo {
 pub struct ICastingSourceInfo_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetController: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, controller: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    #[cfg(feature = "win32-ui")]
     pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, props: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    #[cfg(not(feature = "win32-ui"))]
     GetProperties: usize,
 }
 #[repr(transparent)]
@@ -3448,7 +3448,7 @@ pub unsafe fn RoGetApartmentIdentifier() -> ::windows_core::Result<u64> {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com_Marshal")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn RoGetBufferMarshaler() -> ::windows_core::Result<super::Com::Marshal::IMarshal> {
     #[cfg(windows)]

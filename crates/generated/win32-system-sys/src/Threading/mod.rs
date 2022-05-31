@@ -36,51 +36,51 @@ extern "system" {
     pub fn ConvertThreadToFiberEx(lpparameter: *const ::core::ffi::c_void, dwflags: u32) -> *mut ::core::ffi::c_void;
     pub fn CreateBoundaryDescriptorA(name: ::windows_core_sys::PCSTR, flags: u32) -> BoundaryDescriptorHandle;
     pub fn CreateBoundaryDescriptorW(name: ::windows_core_sys::PCWSTR, flags: u32) -> BoundaryDescriptorHandle;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateEventA(lpeventattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, bmanualreset: ::win32_foundation_sys::BOOL, binitialstate: ::win32_foundation_sys::BOOL, lpname: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateEventExA(lpeventattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, lpname: ::windows_core_sys::PCSTR, dwflags: CREATE_EVENT, dwdesiredaccess: u32) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateEventExW(lpeventattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, lpname: ::windows_core_sys::PCWSTR, dwflags: CREATE_EVENT, dwdesiredaccess: u32) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateEventW(lpeventattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, bmanualreset: ::win32_foundation_sys::BOOL, binitialstate: ::win32_foundation_sys::BOOL, lpname: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HANDLE;
     pub fn CreateFiber(dwstacksize: usize, lpstartaddress: LPFIBER_START_ROUTINE, lpparameter: *const ::core::ffi::c_void) -> *mut ::core::ffi::c_void;
     pub fn CreateFiberEx(dwstackcommitsize: usize, dwstackreservesize: usize, dwflags: u32, lpstartaddress: LPFIBER_START_ROUTINE, lpparameter: *const ::core::ffi::c_void) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateMutexA(lpmutexattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, binitialowner: ::win32_foundation_sys::BOOL, lpname: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateMutexExA(lpmutexattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, lpname: ::windows_core_sys::PCSTR, dwflags: u32, dwdesiredaccess: u32) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateMutexExW(lpmutexattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, lpname: ::windows_core_sys::PCWSTR, dwflags: u32, dwdesiredaccess: u32) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateMutexW(lpmutexattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, binitialowner: ::win32_foundation_sys::BOOL, lpname: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreatePrivateNamespaceA(lpprivatenamespaceattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, lpboundarydescriptor: *const ::core::ffi::c_void, lpaliasprefix: ::windows_core_sys::PCSTR) -> NamespaceHandle;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreatePrivateNamespaceW(lpprivatenamespaceattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, lpboundarydescriptor: *const ::core::ffi::c_void, lpaliasprefix: ::windows_core_sys::PCWSTR) -> NamespaceHandle;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateProcessA(lpapplicationname: ::windows_core_sys::PCSTR, lpcommandline: ::windows_core_sys::PSTR, lpprocessattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, lpthreadattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, binherithandles: ::win32_foundation_sys::BOOL, dwcreationflags: PROCESS_CREATION_FLAGS, lpenvironment: *const ::core::ffi::c_void, lpcurrentdirectory: ::windows_core_sys::PCSTR, lpstartupinfo: *const STARTUPINFOA, lpprocessinformation: *mut PROCESS_INFORMATION) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateProcessAsUserA(htoken: ::win32_foundation_sys::HANDLE, lpapplicationname: ::windows_core_sys::PCSTR, lpcommandline: ::windows_core_sys::PSTR, lpprocessattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, lpthreadattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, binherithandles: ::win32_foundation_sys::BOOL, dwcreationflags: u32, lpenvironment: *const ::core::ffi::c_void, lpcurrentdirectory: ::windows_core_sys::PCSTR, lpstartupinfo: *const STARTUPINFOA, lpprocessinformation: *mut PROCESS_INFORMATION) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateProcessAsUserW(htoken: ::win32_foundation_sys::HANDLE, lpapplicationname: ::windows_core_sys::PCWSTR, lpcommandline: ::windows_core_sys::PWSTR, lpprocessattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, lpthreadattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, binherithandles: ::win32_foundation_sys::BOOL, dwcreationflags: u32, lpenvironment: *const ::core::ffi::c_void, lpcurrentdirectory: ::windows_core_sys::PCWSTR, lpstartupinfo: *const STARTUPINFOW, lpprocessinformation: *mut PROCESS_INFORMATION) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateProcessW(lpapplicationname: ::windows_core_sys::PCWSTR, lpcommandline: ::windows_core_sys::PWSTR, lpprocessattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, lpthreadattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, binherithandles: ::win32_foundation_sys::BOOL, dwcreationflags: PROCESS_CREATION_FLAGS, lpenvironment: *const ::core::ffi::c_void, lpcurrentdirectory: ::windows_core_sys::PCWSTR, lpstartupinfo: *const STARTUPINFOW, lpprocessinformation: *mut PROCESS_INFORMATION) -> ::win32_foundation_sys::BOOL;
     pub fn CreateProcessWithLogonW(lpusername: ::windows_core_sys::PCWSTR, lpdomain: ::windows_core_sys::PCWSTR, lppassword: ::windows_core_sys::PCWSTR, dwlogonflags: CREATE_PROCESS_LOGON_FLAGS, lpapplicationname: ::windows_core_sys::PCWSTR, lpcommandline: ::windows_core_sys::PWSTR, dwcreationflags: u32, lpenvironment: *const ::core::ffi::c_void, lpcurrentdirectory: ::windows_core_sys::PCWSTR, lpstartupinfo: *const STARTUPINFOW, lpprocessinformation: *mut PROCESS_INFORMATION) -> ::win32_foundation_sys::BOOL;
     pub fn CreateProcessWithTokenW(htoken: ::win32_foundation_sys::HANDLE, dwlogonflags: CREATE_PROCESS_LOGON_FLAGS, lpapplicationname: ::windows_core_sys::PCWSTR, lpcommandline: ::windows_core_sys::PWSTR, dwcreationflags: u32, lpenvironment: *const ::core::ffi::c_void, lpcurrentdirectory: ::windows_core_sys::PCWSTR, lpstartupinfo: *const STARTUPINFOW, lpprocessinformation: *mut PROCESS_INFORMATION) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateRemoteThread(hprocess: ::win32_foundation_sys::HANDLE, lpthreadattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, dwstacksize: usize, lpstartaddress: LPTHREAD_START_ROUTINE, lpparameter: *const ::core::ffi::c_void, dwcreationflags: u32, lpthreadid: *mut u32) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateRemoteThreadEx(hprocess: ::win32_foundation_sys::HANDLE, lpthreadattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, dwstacksize: usize, lpstartaddress: LPTHREAD_START_ROUTINE, lpparameter: *const ::core::ffi::c_void, dwcreationflags: u32, lpattributelist: LPPROC_THREAD_ATTRIBUTE_LIST, lpthreadid: *mut u32) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateSemaphoreA(lpsemaphoreattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, linitialcount: i32, lmaximumcount: i32, lpname: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateSemaphoreExA(lpsemaphoreattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, linitialcount: i32, lmaximumcount: i32, lpname: ::windows_core_sys::PCSTR, dwflags: u32, dwdesiredaccess: u32) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateSemaphoreExW(lpsemaphoreattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, linitialcount: i32, lmaximumcount: i32, lpname: ::windows_core_sys::PCWSTR, dwflags: u32, dwdesiredaccess: u32) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateSemaphoreW(lpsemaphoreattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, linitialcount: i32, lmaximumcount: i32, lpname: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateThread(lpthreadattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, dwstacksize: usize, lpstartaddress: LPTHREAD_START_ROUTINE, lpparameter: *const ::core::ffi::c_void, dwcreationflags: THREAD_CREATION_FLAGS, lpthreadid: *mut u32) -> ::win32_foundation_sys::HANDLE;
     pub fn CreateThreadpool(reserved: *mut ::core::ffi::c_void) -> PTP_POOL;
     pub fn CreateThreadpoolCleanupGroup() -> isize;
@@ -92,12 +92,12 @@ extern "system" {
     pub fn CreateTimerQueueTimer(phnewtimer: *mut ::win32_foundation_sys::HANDLE, timerqueue: ::win32_foundation_sys::HANDLE, callback: WAITORTIMERCALLBACK, parameter: *const ::core::ffi::c_void, duetime: u32, period: u32, flags: WORKER_THREAD_FLAGS) -> ::win32_foundation_sys::BOOL;
     pub fn CreateUmsCompletionList(umscompletionlist: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn CreateUmsThreadContext(lpumsthread: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateWaitableTimerExW(lptimerattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, lptimername: ::windows_core_sys::PCWSTR, dwflags: u32, dwdesiredaccess: u32) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateWaitableTimerW(lptimerattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, bmanualreset: ::win32_foundation_sys::BOOL, lptimername: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HANDLE;
     pub fn DeleteBoundaryDescriptor(boundarydescriptor: BoundaryDescriptorHandle);
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn DeleteCriticalSection(lpcriticalsection: *mut RTL_CRITICAL_SECTION);
     pub fn DeleteFiber(lpfiber: *const ::core::ffi::c_void);
     pub fn DeleteProcThreadAttributeList(lpattributelist: LPPROC_THREAD_ATTRIBUTE_LIST);
@@ -109,10 +109,10 @@ extern "system" {
     pub fn DeleteUmsThreadContext(umsthread: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn DequeueUmsCompletionListItems(umscompletionlist: *const ::core::ffi::c_void, waittimeout: u32, umsthreadlist: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn DisassociateCurrentThreadFromCallback(pci: *mut TP_CALLBACK_INSTANCE);
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn EnterCriticalSection(lpcriticalsection: *mut RTL_CRITICAL_SECTION);
     pub fn EnterSynchronizationBarrier(lpbarrier: *mut RTL_BARRIER, dwflags: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_SystemServices")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn EnterUmsSchedulingMode(schedulerstartupinfo: *const UMS_SCHEDULER_STARTUP_INFO) -> ::win32_foundation_sys::BOOL;
     pub fn ExecuteUmsThread(umsthread: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn ExitProcess(uexitcode: u32) -> !;
@@ -128,7 +128,7 @@ extern "system" {
     pub fn GetCurrentProcess() -> ::win32_foundation_sys::HANDLE;
     pub fn GetCurrentProcessId() -> u32;
     pub fn GetCurrentProcessorNumber() -> u32;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn GetCurrentProcessorNumberEx(procnumber: *mut super::Kernel::PROCESSOR_NUMBER);
     pub fn GetCurrentThread() -> ::win32_foundation_sys::HANDLE;
     pub fn GetCurrentThreadId() -> u32;
@@ -146,19 +146,19 @@ extern "system" {
     pub fn GetNumaHighestNodeNumber(highestnodenumber: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn GetNumaNodeNumberFromHandle(hfile: ::win32_foundation_sys::HANDLE, nodenumber: *mut u16) -> ::win32_foundation_sys::BOOL;
     pub fn GetNumaNodeProcessorMask(node: u8, processormask: *mut u64) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_SystemInformation")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn GetNumaNodeProcessorMask2(nodenumber: u16, processormasks: *mut super::SystemInformation::GROUP_AFFINITY, processormaskcount: u16, requiredmaskcount: *mut u16) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_SystemInformation")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn GetNumaNodeProcessorMaskEx(node: u16, processormask: *mut super::SystemInformation::GROUP_AFFINITY) -> ::win32_foundation_sys::BOOL;
     pub fn GetNumaProcessorNode(processor: u8, nodenumber: *mut u8) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn GetNumaProcessorNodeEx(processor: *const super::Kernel::PROCESSOR_NUMBER, nodenumber: *mut u16) -> ::win32_foundation_sys::BOOL;
     pub fn GetNumaProximityNode(proximityid: u32, nodenumber: *mut u8) -> ::win32_foundation_sys::BOOL;
     pub fn GetNumaProximityNodeEx(proximityid: u32, nodenumber: *mut u16) -> ::win32_foundation_sys::BOOL;
     pub fn GetPriorityClass(hprocess: ::win32_foundation_sys::HANDLE) -> u32;
     pub fn GetProcessAffinityMask(hprocess: ::win32_foundation_sys::HANDLE, lpprocessaffinitymask: *mut usize, lpsystemaffinitymask: *mut usize) -> ::win32_foundation_sys::BOOL;
     pub fn GetProcessDEPPolicy(hprocess: ::win32_foundation_sys::HANDLE, lpflags: *mut u32, lppermanent: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_SystemInformation")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn GetProcessDefaultCpuSetMasks(process: ::win32_foundation_sys::HANDLE, cpusetmasks: *mut super::SystemInformation::GROUP_AFFINITY, cpusetmaskcount: u16, requiredmaskcount: *mut u16) -> ::win32_foundation_sys::BOOL;
     pub fn GetProcessDefaultCpuSets(process: ::win32_foundation_sys::HANDLE, cpusetids: *mut u32, cpusetidcount: u32, requiredidcount: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn GetProcessGroupAffinity(hprocess: ::win32_foundation_sys::HANDLE, groupcount: *mut u16, grouparray: *mut u16) -> ::win32_foundation_sys::BOOL;
@@ -177,16 +177,16 @@ extern "system" {
     pub fn GetStartupInfoW(lpstartupinfo: *mut STARTUPINFOW);
     pub fn GetSystemTimes(lpidletime: *mut ::win32_foundation_sys::FILETIME, lpkerneltime: *mut ::win32_foundation_sys::FILETIME, lpusertime: *mut ::win32_foundation_sys::FILETIME) -> ::win32_foundation_sys::BOOL;
     pub fn GetThreadDescription(hthread: ::win32_foundation_sys::HANDLE, ppszthreaddescription: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_SystemInformation")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn GetThreadGroupAffinity(hthread: ::win32_foundation_sys::HANDLE, groupaffinity: *mut super::SystemInformation::GROUP_AFFINITY) -> ::win32_foundation_sys::BOOL;
     pub fn GetThreadIOPendingFlag(hthread: ::win32_foundation_sys::HANDLE, lpioispending: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     pub fn GetThreadId(thread: ::win32_foundation_sys::HANDLE) -> u32;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn GetThreadIdealProcessorEx(hthread: ::win32_foundation_sys::HANDLE, lpidealprocessor: *mut super::Kernel::PROCESSOR_NUMBER) -> ::win32_foundation_sys::BOOL;
     pub fn GetThreadInformation(hthread: ::win32_foundation_sys::HANDLE, threadinformationclass: THREAD_INFORMATION_CLASS, threadinformation: *mut ::core::ffi::c_void, threadinformationsize: u32) -> ::win32_foundation_sys::BOOL;
     pub fn GetThreadPriority(hthread: ::win32_foundation_sys::HANDLE) -> i32;
     pub fn GetThreadPriorityBoost(hthread: ::win32_foundation_sys::HANDLE, pdisablepriorityboost: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_SystemInformation")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn GetThreadSelectedCpuSetMasks(thread: ::win32_foundation_sys::HANDLE, cpusetmasks: *mut super::SystemInformation::GROUP_AFFINITY, cpusetmaskcount: u16, requiredmaskcount: *mut u16) -> ::win32_foundation_sys::BOOL;
     pub fn GetThreadSelectedCpuSets(thread: ::win32_foundation_sys::HANDLE, cpusetids: *mut u32, cpusetidcount: u32, requiredidcount: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn GetThreadTimes(hthread: ::win32_foundation_sys::HANDLE, lpcreationtime: *mut ::win32_foundation_sys::FILETIME, lpexittime: *mut ::win32_foundation_sys::FILETIME, lpkerneltime: *mut ::win32_foundation_sys::FILETIME, lpusertime: *mut ::win32_foundation_sys::FILETIME) -> ::win32_foundation_sys::BOOL;
@@ -197,24 +197,24 @@ extern "system" {
     pub fn InitOnceExecuteOnce(initonce: *mut RTL_RUN_ONCE, initfn: PINIT_ONCE_FN, parameter: *mut ::core::ffi::c_void, context: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn InitOnceInitialize(initonce: *mut RTL_RUN_ONCE);
     pub fn InitializeConditionVariable(conditionvariable: *mut RTL_CONDITION_VARIABLE);
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn InitializeCriticalSection(lpcriticalsection: *mut RTL_CRITICAL_SECTION);
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn InitializeCriticalSectionAndSpinCount(lpcriticalsection: *mut RTL_CRITICAL_SECTION, dwspincount: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn InitializeCriticalSectionEx(lpcriticalsection: *mut RTL_CRITICAL_SECTION, dwspincount: u32, flags: u32) -> ::win32_foundation_sys::BOOL;
     pub fn InitializeProcThreadAttributeList(lpattributelist: LPPROC_THREAD_ATTRIBUTE_LIST, dwattributecount: u32, dwflags: u32, lpsize: *mut usize) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn InitializeSListHead(listhead: *mut super::Kernel::SLIST_HEADER);
     pub fn InitializeSRWLock(srwlock: *mut RTL_SRWLOCK);
     pub fn InitializeSynchronizationBarrier(lpbarrier: *mut RTL_BARRIER, ltotalthreads: i32, lspincount: i32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn InterlockedFlushSList(listhead: *mut super::Kernel::SLIST_HEADER) -> *mut super::Kernel::SLIST_ENTRY;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn InterlockedPopEntrySList(listhead: *mut super::Kernel::SLIST_HEADER) -> *mut super::Kernel::SLIST_ENTRY;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn InterlockedPushEntrySList(listhead: *mut super::Kernel::SLIST_HEADER, listentry: *mut super::Kernel::SLIST_ENTRY) -> *mut super::Kernel::SLIST_ENTRY;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn InterlockedPushListSListEx(listhead: *mut super::Kernel::SLIST_HEADER, list: *mut super::Kernel::SLIST_ENTRY, listend: *mut super::Kernel::SLIST_ENTRY, count: u32) -> *mut super::Kernel::SLIST_ENTRY;
     pub fn IsImmersiveProcess(hprocess: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn IsProcessCritical(hprocess: ::win32_foundation_sys::HANDLE, critical: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
@@ -223,9 +223,9 @@ extern "system" {
     pub fn IsThreadpoolTimerSet(pti: *mut TP_TIMER) -> ::win32_foundation_sys::BOOL;
     pub fn IsWow64Process(hprocess: ::win32_foundation_sys::HANDLE, wow64process: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     pub fn IsWow64Process2(hprocess: ::win32_foundation_sys::HANDLE, pprocessmachine: *mut u16, pnativemachine: *mut u16) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn LeaveCriticalSection(lpcriticalsection: *mut RTL_CRITICAL_SECTION);
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn LeaveCriticalSectionWhenCallbackReturns(pci: *mut TP_CALLBACK_INSTANCE, pcs: *mut RTL_CRITICAL_SECTION);
     pub fn NtQueryInformationProcess(processhandle: ::win32_foundation_sys::HANDLE, processinformationclass: PROCESSINFOCLASS, processinformation: *mut ::core::ffi::c_void, processinformationlength: u32, returnlength: *mut u32) -> ::win32_foundation_sys::NTSTATUS;
     pub fn NtQueryInformationThread(threadhandle: ::win32_foundation_sys::HANDLE, threadinformationclass: THREADINFOCLASS, threadinformation: *mut ::core::ffi::c_void, threadinformationlength: u32, returnlength: *mut u32) -> ::win32_foundation_sys::NTSTATUS;
@@ -236,15 +236,15 @@ extern "system" {
     pub fn OpenPrivateNamespaceA(lpboundarydescriptor: *const ::core::ffi::c_void, lpaliasprefix: ::windows_core_sys::PCSTR) -> NamespaceHandle;
     pub fn OpenPrivateNamespaceW(lpboundarydescriptor: *const ::core::ffi::c_void, lpaliasprefix: ::windows_core_sys::PCWSTR) -> NamespaceHandle;
     pub fn OpenProcess(dwdesiredaccess: PROCESS_ACCESS_RIGHTS, binherithandle: ::win32_foundation_sys::BOOL, dwprocessid: u32) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn OpenProcessToken(processhandle: ::win32_foundation_sys::HANDLE, desiredaccess: ::win32_security_sys::TOKEN_ACCESS_MASK, tokenhandle: *mut ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn OpenSemaphoreW(dwdesiredaccess: u32, binherithandle: ::win32_foundation_sys::BOOL, lpname: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HANDLE;
     pub fn OpenThread(dwdesiredaccess: THREAD_ACCESS_RIGHTS, binherithandle: ::win32_foundation_sys::BOOL, dwthreadid: u32) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn OpenThreadToken(threadhandle: ::win32_foundation_sys::HANDLE, desiredaccess: ::win32_security_sys::TOKEN_ACCESS_MASK, openasself: ::win32_foundation_sys::BOOL, tokenhandle: *mut ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn OpenWaitableTimerW(dwdesiredaccess: u32, binherithandle: ::win32_foundation_sys::BOOL, lptimername: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HANDLE;
     pub fn PulseEvent(hevent: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn QueryDepthSList(listhead: *const super::Kernel::SLIST_HEADER) -> u16;
     pub fn QueryFullProcessImageNameA(hprocess: ::win32_foundation_sys::HANDLE, dwflags: PROCESS_NAME_FORMAT, lpexename: ::windows_core_sys::PSTR, lpdwsize: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn QueryFullProcessImageNameW(hprocess: ::win32_foundation_sys::HANDLE, dwflags: PROCESS_NAME_FORMAT, lpexename: ::windows_core_sys::PWSTR, lpdwsize: *mut u32) -> ::win32_foundation_sys::BOOL;
@@ -264,7 +264,7 @@ extern "system" {
     pub fn ReleaseSemaphoreWhenCallbackReturns(pci: *mut TP_CALLBACK_INSTANCE, sem: ::win32_foundation_sys::HANDLE, crel: u32);
     pub fn ResetEvent(hevent: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn ResumeThread(hthread: ::win32_foundation_sys::HANDLE) -> u32;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn SetCriticalSectionSpinCount(lpcriticalsection: *mut RTL_CRITICAL_SECTION, dwspincount: u32) -> u32;
     pub fn SetEvent(hevent: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn SetEventWhenCallbackReturns(pci: *mut TP_CALLBACK_INSTANCE, evt: ::win32_foundation_sys::HANDLE);
@@ -272,7 +272,7 @@ extern "system" {
     pub fn SetProcessAffinityMask(hprocess: ::win32_foundation_sys::HANDLE, dwprocessaffinitymask: usize) -> ::win32_foundation_sys::BOOL;
     pub fn SetProcessAffinityUpdateMode(hprocess: ::win32_foundation_sys::HANDLE, dwflags: PROCESS_AFFINITY_AUTO_UPDATE_FLAGS) -> ::win32_foundation_sys::BOOL;
     pub fn SetProcessDEPPolicy(dwflags: PROCESS_DEP_FLAGS) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_SystemInformation")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn SetProcessDefaultCpuSetMasks(process: ::win32_foundation_sys::HANDLE, cpusetmasks: *const super::SystemInformation::GROUP_AFFINITY, cpusetmaskcount: u16) -> ::win32_foundation_sys::BOOL;
     pub fn SetProcessDefaultCpuSets(process: ::win32_foundation_sys::HANDLE, cpusetids: *const u32, cpusetidcount: u32) -> ::win32_foundation_sys::BOOL;
     pub fn SetProcessDynamicEHContinuationTargets(process: ::win32_foundation_sys::HANDLE, numberoftargets: u16, targets: *mut PROCESS_DYNAMIC_EH_CONTINUATION_TARGET) -> ::win32_foundation_sys::BOOL;
@@ -286,15 +286,15 @@ extern "system" {
     pub fn SetProtectedPolicy(policyguid: *const ::windows_core_sys::GUID, policyvalue: usize, oldpolicyvalue: *mut usize) -> ::win32_foundation_sys::BOOL;
     pub fn SetThreadAffinityMask(hthread: ::win32_foundation_sys::HANDLE, dwthreadaffinitymask: usize) -> usize;
     pub fn SetThreadDescription(hthread: ::win32_foundation_sys::HANDLE, lpthreaddescription: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_SystemInformation")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn SetThreadGroupAffinity(hthread: ::win32_foundation_sys::HANDLE, groupaffinity: *const super::SystemInformation::GROUP_AFFINITY, previousgroupaffinity: *mut super::SystemInformation::GROUP_AFFINITY) -> ::win32_foundation_sys::BOOL;
     pub fn SetThreadIdealProcessor(hthread: ::win32_foundation_sys::HANDLE, dwidealprocessor: u32) -> u32;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn SetThreadIdealProcessorEx(hthread: ::win32_foundation_sys::HANDLE, lpidealprocessor: *const super::Kernel::PROCESSOR_NUMBER, lppreviousidealprocessor: *mut super::Kernel::PROCESSOR_NUMBER) -> ::win32_foundation_sys::BOOL;
     pub fn SetThreadInformation(hthread: ::win32_foundation_sys::HANDLE, threadinformationclass: THREAD_INFORMATION_CLASS, threadinformation: *const ::core::ffi::c_void, threadinformationsize: u32) -> ::win32_foundation_sys::BOOL;
     pub fn SetThreadPriority(hthread: ::win32_foundation_sys::HANDLE, npriority: THREAD_PRIORITY) -> ::win32_foundation_sys::BOOL;
     pub fn SetThreadPriorityBoost(hthread: ::win32_foundation_sys::HANDLE, bdisablepriorityboost: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_SystemInformation")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn SetThreadSelectedCpuSetMasks(thread: ::win32_foundation_sys::HANDLE, cpusetmasks: *const super::SystemInformation::GROUP_AFFINITY, cpusetmaskcount: u16) -> ::win32_foundation_sys::BOOL;
     pub fn SetThreadSelectedCpuSets(thread: ::win32_foundation_sys::HANDLE, cpusetids: *const u32, cpusetidcount: u32) -> ::win32_foundation_sys::BOOL;
     pub fn SetThreadStackGuarantee(stacksizeinbytes: *mut u32) -> ::win32_foundation_sys::BOOL;
@@ -311,7 +311,7 @@ extern "system" {
     pub fn SetWaitableTimer(htimer: ::win32_foundation_sys::HANDLE, lpduetime: *const i64, lperiod: i32, pfncompletionroutine: PTIMERAPCROUTINE, lpargtocompletionroutine: *const ::core::ffi::c_void, fresume: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     pub fn SetWaitableTimerEx(htimer: ::win32_foundation_sys::HANDLE, lpduetime: *const i64, lperiod: i32, pfncompletionroutine: PTIMERAPCROUTINE, lpargtocompletionroutine: *const ::core::ffi::c_void, wakecontext: *const REASON_CONTEXT, tolerabledelay: u32) -> ::win32_foundation_sys::BOOL;
     pub fn Sleep(dwmilliseconds: u32);
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn SleepConditionVariableCS(conditionvariable: *mut RTL_CONDITION_VARIABLE, criticalsection: *mut RTL_CRITICAL_SECTION, dwmilliseconds: u32) -> ::win32_foundation_sys::BOOL;
     pub fn SleepConditionVariableSRW(conditionvariable: *mut RTL_CONDITION_VARIABLE, srwlock: *mut RTL_SRWLOCK, dwmilliseconds: u32, flags: u32) -> ::win32_foundation_sys::BOOL;
     pub fn SleepEx(dwmilliseconds: u32, balertable: ::win32_foundation_sys::BOOL) -> u32;
@@ -328,7 +328,7 @@ extern "system" {
     pub fn TlsSetValue(dwtlsindex: u32, lptlsvalue: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn TryAcquireSRWLockExclusive(srwlock: *mut RTL_SRWLOCK) -> ::win32_foundation_sys::BOOLEAN;
     pub fn TryAcquireSRWLockShared(srwlock: *mut RTL_SRWLOCK) -> ::win32_foundation_sys::BOOLEAN;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn TryEnterCriticalSection(lpcriticalsection: *mut RTL_CRITICAL_SECTION) -> ::win32_foundation_sys::BOOL;
     pub fn TrySubmitThreadpoolCallback(pfns: PTP_SIMPLE_CALLBACK, pv: *mut ::core::ffi::c_void, pcbe: *const TP_CALLBACK_ENVIRON_V3) -> ::win32_foundation_sys::BOOL;
     pub fn UmsThreadYield(schedulerparam: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
@@ -433,7 +433,7 @@ impl ::core::clone::Clone for MEMORY_PRIORITY_INFORMATION {
 pub const MUTEX_MODIFY_STATE: u32 = 1u32;
 pub type NamespaceHandle = isize;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct PEB {
     pub Reserved1: [u8; 2],
     pub BeingDebugged: u8,
@@ -455,24 +455,24 @@ pub struct PEB {
     pub Reserved12: [*mut ::core::ffi::c_void; 1],
     pub SessionId: u32,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for PEB {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for PEB {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct PEB_LDR_DATA {
     pub Reserved1: [u8; 8],
     pub Reserved2: [*mut ::core::ffi::c_void; 3],
     pub InMemoryOrderModuleList: super::Kernel::LIST_ENTRY,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for PEB_LDR_DATA {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for PEB_LDR_DATA {
     fn clone(&self) -> Self {
         *self
@@ -549,7 +549,7 @@ pub type PROCESS_AFFINITY_AUTO_UPDATE_FLAGS = u32;
 pub const PROCESS_AFFINITY_DISABLE_AUTO_UPDATE: PROCESS_AFFINITY_AUTO_UPDATE_FLAGS = 0u32;
 pub const PROCESS_AFFINITY_ENABLE_AUTO_UPDATE: PROCESS_AFFINITY_AUTO_UPDATE_FLAGS = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct PROCESS_BASIC_INFORMATION {
     pub Reserved1: *mut ::core::ffi::c_void,
     pub PebBaseAddress: *mut PEB,
@@ -557,9 +557,9 @@ pub struct PROCESS_BASIC_INFORMATION {
     pub UniqueProcessId: usize,
     pub Reserved3: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for PROCESS_BASIC_INFORMATION {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for PROCESS_BASIC_INFORMATION {
     fn clone(&self) -> Self {
         *self
@@ -815,7 +815,7 @@ pub const PROC_THREAD_ATTRIBUTE_REPLACE_VALUE: u32 = 1u32;
 pub const PROC_THREAD_ATTRIBUTE_SECURITY_CAPABILITIES: u32 = 131081u32;
 pub const PROC_THREAD_ATTRIBUTE_UMS_THREAD: u32 = 196614u32;
 pub const PROC_THREAD_ATTRIBUTE_WIN32K_FILTER: u32 = 131088u32;
-#[cfg(feature = "Win32_System_SystemServices")]
+#[cfg(feature = "win32-system-sys")]
 pub type PRTL_UMS_SCHEDULER_ENTRY_POINT = ::core::option::Option<unsafe extern "system" fn(reason: super::SystemServices::RTL_UMS_SCHEDULER_REASON, activationpayload: usize, schedulerparam: *const ::core::ffi::c_void)>;
 pub type PTIMERAPCROUTINE = ::core::option::Option<unsafe extern "system" fn(lpargtocompletionroutine: *const ::core::ffi::c_void, dwtimerlowvalue: u32, dwtimerhighvalue: u32)>;
 pub type PTP_CLEANUP_GROUP_CANCEL_CALLBACK = ::core::option::Option<unsafe extern "system" fn(objectcontext: *mut ::core::ffi::c_void, cleanupcontext: *mut ::core::ffi::c_void)>;
@@ -889,7 +889,7 @@ impl ::core::clone::Clone for RTL_CONDITION_VARIABLE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct RTL_CRITICAL_SECTION {
     pub DebugInfo: *mut RTL_CRITICAL_SECTION_DEBUG,
     pub LockCount: i32,
@@ -898,16 +898,16 @@ pub struct RTL_CRITICAL_SECTION {
     pub LockSemaphore: ::win32_foundation_sys::HANDLE,
     pub SpinCount: usize,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for RTL_CRITICAL_SECTION {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for RTL_CRITICAL_SECTION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct RTL_CRITICAL_SECTION_DEBUG {
     pub Type: u16,
     pub CreatorBackTraceIndex: u16,
@@ -919,9 +919,9 @@ pub struct RTL_CRITICAL_SECTION_DEBUG {
     pub CreatorBackTraceIndexHigh: u16,
     pub SpareWORD: u16,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for RTL_CRITICAL_SECTION_DEBUG {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for RTL_CRITICAL_SECTION_DEBUG {
     fn clone(&self) -> Self {
         *self
@@ -1193,16 +1193,16 @@ pub struct TP_WAIT(pub u8);
 pub struct TP_WORK(pub u8);
 pub type TimerQueueHandle = isize;
 #[repr(C)]
-#[cfg(feature = "Win32_System_SystemServices")]
+#[cfg(feature = "win32-system-sys")]
 pub struct UMS_SCHEDULER_STARTUP_INFO {
     pub UmsVersion: u32,
     pub CompletionList: *mut ::core::ffi::c_void,
     pub SchedulerProc: PRTL_UMS_SCHEDULER_ENTRY_POINT,
     pub SchedulerParam: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_System_SystemServices")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for UMS_SCHEDULER_STARTUP_INFO {}
-#[cfg(feature = "Win32_System_SystemServices")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for UMS_SCHEDULER_STARTUP_INFO {
     fn clone(&self) -> Self {
         *self

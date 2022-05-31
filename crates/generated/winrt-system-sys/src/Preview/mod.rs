@@ -1,7 +1,7 @@
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct HingeState(pub i32);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl HingeState {
     pub const Unknown: Self = Self(0i32);
     pub const Closed: Self = Self(1i32);
@@ -10,9 +10,9 @@ impl HingeState {
     pub const Convex: Self = Self(4i32);
     pub const Full: Self = Self(5i32);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::marker::Copy for HingeState {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for HingeState {
     fn clone(&self) -> Self {
         *self

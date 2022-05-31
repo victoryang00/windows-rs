@@ -12,7 +12,7 @@ impl FrameNavigationOptions {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetIsNavigationStackEnabled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media_Animation")]
+    #[cfg(feature = "winrt-ui")]
     pub fn TransitionInfoOverride(&self) -> ::windows_core::Result<super::Media::Animation::NavigationTransitionInfo> {
         let this = self;
         unsafe {
@@ -20,7 +20,7 @@ impl FrameNavigationOptions {
             (::windows_core::Interface::vtable(this).TransitionInfoOverride)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Media::Animation::NavigationTransitionInfo>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media_Animation")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetTransitionInfoOverride<'a, Param0: ::windows_core::IntoParam<'a, super::Media::Animation::NavigationTransitionInfo>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetTransitionInfoOverride)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -128,13 +128,13 @@ pub struct IFrameNavigationOptions_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsNavigationStackEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetIsNavigationStackEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Media_Animation")]
+    #[cfg(feature = "winrt-ui")]
     pub TransitionInfoOverride: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media_Animation"))]
+    #[cfg(not(feature = "winrt-ui"))]
     TransitionInfoOverride: usize,
-    #[cfg(feature = "UI_Xaml_Media_Animation")]
+    #[cfg(feature = "winrt-ui")]
     pub SetTransitionInfoOverride: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media_Animation"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetTransitionInfoOverride: usize,
 }
 #[doc(hidden)]
@@ -164,9 +164,9 @@ pub struct INavigatingCancelEventArgs_Vtbl {
     pub Cancel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetCancel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub NavigationMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut NavigationMode) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub SourcePageType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<super::Interop::TypeName>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Interop"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SourcePageType: usize,
 }
 #[doc(hidden)]
@@ -181,9 +181,9 @@ unsafe impl ::windows_core::Interface for INavigatingCancelEventArgs2 {
 pub struct INavigatingCancelEventArgs2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Parameter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Media_Animation")]
+    #[cfg(feature = "winrt-ui")]
     pub NavigationTransitionInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media_Animation"))]
+    #[cfg(not(feature = "winrt-ui"))]
     NavigationTransitionInfo: usize,
 }
 #[doc(hidden)]
@@ -199,9 +199,9 @@ pub struct INavigationEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Content: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Parameter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub SourcePageType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<super::Interop::TypeName>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Interop"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SourcePageType: usize,
     pub NavigationMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut NavigationMode) -> ::windows_core::HRESULT,
     pub Uri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -218,9 +218,9 @@ unsafe impl ::windows_core::Interface for INavigationEventArgs2 {
 #[doc(hidden)]
 pub struct INavigationEventArgs2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Media_Animation")]
+    #[cfg(feature = "winrt-ui")]
     pub NavigationTransitionInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media_Animation"))]
+    #[cfg(not(feature = "winrt-ui"))]
     NavigationTransitionInfo: usize,
 }
 #[doc(hidden)]
@@ -237,9 +237,9 @@ pub struct INavigationFailedEventArgs_Vtbl {
     pub Exception: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::HRESULT) -> ::windows_core::HRESULT,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub SourcePageType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<super::Interop::TypeName>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Interop"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SourcePageType: usize,
 }
 #[doc(hidden)]
@@ -253,14 +253,14 @@ unsafe impl ::windows_core::Interface for IPageStackEntry {
 #[doc(hidden)]
 pub struct IPageStackEntry_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub SourcePageType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<super::Interop::TypeName>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Interop"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SourcePageType: usize,
     pub Parameter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Media_Animation")]
+    #[cfg(feature = "winrt-ui")]
     pub NavigationTransitionInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media_Animation"))]
+    #[cfg(not(feature = "winrt-ui"))]
     NavigationTransitionInfo: usize,
 }
 #[doc(hidden)]
@@ -274,9 +274,9 @@ unsafe impl ::windows_core::Interface for IPageStackEntryFactory {
 #[doc(hidden)]
 pub struct IPageStackEntryFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "UI_Xaml_Interop", feature = "UI_Xaml_Media_Animation"))]
+    #[cfg(all(feature = "winrt-ui", feature = "winrt-ui"))]
     pub CreateInstance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sourcepagetype: ::core::mem::ManuallyDrop<super::Interop::TypeName>, parameter: *mut ::core::ffi::c_void, navigationtransitioninfo: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "UI_Xaml_Interop", feature = "UI_Xaml_Media_Animation")))]
+    #[cfg(not(all(feature = "winrt-ui", feature = "winrt-ui")))]
     CreateInstance: usize,
 }
 #[doc(hidden)]
@@ -479,7 +479,7 @@ impl NavigatingCancelEventArgs {
             (::windows_core::Interface::vtable(this).NavigationMode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<NavigationMode>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SourcePageType(&self) -> ::windows_core::Result<super::Interop::TypeName> {
         let this = self;
         unsafe {
@@ -494,7 +494,7 @@ impl NavigatingCancelEventArgs {
             (::windows_core::Interface::vtable(this).Parameter)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::IInspectable>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media_Animation")]
+    #[cfg(feature = "winrt-ui")]
     pub fn NavigationTransitionInfo(&self) -> ::windows_core::Result<super::Media::Animation::NavigationTransitionInfo> {
         let this = &::windows_core::Interface::cast::<INavigatingCancelEventArgs2>(self)?;
         unsafe {
@@ -709,7 +709,7 @@ impl NavigationEventArgs {
             (::windows_core::Interface::vtable(this).Parameter)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::IInspectable>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SourcePageType(&self) -> ::windows_core::Result<super::Interop::TypeName> {
         let this = self;
         unsafe {
@@ -735,7 +735,7 @@ impl NavigationEventArgs {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media_Animation")]
+    #[cfg(feature = "winrt-ui")]
     pub fn NavigationTransitionInfo(&self) -> ::windows_core::Result<super::Media::Animation::NavigationTransitionInfo> {
         let this = &::windows_core::Interface::cast::<INavigationEventArgs2>(self)?;
         unsafe {
@@ -837,7 +837,7 @@ impl NavigationFailedEventArgs {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetHandled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SourcePageType(&self) -> ::windows_core::Result<super::Interop::TypeName> {
         let this = self;
         unsafe {
@@ -1122,7 +1122,7 @@ pub struct NavigationStoppedEventHandler_Vtbl {
 #[repr(transparent)]
 pub struct PageStackEntry(::windows_core::IUnknown);
 impl PageStackEntry {
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SourcePageType(&self) -> ::windows_core::Result<super::Interop::TypeName> {
         let this = self;
         unsafe {
@@ -1137,7 +1137,7 @@ impl PageStackEntry {
             (::windows_core::Interface::vtable(this).Parameter)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::IInspectable>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media_Animation")]
+    #[cfg(feature = "winrt-ui")]
     pub fn NavigationTransitionInfo(&self) -> ::windows_core::Result<super::Media::Animation::NavigationTransitionInfo> {
         let this = self;
         unsafe {
@@ -1145,7 +1145,7 @@ impl PageStackEntry {
             (::windows_core::Interface::vtable(this).NavigationTransitionInfo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Media::Animation::NavigationTransitionInfo>(result__)
         }
     }
-    #[cfg(all(feature = "UI_Xaml_Interop", feature = "UI_Xaml_Media_Animation"))]
+    #[cfg(all(feature = "winrt-ui", feature = "winrt-ui"))]
     pub fn CreateInstance<'a, Param0: ::windows_core::IntoParam<'a, super::Interop::TypeName>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param2: ::windows_core::IntoParam<'a, super::Media::Animation::NavigationTransitionInfo>>(sourcepagetype: Param0, parameter: Param1, navigationtransitioninfo: Param2) -> ::windows_core::Result<PageStackEntry> {
         Self::IPageStackEntryFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();

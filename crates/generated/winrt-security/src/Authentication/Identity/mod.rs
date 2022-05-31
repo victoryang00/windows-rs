@@ -116,7 +116,7 @@ unsafe impl ::core::marker::Sync for EnterpriseKeyCredentialRegistrationInfo {}
 #[repr(transparent)]
 pub struct EnterpriseKeyCredentialRegistrationManager(::windows_core::IUnknown);
 impl EnterpriseKeyCredentialRegistrationManager {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetRegistrationsAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<EnterpriseKeyCredentialRegistrationInfo>>> {
         let this = self;
         unsafe {
@@ -235,9 +235,9 @@ unsafe impl ::windows_core::Interface for IEnterpriseKeyCredentialRegistrationMa
 #[doc(hidden)]
 pub struct IEnterpriseKeyCredentialRegistrationManager_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetRegistrationsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetRegistrationsAsync: usize,
 }
 #[doc(hidden)]

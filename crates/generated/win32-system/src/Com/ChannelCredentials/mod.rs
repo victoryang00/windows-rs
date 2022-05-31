@@ -7,7 +7,7 @@ impl IChannelCredentials {
     pub unsafe fn SetUserNameCredential<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, username: Param0, password: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetUserNameCredential)(::windows_core::Interface::as_raw(self), username.into_param().abi(), password.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_System_Ole")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn SetClientCertificateFromStore<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param3: ::windows_core::IntoParam<'a, super::VARIANT>>(&self, storelocation: Param0, storename: Param1, findyype: Param2, findvalue: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetClientCertificateFromStore)(::windows_core::Interface::as_raw(self), storelocation.into_param().abi(), storename.into_param().abi(), findyype.into_param().abi(), findvalue.into_param().abi()).ok()
     }
@@ -17,7 +17,7 @@ impl IChannelCredentials {
     pub unsafe fn SetClientCertificateFromFile<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, filename: Param0, password: Param1, keystorageflags: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetClientCertificateFromFile)(::windows_core::Interface::as_raw(self), filename.into_param().abi(), password.into_param().abi(), keystorageflags.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_System_Ole")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn SetDefaultServiceCertificateFromStore<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param3: ::windows_core::IntoParam<'a, super::VARIANT>>(&self, storelocation: Param0, storename: Param1, findtype: Param2, findvalue: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDefaultServiceCertificateFromStore)(::windows_core::Interface::as_raw(self), storelocation.into_param().abi(), storename.into_param().abi(), findtype.into_param().abi(), findvalue.into_param().abi()).ok()
     }
@@ -100,15 +100,15 @@ pub struct IChannelCredentials_Vtbl {
     pub base__: super::IDispatch_Vtbl,
     pub SetWindowsCredential: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, domain: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, username: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, password: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, impersonationlevel: i32, allowntlm: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub SetUserNameCredential: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, username: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, password: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Ole")]
+    #[cfg(feature = "win32-system")]
     pub SetClientCertificateFromStore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, storelocation: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, storename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, findyype: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, findvalue: ::core::mem::ManuallyDrop<super::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Ole"))]
+    #[cfg(not(feature = "win32-system"))]
     SetClientCertificateFromStore: usize,
     pub SetClientCertificateFromStoreByName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, subjectname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, storelocation: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, storename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub SetClientCertificateFromFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, password: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, keystorageflags: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Ole")]
+    #[cfg(feature = "win32-system")]
     pub SetDefaultServiceCertificateFromStore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, storelocation: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, storename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, findtype: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, findvalue: ::core::mem::ManuallyDrop<super::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Ole"))]
+    #[cfg(not(feature = "win32-system"))]
     SetDefaultServiceCertificateFromStore: usize,
     pub SetDefaultServiceCertificateFromStoreByName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, subjectname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, storelocation: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, storename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub SetDefaultServiceCertificateFromFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, password: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, keystorageflags: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,

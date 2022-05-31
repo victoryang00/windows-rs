@@ -25,9 +25,9 @@ unsafe impl ::windows_core::Interface for IUserDataAccountProviderAddAccountOper
 pub struct IUserDataAccountProviderAddAccountOperation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ContentKinds: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::UserDataAccountContentKinds) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub PartnerAccountInfos: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     PartnerAccountInfos: usize,
     pub ReportCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, userdataaccountid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
@@ -250,7 +250,7 @@ impl UserDataAccountProviderAddAccountOperation {
             (::windows_core::Interface::vtable(this).ContentKinds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::UserDataAccountContentKinds>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn PartnerAccountInfos(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<UserDataAccountPartnerAccountInfo>> {
         let this = self;
         unsafe {

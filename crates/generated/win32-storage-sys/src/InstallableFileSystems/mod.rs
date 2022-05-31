@@ -3,7 +3,7 @@ extern "system" {
     pub fn FilterAttach(lpfiltername: ::windows_core_sys::PCWSTR, lpvolumename: ::windows_core_sys::PCWSTR, lpinstancename: ::windows_core_sys::PCWSTR, dwcreatedinstancenamelength: u32, lpcreatedinstancename: ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn FilterAttachAtAltitude(lpfiltername: ::windows_core_sys::PCWSTR, lpvolumename: ::windows_core_sys::PCWSTR, lpaltitude: ::windows_core_sys::PCWSTR, lpinstancename: ::windows_core_sys::PCWSTR, dwcreatedinstancenamelength: u32, lpcreatedinstancename: ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn FilterClose(hfilter: HFILTER) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn FilterConnectCommunicationPort(lpportname: ::windows_core_sys::PCWSTR, dwoptions: u32, lpcontext: *const ::core::ffi::c_void, wsizeofcontext: u16, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, hport: *mut ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
     pub fn FilterCreate(lpfiltername: ::windows_core_sys::PCWSTR, hfilter: *mut HFILTER) -> ::windows_core_sys::HRESULT;
     pub fn FilterDetach(lpfiltername: ::windows_core_sys::PCWSTR, lpvolumename: ::windows_core_sys::PCWSTR, lpinstancename: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
@@ -12,7 +12,7 @@ extern "system" {
     pub fn FilterFindNext(hfilterfind: ::win32_foundation_sys::HANDLE, dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn FilterGetDosName(lpvolumename: ::windows_core_sys::PCWSTR, lpdosname: ::windows_core_sys::PWSTR, dwdosnamebuffersize: u32) -> ::windows_core_sys::HRESULT;
     pub fn FilterGetInformation(hfilter: HFILTER, dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn FilterGetMessage(hport: ::win32_foundation_sys::HANDLE, lpmessagebuffer: *mut FILTER_MESSAGE_HEADER, dwmessagebuffersize: u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::windows_core_sys::HRESULT;
     pub fn FilterInstanceClose(hinstance: HFILTER_INSTANCE) -> ::windows_core_sys::HRESULT;
     pub fn FilterInstanceCreate(lpfiltername: ::windows_core_sys::PCWSTR, lpvolumename: ::windows_core_sys::PCWSTR, lpinstancename: ::windows_core_sys::PCWSTR, hinstance: *mut HFILTER_INSTANCE) -> ::windows_core_sys::HRESULT;

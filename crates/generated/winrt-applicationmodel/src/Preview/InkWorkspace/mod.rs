@@ -9,9 +9,9 @@ unsafe impl ::windows_core::Interface for IInkWorkspaceHostedAppManager {
 #[doc(hidden)]
 pub struct IInkWorkspaceHostedAppManager_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_Imaging")]
+    #[cfg(feature = "winrt-graphics")]
     pub SetThumbnailAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bitmap: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Imaging"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     SetThumbnailAsync: usize,
 }
 #[doc(hidden)]
@@ -30,7 +30,7 @@ pub struct IInkWorkspaceHostedAppManagerStatics_Vtbl {
 #[repr(transparent)]
 pub struct InkWorkspaceHostedAppManager(::windows_core::IUnknown);
 impl InkWorkspaceHostedAppManager {
-    #[cfg(feature = "Graphics_Imaging")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn SetThumbnailAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::Imaging::SoftwareBitmap>>(&self, bitmap: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {

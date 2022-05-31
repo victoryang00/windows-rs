@@ -720,7 +720,7 @@ pub unsafe fn NdfCreateDNSIncident<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 #[inline]
 pub unsafe fn NdfCreateGroupingIncident<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(cloudname: Param0, groupname: Param1, identity: Param2, invitation: Param3, addresses: *const ::win32_networking::WinSock::SOCKET_ADDRESS_LIST, appid: Param5, handle: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -812,7 +812,7 @@ pub unsafe fn NdfCreateWebIncidentEx<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security"))]
+#[cfg(all(feature = "win32-networking", feature = "win32-security"))]
 #[inline]
 pub unsafe fn NdfCreateWinSockIncident<'a, Param0: ::windows_core::IntoParam<'a, ::win32_networking::WinSock::SOCKET>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(sock: Param0, host: Param1, port: u16, appid: Param3, userid: *const ::win32_security::SID, handle: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]

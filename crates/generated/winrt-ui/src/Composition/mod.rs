@@ -75,7 +75,7 @@ impl AmbientLight {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -128,7 +128,7 @@ impl AmbientLight {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -371,7 +371,7 @@ impl AnimationController {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -424,7 +424,7 @@ impl AnimationController {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -792,7 +792,7 @@ impl AnimationPropertyInfo {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -845,7 +845,7 @@ impl AnimationPropertyInfo {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -1063,7 +1063,7 @@ impl BackEasingFunction {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -1116,7 +1116,7 @@ impl BackEasingFunction {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -1315,17 +1315,17 @@ impl BooleanKeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetColorParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix3x2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix3x2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix4x4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix4x4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetQuaternionParameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetQuaternionParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -1338,17 +1338,17 @@ impl BooleanKeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScalarParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector3Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector3Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -1368,7 +1368,7 @@ impl BooleanKeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTarget)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValueExpressions(&self) -> ::windows_core::Result<InitialValueExpressionCollection> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation3>(self)?;
         unsafe {
@@ -1387,7 +1387,7 @@ impl BooleanKeyFrameAnimation {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -1440,7 +1440,7 @@ impl BooleanKeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -1785,7 +1785,7 @@ impl BounceEasingFunction {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -1838,7 +1838,7 @@ impl BounceEasingFunction {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -2055,17 +2055,17 @@ impl BounceScalarNaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetColorParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix3x2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix3x2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix4x4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix4x4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetQuaternionParameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetQuaternionParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -2078,17 +2078,17 @@ impl BounceScalarNaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScalarParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector3Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector3Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -2108,7 +2108,7 @@ impl BounceScalarNaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTarget)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValueExpressions(&self) -> ::windows_core::Result<InitialValueExpressionCollection> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation3>(self)?;
         unsafe {
@@ -2127,7 +2127,7 @@ impl BounceScalarNaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -2180,7 +2180,7 @@ impl BounceScalarNaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -2525,17 +2525,17 @@ impl BounceVector2NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetColorParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix3x2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix3x2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix4x4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix4x4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetQuaternionParameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetQuaternionParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -2548,17 +2548,17 @@ impl BounceVector2NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScalarParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector3Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector3Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -2578,7 +2578,7 @@ impl BounceVector2NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTarget)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValueExpressions(&self) -> ::windows_core::Result<InitialValueExpressionCollection> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation3>(self)?;
         unsafe {
@@ -2597,7 +2597,7 @@ impl BounceVector2NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -2650,7 +2650,7 @@ impl BounceVector2NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -2698,7 +2698,7 @@ impl BounceVector2NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<INaturalMotionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetStopBehavior)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn FinalValue(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector2>> {
         let this = &::windows_core::Interface::cast::<IVector2NaturalMotionAnimation>(self)?;
         unsafe {
@@ -2706,12 +2706,12 @@ impl BounceVector2NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).FinalValue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector2>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetFinalValue<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector2>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVector2NaturalMotionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetFinalValue)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValue(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector2>> {
         let this = &::windows_core::Interface::cast::<IVector2NaturalMotionAnimation>(self)?;
         unsafe {
@@ -2719,12 +2719,12 @@ impl BounceVector2NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).InitialValue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector2>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetInitialValue<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector2>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVector2NaturalMotionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetInitialValue)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialVelocity(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<IVector2NaturalMotionAnimation>(self)?;
         unsafe {
@@ -2732,7 +2732,7 @@ impl BounceVector2NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).InitialVelocity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetInitialVelocity<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVector2NaturalMotionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetInitialVelocity)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -3001,17 +3001,17 @@ impl BounceVector3NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetColorParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix3x2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix3x2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix4x4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix4x4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetQuaternionParameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetQuaternionParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -3024,17 +3024,17 @@ impl BounceVector3NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScalarParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector3Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector3Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -3054,7 +3054,7 @@ impl BounceVector3NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTarget)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValueExpressions(&self) -> ::windows_core::Result<InitialValueExpressionCollection> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation3>(self)?;
         unsafe {
@@ -3073,7 +3073,7 @@ impl BounceVector3NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -3126,7 +3126,7 @@ impl BounceVector3NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -3174,7 +3174,7 @@ impl BounceVector3NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<INaturalMotionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetStopBehavior)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn FinalValue(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>> {
         let this = &::windows_core::Interface::cast::<IVector3NaturalMotionAnimation>(self)?;
         unsafe {
@@ -3182,12 +3182,12 @@ impl BounceVector3NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).FinalValue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetFinalValue<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVector3NaturalMotionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetFinalValue)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValue(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>> {
         let this = &::windows_core::Interface::cast::<IVector3NaturalMotionAnimation>(self)?;
         unsafe {
@@ -3195,12 +3195,12 @@ impl BounceVector3NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).InitialValue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetInitialValue<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVector3NaturalMotionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetInitialValue)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialVelocity(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVector3NaturalMotionAnimation>(self)?;
         unsafe {
@@ -3208,7 +3208,7 @@ impl BounceVector3NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).InitialVelocity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetInitialVelocity<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVector3NaturalMotionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetInitialVelocity)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -3457,7 +3457,7 @@ impl CircleEasingFunction {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -3510,7 +3510,7 @@ impl CircleEasingFunction {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -3724,17 +3724,17 @@ impl ColorKeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetColorParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix3x2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix3x2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix4x4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix4x4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetQuaternionParameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetQuaternionParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -3747,17 +3747,17 @@ impl ColorKeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScalarParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector3Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector3Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -3777,7 +3777,7 @@ impl ColorKeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTarget)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValueExpressions(&self) -> ::windows_core::Result<InitialValueExpressionCollection> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation3>(self)?;
         unsafe {
@@ -3796,7 +3796,7 @@ impl ColorKeyFrameAnimation {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -3849,7 +3849,7 @@ impl ColorKeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -4178,17 +4178,17 @@ impl CompositionAnimation {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetColorParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix3x2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix3x2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix4x4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix4x4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetQuaternionParameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetQuaternionParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -4201,17 +4201,17 @@ impl CompositionAnimation {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetScalarParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetVector2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector3Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetVector3Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetVector4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -4231,7 +4231,7 @@ impl CompositionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTarget)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValueExpressions(&self) -> ::windows_core::Result<InitialValueExpressionCollection> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation3>(self)?;
         unsafe {
@@ -4250,7 +4250,7 @@ impl CompositionAnimation {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -4303,7 +4303,7 @@ impl CompositionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -4514,7 +4514,7 @@ impl CompositionAnimationGroup {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -4567,7 +4567,7 @@ impl CompositionAnimationGroup {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -4582,7 +4582,7 @@ impl CompositionAnimationGroup {
             (::windows_core::Interface::vtable(this).TryGetAnimationController)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<AnimationController>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<CompositionAnimation>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<CompositionAnimation>>(self)?;
         unsafe {
@@ -4621,7 +4621,7 @@ unsafe impl ::windows_core::Interface for CompositionAnimationGroup {
 impl ::windows_core::RuntimeName for CompositionAnimationGroup {
     const NAME: &'static str = "Windows.UI.Composition.CompositionAnimationGroup";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for CompositionAnimationGroup {
     type Item = CompositionAnimation;
     type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
@@ -4629,7 +4629,7 @@ impl ::core::iter::IntoIterator for CompositionAnimationGroup {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &CompositionAnimationGroup {
     type Item = CompositionAnimation;
     type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
@@ -4743,27 +4743,27 @@ impl<'a> ::windows_core::IntoParam<'a, ICompositionAnimationBase> for &Compositi
         ::core::convert::TryInto::<ICompositionAnimationBase>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<CompositionAnimationGroup> for ::winrt_foundation::Collections::IIterable<CompositionAnimation> {
     type Error = ::windows_core::Error;
     fn try_from(value: CompositionAnimationGroup) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&CompositionAnimationGroup> for ::winrt_foundation::Collections::IIterable<CompositionAnimation> {
     type Error = ::windows_core::Error;
     fn try_from(value: &CompositionAnimationGroup) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<CompositionAnimation>> for CompositionAnimationGroup {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<CompositionAnimation>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<CompositionAnimation>> for &CompositionAnimationGroup {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<CompositionAnimation>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<CompositionAnimation>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -4809,7 +4809,7 @@ impl CompositionBackdropBrush {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -4862,7 +4862,7 @@ impl CompositionBackdropBrush {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -5086,7 +5086,7 @@ impl CompositionBatchCompletedEventArgs {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -5139,7 +5139,7 @@ impl CompositionBatchCompletedEventArgs {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -5448,7 +5448,7 @@ impl CompositionBrush {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -5501,7 +5501,7 @@ impl CompositionBrush {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -5775,7 +5775,7 @@ impl CompositionClip {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AnchorPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe {
@@ -5783,12 +5783,12 @@ impl CompositionClip {
             (::windows_core::Interface::vtable(this).AnchorPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetAnchorPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CenterPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe {
@@ -5796,12 +5796,12 @@ impl CompositionClip {
             (::windows_core::Interface::vtable(this).CenterPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetCenterPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCenterPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe {
@@ -5809,7 +5809,7 @@ impl CompositionClip {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -5836,7 +5836,7 @@ impl CompositionClip {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAngleInDegrees)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Scale(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe {
@@ -5844,12 +5844,12 @@ impl CompositionClip {
             (::windows_core::Interface::vtable(this).Scale)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetScale<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScale)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TransformMatrix(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix3x2> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe {
@@ -5857,7 +5857,7 @@ impl CompositionClip {
             (::windows_core::Interface::vtable(this).TransformMatrix)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Matrix3x2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetTransformMatrix<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTransformMatrix)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -5869,7 +5869,7 @@ impl CompositionClip {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -5922,7 +5922,7 @@ impl CompositionClip {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -6103,7 +6103,7 @@ impl CompositionColorBrush {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -6156,7 +6156,7 @@ impl CompositionColorBrush {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -6368,7 +6368,7 @@ impl CompositionColorGradientStop {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -6421,7 +6421,7 @@ impl CompositionColorGradientStop {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -6576,7 +6576,7 @@ unsafe impl ::core::marker::Sync for CompositionColorGradientStop {}
 #[repr(transparent)]
 pub struct CompositionColorGradientStopCollection(::windows_core::IUnknown);
 impl CompositionColorGradientStopCollection {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<CompositionColorGradientStop>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<CompositionColorGradientStop>>(self)?;
         unsafe {
@@ -6584,7 +6584,7 @@ impl CompositionColorGradientStopCollection {
             (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<CompositionColorGradientStop>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetAt(&self, index: u32) -> ::windows_core::Result<CompositionColorGradientStop> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<CompositionColorGradientStop>>(self)?;
         unsafe {
@@ -6592,7 +6592,7 @@ impl CompositionColorGradientStopCollection {
             (::windows_core::Interface::vtable(this).GetAt)(::windows_core::Interface::as_raw(this), index, result__.as_mut_ptr()).from_abi::<CompositionColorGradientStop>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<CompositionColorGradientStop>>(self)?;
         unsafe {
@@ -6600,7 +6600,7 @@ impl CompositionColorGradientStopCollection {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<CompositionColorGradientStop>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<CompositionColorGradientStop>>(self)?;
         unsafe {
@@ -6608,7 +6608,7 @@ impl CompositionColorGradientStopCollection {
             (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<CompositionColorGradientStop>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn IndexOf<'a, Param0: ::windows_core::IntoParam<'a, CompositionColorGradientStop>>(&self, value: Param0, index: &mut u32) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<CompositionColorGradientStop>>(self)?;
         unsafe {
@@ -6616,37 +6616,37 @@ impl CompositionColorGradientStopCollection {
             (::windows_core::Interface::vtable(this).IndexOf)(::windows_core::Interface::as_raw(this), value.into_param().abi(), index, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAt<'a, Param1: ::windows_core::IntoParam<'a, CompositionColorGradientStop>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<CompositionColorGradientStop>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertAt<'a, Param1: ::windows_core::IntoParam<'a, CompositionColorGradientStop>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<CompositionColorGradientStop>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).InsertAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAt(&self, index: u32) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<CompositionColorGradientStop>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAt)(::windows_core::Interface::as_raw(this), index).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Append<'a, Param0: ::windows_core::IntoParam<'a, CompositionColorGradientStop>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<CompositionColorGradientStop>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Append)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAtEnd(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<CompositionColorGradientStop>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAtEnd)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Clear(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<CompositionColorGradientStop>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Clear)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetMany(&self, startindex: u32, items: &mut [::core::option::Option<CompositionColorGradientStop>]) -> ::windows_core::Result<u32> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<CompositionColorGradientStop>>(self)?;
         unsafe {
@@ -6654,7 +6654,7 @@ impl CompositionColorGradientStopCollection {
             (::windows_core::Interface::vtable(this).GetMany)(::windows_core::Interface::as_raw(this), startindex, items.len() as u32, ::core::mem::transmute_copy(&items), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ReplaceAll(&self, items: &[::core::option::Option<CompositionColorGradientStop>]) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<CompositionColorGradientStop>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ReplaceAll)(::windows_core::Interface::as_raw(this), items.len() as u32, ::core::mem::transmute(items.as_ptr())).ok() }
@@ -6690,7 +6690,7 @@ unsafe impl ::windows_core::Interface for CompositionColorGradientStopCollection
 impl ::windows_core::RuntimeName for CompositionColorGradientStopCollection {
     const NAME: &'static str = "Windows.UI.Composition.CompositionColorGradientStopCollection";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for CompositionColorGradientStopCollection {
     type Item = CompositionColorGradientStop;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -6698,7 +6698,7 @@ impl ::core::iter::IntoIterator for CompositionColorGradientStopCollection {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &CompositionColorGradientStopCollection {
     type Item = CompositionColorGradientStop;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -6746,53 +6746,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Com
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<CompositionColorGradientStopCollection> for ::winrt_foundation::Collections::IIterable<CompositionColorGradientStop> {
     type Error = ::windows_core::Error;
     fn try_from(value: CompositionColorGradientStopCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&CompositionColorGradientStopCollection> for ::winrt_foundation::Collections::IIterable<CompositionColorGradientStop> {
     type Error = ::windows_core::Error;
     fn try_from(value: &CompositionColorGradientStopCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<CompositionColorGradientStop>> for CompositionColorGradientStopCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<CompositionColorGradientStop>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<CompositionColorGradientStop>> for &CompositionColorGradientStopCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<CompositionColorGradientStop>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<CompositionColorGradientStop>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<CompositionColorGradientStopCollection> for ::winrt_foundation::Collections::IVector<CompositionColorGradientStop> {
     type Error = ::windows_core::Error;
     fn try_from(value: CompositionColorGradientStopCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&CompositionColorGradientStopCollection> for ::winrt_foundation::Collections::IVector<CompositionColorGradientStop> {
     type Error = ::windows_core::Error;
     fn try_from(value: &CompositionColorGradientStopCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<CompositionColorGradientStop>> for CompositionColorGradientStopCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<CompositionColorGradientStop>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<CompositionColorGradientStop>> for &CompositionColorGradientStopCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<CompositionColorGradientStop>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IVector<CompositionColorGradientStop>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -6879,7 +6879,7 @@ impl CompositionCommitBatch {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -6932,7 +6932,7 @@ impl CompositionCommitBatch {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -7130,7 +7130,7 @@ impl CompositionContainerShape {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Shapes(&self) -> ::windows_core::Result<CompositionShapeCollection> {
         let this = self;
         unsafe {
@@ -7145,7 +7145,7 @@ impl CompositionContainerShape {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -7198,7 +7198,7 @@ impl CompositionContainerShape {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -7213,7 +7213,7 @@ impl CompositionContainerShape {
             (::windows_core::Interface::vtable(this).TryGetAnimationController)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<AnimationController>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CenterPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionShape>(self)?;
         unsafe {
@@ -7221,12 +7221,12 @@ impl CompositionContainerShape {
             (::windows_core::Interface::vtable(this).CenterPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetCenterPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionShape>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCenterPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionShape>(self)?;
         unsafe {
@@ -7234,7 +7234,7 @@ impl CompositionContainerShape {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionShape>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -7261,7 +7261,7 @@ impl CompositionContainerShape {
         let this = &::windows_core::Interface::cast::<ICompositionShape>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAngleInDegrees)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Scale(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionShape>(self)?;
         unsafe {
@@ -7269,12 +7269,12 @@ impl CompositionContainerShape {
             (::windows_core::Interface::vtable(this).Scale)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetScale<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionShape>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScale)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TransformMatrix(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix3x2> {
         let this = &::windows_core::Interface::cast::<ICompositionShape>(self)?;
         unsafe {
@@ -7282,7 +7282,7 @@ impl CompositionContainerShape {
             (::windows_core::Interface::vtable(this).TransformMatrix)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Matrix3x2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetTransformMatrix<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionShape>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTransformMatrix)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -7455,7 +7455,7 @@ impl CompositionDrawingSurface {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn AlphaMode(&self) -> ::windows_core::Result<::winrt_graphics::DirectX::DirectXAlphaMode> {
         let this = self;
         unsafe {
@@ -7463,7 +7463,7 @@ impl CompositionDrawingSurface {
             (::windows_core::Interface::vtable(this).AlphaMode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::DirectX::DirectXAlphaMode>(result__)
         }
     }
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn PixelFormat(&self) -> ::windows_core::Result<::winrt_graphics::DirectX::DirectXPixelFormat> {
         let this = self;
         unsafe {
@@ -7478,7 +7478,7 @@ impl CompositionDrawingSurface {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Size>(result__)
         }
     }
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn SizeInt32(&self) -> ::windows_core::Result<::winrt_graphics::SizeInt32> {
         let this = &::windows_core::Interface::cast::<ICompositionDrawingSurface2>(self)?;
         unsafe {
@@ -7486,27 +7486,27 @@ impl CompositionDrawingSurface {
             (::windows_core::Interface::vtable(this).SizeInt32)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::SizeInt32>(result__)
         }
     }
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn Resize<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::SizeInt32>>(&self, sizepixels: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionDrawingSurface2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Resize)(::windows_core::Interface::as_raw(this), sizepixels.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn Scroll<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::PointInt32>>(&self, offset: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionDrawingSurface2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Scroll)(::windows_core::Interface::as_raw(this), offset.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn ScrollRect<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::PointInt32>, Param1: ::windows_core::IntoParam<'a, ::winrt_graphics::RectInt32>>(&self, offset: Param0, scrollrect: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionDrawingSurface2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ScrollRect)(::windows_core::Interface::as_raw(this), offset.into_param().abi(), scrollrect.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn ScrollWithClip<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::PointInt32>, Param1: ::windows_core::IntoParam<'a, ::winrt_graphics::RectInt32>>(&self, offset: Param0, cliprect: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionDrawingSurface2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ScrollWithClip)(::windows_core::Interface::as_raw(this), offset.into_param().abi(), cliprect.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn ScrollRectWithClip<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::PointInt32>, Param1: ::windows_core::IntoParam<'a, ::winrt_graphics::RectInt32>, Param2: ::windows_core::IntoParam<'a, ::winrt_graphics::RectInt32>>(&self, offset: Param0, cliprect: Param1, scrollrect: Param2) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionDrawingSurface2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ScrollRectWithClip)(::windows_core::Interface::as_raw(this), offset.into_param().abi(), cliprect.into_param().abi(), scrollrect.into_param().abi()).ok() }
@@ -7518,7 +7518,7 @@ impl CompositionDrawingSurface {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -7571,7 +7571,7 @@ impl CompositionDrawingSurface {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -7789,7 +7789,7 @@ impl CompositionEasingFunction {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CreateCubicBezierEasingFunction<'a, Param0: ::windows_core::IntoParam<'a, Compositor>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(owner: Param0, controlpoint1: Param1, controlpoint2: Param2) -> ::windows_core::Result<CubicBezierEasingFunction> {
         Self::ICompositionEasingFunctionStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -7863,7 +7863,7 @@ impl CompositionEasingFunction {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -7916,7 +7916,7 @@ impl CompositionEasingFunction {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -8135,7 +8135,7 @@ impl CompositionEffectBrush {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -8188,7 +8188,7 @@ impl CompositionEffectBrush {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -8399,7 +8399,7 @@ impl CompositionEffectFactory {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -8452,7 +8452,7 @@ impl CompositionEffectFactory {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -8730,27 +8730,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Com
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Graphics_Effects")]
+#[cfg(feature = "winrt-graphics")]
 impl ::core::convert::TryFrom<CompositionEffectSourceParameter> for ::winrt_graphics::Effects::IGraphicsEffectSource {
     type Error = ::windows_core::Error;
     fn try_from(value: CompositionEffectSourceParameter) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Graphics_Effects")]
+#[cfg(feature = "winrt-graphics")]
 impl ::core::convert::TryFrom<&CompositionEffectSourceParameter> for ::winrt_graphics::Effects::IGraphicsEffectSource {
     type Error = ::windows_core::Error;
     fn try_from(value: &CompositionEffectSourceParameter) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Graphics_Effects")]
+#[cfg(feature = "winrt-graphics")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_graphics::Effects::IGraphicsEffectSource> for CompositionEffectSourceParameter {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_graphics::Effects::IGraphicsEffectSource> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Graphics_Effects")]
+#[cfg(feature = "winrt-graphics")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_graphics::Effects::IGraphicsEffectSource> for &CompositionEffectSourceParameter {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_graphics::Effects::IGraphicsEffectSource> {
         ::core::convert::TryInto::<::winrt_graphics::Effects::IGraphicsEffectSource>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -8769,7 +8769,7 @@ impl CompositionEllipseGeometry {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Center(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -8777,12 +8777,12 @@ impl CompositionEllipseGeometry {
             (::windows_core::Interface::vtable(this).Center)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetCenter<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCenter)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Radius(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -8790,7 +8790,7 @@ impl CompositionEllipseGeometry {
             (::windows_core::Interface::vtable(this).Radius)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRadius<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetRadius)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -8835,7 +8835,7 @@ impl CompositionEllipseGeometry {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -8888,7 +8888,7 @@ impl CompositionEllipseGeometry {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -9071,7 +9071,7 @@ impl CompositionGeometricClip {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AnchorPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe {
@@ -9079,12 +9079,12 @@ impl CompositionGeometricClip {
             (::windows_core::Interface::vtable(this).AnchorPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetAnchorPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CenterPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe {
@@ -9092,12 +9092,12 @@ impl CompositionGeometricClip {
             (::windows_core::Interface::vtable(this).CenterPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetCenterPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCenterPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe {
@@ -9105,7 +9105,7 @@ impl CompositionGeometricClip {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -9132,7 +9132,7 @@ impl CompositionGeometricClip {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAngleInDegrees)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Scale(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe {
@@ -9140,12 +9140,12 @@ impl CompositionGeometricClip {
             (::windows_core::Interface::vtable(this).Scale)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetScale<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScale)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TransformMatrix(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix3x2> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe {
@@ -9153,7 +9153,7 @@ impl CompositionGeometricClip {
             (::windows_core::Interface::vtable(this).TransformMatrix)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Matrix3x2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetTransformMatrix<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTransformMatrix)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -9187,7 +9187,7 @@ impl CompositionGeometricClip {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -9240,7 +9240,7 @@ impl CompositionGeometricClip {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -9463,7 +9463,7 @@ impl CompositionGeometry {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -9516,7 +9516,7 @@ impl CompositionGeometry {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -9713,7 +9713,7 @@ impl CompositionGradientBrush {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AnchorPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -9721,12 +9721,12 @@ impl CompositionGradientBrush {
             (::windows_core::Interface::vtable(this).AnchorPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetAnchorPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CenterPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -9734,7 +9734,7 @@ impl CompositionGradientBrush {
             (::windows_core::Interface::vtable(this).CenterPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetCenterPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCenterPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -9768,7 +9768,7 @@ impl CompositionGradientBrush {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetInterpolationSpace)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -9776,7 +9776,7 @@ impl CompositionGradientBrush {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -9803,7 +9803,7 @@ impl CompositionGradientBrush {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAngleInDegrees)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Scale(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -9811,12 +9811,12 @@ impl CompositionGradientBrush {
             (::windows_core::Interface::vtable(this).Scale)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetScale<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetScale)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TransformMatrix(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix3x2> {
         let this = self;
         unsafe {
@@ -9824,7 +9824,7 @@ impl CompositionGradientBrush {
             (::windows_core::Interface::vtable(this).TransformMatrix)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Matrix3x2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetTransformMatrix<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetTransformMatrix)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -9847,7 +9847,7 @@ impl CompositionGradientBrush {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -9900,7 +9900,7 @@ impl CompositionGradientBrush {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -10117,7 +10117,7 @@ impl CompositionGraphicsDevice {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn CreateDrawingSurface<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Size>>(&self, sizepixels: Param0, pixelformat: ::winrt_graphics::DirectX::DirectXPixelFormat, alphamode: ::winrt_graphics::DirectX::DirectXAlphaMode) -> ::windows_core::Result<CompositionDrawingSurface> {
         let this = self;
         unsafe {
@@ -10136,7 +10136,7 @@ impl CompositionGraphicsDevice {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveRenderingDeviceReplaced)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn CreateDrawingSurface2<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::SizeInt32>>(&self, sizepixels: Param0, pixelformat: ::winrt_graphics::DirectX::DirectXPixelFormat, alphamode: ::winrt_graphics::DirectX::DirectXAlphaMode) -> ::windows_core::Result<CompositionDrawingSurface> {
         let this = &::windows_core::Interface::cast::<ICompositionGraphicsDevice2>(self)?;
         unsafe {
@@ -10144,7 +10144,7 @@ impl CompositionGraphicsDevice {
             (::windows_core::Interface::vtable(this).CreateDrawingSurface2)(::windows_core::Interface::as_raw(this), sizepixels.into_param().abi(), pixelformat, alphamode, result__.as_mut_ptr()).from_abi::<CompositionDrawingSurface>(result__)
         }
     }
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn CreateVirtualDrawingSurface<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::SizeInt32>>(&self, sizepixels: Param0, pixelformat: ::winrt_graphics::DirectX::DirectXPixelFormat, alphamode: ::winrt_graphics::DirectX::DirectXAlphaMode) -> ::windows_core::Result<CompositionVirtualDrawingSurface> {
         let this = &::windows_core::Interface::cast::<ICompositionGraphicsDevice2>(self)?;
         unsafe {
@@ -10152,7 +10152,7 @@ impl CompositionGraphicsDevice {
             (::windows_core::Interface::vtable(this).CreateVirtualDrawingSurface)(::windows_core::Interface::as_raw(this), sizepixels.into_param().abi(), pixelformat, alphamode, result__.as_mut_ptr()).from_abi::<CompositionVirtualDrawingSurface>(result__)
         }
     }
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn CreateMipmapSurface<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::SizeInt32>>(&self, sizepixels: Param0, pixelformat: ::winrt_graphics::DirectX::DirectXPixelFormat, alphamode: ::winrt_graphics::DirectX::DirectXAlphaMode) -> ::windows_core::Result<CompositionMipmapSurface> {
         let this = &::windows_core::Interface::cast::<ICompositionGraphicsDevice3>(self)?;
         unsafe {
@@ -10164,7 +10164,7 @@ impl CompositionGraphicsDevice {
         let this = &::windows_core::Interface::cast::<ICompositionGraphicsDevice3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Trim)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn CaptureAsync<'a, Param0: ::windows_core::IntoParam<'a, Visual>, Param1: ::windows_core::IntoParam<'a, ::winrt_graphics::SizeInt32>>(&self, capturevisual: Param0, size: Param1, pixelformat: ::winrt_graphics::DirectX::DirectXPixelFormat, alphamode: ::winrt_graphics::DirectX::DirectXAlphaMode, sdrboost: f32) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ICompositionSurface>> {
         let this = &::windows_core::Interface::cast::<ICompositionGraphicsDevice4>(self)?;
         unsafe {
@@ -10179,7 +10179,7 @@ impl CompositionGraphicsDevice {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -10232,7 +10232,7 @@ impl CompositionGraphicsDevice {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -10427,7 +10427,7 @@ impl CompositionLight {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -10480,7 +10480,7 @@ impl CompositionLight {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -10676,7 +10676,7 @@ impl CompositionLineGeometry {
         let this = &::windows_core::Interface::cast::<ICompositionGeometry>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTrimStart)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Start(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -10684,12 +10684,12 @@ impl CompositionLineGeometry {
             (::windows_core::Interface::vtable(this).Start)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetStart<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetStart)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn End(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -10697,7 +10697,7 @@ impl CompositionLineGeometry {
             (::windows_core::Interface::vtable(this).End)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetEnd<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetEnd)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -10709,7 +10709,7 @@ impl CompositionLineGeometry {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -10762,7 +10762,7 @@ impl CompositionLineGeometry {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -10945,7 +10945,7 @@ impl CompositionLinearGradientBrush {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AnchorPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush>(self)?;
         unsafe {
@@ -10953,12 +10953,12 @@ impl CompositionLinearGradientBrush {
             (::windows_core::Interface::vtable(this).AnchorPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetAnchorPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CenterPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush>(self)?;
         unsafe {
@@ -10966,7 +10966,7 @@ impl CompositionLinearGradientBrush {
             (::windows_core::Interface::vtable(this).CenterPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetCenterPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCenterPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -11000,7 +11000,7 @@ impl CompositionLinearGradientBrush {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetInterpolationSpace)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush>(self)?;
         unsafe {
@@ -11008,7 +11008,7 @@ impl CompositionLinearGradientBrush {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -11035,7 +11035,7 @@ impl CompositionLinearGradientBrush {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAngleInDegrees)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Scale(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush>(self)?;
         unsafe {
@@ -11043,12 +11043,12 @@ impl CompositionLinearGradientBrush {
             (::windows_core::Interface::vtable(this).Scale)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetScale<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScale)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TransformMatrix(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix3x2> {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush>(self)?;
         unsafe {
@@ -11056,7 +11056,7 @@ impl CompositionLinearGradientBrush {
             (::windows_core::Interface::vtable(this).TransformMatrix)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Matrix3x2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetTransformMatrix<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTransformMatrix)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -11072,7 +11072,7 @@ impl CompositionLinearGradientBrush {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMappingMode)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn EndPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -11080,12 +11080,12 @@ impl CompositionLinearGradientBrush {
             (::windows_core::Interface::vtable(this).EndPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetEndPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetEndPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn StartPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -11093,7 +11093,7 @@ impl CompositionLinearGradientBrush {
             (::windows_core::Interface::vtable(this).StartPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetStartPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetStartPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -11105,7 +11105,7 @@ impl CompositionLinearGradientBrush {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -11158,7 +11158,7 @@ impl CompositionLinearGradientBrush {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -11423,7 +11423,7 @@ impl CompositionMaskBrush {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -11476,7 +11476,7 @@ impl CompositionMaskBrush {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -11666,7 +11666,7 @@ impl CompositionMipmapSurface {
             (::windows_core::Interface::vtable(this).LevelCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn AlphaMode(&self) -> ::windows_core::Result<::winrt_graphics::DirectX::DirectXAlphaMode> {
         let this = self;
         unsafe {
@@ -11674,7 +11674,7 @@ impl CompositionMipmapSurface {
             (::windows_core::Interface::vtable(this).AlphaMode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::DirectX::DirectXAlphaMode>(result__)
         }
     }
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn PixelFormat(&self) -> ::windows_core::Result<::winrt_graphics::DirectX::DirectXPixelFormat> {
         let this = self;
         unsafe {
@@ -11682,7 +11682,7 @@ impl CompositionMipmapSurface {
             (::windows_core::Interface::vtable(this).PixelFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::DirectX::DirectXPixelFormat>(result__)
         }
     }
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn SizeInt32(&self) -> ::windows_core::Result<::winrt_graphics::SizeInt32> {
         let this = self;
         unsafe {
@@ -11704,7 +11704,7 @@ impl CompositionMipmapSurface {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -11757,7 +11757,7 @@ impl CompositionMipmapSurface {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -12075,7 +12075,7 @@ impl CompositionNineGridBrush {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -12128,7 +12128,7 @@ impl CompositionNineGridBrush {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -12318,7 +12318,7 @@ impl CompositionObject {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = self;
         unsafe {
@@ -12371,7 +12371,7 @@ impl CompositionObject {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -12516,7 +12516,7 @@ unsafe impl ::core::marker::Sync for CompositionObject {}
 #[repr(transparent)]
 pub struct CompositionPath(::windows_core::IUnknown);
 impl CompositionPath {
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::IGeometrySource2D>>(source: Param0) -> ::windows_core::Result<CompositionPath> {
         Self::ICompositionPathFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -12598,27 +12598,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Com
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Graphics")]
+#[cfg(feature = "winrt-graphics")]
 impl ::core::convert::TryFrom<CompositionPath> for ::winrt_graphics::IGeometrySource2D {
     type Error = ::windows_core::Error;
     fn try_from(value: CompositionPath) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Graphics")]
+#[cfg(feature = "winrt-graphics")]
 impl ::core::convert::TryFrom<&CompositionPath> for ::winrt_graphics::IGeometrySource2D {
     type Error = ::windows_core::Error;
     fn try_from(value: &CompositionPath) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Graphics")]
+#[cfg(feature = "winrt-graphics")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_graphics::IGeometrySource2D> for CompositionPath {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_graphics::IGeometrySource2D> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Graphics")]
+#[cfg(feature = "winrt-graphics")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_graphics::IGeometrySource2D> for &CompositionPath {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_graphics::IGeometrySource2D> {
         ::core::convert::TryInto::<::winrt_graphics::IGeometrySource2D>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -12677,7 +12677,7 @@ impl CompositionPathGeometry {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -12730,7 +12730,7 @@ impl CompositionPathGeometry {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -12931,7 +12931,7 @@ impl CompositionProjectedShadow {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -12984,7 +12984,7 @@ impl CompositionProjectedShadow {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -13212,7 +13212,7 @@ impl CompositionProjectedShadowCaster {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -13265,7 +13265,7 @@ impl CompositionProjectedShadowCaster {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -13457,7 +13457,7 @@ impl CompositionProjectedShadowCasterCollection {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -13510,7 +13510,7 @@ impl CompositionProjectedShadowCasterCollection {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -13562,7 +13562,7 @@ impl CompositionProjectedShadowCasterCollection {
             (::windows_core::Interface::vtable(this).MaxRespectedCasters)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<CompositionProjectedShadowCaster>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<CompositionProjectedShadowCaster>>(self)?;
         unsafe {
@@ -13605,7 +13605,7 @@ unsafe impl ::windows_core::Interface for CompositionProjectedShadowCasterCollec
 impl ::windows_core::RuntimeName for CompositionProjectedShadowCasterCollection {
     const NAME: &'static str = "Windows.UI.Composition.CompositionProjectedShadowCasterCollection";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for CompositionProjectedShadowCasterCollection {
     type Item = CompositionProjectedShadowCaster;
     type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
@@ -13613,7 +13613,7 @@ impl ::core::iter::IntoIterator for CompositionProjectedShadowCasterCollection {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &CompositionProjectedShadowCasterCollection {
     type Item = CompositionProjectedShadowCaster;
     type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
@@ -13705,27 +13705,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &Compo
         ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<CompositionProjectedShadowCasterCollection> for ::winrt_foundation::Collections::IIterable<CompositionProjectedShadowCaster> {
     type Error = ::windows_core::Error;
     fn try_from(value: CompositionProjectedShadowCasterCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&CompositionProjectedShadowCasterCollection> for ::winrt_foundation::Collections::IIterable<CompositionProjectedShadowCaster> {
     type Error = ::windows_core::Error;
     fn try_from(value: &CompositionProjectedShadowCasterCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<CompositionProjectedShadowCaster>> for CompositionProjectedShadowCasterCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<CompositionProjectedShadowCaster>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<CompositionProjectedShadowCaster>> for &CompositionProjectedShadowCasterCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<CompositionProjectedShadowCaster>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<CompositionProjectedShadowCaster>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -13771,7 +13771,7 @@ impl CompositionProjectedShadowReceiver {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -13824,7 +13824,7 @@ impl CompositionProjectedShadowReceiver {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -14005,7 +14005,7 @@ impl CompositionProjectedShadowReceiverUnorderedCollection {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -14058,7 +14058,7 @@ impl CompositionProjectedShadowReceiverUnorderedCollection {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -14092,7 +14092,7 @@ impl CompositionProjectedShadowReceiverUnorderedCollection {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAll)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<CompositionProjectedShadowReceiver>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<CompositionProjectedShadowReceiver>>(self)?;
         unsafe {
@@ -14131,7 +14131,7 @@ unsafe impl ::windows_core::Interface for CompositionProjectedShadowReceiverUnor
 impl ::windows_core::RuntimeName for CompositionProjectedShadowReceiverUnorderedCollection {
     const NAME: &'static str = "Windows.UI.Composition.CompositionProjectedShadowReceiverUnorderedCollection";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for CompositionProjectedShadowReceiverUnorderedCollection {
     type Item = CompositionProjectedShadowReceiver;
     type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
@@ -14139,7 +14139,7 @@ impl ::core::iter::IntoIterator for CompositionProjectedShadowReceiverUnorderedC
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &CompositionProjectedShadowReceiverUnorderedCollection {
     type Item = CompositionProjectedShadowReceiver;
     type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
@@ -14231,27 +14231,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &Compo
         ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<CompositionProjectedShadowReceiverUnorderedCollection> for ::winrt_foundation::Collections::IIterable<CompositionProjectedShadowReceiver> {
     type Error = ::windows_core::Error;
     fn try_from(value: CompositionProjectedShadowReceiverUnorderedCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&CompositionProjectedShadowReceiverUnorderedCollection> for ::winrt_foundation::Collections::IIterable<CompositionProjectedShadowReceiver> {
     type Error = ::windows_core::Error;
     fn try_from(value: &CompositionProjectedShadowReceiverUnorderedCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<CompositionProjectedShadowReceiver>> for CompositionProjectedShadowReceiverUnorderedCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<CompositionProjectedShadowReceiver>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<CompositionProjectedShadowReceiver>> for &CompositionProjectedShadowReceiverUnorderedCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<CompositionProjectedShadowReceiver>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<CompositionProjectedShadowReceiver>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -14297,7 +14297,7 @@ impl CompositionPropertySet {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -14350,7 +14350,7 @@ impl CompositionPropertySet {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -14369,17 +14369,17 @@ impl CompositionPropertySet {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertColor)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertMatrix3x2<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, propertyname: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertMatrix3x2)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertMatrix4x4<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, propertyname: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertMatrix4x4)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertQuaternion<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, propertyname: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertQuaternion)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), value.into_param().abi()).ok() }
@@ -14388,17 +14388,17 @@ impl CompositionPropertySet {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertScalar)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertVector2<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, propertyname: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertVector2)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertVector3<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, propertyname: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertVector3)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertVector4<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>>(&self, propertyname: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertVector4)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), value.into_param().abi()).ok() }
@@ -14410,7 +14410,7 @@ impl CompositionPropertySet {
             (::windows_core::Interface::vtable(this).TryGetColor)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), value, result__.as_mut_ptr()).from_abi::<CompositionGetValueStatus>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TryGetMatrix3x2<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, propertyname: Param0, value: &mut ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::Result<CompositionGetValueStatus> {
         let this = self;
         unsafe {
@@ -14418,7 +14418,7 @@ impl CompositionPropertySet {
             (::windows_core::Interface::vtable(this).TryGetMatrix3x2)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), value, result__.as_mut_ptr()).from_abi::<CompositionGetValueStatus>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TryGetMatrix4x4<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, propertyname: Param0, value: &mut ::winrt_foundation::Numerics::Matrix4x4) -> ::windows_core::Result<CompositionGetValueStatus> {
         let this = self;
         unsafe {
@@ -14426,7 +14426,7 @@ impl CompositionPropertySet {
             (::windows_core::Interface::vtable(this).TryGetMatrix4x4)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), value, result__.as_mut_ptr()).from_abi::<CompositionGetValueStatus>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TryGetQuaternion<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, propertyname: Param0, value: &mut ::winrt_foundation::Numerics::Quaternion) -> ::windows_core::Result<CompositionGetValueStatus> {
         let this = self;
         unsafe {
@@ -14441,7 +14441,7 @@ impl CompositionPropertySet {
             (::windows_core::Interface::vtable(this).TryGetScalar)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), value, result__.as_mut_ptr()).from_abi::<CompositionGetValueStatus>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TryGetVector2<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, propertyname: Param0, value: &mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::Result<CompositionGetValueStatus> {
         let this = self;
         unsafe {
@@ -14449,7 +14449,7 @@ impl CompositionPropertySet {
             (::windows_core::Interface::vtable(this).TryGetVector2)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), value, result__.as_mut_ptr()).from_abi::<CompositionGetValueStatus>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TryGetVector3<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, propertyname: Param0, value: &mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::Result<CompositionGetValueStatus> {
         let this = self;
         unsafe {
@@ -14457,7 +14457,7 @@ impl CompositionPropertySet {
             (::windows_core::Interface::vtable(this).TryGetVector3)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), value, result__.as_mut_ptr()).from_abi::<CompositionGetValueStatus>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TryGetVector4<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, propertyname: Param0, value: &mut ::winrt_foundation::Numerics::Vector4) -> ::windows_core::Result<CompositionGetValueStatus> {
         let this = self;
         unsafe {
@@ -14624,7 +14624,7 @@ impl CompositionRadialGradientBrush {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AnchorPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush>(self)?;
         unsafe {
@@ -14632,12 +14632,12 @@ impl CompositionRadialGradientBrush {
             (::windows_core::Interface::vtable(this).AnchorPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetAnchorPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CenterPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush>(self)?;
         unsafe {
@@ -14645,7 +14645,7 @@ impl CompositionRadialGradientBrush {
             (::windows_core::Interface::vtable(this).CenterPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetCenterPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCenterPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -14679,7 +14679,7 @@ impl CompositionRadialGradientBrush {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetInterpolationSpace)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush>(self)?;
         unsafe {
@@ -14687,7 +14687,7 @@ impl CompositionRadialGradientBrush {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -14714,7 +14714,7 @@ impl CompositionRadialGradientBrush {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAngleInDegrees)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Scale(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush>(self)?;
         unsafe {
@@ -14722,12 +14722,12 @@ impl CompositionRadialGradientBrush {
             (::windows_core::Interface::vtable(this).Scale)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetScale<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScale)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TransformMatrix(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix3x2> {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush>(self)?;
         unsafe {
@@ -14735,7 +14735,7 @@ impl CompositionRadialGradientBrush {
             (::windows_core::Interface::vtable(this).TransformMatrix)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Matrix3x2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetTransformMatrix<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionGradientBrush>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTransformMatrix)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -14758,7 +14758,7 @@ impl CompositionRadialGradientBrush {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -14811,7 +14811,7 @@ impl CompositionRadialGradientBrush {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -14826,7 +14826,7 @@ impl CompositionRadialGradientBrush {
             (::windows_core::Interface::vtable(this).TryGetAnimationController)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<AnimationController>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn EllipseCenter(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -14834,12 +14834,12 @@ impl CompositionRadialGradientBrush {
             (::windows_core::Interface::vtable(this).EllipseCenter)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetEllipseCenter<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetEllipseCenter)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn EllipseRadius(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -14847,12 +14847,12 @@ impl CompositionRadialGradientBrush {
             (::windows_core::Interface::vtable(this).EllipseRadius)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetEllipseRadius<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetEllipseRadius)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GradientOriginOffset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -14860,7 +14860,7 @@ impl CompositionRadialGradientBrush {
             (::windows_core::Interface::vtable(this).GradientOriginOffset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetGradientOriginOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetGradientOriginOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -15093,7 +15093,7 @@ impl CompositionRectangleGeometry {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -15146,7 +15146,7 @@ impl CompositionRectangleGeometry {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -15161,7 +15161,7 @@ impl CompositionRectangleGeometry {
             (::windows_core::Interface::vtable(this).TryGetAnimationController)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<AnimationController>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -15169,12 +15169,12 @@ impl CompositionRectangleGeometry {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -15182,7 +15182,7 @@ impl CompositionRectangleGeometry {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetSize<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSize)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -15395,7 +15395,7 @@ impl CompositionRoundedRectangleGeometry {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -15448,7 +15448,7 @@ impl CompositionRoundedRectangleGeometry {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -15463,7 +15463,7 @@ impl CompositionRoundedRectangleGeometry {
             (::windows_core::Interface::vtable(this).TryGetAnimationController)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<AnimationController>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CornerRadius(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -15471,12 +15471,12 @@ impl CompositionRoundedRectangleGeometry {
             (::windows_core::Interface::vtable(this).CornerRadius)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetCornerRadius<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCornerRadius)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -15484,12 +15484,12 @@ impl CompositionRoundedRectangleGeometry {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -15497,7 +15497,7 @@ impl CompositionRoundedRectangleGeometry {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetSize<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSize)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -15677,7 +15677,7 @@ impl CompositionScopedBatch {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -15730,7 +15730,7 @@ impl CompositionScopedBatch {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -15937,7 +15937,7 @@ impl CompositionShadow {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -15990,7 +15990,7 @@ impl CompositionShadow {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -16160,7 +16160,7 @@ impl CompositionShape {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -16213,7 +16213,7 @@ impl CompositionShape {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -16228,7 +16228,7 @@ impl CompositionShape {
             (::windows_core::Interface::vtable(this).TryGetAnimationController)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<AnimationController>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CenterPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -16236,12 +16236,12 @@ impl CompositionShape {
             (::windows_core::Interface::vtable(this).CenterPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetCenterPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCenterPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -16249,7 +16249,7 @@ impl CompositionShape {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -16276,7 +16276,7 @@ impl CompositionShape {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAngleInDegrees)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Scale(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -16284,12 +16284,12 @@ impl CompositionShape {
             (::windows_core::Interface::vtable(this).Scale)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetScale<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetScale)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TransformMatrix(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix3x2> {
         let this = self;
         unsafe {
@@ -16297,7 +16297,7 @@ impl CompositionShape {
             (::windows_core::Interface::vtable(this).TransformMatrix)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Matrix3x2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetTransformMatrix<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetTransformMatrix)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -16439,10 +16439,10 @@ impl<'a> ::windows_core::IntoParam<'a, CompositionObject> for &CompositionShape 
 }
 unsafe impl ::core::marker::Send for CompositionShape {}
 unsafe impl ::core::marker::Sync for CompositionShape {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 #[repr(transparent)]
 pub struct CompositionShapeCollection(::windows_core::IUnknown);
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl CompositionShapeCollection {
     pub fn PopulatePropertyInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, AnimationPropertyInfo>>(&self, propertyname: Param0, propertyinfo: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAnimationObject>(self)?;
@@ -16459,7 +16459,7 @@ impl CompositionShapeCollection {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -16512,7 +16512,7 @@ impl CompositionShapeCollection {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -16527,7 +16527,7 @@ impl CompositionShapeCollection {
             (::windows_core::Interface::vtable(this).TryGetAnimationController)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<AnimationController>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<CompositionShape>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<CompositionShape>>(self)?;
         unsafe {
@@ -16535,7 +16535,7 @@ impl CompositionShapeCollection {
             (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<CompositionShape>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetAt(&self, index: u32) -> ::windows_core::Result<CompositionShape> {
         let this = self;
         unsafe {
@@ -16543,7 +16543,7 @@ impl CompositionShapeCollection {
             (::windows_core::Interface::vtable(this).GetAt)(::windows_core::Interface::as_raw(this), index, result__.as_mut_ptr()).from_abi::<CompositionShape>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -16551,7 +16551,7 @@ impl CompositionShapeCollection {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<CompositionShape>> {
         let this = self;
         unsafe {
@@ -16559,7 +16559,7 @@ impl CompositionShapeCollection {
             (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<CompositionShape>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn IndexOf<'a, Param0: ::windows_core::IntoParam<'a, CompositionShape>>(&self, value: Param0, index: &mut u32) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
@@ -16567,37 +16567,37 @@ impl CompositionShapeCollection {
             (::windows_core::Interface::vtable(this).IndexOf)(::windows_core::Interface::as_raw(this), value.into_param().abi(), index, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAt<'a, Param1: ::windows_core::IntoParam<'a, CompositionShape>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertAt<'a, Param1: ::windows_core::IntoParam<'a, CompositionShape>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAt(&self, index: u32) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAt)(::windows_core::Interface::as_raw(this), index).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Append<'a, Param0: ::windows_core::IntoParam<'a, CompositionShape>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Append)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAtEnd(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAtEnd)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Clear(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Clear)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetMany(&self, startindex: u32, items: &mut [::core::option::Option<CompositionShape>]) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -16605,33 +16605,33 @@ impl CompositionShapeCollection {
             (::windows_core::Interface::vtable(this).GetMany)(::windows_core::Interface::as_raw(this), startindex, items.len() as u32, ::core::mem::transmute_copy(&items), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ReplaceAll(&self, items: &[::core::option::Option<CompositionShape>]) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ReplaceAll)(::windows_core::Interface::as_raw(this), items.len() as u32, ::core::mem::transmute(items.as_ptr())).ok() }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::clone::Clone for CompositionShapeCollection {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::PartialEq for CompositionShapeCollection {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::Eq for CompositionShapeCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::fmt::Debug for CompositionShapeCollection {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("CompositionShapeCollection").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::RuntimeType for CompositionShapeCollection {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Composition.CompositionShapeCollection;pinterface({913337e9-11a1-4345-a3a2-4e7f956e222d};rc(Windows.UI.Composition.CompositionShape;{b47ce2f7-9a88-42c4-9e87-2e500ca8688c})))");
     type DefaultType = ::core::option::Option<Self>;
@@ -16639,16 +16639,16 @@ unsafe impl ::windows_core::RuntimeType for CompositionShapeCollection {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::Interface for CompositionShapeCollection {
     type Vtable = ::winrt_foundation::Collections::IVector_Vtbl<CompositionShape>;
     const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IVector<CompositionShape> as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::windows_core::RuntimeName for CompositionShapeCollection {
     const NAME: &'static str = "Windows.UI.Composition.CompositionShapeCollection";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for CompositionShapeCollection {
     type Item = CompositionShape;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -16656,7 +16656,7 @@ impl ::core::iter::IntoIterator for CompositionShapeCollection {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &CompositionShapeCollection {
     type Item = CompositionShape;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -16664,185 +16664,185 @@ impl ::core::iter::IntoIterator for &CompositionShapeCollection {
         ::winrt_foundation::Collections::VectorIterator::new(::core::convert::TryInto::try_into(self).ok())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<CompositionShapeCollection> for ::windows_core::IUnknown {
     fn from(value: CompositionShapeCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&CompositionShapeCollection> for ::windows_core::IUnknown {
     fn from(value: &CompositionShapeCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for CompositionShapeCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a CompositionShapeCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<CompositionShapeCollection> for ::windows_core::IInspectable {
     fn from(value: CompositionShapeCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&CompositionShapeCollection> for ::windows_core::IInspectable {
     fn from(value: &CompositionShapeCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for CompositionShapeCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a CompositionShapeCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<CompositionShapeCollection> for IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: CompositionShapeCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&CompositionShapeCollection> for IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &CompositionShapeCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, IAnimationObject> for CompositionShapeCollection {
     fn into_param(self) -> ::windows_core::Param<'a, IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, IAnimationObject> for &CompositionShapeCollection {
     fn into_param(self) -> ::windows_core::Param<'a, IAnimationObject> {
         ::core::convert::TryInto::<IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<CompositionShapeCollection> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: CompositionShapeCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&CompositionShapeCollection> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &CompositionShapeCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for CompositionShapeCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &CompositionShapeCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<CompositionShapeCollection> for ::winrt_foundation::Collections::IIterable<CompositionShape> {
     type Error = ::windows_core::Error;
     fn try_from(value: CompositionShapeCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&CompositionShapeCollection> for ::winrt_foundation::Collections::IIterable<CompositionShape> {
     type Error = ::windows_core::Error;
     fn try_from(value: &CompositionShapeCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<CompositionShape>> for CompositionShapeCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<CompositionShape>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<CompositionShape>> for &CompositionShapeCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<CompositionShape>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<CompositionShape>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<CompositionShapeCollection> for ::winrt_foundation::Collections::IVector<CompositionShape> {
     type Error = ::windows_core::Error;
     fn try_from(value: CompositionShapeCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&CompositionShapeCollection> for ::winrt_foundation::Collections::IVector<CompositionShape> {
     type Error = ::windows_core::Error;
     fn try_from(value: &CompositionShapeCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<CompositionShape>> for CompositionShapeCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<CompositionShape>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<CompositionShape>> for &CompositionShapeCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<CompositionShape>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IVector<CompositionShape>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<CompositionShapeCollection> for CompositionObject {
     fn from(value: CompositionShapeCollection) -> Self {
         ::core::convert::From::from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&CompositionShapeCollection> for CompositionObject {
     fn from(value: &CompositionShapeCollection) -> Self {
         ::windows_core::Interface::cast(value).unwrap()
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, CompositionObject> for CompositionShapeCollection {
     fn into_param(self) -> ::windows_core::Param<'a, CompositionObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, CompositionObject> for &CompositionShapeCollection {
     fn into_param(self) -> ::windows_core::Param<'a, CompositionObject> {
         ::windows_core::Param::Owned(::core::convert::Into::<CompositionObject>::into(self))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Send for CompositionShapeCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Sync for CompositionShapeCollection {}
 #[repr(transparent)]
 pub struct CompositionSpriteShape(::windows_core::IUnknown);
@@ -16862,7 +16862,7 @@ impl CompositionSpriteShape {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -16915,7 +16915,7 @@ impl CompositionSpriteShape {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -16930,7 +16930,7 @@ impl CompositionSpriteShape {
             (::windows_core::Interface::vtable(this).TryGetAnimationController)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<AnimationController>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CenterPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionShape>(self)?;
         unsafe {
@@ -16938,12 +16938,12 @@ impl CompositionSpriteShape {
             (::windows_core::Interface::vtable(this).CenterPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetCenterPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionShape>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCenterPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionShape>(self)?;
         unsafe {
@@ -16951,7 +16951,7 @@ impl CompositionSpriteShape {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionShape>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -16978,7 +16978,7 @@ impl CompositionSpriteShape {
         let this = &::windows_core::Interface::cast::<ICompositionShape>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAngleInDegrees)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Scale(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionShape>(self)?;
         unsafe {
@@ -16986,12 +16986,12 @@ impl CompositionSpriteShape {
             (::windows_core::Interface::vtable(this).Scale)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetScale<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionShape>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScale)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TransformMatrix(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix3x2> {
         let this = &::windows_core::Interface::cast::<ICompositionShape>(self)?;
         unsafe {
@@ -16999,7 +16999,7 @@ impl CompositionSpriteShape {
             (::windows_core::Interface::vtable(this).TransformMatrix)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Matrix3x2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetTransformMatrix<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionShape>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTransformMatrix)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -17048,7 +17048,7 @@ impl CompositionSpriteShape {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetStrokeBrush)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn StrokeDashArray(&self) -> ::windows_core::Result<CompositionStrokeDashArray> {
         let this = self;
         unsafe {
@@ -17360,10 +17360,10 @@ unsafe impl ::windows_core::RuntimeType for CompositionStrokeCap {
         Ok(*from)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 #[repr(transparent)]
 pub struct CompositionStrokeDashArray(::windows_core::IUnknown);
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl CompositionStrokeDashArray {
     pub fn PopulatePropertyInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, AnimationPropertyInfo>>(&self, propertyname: Param0, propertyinfo: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAnimationObject>(self)?;
@@ -17380,7 +17380,7 @@ impl CompositionStrokeDashArray {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -17433,7 +17433,7 @@ impl CompositionStrokeDashArray {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -17448,7 +17448,7 @@ impl CompositionStrokeDashArray {
             (::windows_core::Interface::vtable(this).TryGetAnimationController)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<AnimationController>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<f32>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<f32>>(self)?;
         unsafe {
@@ -17456,7 +17456,7 @@ impl CompositionStrokeDashArray {
             (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<f32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetAt(&self, index: u32) -> ::windows_core::Result<f32> {
         let this = self;
         unsafe {
@@ -17464,7 +17464,7 @@ impl CompositionStrokeDashArray {
             (::windows_core::Interface::vtable(this).GetAt)(::windows_core::Interface::as_raw(this), index, result__.as_mut_ptr()).from_abi::<f32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -17472,7 +17472,7 @@ impl CompositionStrokeDashArray {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<f32>> {
         let this = self;
         unsafe {
@@ -17480,7 +17480,7 @@ impl CompositionStrokeDashArray {
             (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<f32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn IndexOf(&self, value: f32, index: &mut u32) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
@@ -17488,37 +17488,37 @@ impl CompositionStrokeDashArray {
             (::windows_core::Interface::vtable(this).IndexOf)(::windows_core::Interface::as_raw(this), value, index, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAt(&self, index: u32, value: f32) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetAt)(::windows_core::Interface::as_raw(this), index, value).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertAt(&self, index: u32, value: f32) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertAt)(::windows_core::Interface::as_raw(this), index, value).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAt(&self, index: u32) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAt)(::windows_core::Interface::as_raw(this), index).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Append(&self, value: f32) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Append)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAtEnd(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAtEnd)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Clear(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Clear)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetMany(&self, startindex: u32, items: &mut [f32]) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -17526,33 +17526,33 @@ impl CompositionStrokeDashArray {
             (::windows_core::Interface::vtable(this).GetMany)(::windows_core::Interface::as_raw(this), startindex, items.len() as u32, ::core::mem::transmute_copy(&items), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ReplaceAll(&self, items: &[f32]) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ReplaceAll)(::windows_core::Interface::as_raw(this), items.len() as u32, ::core::mem::transmute(items.as_ptr())).ok() }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::clone::Clone for CompositionStrokeDashArray {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::PartialEq for CompositionStrokeDashArray {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::Eq for CompositionStrokeDashArray {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::fmt::Debug for CompositionStrokeDashArray {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("CompositionStrokeDashArray").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::RuntimeType for CompositionStrokeDashArray {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Composition.CompositionStrokeDashArray;pinterface({913337e9-11a1-4345-a3a2-4e7f956e222d};f4))");
     type DefaultType = ::core::option::Option<Self>;
@@ -17560,16 +17560,16 @@ unsafe impl ::windows_core::RuntimeType for CompositionStrokeDashArray {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::Interface for CompositionStrokeDashArray {
     type Vtable = ::winrt_foundation::Collections::IVector_Vtbl<f32>;
     const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IVector<f32> as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::windows_core::RuntimeName for CompositionStrokeDashArray {
     const NAME: &'static str = "Windows.UI.Composition.CompositionStrokeDashArray";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for CompositionStrokeDashArray {
     type Item = f32;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -17577,7 +17577,7 @@ impl ::core::iter::IntoIterator for CompositionStrokeDashArray {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &CompositionStrokeDashArray {
     type Item = f32;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -17585,185 +17585,185 @@ impl ::core::iter::IntoIterator for &CompositionStrokeDashArray {
         ::winrt_foundation::Collections::VectorIterator::new(::core::convert::TryInto::try_into(self).ok())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<CompositionStrokeDashArray> for ::windows_core::IUnknown {
     fn from(value: CompositionStrokeDashArray) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&CompositionStrokeDashArray> for ::windows_core::IUnknown {
     fn from(value: &CompositionStrokeDashArray) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for CompositionStrokeDashArray {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a CompositionStrokeDashArray {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<CompositionStrokeDashArray> for ::windows_core::IInspectable {
     fn from(value: CompositionStrokeDashArray) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&CompositionStrokeDashArray> for ::windows_core::IInspectable {
     fn from(value: &CompositionStrokeDashArray) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for CompositionStrokeDashArray {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a CompositionStrokeDashArray {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<CompositionStrokeDashArray> for IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: CompositionStrokeDashArray) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&CompositionStrokeDashArray> for IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &CompositionStrokeDashArray) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, IAnimationObject> for CompositionStrokeDashArray {
     fn into_param(self) -> ::windows_core::Param<'a, IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, IAnimationObject> for &CompositionStrokeDashArray {
     fn into_param(self) -> ::windows_core::Param<'a, IAnimationObject> {
         ::core::convert::TryInto::<IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<CompositionStrokeDashArray> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: CompositionStrokeDashArray) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&CompositionStrokeDashArray> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &CompositionStrokeDashArray) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for CompositionStrokeDashArray {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &CompositionStrokeDashArray {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<CompositionStrokeDashArray> for ::winrt_foundation::Collections::IIterable<f32> {
     type Error = ::windows_core::Error;
     fn try_from(value: CompositionStrokeDashArray) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&CompositionStrokeDashArray> for ::winrt_foundation::Collections::IIterable<f32> {
     type Error = ::windows_core::Error;
     fn try_from(value: &CompositionStrokeDashArray) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<f32>> for CompositionStrokeDashArray {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<f32>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<f32>> for &CompositionStrokeDashArray {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<f32>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<f32>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<CompositionStrokeDashArray> for ::winrt_foundation::Collections::IVector<f32> {
     type Error = ::windows_core::Error;
     fn try_from(value: CompositionStrokeDashArray) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&CompositionStrokeDashArray> for ::winrt_foundation::Collections::IVector<f32> {
     type Error = ::windows_core::Error;
     fn try_from(value: &CompositionStrokeDashArray) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<f32>> for CompositionStrokeDashArray {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<f32>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<f32>> for &CompositionStrokeDashArray {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<f32>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IVector<f32>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<CompositionStrokeDashArray> for CompositionObject {
     fn from(value: CompositionStrokeDashArray) -> Self {
         ::core::convert::From::from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&CompositionStrokeDashArray> for CompositionObject {
     fn from(value: &CompositionStrokeDashArray) -> Self {
         ::windows_core::Interface::cast(value).unwrap()
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, CompositionObject> for CompositionStrokeDashArray {
     fn into_param(self) -> ::windows_core::Param<'a, CompositionObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, CompositionObject> for &CompositionStrokeDashArray {
     fn into_param(self) -> ::windows_core::Param<'a, CompositionObject> {
         ::windows_core::Param::Owned(::core::convert::Into::<CompositionObject>::into(self))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Send for CompositionStrokeDashArray {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Sync for CompositionStrokeDashArray {}
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -17818,7 +17818,7 @@ impl CompositionSurfaceBrush {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -17871,7 +17871,7 @@ impl CompositionSurfaceBrush {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -17941,7 +17941,7 @@ impl CompositionSurfaceBrush {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetVerticalAlignmentRatio)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AnchorPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionSurfaceBrush2>(self)?;
         unsafe {
@@ -17949,12 +17949,12 @@ impl CompositionSurfaceBrush {
             (::windows_core::Interface::vtable(this).AnchorPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionSurfaceBrush2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetAnchorPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CenterPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionSurfaceBrush2>(self)?;
         unsafe {
@@ -17962,12 +17962,12 @@ impl CompositionSurfaceBrush {
             (::windows_core::Interface::vtable(this).CenterPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetCenterPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionSurfaceBrush2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCenterPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionSurfaceBrush2>(self)?;
         unsafe {
@@ -17975,7 +17975,7 @@ impl CompositionSurfaceBrush {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionSurfaceBrush2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -18002,7 +18002,7 @@ impl CompositionSurfaceBrush {
         let this = &::windows_core::Interface::cast::<ICompositionSurfaceBrush2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAngleInDegrees)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Scale(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionSurfaceBrush2>(self)?;
         unsafe {
@@ -18010,12 +18010,12 @@ impl CompositionSurfaceBrush {
             (::windows_core::Interface::vtable(this).Scale)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetScale<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionSurfaceBrush2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScale)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TransformMatrix(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix3x2> {
         let this = &::windows_core::Interface::cast::<ICompositionSurfaceBrush2>(self)?;
         unsafe {
@@ -18023,7 +18023,7 @@ impl CompositionSurfaceBrush {
             (::windows_core::Interface::vtable(this).TransformMatrix)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Matrix3x2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetTransformMatrix<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionSurfaceBrush2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTransformMatrix)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -18214,7 +18214,7 @@ impl CompositionTarget {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -18267,7 +18267,7 @@ impl CompositionTarget {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -18448,7 +18448,7 @@ impl CompositionTransform {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -18501,7 +18501,7 @@ impl CompositionTransform {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -18671,7 +18671,7 @@ impl CompositionViewBox {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -18724,7 +18724,7 @@ impl CompositionViewBox {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -18750,7 +18750,7 @@ impl CompositionViewBox {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetHorizontalAlignmentRatio)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -18758,12 +18758,12 @@ impl CompositionViewBox {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -18771,7 +18771,7 @@ impl CompositionViewBox {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetSize<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSize)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -18946,7 +18946,7 @@ impl CompositionVirtualDrawingSurface {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn AlphaMode(&self) -> ::windows_core::Result<::winrt_graphics::DirectX::DirectXAlphaMode> {
         let this = &::windows_core::Interface::cast::<ICompositionDrawingSurface>(self)?;
         unsafe {
@@ -18954,7 +18954,7 @@ impl CompositionVirtualDrawingSurface {
             (::windows_core::Interface::vtable(this).AlphaMode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::DirectX::DirectXAlphaMode>(result__)
         }
     }
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn PixelFormat(&self) -> ::windows_core::Result<::winrt_graphics::DirectX::DirectXPixelFormat> {
         let this = &::windows_core::Interface::cast::<ICompositionDrawingSurface>(self)?;
         unsafe {
@@ -18969,7 +18969,7 @@ impl CompositionVirtualDrawingSurface {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Size>(result__)
         }
     }
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn SizeInt32(&self) -> ::windows_core::Result<::winrt_graphics::SizeInt32> {
         let this = &::windows_core::Interface::cast::<ICompositionDrawingSurface2>(self)?;
         unsafe {
@@ -18977,27 +18977,27 @@ impl CompositionVirtualDrawingSurface {
             (::windows_core::Interface::vtable(this).SizeInt32)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::SizeInt32>(result__)
         }
     }
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn Resize<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::SizeInt32>>(&self, sizepixels: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionDrawingSurface2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Resize)(::windows_core::Interface::as_raw(this), sizepixels.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn Scroll<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::PointInt32>>(&self, offset: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionDrawingSurface2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Scroll)(::windows_core::Interface::as_raw(this), offset.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn ScrollRect<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::PointInt32>, Param1: ::windows_core::IntoParam<'a, ::winrt_graphics::RectInt32>>(&self, offset: Param0, scrollrect: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionDrawingSurface2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ScrollRect)(::windows_core::Interface::as_raw(this), offset.into_param().abi(), scrollrect.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn ScrollWithClip<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::PointInt32>, Param1: ::windows_core::IntoParam<'a, ::winrt_graphics::RectInt32>>(&self, offset: Param0, cliprect: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionDrawingSurface2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ScrollWithClip)(::windows_core::Interface::as_raw(this), offset.into_param().abi(), cliprect.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn ScrollRectWithClip<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::PointInt32>, Param1: ::windows_core::IntoParam<'a, ::winrt_graphics::RectInt32>, Param2: ::windows_core::IntoParam<'a, ::winrt_graphics::RectInt32>>(&self, offset: Param0, cliprect: Param1, scrollrect: Param2) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionDrawingSurface2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ScrollRectWithClip)(::windows_core::Interface::as_raw(this), offset.into_param().abi(), cliprect.into_param().abi(), scrollrect.into_param().abi()).ok() }
@@ -19009,7 +19009,7 @@ impl CompositionVirtualDrawingSurface {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -19062,7 +19062,7 @@ impl CompositionVirtualDrawingSurface {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -19077,7 +19077,7 @@ impl CompositionVirtualDrawingSurface {
             (::windows_core::Interface::vtable(this).TryGetAnimationController)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<AnimationController>(result__)
         }
     }
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn Trim(&self, rects: &[::winrt_graphics::RectInt32]) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Trim)(::windows_core::Interface::as_raw(this), rects.len() as u32, ::core::mem::transmute(rects.as_ptr())).ok() }
@@ -19279,7 +19279,7 @@ impl CompositionVisualSurface {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -19332,7 +19332,7 @@ impl CompositionVisualSurface {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -19358,7 +19358,7 @@ impl CompositionVisualSurface {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSourceVisual)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SourceOffset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -19366,12 +19366,12 @@ impl CompositionVisualSurface {
             (::windows_core::Interface::vtable(this).SourceOffset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetSourceOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSourceOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SourceSize(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -19379,7 +19379,7 @@ impl CompositionVisualSurface {
             (::windows_core::Interface::vtable(this).SourceSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetSourceSize<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSourceSize)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -19585,7 +19585,7 @@ impl Compositor {
             (::windows_core::Interface::vtable(this).CreateContainerVisual)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ContainerVisual>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CreateCubicBezierEasingFunction<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, controlpoint1: Param0, controlpoint2: Param1) -> ::windows_core::Result<CubicBezierEasingFunction> {
         let this = self;
         unsafe {
@@ -19593,7 +19593,7 @@ impl Compositor {
             (::windows_core::Interface::vtable(this).CreateCubicBezierEasingFunction)(::windows_core::Interface::as_raw(this), controlpoint1.into_param().abi(), controlpoint2.into_param().abi(), result__.as_mut_ptr()).from_abi::<CubicBezierEasingFunction>(result__)
         }
     }
-    #[cfg(feature = "Graphics_Effects")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn CreateEffectFactory<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::Effects::IGraphicsEffect>>(&self, graphicseffect: Param0) -> ::windows_core::Result<CompositionEffectFactory> {
         let this = self;
         unsafe {
@@ -19601,7 +19601,7 @@ impl Compositor {
             (::windows_core::Interface::vtable(this).CreateEffectFactory)(::windows_core::Interface::as_raw(this), graphicseffect.into_param().abi(), result__.as_mut_ptr()).from_abi::<CompositionEffectFactory>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Graphics_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-graphics"))]
     pub fn CreateEffectFactoryWithProperties<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::Effects::IGraphicsEffect>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, graphicseffect: Param0, animatableproperties: Param1) -> ::windows_core::Result<CompositionEffectFactory> {
         let this = self;
         unsafe {
@@ -20037,7 +20037,7 @@ impl Compositor {
             (::windows_core::Interface::vtable(this).CreateBooleanKeyFrameAnimation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<BooleanKeyFrameAnimation>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositor7>(self)?;
         unsafe {
@@ -20066,7 +20066,7 @@ impl Compositor {
             (::windows_core::Interface::vtable(this).CreateRectangleClipWithSides)(::windows_core::Interface::as_raw(this), left, top, right, bottom, result__.as_mut_ptr()).from_abi::<RectangleClip>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CreateRectangleClipWithSidesAndRadius<'a, Param4: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>, Param5: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>, Param6: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>, Param7: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, left: f32, top: f32, right: f32, bottom: f32, topleftradius: Param4, toprightradius: Param5, bottomrightradius: Param6, bottomleftradius: Param7) -> ::windows_core::Result<RectangleClip> {
         let this = &::windows_core::Interface::cast::<ICompositor7>(self)?;
         unsafe {
@@ -20245,7 +20245,7 @@ impl ContainerVisual {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -20298,7 +20298,7 @@ impl ContainerVisual {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -20320,7 +20320,7 @@ impl ContainerVisual {
             (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VisualCollection>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AnchorPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -20328,7 +20328,7 @@ impl ContainerVisual {
             (::windows_core::Interface::vtable(this).AnchorPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetAnchorPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -20355,7 +20355,7 @@ impl ContainerVisual {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetBorderMode)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CenterPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -20363,7 +20363,7 @@ impl ContainerVisual {
             (::windows_core::Interface::vtable(this).CenterPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetCenterPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCenterPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -20401,7 +20401,7 @@ impl ContainerVisual {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetIsVisible)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -20409,7 +20409,7 @@ impl ContainerVisual {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -20425,7 +20425,7 @@ impl ContainerVisual {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOpacity)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Orientation(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Quaternion> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -20433,7 +20433,7 @@ impl ContainerVisual {
             (::windows_core::Interface::vtable(this).Orientation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Quaternion>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOrientation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOrientation)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -20467,7 +20467,7 @@ impl ContainerVisual {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAngleInDegrees)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RotationAxis(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -20475,12 +20475,12 @@ impl ContainerVisual {
             (::windows_core::Interface::vtable(this).RotationAxis)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRotationAxis<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAxis)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Scale(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -20488,12 +20488,12 @@ impl ContainerVisual {
             (::windows_core::Interface::vtable(this).Scale)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetScale<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScale)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -20501,12 +20501,12 @@ impl ContainerVisual {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetSize<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSize)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TransformMatrix(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix4x4> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -20514,7 +20514,7 @@ impl ContainerVisual {
             (::windows_core::Interface::vtable(this).TransformMatrix)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Matrix4x4>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetTransformMatrix<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTransformMatrix)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -20530,7 +20530,7 @@ impl ContainerVisual {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetParentForTransform)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RelativeOffsetAdjustment(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe {
@@ -20538,12 +20538,12 @@ impl ContainerVisual {
             (::windows_core::Interface::vtable(this).RelativeOffsetAdjustment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRelativeOffsetAdjustment<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRelativeOffsetAdjustment)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RelativeSizeAdjustment(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe {
@@ -20551,7 +20551,7 @@ impl ContainerVisual {
             (::windows_core::Interface::vtable(this).RelativeSizeAdjustment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRelativeSizeAdjustment<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRelativeSizeAdjustment)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -20753,7 +20753,7 @@ impl CubicBezierEasingFunction {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -20806,7 +20806,7 @@ impl CubicBezierEasingFunction {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -20821,7 +20821,7 @@ impl CubicBezierEasingFunction {
             (::windows_core::Interface::vtable(this).TryGetAnimationController)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<AnimationController>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ControlPoint1(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -20829,7 +20829,7 @@ impl CubicBezierEasingFunction {
             (::windows_core::Interface::vtable(this).ControlPoint1)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ControlPoint2(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -21012,7 +21012,7 @@ impl DelegatedInkTrailVisual {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -21065,7 +21065,7 @@ impl DelegatedInkTrailVisual {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -21114,7 +21114,7 @@ impl DelegatedInkTrailVisual {
             (::windows_core::Interface::vtable(this).CreateForSwapChain)(::windows_core::Interface::as_raw(this), compositor.into_param().abi(), swapchain.into_param().abi(), result__.as_mut_ptr()).from_abi::<DelegatedInkTrailVisual>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AnchorPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -21122,7 +21122,7 @@ impl DelegatedInkTrailVisual {
             (::windows_core::Interface::vtable(this).AnchorPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetAnchorPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -21149,7 +21149,7 @@ impl DelegatedInkTrailVisual {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetBorderMode)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CenterPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -21157,7 +21157,7 @@ impl DelegatedInkTrailVisual {
             (::windows_core::Interface::vtable(this).CenterPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetCenterPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCenterPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -21195,7 +21195,7 @@ impl DelegatedInkTrailVisual {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetIsVisible)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -21203,7 +21203,7 @@ impl DelegatedInkTrailVisual {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -21219,7 +21219,7 @@ impl DelegatedInkTrailVisual {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOpacity)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Orientation(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Quaternion> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -21227,7 +21227,7 @@ impl DelegatedInkTrailVisual {
             (::windows_core::Interface::vtable(this).Orientation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Quaternion>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOrientation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOrientation)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -21261,7 +21261,7 @@ impl DelegatedInkTrailVisual {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAngleInDegrees)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RotationAxis(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -21269,12 +21269,12 @@ impl DelegatedInkTrailVisual {
             (::windows_core::Interface::vtable(this).RotationAxis)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRotationAxis<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAxis)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Scale(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -21282,12 +21282,12 @@ impl DelegatedInkTrailVisual {
             (::windows_core::Interface::vtable(this).Scale)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetScale<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScale)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -21295,12 +21295,12 @@ impl DelegatedInkTrailVisual {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetSize<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSize)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TransformMatrix(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix4x4> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -21308,7 +21308,7 @@ impl DelegatedInkTrailVisual {
             (::windows_core::Interface::vtable(this).TransformMatrix)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Matrix4x4>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetTransformMatrix<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTransformMatrix)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -21324,7 +21324,7 @@ impl DelegatedInkTrailVisual {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetParentForTransform)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RelativeOffsetAdjustment(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe {
@@ -21332,12 +21332,12 @@ impl DelegatedInkTrailVisual {
             (::windows_core::Interface::vtable(this).RelativeOffsetAdjustment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRelativeOffsetAdjustment<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRelativeOffsetAdjustment)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RelativeSizeAdjustment(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe {
@@ -21345,7 +21345,7 @@ impl DelegatedInkTrailVisual {
             (::windows_core::Interface::vtable(this).RelativeSizeAdjustment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRelativeSizeAdjustment<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRelativeSizeAdjustment)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -21576,7 +21576,7 @@ impl DistantLight {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -21629,7 +21629,7 @@ impl DistantLight {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -21666,7 +21666,7 @@ impl DistantLight {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCoordinateSpace)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Direction(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -21674,7 +21674,7 @@ impl DistantLight {
             (::windows_core::Interface::vtable(this).Direction)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetDirection<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDirection)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -21865,7 +21865,7 @@ impl DropShadow {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -21918,7 +21918,7 @@ impl DropShadow {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -21966,7 +21966,7 @@ impl DropShadow {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetMask)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -21974,7 +21974,7 @@ impl DropShadow {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -22176,7 +22176,7 @@ impl ElasticEasingFunction {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -22229,7 +22229,7 @@ impl ElasticEasingFunction {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -22440,7 +22440,7 @@ impl ExponentialEasingFunction {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -22493,7 +22493,7 @@ impl ExponentialEasingFunction {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -22702,17 +22702,17 @@ impl ExpressionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetColorParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix3x2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix3x2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix4x4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix4x4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetQuaternionParameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetQuaternionParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -22725,17 +22725,17 @@ impl ExpressionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScalarParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector3Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector3Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -22755,7 +22755,7 @@ impl ExpressionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTarget)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValueExpressions(&self) -> ::windows_core::Result<InitialValueExpressionCollection> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation3>(self)?;
         unsafe {
@@ -22774,7 +22774,7 @@ impl ExpressionAnimation {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -22827,7 +22827,7 @@ impl ExpressionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -23336,31 +23336,31 @@ pub struct ICompositionAnimation_Vtbl {
     pub ClearAllParameters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub ClearParameter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetColorParameter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: super::Color) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetMatrix3x2Parameter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetMatrix3x2Parameter: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetMatrix4x4Parameter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: ::winrt_foundation::Numerics::Matrix4x4) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetMatrix4x4Parameter: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetQuaternionParameter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: ::winrt_foundation::Numerics::Quaternion) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetQuaternionParameter: usize,
     pub SetReferenceParameter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, compositionobject: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetScalarParameter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetVector2Parameter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetVector2Parameter: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetVector3Parameter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetVector3Parameter: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetVector4Parameter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: ::winrt_foundation::Numerics::Vector4) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetVector4Parameter: usize,
 }
 #[doc(hidden)]
@@ -23389,9 +23389,9 @@ unsafe impl ::windows_core::Interface for ICompositionAnimation3 {
 #[doc(hidden)]
 pub struct ICompositionAnimation3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub InitialValueExpressions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     InitialValueExpressions: usize,
 }
 #[doc(hidden)]
@@ -23610,49 +23610,49 @@ unsafe impl ::windows_core::Interface for ICompositionClip2 {
 #[doc(hidden)]
 pub struct ICompositionClip2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub AnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     AnchorPoint: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetAnchorPoint: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub CenterPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CenterPoint: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetCenterPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetCenterPoint: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Offset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Offset: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetOffset: usize,
     pub RotationAngle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetRotationAngle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
     pub RotationAngleInDegrees: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetRotationAngleInDegrees: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Scale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Scale: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetScale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetScale: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub TransformMatrix: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TransformMatrix: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetTransformMatrix: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetTransformMatrix: usize,
 }
 #[doc(hidden)]
@@ -23736,9 +23736,9 @@ unsafe impl ::windows_core::Interface for ICompositionContainerShape {
 #[doc(hidden)]
 pub struct ICompositionContainerShape_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Shapes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Shapes: usize,
 }
 #[doc(hidden)]
@@ -23752,13 +23752,13 @@ unsafe impl ::windows_core::Interface for ICompositionDrawingSurface {
 #[doc(hidden)]
 pub struct ICompositionDrawingSurface_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub AlphaMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::DirectX::DirectXAlphaMode) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     AlphaMode: usize,
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub PixelFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::DirectX::DirectXPixelFormat) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     PixelFormat: usize,
     pub Size: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Size) -> ::windows_core::HRESULT,
 }
@@ -23773,29 +23773,29 @@ unsafe impl ::windows_core::Interface for ICompositionDrawingSurface2 {
 #[doc(hidden)]
 pub struct ICompositionDrawingSurface2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub SizeInt32: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::SizeInt32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     SizeInt32: usize,
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub Resize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sizepixels: ::winrt_graphics::SizeInt32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     Resize: usize,
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub Scroll: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: ::winrt_graphics::PointInt32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     Scroll: usize,
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub ScrollRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: ::winrt_graphics::PointInt32, scrollrect: ::winrt_graphics::RectInt32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     ScrollRect: usize,
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub ScrollWithClip: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: ::winrt_graphics::PointInt32, cliprect: ::winrt_graphics::RectInt32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     ScrollWithClip: usize,
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub ScrollRectWithClip: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: ::winrt_graphics::PointInt32, cliprect: ::winrt_graphics::RectInt32, scrollrect: ::winrt_graphics::RectInt32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     ScrollRectWithClip: usize,
 }
 #[doc(hidden)]
@@ -23845,9 +23845,9 @@ unsafe impl ::windows_core::Interface for ICompositionEasingFunctionStatics {
 #[doc(hidden)]
 pub struct ICompositionEasingFunctionStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub CreateCubicBezierEasingFunction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, controlpoint1: ::winrt_foundation::Numerics::Vector2, controlpoint2: ::winrt_foundation::Numerics::Vector2, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CreateCubicBezierEasingFunction: usize,
     pub CreateLinearEasingFunction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateStepEasingFunction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -23926,21 +23926,21 @@ unsafe impl ::windows_core::Interface for ICompositionEllipseGeometry {
 #[doc(hidden)]
 pub struct ICompositionEllipseGeometry_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Center: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Center: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetCenter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetCenter: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Radius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Radius: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetRadius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetRadius: usize,
 }
 #[doc(hidden)]
@@ -24000,54 +24000,54 @@ unsafe impl ::windows_core::Interface for ICompositionGradientBrush {
 #[doc(hidden)]
 pub struct ICompositionGradientBrush_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub AnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     AnchorPoint: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetAnchorPoint: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub CenterPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CenterPoint: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetCenterPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetCenterPoint: usize,
     pub ColorStops: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ExtendMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut CompositionGradientExtendMode) -> ::windows_core::HRESULT,
     pub SetExtendMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: CompositionGradientExtendMode) -> ::windows_core::HRESULT,
     pub InterpolationSpace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut CompositionColorSpace) -> ::windows_core::HRESULT,
     pub SetInterpolationSpace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: CompositionColorSpace) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Offset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Offset: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetOffset: usize,
     pub RotationAngle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetRotationAngle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
     pub RotationAngleInDegrees: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetRotationAngleInDegrees: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Scale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Scale: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetScale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetScale: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub TransformMatrix: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TransformMatrix: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetTransformMatrix: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetTransformMatrix: usize,
 }
 #[doc(hidden)]
@@ -24087,9 +24087,9 @@ unsafe impl ::windows_core::Interface for ICompositionGraphicsDevice {
 #[doc(hidden)]
 pub struct ICompositionGraphicsDevice_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub CreateDrawingSurface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sizepixels: ::winrt_foundation::Size, pixelformat: ::winrt_graphics::DirectX::DirectXPixelFormat, alphamode: ::winrt_graphics::DirectX::DirectXAlphaMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     CreateDrawingSurface: usize,
     pub RenderingDeviceReplaced: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveRenderingDeviceReplaced: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -24105,13 +24105,13 @@ unsafe impl ::windows_core::Interface for ICompositionGraphicsDevice2 {
 #[doc(hidden)]
 pub struct ICompositionGraphicsDevice2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub CreateDrawingSurface2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sizepixels: ::winrt_graphics::SizeInt32, pixelformat: ::winrt_graphics::DirectX::DirectXPixelFormat, alphamode: ::winrt_graphics::DirectX::DirectXAlphaMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     CreateDrawingSurface2: usize,
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub CreateVirtualDrawingSurface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sizepixels: ::winrt_graphics::SizeInt32, pixelformat: ::winrt_graphics::DirectX::DirectXPixelFormat, alphamode: ::winrt_graphics::DirectX::DirectXAlphaMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     CreateVirtualDrawingSurface: usize,
 }
 #[doc(hidden)]
@@ -24125,9 +24125,9 @@ unsafe impl ::windows_core::Interface for ICompositionGraphicsDevice3 {
 #[doc(hidden)]
 pub struct ICompositionGraphicsDevice3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub CreateMipmapSurface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sizepixels: ::winrt_graphics::SizeInt32, pixelformat: ::winrt_graphics::DirectX::DirectXPixelFormat, alphamode: ::winrt_graphics::DirectX::DirectXAlphaMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     CreateMipmapSurface: usize,
     pub Trim: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -24142,9 +24142,9 @@ unsafe impl ::windows_core::Interface for ICompositionGraphicsDevice4 {
 #[doc(hidden)]
 pub struct ICompositionGraphicsDevice4_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub CaptureAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, capturevisual: ::windows_core::RawPtr, size: ::winrt_graphics::SizeInt32, pixelformat: ::winrt_graphics::DirectX::DirectXPixelFormat, alphamode: ::winrt_graphics::DirectX::DirectXAlphaMode, sdrboost: f32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     CaptureAsync: usize,
 }
 #[doc(hidden)]
@@ -24210,21 +24210,21 @@ unsafe impl ::windows_core::Interface for ICompositionLineGeometry {
 #[doc(hidden)]
 pub struct ICompositionLineGeometry_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Start: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Start: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetStart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetStart: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub End: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     End: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetEnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetEnd: usize,
 }
 #[doc(hidden)]
@@ -24238,21 +24238,21 @@ unsafe impl ::windows_core::Interface for ICompositionLinearGradientBrush {
 #[doc(hidden)]
 pub struct ICompositionLinearGradientBrush_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub EndPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     EndPoint: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetEndPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetEndPoint: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub StartPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     StartPoint: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetStartPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetStartPoint: usize,
 }
 #[doc(hidden)]
@@ -24283,17 +24283,17 @@ unsafe impl ::windows_core::Interface for ICompositionMipmapSurface {
 pub struct ICompositionMipmapSurface_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub LevelCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub AlphaMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::DirectX::DirectXAlphaMode) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     AlphaMode: usize,
-    #[cfg(feature = "Graphics_DirectX")]
+    #[cfg(feature = "winrt-graphics")]
     pub PixelFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::DirectX::DirectXPixelFormat) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     PixelFormat: usize,
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub SizeInt32: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::SizeInt32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     SizeInt32: usize,
     pub GetDrawingSurfaceForLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, level: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -24345,9 +24345,9 @@ unsafe impl ::windows_core::Interface for ICompositionObject {
 pub struct ICompositionObject_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Compositor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub Dispatcher: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Core"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Dispatcher: usize,
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub StartAnimation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -24382,9 +24382,9 @@ unsafe impl ::windows_core::Interface for ICompositionObject3 {
 #[doc(hidden)]
 pub struct ICompositionObject3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub DispatcherQueue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     DispatcherQueue: usize,
 }
 #[doc(hidden)]
@@ -24449,9 +24449,9 @@ unsafe impl ::windows_core::Interface for ICompositionPathFactory {
 #[doc(hidden)]
 pub struct ICompositionPathFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, source: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     Create: usize,
 }
 #[doc(hidden)]
@@ -24580,56 +24580,56 @@ unsafe impl ::windows_core::Interface for ICompositionPropertySet {
 pub struct ICompositionPropertySet_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub InsertColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: super::Color) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub InsertMatrix3x2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     InsertMatrix3x2: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub InsertMatrix4x4: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: ::winrt_foundation::Numerics::Matrix4x4) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     InsertMatrix4x4: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub InsertQuaternion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: ::winrt_foundation::Numerics::Quaternion) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     InsertQuaternion: usize,
     pub InsertScalar: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub InsertVector2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     InsertVector2: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub InsertVector3: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     InsertVector3: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub InsertVector4: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: ::winrt_foundation::Numerics::Vector4) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     InsertVector4: usize,
     pub TryGetColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: *mut super::Color, result__: *mut CompositionGetValueStatus) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub TryGetMatrix3x2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: *mut ::winrt_foundation::Numerics::Matrix3x2, result__: *mut CompositionGetValueStatus) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TryGetMatrix3x2: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub TryGetMatrix4x4: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: *mut ::winrt_foundation::Numerics::Matrix4x4, result__: *mut CompositionGetValueStatus) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TryGetMatrix4x4: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub TryGetQuaternion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: *mut ::winrt_foundation::Numerics::Quaternion, result__: *mut CompositionGetValueStatus) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TryGetQuaternion: usize,
     pub TryGetScalar: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: *mut f32, result__: *mut CompositionGetValueStatus) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub TryGetVector2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: *mut ::winrt_foundation::Numerics::Vector2, result__: *mut CompositionGetValueStatus) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TryGetVector2: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub TryGetVector3: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: *mut ::winrt_foundation::Numerics::Vector3, result__: *mut CompositionGetValueStatus) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TryGetVector3: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub TryGetVector4: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: *mut ::winrt_foundation::Numerics::Vector4, result__: *mut CompositionGetValueStatus) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TryGetVector4: usize,
 }
 #[doc(hidden)]
@@ -24657,29 +24657,29 @@ unsafe impl ::windows_core::Interface for ICompositionRadialGradientBrush {
 #[doc(hidden)]
 pub struct ICompositionRadialGradientBrush_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub EllipseCenter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     EllipseCenter: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetEllipseCenter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetEllipseCenter: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub EllipseRadius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     EllipseRadius: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetEllipseRadius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetEllipseRadius: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub GradientOriginOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GradientOriginOffset: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetGradientOriginOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetGradientOriginOffset: usize,
 }
 #[doc(hidden)]
@@ -24693,21 +24693,21 @@ unsafe impl ::windows_core::Interface for ICompositionRectangleGeometry {
 #[doc(hidden)]
 pub struct ICompositionRectangleGeometry_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Offset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Offset: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetOffset: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Size: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Size: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetSize: usize,
 }
 #[doc(hidden)]
@@ -24721,29 +24721,29 @@ unsafe impl ::windows_core::Interface for ICompositionRoundedRectangleGeometry {
 #[doc(hidden)]
 pub struct ICompositionRoundedRectangleGeometry_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub CornerRadius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CornerRadius: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetCornerRadius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetCornerRadius: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Offset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Offset: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetOffset: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Size: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Size: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetSize: usize,
 }
 #[doc(hidden)]
@@ -24800,41 +24800,41 @@ unsafe impl ::windows_core::Interface for ICompositionShape {
 #[doc(hidden)]
 pub struct ICompositionShape_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub CenterPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CenterPoint: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetCenterPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetCenterPoint: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Offset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Offset: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetOffset: usize,
     pub RotationAngle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetRotationAngle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
     pub RotationAngleInDegrees: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetRotationAngleInDegrees: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Scale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Scale: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetScale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetScale: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub TransformMatrix: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TransformMatrix: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetTransformMatrix: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetTransformMatrix: usize,
 }
 #[doc(hidden)]
@@ -24868,9 +24868,9 @@ pub struct ICompositionSpriteShape_Vtbl {
     pub SetIsStrokeNonScaling: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub StrokeBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetStrokeBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub StrokeDashArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     StrokeDashArray: usize,
     pub StrokeDashCap: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut CompositionStrokeCap) -> ::windows_core::HRESULT,
     pub SetStrokeDashCap: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: CompositionStrokeCap) -> ::windows_core::HRESULT,
@@ -25084,49 +25084,49 @@ unsafe impl ::windows_core::Interface for ICompositionSurfaceBrush2 {
 #[doc(hidden)]
 pub struct ICompositionSurfaceBrush2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub AnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     AnchorPoint: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetAnchorPoint: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub CenterPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CenterPoint: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetCenterPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetCenterPoint: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Offset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Offset: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetOffset: usize,
     pub RotationAngle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetRotationAngle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
     pub RotationAngleInDegrees: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetRotationAngleInDegrees: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Scale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Scale: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetScale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetScale: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub TransformMatrix: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TransformMatrix: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetTransformMatrix: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetTransformMatrix: usize,
 }
 #[doc(hidden)]
@@ -25290,21 +25290,21 @@ pub struct ICompositionViewBox_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub HorizontalAlignmentRatio: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetHorizontalAlignmentRatio: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Offset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Offset: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetOffset: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Size: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Size: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetSize: usize,
     pub Stretch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut CompositionStretch) -> ::windows_core::HRESULT,
     pub SetStretch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: CompositionStretch) -> ::windows_core::HRESULT,
@@ -25322,9 +25322,9 @@ unsafe impl ::windows_core::Interface for ICompositionVirtualDrawingSurface {
 #[doc(hidden)]
 pub struct ICompositionVirtualDrawingSurface_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub Trim: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, rects_array_size: u32, rects: *const ::winrt_graphics::RectInt32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     Trim: usize,
 }
 #[doc(hidden)]
@@ -25352,21 +25352,21 @@ pub struct ICompositionVisualSurface_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub SourceVisual: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetSourceVisual: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SourceOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SourceOffset: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetSourceOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetSourceOffset: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SourceSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SourceSize: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetSourceSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetSourceSize: usize,
 }
 #[doc(hidden)]
@@ -25384,17 +25384,17 @@ pub struct ICompositor_Vtbl {
     pub CreateColorBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateColorBrushWithColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, color: super::Color, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateContainerVisual: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub CreateCubicBezierEasingFunction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, controlpoint1: ::winrt_foundation::Numerics::Vector2, controlpoint2: ::winrt_foundation::Numerics::Vector2, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CreateCubicBezierEasingFunction: usize,
-    #[cfg(feature = "Graphics_Effects")]
+    #[cfg(feature = "winrt-graphics")]
     pub CreateEffectFactory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, graphicseffect: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Effects"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     CreateEffectFactory: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Graphics_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-graphics"))]
     pub CreateEffectFactoryWithProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, graphicseffect: ::windows_core::RawPtr, animatableproperties: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Graphics_Effects")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-graphics")))]
     CreateEffectFactoryWithProperties: usize,
     pub CreateExpressionAnimation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateExpressionAnimationWithExpression: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, expression: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -25530,16 +25530,16 @@ unsafe impl ::windows_core::Interface for ICompositor7 {
 #[doc(hidden)]
 pub struct ICompositor7_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub DispatcherQueue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     DispatcherQueue: usize,
     pub CreateAnimationPropertyInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateRectangleClip: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateRectangleClipWithSides: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, left: f32, top: f32, right: f32, bottom: f32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub CreateRectangleClipWithSidesAndRadius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, left: f32, top: f32, right: f32, bottom: f32, topleftradius: ::winrt_foundation::Numerics::Vector2, toprightradius: ::winrt_foundation::Numerics::Vector2, bottomrightradius: ::winrt_foundation::Numerics::Vector2, bottomleftradius: ::winrt_foundation::Numerics::Vector2, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CreateRectangleClipWithSidesAndRadius: usize,
 }
 #[doc(hidden)]
@@ -25646,13 +25646,13 @@ unsafe impl ::windows_core::Interface for ICubicBezierEasingFunction {
 #[doc(hidden)]
 pub struct ICubicBezierEasingFunction_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub ControlPoint1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ControlPoint1: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub ControlPoint2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ControlPoint2: usize,
 }
 #[doc(hidden)]
@@ -25700,13 +25700,13 @@ pub struct IDistantLight_Vtbl {
     pub SetColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Color) -> ::windows_core::HRESULT,
     pub CoordinateSpace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetCoordinateSpace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Direction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Direction: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetDirection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetDirection: usize,
 }
 #[doc(hidden)]
@@ -25740,13 +25740,13 @@ pub struct IDropShadow_Vtbl {
     pub SetColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Color) -> ::windows_core::HRESULT,
     pub Mask: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetMask: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Offset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Offset: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetOffset: usize,
     pub Opacity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetOpacity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
@@ -26008,13 +26008,13 @@ pub struct IPointLight_Vtbl {
     pub SetCoordinateSpace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub LinearAttenuation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetLinearAttenuation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Offset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Offset: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetOffset: usize,
     pub QuadraticAttenuation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetQuadraticAttenuation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
@@ -26074,13 +26074,13 @@ unsafe impl ::windows_core::Interface for IQuaternionKeyFrameAnimation {
 #[doc(hidden)]
 pub struct IQuaternionKeyFrameAnimation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub InsertKeyFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, normalizedprogresskey: f32, value: ::winrt_foundation::Numerics::Quaternion) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     InsertKeyFrame: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub InsertKeyFrameWithEasingFunction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, normalizedprogresskey: f32, value: ::winrt_foundation::Numerics::Quaternion, easingfunction: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     InsertKeyFrameWithEasingFunction: usize,
 }
 #[doc(hidden)]
@@ -26096,21 +26096,21 @@ pub struct IRectangleClip_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Bottom: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetBottom: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub BottomLeftRadius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     BottomLeftRadius: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetBottomLeftRadius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetBottomLeftRadius: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub BottomRightRadius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     BottomRightRadius: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetBottomRightRadius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetBottomRightRadius: usize,
     pub Left: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetLeft: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
@@ -26118,21 +26118,21 @@ pub struct IRectangleClip_Vtbl {
     pub SetRight: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
     pub Top: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetTop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub TopLeftRadius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TopLeftRadius: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetTopLeftRadius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetTopLeftRadius: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub TopRightRadius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TopRightRadius: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetTopRightRadius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetTopRightRadius: usize,
 }
 #[doc(hidden)]
@@ -26217,9 +26217,9 @@ unsafe impl ::windows_core::Interface for IShapeVisual {
 #[doc(hidden)]
 pub struct IShapeVisual_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Shapes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Shapes: usize,
     pub ViewBox: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetViewBox: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -26252,13 +26252,13 @@ pub struct ISpotLight_Vtbl {
     pub SetConstantAttenuation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
     pub CoordinateSpace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetCoordinateSpace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Direction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Direction: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetDirection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetDirection: usize,
     pub InnerConeAngle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetInnerConeAngle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
@@ -26268,13 +26268,13 @@ pub struct ISpotLight_Vtbl {
     pub SetInnerConeColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Color) -> ::windows_core::HRESULT,
     pub LinearAttenuation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetLinearAttenuation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Offset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Offset: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetOffset: usize,
     pub OuterConeAngle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetOuterConeAngle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
@@ -26426,13 +26426,13 @@ unsafe impl ::windows_core::Interface for IVector2KeyFrameAnimation {
 #[doc(hidden)]
 pub struct IVector2KeyFrameAnimation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub InsertKeyFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, normalizedprogresskey: f32, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     InsertKeyFrame: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub InsertKeyFrameWithEasingFunction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, normalizedprogresskey: f32, value: ::winrt_foundation::Numerics::Vector2, easingfunction: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     InsertKeyFrameWithEasingFunction: usize,
 }
 #[doc(hidden)]
@@ -26446,29 +26446,29 @@ unsafe impl ::windows_core::Interface for IVector2NaturalMotionAnimation {
 #[doc(hidden)]
 pub struct IVector2NaturalMotionAnimation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub FinalValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     FinalValue: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetFinalValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetFinalValue: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub InitialValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     InitialValue: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetInitialValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetInitialValue: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub InitialVelocity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     InitialVelocity: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetInitialVelocity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetInitialVelocity: usize,
 }
 #[doc(hidden)]
@@ -26494,13 +26494,13 @@ unsafe impl ::windows_core::Interface for IVector3KeyFrameAnimation {
 #[doc(hidden)]
 pub struct IVector3KeyFrameAnimation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub InsertKeyFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, normalizedprogresskey: f32, value: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     InsertKeyFrame: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub InsertKeyFrameWithEasingFunction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, normalizedprogresskey: f32, value: ::winrt_foundation::Numerics::Vector3, easingfunction: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     InsertKeyFrameWithEasingFunction: usize,
 }
 #[doc(hidden)]
@@ -26514,29 +26514,29 @@ unsafe impl ::windows_core::Interface for IVector3NaturalMotionAnimation {
 #[doc(hidden)]
 pub struct IVector3NaturalMotionAnimation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub FinalValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     FinalValue: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetFinalValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetFinalValue: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub InitialValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     InitialValue: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetInitialValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetInitialValue: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub InitialVelocity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     InitialVelocity: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetInitialVelocity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetInitialVelocity: usize,
 }
 #[doc(hidden)]
@@ -26562,13 +26562,13 @@ unsafe impl ::windows_core::Interface for IVector4KeyFrameAnimation {
 #[doc(hidden)]
 pub struct IVector4KeyFrameAnimation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub InsertKeyFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, normalizedprogresskey: f32, value: ::winrt_foundation::Numerics::Vector4) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     InsertKeyFrame: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub InsertKeyFrameWithEasingFunction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, normalizedprogresskey: f32, value: ::winrt_foundation::Numerics::Vector4, easingfunction: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     InsertKeyFrameWithEasingFunction: usize,
 }
 #[doc(hidden)]
@@ -26582,25 +26582,25 @@ unsafe impl ::windows_core::Interface for IVisual {
 #[doc(hidden)]
 pub struct IVisual_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub AnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     AnchorPoint: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetAnchorPoint: usize,
     pub BackfaceVisibility: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut CompositionBackfaceVisibility) -> ::windows_core::HRESULT,
     pub SetBackfaceVisibility: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: CompositionBackfaceVisibility) -> ::windows_core::HRESULT,
     pub BorderMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut CompositionBorderMode) -> ::windows_core::HRESULT,
     pub SetBorderMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: CompositionBorderMode) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub CenterPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CenterPoint: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetCenterPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetCenterPoint: usize,
     pub Clip: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetClip: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -26608,60 +26608,60 @@ pub struct IVisual_Vtbl {
     pub SetCompositeMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: CompositionCompositeMode) -> ::windows_core::HRESULT,
     pub IsVisible: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetIsVisible: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Offset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Offset: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetOffset: usize,
     pub Opacity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetOpacity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Orientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Quaternion) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Orientation: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetOrientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Quaternion) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetOrientation: usize,
     pub Parent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RotationAngle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetRotationAngle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
     pub RotationAngleInDegrees: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetRotationAngleInDegrees: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub RotationAxis: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     RotationAxis: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetRotationAxis: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetRotationAxis: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Scale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Scale: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetScale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetScale: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Size: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Size: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetSize: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub TransformMatrix: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Matrix4x4) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TransformMatrix: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetTransformMatrix: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Matrix4x4) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetTransformMatrix: usize,
 }
 #[doc(hidden)]
@@ -26677,21 +26677,21 @@ pub struct IVisual2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ParentForTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetParentForTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub RelativeOffsetAdjustment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     RelativeOffsetAdjustment: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetRelativeOffsetAdjustment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetRelativeOffsetAdjustment: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub RelativeSizeAdjustment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     RelativeSizeAdjustment: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetRelativeSizeAdjustment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetRelativeSizeAdjustment: usize,
 }
 #[doc(hidden)]
@@ -26946,7 +26946,7 @@ impl ImplicitAnimationCollection {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -26999,7 +26999,7 @@ impl ImplicitAnimationCollection {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -27014,7 +27014,7 @@ impl ImplicitAnimationCollection {
             (::windows_core::Interface::vtable(this).TryGetAnimationController)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<AnimationController>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ICompositionAnimationBase>>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ICompositionAnimationBase>>>(self)?;
         unsafe {
@@ -27022,7 +27022,7 @@ impl ImplicitAnimationCollection {
             (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ICompositionAnimationBase>>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Lookup<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, key: Param0) -> ::windows_core::Result<ICompositionAnimationBase> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ICompositionAnimationBase>>(self)?;
         unsafe {
@@ -27030,7 +27030,7 @@ impl ImplicitAnimationCollection {
             (::windows_core::Interface::vtable(this).Lookup)(::windows_core::Interface::as_raw(this), key.into_param().abi(), result__.as_mut_ptr()).from_abi::<ICompositionAnimationBase>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ICompositionAnimationBase>>(self)?;
         unsafe {
@@ -27038,7 +27038,7 @@ impl ImplicitAnimationCollection {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn HasKey<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, key: Param0) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ICompositionAnimationBase>>(self)?;
         unsafe {
@@ -27046,7 +27046,7 @@ impl ImplicitAnimationCollection {
             (::windows_core::Interface::vtable(this).HasKey)(::windows_core::Interface::as_raw(this), key.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ICompositionAnimationBase>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ICompositionAnimationBase>>(self)?;
         unsafe {
@@ -27054,7 +27054,7 @@ impl ImplicitAnimationCollection {
             (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ICompositionAnimationBase>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Insert<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ICompositionAnimationBase>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ICompositionAnimationBase>>(self)?;
         unsafe {
@@ -27062,12 +27062,12 @@ impl ImplicitAnimationCollection {
             (::windows_core::Interface::vtable(this).Insert)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Remove<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, key: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ICompositionAnimationBase>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Remove)(::windows_core::Interface::as_raw(this), key.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Clear(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ICompositionAnimationBase>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Clear)(::windows_core::Interface::as_raw(this)).ok() }
@@ -27103,7 +27103,7 @@ unsafe impl ::windows_core::Interface for ImplicitAnimationCollection {
 impl ::windows_core::RuntimeName for ImplicitAnimationCollection {
     const NAME: &'static str = "Windows.UI.Composition.ImplicitAnimationCollection";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for ImplicitAnimationCollection {
     type Item = ::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ICompositionAnimationBase>;
     type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
@@ -27111,7 +27111,7 @@ impl ::core::iter::IntoIterator for ImplicitAnimationCollection {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &ImplicitAnimationCollection {
     type Item = ::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ICompositionAnimationBase>;
     type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
@@ -27203,53 +27203,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &Impli
         ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<ImplicitAnimationCollection> for ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ICompositionAnimationBase>> {
     type Error = ::windows_core::Error;
     fn try_from(value: ImplicitAnimationCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&ImplicitAnimationCollection> for ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ICompositionAnimationBase>> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ImplicitAnimationCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ICompositionAnimationBase>>> for ImplicitAnimationCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ICompositionAnimationBase>>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ICompositionAnimationBase>>> for &ImplicitAnimationCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ICompositionAnimationBase>>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ICompositionAnimationBase>>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<ImplicitAnimationCollection> for ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ICompositionAnimationBase> {
     type Error = ::windows_core::Error;
     fn try_from(value: ImplicitAnimationCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&ImplicitAnimationCollection> for ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ICompositionAnimationBase> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ImplicitAnimationCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ICompositionAnimationBase>> for ImplicitAnimationCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ICompositionAnimationBase>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ICompositionAnimationBase>> for &ImplicitAnimationCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ICompositionAnimationBase>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ICompositionAnimationBase>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -27277,10 +27277,10 @@ impl<'a> ::windows_core::IntoParam<'a, CompositionObject> for &ImplicitAnimation
 }
 unsafe impl ::core::marker::Send for ImplicitAnimationCollection {}
 unsafe impl ::core::marker::Sync for ImplicitAnimationCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 #[repr(transparent)]
 pub struct InitialValueExpressionCollection(::windows_core::IUnknown);
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl InitialValueExpressionCollection {
     pub fn PopulatePropertyInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, AnimationPropertyInfo>>(&self, propertyname: Param0, propertyinfo: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAnimationObject>(self)?;
@@ -27297,7 +27297,7 @@ impl InitialValueExpressionCollection {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -27350,7 +27350,7 @@ impl InitialValueExpressionCollection {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -27365,7 +27365,7 @@ impl InitialValueExpressionCollection {
             (::windows_core::Interface::vtable(this).TryGetAnimationController)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<AnimationController>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>>(self)?;
         unsafe {
@@ -27373,7 +27373,7 @@ impl InitialValueExpressionCollection {
             (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Lookup<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, key: Param0) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
@@ -27381,7 +27381,7 @@ impl InitialValueExpressionCollection {
             (::windows_core::Interface::vtable(this).Lookup)(::windows_core::Interface::as_raw(this), key.into_param().abi(), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -27389,7 +27389,7 @@ impl InitialValueExpressionCollection {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn HasKey<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, key: Param0) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
@@ -27397,7 +27397,7 @@ impl InitialValueExpressionCollection {
             (::windows_core::Interface::vtable(this).HasKey)(::windows_core::Interface::as_raw(this), key.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -27405,7 +27405,7 @@ impl InitialValueExpressionCollection {
             (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Insert<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
@@ -27413,38 +27413,38 @@ impl InitialValueExpressionCollection {
             (::windows_core::Interface::vtable(this).Insert)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Remove<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, key: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Remove)(::windows_core::Interface::as_raw(this), key.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Clear(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Clear)(::windows_core::Interface::as_raw(this)).ok() }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::clone::Clone for InitialValueExpressionCollection {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::PartialEq for InitialValueExpressionCollection {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::Eq for InitialValueExpressionCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::fmt::Debug for InitialValueExpressionCollection {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("InitialValueExpressionCollection").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::RuntimeType for InitialValueExpressionCollection {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Composition.InitialValueExpressionCollection;pinterface({3c2925fe-8519-45c1-aa79-197b6718c1c1};string;string))");
     type DefaultType = ::core::option::Option<Self>;
@@ -27452,16 +27452,16 @@ unsafe impl ::windows_core::RuntimeType for InitialValueExpressionCollection {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::Interface for InitialValueExpressionCollection {
     type Vtable = ::winrt_foundation::Collections::IMap_Vtbl<::windows_core::HSTRING, ::windows_core::HSTRING>;
     const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING> as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::windows_core::RuntimeName for InitialValueExpressionCollection {
     const NAME: &'static str = "Windows.UI.Composition.InitialValueExpressionCollection";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for InitialValueExpressionCollection {
     type Item = ::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>;
     type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
@@ -27469,7 +27469,7 @@ impl ::core::iter::IntoIterator for InitialValueExpressionCollection {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &InitialValueExpressionCollection {
     type Item = ::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>;
     type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
@@ -27477,185 +27477,185 @@ impl ::core::iter::IntoIterator for &InitialValueExpressionCollection {
         self.First().unwrap()
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<InitialValueExpressionCollection> for ::windows_core::IUnknown {
     fn from(value: InitialValueExpressionCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&InitialValueExpressionCollection> for ::windows_core::IUnknown {
     fn from(value: &InitialValueExpressionCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for InitialValueExpressionCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a InitialValueExpressionCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<InitialValueExpressionCollection> for ::windows_core::IInspectable {
     fn from(value: InitialValueExpressionCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&InitialValueExpressionCollection> for ::windows_core::IInspectable {
     fn from(value: &InitialValueExpressionCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for InitialValueExpressionCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a InitialValueExpressionCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<InitialValueExpressionCollection> for IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: InitialValueExpressionCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&InitialValueExpressionCollection> for IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &InitialValueExpressionCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, IAnimationObject> for InitialValueExpressionCollection {
     fn into_param(self) -> ::windows_core::Param<'a, IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, IAnimationObject> for &InitialValueExpressionCollection {
     fn into_param(self) -> ::windows_core::Param<'a, IAnimationObject> {
         ::core::convert::TryInto::<IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<InitialValueExpressionCollection> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: InitialValueExpressionCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&InitialValueExpressionCollection> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &InitialValueExpressionCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for InitialValueExpressionCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &InitialValueExpressionCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<InitialValueExpressionCollection> for ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>> {
     type Error = ::windows_core::Error;
     fn try_from(value: InitialValueExpressionCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&InitialValueExpressionCollection> for ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>> {
     type Error = ::windows_core::Error;
     fn try_from(value: &InitialValueExpressionCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> for InitialValueExpressionCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> for &InitialValueExpressionCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<InitialValueExpressionCollection> for ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING> {
     type Error = ::windows_core::Error;
     fn try_from(value: InitialValueExpressionCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&InitialValueExpressionCollection> for ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING> {
     type Error = ::windows_core::Error;
     fn try_from(value: &InitialValueExpressionCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> for InitialValueExpressionCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> for &InitialValueExpressionCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<InitialValueExpressionCollection> for CompositionObject {
     fn from(value: InitialValueExpressionCollection) -> Self {
         ::core::convert::From::from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&InitialValueExpressionCollection> for CompositionObject {
     fn from(value: &InitialValueExpressionCollection) -> Self {
         ::windows_core::Interface::cast(value).unwrap()
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, CompositionObject> for InitialValueExpressionCollection {
     fn into_param(self) -> ::windows_core::Param<'a, CompositionObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, CompositionObject> for &InitialValueExpressionCollection {
     fn into_param(self) -> ::windows_core::Param<'a, CompositionObject> {
         ::windows_core::Param::Owned(::core::convert::Into::<CompositionObject>::into(self))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Send for InitialValueExpressionCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Sync for InitialValueExpressionCollection {}
 #[repr(C)]
 pub struct InkTrailPoint {
@@ -27705,7 +27705,7 @@ impl InsetClip {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AnchorPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe {
@@ -27713,12 +27713,12 @@ impl InsetClip {
             (::windows_core::Interface::vtable(this).AnchorPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetAnchorPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CenterPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe {
@@ -27726,12 +27726,12 @@ impl InsetClip {
             (::windows_core::Interface::vtable(this).CenterPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetCenterPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCenterPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe {
@@ -27739,7 +27739,7 @@ impl InsetClip {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -27766,7 +27766,7 @@ impl InsetClip {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAngleInDegrees)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Scale(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe {
@@ -27774,12 +27774,12 @@ impl InsetClip {
             (::windows_core::Interface::vtable(this).Scale)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetScale<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScale)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TransformMatrix(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix3x2> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe {
@@ -27787,7 +27787,7 @@ impl InsetClip {
             (::windows_core::Interface::vtable(this).TransformMatrix)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Matrix3x2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetTransformMatrix<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTransformMatrix)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -27799,7 +27799,7 @@ impl InsetClip {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -27852,7 +27852,7 @@ impl InsetClip {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -28091,17 +28091,17 @@ impl KeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetColorParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix3x2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix3x2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix4x4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix4x4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetQuaternionParameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetQuaternionParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -28114,17 +28114,17 @@ impl KeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScalarParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector3Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector3Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -28144,7 +28144,7 @@ impl KeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTarget)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValueExpressions(&self) -> ::windows_core::Result<InitialValueExpressionCollection> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation3>(self)?;
         unsafe {
@@ -28163,7 +28163,7 @@ impl KeyFrameAnimation {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -28216,7 +28216,7 @@ impl KeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -28520,7 +28520,7 @@ impl LayerVisual {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -28573,7 +28573,7 @@ impl LayerVisual {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -28617,7 +28617,7 @@ impl LayerVisual {
         let this = &::windows_core::Interface::cast::<ILayerVisual2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetShadow)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AnchorPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -28625,7 +28625,7 @@ impl LayerVisual {
             (::windows_core::Interface::vtable(this).AnchorPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetAnchorPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -28652,7 +28652,7 @@ impl LayerVisual {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetBorderMode)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CenterPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -28660,7 +28660,7 @@ impl LayerVisual {
             (::windows_core::Interface::vtable(this).CenterPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetCenterPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCenterPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -28698,7 +28698,7 @@ impl LayerVisual {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetIsVisible)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -28706,7 +28706,7 @@ impl LayerVisual {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -28722,7 +28722,7 @@ impl LayerVisual {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOpacity)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Orientation(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Quaternion> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -28730,7 +28730,7 @@ impl LayerVisual {
             (::windows_core::Interface::vtable(this).Orientation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Quaternion>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOrientation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOrientation)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -28764,7 +28764,7 @@ impl LayerVisual {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAngleInDegrees)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RotationAxis(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -28772,12 +28772,12 @@ impl LayerVisual {
             (::windows_core::Interface::vtable(this).RotationAxis)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRotationAxis<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAxis)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Scale(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -28785,12 +28785,12 @@ impl LayerVisual {
             (::windows_core::Interface::vtable(this).Scale)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetScale<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScale)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -28798,12 +28798,12 @@ impl LayerVisual {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetSize<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSize)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TransformMatrix(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix4x4> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -28811,7 +28811,7 @@ impl LayerVisual {
             (::windows_core::Interface::vtable(this).TransformMatrix)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Matrix4x4>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetTransformMatrix<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTransformMatrix)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -28827,7 +28827,7 @@ impl LayerVisual {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetParentForTransform)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RelativeOffsetAdjustment(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe {
@@ -28835,12 +28835,12 @@ impl LayerVisual {
             (::windows_core::Interface::vtable(this).RelativeOffsetAdjustment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRelativeOffsetAdjustment<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRelativeOffsetAdjustment)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RelativeSizeAdjustment(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe {
@@ -28848,7 +28848,7 @@ impl LayerVisual {
             (::windows_core::Interface::vtable(this).RelativeSizeAdjustment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRelativeSizeAdjustment<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRelativeSizeAdjustment)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -29070,7 +29070,7 @@ impl LinearEasingFunction {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -29123,7 +29123,7 @@ impl LinearEasingFunction {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -29318,17 +29318,17 @@ impl NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetColorParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix3x2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix3x2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix4x4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix4x4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetQuaternionParameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetQuaternionParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -29341,17 +29341,17 @@ impl NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScalarParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector3Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector3Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -29371,7 +29371,7 @@ impl NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTarget)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValueExpressions(&self) -> ::windows_core::Result<InitialValueExpressionCollection> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation3>(self)?;
         unsafe {
@@ -29390,7 +29390,7 @@ impl NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -29443,7 +29443,7 @@ impl NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -29693,17 +29693,17 @@ impl PathKeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetColorParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix3x2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix3x2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix4x4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix4x4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetQuaternionParameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetQuaternionParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -29716,17 +29716,17 @@ impl PathKeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScalarParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector3Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector3Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -29746,7 +29746,7 @@ impl PathKeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTarget)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValueExpressions(&self) -> ::windows_core::Result<InitialValueExpressionCollection> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation3>(self)?;
         unsafe {
@@ -29765,7 +29765,7 @@ impl PathKeyFrameAnimation {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -29818,7 +29818,7 @@ impl PathKeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -30175,7 +30175,7 @@ impl PointLight {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -30228,7 +30228,7 @@ impl PointLight {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -30287,7 +30287,7 @@ impl PointLight {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetLinearAttenuation)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -30295,7 +30295,7 @@ impl PointLight {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -30519,7 +30519,7 @@ impl PowerEasingFunction {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -30572,7 +30572,7 @@ impl PowerEasingFunction {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -30781,17 +30781,17 @@ impl QuaternionKeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetColorParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix3x2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix3x2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix4x4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix4x4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetQuaternionParameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetQuaternionParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -30804,17 +30804,17 @@ impl QuaternionKeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScalarParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector3Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector3Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -30834,7 +30834,7 @@ impl QuaternionKeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTarget)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValueExpressions(&self) -> ::windows_core::Result<InitialValueExpressionCollection> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation3>(self)?;
         unsafe {
@@ -30853,7 +30853,7 @@ impl QuaternionKeyFrameAnimation {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -30906,7 +30906,7 @@ impl QuaternionKeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -31013,12 +31013,12 @@ impl QuaternionKeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<IKeyFrameAnimation3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetDelayBehavior)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertKeyFrame<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, normalizedprogresskey: f32, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertKeyFrame)(::windows_core::Interface::as_raw(this), normalizedprogresskey, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertKeyFrameWithEasingFunction<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>, Param2: ::windows_core::IntoParam<'a, CompositionEasingFunction>>(&self, normalizedprogresskey: f32, value: Param1, easingfunction: Param2) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertKeyFrameWithEasingFunction)(::windows_core::Interface::as_raw(this), normalizedprogresskey, value.into_param().abi(), easingfunction.into_param().abi()).ok() }
@@ -31233,7 +31233,7 @@ impl RectangleClip {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AnchorPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe {
@@ -31241,12 +31241,12 @@ impl RectangleClip {
             (::windows_core::Interface::vtable(this).AnchorPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetAnchorPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CenterPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe {
@@ -31254,12 +31254,12 @@ impl RectangleClip {
             (::windows_core::Interface::vtable(this).CenterPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetCenterPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCenterPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe {
@@ -31267,7 +31267,7 @@ impl RectangleClip {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -31294,7 +31294,7 @@ impl RectangleClip {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAngleInDegrees)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Scale(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe {
@@ -31302,12 +31302,12 @@ impl RectangleClip {
             (::windows_core::Interface::vtable(this).Scale)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetScale<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScale)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TransformMatrix(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix3x2> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe {
@@ -31315,7 +31315,7 @@ impl RectangleClip {
             (::windows_core::Interface::vtable(this).TransformMatrix)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Matrix3x2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetTransformMatrix<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionClip2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTransformMatrix)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -31327,7 +31327,7 @@ impl RectangleClip {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -31380,7 +31380,7 @@ impl RectangleClip {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -31406,7 +31406,7 @@ impl RectangleClip {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetBottom)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn BottomLeftRadius(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -31414,12 +31414,12 @@ impl RectangleClip {
             (::windows_core::Interface::vtable(this).BottomLeftRadius)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetBottomLeftRadius<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetBottomLeftRadius)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn BottomRightRadius(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -31427,7 +31427,7 @@ impl RectangleClip {
             (::windows_core::Interface::vtable(this).BottomRightRadius)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetBottomRightRadius<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetBottomRightRadius)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -31465,7 +31465,7 @@ impl RectangleClip {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetTop)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TopLeftRadius(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -31473,12 +31473,12 @@ impl RectangleClip {
             (::windows_core::Interface::vtable(this).TopLeftRadius)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetTopLeftRadius<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetTopLeftRadius)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TopRightRadius(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -31486,7 +31486,7 @@ impl RectangleClip {
             (::windows_core::Interface::vtable(this).TopRightRadius)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetTopRightRadius<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetTopRightRadius)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -31666,7 +31666,7 @@ impl RedirectVisual {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -31719,7 +31719,7 @@ impl RedirectVisual {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -31752,7 +31752,7 @@ impl RedirectVisual {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSource)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AnchorPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -31760,7 +31760,7 @@ impl RedirectVisual {
             (::windows_core::Interface::vtable(this).AnchorPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetAnchorPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -31787,7 +31787,7 @@ impl RedirectVisual {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetBorderMode)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CenterPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -31795,7 +31795,7 @@ impl RedirectVisual {
             (::windows_core::Interface::vtable(this).CenterPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetCenterPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCenterPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -31833,7 +31833,7 @@ impl RedirectVisual {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetIsVisible)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -31841,7 +31841,7 @@ impl RedirectVisual {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -31857,7 +31857,7 @@ impl RedirectVisual {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOpacity)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Orientation(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Quaternion> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -31865,7 +31865,7 @@ impl RedirectVisual {
             (::windows_core::Interface::vtable(this).Orientation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Quaternion>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOrientation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOrientation)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -31899,7 +31899,7 @@ impl RedirectVisual {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAngleInDegrees)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RotationAxis(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -31907,12 +31907,12 @@ impl RedirectVisual {
             (::windows_core::Interface::vtable(this).RotationAxis)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRotationAxis<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAxis)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Scale(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -31920,12 +31920,12 @@ impl RedirectVisual {
             (::windows_core::Interface::vtable(this).Scale)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetScale<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScale)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -31933,12 +31933,12 @@ impl RedirectVisual {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetSize<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSize)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TransformMatrix(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix4x4> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -31946,7 +31946,7 @@ impl RedirectVisual {
             (::windows_core::Interface::vtable(this).TransformMatrix)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Matrix4x4>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetTransformMatrix<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTransformMatrix)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -31962,7 +31962,7 @@ impl RedirectVisual {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetParentForTransform)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RelativeOffsetAdjustment(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe {
@@ -31970,12 +31970,12 @@ impl RedirectVisual {
             (::windows_core::Interface::vtable(this).RelativeOffsetAdjustment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRelativeOffsetAdjustment<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRelativeOffsetAdjustment)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RelativeSizeAdjustment(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe {
@@ -31983,7 +31983,7 @@ impl RedirectVisual {
             (::windows_core::Interface::vtable(this).RelativeSizeAdjustment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRelativeSizeAdjustment<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRelativeSizeAdjustment)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -32205,7 +32205,7 @@ impl RenderingDeviceReplacedEventArgs {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -32258,7 +32258,7 @@ impl RenderingDeviceReplacedEventArgs {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -32440,17 +32440,17 @@ impl ScalarKeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetColorParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix3x2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix3x2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix4x4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix4x4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetQuaternionParameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetQuaternionParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -32463,17 +32463,17 @@ impl ScalarKeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScalarParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector3Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector3Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -32493,7 +32493,7 @@ impl ScalarKeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTarget)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValueExpressions(&self) -> ::windows_core::Result<InitialValueExpressionCollection> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation3>(self)?;
         unsafe {
@@ -32512,7 +32512,7 @@ impl ScalarKeyFrameAnimation {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -32565,7 +32565,7 @@ impl ScalarKeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -32902,17 +32902,17 @@ impl ScalarNaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetColorParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix3x2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix3x2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix4x4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix4x4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetQuaternionParameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetQuaternionParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -32925,17 +32925,17 @@ impl ScalarNaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScalarParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector3Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector3Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -32955,7 +32955,7 @@ impl ScalarNaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTarget)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValueExpressions(&self) -> ::windows_core::Result<InitialValueExpressionCollection> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation3>(self)?;
         unsafe {
@@ -32974,7 +32974,7 @@ impl ScalarNaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -33027,7 +33027,7 @@ impl ScalarNaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -33325,7 +33325,7 @@ impl ShapeVisual {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -33378,7 +33378,7 @@ impl ShapeVisual {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -33400,7 +33400,7 @@ impl ShapeVisual {
             (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VisualCollection>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Shapes(&self) -> ::windows_core::Result<CompositionShapeCollection> {
         let this = self;
         unsafe {
@@ -33419,7 +33419,7 @@ impl ShapeVisual {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetViewBox)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AnchorPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -33427,7 +33427,7 @@ impl ShapeVisual {
             (::windows_core::Interface::vtable(this).AnchorPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetAnchorPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -33454,7 +33454,7 @@ impl ShapeVisual {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetBorderMode)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CenterPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -33462,7 +33462,7 @@ impl ShapeVisual {
             (::windows_core::Interface::vtable(this).CenterPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetCenterPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCenterPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -33500,7 +33500,7 @@ impl ShapeVisual {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetIsVisible)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -33508,7 +33508,7 @@ impl ShapeVisual {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -33524,7 +33524,7 @@ impl ShapeVisual {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOpacity)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Orientation(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Quaternion> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -33532,7 +33532,7 @@ impl ShapeVisual {
             (::windows_core::Interface::vtable(this).Orientation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Quaternion>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOrientation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOrientation)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -33566,7 +33566,7 @@ impl ShapeVisual {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAngleInDegrees)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RotationAxis(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -33574,12 +33574,12 @@ impl ShapeVisual {
             (::windows_core::Interface::vtable(this).RotationAxis)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRotationAxis<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAxis)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Scale(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -33587,12 +33587,12 @@ impl ShapeVisual {
             (::windows_core::Interface::vtable(this).Scale)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetScale<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScale)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -33600,12 +33600,12 @@ impl ShapeVisual {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetSize<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSize)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TransformMatrix(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix4x4> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -33613,7 +33613,7 @@ impl ShapeVisual {
             (::windows_core::Interface::vtable(this).TransformMatrix)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Matrix4x4>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetTransformMatrix<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTransformMatrix)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -33629,7 +33629,7 @@ impl ShapeVisual {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetParentForTransform)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RelativeOffsetAdjustment(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe {
@@ -33637,12 +33637,12 @@ impl ShapeVisual {
             (::windows_core::Interface::vtable(this).RelativeOffsetAdjustment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRelativeOffsetAdjustment<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRelativeOffsetAdjustment)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RelativeSizeAdjustment(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe {
@@ -33650,7 +33650,7 @@ impl ShapeVisual {
             (::windows_core::Interface::vtable(this).RelativeSizeAdjustment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRelativeSizeAdjustment<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRelativeSizeAdjustment)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -33872,7 +33872,7 @@ impl SineEasingFunction {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -33925,7 +33925,7 @@ impl SineEasingFunction {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -34147,7 +34147,7 @@ impl SpotLight {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -34200,7 +34200,7 @@ impl SpotLight {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -34237,7 +34237,7 @@ impl SpotLight {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCoordinateSpace)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Direction(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -34245,7 +34245,7 @@ impl SpotLight {
             (::windows_core::Interface::vtable(this).Direction)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetDirection<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDirection)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -34294,7 +34294,7 @@ impl SpotLight {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetLinearAttenuation)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -34302,7 +34302,7 @@ impl SpotLight {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -34575,17 +34575,17 @@ impl SpringScalarNaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetColorParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix3x2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix3x2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix4x4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix4x4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetQuaternionParameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetQuaternionParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -34598,17 +34598,17 @@ impl SpringScalarNaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScalarParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector3Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector3Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -34628,7 +34628,7 @@ impl SpringScalarNaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTarget)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValueExpressions(&self) -> ::windows_core::Result<InitialValueExpressionCollection> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation3>(self)?;
         unsafe {
@@ -34647,7 +34647,7 @@ impl SpringScalarNaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -34700,7 +34700,7 @@ impl SpringScalarNaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -35045,17 +35045,17 @@ impl SpringVector2NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetColorParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix3x2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix3x2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix4x4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix4x4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetQuaternionParameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetQuaternionParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -35068,17 +35068,17 @@ impl SpringVector2NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScalarParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector3Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector3Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -35098,7 +35098,7 @@ impl SpringVector2NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTarget)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValueExpressions(&self) -> ::windows_core::Result<InitialValueExpressionCollection> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation3>(self)?;
         unsafe {
@@ -35117,7 +35117,7 @@ impl SpringVector2NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -35170,7 +35170,7 @@ impl SpringVector2NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -35240,7 +35240,7 @@ impl SpringVector2NaturalMotionAnimation {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPeriod)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn FinalValue(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector2>> {
         let this = &::windows_core::Interface::cast::<IVector2NaturalMotionAnimation>(self)?;
         unsafe {
@@ -35248,12 +35248,12 @@ impl SpringVector2NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).FinalValue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector2>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetFinalValue<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector2>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVector2NaturalMotionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetFinalValue)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValue(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector2>> {
         let this = &::windows_core::Interface::cast::<IVector2NaturalMotionAnimation>(self)?;
         unsafe {
@@ -35261,12 +35261,12 @@ impl SpringVector2NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).InitialValue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector2>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetInitialValue<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector2>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVector2NaturalMotionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetInitialValue)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialVelocity(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<IVector2NaturalMotionAnimation>(self)?;
         unsafe {
@@ -35274,7 +35274,7 @@ impl SpringVector2NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).InitialVelocity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetInitialVelocity<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVector2NaturalMotionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetInitialVelocity)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -35521,17 +35521,17 @@ impl SpringVector3NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetColorParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix3x2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix3x2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix4x4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix4x4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetQuaternionParameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetQuaternionParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -35544,17 +35544,17 @@ impl SpringVector3NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScalarParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector3Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector3Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -35574,7 +35574,7 @@ impl SpringVector3NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTarget)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValueExpressions(&self) -> ::windows_core::Result<InitialValueExpressionCollection> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation3>(self)?;
         unsafe {
@@ -35593,7 +35593,7 @@ impl SpringVector3NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -35646,7 +35646,7 @@ impl SpringVector3NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -35716,7 +35716,7 @@ impl SpringVector3NaturalMotionAnimation {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPeriod)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn FinalValue(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>> {
         let this = &::windows_core::Interface::cast::<IVector3NaturalMotionAnimation>(self)?;
         unsafe {
@@ -35724,12 +35724,12 @@ impl SpringVector3NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).FinalValue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetFinalValue<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVector3NaturalMotionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetFinalValue)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValue(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>> {
         let this = &::windows_core::Interface::cast::<IVector3NaturalMotionAnimation>(self)?;
         unsafe {
@@ -35737,12 +35737,12 @@ impl SpringVector3NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).InitialValue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetInitialValue<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVector3NaturalMotionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetInitialValue)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialVelocity(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVector3NaturalMotionAnimation>(self)?;
         unsafe {
@@ -35750,7 +35750,7 @@ impl SpringVector3NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).InitialVelocity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetInitialVelocity<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVector3NaturalMotionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetInitialVelocity)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -35992,7 +35992,7 @@ impl SpriteVisual {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -36045,7 +36045,7 @@ impl SpriteVisual {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -36089,7 +36089,7 @@ impl SpriteVisual {
         let this = &::windows_core::Interface::cast::<ISpriteVisual2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetShadow)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AnchorPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -36097,7 +36097,7 @@ impl SpriteVisual {
             (::windows_core::Interface::vtable(this).AnchorPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetAnchorPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -36124,7 +36124,7 @@ impl SpriteVisual {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetBorderMode)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CenterPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -36132,7 +36132,7 @@ impl SpriteVisual {
             (::windows_core::Interface::vtable(this).CenterPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetCenterPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCenterPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -36170,7 +36170,7 @@ impl SpriteVisual {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetIsVisible)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -36178,7 +36178,7 @@ impl SpriteVisual {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -36194,7 +36194,7 @@ impl SpriteVisual {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOpacity)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Orientation(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Quaternion> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -36202,7 +36202,7 @@ impl SpriteVisual {
             (::windows_core::Interface::vtable(this).Orientation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Quaternion>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOrientation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOrientation)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -36236,7 +36236,7 @@ impl SpriteVisual {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAngleInDegrees)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RotationAxis(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -36244,12 +36244,12 @@ impl SpriteVisual {
             (::windows_core::Interface::vtable(this).RotationAxis)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRotationAxis<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAxis)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Scale(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -36257,12 +36257,12 @@ impl SpriteVisual {
             (::windows_core::Interface::vtable(this).Scale)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetScale<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScale)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -36270,12 +36270,12 @@ impl SpriteVisual {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetSize<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSize)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TransformMatrix(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix4x4> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe {
@@ -36283,7 +36283,7 @@ impl SpriteVisual {
             (::windows_core::Interface::vtable(this).TransformMatrix)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Matrix4x4>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetTransformMatrix<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTransformMatrix)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -36299,7 +36299,7 @@ impl SpriteVisual {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetParentForTransform)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RelativeOffsetAdjustment(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe {
@@ -36307,12 +36307,12 @@ impl SpriteVisual {
             (::windows_core::Interface::vtable(this).RelativeOffsetAdjustment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRelativeOffsetAdjustment<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRelativeOffsetAdjustment)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RelativeSizeAdjustment(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe {
@@ -36320,7 +36320,7 @@ impl SpriteVisual {
             (::windows_core::Interface::vtable(this).RelativeSizeAdjustment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRelativeSizeAdjustment<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRelativeSizeAdjustment)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -36542,7 +36542,7 @@ impl StepEasingFunction {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -36595,7 +36595,7 @@ impl StepEasingFunction {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -36845,17 +36845,17 @@ impl Vector2KeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetColorParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix3x2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix3x2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix4x4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix4x4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetQuaternionParameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetQuaternionParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -36868,17 +36868,17 @@ impl Vector2KeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScalarParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector3Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector3Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -36898,7 +36898,7 @@ impl Vector2KeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTarget)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValueExpressions(&self) -> ::windows_core::Result<InitialValueExpressionCollection> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation3>(self)?;
         unsafe {
@@ -36917,7 +36917,7 @@ impl Vector2KeyFrameAnimation {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -36970,7 +36970,7 @@ impl Vector2KeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -37077,12 +37077,12 @@ impl Vector2KeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<IKeyFrameAnimation3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetDelayBehavior)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertKeyFrame<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, normalizedprogresskey: f32, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertKeyFrame)(::windows_core::Interface::as_raw(this), normalizedprogresskey, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertKeyFrameWithEasingFunction<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>, Param2: ::windows_core::IntoParam<'a, CompositionEasingFunction>>(&self, normalizedprogresskey: f32, value: Param1, easingfunction: Param2) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertKeyFrameWithEasingFunction)(::windows_core::Interface::as_raw(this), normalizedprogresskey, value.into_param().abi(), easingfunction.into_param().abi()).ok() }
@@ -37309,17 +37309,17 @@ impl Vector2NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetColorParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix3x2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix3x2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix4x4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix4x4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetQuaternionParameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetQuaternionParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -37332,17 +37332,17 @@ impl Vector2NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScalarParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector3Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector3Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -37362,7 +37362,7 @@ impl Vector2NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTarget)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValueExpressions(&self) -> ::windows_core::Result<InitialValueExpressionCollection> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation3>(self)?;
         unsafe {
@@ -37381,7 +37381,7 @@ impl Vector2NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -37434,7 +37434,7 @@ impl Vector2NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -37482,7 +37482,7 @@ impl Vector2NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<INaturalMotionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetStopBehavior)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn FinalValue(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector2>> {
         let this = self;
         unsafe {
@@ -37490,12 +37490,12 @@ impl Vector2NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).FinalValue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector2>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetFinalValue<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector2>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFinalValue)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValue(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector2>> {
         let this = self;
         unsafe {
@@ -37503,12 +37503,12 @@ impl Vector2NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).InitialValue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector2>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetInitialValue<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector2>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetInitialValue)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialVelocity(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -37516,7 +37516,7 @@ impl Vector2NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).InitialVelocity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetInitialVelocity<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetInitialVelocity)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -37743,17 +37743,17 @@ impl Vector3KeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetColorParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix3x2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix3x2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix4x4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix4x4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetQuaternionParameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetQuaternionParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -37766,17 +37766,17 @@ impl Vector3KeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScalarParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector3Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector3Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -37796,7 +37796,7 @@ impl Vector3KeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTarget)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValueExpressions(&self) -> ::windows_core::Result<InitialValueExpressionCollection> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation3>(self)?;
         unsafe {
@@ -37815,7 +37815,7 @@ impl Vector3KeyFrameAnimation {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -37868,7 +37868,7 @@ impl Vector3KeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -37975,12 +37975,12 @@ impl Vector3KeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<IKeyFrameAnimation3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetDelayBehavior)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertKeyFrame<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, normalizedprogresskey: f32, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertKeyFrame)(::windows_core::Interface::as_raw(this), normalizedprogresskey, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertKeyFrameWithEasingFunction<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>, Param2: ::windows_core::IntoParam<'a, CompositionEasingFunction>>(&self, normalizedprogresskey: f32, value: Param1, easingfunction: Param2) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertKeyFrameWithEasingFunction)(::windows_core::Interface::as_raw(this), normalizedprogresskey, value.into_param().abi(), easingfunction.into_param().abi()).ok() }
@@ -38207,17 +38207,17 @@ impl Vector3NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetColorParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix3x2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix3x2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix4x4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix4x4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetQuaternionParameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetQuaternionParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -38230,17 +38230,17 @@ impl Vector3NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScalarParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector3Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector3Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -38260,7 +38260,7 @@ impl Vector3NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTarget)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValueExpressions(&self) -> ::windows_core::Result<InitialValueExpressionCollection> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation3>(self)?;
         unsafe {
@@ -38279,7 +38279,7 @@ impl Vector3NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -38332,7 +38332,7 @@ impl Vector3NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -38380,7 +38380,7 @@ impl Vector3NaturalMotionAnimation {
         let this = &::windows_core::Interface::cast::<INaturalMotionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetStopBehavior)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn FinalValue(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>> {
         let this = self;
         unsafe {
@@ -38388,12 +38388,12 @@ impl Vector3NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).FinalValue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetFinalValue<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFinalValue)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValue(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>> {
         let this = self;
         unsafe {
@@ -38401,12 +38401,12 @@ impl Vector3NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).InitialValue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetInitialValue<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetInitialValue)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialVelocity(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -38414,7 +38414,7 @@ impl Vector3NaturalMotionAnimation {
             (::windows_core::Interface::vtable(this).InitialVelocity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetInitialVelocity<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetInitialVelocity)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -38641,17 +38641,17 @@ impl Vector4KeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetColorParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix3x2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix3x2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMatrix4x4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix4x4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetQuaternionParameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetQuaternionParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -38664,17 +38664,17 @@ impl Vector4KeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScalarParameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector2Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector2Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector3Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector3Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetVector4Parameter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVector4Parameter)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi()).ok() }
@@ -38694,7 +38694,7 @@ impl Vector4KeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTarget)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InitialValueExpressions(&self) -> ::windows_core::Result<InitialValueExpressionCollection> {
         let this = &::windows_core::Interface::cast::<ICompositionAnimation3>(self)?;
         unsafe {
@@ -38713,7 +38713,7 @@ impl Vector4KeyFrameAnimation {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -38766,7 +38766,7 @@ impl Vector4KeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -38873,12 +38873,12 @@ impl Vector4KeyFrameAnimation {
         let this = &::windows_core::Interface::cast::<IKeyFrameAnimation3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetDelayBehavior)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertKeyFrame<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>>(&self, normalizedprogresskey: f32, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertKeyFrame)(::windows_core::Interface::as_raw(this), normalizedprogresskey, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertKeyFrameWithEasingFunction<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector4>, Param2: ::windows_core::IntoParam<'a, CompositionEasingFunction>>(&self, normalizedprogresskey: f32, value: Param1, easingfunction: Param2) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertKeyFrameWithEasingFunction)(::windows_core::Interface::as_raw(this), normalizedprogresskey, value.into_param().abi(), easingfunction.into_param().abi()).ok() }
@@ -39100,7 +39100,7 @@ impl Visual {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -39153,7 +39153,7 @@ impl Visual {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -39168,7 +39168,7 @@ impl Visual {
             (::windows_core::Interface::vtable(this).TryGetAnimationController)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<AnimationController>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AnchorPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -39176,7 +39176,7 @@ impl Visual {
             (::windows_core::Interface::vtable(this).AnchorPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetAnchorPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -39203,7 +39203,7 @@ impl Visual {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetBorderMode)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CenterPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -39211,7 +39211,7 @@ impl Visual {
             (::windows_core::Interface::vtable(this).CenterPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetCenterPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCenterPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -39249,7 +39249,7 @@ impl Visual {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetIsVisible)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -39257,7 +39257,7 @@ impl Visual {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetOffset)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -39273,7 +39273,7 @@ impl Visual {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetOpacity)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Orientation(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Quaternion> {
         let this = self;
         unsafe {
@@ -39281,7 +39281,7 @@ impl Visual {
             (::windows_core::Interface::vtable(this).Orientation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Quaternion>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOrientation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetOrientation)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -39315,7 +39315,7 @@ impl Visual {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAngleInDegrees)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RotationAxis(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -39323,12 +39323,12 @@ impl Visual {
             (::windows_core::Interface::vtable(this).RotationAxis)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRotationAxis<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetRotationAxis)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Scale(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -39336,12 +39336,12 @@ impl Visual {
             (::windows_core::Interface::vtable(this).Scale)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetScale<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetScale)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -39349,12 +39349,12 @@ impl Visual {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetSize<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSize)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TransformMatrix(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix4x4> {
         let this = self;
         unsafe {
@@ -39362,7 +39362,7 @@ impl Visual {
             (::windows_core::Interface::vtable(this).TransformMatrix)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Matrix4x4>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetTransformMatrix<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetTransformMatrix)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -39378,7 +39378,7 @@ impl Visual {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetParentForTransform)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RelativeOffsetAdjustment(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe {
@@ -39386,12 +39386,12 @@ impl Visual {
             (::windows_core::Interface::vtable(this).RelativeOffsetAdjustment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRelativeOffsetAdjustment<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRelativeOffsetAdjustment)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RelativeSizeAdjustment(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe {
@@ -39399,7 +39399,7 @@ impl Visual {
             (::windows_core::Interface::vtable(this).RelativeSizeAdjustment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRelativeSizeAdjustment<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisual2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRelativeSizeAdjustment)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -39581,7 +39581,7 @@ impl VisualCollection {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -39634,7 +39634,7 @@ impl VisualCollection {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -39649,7 +39649,7 @@ impl VisualCollection {
             (::windows_core::Interface::vtable(this).TryGetAnimationController)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<AnimationController>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<Visual>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<Visual>>(self)?;
         unsafe {
@@ -39719,7 +39719,7 @@ unsafe impl ::windows_core::Interface for VisualCollection {
 impl ::windows_core::RuntimeName for VisualCollection {
     const NAME: &'static str = "Windows.UI.Composition.VisualCollection";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for VisualCollection {
     type Item = Visual;
     type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
@@ -39727,7 +39727,7 @@ impl ::core::iter::IntoIterator for VisualCollection {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &VisualCollection {
     type Item = Visual;
     type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
@@ -39819,27 +39819,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &Visua
         ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<VisualCollection> for ::winrt_foundation::Collections::IIterable<Visual> {
     type Error = ::windows_core::Error;
     fn try_from(value: VisualCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&VisualCollection> for ::winrt_foundation::Collections::IIterable<Visual> {
     type Error = ::windows_core::Error;
     fn try_from(value: &VisualCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<Visual>> for VisualCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<Visual>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<Visual>> for &VisualCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<Visual>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<Visual>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -39885,7 +39885,7 @@ impl VisualUnorderedCollection {
             (::windows_core::Interface::vtable(this).Compositor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Compositor>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Dispatcher(&self) -> ::windows_core::Result<super::Core::CoreDispatcher> {
         let this = &::windows_core::Interface::cast::<ICompositionObject>(self)?;
         unsafe {
@@ -39938,7 +39938,7 @@ impl VisualUnorderedCollection {
         let this = &::windows_core::Interface::cast::<ICompositionObject2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<ICompositionObject3>(self)?;
         unsafe {
@@ -39953,7 +39953,7 @@ impl VisualUnorderedCollection {
             (::windows_core::Interface::vtable(this).TryGetAnimationController)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<AnimationController>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<Visual>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<Visual>>(self)?;
         unsafe {
@@ -40011,7 +40011,7 @@ unsafe impl ::windows_core::Interface for VisualUnorderedCollection {
 impl ::windows_core::RuntimeName for VisualUnorderedCollection {
     const NAME: &'static str = "Windows.UI.Composition.VisualUnorderedCollection";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for VisualUnorderedCollection {
     type Item = Visual;
     type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
@@ -40019,7 +40019,7 @@ impl ::core::iter::IntoIterator for VisualUnorderedCollection {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &VisualUnorderedCollection {
     type Item = Visual;
     type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
@@ -40111,27 +40111,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &Visua
         ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<VisualUnorderedCollection> for ::winrt_foundation::Collections::IIterable<Visual> {
     type Error = ::windows_core::Error;
     fn try_from(value: VisualUnorderedCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&VisualUnorderedCollection> for ::winrt_foundation::Collections::IIterable<Visual> {
     type Error = ::windows_core::Error;
     fn try_from(value: &VisualUnorderedCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<Visual>> for VisualUnorderedCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<Visual>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<Visual>> for &VisualUnorderedCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<Visual>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<Visual>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)

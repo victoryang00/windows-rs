@@ -29,7 +29,7 @@ extern "system" {
     pub fn SetDefaultCommConfigW(lpszname: ::windows_core_sys::PCWSTR, lpcc: *const COMMCONFIG, dwsize: u32) -> ::win32_foundation_sys::BOOL;
     pub fn SetupComm(hfile: ::win32_foundation_sys::HANDLE, dwinqueue: u32, dwoutqueue: u32) -> ::win32_foundation_sys::BOOL;
     pub fn TransmitCommChar(hfile: ::win32_foundation_sys::HANDLE, cchar: ::win32_foundation_sys::CHAR) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn WaitCommEvent(hfile: ::win32_foundation_sys::HANDLE, lpevtmask: *mut COMM_EVENT_MASK, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
 }
 pub type CLEAR_COMM_ERROR_FLAGS = u32;

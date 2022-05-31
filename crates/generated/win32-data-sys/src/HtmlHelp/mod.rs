@@ -136,30 +136,30 @@ pub const HHACT_TOC_NEXT: i32 = 20i32;
 pub const HHACT_TOC_PREV: i32 = 21i32;
 pub const HHACT_ZOOM: i32 = 19i32;
 #[repr(C)]
-#[cfg(feature = "Win32_UI_Controls")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct HHNTRACK {
     pub hdr: ::win32_ui_sys::Controls::NMHDR,
     pub pszCurUrl: ::windows_core_sys::PCSTR,
     pub idAction: i32,
     pub phhWinType: *mut HH_WINTYPE,
 }
-#[cfg(feature = "Win32_UI_Controls")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for HHNTRACK {}
-#[cfg(feature = "Win32_UI_Controls")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for HHNTRACK {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_UI_Controls")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct HHN_NOTIFY {
     pub hdr: ::win32_ui_sys::Controls::NMHDR,
     pub pszUrl: ::windows_core_sys::PCSTR,
 }
-#[cfg(feature = "Win32_UI_Controls")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for HHN_NOTIFY {}
-#[cfg(feature = "Win32_UI_Controls")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for HHN_NOTIFY {
     fn clone(&self) -> Self {
         *self
@@ -314,14 +314,14 @@ pub const HH_GET_LAST_ERROR: u32 = 20u32;
 pub const HH_GET_WIN_HANDLE: u32 = 6u32;
 pub const HH_GET_WIN_TYPE: u32 = 5u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub struct HH_GLOBAL_PROPERTY {
     pub id: HH_GPROPID,
     pub var: ::win32_system_sys::Com::VARIANT,
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for HH_GLOBAL_PROPERTY {}
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for HH_GLOBAL_PROPERTY {
     fn clone(&self) -> Self {
         *self

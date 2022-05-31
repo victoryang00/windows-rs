@@ -373,40 +373,40 @@ unsafe impl ::windows_core::Abi for HRASCONN {
     type Abi = Self;
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 pub struct IKEV2_CONFIG_PARAMS {
     pub dwNumPorts: u32,
     pub dwPortFlags: u32,
     pub dwTunnelConfigParamFlags: u32,
     pub TunnelConfigParams: IKEV2_TUNNEL_CONFIG_PARAMS4,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for IKEV2_CONFIG_PARAMS {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for IKEV2_CONFIG_PARAMS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for IKEV2_CONFIG_PARAMS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("IKEV2_CONFIG_PARAMS").field("dwNumPorts", &self.dwNumPorts).field("dwPortFlags", &self.dwPortFlags).field("dwTunnelConfigParamFlags", &self.dwTunnelConfigParamFlags).field("TunnelConfigParams", &self.TunnelConfigParams).finish()
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for IKEV2_CONFIG_PARAMS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for IKEV2_CONFIG_PARAMS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IKEV2_CONFIG_PARAMS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for IKEV2_CONFIG_PARAMS {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for IKEV2_CONFIG_PARAMS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -568,7 +568,7 @@ impl ::core::default::Default for IKEV2_PROJECTION_INFO2 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 pub struct IKEV2_TUNNEL_CONFIG_PARAMS2 {
     pub dwIdleTimeout: u32,
     pub dwNetworkBlackoutTime: u32,
@@ -581,15 +581,15 @@ pub struct IKEV2_TUNNEL_CONFIG_PARAMS2 {
     pub dwEncryptionType: u32,
     pub customPolicy: *mut ROUTER_CUSTOM_IKEv2_POLICY0,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for IKEV2_TUNNEL_CONFIG_PARAMS2 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for IKEV2_TUNNEL_CONFIG_PARAMS2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for IKEV2_TUNNEL_CONFIG_PARAMS2 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("IKEV2_TUNNEL_CONFIG_PARAMS2")
@@ -606,26 +606,26 @@ impl ::core::fmt::Debug for IKEV2_TUNNEL_CONFIG_PARAMS2 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for IKEV2_TUNNEL_CONFIG_PARAMS2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for IKEV2_TUNNEL_CONFIG_PARAMS2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IKEV2_TUNNEL_CONFIG_PARAMS2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for IKEV2_TUNNEL_CONFIG_PARAMS2 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for IKEV2_TUNNEL_CONFIG_PARAMS2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 pub struct IKEV2_TUNNEL_CONFIG_PARAMS3 {
     pub dwIdleTimeout: u32,
     pub dwNetworkBlackoutTime: u32,
@@ -641,15 +641,15 @@ pub struct IKEV2_TUNNEL_CONFIG_PARAMS3 {
     pub certificateEKUs: *mut MPR_CERT_EKU,
     pub machineCertificateHash: ::win32_security::Cryptography::CRYPTOAPI_BLOB,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for IKEV2_TUNNEL_CONFIG_PARAMS3 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for IKEV2_TUNNEL_CONFIG_PARAMS3 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for IKEV2_TUNNEL_CONFIG_PARAMS3 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("IKEV2_TUNNEL_CONFIG_PARAMS3")
@@ -669,26 +669,26 @@ impl ::core::fmt::Debug for IKEV2_TUNNEL_CONFIG_PARAMS3 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for IKEV2_TUNNEL_CONFIG_PARAMS3 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for IKEV2_TUNNEL_CONFIG_PARAMS3 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IKEV2_TUNNEL_CONFIG_PARAMS3>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for IKEV2_TUNNEL_CONFIG_PARAMS3 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for IKEV2_TUNNEL_CONFIG_PARAMS3 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 pub struct IKEV2_TUNNEL_CONFIG_PARAMS4 {
     pub dwIdleTimeout: u32,
     pub dwNetworkBlackoutTime: u32,
@@ -705,15 +705,15 @@ pub struct IKEV2_TUNNEL_CONFIG_PARAMS4 {
     pub machineCertificateHash: ::win32_security::Cryptography::CRYPTOAPI_BLOB,
     pub dwMmSaLifeTime: u32,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for IKEV2_TUNNEL_CONFIG_PARAMS4 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for IKEV2_TUNNEL_CONFIG_PARAMS4 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for IKEV2_TUNNEL_CONFIG_PARAMS4 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("IKEV2_TUNNEL_CONFIG_PARAMS4")
@@ -734,19 +734,19 @@ impl ::core::fmt::Debug for IKEV2_TUNNEL_CONFIG_PARAMS4 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for IKEV2_TUNNEL_CONFIG_PARAMS4 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for IKEV2_TUNNEL_CONFIG_PARAMS4 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IKEV2_TUNNEL_CONFIG_PARAMS4>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for IKEV2_TUNNEL_CONFIG_PARAMS4 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for IKEV2_TUNNEL_CONFIG_PARAMS4 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -956,7 +956,7 @@ pub const MGM_JOIN_STATE_FLAG: u32 = 1u32;
 pub const MGM_MFE_STATS_0: u32 = 1u32;
 pub const MGM_MFE_STATS_1: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct MPRAPI_ADMIN_DLL_CALLBACKS {
     pub revision: u8,
     pub lpfnMprAdminGetIpAddressForUser: PMPRADMINGETIPADDRESSFORUSER,
@@ -972,15 +972,15 @@ pub struct MPRAPI_ADMIN_DLL_CALLBACKS {
     pub lpfnRasAdminConnectionHangupNotificationEx: PMPRADMINCONNECTIONHANGUPNOTIFICATIONEX,
     pub lpfnRASValidatePreAuthenticatedConnectionEx: PMPRADMINRASVALIDATEPREAUTHENTICATEDCONNECTIONEX,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for MPRAPI_ADMIN_DLL_CALLBACKS {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for MPRAPI_ADMIN_DLL_CALLBACKS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::fmt::Debug for MPRAPI_ADMIN_DLL_CALLBACKS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPRAPI_ADMIN_DLL_CALLBACKS")
@@ -1000,19 +1000,19 @@ impl ::core::fmt::Debug for MPRAPI_ADMIN_DLL_CALLBACKS {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for MPRAPI_ADMIN_DLL_CALLBACKS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for MPRAPI_ADMIN_DLL_CALLBACKS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPRAPI_ADMIN_DLL_CALLBACKS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for MPRAPI_ADMIN_DLL_CALLBACKS {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for MPRAPI_ADMIN_DLL_CALLBACKS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1107,47 +1107,47 @@ pub const MPRAPI_SET_CONFIG_PROTOCOL_FOR_L2TP: u32 = 2u32;
 pub const MPRAPI_SET_CONFIG_PROTOCOL_FOR_PPTP: u32 = 1u32;
 pub const MPRAPI_SET_CONFIG_PROTOCOL_FOR_SSTP: u32 = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 pub struct MPRAPI_TUNNEL_CONFIG_PARAMS0 {
     pub IkeConfigParams: IKEV2_CONFIG_PARAMS,
     pub PptpConfigParams: PPTP_CONFIG_PARAMS,
     pub L2tpConfigParams: L2TP_CONFIG_PARAMS1,
     pub SstpConfigParams: SSTP_CONFIG_PARAMS,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for MPRAPI_TUNNEL_CONFIG_PARAMS0 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for MPRAPI_TUNNEL_CONFIG_PARAMS0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for MPRAPI_TUNNEL_CONFIG_PARAMS0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPRAPI_TUNNEL_CONFIG_PARAMS0").field("IkeConfigParams", &self.IkeConfigParams).field("PptpConfigParams", &self.PptpConfigParams).field("L2tpConfigParams", &self.L2tpConfigParams).field("SstpConfigParams", &self.SstpConfigParams).finish()
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for MPRAPI_TUNNEL_CONFIG_PARAMS0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for MPRAPI_TUNNEL_CONFIG_PARAMS0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPRAPI_TUNNEL_CONFIG_PARAMS0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for MPRAPI_TUNNEL_CONFIG_PARAMS0 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for MPRAPI_TUNNEL_CONFIG_PARAMS0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 pub struct MPRAPI_TUNNEL_CONFIG_PARAMS1 {
     pub IkeConfigParams: IKEV2_CONFIG_PARAMS,
     pub PptpConfigParams: PPTP_CONFIG_PARAMS,
@@ -1155,33 +1155,33 @@ pub struct MPRAPI_TUNNEL_CONFIG_PARAMS1 {
     pub SstpConfigParams: SSTP_CONFIG_PARAMS,
     pub GREConfigParams: GRE_CONFIG_PARAMS0,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for MPRAPI_TUNNEL_CONFIG_PARAMS1 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for MPRAPI_TUNNEL_CONFIG_PARAMS1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for MPRAPI_TUNNEL_CONFIG_PARAMS1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPRAPI_TUNNEL_CONFIG_PARAMS1").field("IkeConfigParams", &self.IkeConfigParams).field("PptpConfigParams", &self.PptpConfigParams).field("L2tpConfigParams", &self.L2tpConfigParams).field("SstpConfigParams", &self.SstpConfigParams).field("GREConfigParams", &self.GREConfigParams).finish()
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for MPRAPI_TUNNEL_CONFIG_PARAMS1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for MPRAPI_TUNNEL_CONFIG_PARAMS1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPRAPI_TUNNEL_CONFIG_PARAMS1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for MPRAPI_TUNNEL_CONFIG_PARAMS1 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for MPRAPI_TUNNEL_CONFIG_PARAMS1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1473,117 +1473,117 @@ impl ::core::default::Default for MPR_IFTRANSPORT_0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 pub struct MPR_IF_CUSTOMINFOEX0 {
     pub Header: MPRAPI_OBJECT_HEADER,
     pub dwFlags: u32,
     pub customIkev2Config: ROUTER_IKEv2_IF_CUSTOM_CONFIG0,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for MPR_IF_CUSTOMINFOEX0 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for MPR_IF_CUSTOMINFOEX0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for MPR_IF_CUSTOMINFOEX0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPR_IF_CUSTOMINFOEX0").field("Header", &self.Header).field("dwFlags", &self.dwFlags).field("customIkev2Config", &self.customIkev2Config).finish()
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for MPR_IF_CUSTOMINFOEX0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for MPR_IF_CUSTOMINFOEX0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPR_IF_CUSTOMINFOEX0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for MPR_IF_CUSTOMINFOEX0 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for MPR_IF_CUSTOMINFOEX0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 pub struct MPR_IF_CUSTOMINFOEX1 {
     pub Header: MPRAPI_OBJECT_HEADER,
     pub dwFlags: u32,
     pub customIkev2Config: ROUTER_IKEv2_IF_CUSTOM_CONFIG1,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for MPR_IF_CUSTOMINFOEX1 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for MPR_IF_CUSTOMINFOEX1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for MPR_IF_CUSTOMINFOEX1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPR_IF_CUSTOMINFOEX1").field("Header", &self.Header).field("dwFlags", &self.dwFlags).field("customIkev2Config", &self.customIkev2Config).finish()
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for MPR_IF_CUSTOMINFOEX1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for MPR_IF_CUSTOMINFOEX1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPR_IF_CUSTOMINFOEX1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for MPR_IF_CUSTOMINFOEX1 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for MPR_IF_CUSTOMINFOEX1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking", feature = "win32-security"))]
 pub struct MPR_IF_CUSTOMINFOEX2 {
     pub Header: MPRAPI_OBJECT_HEADER,
     pub dwFlags: u32,
     pub customIkev2Config: ROUTER_IKEv2_IF_CUSTOM_CONFIG2,
 }
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking", feature = "win32-security"))]
 impl ::core::marker::Copy for MPR_IF_CUSTOMINFOEX2 {}
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking", feature = "win32-security"))]
 impl ::core::clone::Clone for MPR_IF_CUSTOMINFOEX2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking", feature = "win32-security"))]
 impl ::core::fmt::Debug for MPR_IF_CUSTOMINFOEX2 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPR_IF_CUSTOMINFOEX2").field("Header", &self.Header).field("dwFlags", &self.dwFlags).field("customIkev2Config", &self.customIkev2Config).finish()
     }
 }
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking", feature = "win32-security"))]
 unsafe impl ::windows_core::Abi for MPR_IF_CUSTOMINFOEX2 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking", feature = "win32-security"))]
 impl ::core::cmp::PartialEq for MPR_IF_CUSTOMINFOEX2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPR_IF_CUSTOMINFOEX2>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking", feature = "win32-security"))]
 impl ::core::cmp::Eq for MPR_IF_CUSTOMINFOEX2 {}
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking", feature = "win32-security"))]
 impl ::core::default::Default for MPR_IF_CUSTOMINFOEX2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1764,7 +1764,7 @@ impl ::core::default::Default for MPR_INTERFACE_2 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct MPR_INTERFACE_3 {
     pub wszInterfaceName: [u16; 257],
     pub hInterface: ::win32_foundation::HANDLE,
@@ -1808,27 +1808,27 @@ pub struct MPR_INTERFACE_3 {
     pub ipv6addrDnsAlt: ::win32_networking::WinSock::IN6_ADDR,
     pub ipv6addr: *mut ::win32_networking::WinSock::IN6_ADDR,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for MPR_INTERFACE_3 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for MPR_INTERFACE_3 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for MPR_INTERFACE_3 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for MPR_INTERFACE_3 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPR_INTERFACE_3>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for MPR_INTERFACE_3 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for MPR_INTERFACE_3 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2007,7 +2007,7 @@ impl ::core::default::Default for MPR_SERVER_2 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 pub struct MPR_SERVER_EX0 {
     pub Header: MPRAPI_OBJECT_HEADER,
     pub fLanOnlyMode: u32,
@@ -2017,40 +2017,40 @@ pub struct MPR_SERVER_EX0 {
     pub Reserved: u32,
     pub ConfigParams: MPRAPI_TUNNEL_CONFIG_PARAMS0,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for MPR_SERVER_EX0 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for MPR_SERVER_EX0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for MPR_SERVER_EX0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPR_SERVER_EX0").field("Header", &self.Header).field("fLanOnlyMode", &self.fLanOnlyMode).field("dwUpTime", &self.dwUpTime).field("dwTotalPorts", &self.dwTotalPorts).field("dwPortsInUse", &self.dwPortsInUse).field("Reserved", &self.Reserved).field("ConfigParams", &self.ConfigParams).finish()
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for MPR_SERVER_EX0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for MPR_SERVER_EX0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPR_SERVER_EX0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for MPR_SERVER_EX0 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for MPR_SERVER_EX0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 pub struct MPR_SERVER_EX1 {
     pub Header: MPRAPI_OBJECT_HEADER,
     pub fLanOnlyMode: u32,
@@ -2060,111 +2060,111 @@ pub struct MPR_SERVER_EX1 {
     pub Reserved: u32,
     pub ConfigParams: MPRAPI_TUNNEL_CONFIG_PARAMS1,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for MPR_SERVER_EX1 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for MPR_SERVER_EX1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for MPR_SERVER_EX1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPR_SERVER_EX1").field("Header", &self.Header).field("fLanOnlyMode", &self.fLanOnlyMode).field("dwUpTime", &self.dwUpTime).field("dwTotalPorts", &self.dwTotalPorts).field("dwPortsInUse", &self.dwPortsInUse).field("Reserved", &self.Reserved).field("ConfigParams", &self.ConfigParams).finish()
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for MPR_SERVER_EX1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for MPR_SERVER_EX1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPR_SERVER_EX1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for MPR_SERVER_EX1 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for MPR_SERVER_EX1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 pub struct MPR_SERVER_SET_CONFIG_EX0 {
     pub Header: MPRAPI_OBJECT_HEADER,
     pub setConfigForProtocols: u32,
     pub ConfigParams: MPRAPI_TUNNEL_CONFIG_PARAMS0,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for MPR_SERVER_SET_CONFIG_EX0 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for MPR_SERVER_SET_CONFIG_EX0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for MPR_SERVER_SET_CONFIG_EX0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPR_SERVER_SET_CONFIG_EX0").field("Header", &self.Header).field("setConfigForProtocols", &self.setConfigForProtocols).field("ConfigParams", &self.ConfigParams).finish()
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for MPR_SERVER_SET_CONFIG_EX0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for MPR_SERVER_SET_CONFIG_EX0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPR_SERVER_SET_CONFIG_EX0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for MPR_SERVER_SET_CONFIG_EX0 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for MPR_SERVER_SET_CONFIG_EX0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 pub struct MPR_SERVER_SET_CONFIG_EX1 {
     pub Header: MPRAPI_OBJECT_HEADER,
     pub setConfigForProtocols: u32,
     pub ConfigParams: MPRAPI_TUNNEL_CONFIG_PARAMS1,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for MPR_SERVER_SET_CONFIG_EX1 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for MPR_SERVER_SET_CONFIG_EX1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for MPR_SERVER_SET_CONFIG_EX1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPR_SERVER_SET_CONFIG_EX1").field("Header", &self.Header).field("setConfigForProtocols", &self.setConfigForProtocols).field("ConfigParams", &self.ConfigParams).finish()
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for MPR_SERVER_SET_CONFIG_EX1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for MPR_SERVER_SET_CONFIG_EX1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPR_SERVER_SET_CONFIG_EX1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for MPR_SERVER_SET_CONFIG_EX1 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for MPR_SERVER_SET_CONFIG_EX1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2202,40 +2202,40 @@ impl ::core::default::Default for MPR_TRANSPORT_0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct MPR_VPN_TRAFFIC_SELECTORS {
     pub numTsi: u32,
     pub numTsr: u32,
     pub tsI: *mut _MPR_VPN_SELECTOR,
     pub tsR: *mut _MPR_VPN_SELECTOR,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for MPR_VPN_TRAFFIC_SELECTORS {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for MPR_VPN_TRAFFIC_SELECTORS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::fmt::Debug for MPR_VPN_TRAFFIC_SELECTORS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPR_VPN_TRAFFIC_SELECTORS").field("numTsi", &self.numTsi).field("numTsr", &self.numTsr).field("tsI", &self.tsI).field("tsR", &self.tsR).finish()
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for MPR_VPN_TRAFFIC_SELECTORS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for MPR_VPN_TRAFFIC_SELECTORS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPR_VPN_TRAFFIC_SELECTORS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for MPR_VPN_TRAFFIC_SELECTORS {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for MPR_VPN_TRAFFIC_SELECTORS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2359,7 +2359,7 @@ pub unsafe fn MgmGetFirstMfeStats(pdwbuffersize: *mut u32, pbbuffer: *mut u8, pd
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_NetworkManagement_IpHelper")]
+#[cfg(feature = "win32-networkmanagement")]
 #[inline]
 pub unsafe fn MgmGetMfe(pimm: *mut super::IpHelper::MIB_IPMCAST_MFE, pdwbuffersize: *mut u32, pbbuffer: *mut u8) -> u32 {
     #[cfg(windows)]
@@ -2373,7 +2373,7 @@ pub unsafe fn MgmGetMfe(pimm: *mut super::IpHelper::MIB_IPMCAST_MFE, pdwbuffersi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_NetworkManagement_IpHelper")]
+#[cfg(feature = "win32-networkmanagement")]
 #[inline]
 pub unsafe fn MgmGetMfeStats(pimm: *mut super::IpHelper::MIB_IPMCAST_MFE, pdwbuffersize: *mut u32, pbbuffer: *mut u8, dwflags: u32) -> u32 {
     #[cfg(windows)]
@@ -2387,7 +2387,7 @@ pub unsafe fn MgmGetMfeStats(pimm: *mut super::IpHelper::MIB_IPMCAST_MFE, pdwbuf
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_NetworkManagement_IpHelper")]
+#[cfg(feature = "win32-networkmanagement")]
 #[inline]
 pub unsafe fn MgmGetNextMfe(pimmstart: *mut super::IpHelper::MIB_IPMCAST_MFE, pdwbuffersize: *mut u32, pbbuffer: *mut u8, pdwnumentries: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -2401,7 +2401,7 @@ pub unsafe fn MgmGetNextMfe(pimmstart: *mut super::IpHelper::MIB_IPMCAST_MFE, pd
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_NetworkManagement_IpHelper")]
+#[cfg(feature = "win32-networkmanagement")]
 #[inline]
 pub unsafe fn MgmGetNextMfeStats(pimmstart: *mut super::IpHelper::MIB_IPMCAST_MFE, pdwbuffersize: *mut u32, pbbuffer: *mut u8, pdwnumentries: *mut u32, dwflags: u32) -> u32 {
     #[cfg(windows)]
@@ -2779,7 +2779,7 @@ pub unsafe fn MprAdminInterfaceGetCredentialsEx<'a, Param1: ::windows_core::Into
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking", feature = "win32-security"))]
 #[inline]
 pub unsafe fn MprAdminInterfaceGetCustomInfoEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, pcustominfo: *mut MPR_IF_CUSTOMINFOEX2) -> u32 {
     #[cfg(windows)]
@@ -2858,7 +2858,7 @@ pub unsafe fn MprAdminInterfaceSetCredentialsEx<'a, Param1: ::windows_core::Into
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking", feature = "win32-security"))]
 #[inline]
 pub unsafe fn MprAdminInterfaceSetCustomInfoEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, pcustominfo: *const MPR_IF_CUSTOMINFOEX2) -> u32 {
     #[cfg(windows)]
@@ -3262,7 +3262,7 @@ pub unsafe fn MprAdminServerGetInfo(hmprserver: isize, dwlevel: u32, lplpbbuffer
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn MprAdminServerGetInfoEx(hmprserver: isize, pserverinfo: *mut MPR_SERVER_EX1) -> u32 {
     #[cfg(windows)]
@@ -3302,7 +3302,7 @@ pub unsafe fn MprAdminServerSetInfo(hmprserver: isize, dwlevel: u32, lpbbuffer: 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn MprAdminServerSetInfoEx(hmprserver: isize, pserverinfo: *const MPR_SERVER_SET_CONFIG_EX1) -> u32 {
     #[cfg(windows)]
@@ -3498,7 +3498,7 @@ pub unsafe fn MprConfigInterfaceEnum<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking", feature = "win32-security"))]
 #[inline]
 pub unsafe fn MprConfigInterfaceGetCustomInfoEx<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, hrouterinterface: Param1, pcustominfo: *mut MPR_IF_CUSTOMINFOEX2) -> u32 {
     #[cfg(windows)]
@@ -3538,7 +3538,7 @@ pub unsafe fn MprConfigInterfaceGetInfo<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking", feature = "win32-security"))]
 #[inline]
 pub unsafe fn MprConfigInterfaceSetCustomInfoEx<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, hrouterinterface: Param1, pcustominfo: *const MPR_IF_CUSTOMINFOEX2) -> u32 {
     #[cfg(windows)]
@@ -3695,7 +3695,7 @@ pub unsafe fn MprConfigServerGetInfo<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn MprConfigServerGetInfoEx<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, pserverinfo: *mut MPR_SERVER_EX1) -> u32 {
     #[cfg(windows)]
@@ -3761,7 +3761,7 @@ pub unsafe fn MprConfigServerSetInfo(hmprserver: isize, dwlevel: u32, lpbbuffer:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn MprConfigServerSetInfoEx<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, psetserverconfig: *const MPR_SERVER_SET_CONFIG_EX1) -> u32 {
     #[cfg(windows)]
@@ -4005,12 +4005,12 @@ pub type PMPRADMINCONNECTIONHANGUPNOTIFICATION2 = ::core::option::Option<unsafe 
 pub type PMPRADMINCONNECTIONHANGUPNOTIFICATION3 = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_CONNECTION_0, param1: *mut RAS_CONNECTION_1, param2: *mut RAS_CONNECTION_2, param3: RAS_CONNECTION_3)>;
 pub type PMPRADMINCONNECTIONHANGUPNOTIFICATIONEX = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_CONNECTION_EX)>;
 pub type PMPRADMINGETIPADDRESSFORUSER = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: ::windows_core::PCWSTR, param2: *mut u32, param3: *mut ::win32_foundation::BOOL) -> u32>;
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub type PMPRADMINGETIPV6ADDRESSFORUSER = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: ::windows_core::PCWSTR, param2: *mut ::win32_networking::WinSock::IN6_ADDR, param3: *mut ::win32_foundation::BOOL) -> u32>;
 pub type PMPRADMINLINKHANGUPNOTIFICATION = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_PORT_0, param1: *mut RAS_PORT_1)>;
 pub type PMPRADMINRASVALIDATEPREAUTHENTICATEDCONNECTIONEX = ::core::option::Option<unsafe extern "system" fn(param0: *mut AUTH_VALIDATION_EX) -> u32>;
 pub type PMPRADMINRELEASEIPADRESS = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: ::windows_core::PCWSTR, param2: *mut u32)>;
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub type PMPRADMINRELEASEIPV6ADDRESSFORUSER = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: ::windows_core::PCWSTR, param2: *mut ::win32_networking::WinSock::IN6_ADDR)>;
 pub type PMPRADMINTERMINATEDLL = ::core::option::Option<unsafe extern "system" fn() -> u32>;
 #[repr(C)]
@@ -5098,7 +5098,7 @@ impl ::core::fmt::Debug for RASCONNSTATE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct RASCONNSTATUSA {
     pub dwSize: u32,
     pub rasconnstate: RASCONNSTATE,
@@ -5110,34 +5110,34 @@ pub struct RASCONNSTATUSA {
     pub remoteEndPoint: RASTUNNELENDPOINT,
     pub rasconnsubstate: RASCONNSUBSTATE,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for RASCONNSTATUSA {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for RASCONNSTATUSA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for RASCONNSTATUSA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for RASCONNSTATUSA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASCONNSTATUSA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for RASCONNSTATUSA {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for RASCONNSTATUSA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct RASCONNSTATUSW {
     pub dwSize: u32,
     pub rasconnstate: RASCONNSTATE,
@@ -5149,27 +5149,27 @@ pub struct RASCONNSTATUSW {
     pub remoteEndPoint: RASTUNNELENDPOINT,
     pub rasconnsubstate: RASCONNSUBSTATE,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for RASCONNSTATUSW {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for RASCONNSTATUSW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for RASCONNSTATUSW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for RASCONNSTATUSW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASCONNSTATUSW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for RASCONNSTATUSW {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for RASCONNSTATUSW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5705,7 +5705,7 @@ pub const RASEDFLAG_NoRename: u32 = 8u32;
 pub const RASEDFLAG_PositionDlg: u32 = 1u32;
 pub const RASEDFLAG_ShellOwned: u32 = 1073741824u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct RASENTRYA {
     pub dwSize: u32,
     pub dwfOptions: u32,
@@ -5769,27 +5769,27 @@ pub struct RASENTRYA {
     pub IdrType: IKEV2_ID_PAYLOAD_TYPE,
     pub fDisableIKEv2Fragmentation: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for RASENTRYA {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for RASENTRYA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for RASENTRYA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for RASENTRYA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASENTRYA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for RASENTRYA {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for RASENTRYA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5924,7 +5924,7 @@ impl ::core::default::Default for RASENTRYNAMEW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct RASENTRYW {
     pub dwSize: u32,
     pub dwfOptions: u32,
@@ -5988,27 +5988,27 @@ pub struct RASENTRYW {
     pub IdrType: IKEV2_ID_PAYLOAD_TYPE,
     pub fDisableIKEv2Fragmentation: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for RASENTRYW {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for RASENTRYW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for RASENTRYW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for RASENTRYW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASENTRYW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for RASENTRYW {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for RASENTRYW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6112,7 +6112,7 @@ pub const RASFP_Slip: u32 = 2u32;
 pub const RASIDS_Disabled: u32 = 4294967295u32;
 pub const RASIDS_UseGlobalValue: u32 = 0u32;
 #[repr(C, packed(4))]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct RASIKEV2_PROJECTION_INFO {
     pub dwIPv4NegotiationError: u32,
     pub ipv4Address: ::win32_networking::WinSock::IN_ADDR,
@@ -6130,27 +6130,27 @@ pub struct RASIKEV2_PROJECTION_INFO {
     pub numIPv6ServerAddresses: u32,
     pub ipv6ServerAddresses: *mut ::win32_networking::WinSock::IN6_ADDR,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for RASIKEV2_PROJECTION_INFO {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for RASIKEV2_PROJECTION_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for RASIKEV2_PROJECTION_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for RASIKEV2_PROJECTION_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASIKEV2_PROJECTION_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for RASIKEV2_PROJECTION_INFO {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for RASIKEV2_PROJECTION_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6794,7 +6794,7 @@ impl ::core::default::Default for RASPPPNBFW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct RASPPP_PROJECTION_INFO {
     pub dwIPv4NegotiationError: u32,
     pub ipv4Address: ::win32_networking::WinSock::IN_ADDR,
@@ -6820,27 +6820,27 @@ pub struct RASPPP_PROJECTION_INFO {
     pub dwCcpOptions: u32,
     pub dwCcpServerOptions: u32,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for RASPPP_PROJECTION_INFO {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for RASPPP_PROJECTION_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for RASPPP_PROJECTION_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for RASPPP_PROJECTION_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASPPP_PROJECTION_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for RASPPP_PROJECTION_INFO {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for RASPPP_PROJECTION_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7025,64 +7025,64 @@ impl ::core::default::Default for RASSUBENTRYW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct RASTUNNELENDPOINT {
     pub dwType: u32,
     pub Anonymous: RASTUNNELENDPOINT_0,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for RASTUNNELENDPOINT {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for RASTUNNELENDPOINT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for RASTUNNELENDPOINT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for RASTUNNELENDPOINT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASTUNNELENDPOINT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for RASTUNNELENDPOINT {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for RASTUNNELENDPOINT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub union RASTUNNELENDPOINT_0 {
     pub ipv4: ::win32_networking::WinSock::IN_ADDR,
     pub ipv6: ::win32_networking::WinSock::IN6_ADDR,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for RASTUNNELENDPOINT_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for RASTUNNELENDPOINT_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for RASTUNNELENDPOINT_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for RASTUNNELENDPOINT_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASTUNNELENDPOINT_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for RASTUNNELENDPOINT_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for RASTUNNELENDPOINT_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7092,7 +7092,7 @@ pub const RASTUNNELENDPOINT_IPv4: u32 = 1u32;
 pub const RASTUNNELENDPOINT_IPv6: u32 = 2u32;
 pub const RASTUNNELENDPOINT_UNKNOWN: u32 = 0u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct RASUPDATECONN {
     pub version: RASAPIVERSION,
     pub dwSize: u32,
@@ -7101,27 +7101,27 @@ pub struct RASUPDATECONN {
     pub localEndPoint: RASTUNNELENDPOINT,
     pub remoteEndPoint: RASTUNNELENDPOINT,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for RASUPDATECONN {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for RASUPDATECONN {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for RASUPDATECONN {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for RASUPDATECONN {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASUPDATECONN>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for RASUPDATECONN {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for RASUPDATECONN {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7677,65 +7677,65 @@ impl ::core::fmt::Debug for RAS_PORT_CONDITION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct RAS_PROJECTION_INFO {
     pub version: RASAPIVERSION,
     pub r#type: RASPROJECTION_INFO_TYPE,
     pub Anonymous: RAS_PROJECTION_INFO_0,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for RAS_PROJECTION_INFO {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for RAS_PROJECTION_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for RAS_PROJECTION_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for RAS_PROJECTION_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAS_PROJECTION_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for RAS_PROJECTION_INFO {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for RAS_PROJECTION_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub union RAS_PROJECTION_INFO_0 {
     pub ppp: RASPPP_PROJECTION_INFO,
     pub ikev2: RASIKEV2_PROJECTION_INFO,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for RAS_PROJECTION_INFO_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for RAS_PROJECTION_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for RAS_PROJECTION_INFO_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for RAS_PROJECTION_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAS_PROJECTION_INFO_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for RAS_PROJECTION_INFO_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for RAS_PROJECTION_INFO_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8033,47 +8033,47 @@ impl ::core::default::Default for ROUTER_CUSTOM_IKEv2_POLICY0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 pub struct ROUTER_IKEv2_IF_CUSTOM_CONFIG0 {
     pub dwSaLifeTime: u32,
     pub dwSaDataSize: u32,
     pub certificateName: ::win32_security::Cryptography::CRYPTOAPI_BLOB,
     pub customPolicy: *mut ROUTER_CUSTOM_IKEv2_POLICY0,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for ROUTER_IKEv2_IF_CUSTOM_CONFIG0 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for ROUTER_IKEv2_IF_CUSTOM_CONFIG0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for ROUTER_IKEv2_IF_CUSTOM_CONFIG0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ROUTER_IKEv2_IF_CUSTOM_CONFIG0").field("dwSaLifeTime", &self.dwSaLifeTime).field("dwSaDataSize", &self.dwSaDataSize).field("certificateName", &self.certificateName).field("customPolicy", &self.customPolicy).finish()
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for ROUTER_IKEv2_IF_CUSTOM_CONFIG0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for ROUTER_IKEv2_IF_CUSTOM_CONFIG0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ROUTER_IKEv2_IF_CUSTOM_CONFIG0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for ROUTER_IKEv2_IF_CUSTOM_CONFIG0 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for ROUTER_IKEv2_IF_CUSTOM_CONFIG0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 pub struct ROUTER_IKEv2_IF_CUSTOM_CONFIG1 {
     pub dwSaLifeTime: u32,
     pub dwSaDataSize: u32,
@@ -8081,40 +8081,40 @@ pub struct ROUTER_IKEv2_IF_CUSTOM_CONFIG1 {
     pub customPolicy: *mut ROUTER_CUSTOM_IKEv2_POLICY0,
     pub certificateHash: ::win32_security::Cryptography::CRYPTOAPI_BLOB,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for ROUTER_IKEv2_IF_CUSTOM_CONFIG1 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for ROUTER_IKEv2_IF_CUSTOM_CONFIG1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for ROUTER_IKEv2_IF_CUSTOM_CONFIG1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ROUTER_IKEv2_IF_CUSTOM_CONFIG1").field("dwSaLifeTime", &self.dwSaLifeTime).field("dwSaDataSize", &self.dwSaDataSize).field("certificateName", &self.certificateName).field("customPolicy", &self.customPolicy).field("certificateHash", &self.certificateHash).finish()
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for ROUTER_IKEv2_IF_CUSTOM_CONFIG1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for ROUTER_IKEv2_IF_CUSTOM_CONFIG1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ROUTER_IKEv2_IF_CUSTOM_CONFIG1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for ROUTER_IKEv2_IF_CUSTOM_CONFIG1 {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for ROUTER_IKEv2_IF_CUSTOM_CONFIG1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking", feature = "win32-security"))]
 pub struct ROUTER_IKEv2_IF_CUSTOM_CONFIG2 {
     pub dwSaLifeTime: u32,
     pub dwSaDataSize: u32,
@@ -8124,33 +8124,33 @@ pub struct ROUTER_IKEv2_IF_CUSTOM_CONFIG2 {
     pub dwMmSaLifeTime: u32,
     pub vpnTrafficSelectors: MPR_VPN_TRAFFIC_SELECTORS,
 }
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking", feature = "win32-security"))]
 impl ::core::marker::Copy for ROUTER_IKEv2_IF_CUSTOM_CONFIG2 {}
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking", feature = "win32-security"))]
 impl ::core::clone::Clone for ROUTER_IKEv2_IF_CUSTOM_CONFIG2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking", feature = "win32-security"))]
 impl ::core::fmt::Debug for ROUTER_IKEv2_IF_CUSTOM_CONFIG2 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ROUTER_IKEv2_IF_CUSTOM_CONFIG2").field("dwSaLifeTime", &self.dwSaLifeTime).field("dwSaDataSize", &self.dwSaDataSize).field("certificateName", &self.certificateName).field("customPolicy", &self.customPolicy).field("certificateHash", &self.certificateHash).field("dwMmSaLifeTime", &self.dwMmSaLifeTime).field("vpnTrafficSelectors", &self.vpnTrafficSelectors).finish()
     }
 }
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking", feature = "win32-security"))]
 unsafe impl ::windows_core::Abi for ROUTER_IKEv2_IF_CUSTOM_CONFIG2 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking", feature = "win32-security"))]
 impl ::core::cmp::PartialEq for ROUTER_IKEv2_IF_CUSTOM_CONFIG2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ROUTER_IKEv2_IF_CUSTOM_CONFIG2>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking", feature = "win32-security"))]
 impl ::core::cmp::Eq for ROUTER_IKEv2_IF_CUSTOM_CONFIG2 {}
-#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-networking", feature = "win32-security"))]
 impl ::core::default::Default for ROUTER_IKEv2_IF_CUSTOM_CONFIG2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -9235,7 +9235,7 @@ pub unsafe fn RasGetAutodialParamW(param0: u32, param1: *mut ::core::ffi::c_void
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 #[inline]
 pub unsafe fn RasGetConnectStatusA<'a, Param0: ::windows_core::IntoParam<'a, HRASCONN>>(param0: Param0, param1: *mut RASCONNSTATUSA) -> u32 {
     #[cfg(windows)]
@@ -9249,7 +9249,7 @@ pub unsafe fn RasGetConnectStatusA<'a, Param0: ::windows_core::IntoParam<'a, HRA
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 #[inline]
 pub unsafe fn RasGetConnectStatusW<'a, Param0: ::windows_core::IntoParam<'a, HRASCONN>>(param0: Param0, param1: *mut RASCONNSTATUSW) -> u32 {
     #[cfg(windows)]
@@ -9432,7 +9432,7 @@ pub unsafe fn RasGetEntryDialParamsW<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 #[inline]
 pub unsafe fn RasGetEntryPropertiesA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(param0: Param0, param1: Param1, param2: *mut RASENTRYA, param3: *mut u32, param4: *mut u8, param5: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -9446,7 +9446,7 @@ pub unsafe fn RasGetEntryPropertiesA<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 #[inline]
 pub unsafe fn RasGetEntryPropertiesW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(param0: Param0, param1: Param1, param2: *mut RASENTRYW, param3: *mut u32, param4: *mut u8, param5: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -9525,7 +9525,7 @@ pub unsafe fn RasGetProjectionInfoA<'a, Param0: ::windows_core::IntoParam<'a, HR
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 #[inline]
 pub unsafe fn RasGetProjectionInfoEx<'a, Param0: ::windows_core::IntoParam<'a, HRASCONN>>(hrasconn: Param0, prasprojection: *mut RAS_PROJECTION_INFO, lpdwsize: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -9877,7 +9877,7 @@ pub unsafe fn RasSetEntryDialParamsW<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 #[inline]
 pub unsafe fn RasSetEntryPropertiesA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(param0: Param0, param1: Param1, param2: *const RASENTRYA, param3: u32, param4: *const u8, param5: u32) -> u32 {
     #[cfg(windows)]
@@ -9891,7 +9891,7 @@ pub unsafe fn RasSetEntryPropertiesA<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 #[inline]
 pub unsafe fn RasSetEntryPropertiesW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(param0: Param0, param1: Param1, param2: *const RASENTRYW, param3: u32, param4: *const u8, param5: u32) -> u32 {
     #[cfg(windows)]
@@ -9931,7 +9931,7 @@ pub unsafe fn RasSetSubEntryPropertiesW<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 #[inline]
 pub unsafe fn RasUpdateConnection<'a, Param0: ::windows_core::IntoParam<'a, HRASCONN>>(hrasconn: Param0, lprasupdateconn: *const RASUPDATECONN) -> u32 {
     #[cfg(windows)]
@@ -10010,7 +10010,7 @@ pub unsafe fn RtmBlockMethods<'a, Param1: ::windows_core::IntoParam<'a, ::win32_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 #[inline]
 pub unsafe fn RtmConvertIpv6AddressAndLengthToNetAddress<'a, Param1: ::windows_core::IntoParam<'a, ::win32_networking::WinSock::IN6_ADDR>>(pnetaddress: *mut RTM_NET_ADDRESS, address: Param1, dwlength: u32, dwaddresssize: u32) -> u32 {
     #[cfg(windows)]
@@ -10024,7 +10024,7 @@ pub unsafe fn RtmConvertIpv6AddressAndLengthToNetAddress<'a, Param1: ::windows_c
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 #[inline]
 pub unsafe fn RtmConvertNetAddressToIpv6AddressAndLength(pnetaddress: *mut RTM_NET_ADDRESS, paddress: *mut ::win32_networking::WinSock::IN6_ADDR, plength: *mut u32, dwaddresssize: u32) -> u32 {
     #[cfg(windows)]
@@ -10831,45 +10831,45 @@ impl ::core::default::Default for SOURCE_GROUP_ENTRY {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 pub struct SSTP_CERT_INFO {
     pub isDefault: ::win32_foundation::BOOL,
     pub certBlob: ::win32_security::Cryptography::CRYPTOAPI_BLOB,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for SSTP_CERT_INFO {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for SSTP_CERT_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for SSTP_CERT_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SSTP_CERT_INFO").field("isDefault", &self.isDefault).field("certBlob", &self.certBlob).finish()
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for SSTP_CERT_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for SSTP_CERT_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SSTP_CERT_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for SSTP_CERT_INFO {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for SSTP_CERT_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 pub struct SSTP_CONFIG_PARAMS {
     pub dwNumPorts: u32,
     pub dwPortFlags: u32,
@@ -10877,97 +10877,97 @@ pub struct SSTP_CONFIG_PARAMS {
     pub certAlgorithm: u32,
     pub sstpCertDetails: SSTP_CERT_INFO,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for SSTP_CONFIG_PARAMS {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for SSTP_CONFIG_PARAMS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for SSTP_CONFIG_PARAMS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SSTP_CONFIG_PARAMS").field("dwNumPorts", &self.dwNumPorts).field("dwPortFlags", &self.dwPortFlags).field("isUseHttps", &self.isUseHttps).field("certAlgorithm", &self.certAlgorithm).field("sstpCertDetails", &self.sstpCertDetails).finish()
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for SSTP_CONFIG_PARAMS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for SSTP_CONFIG_PARAMS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SSTP_CONFIG_PARAMS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for SSTP_CONFIG_PARAMS {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for SSTP_CONFIG_PARAMS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct VPN_TS_IP_ADDRESS {
     pub Type: u16,
     pub Anonymous: VPN_TS_IP_ADDRESS_0,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for VPN_TS_IP_ADDRESS {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for VPN_TS_IP_ADDRESS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for VPN_TS_IP_ADDRESS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for VPN_TS_IP_ADDRESS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VPN_TS_IP_ADDRESS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for VPN_TS_IP_ADDRESS {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for VPN_TS_IP_ADDRESS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub union VPN_TS_IP_ADDRESS_0 {
     pub v4: ::win32_networking::WinSock::IN_ADDR,
     pub v6: ::win32_networking::WinSock::IN6_ADDR,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for VPN_TS_IP_ADDRESS_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for VPN_TS_IP_ADDRESS_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for VPN_TS_IP_ADDRESS_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for VPN_TS_IP_ADDRESS_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VPN_TS_IP_ADDRESS_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for VPN_TS_IP_ADDRESS_0 {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for VPN_TS_IP_ADDRESS_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -10990,7 +10990,7 @@ pub const VS_SstpOnly: u32 = 5u32;
 pub const WARNING_MSG_ALIAS_NOT_ADDED: u32 = 644u32;
 pub const WM_RASDIALEVENT: u32 = 52429u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 pub struct _MPR_VPN_SELECTOR {
     pub r#type: MPR_VPN_TS_TYPE,
     pub protocolId: u8,
@@ -11000,27 +11000,27 @@ pub struct _MPR_VPN_SELECTOR {
     pub addrStart: VPN_TS_IP_ADDRESS,
     pub addrEnd: VPN_TS_IP_ADDRESS,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::marker::Copy for _MPR_VPN_SELECTOR {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::clone::Clone for _MPR_VPN_SELECTOR {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 unsafe impl ::windows_core::Abi for _MPR_VPN_SELECTOR {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::PartialEq for _MPR_VPN_SELECTOR {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<_MPR_VPN_SELECTOR>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::cmp::Eq for _MPR_VPN_SELECTOR {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking")]
 impl ::core::default::Default for _MPR_VPN_SELECTOR {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

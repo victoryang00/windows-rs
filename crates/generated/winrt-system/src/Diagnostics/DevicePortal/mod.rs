@@ -23,14 +23,14 @@ impl DevicePortalConnection {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveRequestReceived)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "ApplicationModel_AppService")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn GetForAppServiceConnection<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_applicationmodel::AppService::AppServiceConnection>>(appserviceconnection: Param0) -> ::windows_core::Result<DevicePortalConnection> {
         Self::IDevicePortalConnectionStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetForAppServiceConnection)(::windows_core::Interface::as_raw(this), appserviceconnection.into_param().abi(), result__.as_mut_ptr()).from_abi::<DevicePortalConnection>(result__)
         })
     }
-    #[cfg(all(feature = "Networking_Sockets", feature = "Web_Http"))]
+    #[cfg(all(feature = "winrt-networking", feature = "winrt-web"))]
     pub fn GetServerMessageWebSocketForRequest<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_web::Http::HttpRequestMessage>>(&self, request: Param0) -> ::windows_core::Result<::winrt_networking::Sockets::ServerMessageWebSocket> {
         let this = &::windows_core::Interface::cast::<IDevicePortalWebSocketConnection>(self)?;
         unsafe {
@@ -38,7 +38,7 @@ impl DevicePortalConnection {
             (::windows_core::Interface::vtable(this).GetServerMessageWebSocketForRequest)(::windows_core::Interface::as_raw(this), request.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_networking::Sockets::ServerMessageWebSocket>(result__)
         }
     }
-    #[cfg(all(feature = "Networking_Sockets", feature = "Web_Http"))]
+    #[cfg(all(feature = "winrt-networking", feature = "winrt-web"))]
     pub fn GetServerMessageWebSocketForRequest2<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_web::Http::HttpRequestMessage>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, request: Param0, messagetype: ::winrt_networking::Sockets::SocketMessageType, protocol: Param2) -> ::windows_core::Result<::winrt_networking::Sockets::ServerMessageWebSocket> {
         let this = &::windows_core::Interface::cast::<IDevicePortalWebSocketConnection>(self)?;
         unsafe {
@@ -46,7 +46,7 @@ impl DevicePortalConnection {
             (::windows_core::Interface::vtable(this).GetServerMessageWebSocketForRequest2)(::windows_core::Interface::as_raw(this), request.into_param().abi(), messagetype, protocol.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_networking::Sockets::ServerMessageWebSocket>(result__)
         }
     }
-    #[cfg(all(feature = "Networking_Sockets", feature = "Web_Http"))]
+    #[cfg(all(feature = "winrt-networking", feature = "winrt-web"))]
     pub fn GetServerMessageWebSocketForRequest3<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_web::Http::HttpRequestMessage>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, request: Param0, messagetype: ::winrt_networking::Sockets::SocketMessageType, protocol: Param2, outboundbuffersizeinbytes: u32, maxmessagesize: u32, receivemode: ::winrt_networking::Sockets::MessageWebSocketReceiveMode) -> ::windows_core::Result<::winrt_networking::Sockets::ServerMessageWebSocket> {
         let this = &::windows_core::Interface::cast::<IDevicePortalWebSocketConnection>(self)?;
         unsafe {
@@ -54,7 +54,7 @@ impl DevicePortalConnection {
             (::windows_core::Interface::vtable(this).GetServerMessageWebSocketForRequest3)(::windows_core::Interface::as_raw(this), request.into_param().abi(), messagetype, protocol.into_param().abi(), outboundbuffersizeinbytes, maxmessagesize, receivemode, result__.as_mut_ptr()).from_abi::<::winrt_networking::Sockets::ServerMessageWebSocket>(result__)
         }
     }
-    #[cfg(all(feature = "Networking_Sockets", feature = "Web_Http"))]
+    #[cfg(all(feature = "winrt-networking", feature = "winrt-web"))]
     pub fn GetServerStreamWebSocketForRequest<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_web::Http::HttpRequestMessage>>(&self, request: Param0) -> ::windows_core::Result<::winrt_networking::Sockets::ServerStreamWebSocket> {
         let this = &::windows_core::Interface::cast::<IDevicePortalWebSocketConnection>(self)?;
         unsafe {
@@ -62,7 +62,7 @@ impl DevicePortalConnection {
             (::windows_core::Interface::vtable(this).GetServerStreamWebSocketForRequest)(::windows_core::Interface::as_raw(this), request.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_networking::Sockets::ServerStreamWebSocket>(result__)
         }
     }
-    #[cfg(all(feature = "Networking_Sockets", feature = "Web_Http"))]
+    #[cfg(all(feature = "winrt-networking", feature = "winrt-web"))]
     pub fn GetServerStreamWebSocketForRequest2<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_web::Http::HttpRequestMessage>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, request: Param0, protocol: Param1, outboundbuffersizeinbytes: u32, nodelay: bool) -> ::windows_core::Result<::winrt_networking::Sockets::ServerStreamWebSocket> {
         let this = &::windows_core::Interface::cast::<IDevicePortalWebSocketConnection>(self)?;
         unsafe {
@@ -270,7 +270,7 @@ unsafe impl ::windows_core::RuntimeType for DevicePortalConnectionClosedReason {
 #[repr(transparent)]
 pub struct DevicePortalConnectionRequestReceivedEventArgs(::windows_core::IUnknown);
 impl DevicePortalConnectionRequestReceivedEventArgs {
-    #[cfg(feature = "Web_Http")]
+    #[cfg(feature = "winrt-web")]
     pub fn RequestMessage(&self) -> ::windows_core::Result<::winrt_web::Http::HttpRequestMessage> {
         let this = self;
         unsafe {
@@ -278,7 +278,7 @@ impl DevicePortalConnectionRequestReceivedEventArgs {
             (::windows_core::Interface::vtable(this).RequestMessage)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_web::Http::HttpRequestMessage>(result__)
         }
     }
-    #[cfg(feature = "Web_Http")]
+    #[cfg(feature = "winrt-web")]
     pub fn ResponseMessage(&self) -> ::windows_core::Result<::winrt_web::Http::HttpResponseMessage> {
         let this = self;
         unsafe {
@@ -293,7 +293,7 @@ impl DevicePortalConnectionRequestReceivedEventArgs {
             (::windows_core::Interface::vtable(this).IsWebSocketUpgradeRequest)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn WebSocketProtocolsRequested(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<IDevicePortalWebSocketConnectionRequestReceivedEventArgs>(self)?;
         unsafe {
@@ -421,13 +421,13 @@ unsafe impl ::windows_core::Interface for IDevicePortalConnectionRequestReceived
 #[doc(hidden)]
 pub struct IDevicePortalConnectionRequestReceivedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Web_Http")]
+    #[cfg(feature = "winrt-web")]
     pub RequestMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Web_Http"))]
+    #[cfg(not(feature = "winrt-web"))]
     RequestMessage: usize,
-    #[cfg(feature = "Web_Http")]
+    #[cfg(feature = "winrt-web")]
     pub ResponseMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Web_Http"))]
+    #[cfg(not(feature = "winrt-web"))]
     ResponseMessage: usize,
 }
 #[doc(hidden)]
@@ -441,9 +441,9 @@ unsafe impl ::windows_core::Interface for IDevicePortalConnectionStatics {
 #[doc(hidden)]
 pub struct IDevicePortalConnectionStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "ApplicationModel_AppService")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub GetForAppServiceConnection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appserviceconnection: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_AppService"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     GetForAppServiceConnection: usize,
 }
 #[doc(hidden)]
@@ -457,25 +457,25 @@ unsafe impl ::windows_core::Interface for IDevicePortalWebSocketConnection {
 #[doc(hidden)]
 pub struct IDevicePortalWebSocketConnection_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Networking_Sockets", feature = "Web_Http"))]
+    #[cfg(all(feature = "winrt-networking", feature = "winrt-web"))]
     pub GetServerMessageWebSocketForRequest: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, request: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Networking_Sockets", feature = "Web_Http")))]
+    #[cfg(not(all(feature = "winrt-networking", feature = "winrt-web")))]
     GetServerMessageWebSocketForRequest: usize,
-    #[cfg(all(feature = "Networking_Sockets", feature = "Web_Http"))]
+    #[cfg(all(feature = "winrt-networking", feature = "winrt-web"))]
     pub GetServerMessageWebSocketForRequest2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, request: ::windows_core::RawPtr, messagetype: ::winrt_networking::Sockets::SocketMessageType, protocol: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Networking_Sockets", feature = "Web_Http")))]
+    #[cfg(not(all(feature = "winrt-networking", feature = "winrt-web")))]
     GetServerMessageWebSocketForRequest2: usize,
-    #[cfg(all(feature = "Networking_Sockets", feature = "Web_Http"))]
+    #[cfg(all(feature = "winrt-networking", feature = "winrt-web"))]
     pub GetServerMessageWebSocketForRequest3: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, request: ::windows_core::RawPtr, messagetype: ::winrt_networking::Sockets::SocketMessageType, protocol: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, outboundbuffersizeinbytes: u32, maxmessagesize: u32, receivemode: ::winrt_networking::Sockets::MessageWebSocketReceiveMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Networking_Sockets", feature = "Web_Http")))]
+    #[cfg(not(all(feature = "winrt-networking", feature = "winrt-web")))]
     GetServerMessageWebSocketForRequest3: usize,
-    #[cfg(all(feature = "Networking_Sockets", feature = "Web_Http"))]
+    #[cfg(all(feature = "winrt-networking", feature = "winrt-web"))]
     pub GetServerStreamWebSocketForRequest: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, request: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Networking_Sockets", feature = "Web_Http")))]
+    #[cfg(not(all(feature = "winrt-networking", feature = "winrt-web")))]
     GetServerStreamWebSocketForRequest: usize,
-    #[cfg(all(feature = "Networking_Sockets", feature = "Web_Http"))]
+    #[cfg(all(feature = "winrt-networking", feature = "winrt-web"))]
     pub GetServerStreamWebSocketForRequest2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, request: ::windows_core::RawPtr, protocol: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, outboundbuffersizeinbytes: u32, nodelay: bool, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Networking_Sockets", feature = "Web_Http")))]
+    #[cfg(not(all(feature = "winrt-networking", feature = "winrt-web")))]
     GetServerStreamWebSocketForRequest2: usize,
 }
 #[doc(hidden)]
@@ -490,9 +490,9 @@ unsafe impl ::windows_core::Interface for IDevicePortalWebSocketConnectionReques
 pub struct IDevicePortalWebSocketConnectionRequestReceivedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsWebSocketUpgradeRequest: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub WebSocketProtocolsRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     WebSocketProtocolsRequested: usize,
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }

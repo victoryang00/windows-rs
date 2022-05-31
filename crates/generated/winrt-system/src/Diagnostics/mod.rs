@@ -14,7 +14,7 @@ impl DiagnosticActionResult {
             (::windows_core::Interface::vtable(this).ExtendedError)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HRESULT>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Results(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = self;
         unsafe {
@@ -136,7 +136,7 @@ unsafe impl ::windows_core::RuntimeType for DiagnosticActionState {
 #[repr(transparent)]
 pub struct DiagnosticInvoker(::windows_core::IUnknown);
 impl DiagnosticInvoker {
-    #[cfg(feature = "Data_Json")]
+    #[cfg(feature = "winrt-data")]
     pub fn RunDiagnosticActionAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_data::Json::JsonObject>>(&self, context: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DiagnosticActionResult, DiagnosticActionState>> {
         let this = self;
         unsafe {
@@ -258,9 +258,9 @@ unsafe impl ::windows_core::Interface for IDiagnosticActionResult {
 pub struct IDiagnosticActionResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ExtendedError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::HRESULT) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Results: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Results: usize,
 }
 #[doc(hidden)]
@@ -274,9 +274,9 @@ unsafe impl ::windows_core::Interface for IDiagnosticInvoker {
 #[doc(hidden)]
 pub struct IDiagnosticInvoker_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Data_Json")]
+    #[cfg(feature = "winrt-data")]
     pub RunDiagnosticActionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, context: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Json"))]
+    #[cfg(not(feature = "winrt-data"))]
     RunDiagnosticActionAsync: usize,
 }
 #[doc(hidden)]
@@ -364,9 +364,9 @@ unsafe impl ::windows_core::Interface for IProcessDiagnosticInfo2 {
 #[doc(hidden)]
 pub struct IProcessDiagnosticInfo2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetAppDiagnosticInfos: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetAppDiagnosticInfos: usize,
     pub IsPackaged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
 }
@@ -381,9 +381,9 @@ unsafe impl ::windows_core::Interface for IProcessDiagnosticInfoStatics {
 #[doc(hidden)]
 pub struct IProcessDiagnosticInfoStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetForProcesses: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetForProcesses: usize,
     pub GetForCurrentProcess: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -790,7 +790,7 @@ impl ProcessDiagnosticInfo {
             (::windows_core::Interface::vtable(this).CpuUsage)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ProcessCpuUsage>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetAppDiagnosticInfos(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::AppDiagnosticInfo>> {
         let this = &::windows_core::Interface::cast::<IProcessDiagnosticInfo2>(self)?;
         unsafe {
@@ -805,7 +805,7 @@ impl ProcessDiagnosticInfo {
             (::windows_core::Interface::vtable(this).IsPackaged)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetForProcesses() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ProcessDiagnosticInfo>> {
         Self::IProcessDiagnosticInfoStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();

@@ -21,13 +21,13 @@ unsafe impl ::windows_core::Interface for IPalmRejectionDelayZonePreviewStatics 
 #[doc(hidden)]
 pub struct IPalmRejectionDelayZonePreviewStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateForVisual: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, inputpanelvisual: ::windows_core::RawPtr, inputpanelrect: ::winrt_foundation::Rect, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Composition"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateForVisual: usize,
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateForVisualWithViewportClip: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, inputpanelvisual: ::windows_core::RawPtr, inputpanelrect: ::winrt_foundation::Rect, viewportvisual: ::windows_core::RawPtr, viewportrect: ::winrt_foundation::Rect, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Composition"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateForVisualWithViewportClip: usize,
 }
 #[repr(transparent)]
@@ -37,14 +37,14 @@ impl PalmRejectionDelayZonePreview {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateForVisual<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Composition::Visual>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Rect>>(inputpanelvisual: Param0, inputpanelrect: Param1) -> ::windows_core::Result<PalmRejectionDelayZonePreview> {
         Self::IPalmRejectionDelayZonePreviewStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateForVisual)(::windows_core::Interface::as_raw(this), inputpanelvisual.into_param().abi(), inputpanelrect.into_param().abi(), result__.as_mut_ptr()).from_abi::<PalmRejectionDelayZonePreview>(result__)
         })
     }
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateForVisualWithViewportClip<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Composition::Visual>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Rect>, Param2: ::windows_core::IntoParam<'a, super::super::super::Composition::Visual>, Param3: ::windows_core::IntoParam<'a, ::winrt_foundation::Rect>>(inputpanelvisual: Param0, inputpanelrect: Param1, viewportvisual: Param2, viewportrect: Param3) -> ::windows_core::Result<PalmRejectionDelayZonePreview> {
         Self::IPalmRejectionDelayZonePreviewStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();

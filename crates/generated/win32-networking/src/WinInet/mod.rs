@@ -1536,7 +1536,7 @@ pub unsafe fn FtpDeleteFileW<'a, Param1: ::windows_core::IntoParam<'a, ::windows
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 #[inline]
 pub unsafe fn FtpFindFirstFileA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hconnect: *const ::core::ffi::c_void, lpszsearchfile: Param1, lpfindfiledata: *mut ::win32_storage::FileSystem::WIN32_FIND_DATAA, dwflags: u32, dwcontext: usize) -> *mut ::core::ffi::c_void {
     #[cfg(windows)]
@@ -1550,7 +1550,7 @@ pub unsafe fn FtpFindFirstFileA<'a, Param1: ::windows_core::IntoParam<'a, ::wind
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 #[inline]
 pub unsafe fn FtpFindFirstFileW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hconnect: *const ::core::ffi::c_void, lpszsearchfile: Param1, lpfindfiledata: *mut ::win32_storage::FileSystem::WIN32_FIND_DATAW, dwflags: u32, dwcontext: usize) -> *mut ::core::ffi::c_void {
     #[cfg(windows)]
@@ -3678,7 +3678,7 @@ impl IDialBranding {
     pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwzconnectoid: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Initialize)(::windows_core::Interface::as_raw(self), pwzconnectoid.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetBitmap(&self, dwindex: u32) -> ::windows_core::Result<::win32_graphics::Gdi::HBITMAP> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_graphics::Gdi::HBITMAP>::zeroed();
         (::windows_core::Interface::vtable(self).GetBitmap)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwindex), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_graphics::Gdi::HBITMAP>(result__)
@@ -3729,9 +3729,9 @@ unsafe impl ::windows_core::Interface for IDialBranding {
 pub struct IDialBranding_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwzconnectoid: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub GetBitmap: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwindex: u32, phbitmap: *mut ::win32_graphics::Gdi::HBITMAP) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetBitmap: usize,
 }
 #[repr(transparent)]
@@ -5662,47 +5662,47 @@ impl ::core::fmt::Debug for INTERNET_SCHEME {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Authentication_Identity")]
+#[cfg(feature = "win32-security")]
 pub struct INTERNET_SECURITY_CONNECTION_INFO {
     pub dwSize: u32,
     pub fSecure: ::win32_foundation::BOOL,
     pub connectionInfo: ::win32_security::Authentication::Identity::SecPkgContext_ConnectionInfo,
     pub cipherInfo: ::win32_security::Authentication::Identity::SecPkgContext_CipherInfo,
 }
-#[cfg(feature = "Win32_Security_Authentication_Identity")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for INTERNET_SECURITY_CONNECTION_INFO {}
-#[cfg(feature = "Win32_Security_Authentication_Identity")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for INTERNET_SECURITY_CONNECTION_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Authentication_Identity")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for INTERNET_SECURITY_CONNECTION_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("INTERNET_SECURITY_CONNECTION_INFO").field("dwSize", &self.dwSize).field("fSecure", &self.fSecure).field("connectionInfo", &self.connectionInfo).field("cipherInfo", &self.cipherInfo).finish()
     }
 }
-#[cfg(feature = "Win32_Security_Authentication_Identity")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for INTERNET_SECURITY_CONNECTION_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Authentication_Identity")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for INTERNET_SECURITY_CONNECTION_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERNET_SECURITY_CONNECTION_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Authentication_Identity")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for INTERNET_SECURITY_CONNECTION_INFO {}
-#[cfg(feature = "Win32_Security_Authentication_Identity")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for INTERNET_SECURITY_CONNECTION_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-security", feature = "win32-security"))]
 pub struct INTERNET_SECURITY_INFO {
     pub dwSize: u32,
     pub pCertificate: *const ::win32_security::Cryptography::CERT_CONTEXT,
@@ -5712,33 +5712,33 @@ pub struct INTERNET_SECURITY_INFO {
     pub pcUnverifiedCertChain: *mut ::win32_security::Cryptography::CERT_CHAIN_CONTEXT,
     pub channelBindingToken: ::win32_security::Authentication::Identity::SecPkgContext_Bindings,
 }
-#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-security", feature = "win32-security"))]
 impl ::core::marker::Copy for INTERNET_SECURITY_INFO {}
-#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-security", feature = "win32-security"))]
 impl ::core::clone::Clone for INTERNET_SECURITY_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-security", feature = "win32-security"))]
 impl ::core::fmt::Debug for INTERNET_SECURITY_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("INTERNET_SECURITY_INFO").field("dwSize", &self.dwSize).field("pCertificate", &self.pCertificate).field("pcCertChain", &self.pcCertChain).field("connectionInfo", &self.connectionInfo).field("cipherInfo", &self.cipherInfo).field("pcUnverifiedCertChain", &self.pcUnverifiedCertChain).field("channelBindingToken", &self.channelBindingToken).finish()
     }
 }
-#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-security", feature = "win32-security"))]
 unsafe impl ::windows_core::Abi for INTERNET_SECURITY_INFO {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-security", feature = "win32-security"))]
 impl ::core::cmp::PartialEq for INTERNET_SECURITY_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERNET_SECURITY_INFO>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-security", feature = "win32-security"))]
 impl ::core::cmp::Eq for INTERNET_SECURITY_INFO {}
-#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-security", feature = "win32-security"))]
 impl ::core::default::Default for INTERNET_SECURITY_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6404,7 +6404,7 @@ impl ::core::fmt::Debug for InternetCookieState {
         f.debug_tuple("InternetCookieState").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Networking_WinHttp")]
+#[cfg(feature = "win32-networking")]
 #[inline]
 pub unsafe fn InternetCrackUrlA(lpszurl: &[u8], dwflags: super::WinHttp::WIN_HTTP_CREATE_URL_FLAGS, lpurlcomponents: *mut URL_COMPONENTSA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -6418,7 +6418,7 @@ pub unsafe fn InternetCrackUrlA(lpszurl: &[u8], dwflags: super::WinHttp::WIN_HTT
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Networking_WinHttp")]
+#[cfg(feature = "win32-networking")]
 #[inline]
 pub unsafe fn InternetCrackUrlW(lpszurl: &[u16], dwflags: super::WinHttp::WIN_HTTP_CREATE_URL_FLAGS, lpurlcomponents: *mut URL_COMPONENTSW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -6783,7 +6783,7 @@ pub unsafe fn InternetGetProxyForUrl<'a, Param1: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn InternetGetSecurityInfoByURL<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszurl: Param0, ppcertchain: *mut *mut ::win32_security::Cryptography::CERT_CHAIN_CONTEXT, pdwsecureflags: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -6797,7 +6797,7 @@ pub unsafe fn InternetGetSecurityInfoByURL<'a, Param0: ::windows_core::IntoParam
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn InternetGetSecurityInfoByURLA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszurl: Param0, ppcertchain: *mut *mut ::win32_security::Cryptography::CERT_CHAIN_CONTEXT, pdwsecureflags: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -6811,7 +6811,7 @@ pub unsafe fn InternetGetSecurityInfoByURLA<'a, Param0: ::windows_core::IntoPara
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn InternetGetSecurityInfoByURLW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszurl: Param0, ppcertchain: *mut *mut ::win32_security::Cryptography::CERT_CHAIN_CONTEXT, pdwsecureflags: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -8098,7 +8098,7 @@ pub unsafe fn ShowClientAuthCerts<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "win32-security", feature = "win32-security"))]
 #[inline]
 pub unsafe fn ShowSecurityInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwndparent: Param0, psecurityinfo: *const INTERNET_SECURITY_INFO) -> u32 {
     #[cfg(windows)]

@@ -2,9 +2,9 @@
 pub mod WebApp;
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn AddVectoredContinueHandler(first: u32, handler: PVECTORED_EXCEPTION_HANDLER) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn AddVectoredExceptionHandler(first: u32, handler: PVECTORED_EXCEPTION_HANDLER) -> *mut ::core::ffi::c_void;
     pub fn Beep(dwfreq: u32, dwduration: u32) -> ::win32_foundation_sys::BOOL;
     pub fn BindImage(imagename: ::windows_core_sys::PCSTR, dllpath: ::windows_core_sys::PCSTR, symbolpath: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
@@ -16,7 +16,7 @@ extern "system" {
     pub fn CheckSumMappedFile(baseaddress: *const ::core::ffi::c_void, filelength: u32, headersum: *mut u32, checksum: *mut u32) -> *mut IMAGE_NT_HEADERS32;
     pub fn CloseThreadWaitChainSession(wcthandle: *const ::core::ffi::c_void);
     pub fn ContinueDebugEvent(dwprocessid: u32, dwthreadid: u32, dwcontinuestatus: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn CopyContext(destination: *mut CONTEXT, contextflags: u32, source: *const CONTEXT) -> ::win32_foundation_sys::BOOL;
     pub fn CreateDataModelManager(debughost: IDebugHost, manager: *mut IDataModelManager) -> ::windows_core_sys::HRESULT;
     pub fn DbgHelpCreateUserDump(filename: ::windows_core_sys::PCSTR, callback: PDBGHELP_CREATE_USER_DUMP_CALLBACK, userdata: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
@@ -62,34 +62,34 @@ extern "system" {
     pub fn GetEnabledXStateFeatures() -> u64;
     pub fn GetErrorMode() -> u32;
     #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn GetImageConfigInformation(loadedimage: *const LOADED_IMAGE, imageconfiginformation: *mut IMAGE_LOAD_CONFIG_DIRECTORY64) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "x86")]
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn GetImageConfigInformation(loadedimage: *const LOADED_IMAGE, imageconfiginformation: *mut IMAGE_LOAD_CONFIG_DIRECTORY32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn GetImageUnusedHeaderBytes(loadedimage: *const LOADED_IMAGE, sizeunusedheaderbytes: *mut u32) -> u32;
     pub fn GetSymLoadError() -> u32;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn GetThreadContext(hthread: ::win32_foundation_sys::HANDLE, lpcontext: *mut CONTEXT) -> ::win32_foundation_sys::BOOL;
     pub fn GetThreadErrorMode() -> u32;
     pub fn GetThreadSelectorEntry(hthread: ::win32_foundation_sys::HANDLE, dwselector: u32, lpselectorentry: *mut LDT_ENTRY) -> ::win32_foundation_sys::BOOL;
     pub fn GetThreadWaitChain(wcthandle: *const ::core::ffi::c_void, context: usize, flags: WAIT_CHAIN_THREAD_OPTIONS, threadid: u32, nodecount: *mut u32, nodeinfoarray: *mut WAITCHAIN_NODE_INFO, iscycle: *mut i32) -> ::win32_foundation_sys::BOOL;
     pub fn GetTimestampForLoadedLibrary(module: ::win32_foundation_sys::HINSTANCE) -> u32;
     #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn GetXStateFeaturesMask(context: *const CONTEXT, featuremask: *mut u64) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security_WinTrust")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn ImageAddCertificate(filehandle: ::win32_foundation_sys::HANDLE, certificate: *const ::win32_security_sys::WinTrust::WIN_CERTIFICATE, index: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn ImageDirectoryEntryToData(base: *const ::core::ffi::c_void, mappedasimage: ::win32_foundation_sys::BOOLEAN, directoryentry: IMAGE_DIRECTORY_ENTRY, size: *mut u32) -> *mut ::core::ffi::c_void;
     pub fn ImageDirectoryEntryToDataEx(base: *const ::core::ffi::c_void, mappedasimage: ::win32_foundation_sys::BOOLEAN, directoryentry: IMAGE_DIRECTORY_ENTRY, size: *mut u32, foundheader: *mut *mut IMAGE_SECTION_HEADER) -> *mut ::core::ffi::c_void;
     pub fn ImageEnumerateCertificates(filehandle: ::win32_foundation_sys::HANDLE, typefilter: u16, certificatecount: *mut u32, indices: *mut u32, indexcount: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security_WinTrust")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn ImageGetCertificateData(filehandle: ::win32_foundation_sys::HANDLE, certificateindex: u32, certificate: *mut ::win32_security_sys::WinTrust::WIN_CERTIFICATE, requiredlength: *mut u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security_WinTrust")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn ImageGetCertificateHeader(filehandle: ::win32_foundation_sys::HANDLE, certificateindex: u32, certificateheader: *mut ::win32_security_sys::WinTrust::WIN_CERTIFICATE) -> ::win32_foundation_sys::BOOL;
     pub fn ImageGetDigestStream(filehandle: ::win32_foundation_sys::HANDLE, digestlevel: u32, digestfunction: DIGEST_FUNCTION, digesthandle: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn ImageLoad(dllname: ::windows_core_sys::PCSTR, dllpath: ::windows_core_sys::PCSTR) -> *mut LOADED_IMAGE;
     #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
     pub fn ImageNtHeader(base: *const ::core::ffi::c_void) -> *mut IMAGE_NT_HEADERS64;
@@ -104,32 +104,32 @@ extern "system" {
     pub fn ImageRvaToVa(ntheaders: *const IMAGE_NT_HEADERS64, base: *const ::core::ffi::c_void, rva: u32, lastrvasection: *const *const IMAGE_SECTION_HEADER) -> *mut ::core::ffi::c_void;
     #[cfg(target_arch = "x86")]
     pub fn ImageRvaToVa(ntheaders: *const IMAGE_NT_HEADERS32, base: *const ::core::ffi::c_void, rva: u32, lastrvasection: *const *const IMAGE_SECTION_HEADER) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn ImageUnload(loadedimage: *mut LOADED_IMAGE) -> ::win32_foundation_sys::BOOL;
     pub fn ImagehlpApiVersion() -> *mut API_VERSION;
     pub fn ImagehlpApiVersionEx(appversion: *const API_VERSION) -> *mut API_VERSION;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn InitializeContext(buffer: *mut ::core::ffi::c_void, contextflags: u32, context: *mut *mut CONTEXT, contextlength: *mut u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn InitializeContext2(buffer: *mut ::core::ffi::c_void, contextflags: u32, context: *mut *mut CONTEXT, contextlength: *mut u32, xstatecompactionmask: u64) -> ::win32_foundation_sys::BOOL;
     pub fn IsDebuggerPresent() -> ::win32_foundation_sys::BOOL;
     #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn LocateXStateFeature(context: *const CONTEXT, featureid: u32, length: *mut u32) -> *mut ::core::ffi::c_void;
     pub fn MakeSureDirectoryPathExists(dirpath: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn MapAndLoad(imagename: ::windows_core_sys::PCSTR, dllpath: ::windows_core_sys::PCSTR, loadedimage: *mut LOADED_IMAGE, dotdll: ::win32_foundation_sys::BOOL, readonly: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     pub fn MapFileAndCheckSumA(filename: ::windows_core_sys::PCSTR, headersum: *mut u32, checksum: *mut u32) -> u32;
     pub fn MapFileAndCheckSumW(filename: ::windows_core_sys::PCWSTR, headersum: *mut u32, checksum: *mut u32) -> u32;
     pub fn MessageBeep(utype: u32) -> ::win32_foundation_sys::BOOL;
     pub fn MiniDumpReadDumpStream(baseofdump: *const ::core::ffi::c_void, streamnumber: u32, dir: *mut *mut MINIDUMP_DIRECTORY, streampointer: *mut *mut ::core::ffi::c_void, streamsize: *mut u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel", feature = "Win32_System_Memory"))]
+    #[cfg(all(feature = "win32-storage-sys", feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn MiniDumpWriteDump(hprocess: ::win32_foundation_sys::HANDLE, processid: u32, hfile: ::win32_foundation_sys::HANDLE, dumptype: MINIDUMP_TYPE, exceptionparam: *const MINIDUMP_EXCEPTION_INFORMATION, userstreamparam: *const MINIDUMP_USER_STREAM_INFORMATION, callbackparam: *const MINIDUMP_CALLBACK_INFORMATION) -> ::win32_foundation_sys::BOOL;
     pub fn OpenThreadWaitChainSession(flags: OPEN_THREAD_WAIT_CHAIN_SESSION_FLAGS, callback: PWAITCHAINCALLBACK) -> *mut ::core::ffi::c_void;
     pub fn OutputDebugStringA(lpoutputstring: ::windows_core_sys::PCSTR);
     pub fn OutputDebugStringW(lpoutputstring: ::windows_core_sys::PCWSTR);
     pub fn RaiseException(dwexceptioncode: u32, dwexceptionflags: u32, nnumberofarguments: u32, lparguments: *const usize);
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RaiseFailFastException(pexceptionrecord: *const EXCEPTION_RECORD, pcontextrecord: *const CONTEXT, dwflags: u32);
     pub fn RangeMapAddPeImageSections(rmaphandle: *const ::core::ffi::c_void, imagename: ::windows_core_sys::PCWSTR, mappedimage: *const ::core::ffi::c_void, mappingbytes: u32, imagebase: u64, usertag: u64, mappingflags: u32) -> ::win32_foundation_sys::BOOL;
     pub fn RangeMapCreate() -> *mut ::core::ffi::c_void;
@@ -153,10 +153,10 @@ extern "system" {
     pub fn RtlAddGrowableFunctionTable(dynamictable: *mut *mut ::core::ffi::c_void, functiontable: *const IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY, entrycount: u32, maximumentrycount: u32, rangebase: usize, rangeend: usize) -> u32;
     #[cfg(target_arch = "x86_64")]
     pub fn RtlAddGrowableFunctionTable(dynamictable: *mut *mut ::core::ffi::c_void, functiontable: *const IMAGE_RUNTIME_FUNCTION_ENTRY, entrycount: u32, maximumentrycount: u32, rangebase: usize, rangeend: usize) -> u32;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RtlCaptureContext(contextrecord: *mut CONTEXT);
     #[cfg(target_arch = "x86_64")]
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RtlCaptureContext2(contextrecord: *mut CONTEXT);
     pub fn RtlCaptureStackBackTrace(framestoskip: u32, framestocapture: u32, backtrace: *mut *mut ::core::ffi::c_void, backtracehash: *mut u32) -> u16;
     #[cfg(target_arch = "aarch64")]
@@ -175,36 +175,36 @@ extern "system" {
     pub fn RtlLookupFunctionEntry(controlpc: u64, imagebase: *mut u64, historytable: *mut UNWIND_HISTORY_TABLE) -> *mut IMAGE_RUNTIME_FUNCTION_ENTRY;
     pub fn RtlPcToFileHeader(pcvalue: *const ::core::ffi::c_void, baseofimage: *mut *mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void;
     pub fn RtlRaiseException(exceptionrecord: *const EXCEPTION_RECORD);
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RtlRestoreContext(contextrecord: *const CONTEXT, exceptionrecord: *const EXCEPTION_RECORD);
     pub fn RtlUnwind(targetframe: *const ::core::ffi::c_void, targetip: *const ::core::ffi::c_void, exceptionrecord: *const EXCEPTION_RECORD, returnvalue: *const ::core::ffi::c_void);
     #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RtlUnwindEx(targetframe: *const ::core::ffi::c_void, targetip: *const ::core::ffi::c_void, exceptionrecord: *const EXCEPTION_RECORD, returnvalue: *const ::core::ffi::c_void, contextrecord: *const CONTEXT, historytable: *const UNWIND_HISTORY_TABLE);
     #[cfg(target_arch = "aarch64")]
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RtlVirtualUnwind(handlertype: RTL_VIRTUAL_UNWIND_HANDLER_TYPE, imagebase: usize, controlpc: usize, functionentry: *const IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY, contextrecord: *mut CONTEXT, handlerdata: *mut *mut ::core::ffi::c_void, establisherframe: *mut usize, contextpointers: *mut KNONVOLATILE_CONTEXT_POINTERS_ARM64) -> super::super::Kernel::EXCEPTION_ROUTINE;
     #[cfg(target_arch = "x86_64")]
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RtlVirtualUnwind(handlertype: RTL_VIRTUAL_UNWIND_HANDLER_TYPE, imagebase: u64, controlpc: u64, functionentry: *const IMAGE_RUNTIME_FUNCTION_ENTRY, contextrecord: *mut CONTEXT, handlerdata: *mut *mut ::core::ffi::c_void, establisherframe: *mut u64, contextpointers: *mut KNONVOLATILE_CONTEXT_POINTERS) -> super::super::Kernel::EXCEPTION_ROUTINE;
     pub fn SearchTreeForFile(rootpath: ::windows_core_sys::PCSTR, inputpathname: ::windows_core_sys::PCSTR, outputpathbuffer: ::windows_core_sys::PSTR) -> ::win32_foundation_sys::BOOL;
     pub fn SearchTreeForFileW(rootpath: ::windows_core_sys::PCWSTR, inputpathname: ::windows_core_sys::PCWSTR, outputpathbuffer: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::BOOL;
     pub fn SetCheckUserInterruptShared(lpstartaddress: LPCALL_BACK_USER_INTERRUPT_ROUTINE);
     pub fn SetErrorMode(umode: THREAD_ERROR_MODE) -> u32;
     #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn SetImageConfigInformation(loadedimage: *mut LOADED_IMAGE, imageconfiginformation: *const IMAGE_LOAD_CONFIG_DIRECTORY64) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "x86")]
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn SetImageConfigInformation(loadedimage: *mut LOADED_IMAGE, imageconfiginformation: *const IMAGE_LOAD_CONFIG_DIRECTORY32) -> ::win32_foundation_sys::BOOL;
     pub fn SetSymLoadError(error: u32);
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn SetThreadContext(hthread: ::win32_foundation_sys::HANDLE, lpcontext: *const CONTEXT) -> ::win32_foundation_sys::BOOL;
     pub fn SetThreadErrorMode(dwnewmode: THREAD_ERROR_MODE, lpoldmode: *const THREAD_ERROR_MODE) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn SetUnhandledExceptionFilter(lptoplevelexceptionfilter: LPTOP_LEVEL_EXCEPTION_FILTER) -> LPTOP_LEVEL_EXCEPTION_FILTER;
     #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn SetXStateFeaturesMask(context: *mut CONTEXT, featuremask: u64) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "x86")]
     pub fn StackWalk(machinetype: u32, hprocess: ::win32_foundation_sys::HANDLE, hthread: ::win32_foundation_sys::HANDLE, stackframe: *mut STACKFRAME, contextrecord: *mut ::core::ffi::c_void, readmemoryroutine: PREAD_PROCESS_MEMORY_ROUTINE, functiontableaccessroutine: PFUNCTION_TABLE_ACCESS_ROUTINE, getmodulebaseroutine: PGET_MODULE_BASE_ROUTINE, translateaddress: PTRANSLATE_ADDRESS_ROUTINE) -> ::win32_foundation_sys::BOOL;
@@ -403,15 +403,15 @@ extern "system" {
     pub fn TouchFileTimes(filehandle: ::win32_foundation_sys::HANDLE, psystemtime: *const ::win32_foundation_sys::SYSTEMTIME) -> ::win32_foundation_sys::BOOL;
     pub fn UnDecorateSymbolName(name: ::windows_core_sys::PCSTR, outputstring: ::windows_core_sys::PSTR, maxstringlength: u32, flags: u32) -> u32;
     pub fn UnDecorateSymbolNameW(name: ::windows_core_sys::PCWSTR, outputstring: ::windows_core_sys::PWSTR, maxstringlength: u32, flags: u32) -> u32;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn UnMapAndLoad(loadedimage: *mut LOADED_IMAGE) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn UnhandledExceptionFilter(exceptioninfo: *const EXCEPTION_POINTERS) -> i32;
     pub fn UpdateDebugInfoFile(imagefilename: ::windows_core_sys::PCSTR, symbolpath: ::windows_core_sys::PCSTR, debugfilepath: ::windows_core_sys::PSTR, ntheaders: *const IMAGE_NT_HEADERS32) -> ::win32_foundation_sys::BOOL;
     pub fn UpdateDebugInfoFileEx(imagefilename: ::windows_core_sys::PCSTR, symbolpath: ::windows_core_sys::PCSTR, debugfilepath: ::windows_core_sys::PSTR, ntheaders: *const IMAGE_NT_HEADERS32, oldchecksum: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_Threading")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn WaitForDebugEvent(lpdebugevent: *mut DEBUG_EVENT, dwmilliseconds: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_Threading")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn WaitForDebugEventEx(lpdebugevent: *mut DEBUG_EVENT, dwmilliseconds: u32) -> ::win32_foundation_sys::BOOL;
     pub fn Wow64GetThreadContext(hthread: ::win32_foundation_sys::HANDLE, lpcontext: *mut WOW64_CONTEXT) -> ::win32_foundation_sys::BOOL;
     pub fn Wow64GetThreadSelectorEntry(hthread: ::win32_foundation_sys::HANDLE, dwselector: u32, lpselectorentry: *mut WOW64_LDT_ENTRY) -> ::win32_foundation_sys::BOOL;
@@ -1245,7 +1245,7 @@ pub const CHECKSUM_SUCCESS: u32 = 0u32;
 pub const CHECKSUM_UNICODE_FAILURE: u32 = 4u32;
 #[repr(C)]
 #[cfg(target_arch = "aarch64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct CONTEXT {
     pub ContextFlags: u32,
     pub Cpsr: u32,
@@ -1261,10 +1261,10 @@ pub struct CONTEXT {
     pub Wvr: [u64; 2],
 }
 #[cfg(target_arch = "aarch64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for CONTEXT {}
 #[cfg(target_arch = "aarch64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for CONTEXT {
     fn clone(&self) -> Self {
         *self
@@ -1272,16 +1272,16 @@ impl ::core::clone::Clone for CONTEXT {
 }
 #[repr(C)]
 #[cfg(target_arch = "aarch64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub union CONTEXT_0 {
     pub Anonymous: CONTEXT_0_0,
     pub X: [u64; 31],
 }
 #[cfg(target_arch = "aarch64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for CONTEXT_0 {}
 #[cfg(target_arch = "aarch64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for CONTEXT_0 {
     fn clone(&self) -> Self {
         *self
@@ -1289,7 +1289,7 @@ impl ::core::clone::Clone for CONTEXT_0 {
 }
 #[repr(C)]
 #[cfg(target_arch = "aarch64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct CONTEXT_0_0 {
     pub X0: u64,
     pub X1: u64,
@@ -1324,10 +1324,10 @@ pub struct CONTEXT_0_0 {
     pub Lr: u64,
 }
 #[cfg(target_arch = "aarch64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for CONTEXT_0_0 {}
 #[cfg(target_arch = "aarch64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for CONTEXT_0_0 {
     fn clone(&self) -> Self {
         *self
@@ -1335,7 +1335,7 @@ impl ::core::clone::Clone for CONTEXT_0_0 {
 }
 #[repr(C)]
 #[cfg(target_arch = "x86_64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct CONTEXT {
     pub P1Home: u64,
     pub P2Home: u64,
@@ -1385,10 +1385,10 @@ pub struct CONTEXT {
     pub LastExceptionFromRip: u64,
 }
 #[cfg(target_arch = "x86_64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for CONTEXT {}
 #[cfg(target_arch = "x86_64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for CONTEXT {
     fn clone(&self) -> Self {
         *self
@@ -1396,16 +1396,16 @@ impl ::core::clone::Clone for CONTEXT {
 }
 #[repr(C)]
 #[cfg(target_arch = "x86_64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub union CONTEXT_0 {
     pub FltSave: XSAVE_FORMAT,
     pub Anonymous: CONTEXT_0_0,
 }
 #[cfg(target_arch = "x86_64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for CONTEXT_0 {}
 #[cfg(target_arch = "x86_64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for CONTEXT_0 {
     fn clone(&self) -> Self {
         *self
@@ -1413,7 +1413,7 @@ impl ::core::clone::Clone for CONTEXT_0 {
 }
 #[repr(C)]
 #[cfg(target_arch = "x86_64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct CONTEXT_0_0 {
     pub Header: [M128A; 2],
     pub Legacy: [M128A; 8],
@@ -1435,10 +1435,10 @@ pub struct CONTEXT_0_0 {
     pub Xmm15: M128A,
 }
 #[cfg(target_arch = "x86_64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for CONTEXT_0_0 {}
 #[cfg(target_arch = "x86_64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for CONTEXT_0_0 {
     fn clone(&self) -> Self {
         *self
@@ -1446,7 +1446,7 @@ impl ::core::clone::Clone for CONTEXT_0_0 {
 }
 #[repr(C)]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct CONTEXT {
     pub ContextFlags: u32,
     pub Dr0: u32,
@@ -1475,10 +1475,10 @@ pub struct CONTEXT {
     pub ExtendedRegisters: [u8; 512],
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for CONTEXT {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for CONTEXT {
     fn clone(&self) -> Self {
         *self
@@ -1519,7 +1519,7 @@ impl ::core::clone::Clone for CPU_INFORMATION_1 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system-sys")]
 pub struct CREATE_PROCESS_DEBUG_INFO {
     pub hFile: ::win32_foundation_sys::HANDLE,
     pub hProcess: ::win32_foundation_sys::HANDLE,
@@ -1532,24 +1532,24 @@ pub struct CREATE_PROCESS_DEBUG_INFO {
     pub lpImageName: *mut ::core::ffi::c_void,
     pub fUnicode: u16,
 }
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for CREATE_PROCESS_DEBUG_INFO {}
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for CREATE_PROCESS_DEBUG_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system-sys")]
 pub struct CREATE_THREAD_DEBUG_INFO {
     pub hThread: ::win32_foundation_sys::HANDLE,
     pub lpThreadLocalBase: *mut ::core::ffi::c_void,
     pub lpStartAddress: super::super::Threading::LPTHREAD_START_ROUTINE,
 }
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for CREATE_THREAD_DEBUG_INFO {}
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for CREATE_THREAD_DEBUG_INFO {
     fn clone(&self) -> Self {
         *self
@@ -1576,30 +1576,30 @@ impl ::core::clone::Clone for DBGHELP_DATA_REPORT_STRUCT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct DBGKD_DEBUG_DATA_HEADER32 {
     pub List: super::super::Kernel::LIST_ENTRY32,
     pub OwnerTag: u32,
     pub Size: u32,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for DBGKD_DEBUG_DATA_HEADER32 {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for DBGKD_DEBUG_DATA_HEADER32 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct DBGKD_DEBUG_DATA_HEADER64 {
     pub List: super::super::Kernel::LIST_ENTRY64,
     pub OwnerTag: u32,
     pub Size: u32,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for DBGKD_DEBUG_DATA_HEADER64 {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for DBGKD_DEBUG_DATA_HEADER64 {
     fn clone(&self) -> Self {
         *self
@@ -2088,23 +2088,23 @@ pub const DEBUG_ENGOPT_PREFER_DML: u32 = 262144u32;
 pub const DEBUG_ENGOPT_PREFER_TRACE_FILES: u32 = 8388608u32;
 pub const DEBUG_ENGOPT_SYNCHRONIZE_BREAKPOINTS: u32 = 2048u32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system-sys")]
 pub struct DEBUG_EVENT {
     pub dwDebugEventCode: DEBUG_EVENT_CODE,
     pub dwProcessId: u32,
     pub dwThreadId: u32,
     pub u: DEBUG_EVENT_0,
 }
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for DEBUG_EVENT {}
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for DEBUG_EVENT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system-sys")]
 pub union DEBUG_EVENT_0 {
     pub Exception: EXCEPTION_DEBUG_INFO,
     pub CreateThread: CREATE_THREAD_DEBUG_INFO,
@@ -2116,9 +2116,9 @@ pub union DEBUG_EVENT_0 {
     pub DebugString: OUTPUT_DEBUG_STRING_INFO,
     pub RipInfo: RIP_INFO,
 }
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for DEBUG_EVENT_0 {}
-#[cfg(feature = "Win32_System_Threading")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for DEBUG_EVENT_0 {
     fn clone(&self) -> Self {
         *self
@@ -3125,7 +3125,7 @@ pub const DEBUG_WAIT_DEFAULT: u32 = 0u32;
 pub type DIGEST_FUNCTION = ::core::option::Option<unsafe extern "system" fn(refdata: *mut ::core::ffi::c_void, pdata: *mut u8, dwlength: u32) -> ::win32_foundation_sys::BOOL>;
 #[repr(C)]
 #[cfg(target_arch = "aarch64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct DISPATCHER_CONTEXT {
     pub ControlPc: usize,
     pub ImageBase: usize,
@@ -3141,10 +3141,10 @@ pub struct DISPATCHER_CONTEXT {
     pub NonVolatileRegisters: *mut u8,
 }
 #[cfg(target_arch = "aarch64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for DISPATCHER_CONTEXT {}
 #[cfg(target_arch = "aarch64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for DISPATCHER_CONTEXT {
     fn clone(&self) -> Self {
         *self
@@ -3152,7 +3152,7 @@ impl ::core::clone::Clone for DISPATCHER_CONTEXT {
 }
 #[repr(C)]
 #[cfg(target_arch = "x86_64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct DISPATCHER_CONTEXT {
     pub ControlPc: u64,
     pub ImageBase: u64,
@@ -3167,10 +3167,10 @@ pub struct DISPATCHER_CONTEXT {
     pub Fill0: u32,
 }
 #[cfg(target_arch = "x86_64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for DISPATCHER_CONTEXT {}
 #[cfg(target_arch = "x86_64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for DISPATCHER_CONTEXT {
     fn clone(&self) -> Self {
         *self
@@ -3408,14 +3408,14 @@ impl ::core::clone::Clone for EXCEPTION_DEBUG_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct EXCEPTION_POINTERS {
     pub ExceptionRecord: *mut EXCEPTION_RECORD,
     pub ContextRecord: *mut CONTEXT,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for EXCEPTION_POINTERS {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for EXCEPTION_POINTERS {
     fn clone(&self) -> Self {
         *self
@@ -3646,7 +3646,7 @@ pub type ErrorClass = i32;
 pub const ErrorClassWarning: ErrorClass = 0i32;
 pub const ErrorClassError: ErrorClass = 1i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub struct ExtendedDebugPropertyInfo {
     pub dwValidFields: u32,
     pub pszName: ::windows_core_sys::PWSTR,
@@ -3661,9 +3661,9 @@ pub struct ExtendedDebugPropertyInfo {
     pub plbValue: super::super::Com::StructuredStorage::ILockBytes,
     pub pDebugExtProp: IDebugExtendedProperty,
 }
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for ExtendedDebugPropertyInfo {}
-#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for ExtendedDebugPropertyInfo {
     fn clone(&self) -> Self {
         *self
@@ -4963,7 +4963,7 @@ impl ::core::clone::Clone for IMAGE_DEBUG_DIRECTORY {
 }
 #[repr(C)]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct IMAGE_DEBUG_INFORMATION {
     pub List: super::super::Kernel::LIST_ENTRY,
     pub ReservedSize: u32,
@@ -4998,10 +4998,10 @@ pub struct IMAGE_DEBUG_INFORMATION {
     pub Reserved: [u32; 2],
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for IMAGE_DEBUG_INFORMATION {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for IMAGE_DEBUG_INFORMATION {
     fn clone(&self) -> Self {
         *self
@@ -5771,7 +5771,7 @@ impl ::core::clone::Clone for JsDebugReadMemoryFlags {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct KDDEBUGGER_DATA32 {
     pub Header: DBGKD_DEBUG_DATA_HEADER32,
     pub KernBase: u32,
@@ -5840,16 +5840,16 @@ pub struct KDDEBUGGER_DATA32 {
     pub KdPrintRolloverCount: u32,
     pub MmLoadedUserImageList: u32,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for KDDEBUGGER_DATA32 {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for KDDEBUGGER_DATA32 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct KDDEBUGGER_DATA64 {
     pub Header: DBGKD_DEBUG_DATA_HEADER64,
     pub KernBase: u64,
@@ -6010,9 +6010,9 @@ pub struct KDDEBUGGER_DATA64 {
     pub RetpolineStubSize: u32,
     pub OffsetEProcessMmHotPatchContext: u16,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for KDDEBUGGER_DATA64 {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for KDDEBUGGER_DATA64 {
     fn clone(&self) -> Self {
         *self
@@ -6263,7 +6263,7 @@ impl ::core::clone::Clone for LDT_ENTRY_0_1 {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LOADED_IMAGE {
     pub ModuleName: ::windows_core_sys::PSTR,
     pub hFile: ::win32_foundation_sys::HANDLE,
@@ -6281,10 +6281,10 @@ pub struct LOADED_IMAGE {
     pub SizeOfImage: u32,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LOADED_IMAGE {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LOADED_IMAGE {
     fn clone(&self) -> Self {
         *self
@@ -6292,7 +6292,7 @@ impl ::core::clone::Clone for LOADED_IMAGE {
 }
 #[repr(C)]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LOADED_IMAGE {
     pub ModuleName: ::windows_core_sys::PSTR,
     pub hFile: ::win32_foundation_sys::HANDLE,
@@ -6310,10 +6310,10 @@ pub struct LOADED_IMAGE {
     pub SizeOfImage: u32,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LOADED_IMAGE {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LOADED_IMAGE {
     fn clone(&self) -> Self {
         *self
@@ -6335,7 +6335,7 @@ impl ::core::clone::Clone for LOAD_DLL_DEBUG_INFO {
     }
 }
 pub type LPCALL_BACK_USER_INTERRUPT_ROUTINE = ::core::option::Option<unsafe extern "system" fn() -> u32>;
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub type LPTOP_LEVEL_EXCEPTION_FILTER = ::core::option::Option<unsafe extern "system" fn(exceptioninfo: *const EXCEPTION_POINTERS) -> i32>;
 pub type LanguageKind = i32;
 pub const LanguageUnknown: LanguageKind = 0i32;
@@ -6372,37 +6372,37 @@ impl ::core::clone::Clone for M128A {
 pub const MAX_SYM_NAME: u32 = 2000u32;
 pub const MEMORY_READ_ERROR: u32 = 1u32;
 #[repr(C, packed(4))]
-#[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel", feature = "Win32_System_Memory"))]
+#[cfg(all(feature = "win32-storage-sys", feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub struct MINIDUMP_CALLBACK_INFORMATION {
     pub CallbackRoutine: MINIDUMP_CALLBACK_ROUTINE,
     pub CallbackParam: *mut ::core::ffi::c_void,
 }
-#[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel", feature = "Win32_System_Memory"))]
+#[cfg(all(feature = "win32-storage-sys", feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for MINIDUMP_CALLBACK_INFORMATION {}
-#[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel", feature = "Win32_System_Memory"))]
+#[cfg(all(feature = "win32-storage-sys", feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for MINIDUMP_CALLBACK_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "win32-storage-sys", feature = "win32-system-sys"))]
 pub struct MINIDUMP_CALLBACK_INPUT {
     pub ProcessId: u32,
     pub ProcessHandle: ::win32_foundation_sys::HANDLE,
     pub CallbackType: u32,
     pub Anonymous: MINIDUMP_CALLBACK_INPUT_0,
 }
-#[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "win32-storage-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for MINIDUMP_CALLBACK_INPUT {}
-#[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "win32-storage-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for MINIDUMP_CALLBACK_INPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "win32-storage-sys", feature = "win32-system-sys"))]
 pub union MINIDUMP_CALLBACK_INPUT_0 {
     pub Status: ::windows_core_sys::HRESULT,
     pub Thread: MINIDUMP_THREAD_CALLBACK,
@@ -6417,29 +6417,29 @@ pub union MINIDUMP_CALLBACK_INPUT_0 {
     pub VmPreRead: MINIDUMP_VM_PRE_READ_CALLBACK,
     pub VmPostRead: MINIDUMP_VM_POST_READ_CALLBACK,
 }
-#[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "win32-storage-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for MINIDUMP_CALLBACK_INPUT_0 {}
-#[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "win32-storage-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for MINIDUMP_CALLBACK_INPUT_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MINIDUMP_CALLBACK_OUTPUT {
     pub Anonymous: MINIDUMP_CALLBACK_OUTPUT_0,
 }
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MINIDUMP_CALLBACK_OUTPUT {}
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MINIDUMP_CALLBACK_OUTPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(4))]
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system-sys")]
 pub union MINIDUMP_CALLBACK_OUTPUT_0 {
     pub ModuleWriteFlags: u32,
     pub ThreadWriteFlags: u32,
@@ -6452,85 +6452,85 @@ pub union MINIDUMP_CALLBACK_OUTPUT_0 {
     pub Anonymous5: MINIDUMP_CALLBACK_OUTPUT_0_4,
     pub Status: ::windows_core_sys::HRESULT,
 }
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MINIDUMP_CALLBACK_OUTPUT_0 {}
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MINIDUMP_CALLBACK_OUTPUT_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(4))]
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MINIDUMP_CALLBACK_OUTPUT_0_0 {
     pub MemoryBase: u64,
     pub MemorySize: u32,
 }
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MINIDUMP_CALLBACK_OUTPUT_0_0 {}
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MINIDUMP_CALLBACK_OUTPUT_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MINIDUMP_CALLBACK_OUTPUT_0_1 {
     pub CheckCancel: ::win32_foundation_sys::BOOL,
     pub Cancel: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MINIDUMP_CALLBACK_OUTPUT_0_1 {}
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MINIDUMP_CALLBACK_OUTPUT_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MINIDUMP_CALLBACK_OUTPUT_0_2 {
     pub VmRegion: MINIDUMP_MEMORY_INFO,
     pub Continue: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MINIDUMP_CALLBACK_OUTPUT_0_2 {}
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MINIDUMP_CALLBACK_OUTPUT_0_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MINIDUMP_CALLBACK_OUTPUT_0_3 {
     pub VmQueryStatus: ::windows_core_sys::HRESULT,
     pub VmQueryResult: MINIDUMP_MEMORY_INFO,
 }
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MINIDUMP_CALLBACK_OUTPUT_0_3 {}
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MINIDUMP_CALLBACK_OUTPUT_0_3 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MINIDUMP_CALLBACK_OUTPUT_0_4 {
     pub VmReadStatus: ::windows_core_sys::HRESULT,
     pub VmReadBytesCompleted: u32,
 }
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MINIDUMP_CALLBACK_OUTPUT_0_4 {}
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MINIDUMP_CALLBACK_OUTPUT_0_4 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel", feature = "Win32_System_Memory"))]
+#[cfg(all(feature = "win32-storage-sys", feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub type MINIDUMP_CALLBACK_ROUTINE = ::core::option::Option<unsafe extern "system" fn(callbackparam: *mut ::core::ffi::c_void, callbackinput: *const MINIDUMP_CALLBACK_INPUT, callbackoutput: *mut MINIDUMP_CALLBACK_OUTPUT) -> ::win32_foundation_sys::BOOL>;
 pub type MINIDUMP_CALLBACK_TYPE = i32;
 pub const ModuleCallback: MINIDUMP_CALLBACK_TYPE = 0i32;
@@ -6582,15 +6582,15 @@ impl ::core::clone::Clone for MINIDUMP_EXCEPTION {
     }
 }
 #[repr(C, packed(4))]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MINIDUMP_EXCEPTION_INFORMATION {
     pub ThreadId: u32,
     pub ExceptionPointers: *mut EXCEPTION_POINTERS,
     pub ClientPointers: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MINIDUMP_EXCEPTION_INFORMATION {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MINIDUMP_EXCEPTION_INFORMATION {
     fn clone(&self) -> Self {
         *self
@@ -6851,7 +6851,7 @@ impl ::core::clone::Clone for MINIDUMP_MEMORY_DESCRIPTOR64 {
     }
 }
 #[repr(C, packed(4))]
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MINIDUMP_MEMORY_INFO {
     pub BaseAddress: u64,
     pub AllocationBase: u64,
@@ -6863,9 +6863,9 @@ pub struct MINIDUMP_MEMORY_INFO {
     pub Type: u32,
     pub __alignment2: u32,
 }
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MINIDUMP_MEMORY_INFO {}
-#[cfg(feature = "Win32_System_Memory")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MINIDUMP_MEMORY_INFO {
     fn clone(&self) -> Self {
         *self
@@ -6937,7 +6937,7 @@ impl ::core::clone::Clone for MINIDUMP_MISC_INFO_2 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Time")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MINIDUMP_MISC_INFO_3 {
     pub SizeOfInfo: u32,
     pub Flags1: u32,
@@ -6956,16 +6956,16 @@ pub struct MINIDUMP_MISC_INFO_3 {
     pub TimeZoneId: u32,
     pub TimeZone: super::super::Time::TIME_ZONE_INFORMATION,
 }
-#[cfg(feature = "Win32_System_Time")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MINIDUMP_MISC_INFO_3 {}
-#[cfg(feature = "Win32_System_Time")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MINIDUMP_MISC_INFO_3 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Time")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MINIDUMP_MISC_INFO_4 {
     pub SizeOfInfo: u32,
     pub Flags1: u32,
@@ -6986,16 +6986,16 @@ pub struct MINIDUMP_MISC_INFO_4 {
     pub BuildString: [u16; 260],
     pub DbgBldStr: [u16; 40],
 }
-#[cfg(feature = "Win32_System_Time")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MINIDUMP_MISC_INFO_4 {}
-#[cfg(feature = "Win32_System_Time")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MINIDUMP_MISC_INFO_4 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Time")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MINIDUMP_MISC_INFO_5 {
     pub SizeOfInfo: u32,
     pub Flags1: u32,
@@ -7018,9 +7018,9 @@ pub struct MINIDUMP_MISC_INFO_5 {
     pub XStateData: XSTATE_CONFIG_FEATURE_MSC_INFO,
     pub ProcessCookie: u32,
 }
-#[cfg(feature = "Win32_System_Time")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MINIDUMP_MISC_INFO_5 {}
-#[cfg(feature = "Win32_System_Time")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MINIDUMP_MISC_INFO_5 {
     fn clone(&self) -> Self {
         *self
@@ -7030,7 +7030,7 @@ pub type MINIDUMP_MISC_INFO_FLAGS = u32;
 pub const MINIDUMP_MISC1_PROCESS_ID: MINIDUMP_MISC_INFO_FLAGS = 1u32;
 pub const MINIDUMP_MISC1_PROCESS_TIMES: MINIDUMP_MISC_INFO_FLAGS = 2u32;
 #[repr(C, packed(4))]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 pub struct MINIDUMP_MODULE {
     pub BaseOfImage: u64,
     pub SizeOfImage: u32,
@@ -7043,16 +7043,16 @@ pub struct MINIDUMP_MODULE {
     pub Reserved0: u64,
     pub Reserved1: u64,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::marker::Copy for MINIDUMP_MODULE {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::clone::Clone for MINIDUMP_MODULE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(4))]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 pub struct MINIDUMP_MODULE_CALLBACK {
     pub FullPath: ::windows_core_sys::PWSTR,
     pub BaseOfImage: u64,
@@ -7065,23 +7065,23 @@ pub struct MINIDUMP_MODULE_CALLBACK {
     pub MiscRecord: *mut ::core::ffi::c_void,
     pub SizeOfMiscRecord: u32,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::marker::Copy for MINIDUMP_MODULE_CALLBACK {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::clone::Clone for MINIDUMP_MODULE_CALLBACK {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 pub struct MINIDUMP_MODULE_LIST {
     pub NumberOfModules: u32,
     pub Modules: [MINIDUMP_MODULE; 1],
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::marker::Copy for MINIDUMP_MODULE_LIST {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage-sys")]
 impl ::core::clone::Clone for MINIDUMP_MODULE_LIST {
     fn clone(&self) -> Self {
         *self
@@ -7446,7 +7446,7 @@ impl ::core::clone::Clone for MINIDUMP_THREAD {
 }
 #[repr(C)]
 #[cfg(target_arch = "aarch64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MINIDUMP_THREAD_CALLBACK {
     pub ThreadId: u32,
     pub ThreadHandle: ::win32_foundation_sys::HANDLE,
@@ -7457,10 +7457,10 @@ pub struct MINIDUMP_THREAD_CALLBACK {
     pub StackEnd: u64,
 }
 #[cfg(target_arch = "aarch64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MINIDUMP_THREAD_CALLBACK {}
 #[cfg(target_arch = "aarch64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MINIDUMP_THREAD_CALLBACK {
     fn clone(&self) -> Self {
         *self
@@ -7468,7 +7468,7 @@ impl ::core::clone::Clone for MINIDUMP_THREAD_CALLBACK {
 }
 #[repr(C)]
 #[cfg(target_arch = "x86_64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MINIDUMP_THREAD_CALLBACK {
     pub ThreadId: u32,
     pub ThreadHandle: ::win32_foundation_sys::HANDLE,
@@ -7478,10 +7478,10 @@ pub struct MINIDUMP_THREAD_CALLBACK {
     pub StackEnd: u64,
 }
 #[cfg(target_arch = "x86_64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MINIDUMP_THREAD_CALLBACK {}
 #[cfg(target_arch = "x86_64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MINIDUMP_THREAD_CALLBACK {
     fn clone(&self) -> Self {
         *self
@@ -7489,7 +7489,7 @@ impl ::core::clone::Clone for MINIDUMP_THREAD_CALLBACK {
 }
 #[repr(C, packed(4))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MINIDUMP_THREAD_CALLBACK {
     pub ThreadId: u32,
     pub ThreadHandle: ::win32_foundation_sys::HANDLE,
@@ -7499,10 +7499,10 @@ pub struct MINIDUMP_THREAD_CALLBACK {
     pub StackEnd: u64,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MINIDUMP_THREAD_CALLBACK {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MINIDUMP_THREAD_CALLBACK {
     fn clone(&self) -> Self {
         *self
@@ -7527,7 +7527,7 @@ impl ::core::clone::Clone for MINIDUMP_THREAD_EX {
 }
 #[repr(C)]
 #[cfg(target_arch = "aarch64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MINIDUMP_THREAD_EX_CALLBACK {
     pub ThreadId: u32,
     pub ThreadHandle: ::win32_foundation_sys::HANDLE,
@@ -7540,10 +7540,10 @@ pub struct MINIDUMP_THREAD_EX_CALLBACK {
     pub BackingStoreEnd: u64,
 }
 #[cfg(target_arch = "aarch64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MINIDUMP_THREAD_EX_CALLBACK {}
 #[cfg(target_arch = "aarch64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MINIDUMP_THREAD_EX_CALLBACK {
     fn clone(&self) -> Self {
         *self
@@ -7551,7 +7551,7 @@ impl ::core::clone::Clone for MINIDUMP_THREAD_EX_CALLBACK {
 }
 #[repr(C)]
 #[cfg(target_arch = "x86_64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MINIDUMP_THREAD_EX_CALLBACK {
     pub ThreadId: u32,
     pub ThreadHandle: ::win32_foundation_sys::HANDLE,
@@ -7563,10 +7563,10 @@ pub struct MINIDUMP_THREAD_EX_CALLBACK {
     pub BackingStoreEnd: u64,
 }
 #[cfg(target_arch = "x86_64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MINIDUMP_THREAD_EX_CALLBACK {}
 #[cfg(target_arch = "x86_64")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MINIDUMP_THREAD_EX_CALLBACK {
     fn clone(&self) -> Self {
         *self
@@ -7574,7 +7574,7 @@ impl ::core::clone::Clone for MINIDUMP_THREAD_EX_CALLBACK {
 }
 #[repr(C, packed(4))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MINIDUMP_THREAD_EX_CALLBACK {
     pub ThreadId: u32,
     pub ThreadHandle: ::win32_foundation_sys::HANDLE,
@@ -7586,10 +7586,10 @@ pub struct MINIDUMP_THREAD_EX_CALLBACK {
     pub BackingStoreEnd: u64,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MINIDUMP_THREAD_EX_CALLBACK {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MINIDUMP_THREAD_EX_CALLBACK {
     fn clone(&self) -> Self {
         *self
@@ -8417,7 +8417,7 @@ pub const PTR_SEARCH_PHYS_ALL_HITS: u32 = 1u32;
 pub const PTR_SEARCH_PHYS_PTE: u32 = 2u32;
 pub const PTR_SEARCH_PHYS_RANGE_CHECK_ONLY: u32 = 4u32;
 pub const PTR_SEARCH_PHYS_SIZE_SHIFT: u32 = 3u32;
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub type PVECTORED_EXCEPTION_HANDLER = ::core::option::Option<unsafe extern "system" fn(exceptioninfo: *mut EXCEPTION_POINTERS) -> i32>;
 pub type PWAITCHAINCALLBACK = ::core::option::Option<unsafe extern "system" fn(wcthandle: *mut ::core::ffi::c_void, context: usize, callbackstatus: u32, nodecount: *mut u32, nodeinfoarray: *mut WAITCHAIN_NODE_INFO, iscycle: *mut i32)>;
 pub type PWINDBG_CHECK_CONTROL_C = ::core::option::Option<unsafe extern "system" fn() -> u32>;
@@ -8426,11 +8426,11 @@ pub type PWINDBG_DISASM = ::core::option::Option<unsafe extern "system" fn(lpoff
 pub type PWINDBG_DISASM32 = ::core::option::Option<unsafe extern "system" fn(lpoffset: *mut u32, lpbuffer: ::windows_core_sys::PCSTR, fshoweffectiveaddress: u32) -> u32>;
 pub type PWINDBG_DISASM64 = ::core::option::Option<unsafe extern "system" fn(lpoffset: *mut u64, lpbuffer: ::windows_core_sys::PCSTR, fshoweffectiveaddress: u32) -> u32>;
 pub type PWINDBG_EXTENSION_API_VERSION = ::core::option::Option<unsafe extern "system" fn() -> *mut EXT_API_VERSION>;
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub type PWINDBG_EXTENSION_DLL_INIT = ::core::option::Option<unsafe extern "system" fn(lpextensionapis: *mut WINDBG_EXTENSION_APIS, majorversion: u16, minorversion: u16)>;
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub type PWINDBG_EXTENSION_DLL_INIT32 = ::core::option::Option<unsafe extern "system" fn(lpextensionapis: *mut WINDBG_EXTENSION_APIS32, majorversion: u16, minorversion: u16)>;
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub type PWINDBG_EXTENSION_DLL_INIT64 = ::core::option::Option<unsafe extern "system" fn(lpextensionapis: *mut WINDBG_EXTENSION_APIS64, majorversion: u16, minorversion: u16)>;
 pub type PWINDBG_EXTENSION_ROUTINE = ::core::option::Option<unsafe extern "system" fn(hcurrentprocess: ::win32_foundation_sys::HANDLE, hcurrentthread: ::win32_foundation_sys::HANDLE, dwcurrentpc: u32, dwprocessor: u32, lpargumentstring: ::windows_core_sys::PCSTR)>;
 pub type PWINDBG_EXTENSION_ROUTINE32 = ::core::option::Option<unsafe extern "system" fn(hcurrentprocess: ::win32_foundation_sys::HANDLE, hcurrentthread: ::win32_foundation_sys::HANDLE, dwcurrentpc: u32, dwprocessor: u32, lpargumentstring: ::windows_core_sys::PCSTR)>;
@@ -8441,19 +8441,19 @@ pub type PWINDBG_GET_EXPRESSION64 = ::core::option::Option<unsafe extern "system
 pub type PWINDBG_GET_SYMBOL = ::core::option::Option<unsafe extern "system" fn(offset: *mut ::core::ffi::c_void, pchbuffer: ::windows_core_sys::PCSTR, pdisplacement: *mut usize)>;
 pub type PWINDBG_GET_SYMBOL32 = ::core::option::Option<unsafe extern "system" fn(offset: u32, pchbuffer: ::windows_core_sys::PCSTR, pdisplacement: *mut u32)>;
 pub type PWINDBG_GET_SYMBOL64 = ::core::option::Option<unsafe extern "system" fn(offset: u64, pchbuffer: ::windows_core_sys::PCSTR, pdisplacement: *mut u64)>;
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub type PWINDBG_GET_THREAD_CONTEXT_ROUTINE = ::core::option::Option<unsafe extern "system" fn(processor: u32, lpcontext: *mut CONTEXT, cbsizeofcontext: u32) -> u32>;
 pub type PWINDBG_IOCTL_ROUTINE = ::core::option::Option<unsafe extern "system" fn(ioctltype: u16, lpvdata: *mut ::core::ffi::c_void, cbsize: u32) -> u32>;
 pub type PWINDBG_OLDKD_EXTENSION_ROUTINE = ::core::option::Option<unsafe extern "system" fn(dwcurrentpc: u32, lpextensionapis: *mut WINDBG_OLDKD_EXTENSION_APIS, lpargumentstring: ::windows_core_sys::PCSTR)>;
 pub type PWINDBG_OLDKD_READ_PHYSICAL_MEMORY = ::core::option::Option<unsafe extern "system" fn(address: u64, buffer: *mut ::core::ffi::c_void, count: u32, bytesread: *mut u32) -> u32>;
 pub type PWINDBG_OLDKD_WRITE_PHYSICAL_MEMORY = ::core::option::Option<unsafe extern "system" fn(address: u64, buffer: *mut ::core::ffi::c_void, length: u32, byteswritten: *mut u32) -> u32>;
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub type PWINDBG_OLD_EXTENSION_ROUTINE = ::core::option::Option<unsafe extern "system" fn(dwcurrentpc: u32, lpextensionapis: *mut WINDBG_EXTENSION_APIS, lpargumentstring: ::windows_core_sys::PCSTR)>;
 pub type PWINDBG_OUTPUT_ROUTINE = ::core::option::Option<unsafe extern "system" fn(lpformat: ::windows_core_sys::PCSTR)>;
 pub type PWINDBG_READ_PROCESS_MEMORY_ROUTINE = ::core::option::Option<unsafe extern "system" fn(offset: usize, lpbuffer: *mut ::core::ffi::c_void, cb: u32, lpcbbytesread: *mut u32) -> u32>;
 pub type PWINDBG_READ_PROCESS_MEMORY_ROUTINE32 = ::core::option::Option<unsafe extern "system" fn(offset: u32, lpbuffer: *mut ::core::ffi::c_void, cb: u32, lpcbbytesread: *mut u32) -> u32>;
 pub type PWINDBG_READ_PROCESS_MEMORY_ROUTINE64 = ::core::option::Option<unsafe extern "system" fn(offset: u64, lpbuffer: *mut ::core::ffi::c_void, cb: u32, lpcbbytesread: *mut u32) -> u32>;
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub type PWINDBG_SET_THREAD_CONTEXT_ROUTINE = ::core::option::Option<unsafe extern "system" fn(processor: u32, lpcontext: *mut CONTEXT, cbsizeofcontext: u32) -> u32>;
 pub type PWINDBG_STACKTRACE_ROUTINE = ::core::option::Option<unsafe extern "system" fn(framepointer: u32, stackpointer: u32, programcounter: u32, stackframes: *mut EXTSTACKTRACE, frames: u32) -> u32>;
 pub type PWINDBG_STACKTRACE_ROUTINE32 = ::core::option::Option<unsafe extern "system" fn(framepointer: u32, stackpointer: u32, programcounter: u32, stackframes: *mut EXTSTACKTRACE32, frames: u32) -> u32>;
@@ -10229,7 +10229,7 @@ impl ::core::clone::Clone for WHEA_XPF_NMI_DESCRIPTOR {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct WINDBG_EXTENSION_APIS {
     pub nSize: u32,
     pub lpOutputRoutine: PWINDBG_OUTPUT_ROUTINE,
@@ -10244,16 +10244,16 @@ pub struct WINDBG_EXTENSION_APIS {
     pub lpIoctlRoutine: PWINDBG_IOCTL_ROUTINE,
     pub lpStackTraceRoutine: PWINDBG_STACKTRACE_ROUTINE,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for WINDBG_EXTENSION_APIS {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for WINDBG_EXTENSION_APIS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct WINDBG_EXTENSION_APIS32 {
     pub nSize: u32,
     pub lpOutputRoutine: PWINDBG_OUTPUT_ROUTINE,
@@ -10268,16 +10268,16 @@ pub struct WINDBG_EXTENSION_APIS32 {
     pub lpIoctlRoutine: PWINDBG_IOCTL_ROUTINE,
     pub lpStackTraceRoutine: PWINDBG_STACKTRACE_ROUTINE32,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for WINDBG_EXTENSION_APIS32 {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for WINDBG_EXTENSION_APIS32 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct WINDBG_EXTENSION_APIS64 {
     pub nSize: u32,
     pub lpOutputRoutine: PWINDBG_OUTPUT_ROUTINE,
@@ -10292,9 +10292,9 @@ pub struct WINDBG_EXTENSION_APIS64 {
     pub lpIoctlRoutine: PWINDBG_IOCTL_ROUTINE,
     pub lpStackTraceRoutine: PWINDBG_STACKTRACE_ROUTINE64,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for WINDBG_EXTENSION_APIS64 {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for WINDBG_EXTENSION_APIS64 {
     fn clone(&self) -> Self {
         *self

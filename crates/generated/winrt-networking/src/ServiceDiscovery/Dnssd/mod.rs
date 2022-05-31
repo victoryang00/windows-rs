@@ -224,7 +224,7 @@ impl DnssdServiceInstance {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetWeight)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TextAttributes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -232,7 +232,7 @@ impl DnssdServiceInstance {
             (::windows_core::Interface::vtable(this).TextAttributes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
         }
     }
-    #[cfg(feature = "Networking_Sockets")]
+    #[cfg(feature = "winrt-networking")]
     pub fn RegisterStreamSocketListenerAsync1<'a, Param0: ::windows_core::IntoParam<'a, super::super::Sockets::StreamSocketListener>>(&self, socket: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<DnssdRegistrationResult>> {
         let this = self;
         unsafe {
@@ -240,7 +240,7 @@ impl DnssdServiceInstance {
             (::windows_core::Interface::vtable(this).RegisterStreamSocketListenerAsync1)(::windows_core::Interface::as_raw(this), socket.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<DnssdRegistrationResult>>(result__)
         }
     }
-    #[cfg(all(feature = "Networking_Connectivity", feature = "Networking_Sockets"))]
+    #[cfg(all(feature = "winrt-networking", feature = "winrt-networking"))]
     pub fn RegisterStreamSocketListenerAsync2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Sockets::StreamSocketListener>, Param1: ::windows_core::IntoParam<'a, super::super::Connectivity::NetworkAdapter>>(&self, socket: Param0, adapter: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<DnssdRegistrationResult>> {
         let this = self;
         unsafe {
@@ -248,7 +248,7 @@ impl DnssdServiceInstance {
             (::windows_core::Interface::vtable(this).RegisterStreamSocketListenerAsync2)(::windows_core::Interface::as_raw(this), socket.into_param().abi(), adapter.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<DnssdRegistrationResult>>(result__)
         }
     }
-    #[cfg(feature = "Networking_Sockets")]
+    #[cfg(feature = "winrt-networking")]
     pub fn RegisterDatagramSocketAsync1<'a, Param0: ::windows_core::IntoParam<'a, super::super::Sockets::DatagramSocket>>(&self, socket: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<DnssdRegistrationResult>> {
         let this = self;
         unsafe {
@@ -256,7 +256,7 @@ impl DnssdServiceInstance {
             (::windows_core::Interface::vtable(this).RegisterDatagramSocketAsync1)(::windows_core::Interface::as_raw(this), socket.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<DnssdRegistrationResult>>(result__)
         }
     }
-    #[cfg(all(feature = "Networking_Connectivity", feature = "Networking_Sockets"))]
+    #[cfg(all(feature = "winrt-networking", feature = "winrt-networking"))]
     pub fn RegisterDatagramSocketAsync2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Sockets::DatagramSocket>, Param1: ::windows_core::IntoParam<'a, super::super::Connectivity::NetworkAdapter>>(&self, socket: Param0, adapter: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<DnssdRegistrationResult>> {
         let this = self;
         unsafe {
@@ -376,12 +376,12 @@ impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &Dns
 }
 unsafe impl ::core::marker::Send for DnssdServiceInstance {}
 unsafe impl ::core::marker::Sync for DnssdServiceInstance {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 #[repr(transparent)]
 pub struct DnssdServiceInstanceCollection(::windows_core::IUnknown);
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl DnssdServiceInstanceCollection {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<DnssdServiceInstance>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<DnssdServiceInstance>>(self)?;
         unsafe {
@@ -389,7 +389,7 @@ impl DnssdServiceInstanceCollection {
             (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<DnssdServiceInstance>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetAt(&self, index: u32) -> ::windows_core::Result<DnssdServiceInstance> {
         let this = self;
         unsafe {
@@ -397,7 +397,7 @@ impl DnssdServiceInstanceCollection {
             (::windows_core::Interface::vtable(this).GetAt)(::windows_core::Interface::as_raw(this), index, result__.as_mut_ptr()).from_abi::<DnssdServiceInstance>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -405,7 +405,7 @@ impl DnssdServiceInstanceCollection {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn IndexOf<'a, Param0: ::windows_core::IntoParam<'a, DnssdServiceInstance>>(&self, value: Param0, index: &mut u32) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
@@ -413,7 +413,7 @@ impl DnssdServiceInstanceCollection {
             (::windows_core::Interface::vtable(this).IndexOf)(::windows_core::Interface::as_raw(this), value.into_param().abi(), index, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetMany(&self, startindex: u32, items: &mut [::core::option::Option<DnssdServiceInstance>]) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -422,27 +422,27 @@ impl DnssdServiceInstanceCollection {
         }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::clone::Clone for DnssdServiceInstanceCollection {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::PartialEq for DnssdServiceInstanceCollection {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::Eq for DnssdServiceInstanceCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::fmt::Debug for DnssdServiceInstanceCollection {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("DnssdServiceInstanceCollection").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::RuntimeType for DnssdServiceInstanceCollection {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstanceCollection;pinterface({bbe1fa4c-b0e3-4583-baef-1f1b2e483e56};rc(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance;{e246db7e-98a5-4ca1-b9e4-c253d33c35ff})))");
     type DefaultType = ::core::option::Option<Self>;
@@ -450,16 +450,16 @@ unsafe impl ::windows_core::RuntimeType for DnssdServiceInstanceCollection {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::Interface for DnssdServiceInstanceCollection {
     type Vtable = ::winrt_foundation::Collections::IVectorView_Vtbl<DnssdServiceInstance>;
     const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IVectorView<DnssdServiceInstance> as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::windows_core::RuntimeName for DnssdServiceInstanceCollection {
     const NAME: &'static str = "Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstanceCollection";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for DnssdServiceInstanceCollection {
     type Item = DnssdServiceInstance;
     type IntoIter = ::winrt_foundation::Collections::VectorViewIterator<Self::Item>;
@@ -467,7 +467,7 @@ impl ::core::iter::IntoIterator for DnssdServiceInstanceCollection {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &DnssdServiceInstanceCollection {
     type Item = DnssdServiceInstance;
     type IntoIter = ::winrt_foundation::Collections::VectorViewIterator<Self::Item>;
@@ -475,109 +475,109 @@ impl ::core::iter::IntoIterator for &DnssdServiceInstanceCollection {
         ::winrt_foundation::Collections::VectorViewIterator::new(::core::convert::TryInto::try_into(self).ok())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<DnssdServiceInstanceCollection> for ::windows_core::IUnknown {
     fn from(value: DnssdServiceInstanceCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&DnssdServiceInstanceCollection> for ::windows_core::IUnknown {
     fn from(value: &DnssdServiceInstanceCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for DnssdServiceInstanceCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a DnssdServiceInstanceCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<DnssdServiceInstanceCollection> for ::windows_core::IInspectable {
     fn from(value: DnssdServiceInstanceCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&DnssdServiceInstanceCollection> for ::windows_core::IInspectable {
     fn from(value: &DnssdServiceInstanceCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for DnssdServiceInstanceCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a DnssdServiceInstanceCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<DnssdServiceInstanceCollection> for ::winrt_foundation::Collections::IIterable<DnssdServiceInstance> {
     type Error = ::windows_core::Error;
     fn try_from(value: DnssdServiceInstanceCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&DnssdServiceInstanceCollection> for ::winrt_foundation::Collections::IIterable<DnssdServiceInstance> {
     type Error = ::windows_core::Error;
     fn try_from(value: &DnssdServiceInstanceCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<DnssdServiceInstance>> for DnssdServiceInstanceCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<DnssdServiceInstance>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<DnssdServiceInstance>> for &DnssdServiceInstanceCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<DnssdServiceInstance>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<DnssdServiceInstance>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<DnssdServiceInstanceCollection> for ::winrt_foundation::Collections::IVectorView<DnssdServiceInstance> {
     type Error = ::windows_core::Error;
     fn try_from(value: DnssdServiceInstanceCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&DnssdServiceInstanceCollection> for ::winrt_foundation::Collections::IVectorView<DnssdServiceInstance> {
     type Error = ::windows_core::Error;
     fn try_from(value: &DnssdServiceInstanceCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<DnssdServiceInstance>> for DnssdServiceInstanceCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVectorView<DnssdServiceInstance>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<DnssdServiceInstance>> for &DnssdServiceInstanceCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVectorView<DnssdServiceInstance>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IVectorView<DnssdServiceInstance>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Send for DnssdServiceInstanceCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Sync for DnssdServiceInstanceCollection {}
 #[repr(transparent)]
 pub struct DnssdServiceWatcher(::windows_core::IUnknown);
@@ -776,25 +776,25 @@ pub struct IDnssdServiceInstance_Vtbl {
     pub SetPriority: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u16) -> ::windows_core::HRESULT,
     pub Weight: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u16) -> ::windows_core::HRESULT,
     pub SetWeight: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub TextAttributes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TextAttributes: usize,
-    #[cfg(feature = "Networking_Sockets")]
+    #[cfg(feature = "winrt-networking")]
     pub RegisterStreamSocketListenerAsync1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, socket: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking_Sockets"))]
+    #[cfg(not(feature = "winrt-networking"))]
     RegisterStreamSocketListenerAsync1: usize,
-    #[cfg(all(feature = "Networking_Connectivity", feature = "Networking_Sockets"))]
+    #[cfg(all(feature = "winrt-networking", feature = "winrt-networking"))]
     pub RegisterStreamSocketListenerAsync2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, socket: ::windows_core::RawPtr, adapter: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Networking_Connectivity", feature = "Networking_Sockets")))]
+    #[cfg(not(all(feature = "winrt-networking", feature = "winrt-networking")))]
     RegisterStreamSocketListenerAsync2: usize,
-    #[cfg(feature = "Networking_Sockets")]
+    #[cfg(feature = "winrt-networking")]
     pub RegisterDatagramSocketAsync1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, socket: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking_Sockets"))]
+    #[cfg(not(feature = "winrt-networking"))]
     RegisterDatagramSocketAsync1: usize,
-    #[cfg(all(feature = "Networking_Connectivity", feature = "Networking_Sockets"))]
+    #[cfg(all(feature = "winrt-networking", feature = "winrt-networking"))]
     pub RegisterDatagramSocketAsync2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, socket: ::windows_core::RawPtr, adapter: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Networking_Connectivity", feature = "Networking_Sockets")))]
+    #[cfg(not(all(feature = "winrt-networking", feature = "winrt-networking")))]
     RegisterDatagramSocketAsync2: usize,
 }
 #[doc(hidden)]

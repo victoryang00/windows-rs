@@ -2,49 +2,49 @@
 extern "system" {
     pub fn EnableMouseInPointer(fenable: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     pub fn GetPointerCursorId(pointerid: u32, cursorid: *mut u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls"))]
+    #[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
     pub fn GetPointerDevice(device: ::win32_foundation_sys::HANDLE, pointerdevice: *mut super::super::Controls::POINTER_DEVICE_INFO) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_Controls")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn GetPointerDeviceCursors(device: ::win32_foundation_sys::HANDLE, cursorcount: *mut u32, devicecursors: *mut super::super::Controls::POINTER_DEVICE_CURSOR_INFO) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_Controls")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn GetPointerDeviceProperties(device: ::win32_foundation_sys::HANDLE, propertycount: *mut u32, pointerproperties: *mut super::super::Controls::POINTER_DEVICE_PROPERTY) -> ::win32_foundation_sys::BOOL;
     pub fn GetPointerDeviceRects(device: ::win32_foundation_sys::HANDLE, pointerdevicerect: *mut ::win32_foundation_sys::RECT, displayrect: *mut ::win32_foundation_sys::RECT) -> ::win32_foundation_sys::BOOL;
-    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls"))]
+    #[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
     pub fn GetPointerDevices(devicecount: *mut u32, pointerdevices: *mut super::super::Controls::POINTER_DEVICE_INFO) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn GetPointerFrameInfo(pointerid: u32, pointercount: *mut u32, pointerinfo: *mut POINTER_INFO) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn GetPointerFrameInfoHistory(pointerid: u32, entriescount: *mut u32, pointercount: *mut u32, pointerinfo: *mut POINTER_INFO) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn GetPointerFramePenInfo(pointerid: u32, pointercount: *mut u32, peninfo: *mut POINTER_PEN_INFO) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn GetPointerFramePenInfoHistory(pointerid: u32, entriescount: *mut u32, pointercount: *mut u32, peninfo: *mut POINTER_PEN_INFO) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn GetPointerFrameTouchInfo(pointerid: u32, pointercount: *mut u32, touchinfo: *mut POINTER_TOUCH_INFO) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn GetPointerFrameTouchInfoHistory(pointerid: u32, entriescount: *mut u32, pointercount: *mut u32, touchinfo: *mut POINTER_TOUCH_INFO) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn GetPointerInfo(pointerid: u32, pointerinfo: *mut POINTER_INFO) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn GetPointerInfoHistory(pointerid: u32, entriescount: *mut u32, pointerinfo: *mut POINTER_INFO) -> ::win32_foundation_sys::BOOL;
     pub fn GetPointerInputTransform(pointerid: u32, historycount: u32, inputtransform: *mut INPUT_TRANSFORM) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn GetPointerPenInfo(pointerid: u32, peninfo: *mut POINTER_PEN_INFO) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn GetPointerPenInfoHistory(pointerid: u32, entriescount: *mut u32, peninfo: *mut POINTER_PEN_INFO) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn GetPointerTouchInfo(pointerid: u32, touchinfo: *mut POINTER_TOUCH_INFO) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn GetPointerTouchInfoHistory(pointerid: u32, entriescount: *mut u32, touchinfo: *mut POINTER_TOUCH_INFO) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn GetPointerType(pointerid: u32, pointertype: *mut super::super::WindowsAndMessaging::POINTER_INPUT_TYPE) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_Controls")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn GetRawPointerDeviceData(pointerid: u32, historycount: u32, propertiescount: u32, pproperties: *const super::super::Controls::POINTER_DEVICE_PROPERTY, pvalues: *mut i32) -> ::win32_foundation_sys::BOOL;
     pub fn GetUnpredictedMessagePos() -> u32;
     pub fn InitializeTouchInjection(maxcount: u32, dwmode: TOUCH_FEEDBACK_MODE) -> ::win32_foundation_sys::BOOL;
-    #[cfg(all(feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+    #[cfg(all(feature = "win32-ui-sys", feature = "win32-ui-sys"))]
     pub fn InjectSyntheticPointerInput(device: super::super::Controls::HSYNTHETICPOINTERDEVICE, pointerinfo: *const super::super::Controls::POINTER_TYPE_INFO, count: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn InjectTouchInput(count: u32, contacts: *const POINTER_TOUCH_INFO) -> ::win32_foundation_sys::BOOL;
     pub fn IsMouseInPointerEnabled() -> ::win32_foundation_sys::BOOL;
     pub fn SkipPointerFrameMessages(pointerid: u32) -> ::win32_foundation_sys::BOOL;
@@ -141,7 +141,7 @@ pub const POINTER_FLAG_HWHEEL: POINTER_FLAGS = 1048576u32;
 pub const POINTER_FLAG_CAPTURECHANGED: POINTER_FLAGS = 2097152u32;
 pub const POINTER_FLAG_HASTRANSFORM: POINTER_FLAGS = 4194304u32;
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct POINTER_INFO {
     pub pointerType: super::super::WindowsAndMessaging::POINTER_INPUT_TYPE,
     pub pointerId: u32,
@@ -160,16 +160,16 @@ pub struct POINTER_INFO {
     pub PerformanceCount: u64,
     pub ButtonChangeType: POINTER_BUTTON_CHANGE_TYPE,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for POINTER_INFO {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for POINTER_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct POINTER_PEN_INFO {
     pub pointerInfo: POINTER_INFO,
     pub penFlags: u32,
@@ -179,16 +179,16 @@ pub struct POINTER_PEN_INFO {
     pub tiltX: i32,
     pub tiltY: i32,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for POINTER_PEN_INFO {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for POINTER_PEN_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct POINTER_TOUCH_INFO {
     pub pointerInfo: POINTER_INFO,
     pub touchFlags: u32,
@@ -198,9 +198,9 @@ pub struct POINTER_TOUCH_INFO {
     pub orientation: u32,
     pub pressure: u32,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for POINTER_TOUCH_INFO {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for POINTER_TOUCH_INFO {
     fn clone(&self) -> Self {
         *self

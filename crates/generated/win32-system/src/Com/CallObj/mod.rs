@@ -280,11 +280,11 @@ impl ICallFrame {
         let mut result__ = ::core::mem::MaybeUninit::<CALLFRAMEPARAMINFO>::zeroed();
         (::windows_core::Interface::vtable(self).GetParamInfo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(iparam), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<CALLFRAMEPARAMINFO>(result__)
     }
-    #[cfg(feature = "Win32_System_Ole")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn SetParam(&self, iparam: u32, pvar: *const super::VARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetParam)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(iparam), ::core::mem::transmute(pvar)).ok()
     }
-    #[cfg(feature = "Win32_System_Ole")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetParam(&self, iparam: u32) -> ::windows_core::Result<super::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).GetParam)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(iparam), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::VARIANT>(result__)
@@ -372,13 +372,13 @@ pub struct ICallFrame_Vtbl {
     pub SetReturnValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hr: ::windows_core::HRESULT),
     pub GetReturnValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub GetParamInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, iparam: u32, pinfo: *mut CALLFRAMEPARAMINFO) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Ole")]
+    #[cfg(feature = "win32-system")]
     pub SetParam: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, iparam: u32, pvar: *const super::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Ole"))]
+    #[cfg(not(feature = "win32-system"))]
     SetParam: usize,
-    #[cfg(feature = "Win32_System_Ole")]
+    #[cfg(feature = "win32-system")]
     pub GetParam: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, iparam: u32, pvar: *mut super::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Ole"))]
+    #[cfg(not(feature = "win32-system"))]
     GetParam: usize,
     pub Copy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, copycontrol: CALLFRAME_COPY, pwalker: ::windows_core::RawPtr, ppframe: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Free: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pframeargsdest: ::windows_core::RawPtr, pwalkerdestfree: ::windows_core::RawPtr, pwalkercopy: ::windows_core::RawPtr, freeflags: u32, pwalkerfree: ::windows_core::RawPtr, nullflags: u32) -> ::windows_core::HRESULT,

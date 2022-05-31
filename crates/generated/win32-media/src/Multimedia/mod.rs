@@ -37,159 +37,159 @@ impl ::core::default::Default for ADPCMCOEFSET {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct ADPCMEWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wSamplesPerBlock: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for ADPCMEWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for ADPCMEWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for ADPCMEWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for ADPCMEWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ADPCMEWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for ADPCMEWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for ADPCMEWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct ADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wSamplesPerBlock: u16,
     pub wNumCoef: u16,
     pub aCoef: [ADPCMCOEFSET; 1],
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for ADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for ADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for ADPCMWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for ADPCMWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ADPCMWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for ADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for ADPCMWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct APTXWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for APTXWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for APTXWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for APTXWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for APTXWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<APTXWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for APTXWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for APTXWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct AUDIOFILE_AF10WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for AUDIOFILE_AF10WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for AUDIOFILE_AF10WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for AUDIOFILE_AF10WAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for AUDIOFILE_AF10WAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AUDIOFILE_AF10WAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for AUDIOFILE_AF10WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for AUDIOFILE_AF10WAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct AUDIOFILE_AF36WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for AUDIOFILE_AF36WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for AUDIOFILE_AF36WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for AUDIOFILE_AF36WAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for AUDIOFILE_AF36WAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AUDIOFILE_AF36WAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for AUDIOFILE_AF36WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for AUDIOFILE_AF36WAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -957,7 +957,7 @@ pub unsafe fn AVIStreamGetFrameClose<'a, Param0: ::windows_core::IntoParam<'a, I
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn AVIStreamGetFrameOpen<'a, Param0: ::windows_core::IntoParam<'a, IAVIStream>>(pavi: Param0, lpbiwanted: *const ::win32_graphics::Gdi::BITMAPINFOHEADER) -> ::core::option::Option<IGetFrame> {
     #[cfg(windows)]
@@ -1255,7 +1255,7 @@ impl ::core::default::Default for CAPINFOCHUNK {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct CAPSTATUS {
     pub uiImageWidth: u32,
     pub uiImageHeight: u32,
@@ -1276,15 +1276,15 @@ pub struct CAPSTATUS {
     pub wNumVideoAllocated: u32,
     pub wNumAudioAllocated: u32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for CAPSTATUS {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for CAPSTATUS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for CAPSTATUS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CAPSTATUS")
@@ -1309,19 +1309,19 @@ impl ::core::fmt::Debug for CAPSTATUS {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for CAPSTATUS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for CAPSTATUS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CAPSTATUS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for CAPSTATUS {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for CAPSTATUS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1407,7 +1407,7 @@ impl ::core::default::Default for CAPTUREPARMS {
     }
 }
 pub type CAPVIDEOCALLBACK = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation::HWND, lpvhdr: *const VIDEOHDR) -> ::win32_foundation::LRESULT>;
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub type CAPWAVECALLBACK = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation::HWND, lpwhdr: *const super::Audio::WAVEHDR) -> ::win32_foundation::LRESULT>;
 pub type CAPYIELDCALLBACK = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation::HWND) -> ::win32_foundation::LRESULT>;
 #[repr(C)]
@@ -1450,7 +1450,7 @@ impl ::core::default::Default for CHANNEL_CAPS {
 pub const CLSID_AVIFile: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00020000_0000_0000_c000_000000000046);
 pub const CLSID_AVISimpleUnMarshal: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00020009_0000_0000_c000_000000000046);
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct COMPVARS {
     pub cbSize: i32,
     pub dwFlags: u32,
@@ -1469,15 +1469,15 @@ pub struct COMPVARS {
     pub lpState: *mut ::core::ffi::c_void,
     pub cbState: i32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for COMPVARS {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for COMPVARS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for COMPVARS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("COMPVARS")
@@ -1500,83 +1500,83 @@ impl ::core::fmt::Debug for COMPVARS {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for COMPVARS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for COMPVARS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<COMPVARS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for COMPVARS {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for COMPVARS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct CONTRESCR10WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wSamplesPerBlock: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for CONTRESCR10WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for CONTRESCR10WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for CONTRESCR10WAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for CONTRESCR10WAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CONTRESCR10WAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for CONTRESCR10WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for CONTRESCR10WAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct CONTRESVQLPCWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wSamplesPerBlock: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for CONTRESVQLPCWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for CONTRESVQLPCWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for CONTRESVQLPCWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for CONTRESVQLPCWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CONTRESVQLPCWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for CONTRESVQLPCWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for CONTRESVQLPCWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1585,96 +1585,96 @@ impl ::core::default::Default for CONTRESVQLPCWAVEFORMAT {
 pub const CONTROLCALLBACK_CAPTURING: u32 = 2u32;
 pub const CONTROLCALLBACK_PREROLL: u32 = 1u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct CREATIVEADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wRevision: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for CREATIVEADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for CREATIVEADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for CREATIVEADPCMWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for CREATIVEADPCMWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CREATIVEADPCMWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for CREATIVEADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for CREATIVEADPCMWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct CREATIVEFASTSPEECH10WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wRevision: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for CREATIVEFASTSPEECH10WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for CREATIVEFASTSPEECH10WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for CREATIVEFASTSPEECH10WAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for CREATIVEFASTSPEECH10WAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CREATIVEFASTSPEECH10WAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for CREATIVEFASTSPEECH10WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for CREATIVEFASTSPEECH10WAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct CREATIVEFASTSPEECH8WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wRevision: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for CREATIVEFASTSPEECH8WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for CREATIVEFASTSPEECH8WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for CREATIVEFASTSPEECH8WAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for CREATIVEFASTSPEECH8WAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CREATIVEFASTSPEECH8WAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for CREATIVEFASTSPEECH8WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for CREATIVEFASTSPEECH8WAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1682,31 +1682,31 @@ impl ::core::default::Default for CREATIVEFASTSPEECH8WAVEFORMAT {
 }
 pub const CRYSTAL_NET_SFM_CODEC: u32 = 1u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct CSIMAADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for CSIMAADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for CSIMAADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for CSIMAADPCMWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for CSIMAADPCMWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CSIMAADPCMWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for CSIMAADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for CSIMAADPCMWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1763,157 +1763,157 @@ pub const DDF_SAME_HDC: u32 = 4u32;
 pub const DDF_SAME_SIZE: u32 = 8u32;
 pub const DDF_UPDATE: u32 = 2u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct DIALOGICOKIADPCMWAVEFORMAT {
     pub ewf: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for DIALOGICOKIADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for DIALOGICOKIADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for DIALOGICOKIADPCMWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for DIALOGICOKIADPCMWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DIALOGICOKIADPCMWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for DIALOGICOKIADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for DIALOGICOKIADPCMWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct DIGIADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wSamplesPerBlock: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for DIGIADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for DIGIADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for DIGIADPCMWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for DIGIADPCMWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DIGIADPCMWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for DIGIADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for DIGIADPCMWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct DIGIFIXWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for DIGIFIXWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for DIGIFIXWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for DIGIFIXWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for DIGIFIXWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DIGIFIXWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for DIGIFIXWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for DIGIFIXWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct DIGIREALWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wSamplesPerBlock: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for DIGIREALWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for DIGIREALWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for DIGIREALWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for DIGIREALWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DIGIREALWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for DIGIREALWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for DIGIREALWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct DIGISTDWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for DIGISTDWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for DIGISTDWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for DIGISTDWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for DIGISTDWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DIGISTDWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for DIGISTDWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for DIGISTDWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1922,32 +1922,32 @@ impl ::core::default::Default for DIGISTDWAVEFORMAT {
 pub const DLG_ACMFILTERCHOOSE_ID: u32 = 71u32;
 pub const DLG_ACMFORMATCHOOSE_ID: u32 = 70u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct DOLBYAC2WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub nAuxBitsCode: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for DOLBYAC2WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for DOLBYAC2WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for DOLBYAC2WAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for DOLBYAC2WAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOLBYAC2WAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for DOLBYAC2WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for DOLBYAC2WAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1992,34 +1992,34 @@ pub type DRIVERMSGPROC = ::core::option::Option<unsafe extern "system" fn(param0
 pub type DRIVERPROC = ::core::option::Option<unsafe extern "system" fn(param0: usize, param1: HDRVR, param2: u32, param3: ::win32_foundation::LPARAM, param4: ::win32_foundation::LPARAM) -> ::win32_foundation::LRESULT>;
 pub const DRIVERS_SECTION: &str = "DRIVERS32";
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct DRMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wReserved: u16,
     pub ulContentId: u32,
     pub wfxSecure: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for DRMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for DRMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for DRMWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for DRMWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DRMWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for DRMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for DRMWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2153,32 +2153,32 @@ pub const DRV_RESERVED: u32 = 2048u32;
 pub const DRV_RESTART: u32 = 2u32;
 pub const DRV_USER: u32 = 16384u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct DVIADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wSamplesPerBlock: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for DVIADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for DVIADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for DVIADPCMWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for DVIADPCMWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DVIADPCMWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for DVIADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for DVIADPCMWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2241,7 +2241,7 @@ pub unsafe fn DefDriverProc<'a, Param1: ::windows_core::IntoParam<'a, HDRVR>, Pa
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn DrawDibBegin<'a, Param1: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HDC>>(hdd: isize, hdc: Param1, dxdst: i32, dydst: i32, lpbi: *const ::win32_graphics::Gdi::BITMAPINFOHEADER, dxsrc: i32, dysrc: i32, wflags: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -2255,7 +2255,7 @@ pub unsafe fn DrawDibBegin<'a, Param1: ::windows_core::IntoParam<'a, ::win32_gra
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn DrawDibChangePalette(hdd: isize, istart: i32, lppe: &[::win32_graphics::Gdi::PALETTEENTRY]) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -2282,7 +2282,7 @@ pub unsafe fn DrawDibClose(hdd: isize) -> ::win32_foundation::BOOL {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn DrawDibDraw<'a, Param1: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HDC>>(hdd: isize, hdc: Param1, xdst: i32, ydst: i32, dxdst: i32, dydst: i32, lpbi: *const ::win32_graphics::Gdi::BITMAPINFOHEADER, lpbits: *const ::core::ffi::c_void, xsrc: i32, ysrc: i32, dxsrc: i32, dysrc: i32, wflags: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -2309,7 +2309,7 @@ pub unsafe fn DrawDibEnd(hdd: isize) -> ::win32_foundation::BOOL {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn DrawDibGetBuffer(hdd: isize, lpbi: *mut ::win32_graphics::Gdi::BITMAPINFOHEADER, dwsize: u32, dwflags: u32) -> *mut ::core::ffi::c_void {
     #[cfg(windows)]
@@ -2323,7 +2323,7 @@ pub unsafe fn DrawDibGetBuffer(hdd: isize, lpbi: *mut ::win32_graphics::Gdi::BIT
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn DrawDibGetPalette(hdd: isize) -> ::win32_graphics::Gdi::HPALETTE {
     #[cfg(windows)]
@@ -2350,7 +2350,7 @@ pub unsafe fn DrawDibOpen() -> isize {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn DrawDibProfileDisplay(lpbi: *const ::win32_graphics::Gdi::BITMAPINFOHEADER) -> ::win32_foundation::LRESULT {
     #[cfg(windows)]
@@ -2364,7 +2364,7 @@ pub unsafe fn DrawDibProfileDisplay(lpbi: *const ::win32_graphics::Gdi::BITMAPIN
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn DrawDibRealize<'a, Param1: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HDC>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(hdd: isize, hdc: Param1, fbackground: Param2) -> u32 {
     #[cfg(windows)]
@@ -2378,7 +2378,7 @@ pub unsafe fn DrawDibRealize<'a, Param1: ::windows_core::IntoParam<'a, ::win32_g
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn DrawDibSetPalette<'a, Param1: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HPALETTE>>(hdd: isize, hpal: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -2458,63 +2458,63 @@ pub unsafe fn DrvGetModuleHandle<'a, Param0: ::windows_core::IntoParam<'a, HDRVR
     unimplemented!("Unsupported target OS");
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct ECHOSC1WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for ECHOSC1WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for ECHOSC1WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for ECHOSC1WAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for ECHOSC1WAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ECHOSC1WAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for ECHOSC1WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for ECHOSC1WAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct EXBMINFOHEADER {
     pub bmi: ::win32_graphics::Gdi::BITMAPINFOHEADER,
     pub biExtDataOffset: u32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for EXBMINFOHEADER {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for EXBMINFOHEADER {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for EXBMINFOHEADER {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for EXBMINFOHEADER {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EXBMINFOHEADER>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for EXBMINFOHEADER {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for EXBMINFOHEADER {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2642,129 +2642,129 @@ pub const FIND_RET: i32 = 61440i32;
 pub const FIND_SIZE: i32 = 12288i32;
 pub const FIND_TYPE: i32 = 240i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct FMTOWNS_SND_WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wRevision: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for FMTOWNS_SND_WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for FMTOWNS_SND_WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for FMTOWNS_SND_WAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for FMTOWNS_SND_WAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FMTOWNS_SND_WAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for FMTOWNS_SND_WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for FMTOWNS_SND_WAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct G721_ADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub nAuxBlockSize: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for G721_ADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for G721_ADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for G721_ADPCMWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for G721_ADPCMWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<G721_ADPCMWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for G721_ADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for G721_ADPCMWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct G723_ADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub cbExtraSize: u16,
     pub nAuxBlockSize: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for G723_ADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for G723_ADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for G723_ADPCMWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for G723_ADPCMWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<G723_ADPCMWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for G723_ADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for G723_ADPCMWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct GSM610WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wSamplesPerBlock: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for GSM610WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for GSM610WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for GSM610WAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for GSM610WAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GSM610WAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for GSM610WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for GSM610WAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2783,7 +2783,7 @@ pub unsafe fn GetDriverModuleHandle<'a, Param0: ::windows_core::IntoParam<'a, HD
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_Controls_Dialogs")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn GetOpenFileNamePreviewA(lpofn: *mut ::win32_ui::Controls::Dialogs::OPENFILENAMEA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -2797,7 +2797,7 @@ pub unsafe fn GetOpenFileNamePreviewA(lpofn: *mut ::win32_ui::Controls::Dialogs:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_Controls_Dialogs")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn GetOpenFileNamePreviewW(lpofn: *mut ::win32_ui::Controls::Dialogs::OPENFILENAMEW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -2811,7 +2811,7 @@ pub unsafe fn GetOpenFileNamePreviewW(lpofn: *mut ::win32_ui::Controls::Dialogs:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_Controls_Dialogs")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn GetSaveFileNamePreviewA(lpofn: *mut ::win32_ui::Controls::Dialogs::OPENFILENAMEA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -2825,7 +2825,7 @@ pub unsafe fn GetSaveFileNamePreviewA(lpofn: *mut ::win32_ui::Controls::Dialogs:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_Controls_Dialogs")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn GetSaveFileNamePreviewW(lpofn: *mut ::win32_ui::Controls::Dialogs::OPENFILENAMEW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -3094,33 +3094,33 @@ pub struct IAVIFile_Vtbl {
     pub EndRecord: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub DeleteStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fcctype: u32, lparam: i32) -> ::windows_core::HRESULT,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(transparent)]
 pub struct IAVIPersistFile(::windows_core::IUnknown);
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl IAVIPersistFile {
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetClassID(&self) -> ::windows_core::Result<::windows_core::GUID> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::GUID>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.GetClassID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::GUID>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn IsDirty(&self) -> ::windows_core::HRESULT {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).base__.IsDirty)(::windows_core::Interface::as_raw(self)))
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn Load<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszfilename: Param0, dwmode: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Load)(::windows_core::Interface::as_raw(self), pszfilename.into_param().abi(), ::core::mem::transmute(dwmode)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn Save<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, pszfilename: Param0, fremember: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Save)(::windows_core::Interface::as_raw(self), pszfilename.into_param().abi(), fremember.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn SaveCompleted<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszfilename: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SaveCompleted)(::windows_core::Interface::as_raw(self), pszfilename.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetCurFile(&self) -> ::windows_core::Result<::windows_core::PWSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetCurFile)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
@@ -3129,104 +3129,104 @@ impl IAVIPersistFile {
         (::windows_core::Interface::vtable(self).Reserved1)(::windows_core::Interface::as_raw(self)).ok()
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IAVIPersistFile> for ::windows_core::IUnknown {
     fn from(value: IAVIPersistFile) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IAVIPersistFile> for ::windows_core::IUnknown {
     fn from(value: &IAVIPersistFile) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IAVIPersistFile {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IAVIPersistFile {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IAVIPersistFile> for ::win32_system::Com::IPersist {
     fn from(value: IAVIPersistFile) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IAVIPersistFile> for ::win32_system::Com::IPersist {
     fn from(value: &IAVIPersistFile) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IPersist> for IAVIPersistFile {
     fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IPersist> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IPersist> for &'a IAVIPersistFile {
     fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IPersist> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IAVIPersistFile> for ::win32_system::Com::IPersistFile {
     fn from(value: IAVIPersistFile) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IAVIPersistFile> for ::win32_system::Com::IPersistFile {
     fn from(value: &IAVIPersistFile) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IPersistFile> for IAVIPersistFile {
     fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IPersistFile> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IPersistFile> for &'a IAVIPersistFile {
     fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IPersistFile> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for IAVIPersistFile {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for IAVIPersistFile {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for IAVIPersistFile {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for IAVIPersistFile {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("IAVIPersistFile").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Interface for IAVIPersistFile {
     type Vtable = IAVIPersistFile_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00020025_0000_0000_c000_000000000046);
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IAVIPersistFile_Vtbl {
@@ -3384,7 +3384,7 @@ pub struct IAVIStreaming_Vtbl {
     pub End: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct ICCOMPRESS {
     pub dwFlags: u32,
     pub lpbiOutput: *mut ::win32_graphics::Gdi::BITMAPINFOHEADER,
@@ -3399,40 +3399,40 @@ pub struct ICCOMPRESS {
     pub lpbiPrev: *mut ::win32_graphics::Gdi::BITMAPINFOHEADER,
     pub lpPrev: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for ICCOMPRESS {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for ICCOMPRESS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for ICCOMPRESS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ICCOMPRESS").field("dwFlags", &self.dwFlags).field("lpbiOutput", &self.lpbiOutput).field("lpOutput", &self.lpOutput).field("lpbiInput", &self.lpbiInput).field("lpInput", &self.lpInput).field("lpckid", &self.lpckid).field("lpdwFlags", &self.lpdwFlags).field("lFrameNum", &self.lFrameNum).field("dwFrameSize", &self.dwFrameSize).field("dwQuality", &self.dwQuality).field("lpbiPrev", &self.lpbiPrev).field("lpPrev", &self.lpPrev).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for ICCOMPRESS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for ICCOMPRESS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ICCOMPRESS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for ICCOMPRESS {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for ICCOMPRESS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct ICCOMPRESSFRAMES {
     pub dwFlags: u32,
     pub lpbiOutput: *mut ::win32_graphics::Gdi::BITMAPINFOHEADER,
@@ -3451,15 +3451,15 @@ pub struct ICCOMPRESSFRAMES {
     pub GetData: isize,
     pub PutData: isize,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for ICCOMPRESSFRAMES {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for ICCOMPRESSFRAMES {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for ICCOMPRESSFRAMES {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ICCOMPRESSFRAMES")
@@ -3482,19 +3482,19 @@ impl ::core::fmt::Debug for ICCOMPRESSFRAMES {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for ICCOMPRESSFRAMES {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for ICCOMPRESSFRAMES {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ICCOMPRESSFRAMES>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for ICCOMPRESSFRAMES {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for ICCOMPRESSFRAMES {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3515,7 +3515,7 @@ pub unsafe fn ICClose<'a, Param0: ::windows_core::IntoParam<'a, HIC>>(hic: Param
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn ICCompress<'a, Param0: ::windows_core::IntoParam<'a, HIC>>(hic: Param0, dwflags: u32, lpbioutput: *const ::win32_graphics::Gdi::BITMAPINFOHEADER, lpdata: *mut ::core::ffi::c_void, lpbiinput: *const ::win32_graphics::Gdi::BITMAPINFOHEADER, lpbits: *const ::core::ffi::c_void, lpckid: *mut u32, lpdwflags: *mut u32, lframenum: i32, dwframesize: u32, dwquality: u32, lpbiprev: *const ::win32_graphics::Gdi::BITMAPINFOHEADER, lpprev: *const ::core::ffi::c_void) -> u32 {
     #[cfg(windows)]
@@ -3529,7 +3529,7 @@ pub unsafe fn ICCompress<'a, Param0: ::windows_core::IntoParam<'a, HIC>>(hic: Pa
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn ICCompressorChoose<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwnd: Param0, uiflags: u32, pvin: *const ::core::ffi::c_void, lpdata: *const ::core::ffi::c_void, pc: *mut COMPVARS, lpsztitle: Param5) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -3543,7 +3543,7 @@ pub unsafe fn ICCompressorChoose<'a, Param0: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn ICCompressorFree(pc: *const COMPVARS) {
     #[cfg(windows)]
@@ -3558,7 +3558,7 @@ pub unsafe fn ICCompressorFree(pc: *const COMPVARS) {
     unimplemented!("Unsupported target OS");
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct ICDECOMPRESS {
     pub dwFlags: u32,
     pub lpbiInput: *mut ::win32_graphics::Gdi::BITMAPINFOHEADER,
@@ -3567,40 +3567,40 @@ pub struct ICDECOMPRESS {
     pub lpOutput: *mut ::core::ffi::c_void,
     pub ckid: u32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for ICDECOMPRESS {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for ICDECOMPRESS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for ICDECOMPRESS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ICDECOMPRESS").field("dwFlags", &self.dwFlags).field("lpbiInput", &self.lpbiInput).field("lpInput", &self.lpInput).field("lpbiOutput", &self.lpbiOutput).field("lpOutput", &self.lpOutput).field("ckid", &self.ckid).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for ICDECOMPRESS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for ICDECOMPRESS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ICDECOMPRESS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for ICDECOMPRESS {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for ICDECOMPRESS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct ICDECOMPRESSEX {
     pub dwFlags: u32,
     pub lpbiSrc: *mut ::win32_graphics::Gdi::BITMAPINFOHEADER,
@@ -3616,33 +3616,33 @@ pub struct ICDECOMPRESSEX {
     pub dxSrc: i32,
     pub dySrc: i32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for ICDECOMPRESSEX {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for ICDECOMPRESSEX {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for ICDECOMPRESSEX {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ICDECOMPRESSEX").field("dwFlags", &self.dwFlags).field("lpbiSrc", &self.lpbiSrc).field("lpSrc", &self.lpSrc).field("lpbiDst", &self.lpbiDst).field("lpDst", &self.lpDst).field("xDst", &self.xDst).field("yDst", &self.yDst).field("dxDst", &self.dxDst).field("dyDst", &self.dyDst).field("xSrc", &self.xSrc).field("ySrc", &self.ySrc).field("dxSrc", &self.dxSrc).field("dySrc", &self.dySrc).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for ICDECOMPRESSEX {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for ICDECOMPRESSEX {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ICDECOMPRESSEX>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for ICDECOMPRESSEX {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for ICDECOMPRESSEX {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3687,7 +3687,7 @@ impl ::core::default::Default for ICDRAW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct ICDRAWBEGIN {
     pub dwFlags: u32,
     pub hpal: ::win32_graphics::Gdi::HPALETTE,
@@ -3705,40 +3705,40 @@ pub struct ICDRAWBEGIN {
     pub dwRate: u32,
     pub dwScale: u32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for ICDRAWBEGIN {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for ICDRAWBEGIN {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for ICDRAWBEGIN {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ICDRAWBEGIN").field("dwFlags", &self.dwFlags).field("hpal", &self.hpal).field("hwnd", &self.hwnd).field("hdc", &self.hdc).field("xDst", &self.xDst).field("yDst", &self.yDst).field("dxDst", &self.dxDst).field("dyDst", &self.dyDst).field("lpbi", &self.lpbi).field("xSrc", &self.xSrc).field("ySrc", &self.ySrc).field("dxSrc", &self.dxSrc).field("dySrc", &self.dySrc).field("dwRate", &self.dwRate).field("dwScale", &self.dwScale).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for ICDRAWBEGIN {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for ICDRAWBEGIN {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ICDRAWBEGIN>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for ICDRAWBEGIN {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for ICDRAWBEGIN {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct ICDRAWSUGGEST {
     pub lpbiIn: *mut ::win32_graphics::Gdi::BITMAPINFOHEADER,
     pub lpbiSuggest: *mut ::win32_graphics::Gdi::BITMAPINFOHEADER,
@@ -3748,33 +3748,33 @@ pub struct ICDRAWSUGGEST {
     pub dyDst: i32,
     pub hicDecompressor: HIC,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for ICDRAWSUGGEST {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for ICDRAWSUGGEST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for ICDRAWSUGGEST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ICDRAWSUGGEST").field("lpbiIn", &self.lpbiIn).field("lpbiSuggest", &self.lpbiSuggest).field("dxSrc", &self.dxSrc).field("dySrc", &self.dySrc).field("dxDst", &self.dxDst).field("dyDst", &self.dyDst).field("hicDecompressor", &self.hicDecompressor).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for ICDRAWSUGGEST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for ICDRAWSUGGEST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ICDRAWSUGGEST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for ICDRAWSUGGEST {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for ICDRAWSUGGEST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3794,7 +3794,7 @@ pub const ICDRAW_QUERY: i32 = 1i32;
 pub const ICDRAW_RENDER: i32 = 128i32;
 pub const ICDRAW_UPDATE: i32 = 1073741824i32;
 pub const ICDRAW_UPDATING: i32 = 64i32;
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn ICDecompress<'a, Param0: ::windows_core::IntoParam<'a, HIC>>(hic: Param0, dwflags: u32, lpbiformat: *const ::win32_graphics::Gdi::BITMAPINFOHEADER, lpdata: *const ::core::ffi::c_void, lpbi: *const ::win32_graphics::Gdi::BITMAPINFOHEADER, lpbits: *mut ::core::ffi::c_void) -> u32 {
     #[cfg(windows)]
@@ -3821,7 +3821,7 @@ pub unsafe fn ICDraw<'a, Param0: ::windows_core::IntoParam<'a, HIC>>(hic: Param0
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn ICDrawBegin<'a, Param0: ::windows_core::IntoParam<'a, HIC>, Param2: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HPALETTE>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param4: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HDC>>(hic: Param0, dwflags: u32, hpal: Param2, hwnd: Param3, hdc: Param4, xdst: i32, ydst: i32, dxdst: i32, dydst: i32, lpbi: *const ::win32_graphics::Gdi::BITMAPINFOHEADER, xsrc: i32, ysrc: i32, dxsrc: i32, dysrc: i32, dwrate: u32, dwscale: u32) -> u32 {
     #[cfg(windows)]
@@ -3871,7 +3871,7 @@ pub const ICERR_NEWPALETTE: i32 = 2i32;
 pub const ICERR_OK: i32 = 0i32;
 pub const ICERR_STOPDRAWING: i32 = 4i32;
 pub const ICERR_UNSUPPORTED: i32 = -1i32;
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn ICGetDisplayFormat<'a, Param0: ::windows_core::IntoParam<'a, HIC>>(hic: Param0, lpbiin: *const ::win32_graphics::Gdi::BITMAPINFOHEADER, lpbiout: *mut ::win32_graphics::Gdi::BITMAPINFOHEADER, bitdepth: i32, dx: i32, dy: i32) -> HIC {
     #[cfg(windows)]
@@ -3940,7 +3940,7 @@ pub const ICINSTALL_DRIVERW: u32 = 32770u32;
 pub const ICINSTALL_FUNCTION: u32 = 1u32;
 pub const ICINSTALL_HDRV: u32 = 4u32;
 pub const ICINSTALL_UNICODE: u32 = 32768u32;
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn ICImageCompress<'a, Param0: ::windows_core::IntoParam<'a, HIC>>(hic: Param0, uiflags: u32, lpbiin: *const ::win32_graphics::Gdi::BITMAPINFO, lpbits: *const ::core::ffi::c_void, lpbiout: *const ::win32_graphics::Gdi::BITMAPINFO, lquality: i32, plsize: *mut i32) -> ::win32_foundation::HANDLE {
     #[cfg(windows)]
@@ -3954,7 +3954,7 @@ pub unsafe fn ICImageCompress<'a, Param0: ::windows_core::IntoParam<'a, HIC>>(hi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn ICImageDecompress<'a, Param0: ::windows_core::IntoParam<'a, HIC>>(hic: Param0, uiflags: u32, lpbiin: *const ::win32_graphics::Gdi::BITMAPINFO, lpbits: *const ::core::ffi::c_void, lpbiout: *const ::win32_graphics::Gdi::BITMAPINFO) -> ::win32_foundation::HANDLE {
     #[cfg(windows)]
@@ -3994,7 +3994,7 @@ pub unsafe fn ICInstall<'a, Param2: ::windows_core::IntoParam<'a, ::win32_founda
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn ICLocate(fcctype: u32, fcchandler: u32, lpbiin: *const ::win32_graphics::Gdi::BITMAPINFOHEADER, lpbiout: *const ::win32_graphics::Gdi::BITMAPINFOHEADER, wflags: u16) -> HIC {
     #[cfg(windows)]
@@ -4146,40 +4146,40 @@ pub unsafe fn ICOpenFunction(fcctype: u32, fcchandler: u32, wmode: u32, lpfnhand
     unimplemented!("Unsupported target OS");
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct ICPALETTE {
     pub dwFlags: u32,
     pub iStart: i32,
     pub iLen: i32,
     pub lppe: *mut ::win32_graphics::Gdi::PALETTEENTRY,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for ICPALETTE {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for ICPALETTE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for ICPALETTE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ICPALETTE").field("dwFlags", &self.dwFlags).field("iStart", &self.iStart).field("iLen", &self.iLen).field("lppe", &self.lppe).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for ICPALETTE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for ICPALETTE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ICPALETTE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for ICPALETTE {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for ICPALETTE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4250,7 +4250,7 @@ pub unsafe fn ICSendMessage<'a, Param0: ::windows_core::IntoParam<'a, HIC>>(hic:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn ICSeqCompressFrame(pc: *const COMPVARS, uiflags: u32, lpbits: *const ::core::ffi::c_void, pfkey: *mut ::win32_foundation::BOOL, plsize: *mut i32) -> *mut ::core::ffi::c_void {
     #[cfg(windows)]
@@ -4264,7 +4264,7 @@ pub unsafe fn ICSeqCompressFrame(pc: *const COMPVARS, uiflags: u32, lpbits: *con
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn ICSeqCompressFrameEnd(pc: *const COMPVARS) {
     #[cfg(windows)]
@@ -4278,7 +4278,7 @@ pub unsafe fn ICSeqCompressFrameEnd(pc: *const COMPVARS) {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn ICSeqCompressFrameStart(pc: *const COMPVARS, lpbiin: *const ::win32_graphics::Gdi::BITMAPINFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -4375,7 +4375,7 @@ impl IGetFrame {
     pub unsafe fn End(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).End)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetFormat(&self, lpbi: *const ::win32_graphics::Gdi::BITMAPINFOHEADER, lpbits: *const ::core::ffi::c_void, x: i32, y: i32, dx: i32, dy: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetFormat)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lpbi), ::core::mem::transmute(lpbits), ::core::mem::transmute(x), ::core::mem::transmute(y), ::core::mem::transmute(dx), ::core::mem::transmute(dy)).ok()
     }
@@ -4427,38 +4427,38 @@ pub struct IGetFrame_Vtbl {
     pub GetFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpos: i32) -> *mut ::core::ffi::c_void,
     pub Begin: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lstart: i32, lend: i32, lrate: i32) -> ::windows_core::HRESULT,
     pub End: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics")]
     pub SetFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbi: *const ::win32_graphics::Gdi::BITMAPINFOHEADER, lpbits: *const ::core::ffi::c_void, x: i32, y: i32, dx: i32, dy: i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetFormat: usize,
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct IMAADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wSamplesPerBlock: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for IMAADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for IMAADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for IMAADPCMWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for IMAADPCMWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IMAADPCMWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for IMAADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for IMAADPCMWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4898,7 +4898,7 @@ pub const JPEG_RGB: u32 = 3u32;
 pub const JPEG_Y: u32 = 1u32;
 pub const JPEG_YCbCr: u32 = 2u32;
 pub const KSDATAFORMAT_SUBTYPE_IEEE_FLOAT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000003_0000_0010_8000_00aa00389b71);
-#[cfg(feature = "Win32_System_IO")]
+#[cfg(feature = "win32-system")]
 pub type LPFNEXTDEVIO = ::core::option::Option<unsafe extern "system" fn(lparam: ::win32_foundation::LPARAM, dwflags: u32, dwiocontrolcode: u32, lpinbuffer: *mut ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesreturned: *mut u32, lpoverlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL>;
 pub type LPMMIOPROC = ::core::option::Option<unsafe extern "system" fn(lpmmioinfo: ::windows_core::PCSTR, umsg: u32, lparam1: ::win32_foundation::LPARAM, lparam2: ::win32_foundation::LPARAM) -> ::win32_foundation::LRESULT>;
 pub type LPTASKCALLBACK = ::core::option::Option<unsafe extern "system" fn(dwinst: usize)>;
@@ -5302,33 +5302,33 @@ impl ::core::default::Default for MCI_ANIM_STEP_PARMS {
 pub const MCI_ANIM_STEP_REVERSE: i32 = 65536i32;
 pub const MCI_ANIM_UPDATE_HDC: i32 = 131072i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct MCI_ANIM_UPDATE_PARMS {
     pub dwCallback: usize,
     pub rc: ::win32_foundation::RECT,
     pub hDC: ::win32_graphics::Gdi::HDC,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for MCI_ANIM_UPDATE_PARMS {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for MCI_ANIM_UPDATE_PARMS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for MCI_ANIM_UPDATE_PARMS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for MCI_ANIM_UPDATE_PARMS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MCI_ANIM_UPDATE_PARMS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for MCI_ANIM_UPDATE_PARMS {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for MCI_ANIM_UPDATE_PARMS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6609,33 +6609,33 @@ pub const MCI_DGV_STOP_HOLD: i32 = 65536i32;
 pub const MCI_DGV_UPDATE_HDC: i32 = 131072i32;
 pub const MCI_DGV_UPDATE_PAINT: i32 = 262144i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 pub struct MCI_DGV_UPDATE_PARMS {
     pub dwCallback: usize,
     pub rc: ::win32_foundation::RECT,
     pub hDC: ::win32_graphics::Gdi::HDC,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for MCI_DGV_UPDATE_PARMS {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for MCI_DGV_UPDATE_PARMS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for MCI_DGV_UPDATE_PARMS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for MCI_DGV_UPDATE_PARMS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MCI_DGV_UPDATE_PARMS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for MCI_DGV_UPDATE_PARMS {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for MCI_DGV_UPDATE_PARMS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7939,32 +7939,32 @@ pub const MCI_WINDOW: u32 = 2113u32;
 pub const MCMADM_E_REGKEY_NOT_FOUND: ::windows_core::HRESULT = ::windows_core::HRESULT(-1072889750i32);
 pub const MCMADM_I_NO_EVENTS: ::windows_core::HRESULT = ::windows_core::HRESULT(1074593897i32);
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct MEDIASPACEADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wRevision: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for MEDIASPACEADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for MEDIASPACEADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for MEDIASPACEADPCMWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for MEDIASPACEADPCMWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MEDIASPACEADPCMWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for MEDIASPACEADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for MEDIASPACEADPCMWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8016,7 +8016,7 @@ pub const MIXERCONTROL_CONTROLTYPE_SRS_MTS: u32 = 536936454u32;
 pub const MIXERCONTROL_CONTROLTYPE_SRS_ONOFF: u32 = 536936455u32;
 pub const MIXERCONTROL_CONTROLTYPE_SRS_SYNTHSELECT: u32 = 536936456u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct MIXEROPENDESC {
     pub hmx: super::Audio::HMIXER,
     pub pReserved0: *mut ::core::ffi::c_void,
@@ -8024,27 +8024,27 @@ pub struct MIXEROPENDESC {
     pub dwInstance: usize,
     pub dnDevNode: usize,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for MIXEROPENDESC {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for MIXEROPENDESC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for MIXEROPENDESC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for MIXEROPENDESC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIXEROPENDESC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for MIXEROPENDESC {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for MIXEROPENDESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -9712,33 +9712,33 @@ pub const MPEGLAYER3_ID_MPEG: u32 = 1u32;
 pub const MPEGLAYER3_ID_UNKNOWN: u32 = 0u32;
 pub const MPEGLAYER3_WFX_EXTRA_BYTES: u32 = 12u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct MSAUDIO1WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wSamplesPerBlock: u16,
     pub wEncodeOptions: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for MSAUDIO1WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for MSAUDIO1WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for MSAUDIO1WAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for MSAUDIO1WAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MSAUDIO1WAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for MSAUDIO1WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for MSAUDIO1WAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -9759,32 +9759,32 @@ pub const MXDM_OPEN: u32 = 3u32;
 pub const MXDM_SETCONTROLDETAILS: u32 = 8u32;
 pub const MXDM_USER: u32 = 16384u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct NMS_VBXADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wSamplesPerBlock: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for NMS_VBXADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for NMS_VBXADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for NMS_VBXADPCMWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for NMS_VBXADPCMWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NMS_VBXADPCMWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for NMS_VBXADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for NMS_VBXADPCMWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -10996,155 +10996,155 @@ pub const NS_W_FILE_BANDWIDTH_LIMIT: ::windows_core::HRESULT = ::windows_core::H
 pub const NS_W_SERVER_BANDWIDTH_LIMIT: ::windows_core::HRESULT = ::windows_core::HRESULT(-2146631677i32);
 pub const NS_W_UNKNOWN_EVENT: ::windows_core::HRESULT = ::windows_core::HRESULT(-2146631584i32);
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct OLIADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for OLIADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for OLIADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for OLIADPCMWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for OLIADPCMWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OLIADPCMWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for OLIADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for OLIADPCMWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct OLICELPWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for OLICELPWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for OLICELPWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for OLICELPWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for OLICELPWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OLICELPWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for OLICELPWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for OLICELPWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct OLIGSMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for OLIGSMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for OLIGSMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for OLIGSMWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for OLIGSMWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OLIGSMWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for OLIGSMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for OLIGSMWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct OLIOPRWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for OLIOPRWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for OLIOPRWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for OLIOPRWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for OLIOPRWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OLIOPRWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for OLIOPRWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for OLIOPRWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct OLISBCWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for OLISBCWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for OLISBCWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for OLISBCWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for OLISBCWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OLISBCWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for OLISBCWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for OLISBCWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11189,64 +11189,64 @@ pub const SEEK_CUR: u32 = 1u32;
 pub const SEEK_END: u32 = 2u32;
 pub const SEEK_SET: u32 = 0u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct SIERRAADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wRevision: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for SIERRAADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for SIERRAADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for SIERRAADPCMWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for SIERRAADPCMWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SIERRAADPCMWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for SIERRAADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for SIERRAADPCMWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct SONARCWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wCompType: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for SONARCWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for SONARCWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for SONARCWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for SONARCWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SONARCWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for SONARCWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for SONARCWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11305,34 +11305,34 @@ impl ::core::default::Default for TIMEREVENT {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct TRUESPEECHWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wRevision: u16,
     pub nSamplesPerBlock: u16,
     pub abReserved: [u8; 28],
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for TRUESPEECHWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for TRUESPEECHWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for TRUESPEECHWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for TRUESPEECHWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRUESPEECHWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for TRUESPEECHWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for TRUESPEECHWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11343,7 +11343,7 @@ pub const VCAPS_CAN_SCALE: u32 = 8u32;
 pub const VCAPS_DST_CAN_CLIP: u32 = 4u32;
 pub const VCAPS_OVERLAY: u32 = 1u32;
 pub const VCAPS_SRC_CAN_CLIP: u32 = 2u32;
-#[cfg(feature = "Win32_UI_Controls")]
+#[cfg(feature = "win32-ui")]
 pub type VFWWDMExtensionProc = ::core::option::Option<unsafe extern "system" fn(pfndeviceiocontrol: *mut ::core::ffi::c_void, pfnaddpropertypage: ::win32_ui::Controls::LPFNSVADDPROPSHEETPAGE, lparam: ::win32_foundation::LPARAM) -> u32>;
 pub const VFW_HIDE_CAMERACONTROL_PAGE: u32 = 4u32;
 pub const VFW_HIDE_SETTINGS_PAGE: u32 = 1u32;
@@ -11464,7 +11464,7 @@ pub unsafe fn VideoForWindowsVersion() -> u32 {
     unimplemented!("Unsupported target OS");
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct WAVEOPENDESC {
     pub hWave: super::Audio::HWAVE,
     pub lpFormat: *mut super::Audio::WAVEFORMAT,
@@ -11473,27 +11473,27 @@ pub struct WAVEOPENDESC {
     pub uMappedDeviceID: u32,
     pub dnDevNode: usize,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for WAVEOPENDESC {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for WAVEOPENDESC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for WAVEOPENDESC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for WAVEOPENDESC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WAVEOPENDESC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for WAVEOPENDESC {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for WAVEOPENDESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11787,34 +11787,34 @@ pub const WIDM_START: u32 = 57u32;
 pub const WIDM_STOP: u32 = 58u32;
 pub const WIDM_UNPREPARE: u32 = 55u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct WMAUDIO2WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub dwSamplesPerBlock: u32,
     pub wEncodeOptions: u16,
     pub dwSuperBlockAlign: u32,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for WMAUDIO2WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for WMAUDIO2WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for WMAUDIO2WAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for WMAUDIO2WAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WMAUDIO2WAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for WMAUDIO2WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for WMAUDIO2WAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11823,7 +11823,7 @@ impl ::core::default::Default for WMAUDIO2WAVEFORMAT {
 pub const WMAUDIO2_BITS_PER_SAMPLE: u32 = 16u32;
 pub const WMAUDIO2_MAX_CHANNELS: u32 = 2u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct WMAUDIO3WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wValidBitsPerSample: u16,
@@ -11833,27 +11833,27 @@ pub struct WMAUDIO3WAVEFORMAT {
     pub wEncodeOptions: u16,
     pub wReserved3: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for WMAUDIO3WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for WMAUDIO3WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for WMAUDIO3WAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for WMAUDIO3WAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WMAUDIO3WAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for WMAUDIO3WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for WMAUDIO3WAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11966,31 +11966,31 @@ pub const WODM_SETVOLUME: u32 = 17u32;
 pub const WODM_UNPREPARE: u32 = 8u32;
 pub const WODM_WRITE: u32 = 9u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 pub struct YAMAHA_ADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::marker::Copy for YAMAHA_ADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::clone::Clone for YAMAHA_ADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 unsafe impl ::windows_core::Abi for YAMAHA_ADPCMWAVEFORMAT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::PartialEq for YAMAHA_ADPCMWAVEFORMAT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<YAMAHA_ADPCMWAVEFORMAT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::cmp::Eq for YAMAHA_ADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media")]
 impl ::core::default::Default for YAMAHA_ADPCMWAVEFORMAT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

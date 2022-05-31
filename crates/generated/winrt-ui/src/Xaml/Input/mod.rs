@@ -480,7 +480,7 @@ impl CharacterReceivedRoutedEventArgs {
             (::windows_core::Interface::vtable(this).Character)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u16>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn KeyStatus(&self) -> ::windows_core::Result<super::super::Core::CorePhysicalKeyStatus> {
         let this = self;
         unsafe {
@@ -806,7 +806,7 @@ impl DoubleTappedRoutedEventArgs {
         static mut SHARED: ::windows_core::FactoryCache<DoubleTappedRoutedEventArgs, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
@@ -1962,7 +1962,7 @@ impl HoldingRoutedEventArgs {
         static mut SHARED: ::windows_core::FactoryCache<HoldingRoutedEventArgs, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
@@ -1970,7 +1970,7 @@ impl HoldingRoutedEventArgs {
             (::windows_core::Interface::vtable(this).PointerDeviceType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Input::PointerDeviceType>(result__)
         }
     }
-    #[cfg(feature = "UI_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn HoldingState(&self) -> ::windows_core::Result<super::super::Input::HoldingState> {
         let this = self;
         unsafe {
@@ -2197,9 +2197,9 @@ unsafe impl ::windows_core::Interface for ICharacterReceivedRoutedEventArgs {
 pub struct ICharacterReceivedRoutedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Character: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub KeyStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Core::CorePhysicalKeyStatus) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Core"))]
+    #[cfg(not(feature = "winrt-ui"))]
     KeyStatus: usize,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -2332,9 +2332,9 @@ unsafe impl ::windows_core::Interface for IDoubleTappedRoutedEventArgs {
 #[doc(hidden)]
 pub struct IDoubleTappedRoutedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Input"))]
+    #[cfg(not(feature = "winrt-devices"))]
     PointerDeviceType: usize,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -2591,13 +2591,13 @@ unsafe impl ::windows_core::Interface for IHoldingRoutedEventArgs {
 #[doc(hidden)]
 pub struct IHoldingRoutedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Input"))]
+    #[cfg(not(feature = "winrt-devices"))]
     PointerDeviceType: usize,
-    #[cfg(feature = "UI_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub HoldingState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Input::HoldingState) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     HoldingState: usize,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -2662,9 +2662,9 @@ unsafe impl ::windows_core::Interface for IInputScope {
 #[doc(hidden)]
 pub struct IInputScope_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Names: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Names: usize,
 }
 #[doc(hidden)]
@@ -2705,13 +2705,13 @@ unsafe impl ::windows_core::Interface for IKeyRoutedEventArgs {
 #[doc(hidden)]
 pub struct IKeyRoutedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub Key: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_system::VirtualKey) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     Key: usize,
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub KeyStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Core::CorePhysicalKeyStatus) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Core"))]
+    #[cfg(not(feature = "winrt-ui"))]
     KeyStatus: usize,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -2727,9 +2727,9 @@ unsafe impl ::windows_core::Interface for IKeyRoutedEventArgs2 {
 #[doc(hidden)]
 pub struct IKeyRoutedEventArgs2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub OriginalKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_system::VirtualKey) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     OriginalKey: usize,
 }
 #[doc(hidden)]
@@ -2756,21 +2756,21 @@ unsafe impl ::windows_core::Interface for IKeyboardAccelerator {
 #[doc(hidden)]
 pub struct IKeyboardAccelerator_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub Key: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_system::VirtualKey) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     Key: usize,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub SetKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_system::VirtualKey) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     SetKey: usize,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub Modifiers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_system::VirtualKeyModifiers) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     Modifiers: usize,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub SetModifiers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_system::VirtualKeyModifiers) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     SetModifiers: usize,
     pub IsEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetIsEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -2899,19 +2899,19 @@ pub struct IManipulationCompletedRoutedEventArgs_Vtbl {
     pub Container: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub IsInertial: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub Cumulative: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Input::ManipulationDelta) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Cumulative: usize,
-    #[cfg(feature = "UI_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub Velocities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Input::ManipulationVelocities) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Velocities: usize,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Input"))]
+    #[cfg(not(feature = "winrt-devices"))]
     PointerDeviceType: usize,
 }
 #[doc(hidden)]
@@ -2928,23 +2928,23 @@ pub struct IManipulationDeltaRoutedEventArgs_Vtbl {
     pub Container: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub IsInertial: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub Delta: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Input::ManipulationDelta) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Delta: usize,
-    #[cfg(feature = "UI_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub Cumulative: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Input::ManipulationDelta) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Cumulative: usize,
-    #[cfg(feature = "UI_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub Velocities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Input::ManipulationVelocities) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Velocities: usize,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Input"))]
+    #[cfg(not(feature = "winrt-devices"))]
     PointerDeviceType: usize,
     pub Complete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -2968,21 +2968,21 @@ pub struct IManipulationInertiaStartingRoutedEventArgs_Vtbl {
     pub SetTranslationBehavior: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Input"))]
+    #[cfg(not(feature = "winrt-devices"))]
     PointerDeviceType: usize,
-    #[cfg(feature = "UI_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub Delta: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Input::ManipulationDelta) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Delta: usize,
-    #[cfg(feature = "UI_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub Cumulative: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Input::ManipulationDelta) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Cumulative: usize,
-    #[cfg(feature = "UI_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub Velocities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Input::ManipulationVelocities) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Velocities: usize,
 }
 #[doc(hidden)]
@@ -3029,13 +3029,13 @@ pub struct IManipulationStartedRoutedEventArgs_Vtbl {
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Input"))]
+    #[cfg(not(feature = "winrt-devices"))]
     PointerDeviceType: usize,
-    #[cfg(feature = "UI_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub Cumulative: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Input::ManipulationDelta) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Cumulative: usize,
     pub Complete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -3100,9 +3100,9 @@ unsafe impl ::windows_core::Interface for IPointer {
 pub struct IPointer_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub PointerId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Input"))]
+    #[cfg(not(feature = "winrt-devices"))]
     PointerDeviceType: usize,
     pub IsInContact: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsInRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -3119,19 +3119,19 @@ unsafe impl ::windows_core::Interface for IPointerRoutedEventArgs {
 pub struct IPointerRoutedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Pointer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub KeyModifiers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_system::VirtualKeyModifiers) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     KeyModifiers: usize,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub GetCurrentPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relativeto: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     GetCurrentPoint: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Input"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub GetIntermediatePoints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relativeto: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "UI_Input")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-ui")))]
     GetIntermediatePoints: usize,
 }
 #[doc(hidden)]
@@ -3158,13 +3158,13 @@ unsafe impl ::windows_core::Interface for IProcessKeyboardAcceleratorEventArgs {
 #[doc(hidden)]
 pub struct IProcessKeyboardAcceleratorEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub Key: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_system::VirtualKey) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     Key: usize,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub Modifiers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_system::VirtualKeyModifiers) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     Modifiers: usize,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -3180,9 +3180,9 @@ unsafe impl ::windows_core::Interface for IRightTappedRoutedEventArgs {
 #[doc(hidden)]
 pub struct IRightTappedRoutedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Input"))]
+    #[cfg(not(feature = "winrt-devices"))]
     PointerDeviceType: usize,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -3252,9 +3252,9 @@ unsafe impl ::windows_core::Interface for ITappedRoutedEventArgs {
 #[doc(hidden)]
 pub struct ITappedRoutedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Input"))]
+    #[cfg(not(feature = "winrt-devices"))]
     PointerDeviceType: usize,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -3273,17 +3273,17 @@ pub struct IXamlUICommand_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Label: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetLabel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub IconSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     IconSource: usize,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub SetIconSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetIconSource: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub KeyboardAccelerators: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     KeyboardAccelerators: usize,
     pub AccessKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetAccessKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -3632,7 +3632,7 @@ impl InputScope {
         static mut SHARED: ::windows_core::FactoryCache<InputScope, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Names(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<InputScopeName>> {
         let this = self;
         unsafe {
@@ -4018,7 +4018,7 @@ pub struct KeyEventHandler_Vtbl {
 #[repr(transparent)]
 pub struct KeyRoutedEventArgs(::windows_core::IUnknown);
 impl KeyRoutedEventArgs {
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn Key(&self) -> ::windows_core::Result<::winrt_system::VirtualKey> {
         let this = self;
         unsafe {
@@ -4026,7 +4026,7 @@ impl KeyRoutedEventArgs {
             (::windows_core::Interface::vtable(this).Key)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::VirtualKey>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn KeyStatus(&self) -> ::windows_core::Result<super::super::Core::CorePhysicalKeyStatus> {
         let this = self;
         unsafe {
@@ -4045,7 +4045,7 @@ impl KeyRoutedEventArgs {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetHandled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn OriginalKey(&self) -> ::windows_core::Result<::winrt_system::VirtualKey> {
         let this = &::windows_core::Interface::cast::<IKeyRoutedEventArgs2>(self)?;
         unsafe {
@@ -4194,7 +4194,7 @@ unsafe impl ::windows_core::RuntimeType for KeyTipPlacementMode {
 #[repr(transparent)]
 pub struct KeyboardAccelerator(::windows_core::IUnknown);
 impl KeyboardAccelerator {
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn Key(&self) -> ::windows_core::Result<::winrt_system::VirtualKey> {
         let this = self;
         unsafe {
@@ -4202,12 +4202,12 @@ impl KeyboardAccelerator {
             (::windows_core::Interface::vtable(this).Key)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::VirtualKey>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn SetKey(&self, value: ::winrt_system::VirtualKey) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetKey)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn Modifiers(&self) -> ::windows_core::Result<::winrt_system::VirtualKeyModifiers> {
         let this = self;
         unsafe {
@@ -4215,7 +4215,7 @@ impl KeyboardAccelerator {
             (::windows_core::Interface::vtable(this).Modifiers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::VirtualKeyModifiers>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn SetModifiers(&self, value: ::winrt_system::VirtualKeyModifiers) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetModifiers)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -4851,7 +4851,7 @@ impl ManipulationCompletedRoutedEventArgs {
             (::windows_core::Interface::vtable(this).IsInertial)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Cumulative(&self) -> ::windows_core::Result<super::super::Input::ManipulationDelta> {
         let this = self;
         unsafe {
@@ -4859,7 +4859,7 @@ impl ManipulationCompletedRoutedEventArgs {
             (::windows_core::Interface::vtable(this).Cumulative)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Input::ManipulationDelta>(result__)
         }
     }
-    #[cfg(feature = "UI_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Velocities(&self) -> ::windows_core::Result<super::super::Input::ManipulationVelocities> {
         let this = self;
         unsafe {
@@ -4878,7 +4878,7 @@ impl ManipulationCompletedRoutedEventArgs {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetHandled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
@@ -5093,7 +5093,7 @@ impl ManipulationDeltaRoutedEventArgs {
             (::windows_core::Interface::vtable(this).IsInertial)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Delta(&self) -> ::windows_core::Result<super::super::Input::ManipulationDelta> {
         let this = self;
         unsafe {
@@ -5101,7 +5101,7 @@ impl ManipulationDeltaRoutedEventArgs {
             (::windows_core::Interface::vtable(this).Delta)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Input::ManipulationDelta>(result__)
         }
     }
-    #[cfg(feature = "UI_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Cumulative(&self) -> ::windows_core::Result<super::super::Input::ManipulationDelta> {
         let this = self;
         unsafe {
@@ -5109,7 +5109,7 @@ impl ManipulationDeltaRoutedEventArgs {
             (::windows_core::Interface::vtable(this).Cumulative)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Input::ManipulationDelta>(result__)
         }
     }
-    #[cfg(feature = "UI_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Velocities(&self) -> ::windows_core::Result<super::super::Input::ManipulationVelocities> {
         let this = self;
         unsafe {
@@ -5128,7 +5128,7 @@ impl ManipulationDeltaRoutedEventArgs {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetHandled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
@@ -5377,7 +5377,7 @@ impl ManipulationInertiaStartingRoutedEventArgs {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetHandled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
@@ -5385,7 +5385,7 @@ impl ManipulationInertiaStartingRoutedEventArgs {
             (::windows_core::Interface::vtable(this).PointerDeviceType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Input::PointerDeviceType>(result__)
         }
     }
-    #[cfg(feature = "UI_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Delta(&self) -> ::windows_core::Result<super::super::Input::ManipulationDelta> {
         let this = self;
         unsafe {
@@ -5393,7 +5393,7 @@ impl ManipulationInertiaStartingRoutedEventArgs {
             (::windows_core::Interface::vtable(this).Delta)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Input::ManipulationDelta>(result__)
         }
     }
-    #[cfg(feature = "UI_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Cumulative(&self) -> ::windows_core::Result<super::super::Input::ManipulationDelta> {
         let this = self;
         unsafe {
@@ -5401,7 +5401,7 @@ impl ManipulationInertiaStartingRoutedEventArgs {
             (::windows_core::Interface::vtable(this).Cumulative)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Input::ManipulationDelta>(result__)
         }
     }
-    #[cfg(feature = "UI_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Velocities(&self) -> ::windows_core::Result<super::super::Input::ManipulationVelocities> {
         let this = self;
         unsafe {
@@ -5799,7 +5799,7 @@ impl ManipulationStartedRoutedEventArgs {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetHandled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
@@ -5807,7 +5807,7 @@ impl ManipulationStartedRoutedEventArgs {
             (::windows_core::Interface::vtable(this).PointerDeviceType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Input::PointerDeviceType>(result__)
         }
     }
-    #[cfg(feature = "UI_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Cumulative(&self) -> ::windows_core::Result<super::super::Input::ManipulationDelta> {
         let this = self;
         unsafe {
@@ -6290,7 +6290,7 @@ impl Pointer {
             (::windows_core::Interface::vtable(this).PointerId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
@@ -6478,7 +6478,7 @@ impl PointerRoutedEventArgs {
             (::windows_core::Interface::vtable(this).Pointer)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Pointer>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn KeyModifiers(&self) -> ::windows_core::Result<::winrt_system::VirtualKeyModifiers> {
         let this = self;
         unsafe {
@@ -6497,7 +6497,7 @@ impl PointerRoutedEventArgs {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetHandled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GetCurrentPoint<'a, Param0: ::windows_core::IntoParam<'a, super::UIElement>>(&self, relativeto: Param0) -> ::windows_core::Result<super::super::Input::PointerPoint> {
         let this = self;
         unsafe {
@@ -6505,7 +6505,7 @@ impl PointerRoutedEventArgs {
             (::windows_core::Interface::vtable(this).GetCurrentPoint)(::windows_core::Interface::as_raw(this), relativeto.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Input::PointerPoint>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Input"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub fn GetIntermediatePoints<'a, Param0: ::windows_core::IntoParam<'a, super::UIElement>>(&self, relativeto: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::super::Input::PointerPoint>> {
         let this = self;
         unsafe {
@@ -6616,7 +6616,7 @@ unsafe impl ::core::marker::Sync for PointerRoutedEventArgs {}
 #[repr(transparent)]
 pub struct ProcessKeyboardAcceleratorEventArgs(::windows_core::IUnknown);
 impl ProcessKeyboardAcceleratorEventArgs {
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn Key(&self) -> ::windows_core::Result<::winrt_system::VirtualKey> {
         let this = self;
         unsafe {
@@ -6624,7 +6624,7 @@ impl ProcessKeyboardAcceleratorEventArgs {
             (::windows_core::Interface::vtable(this).Key)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::VirtualKey>(result__)
         }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn Modifiers(&self) -> ::windows_core::Result<::winrt_system::VirtualKeyModifiers> {
         let this = self;
         unsafe {
@@ -6809,7 +6809,7 @@ impl RightTappedRoutedEventArgs {
         static mut SHARED: ::windows_core::FactoryCache<RightTappedRoutedEventArgs, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
@@ -7258,7 +7258,7 @@ impl TappedRoutedEventArgs {
         static mut SHARED: ::windows_core::FactoryCache<TappedRoutedEventArgs, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
@@ -7518,7 +7518,7 @@ impl XamlUICommand {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetLabel)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn IconSource(&self) -> ::windows_core::Result<super::Controls::IconSource> {
         let this = self;
         unsafe {
@@ -7526,12 +7526,12 @@ impl XamlUICommand {
             (::windows_core::Interface::vtable(this).IconSource)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Controls::IconSource>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetIconSource<'a, Param0: ::windows_core::IntoParam<'a, super::Controls::IconSource>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetIconSource)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn KeyboardAccelerators(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<KeyboardAccelerator>> {
         let this = self;
         unsafe {

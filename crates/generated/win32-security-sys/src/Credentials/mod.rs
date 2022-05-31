@@ -32,13 +32,13 @@ extern "system" {
     pub fn CredUIConfirmCredentialsW(psztargetname: ::windows_core_sys::PCWSTR, bconfirm: ::win32_foundation_sys::BOOL) -> u32;
     pub fn CredUIParseUserNameA(username: ::windows_core_sys::PCSTR, user: ::windows_core_sys::PSTR, userbuffersize: u32, domain: ::windows_core_sys::PSTR, domainbuffersize: u32) -> u32;
     pub fn CredUIParseUserNameW(username: ::windows_core_sys::PCWSTR, user: ::windows_core_sys::PWSTR, userbuffersize: u32, domain: ::windows_core_sys::PWSTR, domainbuffersize: u32) -> u32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn CredUIPromptForCredentialsA(puiinfo: *const CREDUI_INFOA, psztargetname: ::windows_core_sys::PCSTR, pcontext: *mut SecHandle, dwautherror: u32, pszusername: ::windows_core_sys::PSTR, ulusernamebuffersize: u32, pszpassword: ::windows_core_sys::PSTR, ulpasswordbuffersize: u32, save: *mut ::win32_foundation_sys::BOOL, dwflags: CREDUI_FLAGS) -> u32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn CredUIPromptForCredentialsW(puiinfo: *const CREDUI_INFOW, psztargetname: ::windows_core_sys::PCWSTR, pcontext: *mut SecHandle, dwautherror: u32, pszusername: ::windows_core_sys::PWSTR, ulusernamebuffersize: u32, pszpassword: ::windows_core_sys::PWSTR, ulpasswordbuffersize: u32, save: *mut ::win32_foundation_sys::BOOL, dwflags: CREDUI_FLAGS) -> u32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn CredUIPromptForWindowsCredentialsA(puiinfo: *const CREDUI_INFOA, dwautherror: u32, pulauthpackage: *mut u32, pvinauthbuffer: *const ::core::ffi::c_void, ulinauthbuffersize: u32, ppvoutauthbuffer: *mut *mut ::core::ffi::c_void, puloutauthbuffersize: *mut u32, pfsave: *mut ::win32_foundation_sys::BOOL, dwflags: CREDUIWIN_FLAGS) -> u32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn CredUIPromptForWindowsCredentialsW(puiinfo: *const CREDUI_INFOW, dwautherror: u32, pulauthpackage: *mut u32, pvinauthbuffer: *const ::core::ffi::c_void, ulinauthbuffersize: u32, ppvoutauthbuffer: *mut *mut ::core::ffi::c_void, puloutauthbuffersize: *mut u32, pfsave: *mut ::win32_foundation_sys::BOOL, dwflags: CREDUIWIN_FLAGS) -> u32;
     pub fn CredUIReadSSOCredW(pszrealm: ::windows_core_sys::PCWSTR, ppszusername: *mut ::windows_core_sys::PWSTR) -> u32;
     pub fn CredUIStoreSSOCredW(pszrealm: ::windows_core_sys::PCWSTR, pszusername: ::windows_core_sys::PCWSTR, pszpassword: ::windows_core_sys::PCWSTR, bpersist: ::win32_foundation_sys::BOOL) -> u32;
@@ -127,9 +127,9 @@ extern "system" {
     pub fn SCardStatusA(hcard: usize, mszreadernames: ::windows_core_sys::PSTR, pcchreaderlen: *mut u32, pdwstate: *mut u32, pdwprotocol: *mut u32, pbatr: *mut u8, pcbatrlen: *mut u32) -> i32;
     pub fn SCardStatusW(hcard: usize, mszreadernames: ::windows_core_sys::PWSTR, pcchreaderlen: *mut u32, pdwstate: *mut u32, pdwprotocol: *mut u32, pbatr: *mut u8, pcbatrlen: *mut u32) -> i32;
     pub fn SCardTransmit(hcard: usize, piosendpci: *const SCARD_IO_REQUEST, pbsendbuffer: *const u8, cbsendlength: u32, piorecvpci: *mut SCARD_IO_REQUEST, pbrecvbuffer: *mut u8, pcbrecvlength: *mut u32) -> i32;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn SCardUIDlgSelectCardA(param0: *mut OPENCARDNAME_EXA) -> i32;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn SCardUIDlgSelectCardW(param0: *mut OPENCARDNAME_EXW) -> i32;
     pub fn SCardWriteCacheA(hcontext: usize, cardidentifier: *const ::windows_core_sys::GUID, freshnesscounter: u32, lookupname: ::windows_core_sys::PCSTR, data: *const u8, datalen: u32) -> i32;
     pub fn SCardWriteCacheW(hcontext: usize, cardidentifier: *const ::windows_core_sys::GUID, freshnesscounter: u32, lookupname: ::windows_core_sys::PCWSTR, data: *const u8, datalen: u32) -> i32;
@@ -333,7 +333,7 @@ pub const CREDUI_FLAGS_SHOW_SAVE_CHECK_BOX: CREDUI_FLAGS = 64u32;
 pub const CREDUI_FLAGS_USERNAME_TARGET_CREDENTIALS: CREDUI_FLAGS = 524288u32;
 pub const CREDUI_FLAGS_VALIDATE_USERNAME: CREDUI_FLAGS = 1024u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct CREDUI_INFOA {
     pub cbSize: u32,
     pub hwndParent: ::win32_foundation_sys::HWND,
@@ -341,16 +341,16 @@ pub struct CREDUI_INFOA {
     pub pszCaptionText: ::windows_core_sys::PCSTR,
     pub hbmBanner: ::win32_graphics_sys::Gdi::HBITMAP,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for CREDUI_INFOA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for CREDUI_INFOA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct CREDUI_INFOW {
     pub cbSize: u32,
     pub hwndParent: ::win32_foundation_sys::HWND,
@@ -358,9 +358,9 @@ pub struct CREDUI_INFOW {
     pub pszCaptionText: ::windows_core_sys::PCWSTR,
     pub hbmBanner: ::win32_graphics_sys::Gdi::HBITMAP,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for CREDUI_INFOW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for CREDUI_INFOW {
     fn clone(&self) -> Self {
         *self
@@ -565,7 +565,7 @@ impl ::core::clone::Clone for OPENCARDNAMEW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct OPENCARDNAME_EXA {
     pub dwStructSize: u32,
     pub hSCardContext: usize,
@@ -586,16 +586,16 @@ pub struct OPENCARDNAME_EXA {
     pub dwActiveProtocol: u32,
     pub hCardHandle: usize,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for OPENCARDNAME_EXA {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for OPENCARDNAME_EXA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct OPENCARDNAME_EXW {
     pub dwStructSize: u32,
     pub hSCardContext: usize,
@@ -616,9 +616,9 @@ pub struct OPENCARDNAME_EXW {
     pub dwActiveProtocol: u32,
     pub hCardHandle: usize,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for OPENCARDNAME_EXW {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for OPENCARDNAME_EXW {
     fn clone(&self) -> Self {
         *self

@@ -1,15 +1,15 @@
 #[link(name = "windows")]
 extern "system" {
     pub fn SwDeviceClose(hswdevice: HSWDEVICE);
-    #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Security"))]
+    #[cfg(all(feature = "win32-devices-sys", feature = "win32-security-sys"))]
     pub fn SwDeviceCreate(pszenumeratorname: ::windows_core_sys::PCWSTR, pszparentdeviceinstance: ::windows_core_sys::PCWSTR, pcreateinfo: *const SW_DEVICE_CREATE_INFO, cpropertycount: u32, pproperties: *const super::super::Properties::DEVPROPERTY, pcallback: SW_DEVICE_CREATE_CALLBACK, pcontext: *const ::core::ffi::c_void, phswdevice: *mut isize) -> ::windows_core_sys::HRESULT;
     pub fn SwDeviceGetLifetime(hswdevice: HSWDEVICE, plifetime: *mut SW_DEVICE_LIFETIME) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Devices_Properties")]
+    #[cfg(feature = "win32-devices-sys")]
     pub fn SwDeviceInterfacePropertySet(hswdevice: HSWDEVICE, pszdeviceinterfaceid: ::windows_core_sys::PCWSTR, cpropertycount: u32, pproperties: *const super::super::Properties::DEVPROPERTY) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Devices_Properties")]
+    #[cfg(feature = "win32-devices-sys")]
     pub fn SwDeviceInterfaceRegister(hswdevice: HSWDEVICE, pinterfaceclassguid: *const ::windows_core_sys::GUID, pszreferencestring: ::windows_core_sys::PCWSTR, cpropertycount: u32, pproperties: *const super::super::Properties::DEVPROPERTY, fenabled: ::win32_foundation_sys::BOOL, ppszdeviceinterfaceid: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn SwDeviceInterfaceSetState(hswdevice: HSWDEVICE, pszdeviceinterfaceid: ::windows_core_sys::PCWSTR, fenabled: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Devices_Properties")]
+    #[cfg(feature = "win32-devices-sys")]
     pub fn SwDevicePropertySet(hswdevice: HSWDEVICE, cpropertycount: u32, pproperties: *const super::super::Properties::DEVPROPERTY) -> ::windows_core_sys::HRESULT;
     pub fn SwDeviceSetLifetime(hswdevice: HSWDEVICE, lifetime: SW_DEVICE_LIFETIME) -> ::windows_core_sys::HRESULT;
     pub fn SwMemFree(pmem: *const ::core::ffi::c_void);
@@ -58,7 +58,7 @@ pub const SWDeviceCapabilitiesNoDisplayInUI: SW_DEVICE_CAPABILITIES = 4i32;
 pub const SWDeviceCapabilitiesDriverRequired: SW_DEVICE_CAPABILITIES = 8i32;
 pub type SW_DEVICE_CREATE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(hswdevice: HSWDEVICE, createresult: ::windows_core_sys::HRESULT, pcontext: *const ::core::ffi::c_void, pszdeviceinstanceid: ::windows_core_sys::PCWSTR)>;
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct SW_DEVICE_CREATE_INFO {
     pub cbSize: u32,
     pub pszInstanceId: ::windows_core_sys::PCWSTR,
@@ -70,9 +70,9 @@ pub struct SW_DEVICE_CREATE_INFO {
     pub pszDeviceLocation: ::windows_core_sys::PCWSTR,
     pub pSecurityDescriptor: *const ::win32_security_sys::SECURITY_DESCRIPTOR,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for SW_DEVICE_CREATE_INFO {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for SW_DEVICE_CREATE_INFO {
     fn clone(&self) -> Self {
         *self

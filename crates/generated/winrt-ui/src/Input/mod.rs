@@ -150,7 +150,7 @@ impl ::core::default::Default for CrossSlideThresholds {
 #[repr(transparent)]
 pub struct CrossSlidingEventArgs(::windows_core::IUnknown);
 impl CrossSlidingEventArgs {
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
@@ -291,7 +291,7 @@ unsafe impl ::windows_core::RuntimeType for CrossSlidingState {
 #[repr(transparent)]
 pub struct DraggingEventArgs(::windows_core::IUnknown);
 impl DraggingEventArgs {
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
@@ -899,7 +899,7 @@ impl GestureRecognizer {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ProcessDownEvent)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ProcessMoveEvents<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<PointerPoint>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ProcessMoveEvents)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -1258,7 +1258,7 @@ unsafe impl ::windows_core::RuntimeType for GestureSettings {
 #[repr(transparent)]
 pub struct HoldingEventArgs(::windows_core::IUnknown);
 impl HoldingEventArgs {
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
@@ -1434,9 +1434,9 @@ unsafe impl ::windows_core::Interface for ICrossSlidingEventArgs {
 #[doc(hidden)]
 pub struct ICrossSlidingEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Input"))]
+    #[cfg(not(feature = "winrt-devices"))]
     PointerDeviceType: usize,
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub CrossSlidingState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut CrossSlidingState) -> ::windows_core::HRESULT,
@@ -1465,9 +1465,9 @@ unsafe impl ::windows_core::Interface for IDraggingEventArgs {
 #[doc(hidden)]
 pub struct IDraggingEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Input"))]
+    #[cfg(not(feature = "winrt-devices"))]
     PointerDeviceType: usize,
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub DraggingState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut DraggingState) -> ::windows_core::HRESULT,
@@ -1575,9 +1575,9 @@ pub struct IGestureRecognizer_Vtbl {
     pub MouseWheelParameters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CanBeDoubleTap: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
     pub ProcessDownEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub ProcessMoveEvents: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ProcessMoveEvents: usize,
     pub ProcessUpEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ProcessMouseWheelEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, isshiftkeydown: bool, iscontrolkeydown: bool) -> ::windows_core::HRESULT,
@@ -1641,9 +1641,9 @@ unsafe impl ::windows_core::Interface for IHoldingEventArgs {
 #[doc(hidden)]
 pub struct IHoldingEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Input"))]
+    #[cfg(not(feature = "winrt-devices"))]
     PointerDeviceType: usize,
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub HoldingState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut HoldingState) -> ::windows_core::HRESULT,
@@ -1703,14 +1703,14 @@ pub struct IKeyboardDeliveryInterceptor_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsInterceptionEnabledWhenInForeground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetIsInterceptionEnabledWhenInForeground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub KeyDown: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Core"))]
+    #[cfg(not(feature = "winrt-ui"))]
     KeyDown: usize,
     pub RemoveKeyDown: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub KeyUp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Core"))]
+    #[cfg(not(feature = "winrt-ui"))]
     KeyUp: usize,
     pub RemoveKeyUp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
@@ -1738,9 +1738,9 @@ unsafe impl ::windows_core::Interface for IManipulationCompletedEventArgs {
 #[doc(hidden)]
 pub struct IManipulationCompletedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Input"))]
+    #[cfg(not(feature = "winrt-devices"))]
     PointerDeviceType: usize,
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub Cumulative: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ManipulationDelta) -> ::windows_core::HRESULT,
@@ -1771,9 +1771,9 @@ unsafe impl ::windows_core::Interface for IManipulationInertiaStartingEventArgs 
 #[doc(hidden)]
 pub struct IManipulationInertiaStartingEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Input"))]
+    #[cfg(not(feature = "winrt-devices"))]
     PointerDeviceType: usize,
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub Delta: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ManipulationDelta) -> ::windows_core::HRESULT,
@@ -1804,9 +1804,9 @@ unsafe impl ::windows_core::Interface for IManipulationStartedEventArgs {
 #[doc(hidden)]
 pub struct IManipulationStartedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Input"))]
+    #[cfg(not(feature = "winrt-devices"))]
     PointerDeviceType: usize,
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub Cumulative: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ManipulationDelta) -> ::windows_core::HRESULT,
@@ -1835,9 +1835,9 @@ unsafe impl ::windows_core::Interface for IManipulationUpdatedEventArgs {
 #[doc(hidden)]
 pub struct IManipulationUpdatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Input"))]
+    #[cfg(not(feature = "winrt-devices"))]
     PointerDeviceType: usize,
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub Delta: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ManipulationDelta) -> ::windows_core::HRESULT,
@@ -1889,9 +1889,9 @@ unsafe impl ::windows_core::Interface for IPointerPoint {
 #[doc(hidden)]
 pub struct IPointerPoint_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub PointerDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Input"))]
+    #[cfg(not(feature = "winrt-devices"))]
     PointerDevice: usize,
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub RawPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
@@ -1962,14 +1962,14 @@ unsafe impl ::windows_core::Interface for IPointerPointStatics {
 pub struct IPointerPointStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub GetCurrentPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pointerid: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetIntermediatePoints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pointerid: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetIntermediatePoints: usize,
     pub GetCurrentPointTransformed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pointerid: u32, transform: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetIntermediatePointsTransformed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pointerid: u32, transform: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetIntermediatePointsTransformed: usize,
 }
 #[repr(transparent)]
@@ -2174,9 +2174,9 @@ unsafe impl ::windows_core::Interface for IRadialControllerButtonClickedEventArg
 #[doc(hidden)]
 pub struct IRadialControllerButtonClickedEventArgs2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Haptics")]
+    #[cfg(feature = "winrt-devices")]
     pub SimpleHapticsController: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Haptics"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SimpleHapticsController: usize,
 }
 #[doc(hidden)]
@@ -2191,9 +2191,9 @@ unsafe impl ::windows_core::Interface for IRadialControllerButtonHoldingEventArg
 pub struct IRadialControllerButtonHoldingEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Contact: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Haptics")]
+    #[cfg(feature = "winrt-devices")]
     pub SimpleHapticsController: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Haptics"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SimpleHapticsController: usize,
 }
 #[doc(hidden)]
@@ -2208,9 +2208,9 @@ unsafe impl ::windows_core::Interface for IRadialControllerButtonPressedEventArg
 pub struct IRadialControllerButtonPressedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Contact: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Haptics")]
+    #[cfg(feature = "winrt-devices")]
     pub SimpleHapticsController: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Haptics"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SimpleHapticsController: usize,
 }
 #[doc(hidden)]
@@ -2225,9 +2225,9 @@ unsafe impl ::windows_core::Interface for IRadialControllerButtonReleasedEventAr
 pub struct IRadialControllerButtonReleasedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Contact: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Haptics")]
+    #[cfg(feature = "winrt-devices")]
     pub SimpleHapticsController: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Haptics"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SimpleHapticsController: usize,
 }
 #[doc(hidden)]
@@ -2241,9 +2241,9 @@ unsafe impl ::windows_core::Interface for IRadialControllerConfiguration {
 #[doc(hidden)]
 pub struct IRadialControllerConfiguration_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetDefaultMenuItems: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, buttons: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetDefaultMenuItems: usize,
     pub ResetToDefaultMenuItems: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub TrySelectDefaultMenuItem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: RadialControllerSystemMenuItemKind, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -2318,9 +2318,9 @@ unsafe impl ::windows_core::Interface for IRadialControllerControlAcquiredEventA
 pub struct IRadialControllerControlAcquiredEventArgs2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsButtonPressed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Haptics")]
+    #[cfg(feature = "winrt-devices")]
     pub SimpleHapticsController: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Haptics"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SimpleHapticsController: usize,
 }
 #[doc(hidden)]
@@ -2334,9 +2334,9 @@ unsafe impl ::windows_core::Interface for IRadialControllerMenu {
 #[doc(hidden)]
 pub struct IRadialControllerMenu_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Items: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Items: usize,
     pub IsEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetIsEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -2372,9 +2372,9 @@ unsafe impl ::windows_core::Interface for IRadialControllerMenuItemStatics {
 #[doc(hidden)]
 pub struct IRadialControllerMenuItemStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateFromIcon: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, displaytext: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, icon: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateFromIcon: usize,
     pub CreateFromKnownIcon: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, displaytext: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: RadialControllerMenuKnownIcon, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -2418,9 +2418,9 @@ unsafe impl ::windows_core::Interface for IRadialControllerRotationChangedEventA
 pub struct IRadialControllerRotationChangedEventArgs2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsButtonPressed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Haptics")]
+    #[cfg(feature = "winrt-devices")]
     pub SimpleHapticsController: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Haptics"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SimpleHapticsController: usize,
 }
 #[doc(hidden)]
@@ -2462,9 +2462,9 @@ unsafe impl ::windows_core::Interface for IRadialControllerScreenContactContinue
 pub struct IRadialControllerScreenContactContinuedEventArgs2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsButtonPressed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Haptics")]
+    #[cfg(feature = "winrt-devices")]
     pub SimpleHapticsController: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Haptics"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SimpleHapticsController: usize,
 }
 #[doc(hidden)]
@@ -2479,9 +2479,9 @@ unsafe impl ::windows_core::Interface for IRadialControllerScreenContactEndedEve
 pub struct IRadialControllerScreenContactEndedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsButtonPressed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Haptics")]
+    #[cfg(feature = "winrt-devices")]
     pub SimpleHapticsController: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Haptics"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SimpleHapticsController: usize,
 }
 #[doc(hidden)]
@@ -2509,9 +2509,9 @@ unsafe impl ::windows_core::Interface for IRadialControllerScreenContactStartedE
 pub struct IRadialControllerScreenContactStartedEventArgs2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsButtonPressed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Haptics")]
+    #[cfg(feature = "winrt-devices")]
     pub SimpleHapticsController: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Haptics"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SimpleHapticsController: usize,
 }
 #[doc(hidden)]
@@ -2539,9 +2539,9 @@ unsafe impl ::windows_core::Interface for IRightTappedEventArgs {
 #[doc(hidden)]
 pub struct IRightTappedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Input"))]
+    #[cfg(not(feature = "winrt-devices"))]
     PointerDeviceType: usize,
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
 }
@@ -2589,9 +2589,9 @@ unsafe impl ::windows_core::Interface for ISystemButtonEventControllerStatics {
 #[doc(hidden)]
 pub struct ISystemButtonEventControllerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub CreateForDispatcherQueue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, queue: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     CreateForDispatcherQueue: usize,
 }
 #[doc(hidden)]
@@ -2652,9 +2652,9 @@ unsafe impl ::windows_core::Interface for ITappedEventArgs {
 #[doc(hidden)]
 pub struct ITappedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Input"))]
+    #[cfg(not(feature = "winrt-devices"))]
     PointerDeviceType: usize,
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub TapCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
@@ -2944,7 +2944,7 @@ impl KeyboardDeliveryInterceptor {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetIsInterceptionEnabledWhenInForeground)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn KeyDown<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<KeyboardDeliveryInterceptor, super::Core::KeyEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
@@ -2956,7 +2956,7 @@ impl KeyboardDeliveryInterceptor {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveKeyDown)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn KeyUp<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<KeyboardDeliveryInterceptor, super::Core::KeyEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
@@ -3054,7 +3054,7 @@ unsafe impl ::core::marker::Sync for KeyboardDeliveryInterceptor {}
 #[repr(transparent)]
 pub struct ManipulationCompletedEventArgs(::windows_core::IUnknown);
 impl ManipulationCompletedEventArgs {
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
@@ -3210,7 +3210,7 @@ impl ::core::default::Default for ManipulationDelta {
 #[repr(transparent)]
 pub struct ManipulationInertiaStartingEventArgs(::windows_core::IUnknown);
 impl ManipulationInertiaStartingEventArgs {
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
@@ -3327,7 +3327,7 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Man
 #[repr(transparent)]
 pub struct ManipulationStartedEventArgs(::windows_core::IUnknown);
 impl ManipulationStartedEventArgs {
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
@@ -3430,7 +3430,7 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Man
 #[repr(transparent)]
 pub struct ManipulationUpdatedEventArgs(::windows_core::IUnknown);
 impl ManipulationUpdatedEventArgs {
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
@@ -3710,7 +3710,7 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Mou
 #[repr(transparent)]
 pub struct PointerPoint(::windows_core::IUnknown);
 impl PointerPoint {
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub fn PointerDevice(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDevice> {
         let this = self;
         unsafe {
@@ -3773,7 +3773,7 @@ impl PointerPoint {
             (::windows_core::Interface::vtable(this).GetCurrentPoint)(::windows_core::Interface::as_raw(this), pointerid, result__.as_mut_ptr()).from_abi::<PointerPoint>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetIntermediatePoints(pointerid: u32) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<PointerPoint>> {
         Self::IPointerPointStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -3786,7 +3786,7 @@ impl PointerPoint {
             (::windows_core::Interface::vtable(this).GetCurrentPointTransformed)(::windows_core::Interface::as_raw(this), pointerid, transform.into_param().abi(), result__.as_mut_ptr()).from_abi::<PointerPoint>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetIntermediatePointsTransformed<'a, Param1: ::windows_core::IntoParam<'a, IPointerPointTransform>>(pointerid: u32, transform: Param1) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<PointerPoint>> {
         Self::IPointerPointStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -4508,7 +4508,7 @@ impl RadialControllerButtonClickedEventArgs {
             (::windows_core::Interface::vtable(this).Contact)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<RadialControllerScreenContact>(result__)
         }
     }
-    #[cfg(feature = "Devices_Haptics")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SimpleHapticsController(&self) -> ::windows_core::Result<::winrt_devices::Haptics::SimpleHapticsController> {
         let this = &::windows_core::Interface::cast::<IRadialControllerButtonClickedEventArgs2>(self)?;
         unsafe {
@@ -4599,7 +4599,7 @@ impl RadialControllerButtonHoldingEventArgs {
             (::windows_core::Interface::vtable(this).Contact)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<RadialControllerScreenContact>(result__)
         }
     }
-    #[cfg(feature = "Devices_Haptics")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SimpleHapticsController(&self) -> ::windows_core::Result<::winrt_devices::Haptics::SimpleHapticsController> {
         let this = self;
         unsafe {
@@ -4690,7 +4690,7 @@ impl RadialControllerButtonPressedEventArgs {
             (::windows_core::Interface::vtable(this).Contact)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<RadialControllerScreenContact>(result__)
         }
     }
-    #[cfg(feature = "Devices_Haptics")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SimpleHapticsController(&self) -> ::windows_core::Result<::winrt_devices::Haptics::SimpleHapticsController> {
         let this = self;
         unsafe {
@@ -4781,7 +4781,7 @@ impl RadialControllerButtonReleasedEventArgs {
             (::windows_core::Interface::vtable(this).Contact)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<RadialControllerScreenContact>(result__)
         }
     }
-    #[cfg(feature = "Devices_Haptics")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SimpleHapticsController(&self) -> ::windows_core::Result<::winrt_devices::Haptics::SimpleHapticsController> {
         let this = self;
         unsafe {
@@ -4865,7 +4865,7 @@ unsafe impl ::core::marker::Sync for RadialControllerButtonReleasedEventArgs {}
 #[repr(transparent)]
 pub struct RadialControllerConfiguration(::windows_core::IUnknown);
 impl RadialControllerConfiguration {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetDefaultMenuItems<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<RadialControllerSystemMenuItemKind>>>(&self, buttons: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDefaultMenuItems)(::windows_core::Interface::as_raw(this), buttons.into_param().abi()).ok() }
@@ -5025,7 +5025,7 @@ impl RadialControllerControlAcquiredEventArgs {
             (::windows_core::Interface::vtable(this).IsButtonPressed)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Devices_Haptics")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SimpleHapticsController(&self) -> ::windows_core::Result<::winrt_devices::Haptics::SimpleHapticsController> {
         let this = &::windows_core::Interface::cast::<IRadialControllerControlAcquiredEventArgs2>(self)?;
         unsafe {
@@ -5109,7 +5109,7 @@ unsafe impl ::core::marker::Sync for RadialControllerControlAcquiredEventArgs {}
 #[repr(transparent)]
 pub struct RadialControllerMenu(::windows_core::IUnknown);
 impl RadialControllerMenu {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<RadialControllerMenuItem>> {
         let this = self;
         unsafe {
@@ -5251,7 +5251,7 @@ impl RadialControllerMenuItem {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveInvoked)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFromIcon<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::RandomAccessStreamReference>>(displaytext: Param0, icon: Param1) -> ::windows_core::Result<RadialControllerMenuItem> {
         Self::IRadialControllerMenuItemStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -5421,7 +5421,7 @@ impl RadialControllerRotationChangedEventArgs {
             (::windows_core::Interface::vtable(this).IsButtonPressed)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Devices_Haptics")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SimpleHapticsController(&self) -> ::windows_core::Result<::winrt_devices::Haptics::SimpleHapticsController> {
         let this = &::windows_core::Interface::cast::<IRadialControllerRotationChangedEventArgs2>(self)?;
         unsafe {
@@ -5609,7 +5609,7 @@ impl RadialControllerScreenContactContinuedEventArgs {
             (::windows_core::Interface::vtable(this).IsButtonPressed)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Devices_Haptics")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SimpleHapticsController(&self) -> ::windows_core::Result<::winrt_devices::Haptics::SimpleHapticsController> {
         let this = &::windows_core::Interface::cast::<IRadialControllerScreenContactContinuedEventArgs2>(self)?;
         unsafe {
@@ -5700,7 +5700,7 @@ impl RadialControllerScreenContactEndedEventArgs {
             (::windows_core::Interface::vtable(this).IsButtonPressed)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Devices_Haptics")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SimpleHapticsController(&self) -> ::windows_core::Result<::winrt_devices::Haptics::SimpleHapticsController> {
         let this = self;
         unsafe {
@@ -5798,7 +5798,7 @@ impl RadialControllerScreenContactStartedEventArgs {
             (::windows_core::Interface::vtable(this).IsButtonPressed)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Devices_Haptics")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SimpleHapticsController(&self) -> ::windows_core::Result<::winrt_devices::Haptics::SimpleHapticsController> {
         let this = &::windows_core::Interface::cast::<IRadialControllerScreenContactStartedEventArgs2>(self)?;
         unsafe {
@@ -5918,7 +5918,7 @@ unsafe impl ::windows_core::RuntimeType for RadialControllerSystemMenuItemKind {
 #[repr(transparent)]
 pub struct RightTappedEventArgs(::windows_core::IUnknown);
 impl RightTappedEventArgs {
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
@@ -6062,7 +6062,7 @@ impl SystemButtonEventController {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveSystemFunctionLockIndicatorChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn CreateForDispatcherQueue<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::DispatcherQueue>>(queue: Param0) -> ::windows_core::Result<SystemButtonEventController> {
         Self::ISystemButtonEventControllerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -6487,7 +6487,7 @@ unsafe impl ::core::marker::Sync for SystemFunctionLockIndicatorChangedEventArgs
 #[repr(transparent)]
 pub struct TappedEventArgs(::windows_core::IUnknown);
 impl TappedEventArgs {
-    #[cfg(feature = "Devices_Input")]
+    #[cfg(feature = "winrt-devices")]
     pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {

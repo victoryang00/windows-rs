@@ -6,19 +6,19 @@ extern "system" {
     pub fn BroadcastSystemMessageW(flags: BROADCAST_SYSTEM_MESSAGE_FLAGS, lpinfo: *mut BROADCAST_SYSTEM_MESSAGE_INFO, msg: u32, wparam: ::win32_foundation_sys::WPARAM, lparam: ::win32_foundation_sys::LPARAM) -> i32;
     pub fn CloseDesktop(hdesktop: HDESK) -> ::win32_foundation_sys::BOOL;
     pub fn CloseWindowStation(hwinsta: HWINSTA) -> ::win32_foundation_sys::BOOL;
-    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+    #[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys"))]
     pub fn CreateDesktopA(lpszdesktop: ::windows_core_sys::PCSTR, lpszdevice: ::windows_core_sys::PCSTR, pdevmode: *mut ::win32_graphics_sys::Gdi::DEVMODEA, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> HDESK;
-    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+    #[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys"))]
     pub fn CreateDesktopExA(lpszdesktop: ::windows_core_sys::PCSTR, lpszdevice: ::windows_core_sys::PCSTR, pdevmode: *mut ::win32_graphics_sys::Gdi::DEVMODEA, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security_sys::SECURITY_ATTRIBUTES, ulheapsize: u32, pvoid: *mut ::core::ffi::c_void) -> HDESK;
-    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+    #[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys"))]
     pub fn CreateDesktopExW(lpszdesktop: ::windows_core_sys::PCWSTR, lpszdevice: ::windows_core_sys::PCWSTR, pdevmode: *mut ::win32_graphics_sys::Gdi::DEVMODEW, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security_sys::SECURITY_ATTRIBUTES, ulheapsize: u32, pvoid: *mut ::core::ffi::c_void) -> HDESK;
-    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+    #[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys"))]
     pub fn CreateDesktopW(lpszdesktop: ::windows_core_sys::PCWSTR, lpszdevice: ::windows_core_sys::PCWSTR, pdevmode: *mut ::win32_graphics_sys::Gdi::DEVMODEW, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> HDESK;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateWindowStationA(lpwinsta: ::windows_core_sys::PCSTR, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> HWINSTA;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateWindowStationW(lpwinsta: ::windows_core_sys::PCWSTR, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> HWINSTA;
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn EnumDesktopWindows(hdesktop: HDESK, lpfn: ::win32_ui_sys::WindowsAndMessaging::WNDENUMPROC, lparam: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::BOOL;
     pub fn EnumDesktopsA(hwinsta: HWINSTA, lpenumfunc: DESKTOPENUMPROCA, lparam: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::BOOL;
     pub fn EnumDesktopsW(hwinsta: HWINSTA, lpenumfunc: DESKTOPENUMPROCW, lparam: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::BOOL;

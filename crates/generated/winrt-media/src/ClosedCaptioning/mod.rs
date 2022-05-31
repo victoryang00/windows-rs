@@ -119,7 +119,7 @@ impl ClosedCaptionProperties {
             (::windows_core::Interface::vtable(this).FontColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ClosedCaptionColor>(result__)
         })
     }
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ComputedFontColor() -> ::windows_core::Result<::winrt_ui::Color> {
         Self::IClosedCaptionPropertiesStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::winrt_ui::Color>::zeroed();
@@ -156,7 +156,7 @@ impl ClosedCaptionProperties {
             (::windows_core::Interface::vtable(this).BackgroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ClosedCaptionColor>(result__)
         })
     }
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ComputedBackgroundColor() -> ::windows_core::Result<::winrt_ui::Color> {
         Self::IClosedCaptionPropertiesStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::winrt_ui::Color>::zeroed();
@@ -175,7 +175,7 @@ impl ClosedCaptionProperties {
             (::windows_core::Interface::vtable(this).RegionColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ClosedCaptionColor>(result__)
         })
     }
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ComputedRegionColor() -> ::windows_core::Result<::winrt_ui::Color> {
         Self::IClosedCaptionPropertiesStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::winrt_ui::Color>::zeroed();
@@ -283,24 +283,24 @@ unsafe impl ::windows_core::Interface for IClosedCaptionPropertiesStatics {
 pub struct IClosedCaptionPropertiesStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub FontColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ClosedCaptionColor) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub ComputedFontColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_ui::Color) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI"))]
+    #[cfg(not(feature = "winrt-ui"))]
     ComputedFontColor: usize,
     pub FontOpacity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ClosedCaptionOpacity) -> ::windows_core::HRESULT,
     pub FontSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ClosedCaptionSize) -> ::windows_core::HRESULT,
     pub FontStyle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ClosedCaptionStyle) -> ::windows_core::HRESULT,
     pub FontEffect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ClosedCaptionEdgeEffect) -> ::windows_core::HRESULT,
     pub BackgroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ClosedCaptionColor) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub ComputedBackgroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_ui::Color) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI"))]
+    #[cfg(not(feature = "winrt-ui"))]
     ComputedBackgroundColor: usize,
     pub BackgroundOpacity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ClosedCaptionOpacity) -> ::windows_core::HRESULT,
     pub RegionColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ClosedCaptionColor) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI")]
+    #[cfg(feature = "winrt-ui")]
     pub ComputedRegionColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_ui::Color) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI"))]
+    #[cfg(not(feature = "winrt-ui"))]
     ComputedRegionColor: usize,
     pub RegionOpacity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ClosedCaptionOpacity) -> ::windows_core::HRESULT,
 }

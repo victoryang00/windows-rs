@@ -2,7 +2,7 @@
 extern "system" {
     pub fn AddERExcludedApplicationA(szapplication: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
     pub fn AddERExcludedApplicationW(wszapplication: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
-    #[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+    #[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn ReportFault(pep: *const super::Diagnostics::Debug::EXCEPTION_POINTERS, dwopt: u32) -> EFaultRepRetVal;
     pub fn WerAddExcludedApplication(pwzexename: ::windows_core_sys::PCWSTR, ballusers: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn WerFreeString(pwszstr: ::windows_core_sys::PCWSTR);
@@ -15,7 +15,7 @@ extern "system" {
     pub fn WerRegisterMemoryBlock(pvaddress: *const ::core::ffi::c_void, dwsize: u32) -> ::windows_core_sys::HRESULT;
     pub fn WerRegisterRuntimeExceptionModule(pwszoutofprocesscallbackdll: ::windows_core_sys::PCWSTR, pcontext: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn WerRemoveExcludedApplication(pwzexename: ::windows_core_sys::PCWSTR, ballusers: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+    #[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
     pub fn WerReportAddDump(hreporthandle: HREPORT, hprocess: ::win32_foundation_sys::HANDLE, hthread: ::win32_foundation_sys::HANDLE, dumptype: WER_DUMP_TYPE, pexceptionparam: *const WER_EXCEPTION_INFORMATION, pdumpcustomoptions: *const WER_DUMP_CUSTOM_OPTIONS, dwflags: u32) -> ::windows_core_sys::HRESULT;
     pub fn WerReportAddFile(hreporthandle: HREPORT, pwzpath: ::windows_core_sys::PCWSTR, repfiletype: WER_FILE_TYPE, dwfileflags: WER_FILE) -> ::windows_core_sys::HRESULT;
     pub fn WerReportCloseHandle(hreporthandle: HREPORT) -> ::windows_core_sys::HRESULT;
@@ -60,11 +60,11 @@ pub const frrvErrDoubleFault: EFaultRepRetVal = 10i32;
 pub type HREPORT = isize;
 pub type HREPORTSTORE = isize;
 pub const PACKAGED_APPCRASH_EVENT: &str = "MoAppCrash";
-#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub type PFN_WER_RUNTIME_EXCEPTION_DEBUGGER_LAUNCH = ::core::option::Option<unsafe extern "system" fn(pcontext: *const ::core::ffi::c_void, pexceptioninformation: *const WER_RUNTIME_EXCEPTION_INFORMATION, pbiscustomdebugger: *mut ::win32_foundation_sys::BOOL, pwszdebuggerlaunch: ::windows_core_sys::PWSTR, pchdebuggerlaunch: *mut u32, pbisdebuggerautolaunch: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT>;
-#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub type PFN_WER_RUNTIME_EXCEPTION_EVENT = ::core::option::Option<unsafe extern "system" fn(pcontext: *const ::core::ffi::c_void, pexceptioninformation: *const WER_RUNTIME_EXCEPTION_INFORMATION, pbownershipclaimed: *mut ::win32_foundation_sys::BOOL, pwszeventname: ::windows_core_sys::PWSTR, pchsize: *mut u32, pdwsignaturecount: *mut u32) -> ::windows_core_sys::HRESULT>;
-#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub type PFN_WER_RUNTIME_EXCEPTION_EVENT_SIGNATURE = ::core::option::Option<unsafe extern "system" fn(pcontext: *const ::core::ffi::c_void, pexceptioninformation: *const WER_RUNTIME_EXCEPTION_INFORMATION, dwindex: u32, pwszname: ::windows_core_sys::PWSTR, pchname: *mut u32, pwszvalue: ::windows_core_sys::PWSTR, pchvalue: *mut u32) -> ::windows_core_sys::HRESULT>;
 pub type REPORT_STORE_TYPES = i32;
 pub const E_STORE_USER_ARCHIVE: REPORT_STORE_TYPES = 0i32;
@@ -156,14 +156,14 @@ pub const WerDumpTypeHeapDump: WER_DUMP_TYPE = 3i32;
 pub const WerDumpTypeTriageDump: WER_DUMP_TYPE = 4i32;
 pub const WerDumpTypeMax: WER_DUMP_TYPE = 5i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub struct WER_EXCEPTION_INFORMATION {
     pub pExceptionPointers: *mut super::Diagnostics::Debug::EXCEPTION_POINTERS,
     pub bClientPointers: ::win32_foundation_sys::BOOL,
 }
-#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for WER_EXCEPTION_INFORMATION {}
-#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for WER_EXCEPTION_INFORMATION {
     fn clone(&self) -> Self {
         *self
@@ -414,7 +414,7 @@ pub const WER_RUNTIME_EXCEPTION_DEBUGGER_LAUNCH: &str = "OutOfProcessExceptionEv
 pub const WER_RUNTIME_EXCEPTION_EVENT_FUNCTION: &str = "OutOfProcessExceptionEventCallback";
 pub const WER_RUNTIME_EXCEPTION_EVENT_SIGNATURE_FUNCTION: &str = "OutOfProcessExceptionEventSignatureCallback";
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub struct WER_RUNTIME_EXCEPTION_INFORMATION {
     pub dwSize: u32,
     pub hProcess: ::win32_foundation_sys::HANDLE,
@@ -425,9 +425,9 @@ pub struct WER_RUNTIME_EXCEPTION_INFORMATION {
     pub bIsFatal: ::win32_foundation_sys::BOOL,
     pub dwReserved: u32,
 }
-#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::marker::Copy for WER_RUNTIME_EXCEPTION_INFORMATION {}
-#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 impl ::core::clone::Clone for WER_RUNTIME_EXCEPTION_INFORMATION {
     fn clone(&self) -> Self {
         *self
@@ -466,5 +466,5 @@ pub const WerStorageLocationNotFound: WER_SUBMIT_RESULT = 12i32;
 pub const WerSubmitResultMax: WER_SUBMIT_RESULT = 13i32;
 pub type pfn_ADDEREXCLUDEDAPPLICATIONA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR) -> EFaultRepRetVal>;
 pub type pfn_ADDEREXCLUDEDAPPLICATIONW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR) -> EFaultRepRetVal>;
-#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub type pfn_REPORTFAULT = ::core::option::Option<unsafe extern "system" fn(param0: *const super::Diagnostics::Debug::EXCEPTION_POINTERS, param1: u32) -> EFaultRepRetVal>;

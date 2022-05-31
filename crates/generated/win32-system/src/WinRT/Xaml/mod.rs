@@ -67,7 +67,7 @@ impl IDesktopWindowXamlSourceNative2 {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::HWND>::zeroed();
         (::windows_core::Interface::vtable(self).base__.WindowHandle)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::HWND>(result__)
     }
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn PreTranslateMessage(&self, message: *const ::win32_ui::WindowsAndMessaging::MSG, result: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).PreTranslateMessage)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(message), ::core::mem::transmute(result)).ok()
     }
@@ -136,9 +136,9 @@ unsafe impl ::windows_core::Interface for IDesktopWindowXamlSourceNative2 {
 #[doc(hidden)]
 pub struct IDesktopWindowXamlSourceNative2_Vtbl {
     pub base__: IDesktopWindowXamlSourceNative_Vtbl,
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui")]
     pub PreTranslateMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, message: *const ::win32_ui::WindowsAndMessaging::MSG, result: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_UI_WindowsAndMessaging"))]
+    #[cfg(not(feature = "win32-ui"))]
     PreTranslateMessage: usize,
 }
 #[repr(transparent)]
@@ -580,11 +580,11 @@ pub struct ISurfaceImageSourceManagerNative_Vtbl {
 #[repr(transparent)]
 pub struct ISurfaceImageSourceNative(::windows_core::IUnknown);
 impl ISurfaceImageSourceNative {
-    #[cfg(feature = "Win32_Graphics_Dxgi")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetDevice<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Dxgi::IDXGIDevice>>(&self, device: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDevice)(::windows_core::Interface::as_raw(self), device.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Dxgi")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn BeginDraw<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::RECT>>(&self, updaterect: Param0, surface: *mut ::core::option::Option<::win32_graphics::Dxgi::IDXGISurface>, offset: *mut ::win32_foundation::POINT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).BeginDraw)(::windows_core::Interface::as_raw(self), updaterect.into_param().abi(), ::core::mem::transmute(surface), ::core::mem::transmute(offset)).ok()
     }
@@ -636,13 +636,13 @@ unsafe impl ::windows_core::Interface for ISurfaceImageSourceNative {
 #[doc(hidden)]
 pub struct ISurfaceImageSourceNative_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Graphics_Dxgi")]
+    #[cfg(feature = "win32-graphics")]
     pub SetDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, device: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Dxgi"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetDevice: usize,
-    #[cfg(feature = "Win32_Graphics_Dxgi")]
+    #[cfg(feature = "win32-graphics")]
     pub BeginDraw: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, updaterect: ::win32_foundation::RECT, surface: *mut ::windows_core::RawPtr, offset: *mut ::win32_foundation::POINT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Dxgi"))]
+    #[cfg(not(feature = "win32-graphics"))]
     BeginDraw: usize,
     pub EndDraw: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -718,7 +718,7 @@ pub struct ISurfaceImageSourceNativeWithD2D_Vtbl {
 #[repr(transparent)]
 pub struct ISwapChainBackgroundPanelNative(::windows_core::IUnknown);
 impl ISwapChainBackgroundPanelNative {
-    #[cfg(feature = "Win32_Graphics_Dxgi")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetSwapChain<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Dxgi::IDXGISwapChain>>(&self, swapchain: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSwapChain)(::windows_core::Interface::as_raw(self), swapchain.into_param().abi()).ok()
     }
@@ -767,15 +767,15 @@ unsafe impl ::windows_core::Interface for ISwapChainBackgroundPanelNative {
 #[doc(hidden)]
 pub struct ISwapChainBackgroundPanelNative_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Graphics_Dxgi")]
+    #[cfg(feature = "win32-graphics")]
     pub SetSwapChain: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, swapchain: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Dxgi"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetSwapChain: usize,
 }
 #[repr(transparent)]
 pub struct ISwapChainPanelNative(::windows_core::IUnknown);
 impl ISwapChainPanelNative {
-    #[cfg(feature = "Win32_Graphics_Dxgi")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetSwapChain<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Dxgi::IDXGISwapChain>>(&self, swapchain: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSwapChain)(::windows_core::Interface::as_raw(self), swapchain.into_param().abi()).ok()
     }
@@ -824,15 +824,15 @@ unsafe impl ::windows_core::Interface for ISwapChainPanelNative {
 #[doc(hidden)]
 pub struct ISwapChainPanelNative_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Graphics_Dxgi")]
+    #[cfg(feature = "win32-graphics")]
     pub SetSwapChain: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, swapchain: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Dxgi"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetSwapChain: usize,
 }
 #[repr(transparent)]
 pub struct ISwapChainPanelNative2(::windows_core::IUnknown);
 impl ISwapChainPanelNative2 {
-    #[cfg(feature = "Win32_Graphics_Dxgi")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetSwapChain<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Dxgi::IDXGISwapChain>>(&self, swapchain: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetSwapChain)(::windows_core::Interface::as_raw(self), swapchain.into_param().abi()).ok()
     }
@@ -975,11 +975,11 @@ pub struct ITrackerOwner_Vtbl {
 #[repr(transparent)]
 pub struct IVirtualSurfaceImageSourceNative(::windows_core::IUnknown);
 impl IVirtualSurfaceImageSourceNative {
-    #[cfg(feature = "Win32_Graphics_Dxgi")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetDevice<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Dxgi::IDXGIDevice>>(&self, device: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetDevice)(::windows_core::Interface::as_raw(self), device.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Dxgi")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn BeginDraw<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::RECT>>(&self, updaterect: Param0, surface: *mut ::core::option::Option<::win32_graphics::Dxgi::IDXGISurface>, offset: *mut ::win32_foundation::POINT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.BeginDraw)(::windows_core::Interface::as_raw(self), updaterect.into_param().abi(), ::core::mem::transmute(surface), ::core::mem::transmute(offset)).ok()
     }

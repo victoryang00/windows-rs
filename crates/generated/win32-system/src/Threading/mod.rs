@@ -637,7 +637,7 @@ pub unsafe fn CreateBoundaryDescriptorW<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateEventA<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpeventattributes: *const ::win32_security::SECURITY_ATTRIBUTES, bmanualreset: Param1, binitialstate: Param2, lpname: Param3) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
@@ -652,7 +652,7 @@ pub unsafe fn CreateEventA<'a, Param1: ::windows_core::IntoParam<'a, ::win32_fou
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateEventExA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpeventattributes: *const ::win32_security::SECURITY_ATTRIBUTES, lpname: Param1, dwflags: CREATE_EVENT, dwdesiredaccess: u32) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
@@ -667,7 +667,7 @@ pub unsafe fn CreateEventExA<'a, Param1: ::windows_core::IntoParam<'a, ::windows
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateEventExW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpeventattributes: *const ::win32_security::SECURITY_ATTRIBUTES, lpname: Param1, dwflags: CREATE_EVENT, dwdesiredaccess: u32) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
@@ -682,7 +682,7 @@ pub unsafe fn CreateEventExW<'a, Param1: ::windows_core::IntoParam<'a, ::windows
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateEventW<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpeventattributes: *const ::win32_security::SECURITY_ATTRIBUTES, bmanualreset: Param1, binitialstate: Param2, lpname: Param3) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
@@ -723,7 +723,7 @@ pub unsafe fn CreateFiberEx(dwstackcommitsize: usize, dwstackreservesize: usize,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateMutexA<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpmutexattributes: *const ::win32_security::SECURITY_ATTRIBUTES, binitialowner: Param1, lpname: Param2) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
@@ -738,7 +738,7 @@ pub unsafe fn CreateMutexA<'a, Param1: ::windows_core::IntoParam<'a, ::win32_fou
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateMutexExA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpmutexattributes: *const ::win32_security::SECURITY_ATTRIBUTES, lpname: Param1, dwflags: u32, dwdesiredaccess: u32) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
@@ -753,7 +753,7 @@ pub unsafe fn CreateMutexExA<'a, Param1: ::windows_core::IntoParam<'a, ::windows
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateMutexExW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpmutexattributes: *const ::win32_security::SECURITY_ATTRIBUTES, lpname: Param1, dwflags: u32, dwdesiredaccess: u32) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
@@ -768,7 +768,7 @@ pub unsafe fn CreateMutexExW<'a, Param1: ::windows_core::IntoParam<'a, ::windows
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateMutexW<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpmutexattributes: *const ::win32_security::SECURITY_ATTRIBUTES, binitialowner: Param1, lpname: Param2) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
@@ -783,7 +783,7 @@ pub unsafe fn CreateMutexW<'a, Param1: ::windows_core::IntoParam<'a, ::win32_fou
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreatePrivateNamespaceA<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpprivatenamespaceattributes: *const ::win32_security::SECURITY_ATTRIBUTES, lpboundarydescriptor: *const ::core::ffi::c_void, lpaliasprefix: Param2) -> ::windows_core::Result<NamespaceHandle> {
     #[cfg(windows)]
@@ -798,7 +798,7 @@ pub unsafe fn CreatePrivateNamespaceA<'a, Param2: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreatePrivateNamespaceW<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpprivatenamespaceattributes: *const ::win32_security::SECURITY_ATTRIBUTES, lpboundarydescriptor: *const ::core::ffi::c_void, lpaliasprefix: Param2) -> NamespaceHandle {
     #[cfg(windows)]
@@ -812,7 +812,7 @@ pub unsafe fn CreatePrivateNamespaceW<'a, Param2: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateProcessA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param4: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param7: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpapplicationname: Param0, lpcommandline: ::windows_core::PSTR, lpprocessattributes: *const ::win32_security::SECURITY_ATTRIBUTES, lpthreadattributes: *const ::win32_security::SECURITY_ATTRIBUTES, binherithandles: Param4, dwcreationflags: PROCESS_CREATION_FLAGS, lpenvironment: *const ::core::ffi::c_void, lpcurrentdirectory: Param7, lpstartupinfo: *const STARTUPINFOA, lpprocessinformation: *mut PROCESS_INFORMATION) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -826,7 +826,7 @@ pub unsafe fn CreateProcessA<'a, Param0: ::windows_core::IntoParam<'a, ::windows
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateProcessAsUserA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param5: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param8: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(htoken: Param0, lpapplicationname: Param1, lpcommandline: ::windows_core::PSTR, lpprocessattributes: *const ::win32_security::SECURITY_ATTRIBUTES, lpthreadattributes: *const ::win32_security::SECURITY_ATTRIBUTES, binherithandles: Param5, dwcreationflags: u32, lpenvironment: *const ::core::ffi::c_void, lpcurrentdirectory: Param8, lpstartupinfo: *const STARTUPINFOA, lpprocessinformation: *mut PROCESS_INFORMATION) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -840,7 +840,7 @@ pub unsafe fn CreateProcessAsUserA<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateProcessAsUserW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param8: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(htoken: Param0, lpapplicationname: Param1, lpcommandline: ::windows_core::PWSTR, lpprocessattributes: *const ::win32_security::SECURITY_ATTRIBUTES, lpthreadattributes: *const ::win32_security::SECURITY_ATTRIBUTES, binherithandles: Param5, dwcreationflags: u32, lpenvironment: *const ::core::ffi::c_void, lpcurrentdirectory: Param8, lpstartupinfo: *const STARTUPINFOW, lpprocessinformation: *mut PROCESS_INFORMATION) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -854,7 +854,7 @@ pub unsafe fn CreateProcessAsUserW<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateProcessW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param7: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpapplicationname: Param0, lpcommandline: ::windows_core::PWSTR, lpprocessattributes: *const ::win32_security::SECURITY_ATTRIBUTES, lpthreadattributes: *const ::win32_security::SECURITY_ATTRIBUTES, binherithandles: Param4, dwcreationflags: PROCESS_CREATION_FLAGS, lpenvironment: *const ::core::ffi::c_void, lpcurrentdirectory: Param7, lpstartupinfo: *const STARTUPINFOW, lpprocessinformation: *mut PROCESS_INFORMATION) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -894,7 +894,7 @@ pub unsafe fn CreateProcessWithTokenW<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateRemoteThread<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprocess: Param0, lpthreadattributes: *const ::win32_security::SECURITY_ATTRIBUTES, dwstacksize: usize, lpstartaddress: LPTHREAD_START_ROUTINE, lpparameter: *const ::core::ffi::c_void, dwcreationflags: u32, lpthreadid: *mut u32) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
@@ -909,7 +909,7 @@ pub unsafe fn CreateRemoteThread<'a, Param0: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateRemoteThreadEx<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param6: ::windows_core::IntoParam<'a, LPPROC_THREAD_ATTRIBUTE_LIST>>(hprocess: Param0, lpthreadattributes: *const ::win32_security::SECURITY_ATTRIBUTES, dwstacksize: usize, lpstartaddress: LPTHREAD_START_ROUTINE, lpparameter: *const ::core::ffi::c_void, dwcreationflags: u32, lpattributelist: Param6, lpthreadid: *mut u32) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
@@ -924,7 +924,7 @@ pub unsafe fn CreateRemoteThreadEx<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateSemaphoreA<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpsemaphoreattributes: *const ::win32_security::SECURITY_ATTRIBUTES, linitialcount: i32, lmaximumcount: i32, lpname: Param3) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
@@ -939,7 +939,7 @@ pub unsafe fn CreateSemaphoreA<'a, Param3: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateSemaphoreExA<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpsemaphoreattributes: *const ::win32_security::SECURITY_ATTRIBUTES, linitialcount: i32, lmaximumcount: i32, lpname: Param3, dwflags: u32, dwdesiredaccess: u32) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
@@ -954,7 +954,7 @@ pub unsafe fn CreateSemaphoreExA<'a, Param3: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateSemaphoreExW<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpsemaphoreattributes: *const ::win32_security::SECURITY_ATTRIBUTES, linitialcount: i32, lmaximumcount: i32, lpname: Param3, dwflags: u32, dwdesiredaccess: u32) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
@@ -969,7 +969,7 @@ pub unsafe fn CreateSemaphoreExW<'a, Param3: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateSemaphoreW<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpsemaphoreattributes: *const ::win32_security::SECURITY_ATTRIBUTES, linitialcount: i32, lmaximumcount: i32, lpname: Param3) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
@@ -984,7 +984,7 @@ pub unsafe fn CreateSemaphoreW<'a, Param3: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateThread(lpthreadattributes: *const ::win32_security::SECURITY_ATTRIBUTES, dwstacksize: usize, lpstartaddress: LPTHREAD_START_ROUTINE, lpparameter: *const ::core::ffi::c_void, dwcreationflags: THREAD_CREATION_FLAGS, lpthreadid: *mut u32) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
@@ -1130,7 +1130,7 @@ pub unsafe fn CreateUmsThreadContext(lpumsthread: *mut *mut ::core::ffi::c_void)
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateWaitableTimerExW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lptimerattributes: *const ::win32_security::SECURITY_ATTRIBUTES, lptimername: Param1, dwflags: u32, dwdesiredaccess: u32) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
@@ -1145,7 +1145,7 @@ pub unsafe fn CreateWaitableTimerExW<'a, Param1: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreateWaitableTimerW<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lptimerattributes: *const ::win32_security::SECURITY_ATTRIBUTES, bmanualreset: Param1, lptimername: Param2) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
@@ -1173,7 +1173,7 @@ pub unsafe fn DeleteBoundaryDescriptor<'a, Param0: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn DeleteCriticalSection(lpcriticalsection: *mut RTL_CRITICAL_SECTION) {
     #[cfg(windows)]
@@ -1317,7 +1317,7 @@ pub unsafe fn DisassociateCurrentThreadFromCallback(pci: *mut TP_CALLBACK_INSTAN
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn EnterCriticalSection(lpcriticalsection: *mut RTL_CRITICAL_SECTION) {
     #[cfg(windows)]
@@ -1344,7 +1344,7 @@ pub unsafe fn EnterSynchronizationBarrier(lpbarrier: *mut RTL_BARRIER, dwflags: 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_SystemServices")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn EnterUmsSchedulingMode(schedulerstartupinfo: *const UMS_SCHEDULER_STARTUP_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -1566,7 +1566,7 @@ pub unsafe fn GetCurrentProcessorNumber() -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn GetCurrentProcessorNumberEx(procnumber: *mut super::Kernel::PROCESSOR_NUMBER) {
     #[cfg(windows)]
@@ -1789,7 +1789,7 @@ pub unsafe fn GetNumaNodeProcessorMask(node: u8, processormask: *mut u64) -> ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_SystemInformation")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn GetNumaNodeProcessorMask2(nodenumber: u16, processormasks: &mut [super::SystemInformation::GROUP_AFFINITY], requiredmaskcount: *mut u16) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -1803,7 +1803,7 @@ pub unsafe fn GetNumaNodeProcessorMask2(nodenumber: u16, processormasks: &mut [s
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_SystemInformation")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn GetNumaNodeProcessorMaskEx(node: u16, processormask: *mut super::SystemInformation::GROUP_AFFINITY) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -1830,7 +1830,7 @@ pub unsafe fn GetNumaProcessorNode(processor: u8, nodenumber: *mut u8) -> ::win3
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn GetNumaProcessorNodeEx(processor: *const super::Kernel::PROCESSOR_NUMBER, nodenumber: *mut u16) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -1909,7 +1909,7 @@ pub unsafe fn GetProcessDEPPolicy<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_SystemInformation")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn GetProcessDefaultCpuSetMasks<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(process: Param0, cpusetmasks: &mut [super::SystemInformation::GROUP_AFFINITY], requiredmaskcount: *mut u16) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -2145,7 +2145,7 @@ pub unsafe fn GetThreadDescription<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_SystemInformation")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn GetThreadGroupAffinity<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hthread: Param0, groupaffinity: *mut super::SystemInformation::GROUP_AFFINITY) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -2185,7 +2185,7 @@ pub unsafe fn GetThreadId<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foun
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn GetThreadIdealProcessorEx<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hthread: Param0, lpidealprocessor: *mut super::Kernel::PROCESSOR_NUMBER) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -2238,7 +2238,7 @@ pub unsafe fn GetThreadPriorityBoost<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_SystemInformation")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn GetThreadSelectedCpuSetMasks<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(thread: Param0, cpusetmasks: &mut [super::SystemInformation::GROUP_AFFINITY], requiredmaskcount: *mut u16) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -2407,7 +2407,7 @@ pub unsafe fn InitializeConditionVariable(conditionvariable: *mut RTL_CONDITION_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InitializeCriticalSection(lpcriticalsection: *mut RTL_CRITICAL_SECTION) {
     #[cfg(windows)]
@@ -2421,7 +2421,7 @@ pub unsafe fn InitializeCriticalSection(lpcriticalsection: *mut RTL_CRITICAL_SEC
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InitializeCriticalSectionAndSpinCount(lpcriticalsection: *mut RTL_CRITICAL_SECTION, dwspincount: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -2435,7 +2435,7 @@ pub unsafe fn InitializeCriticalSectionAndSpinCount(lpcriticalsection: *mut RTL_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InitializeCriticalSectionEx(lpcriticalsection: *mut RTL_CRITICAL_SECTION, dwspincount: u32, flags: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -2462,7 +2462,7 @@ pub unsafe fn InitializeProcThreadAttributeList(lpattributelist: LPPROC_THREAD_A
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InitializeSListHead(listhead: *mut super::Kernel::SLIST_HEADER) {
     #[cfg(windows)]
@@ -2502,7 +2502,7 @@ pub unsafe fn InitializeSynchronizationBarrier(lpbarrier: *mut RTL_BARRIER, ltot
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InterlockedFlushSList(listhead: *mut super::Kernel::SLIST_HEADER) -> *mut super::Kernel::SLIST_ENTRY {
     #[cfg(windows)]
@@ -2516,7 +2516,7 @@ pub unsafe fn InterlockedFlushSList(listhead: *mut super::Kernel::SLIST_HEADER) 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InterlockedPopEntrySList(listhead: *mut super::Kernel::SLIST_HEADER) -> *mut super::Kernel::SLIST_ENTRY {
     #[cfg(windows)]
@@ -2530,7 +2530,7 @@ pub unsafe fn InterlockedPopEntrySList(listhead: *mut super::Kernel::SLIST_HEADE
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InterlockedPushEntrySList(listhead: *mut super::Kernel::SLIST_HEADER, listentry: *mut super::Kernel::SLIST_ENTRY) -> *mut super::Kernel::SLIST_ENTRY {
     #[cfg(windows)]
@@ -2544,7 +2544,7 @@ pub unsafe fn InterlockedPushEntrySList(listhead: *mut super::Kernel::SLIST_HEAD
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn InterlockedPushListSListEx(listhead: *mut super::Kernel::SLIST_HEADER, list: *mut super::Kernel::SLIST_ENTRY, listend: *mut super::Kernel::SLIST_ENTRY, count: u32) -> *mut super::Kernel::SLIST_ENTRY {
     #[cfg(windows)]
@@ -2678,7 +2678,7 @@ unsafe impl ::windows_core::Abi for LPPROC_THREAD_ATTRIBUTE_LIST {
     type Abi = Self;
 }
 pub type LPTHREAD_START_ROUTINE = ::core::option::Option<unsafe extern "system" fn(lpthreadparameter: *mut ::core::ffi::c_void) -> u32>;
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn LeaveCriticalSection(lpcriticalsection: *mut RTL_CRITICAL_SECTION) {
     #[cfg(windows)]
@@ -2692,7 +2692,7 @@ pub unsafe fn LeaveCriticalSection(lpcriticalsection: *mut RTL_CRITICAL_SECTION)
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn LeaveCriticalSectionWhenCallbackReturns(pci: *mut TP_CALLBACK_INSTANCE, pcs: *mut RTL_CRITICAL_SECTION) {
     #[cfg(windows)]
@@ -2964,7 +2964,7 @@ pub unsafe fn OpenProcess<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foun
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn OpenProcessToken<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(processhandle: Param0, desiredaccess: ::win32_security::TOKEN_ACCESS_MASK, tokenhandle: *mut ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -3006,7 +3006,7 @@ pub unsafe fn OpenThread<'a, Param1: ::windows_core::IntoParam<'a, ::win32_found
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn OpenThreadToken<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(threadhandle: Param0, desiredaccess: ::win32_security::TOKEN_ACCESS_MASK, openasself: Param2, tokenhandle: *mut ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -3035,7 +3035,7 @@ pub unsafe fn OpenWaitableTimerW<'a, Param1: ::windows_core::IntoParam<'a, ::win
     unimplemented!("Unsupported target OS");
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 pub struct PEB {
     pub Reserved1: [u8; 2],
     pub BeingDebugged: u8,
@@ -3057,15 +3057,15 @@ pub struct PEB {
     pub Reserved12: [*mut ::core::ffi::c_void; 1],
     pub SessionId: u32,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for PEB {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for PEB {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for PEB {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PEB")
@@ -3091,58 +3091,58 @@ impl ::core::fmt::Debug for PEB {
             .finish()
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for PEB {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for PEB {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PEB>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for PEB {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for PEB {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 pub struct PEB_LDR_DATA {
     pub Reserved1: [u8; 8],
     pub Reserved2: [*mut ::core::ffi::c_void; 3],
     pub InMemoryOrderModuleList: super::Kernel::LIST_ENTRY,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for PEB_LDR_DATA {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for PEB_LDR_DATA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for PEB_LDR_DATA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PEB_LDR_DATA").field("Reserved1", &self.Reserved1).field("Reserved2", &self.Reserved2).field("InMemoryOrderModuleList", &self.InMemoryOrderModuleList).finish()
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for PEB_LDR_DATA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for PEB_LDR_DATA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PEB_LDR_DATA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for PEB_LDR_DATA {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for PEB_LDR_DATA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3352,7 +3352,7 @@ impl ::core::fmt::Debug for PROCESS_AFFINITY_AUTO_UPDATE_FLAGS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 pub struct PROCESS_BASIC_INFORMATION {
     pub Reserved1: *mut ::core::ffi::c_void,
     pub PebBaseAddress: *mut PEB,
@@ -3360,33 +3360,33 @@ pub struct PROCESS_BASIC_INFORMATION {
     pub UniqueProcessId: usize,
     pub Reserved3: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for PROCESS_BASIC_INFORMATION {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for PROCESS_BASIC_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for PROCESS_BASIC_INFORMATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PROCESS_BASIC_INFORMATION").field("Reserved1", &self.Reserved1).field("PebBaseAddress", &self.PebBaseAddress).field("Reserved2", &self.Reserved2).field("UniqueProcessId", &self.UniqueProcessId).field("Reserved3", &self.Reserved3).finish()
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for PROCESS_BASIC_INFORMATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for PROCESS_BASIC_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROCESS_BASIC_INFORMATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for PROCESS_BASIC_INFORMATION {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for PROCESS_BASIC_INFORMATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4056,7 +4056,7 @@ pub const PROC_THREAD_ATTRIBUTE_REPLACE_VALUE: u32 = 1u32;
 pub const PROC_THREAD_ATTRIBUTE_SECURITY_CAPABILITIES: u32 = 131081u32;
 pub const PROC_THREAD_ATTRIBUTE_UMS_THREAD: u32 = 196614u32;
 pub const PROC_THREAD_ATTRIBUTE_WIN32K_FILTER: u32 = 131088u32;
-#[cfg(feature = "Win32_System_SystemServices")]
+#[cfg(feature = "win32-system")]
 pub type PRTL_UMS_SCHEDULER_ENTRY_POINT = ::core::option::Option<unsafe extern "system" fn(reason: super::SystemServices::RTL_UMS_SCHEDULER_REASON, activationpayload: usize, schedulerparam: *const ::core::ffi::c_void)>;
 pub type PTIMERAPCROUTINE = ::core::option::Option<unsafe extern "system" fn(lpargtocompletionroutine: *const ::core::ffi::c_void, dwtimerlowvalue: u32, dwtimerhighvalue: u32)>;
 pub type PTP_CLEANUP_GROUP_CANCEL_CALLBACK = ::core::option::Option<unsafe extern "system" fn(objectcontext: *mut ::core::ffi::c_void, cleanupcontext: *mut ::core::ffi::c_void)>;
@@ -4124,7 +4124,7 @@ impl ::core::fmt::Debug for QUEUE_USER_APC_FLAGS {
         f.debug_tuple("QUEUE_USER_APC_FLAGS").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn QueryDepthSList(listhead: *const super::Kernel::SLIST_HEADER) -> u16 {
     #[cfg(windows)]
@@ -4401,7 +4401,7 @@ impl ::core::default::Default for RTL_CONDITION_VARIABLE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 pub struct RTL_CRITICAL_SECTION {
     pub DebugInfo: *mut RTL_CRITICAL_SECTION_DEBUG,
     pub LockCount: i32,
@@ -4410,40 +4410,40 @@ pub struct RTL_CRITICAL_SECTION {
     pub LockSemaphore: ::win32_foundation::HANDLE,
     pub SpinCount: usize,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for RTL_CRITICAL_SECTION {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for RTL_CRITICAL_SECTION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for RTL_CRITICAL_SECTION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RTL_CRITICAL_SECTION").field("DebugInfo", &self.DebugInfo).field("LockCount", &self.LockCount).field("RecursionCount", &self.RecursionCount).field("OwningThread", &self.OwningThread).field("LockSemaphore", &self.LockSemaphore).field("SpinCount", &self.SpinCount).finish()
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for RTL_CRITICAL_SECTION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for RTL_CRITICAL_SECTION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RTL_CRITICAL_SECTION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for RTL_CRITICAL_SECTION {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for RTL_CRITICAL_SECTION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 pub struct RTL_CRITICAL_SECTION_DEBUG {
     pub Type: u16,
     pub CreatorBackTraceIndex: u16,
@@ -4455,33 +4455,33 @@ pub struct RTL_CRITICAL_SECTION_DEBUG {
     pub CreatorBackTraceIndexHigh: u16,
     pub SpareWORD: u16,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for RTL_CRITICAL_SECTION_DEBUG {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for RTL_CRITICAL_SECTION_DEBUG {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for RTL_CRITICAL_SECTION_DEBUG {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RTL_CRITICAL_SECTION_DEBUG").field("Type", &self.Type).field("CreatorBackTraceIndex", &self.CreatorBackTraceIndex).field("CriticalSection", &self.CriticalSection).field("ProcessLocksList", &self.ProcessLocksList).field("EntryCount", &self.EntryCount).field("ContentionCount", &self.ContentionCount).field("Flags", &self.Flags).field("CreatorBackTraceIndexHigh", &self.CreatorBackTraceIndexHigh).field("SpareWORD", &self.SpareWORD).finish()
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for RTL_CRITICAL_SECTION_DEBUG {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for RTL_CRITICAL_SECTION_DEBUG {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RTL_CRITICAL_SECTION_DEBUG>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for RTL_CRITICAL_SECTION_DEBUG {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for RTL_CRITICAL_SECTION_DEBUG {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4976,7 +4976,7 @@ impl ::core::ops::Not for STARTUPINFOW_FLAGS {
 pub const SYNCHRONIZATION_BARRIER_FLAGS_BLOCK_ONLY: u32 = 2u32;
 pub const SYNCHRONIZATION_BARRIER_FLAGS_NO_DELETE: u32 = 4u32;
 pub const SYNCHRONIZATION_BARRIER_FLAGS_SPIN_ONLY: u32 = 1u32;
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn SetCriticalSectionSpinCount(lpcriticalsection: *mut RTL_CRITICAL_SECTION, dwspincount: u32) -> u32 {
     #[cfg(windows)]
@@ -5068,7 +5068,7 @@ pub unsafe fn SetProcessDEPPolicy(dwflags: PROCESS_DEP_FLAGS) -> ::win32_foundat
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_SystemInformation")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn SetProcessDefaultCpuSetMasks<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(process: Param0, cpusetmasks: &[super::SystemInformation::GROUP_AFFINITY]) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -5238,7 +5238,7 @@ pub unsafe fn SetThreadDescription<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_SystemInformation")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn SetThreadGroupAffinity<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hthread: Param0, groupaffinity: *const super::SystemInformation::GROUP_AFFINITY, previousgroupaffinity: *mut super::SystemInformation::GROUP_AFFINITY) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -5265,7 +5265,7 @@ pub unsafe fn SetThreadIdealProcessor<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn SetThreadIdealProcessorEx<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hthread: Param0, lpidealprocessor: *const super::Kernel::PROCESSOR_NUMBER, lppreviousidealprocessor: *mut super::Kernel::PROCESSOR_NUMBER) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -5318,7 +5318,7 @@ pub unsafe fn SetThreadPriorityBoost<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_SystemInformation")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn SetThreadSelectedCpuSetMasks<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(thread: Param0, cpusetmasks: &[super::SystemInformation::GROUP_AFFINITY]) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -5527,7 +5527,7 @@ pub unsafe fn Sleep(dwmilliseconds: u32) {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn SleepConditionVariableCS(conditionvariable: *mut RTL_CONDITION_VARIABLE, criticalsection: *mut RTL_CRITICAL_SECTION, dwmilliseconds: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -6158,7 +6158,7 @@ pub unsafe fn TryAcquireSRWLockShared(srwlock: *mut RTL_SRWLOCK) -> ::win32_foun
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn TryEnterCriticalSection(lpcriticalsection: *mut RTL_CRITICAL_SECTION) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -6186,40 +6186,40 @@ pub unsafe fn TrySubmitThreadpoolCallback(pfns: PTP_SIMPLE_CALLBACK, pv: *mut ::
     unimplemented!("Unsupported target OS");
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_SystemServices")]
+#[cfg(feature = "win32-system")]
 pub struct UMS_SCHEDULER_STARTUP_INFO {
     pub UmsVersion: u32,
     pub CompletionList: *mut ::core::ffi::c_void,
     pub SchedulerProc: PRTL_UMS_SCHEDULER_ENTRY_POINT,
     pub SchedulerParam: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_System_SystemServices")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for UMS_SCHEDULER_STARTUP_INFO {}
-#[cfg(feature = "Win32_System_SystemServices")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for UMS_SCHEDULER_STARTUP_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_SystemServices")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for UMS_SCHEDULER_STARTUP_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("UMS_SCHEDULER_STARTUP_INFO").field("UmsVersion", &self.UmsVersion).field("CompletionList", &self.CompletionList).field("SchedulerProc", &self.SchedulerProc.map(|f| f as usize)).field("SchedulerParam", &self.SchedulerParam).finish()
     }
 }
-#[cfg(feature = "Win32_System_SystemServices")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for UMS_SCHEDULER_STARTUP_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_SystemServices")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for UMS_SCHEDULER_STARTUP_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<UMS_SCHEDULER_STARTUP_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_SystemServices")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for UMS_SCHEDULER_STARTUP_INFO {}
-#[cfg(feature = "Win32_System_SystemServices")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for UMS_SCHEDULER_STARTUP_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

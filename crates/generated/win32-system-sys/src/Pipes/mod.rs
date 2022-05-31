@@ -2,13 +2,13 @@
 extern "system" {
     pub fn CallNamedPipeA(lpnamedpipename: ::windows_core_sys::PCSTR, lpinbuffer: *const ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesread: *mut u32, ntimeout: u32) -> ::win32_foundation_sys::BOOL;
     pub fn CallNamedPipeW(lpnamedpipename: ::windows_core_sys::PCWSTR, lpinbuffer: *const ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesread: *mut u32, ntimeout: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn ConnectNamedPipe(hnamedpipe: ::win32_foundation_sys::HANDLE, lpoverlapped: *mut super::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
-    #[cfg(all(feature = "Win32_Security", feature = "Win32_Storage_FileSystem"))]
+    #[cfg(all(feature = "win32-security-sys", feature = "win32-storage-sys"))]
     pub fn CreateNamedPipeA(lpname: ::windows_core_sys::PCSTR, dwopenmode: ::win32_storage_sys::FileSystem::FILE_FLAGS_AND_ATTRIBUTES, dwpipemode: NAMED_PIPE_MODE, nmaxinstances: u32, noutbuffersize: u32, ninbuffersize: u32, ndefaulttimeout: u32, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(all(feature = "Win32_Security", feature = "Win32_Storage_FileSystem"))]
+    #[cfg(all(feature = "win32-security-sys", feature = "win32-storage-sys"))]
     pub fn CreateNamedPipeW(lpname: ::windows_core_sys::PCWSTR, dwopenmode: ::win32_storage_sys::FileSystem::FILE_FLAGS_AND_ATTRIBUTES, dwpipemode: NAMED_PIPE_MODE, nmaxinstances: u32, noutbuffersize: u32, ninbuffersize: u32, ndefaulttimeout: u32, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreatePipe(hreadpipe: *mut ::win32_foundation_sys::HANDLE, hwritepipe: *mut ::win32_foundation_sys::HANDLE, lppipeattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, nsize: u32) -> ::win32_foundation_sys::BOOL;
     pub fn DisconnectNamedPipe(hnamedpipe: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn GetNamedPipeClientComputerNameA(pipe: ::win32_foundation_sys::HANDLE, clientcomputername: ::windows_core_sys::PSTR, clientcomputernamelength: u32) -> ::win32_foundation_sys::BOOL;
@@ -23,7 +23,7 @@ extern "system" {
     pub fn ImpersonateNamedPipeClient(hnamedpipe: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn PeekNamedPipe(hnamedpipe: ::win32_foundation_sys::HANDLE, lpbuffer: *mut ::core::ffi::c_void, nbuffersize: u32, lpbytesread: *mut u32, lptotalbytesavail: *mut u32, lpbytesleftthismessage: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn SetNamedPipeHandleState(hnamedpipe: ::win32_foundation_sys::HANDLE, lpmode: *const NAMED_PIPE_MODE, lpmaxcollectioncount: *const u32, lpcollectdatatimeout: *const u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn TransactNamedPipe(hnamedpipe: ::win32_foundation_sys::HANDLE, lpinbuffer: *const ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesread: *mut u32, lpoverlapped: *mut super::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
     pub fn WaitNamedPipeA(lpnamedpipename: ::windows_core_sys::PCSTR, ntimeout: u32) -> ::win32_foundation_sys::BOOL;
     pub fn WaitNamedPipeW(lpnamedpipename: ::windows_core_sys::PCWSTR, ntimeout: u32) -> ::win32_foundation_sys::BOOL;

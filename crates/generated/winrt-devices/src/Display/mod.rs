@@ -38,7 +38,7 @@ impl DisplayMonitor {
             (::windows_core::Interface::vtable(this).DisplayAdapterDeviceId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn DisplayAdapterId(&self) -> ::windows_core::Result<::winrt_graphics::DisplayAdapterId> {
         let this = self;
         unsafe {
@@ -60,7 +60,7 @@ impl DisplayMonitor {
             (::windows_core::Interface::vtable(this).UsageKind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<DisplayMonitorUsageKind>(result__)
         }
     }
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn NativeResolutionInRawPixels(&self) -> ::windows_core::Result<::winrt_graphics::SizeInt32> {
         let this = self;
         unsafe {
@@ -404,15 +404,15 @@ pub struct IDisplayMonitor_Vtbl {
     pub ConnectionKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut DisplayMonitorConnectionKind) -> ::windows_core::HRESULT,
     pub PhysicalConnector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut DisplayMonitorPhysicalConnectorKind) -> ::windows_core::HRESULT,
     pub DisplayAdapterDeviceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub DisplayAdapterId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::DisplayAdapterId) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     DisplayAdapterId: usize,
     pub DisplayAdapterTargetId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub UsageKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut DisplayMonitorUsageKind) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub NativeResolutionInRawPixels: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::SizeInt32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     NativeResolutionInRawPixels: usize,
     pub PhysicalSizeInInches: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RawDpiX: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,

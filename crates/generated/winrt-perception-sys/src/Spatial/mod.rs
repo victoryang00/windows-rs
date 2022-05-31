@@ -20,21 +20,21 @@ pub type SpatialAnchorExporter = *mut ::core::ffi::c_void;
 pub type SpatialAnchorRawCoordinateSystemAdjustedEventArgs = *mut ::core::ffi::c_void;
 pub type SpatialAnchorStore = *mut ::core::ffi::c_void;
 #[repr(C)]
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation-sys")]
 pub struct SpatialBoundingBox {
     pub Center: ::winrt_foundation_sys::Numerics::Vector3,
     pub Extents: ::winrt_foundation_sys::Numerics::Vector3,
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation-sys")]
 impl ::core::marker::Copy for SpatialBoundingBox {}
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation-sys")]
 impl ::core::clone::Clone for SpatialBoundingBox {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation-sys")]
 pub struct SpatialBoundingFrustum {
     pub Near: ::winrt_foundation_sys::Numerics::Plane,
     pub Far: ::winrt_foundation_sys::Numerics::Plane,
@@ -43,38 +43,38 @@ pub struct SpatialBoundingFrustum {
     pub Top: ::winrt_foundation_sys::Numerics::Plane,
     pub Bottom: ::winrt_foundation_sys::Numerics::Plane,
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation-sys")]
 impl ::core::marker::Copy for SpatialBoundingFrustum {}
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation-sys")]
 impl ::core::clone::Clone for SpatialBoundingFrustum {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation-sys")]
 pub struct SpatialBoundingOrientedBox {
     pub Center: ::winrt_foundation_sys::Numerics::Vector3,
     pub Extents: ::winrt_foundation_sys::Numerics::Vector3,
     pub Orientation: ::winrt_foundation_sys::Numerics::Quaternion,
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation-sys")]
 impl ::core::marker::Copy for SpatialBoundingOrientedBox {}
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation-sys")]
 impl ::core::clone::Clone for SpatialBoundingOrientedBox {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation-sys")]
 pub struct SpatialBoundingSphere {
     pub Center: ::winrt_foundation_sys::Numerics::Vector3,
     pub Radius: f32,
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation-sys")]
 impl ::core::marker::Copy for SpatialBoundingSphere {}
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation-sys")]
 impl ::core::clone::Clone for SpatialBoundingSphere {
     fn clone(&self) -> Self {
         *self
@@ -162,14 +162,14 @@ impl ::core::clone::Clone for SpatialPerceptionAccessStatus {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation-sys")]
 pub struct SpatialRay {
     pub Origin: ::winrt_foundation_sys::Numerics::Vector3,
     pub Direction: ::winrt_foundation_sys::Numerics::Vector3,
 }
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation-sys")]
 impl ::core::marker::Copy for SpatialRay {}
-#[cfg(feature = "Foundation_Numerics")]
+#[cfg(feature = "winrt-foundation-sys")]
 impl ::core::clone::Clone for SpatialRay {
     fn clone(&self) -> Self {
         *self

@@ -23,9 +23,9 @@ unsafe impl ::windows_core::Interface for IUserDataBufferUnprotectResult {
 pub struct IUserDataBufferUnprotectResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut UserDataBufferUnprotectStatus) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub UnprotectedBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     UnprotectedBuffer: usize,
 }
 #[doc(hidden)]
@@ -39,21 +39,21 @@ unsafe impl ::windows_core::Interface for IUserDataProtectionManager {
 #[doc(hidden)]
 pub struct IUserDataProtectionManager_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub ProtectStorageItemAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, storageitem: ::windows_core::RawPtr, availability: UserDataAvailability, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     ProtectStorageItemAsync: usize,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub GetStorageItemProtectionInfoAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, storageitem: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     GetStorageItemProtectionInfoAsync: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub ProtectBufferAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unprotectedbuffer: ::windows_core::RawPtr, availability: UserDataAvailability, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     ProtectBufferAsync: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub UnprotectBufferAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, protectedbuffer: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     UnprotectBufferAsync: usize,
     pub IsContinuedDataAvailabilityExpected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, availability: UserDataAvailability, result__: *mut bool) -> ::windows_core::HRESULT,
     pub DataAvailabilityStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -71,9 +71,9 @@ unsafe impl ::windows_core::Interface for IUserDataProtectionManagerStatics {
 pub struct IUserDataProtectionManagerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub TryGetDefault: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub TryGetForUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     TryGetForUser: usize,
 }
 #[doc(hidden)]
@@ -216,7 +216,7 @@ impl UserDataBufferUnprotectResult {
             (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<UserDataBufferUnprotectStatus>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn UnprotectedBuffer(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
@@ -333,7 +333,7 @@ unsafe impl ::windows_core::RuntimeType for UserDataBufferUnprotectStatus {
 #[repr(transparent)]
 pub struct UserDataProtectionManager(::windows_core::IUnknown);
 impl UserDataProtectionManager {
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ProtectStorageItemAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageItem>>(&self, storageitem: Param0, availability: UserDataAvailability) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<UserDataStorageItemProtectionStatus>> {
         let this = self;
         unsafe {
@@ -341,7 +341,7 @@ impl UserDataProtectionManager {
             (::windows_core::Interface::vtable(this).ProtectStorageItemAsync)(::windows_core::Interface::as_raw(this), storageitem.into_param().abi(), availability, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<UserDataStorageItemProtectionStatus>>(result__)
         }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetStorageItemProtectionInfoAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageItem>>(&self, storageitem: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<UserDataStorageItemProtectionInfo>> {
         let this = self;
         unsafe {
@@ -349,7 +349,7 @@ impl UserDataProtectionManager {
             (::windows_core::Interface::vtable(this).GetStorageItemProtectionInfoAsync)(::windows_core::Interface::as_raw(this), storageitem.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<UserDataStorageItemProtectionInfo>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ProtectBufferAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, unprotectedbuffer: Param0, availability: UserDataAvailability) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>> {
         let this = self;
         unsafe {
@@ -357,7 +357,7 @@ impl UserDataProtectionManager {
             (::windows_core::Interface::vtable(this).ProtectBufferAsync)(::windows_core::Interface::as_raw(this), unprotectedbuffer.into_param().abi(), availability, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn UnprotectBufferAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, protectedbuffer: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<UserDataBufferUnprotectResult>> {
         let this = self;
         unsafe {
@@ -389,7 +389,7 @@ impl UserDataProtectionManager {
             (::windows_core::Interface::vtable(this).TryGetDefault)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<UserDataProtectionManager>(result__)
         })
     }
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn TryGetForUser<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>>(user: Param0) -> ::windows_core::Result<UserDataProtectionManager> {
         Self::IUserDataProtectionManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();

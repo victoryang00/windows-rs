@@ -1,4 +1,4 @@
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 pub type CF_CALLBACK = ::core::option::Option<unsafe extern "system" fn(callbackinfo: *const CF_CALLBACK_INFO, callbackparameters: *const CF_CALLBACK_PARAMETERS)>;
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -446,7 +446,7 @@ impl ::core::ops::Not for CF_CALLBACK_FETCH_PLACEHOLDERS_FLAGS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 pub struct CF_CALLBACK_INFO {
     pub StructSize: u32,
     pub ConnectionKey: CF_CONNECTION_KEY,
@@ -468,15 +468,15 @@ pub struct CF_CALLBACK_INFO {
     pub ProcessInfo: *mut CF_PROCESS_INFO,
     pub RequestKey: i64,
 }
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for CF_CALLBACK_INFO {}
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for CF_CALLBACK_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for CF_CALLBACK_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CF_CALLBACK_INFO")
@@ -502,19 +502,19 @@ impl ::core::fmt::Debug for CF_CALLBACK_INFO {
             .finish()
     }
 }
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for CF_CALLBACK_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for CF_CALLBACK_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for CF_CALLBACK_INFO {}
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for CF_CALLBACK_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1045,38 +1045,38 @@ impl ::core::default::Default for CF_CALLBACK_PARAMETERS_0_11 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 pub struct CF_CALLBACK_REGISTRATION {
     pub Type: CF_CALLBACK_TYPE,
     pub Callback: CF_CALLBACK,
 }
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for CF_CALLBACK_REGISTRATION {}
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for CF_CALLBACK_REGISTRATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for CF_CALLBACK_REGISTRATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CF_CALLBACK_REGISTRATION").field("Type", &self.Type).field("Callback", &self.Callback.map(|f| f as usize)).finish()
     }
 }
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for CF_CALLBACK_REGISTRATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for CF_CALLBACK_REGISTRATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_REGISTRATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for CF_CALLBACK_REGISTRATION {}
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for CF_CALLBACK_REGISTRATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1547,38 +1547,38 @@ impl ::core::default::Default for CF_FILE_RANGE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub struct CF_FS_METADATA {
     pub BasicInfo: super::FileSystem::FILE_BASIC_INFO,
     pub FileSize: i64,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for CF_FS_METADATA {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for CF_FS_METADATA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::fmt::Debug for CF_FS_METADATA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CF_FS_METADATA").field("BasicInfo", &self.BasicInfo).field("FileSize", &self.FileSize).finish()
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for CF_FS_METADATA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for CF_FS_METADATA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_FS_METADATA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for CF_FS_METADATA {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for CF_FS_METADATA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2208,7 +2208,7 @@ impl ::core::ops::Not for CF_OPERATION_ACK_RENAME_FLAGS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 pub struct CF_OPERATION_INFO {
     pub StructSize: u32,
     pub Type: CF_OPERATION_TYPE,
@@ -2218,72 +2218,72 @@ pub struct CF_OPERATION_INFO {
     pub SyncStatus: *const CF_SYNC_STATUS,
     pub RequestKey: i64,
 }
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for CF_OPERATION_INFO {}
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for CF_OPERATION_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for CF_OPERATION_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CF_OPERATION_INFO").field("StructSize", &self.StructSize).field("Type", &self.Type).field("ConnectionKey", &self.ConnectionKey).field("TransferKey", &self.TransferKey).field("CorrelationVector", &self.CorrelationVector).field("SyncStatus", &self.SyncStatus).field("RequestKey", &self.RequestKey).finish()
     }
 }
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for CF_OPERATION_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for CF_OPERATION_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for CF_OPERATION_INFO {}
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for CF_OPERATION_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub struct CF_OPERATION_PARAMETERS {
     pub ParamSize: u32,
     pub Anonymous: CF_OPERATION_PARAMETERS_0,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for CF_OPERATION_PARAMETERS {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for CF_OPERATION_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for CF_OPERATION_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for CF_OPERATION_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for CF_OPERATION_PARAMETERS {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for CF_OPERATION_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub union CF_OPERATION_PARAMETERS_0 {
     pub TransferData: CF_OPERATION_PARAMETERS_0_6,
     pub RetrieveData: CF_OPERATION_PARAMETERS_0_5,
@@ -2294,230 +2294,230 @@ pub union CF_OPERATION_PARAMETERS_0 {
     pub AckRename: CF_OPERATION_PARAMETERS_0_3,
     pub AckDelete: CF_OPERATION_PARAMETERS_0_2,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for CF_OPERATION_PARAMETERS_0 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for CF_OPERATION_PARAMETERS_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for CF_OPERATION_PARAMETERS_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for CF_OPERATION_PARAMETERS_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for CF_OPERATION_PARAMETERS_0 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for CF_OPERATION_PARAMETERS_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub struct CF_OPERATION_PARAMETERS_0_0 {
     pub Flags: CF_OPERATION_ACK_DATA_FLAGS,
     pub CompletionStatus: ::win32_foundation::NTSTATUS,
     pub Offset: i64,
     pub Length: i64,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for CF_OPERATION_PARAMETERS_0_0 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for CF_OPERATION_PARAMETERS_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::fmt::Debug for CF_OPERATION_PARAMETERS_0_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CF_OPERATION_PARAMETERS_0_0").field("Flags", &self.Flags).field("CompletionStatus", &self.CompletionStatus).field("Offset", &self.Offset).field("Length", &self.Length).finish()
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for CF_OPERATION_PARAMETERS_0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for CF_OPERATION_PARAMETERS_0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for CF_OPERATION_PARAMETERS_0_0 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for CF_OPERATION_PARAMETERS_0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub struct CF_OPERATION_PARAMETERS_0_1 {
     pub Flags: CF_OPERATION_ACK_DEHYDRATE_FLAGS,
     pub CompletionStatus: ::win32_foundation::NTSTATUS,
     pub FileIdentity: *const ::core::ffi::c_void,
     pub FileIdentityLength: u32,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for CF_OPERATION_PARAMETERS_0_1 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for CF_OPERATION_PARAMETERS_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::fmt::Debug for CF_OPERATION_PARAMETERS_0_1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CF_OPERATION_PARAMETERS_0_1").field("Flags", &self.Flags).field("CompletionStatus", &self.CompletionStatus).field("FileIdentity", &self.FileIdentity).field("FileIdentityLength", &self.FileIdentityLength).finish()
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for CF_OPERATION_PARAMETERS_0_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for CF_OPERATION_PARAMETERS_0_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for CF_OPERATION_PARAMETERS_0_1 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for CF_OPERATION_PARAMETERS_0_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub struct CF_OPERATION_PARAMETERS_0_2 {
     pub Flags: CF_OPERATION_ACK_DELETE_FLAGS,
     pub CompletionStatus: ::win32_foundation::NTSTATUS,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for CF_OPERATION_PARAMETERS_0_2 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for CF_OPERATION_PARAMETERS_0_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::fmt::Debug for CF_OPERATION_PARAMETERS_0_2 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CF_OPERATION_PARAMETERS_0_2").field("Flags", &self.Flags).field("CompletionStatus", &self.CompletionStatus).finish()
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for CF_OPERATION_PARAMETERS_0_2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for CF_OPERATION_PARAMETERS_0_2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0_2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for CF_OPERATION_PARAMETERS_0_2 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for CF_OPERATION_PARAMETERS_0_2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub struct CF_OPERATION_PARAMETERS_0_3 {
     pub Flags: CF_OPERATION_ACK_RENAME_FLAGS,
     pub CompletionStatus: ::win32_foundation::NTSTATUS,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for CF_OPERATION_PARAMETERS_0_3 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for CF_OPERATION_PARAMETERS_0_3 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::fmt::Debug for CF_OPERATION_PARAMETERS_0_3 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CF_OPERATION_PARAMETERS_0_3").field("Flags", &self.Flags).field("CompletionStatus", &self.CompletionStatus).finish()
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for CF_OPERATION_PARAMETERS_0_3 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for CF_OPERATION_PARAMETERS_0_3 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0_3>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for CF_OPERATION_PARAMETERS_0_3 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for CF_OPERATION_PARAMETERS_0_3 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub struct CF_OPERATION_PARAMETERS_0_4 {
     pub Flags: CF_OPERATION_RESTART_HYDRATION_FLAGS,
     pub FsMetadata: *const CF_FS_METADATA,
     pub FileIdentity: *const ::core::ffi::c_void,
     pub FileIdentityLength: u32,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for CF_OPERATION_PARAMETERS_0_4 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for CF_OPERATION_PARAMETERS_0_4 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::fmt::Debug for CF_OPERATION_PARAMETERS_0_4 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CF_OPERATION_PARAMETERS_0_4").field("Flags", &self.Flags).field("FsMetadata", &self.FsMetadata).field("FileIdentity", &self.FileIdentity).field("FileIdentityLength", &self.FileIdentityLength).finish()
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for CF_OPERATION_PARAMETERS_0_4 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for CF_OPERATION_PARAMETERS_0_4 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0_4>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for CF_OPERATION_PARAMETERS_0_4 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for CF_OPERATION_PARAMETERS_0_4 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub struct CF_OPERATION_PARAMETERS_0_5 {
     pub Flags: CF_OPERATION_RETRIEVE_DATA_FLAGS,
     pub Buffer: *mut ::core::ffi::c_void,
@@ -2525,40 +2525,40 @@ pub struct CF_OPERATION_PARAMETERS_0_5 {
     pub Length: i64,
     pub ReturnedLength: i64,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for CF_OPERATION_PARAMETERS_0_5 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for CF_OPERATION_PARAMETERS_0_5 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::fmt::Debug for CF_OPERATION_PARAMETERS_0_5 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CF_OPERATION_PARAMETERS_0_5").field("Flags", &self.Flags).field("Buffer", &self.Buffer).field("Offset", &self.Offset).field("Length", &self.Length).field("ReturnedLength", &self.ReturnedLength).finish()
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for CF_OPERATION_PARAMETERS_0_5 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for CF_OPERATION_PARAMETERS_0_5 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0_5>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for CF_OPERATION_PARAMETERS_0_5 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for CF_OPERATION_PARAMETERS_0_5 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub struct CF_OPERATION_PARAMETERS_0_6 {
     pub Flags: CF_OPERATION_TRANSFER_DATA_FLAGS,
     pub CompletionStatus: ::win32_foundation::NTSTATUS,
@@ -2566,40 +2566,40 @@ pub struct CF_OPERATION_PARAMETERS_0_6 {
     pub Offset: i64,
     pub Length: i64,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for CF_OPERATION_PARAMETERS_0_6 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for CF_OPERATION_PARAMETERS_0_6 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::fmt::Debug for CF_OPERATION_PARAMETERS_0_6 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CF_OPERATION_PARAMETERS_0_6").field("Flags", &self.Flags).field("CompletionStatus", &self.CompletionStatus).field("Buffer", &self.Buffer).field("Offset", &self.Offset).field("Length", &self.Length).finish()
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for CF_OPERATION_PARAMETERS_0_6 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for CF_OPERATION_PARAMETERS_0_6 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0_6>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for CF_OPERATION_PARAMETERS_0_6 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for CF_OPERATION_PARAMETERS_0_6 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub struct CF_OPERATION_PARAMETERS_0_7 {
     pub Flags: CF_OPERATION_TRANSFER_PLACEHOLDERS_FLAGS,
     pub CompletionStatus: ::win32_foundation::NTSTATUS,
@@ -2608,33 +2608,33 @@ pub struct CF_OPERATION_PARAMETERS_0_7 {
     pub PlaceholderCount: u32,
     pub EntriesProcessed: u32,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for CF_OPERATION_PARAMETERS_0_7 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for CF_OPERATION_PARAMETERS_0_7 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::fmt::Debug for CF_OPERATION_PARAMETERS_0_7 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CF_OPERATION_PARAMETERS_0_7").field("Flags", &self.Flags).field("CompletionStatus", &self.CompletionStatus).field("PlaceholderTotalCount", &self.PlaceholderTotalCount).field("PlaceholderArray", &self.PlaceholderArray).field("PlaceholderCount", &self.PlaceholderCount).field("EntriesProcessed", &self.EntriesProcessed).finish()
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for CF_OPERATION_PARAMETERS_0_7 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for CF_OPERATION_PARAMETERS_0_7 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0_7>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for CF_OPERATION_PARAMETERS_0_7 {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for CF_OPERATION_PARAMETERS_0_7 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2994,7 +2994,7 @@ impl ::core::ops::Not for CF_PLACEHOLDER_CREATE_FLAGS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 pub struct CF_PLACEHOLDER_CREATE_INFO {
     pub RelativeFileName: ::windows_core::PCWSTR,
     pub FsMetadata: CF_FS_METADATA,
@@ -3004,33 +3004,33 @@ pub struct CF_PLACEHOLDER_CREATE_INFO {
     pub Result: ::windows_core::HRESULT,
     pub CreateUsn: i64,
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::marker::Copy for CF_PLACEHOLDER_CREATE_INFO {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::clone::Clone for CF_PLACEHOLDER_CREATE_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::fmt::Debug for CF_PLACEHOLDER_CREATE_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CF_PLACEHOLDER_CREATE_INFO").field("RelativeFileName", &self.RelativeFileName).field("FsMetadata", &self.FsMetadata).field("FileIdentity", &self.FileIdentity).field("FileIdentityLength", &self.FileIdentityLength).field("Flags", &self.Flags).field("Result", &self.Result).field("CreateUsn", &self.CreateUsn).finish()
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 unsafe impl ::windows_core::Abi for CF_PLACEHOLDER_CREATE_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::PartialEq for CF_PLACEHOLDER_CREATE_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_PLACEHOLDER_CREATE_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::cmp::Eq for CF_PLACEHOLDER_CREATE_INFO {}
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 impl ::core::default::Default for CF_PLACEHOLDER_CREATE_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4034,7 +4034,7 @@ pub unsafe fn CfCloseHandle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_fo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn CfConnectSyncRoot<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(syncrootpath: Param0, callbacktable: *const CF_CALLBACK_REGISTRATION, callbackcontext: *const ::core::ffi::c_void, connectflags: CF_CONNECT_FLAGS) -> ::windows_core::Result<CF_CONNECTION_KEY> {
     #[cfg(windows)]
@@ -4049,7 +4049,7 @@ pub unsafe fn CfConnectSyncRoot<'a, Param0: ::windows_core::IntoParam<'a, ::wind
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_IO")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn CfConvertToPlaceholder<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(filehandle: Param0, fileidentity: *const ::core::ffi::c_void, fileidentitylength: u32, convertflags: CF_CONVERT_FLAGS, convertusn: *mut i64, overlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4063,7 +4063,7 @@ pub unsafe fn CfConvertToPlaceholder<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 #[inline]
 pub unsafe fn CfCreatePlaceholders<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(basedirectorypath: Param0, placeholderarray: &mut [CF_PLACEHOLDER_CREATE_INFO], createflags: CF_CREATE_FLAGS, entriesprocessed: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4077,7 +4077,7 @@ pub unsafe fn CfCreatePlaceholders<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_IO")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn CfDehydratePlaceholder<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(filehandle: Param0, startingoffset: i64, length: i64, dehydrateflags: CF_DEHYDRATE_FLAGS, overlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4104,7 +4104,7 @@ pub unsafe fn CfDisconnectSyncRoot<'a, Param0: ::windows_core::IntoParam<'a, CF_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_CorrelationVector"))]
+#[cfg(all(feature = "win32-storage", feature = "win32-system"))]
 #[inline]
 pub unsafe fn CfExecute(opinfo: *const CF_OPERATION_INFO, opparams: *mut CF_OPERATION_PARAMETERS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4118,7 +4118,7 @@ pub unsafe fn CfExecute(opinfo: *const CF_OPERATION_INFO, opparams: *mut CF_OPER
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn CfGetCorrelationVector<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(filehandle: Param0) -> ::windows_core::Result<::win32_system::CorrelationVector::CORRELATION_VECTOR> {
     #[cfg(windows)]
@@ -4172,7 +4172,7 @@ pub unsafe fn CfGetPlaceholderStateFromAttributeTag(fileattributes: u32, reparse
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 #[inline]
 pub unsafe fn CfGetPlaceholderStateFromFileInfo(infobuffer: *const ::core::ffi::c_void, infoclass: super::FileSystem::FILE_INFO_BY_HANDLE_CLASS) -> CF_PLACEHOLDER_STATE {
     #[cfg(windows)]
@@ -4186,7 +4186,7 @@ pub unsafe fn CfGetPlaceholderStateFromFileInfo(infobuffer: *const ::core::ffi::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Storage_FileSystem")]
+#[cfg(feature = "win32-storage")]
 #[inline]
 pub unsafe fn CfGetPlaceholderStateFromFindData(finddata: *const super::FileSystem::WIN32_FIND_DATAA) -> CF_PLACEHOLDER_STATE {
     #[cfg(windows)]
@@ -4267,7 +4267,7 @@ pub unsafe fn CfGetWin32HandleFromProtectedHandle<'a, Param0: ::windows_core::In
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_IO")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn CfHydratePlaceholder<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(filehandle: Param0, startingoffset: i64, length: i64, hydrateflags: CF_HYDRATE_FLAGS, overlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4400,7 +4400,7 @@ pub unsafe fn CfReportSyncStatus<'a, Param0: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_IO")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn CfRevertPlaceholder<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(filehandle: Param0, revertflags: CF_REVERT_FLAGS, overlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4414,7 +4414,7 @@ pub unsafe fn CfRevertPlaceholder<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_CorrelationVector")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn CfSetCorrelationVector<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(filehandle: Param0, correlationvector: *const ::win32_system::CorrelationVector::CORRELATION_VECTOR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4441,7 +4441,7 @@ pub unsafe fn CfSetInSyncState<'a, Param0: ::windows_core::IntoParam<'a, ::win32
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_IO")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn CfSetPinState<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(filehandle: Param0, pinstate: CF_PIN_STATE, pinflags: CF_SET_PIN_FLAGS, overlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -4468,7 +4468,7 @@ pub unsafe fn CfUnregisterSyncRoot<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_IO"))]
+#[cfg(all(feature = "win32-storage", feature = "win32-system"))]
 #[inline]
 pub unsafe fn CfUpdatePlaceholder<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(filehandle: Param0, fsmetadata: *const CF_FS_METADATA, fileidentity: *const ::core::ffi::c_void, fileidentitylength: u32, dehydraterangearray: &[CF_FILE_RANGE], updateflags: CF_UPDATE_FLAGS, updateusn: *mut i64, overlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::windows_core::Result<()> {
     #[cfg(windows)]

@@ -10,17 +10,17 @@ unsafe impl ::windows_core::Interface for ILanguageFont {
 pub struct ILanguageFont_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub FontFamily: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub FontWeight: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_ui::Text::FontWeight) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Text"))]
+    #[cfg(not(feature = "winrt-ui"))]
     FontWeight: usize,
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub FontStretch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_ui::Text::FontStretch) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Text"))]
+    #[cfg(not(feature = "winrt-ui"))]
     FontStretch: usize,
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub FontStyle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_ui::Text::FontStyle) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Text"))]
+    #[cfg(not(feature = "winrt-ui"))]
     FontStyle: usize,
     pub ScaleFactor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
 }
@@ -70,7 +70,7 @@ impl LanguageFont {
             (::windows_core::Interface::vtable(this).FontFamily)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub fn FontWeight(&self) -> ::windows_core::Result<::winrt_ui::Text::FontWeight> {
         let this = self;
         unsafe {
@@ -78,7 +78,7 @@ impl LanguageFont {
             (::windows_core::Interface::vtable(this).FontWeight)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Text::FontWeight>(result__)
         }
     }
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub fn FontStretch(&self) -> ::windows_core::Result<::winrt_ui::Text::FontStretch> {
         let this = self;
         unsafe {
@@ -86,7 +86,7 @@ impl LanguageFont {
             (::windows_core::Interface::vtable(this).FontStretch)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Text::FontStretch>(result__)
         }
     }
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub fn FontStyle(&self) -> ::windows_core::Result<::winrt_ui::Text::FontStyle> {
         let this = self;
         unsafe {

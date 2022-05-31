@@ -1,7 +1,7 @@
 #[repr(transparent)]
 pub struct ActivitySensorTrigger(::windows_core::IUnknown);
 impl ActivitySensorTrigger {
-    #[cfg(all(feature = "Devices_Sensors", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-foundation"))]
     pub fn SubscribedActivities(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_devices::Sensors::ActivityType>> {
         let this = self;
         unsafe {
@@ -16,7 +16,7 @@ impl ActivitySensorTrigger {
             (::windows_core::Interface::vtable(this).ReportInterval)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(all(feature = "Devices_Sensors", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-foundation"))]
     pub fn SupportedActivities(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_devices::Sensors::ActivityType>> {
         let this = self;
         unsafe {
@@ -471,7 +471,7 @@ impl ApplicationTrigger {
             (::windows_core::Interface::vtable(this).RequestAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ApplicationTriggerResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RequestAsyncWithArguments<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::ValueSet>>(&self, arguments: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ApplicationTriggerResult>> {
         let this = self;
         unsafe {
@@ -577,7 +577,7 @@ unsafe impl ::core::marker::Sync for ApplicationTrigger {}
 #[repr(transparent)]
 pub struct ApplicationTriggerDetails(::windows_core::IUnknown);
 impl ApplicationTriggerDetails {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Arguments(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = self;
         unsafe {
@@ -1703,14 +1703,14 @@ impl BackgroundTaskRegistration {
             (::windows_core::Interface::vtable(this).TaskGroup)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<BackgroundTaskRegistrationGroup>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AllTasks() -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::GUID, IBackgroundTaskRegistration>> {
         Self::IBackgroundTaskRegistrationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).AllTasks)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::GUID, IBackgroundTaskRegistration>>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AllTaskGroups() -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, BackgroundTaskRegistrationGroup>> {
         Self::IBackgroundTaskRegistrationStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1887,7 +1887,7 @@ impl BackgroundTaskRegistrationGroup {
             (::windows_core::Interface::vtable(this).Name)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Activation")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn BackgroundActivated<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<BackgroundTaskRegistrationGroup, super::Activation::BackgroundActivatedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
@@ -1899,7 +1899,7 @@ impl BackgroundTaskRegistrationGroup {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveBackgroundActivated)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AllTasks(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::GUID, BackgroundTaskRegistration>> {
         let this = self;
         unsafe {
@@ -2090,7 +2090,7 @@ impl BluetoothLEAdvertisementPublisherTrigger {
         static mut SHARED: ::windows_core::FactoryCache<BluetoothLEAdvertisementPublisherTrigger, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Devices_Bluetooth_Advertisement")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Advertisement(&self) -> ::windows_core::Result<::winrt_devices::Bluetooth::Advertisement::BluetoothLEAdvertisement> {
         let this = self;
         unsafe {
@@ -2275,7 +2275,7 @@ impl BluetoothLEAdvertisementWatcherTrigger {
             (::windows_core::Interface::vtable(this).MaxOutOfRangeTimeout)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Devices_Bluetooth")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SignalStrengthFilter(&self) -> ::windows_core::Result<::winrt_devices::Bluetooth::BluetoothSignalStrengthFilter> {
         let this = self;
         unsafe {
@@ -2283,12 +2283,12 @@ impl BluetoothLEAdvertisementWatcherTrigger {
             (::windows_core::Interface::vtable(this).SignalStrengthFilter)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Bluetooth::BluetoothSignalStrengthFilter>(result__)
         }
     }
-    #[cfg(feature = "Devices_Bluetooth")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SetSignalStrengthFilter<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Bluetooth::BluetoothSignalStrengthFilter>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSignalStrengthFilter)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Devices_Bluetooth_Advertisement")]
+    #[cfg(feature = "winrt-devices")]
     pub fn AdvertisementFilter(&self) -> ::windows_core::Result<::winrt_devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter> {
         let this = self;
         unsafe {
@@ -2296,7 +2296,7 @@ impl BluetoothLEAdvertisementWatcherTrigger {
             (::windows_core::Interface::vtable(this).AdvertisementFilter)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter>(result__)
         }
     }
-    #[cfg(feature = "Devices_Bluetooth_Advertisement")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SetAdvertisementFilter<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetAdvertisementFilter)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -2515,7 +2515,7 @@ unsafe impl ::core::marker::Sync for CachedFileUpdaterTrigger {}
 #[repr(transparent)]
 pub struct CachedFileUpdaterTriggerDetails(::windows_core::IUnknown);
 impl CachedFileUpdaterTriggerDetails {
-    #[cfg(feature = "Storage_Provider")]
+    #[cfg(feature = "winrt-storage")]
     pub fn UpdateTarget(&self) -> ::windows_core::Result<::winrt_storage::Provider::CachedFileTarget> {
         let this = self;
         unsafe {
@@ -2523,7 +2523,7 @@ impl CachedFileUpdaterTriggerDetails {
             (::windows_core::Interface::vtable(this).UpdateTarget)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Provider::CachedFileTarget>(result__)
         }
     }
-    #[cfg(feature = "Storage_Provider")]
+    #[cfg(feature = "winrt-storage")]
     pub fn UpdateRequest(&self) -> ::windows_core::Result<::winrt_storage::Provider::FileUpdateRequest> {
         let this = self;
         unsafe {
@@ -3540,12 +3540,12 @@ impl<'a> ::windows_core::IntoParam<'a, IBackgroundTrigger> for &DeviceConnection
 }
 unsafe impl ::core::marker::Send for DeviceConnectionChangeTrigger {}
 unsafe impl ::core::marker::Sync for DeviceConnectionChangeTrigger {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct DeviceManufacturerNotificationTrigger(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl DeviceManufacturerNotificationTrigger {
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn TriggerQualifier(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
@@ -3553,7 +3553,7 @@ impl DeviceManufacturerNotificationTrigger {
             (::windows_core::Interface::vtable(this).TriggerQualifier)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn OneShot(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
@@ -3561,40 +3561,40 @@ impl DeviceManufacturerNotificationTrigger {
             (::windows_core::Interface::vtable(this).OneShot)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(triggerqualifier: Param0, oneshot: bool) -> ::windows_core::Result<DeviceManufacturerNotificationTrigger> {
         Self::IDeviceManufacturerNotificationTriggerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), triggerqualifier.into_param().abi(), oneshot, result__.as_mut_ptr()).from_abi::<DeviceManufacturerNotificationTrigger>(result__)
         })
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn IDeviceManufacturerNotificationTriggerFactory<R, F: FnOnce(&IDeviceManufacturerNotificationTriggerFactory) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
         static mut SHARED: ::windows_core::FactoryCache<DeviceManufacturerNotificationTrigger, IDeviceManufacturerNotificationTriggerFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for DeviceManufacturerNotificationTrigger {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::PartialEq for DeviceManufacturerNotificationTrigger {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::Eq for DeviceManufacturerNotificationTrigger {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::fmt::Debug for DeviceManufacturerNotificationTrigger {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("DeviceManufacturerNotificationTrigger").field(&self.0).finish()
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::RuntimeType for DeviceManufacturerNotificationTrigger {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.ApplicationModel.Background.DeviceManufacturerNotificationTrigger;{81278ab5-41ab-16da-86c2-7f7bf0912f5b})");
     type DefaultType = ::core::option::Option<Self>;
@@ -3602,84 +3602,84 @@ unsafe impl ::windows_core::RuntimeType for DeviceManufacturerNotificationTrigge
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for DeviceManufacturerNotificationTrigger {
     type Vtable = IDeviceManufacturerNotificationTrigger_Vtbl;
     const IID: ::windows_core::GUID = <IDeviceManufacturerNotificationTrigger as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::windows_core::RuntimeName for DeviceManufacturerNotificationTrigger {
     const NAME: &'static str = "Windows.ApplicationModel.Background.DeviceManufacturerNotificationTrigger";
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<DeviceManufacturerNotificationTrigger> for ::windows_core::IUnknown {
     fn from(value: DeviceManufacturerNotificationTrigger) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&DeviceManufacturerNotificationTrigger> for ::windows_core::IUnknown {
     fn from(value: &DeviceManufacturerNotificationTrigger) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for DeviceManufacturerNotificationTrigger {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a DeviceManufacturerNotificationTrigger {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<DeviceManufacturerNotificationTrigger> for ::windows_core::IInspectable {
     fn from(value: DeviceManufacturerNotificationTrigger) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&DeviceManufacturerNotificationTrigger> for ::windows_core::IInspectable {
     fn from(value: &DeviceManufacturerNotificationTrigger) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for DeviceManufacturerNotificationTrigger {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a DeviceManufacturerNotificationTrigger {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<DeviceManufacturerNotificationTrigger> for IBackgroundTrigger {
     type Error = ::windows_core::Error;
     fn try_from(value: DeviceManufacturerNotificationTrigger) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<&DeviceManufacturerNotificationTrigger> for IBackgroundTrigger {
     type Error = ::windows_core::Error;
     fn try_from(value: &DeviceManufacturerNotificationTrigger) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IBackgroundTrigger> for DeviceManufacturerNotificationTrigger {
     fn into_param(self) -> ::windows_core::Param<'a, IBackgroundTrigger> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IBackgroundTrigger> for &DeviceManufacturerNotificationTrigger {
     fn into_param(self) -> ::windows_core::Param<'a, IBackgroundTrigger> {
         ::core::convert::TryInto::<IBackgroundTrigger>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -4161,7 +4161,7 @@ unsafe impl ::core::marker::Sync for EmailStoreNotificationTrigger {}
 #[repr(transparent)]
 pub struct GattCharacteristicNotificationTrigger(::windows_core::IUnknown);
 impl GattCharacteristicNotificationTrigger {
-    #[cfg(feature = "Devices_Bluetooth_GenericAttributeProfile")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Characteristic(&self) -> ::windows_core::Result<::winrt_devices::Bluetooth::GenericAttributeProfile::GattCharacteristic> {
         let this = self;
         unsafe {
@@ -4169,7 +4169,7 @@ impl GattCharacteristicNotificationTrigger {
             (::windows_core::Interface::vtable(this).Characteristic)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Bluetooth::GenericAttributeProfile::GattCharacteristic>(result__)
         }
     }
-    #[cfg(feature = "Devices_Bluetooth_Background")]
+    #[cfg(feature = "winrt-devices")]
     pub fn EventTriggeringMode(&self) -> ::windows_core::Result<::winrt_devices::Bluetooth::Background::BluetoothEventTriggeringMode> {
         let this = &::windows_core::Interface::cast::<IGattCharacteristicNotificationTrigger2>(self)?;
         unsafe {
@@ -4177,14 +4177,14 @@ impl GattCharacteristicNotificationTrigger {
             (::windows_core::Interface::vtable(this).EventTriggeringMode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Bluetooth::Background::BluetoothEventTriggeringMode>(result__)
         }
     }
-    #[cfg(feature = "Devices_Bluetooth_GenericAttributeProfile")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Bluetooth::GenericAttributeProfile::GattCharacteristic>>(characteristic: Param0) -> ::windows_core::Result<GattCharacteristicNotificationTrigger> {
         Self::IGattCharacteristicNotificationTriggerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), characteristic.into_param().abi(), result__.as_mut_ptr()).from_abi::<GattCharacteristicNotificationTrigger>(result__)
         })
     }
-    #[cfg(all(feature = "Devices_Bluetooth_Background", feature = "Devices_Bluetooth_GenericAttributeProfile"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-devices"))]
     pub fn CreateWithEventTriggeringMode<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Bluetooth::GenericAttributeProfile::GattCharacteristic>>(characteristic: Param0, eventtriggeringmode: ::winrt_devices::Bluetooth::Background::BluetoothEventTriggeringMode) -> ::windows_core::Result<GattCharacteristicNotificationTrigger> {
         Self::IGattCharacteristicNotificationTriggerFactory2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -4304,7 +4304,7 @@ impl GattServiceProviderTrigger {
             (::windows_core::Interface::vtable(this).TriggerId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Devices_Bluetooth_GenericAttributeProfile")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Service(&self) -> ::windows_core::Result<::winrt_devices::Bluetooth::GenericAttributeProfile::GattLocalService> {
         let this = self;
         unsafe {
@@ -4312,12 +4312,12 @@ impl GattServiceProviderTrigger {
             (::windows_core::Interface::vtable(this).Service)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Bluetooth::GenericAttributeProfile::GattLocalService>(result__)
         }
     }
-    #[cfg(feature = "Devices_Bluetooth_GenericAttributeProfile")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SetAdvertisingParameters<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisingParameters>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetAdvertisingParameters)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Devices_Bluetooth_GenericAttributeProfile")]
+    #[cfg(feature = "winrt-devices")]
     pub fn AdvertisingParameters(&self) -> ::windows_core::Result<::winrt_devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisingParameters> {
         let this = self;
         unsafe {
@@ -4440,7 +4440,7 @@ impl GattServiceProviderTriggerResult {
             (::windows_core::Interface::vtable(this).Trigger)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GattServiceProviderTrigger>(result__)
         }
     }
-    #[cfg(feature = "Devices_Bluetooth")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Error(&self) -> ::windows_core::Result<::winrt_devices::Bluetooth::BluetoothError> {
         let this = self;
         unsafe {
@@ -4531,7 +4531,7 @@ impl GeovisitTrigger {
         static mut SHARED: ::windows_core::FactoryCache<GeovisitTrigger, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn MonitoringScope(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::VisitMonitoringScope> {
         let this = self;
         unsafe {
@@ -4539,7 +4539,7 @@ impl GeovisitTrigger {
             (::windows_core::Interface::vtable(this).MonitoringScope)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::VisitMonitoringScope>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SetMonitoringScope(&self, value: ::winrt_devices::Geolocation::VisitMonitoringScope) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetMonitoringScope)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -4650,14 +4650,14 @@ unsafe impl ::windows_core::Interface for IActivitySensorTrigger {
 #[doc(hidden)]
 pub struct IActivitySensorTrigger_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Devices_Sensors", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-foundation"))]
     pub SubscribedActivities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Sensors", feature = "Foundation_Collections")))]
+    #[cfg(not(all(feature = "winrt-devices", feature = "winrt-foundation")))]
     SubscribedActivities: usize,
     pub ReportInterval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Devices_Sensors", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-foundation"))]
     pub SupportedActivities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Sensors", feature = "Foundation_Collections")))]
+    #[cfg(not(all(feature = "winrt-devices", feature = "winrt-foundation")))]
     SupportedActivities: usize,
     pub MinimumReportInterval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
 }
@@ -4751,9 +4751,9 @@ unsafe impl ::windows_core::Interface for IApplicationTrigger {
 pub struct IApplicationTrigger_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub RequestAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub RequestAsyncWithArguments: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, arguments: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     RequestAsyncWithArguments: usize,
 }
 #[doc(hidden)]
@@ -4767,9 +4767,9 @@ unsafe impl ::windows_core::Interface for IApplicationTriggerDetails {
 #[doc(hidden)]
 pub struct IApplicationTriggerDetails_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Arguments: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Arguments: usize,
 }
 #[doc(hidden)]
@@ -5395,7 +5395,7 @@ pub struct IBackgroundTaskInstance2_Vtbl {
 #[repr(transparent)]
 pub struct IBackgroundTaskInstance4(::windows_core::IUnknown);
 impl IBackgroundTaskInstance4 {
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = self;
         unsafe {
@@ -5554,9 +5554,9 @@ unsafe impl ::windows_core::Interface for IBackgroundTaskInstance4 {
 #[doc(hidden)]
 pub struct IBackgroundTaskInstance4_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system")]
     pub User: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System"))]
+    #[cfg(not(feature = "winrt-system"))]
     User: usize,
 }
 #[doc(hidden)]
@@ -6001,14 +6001,14 @@ pub struct IBackgroundTaskRegistrationGroup_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "ApplicationModel_Activation")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub BackgroundActivated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Activation"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     BackgroundActivated: usize,
     pub RemoveBackgroundActivated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub AllTasks: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     AllTasks: usize,
 }
 #[doc(hidden)]
@@ -6036,9 +6036,9 @@ unsafe impl ::windows_core::Interface for IBackgroundTaskRegistrationStatics {
 #[doc(hidden)]
 pub struct IBackgroundTaskRegistrationStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub AllTasks: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     AllTasks: usize,
 }
 #[doc(hidden)]
@@ -6052,9 +6052,9 @@ unsafe impl ::windows_core::Interface for IBackgroundTaskRegistrationStatics2 {
 #[doc(hidden)]
 pub struct IBackgroundTaskRegistrationStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub AllTaskGroups: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     AllTaskGroups: usize,
     pub GetTaskGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, groupid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -6157,9 +6157,9 @@ unsafe impl ::windows_core::Interface for IBluetoothLEAdvertisementPublisherTrig
 #[doc(hidden)]
 pub struct IBluetoothLEAdvertisementPublisherTrigger_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Bluetooth_Advertisement")]
+    #[cfg(feature = "winrt-devices")]
     pub Advertisement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_Advertisement"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Advertisement: usize,
 }
 #[doc(hidden)]
@@ -6197,21 +6197,21 @@ pub struct IBluetoothLEAdvertisementWatcherTrigger_Vtbl {
     pub MaxSamplingInterval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub MinOutOfRangeTimeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub MaxOutOfRangeTimeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Bluetooth")]
+    #[cfg(feature = "winrt-devices")]
     pub SignalStrengthFilter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SignalStrengthFilter: usize,
-    #[cfg(feature = "Devices_Bluetooth")]
+    #[cfg(feature = "winrt-devices")]
     pub SetSignalStrengthFilter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SetSignalStrengthFilter: usize,
-    #[cfg(feature = "Devices_Bluetooth_Advertisement")]
+    #[cfg(feature = "winrt-devices")]
     pub AdvertisementFilter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_Advertisement"))]
+    #[cfg(not(feature = "winrt-devices"))]
     AdvertisementFilter: usize,
-    #[cfg(feature = "Devices_Bluetooth_Advertisement")]
+    #[cfg(feature = "winrt-devices")]
     pub SetAdvertisementFilter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_Advertisement"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SetAdvertisementFilter: usize,
 }
 #[doc(hidden)]
@@ -6251,13 +6251,13 @@ unsafe impl ::windows_core::Interface for ICachedFileUpdaterTriggerDetails {
 #[doc(hidden)]
 pub struct ICachedFileUpdaterTriggerDetails_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Provider")]
+    #[cfg(feature = "winrt-storage")]
     pub UpdateTarget: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_storage::Provider::CachedFileTarget) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Provider"))]
+    #[cfg(not(feature = "winrt-storage"))]
     UpdateTarget: usize,
-    #[cfg(feature = "Storage_Provider")]
+    #[cfg(feature = "winrt-storage")]
     pub UpdateRequest: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Provider"))]
+    #[cfg(not(feature = "winrt-storage"))]
     UpdateRequest: usize,
     pub CanRequestUserInput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
 }
@@ -6392,45 +6392,45 @@ pub struct IDeviceConnectionChangeTriggerStatics_Vtbl {
     pub FromIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct IDeviceManufacturerNotificationTrigger(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for IDeviceManufacturerNotificationTrigger {
     type Vtable = IDeviceManufacturerNotificationTrigger_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x81278ab5_41ab_16da_86c2_7f7bf0912f5b);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IDeviceManufacturerNotificationTrigger_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub TriggerQualifier: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     TriggerQualifier: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub OneShot: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     OneShot: usize,
 }
 #[doc(hidden)]
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct IDeviceManufacturerNotificationTriggerFactory(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for IDeviceManufacturerNotificationTriggerFactory {
     type Vtable = IDeviceManufacturerNotificationTriggerFactory_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7955de75_25bb_4153_a1a2_3029fcabb652);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IDeviceManufacturerNotificationTriggerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, triggerqualifier: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, oneshot: bool, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     Create: usize,
 }
 #[doc(hidden)]
@@ -6496,9 +6496,9 @@ unsafe impl ::windows_core::Interface for IGattCharacteristicNotificationTrigger
 #[doc(hidden)]
 pub struct IGattCharacteristicNotificationTrigger_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Bluetooth_GenericAttributeProfile")]
+    #[cfg(feature = "winrt-devices")]
     pub Characteristic: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_GenericAttributeProfile"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Characteristic: usize,
 }
 #[doc(hidden)]
@@ -6512,9 +6512,9 @@ unsafe impl ::windows_core::Interface for IGattCharacteristicNotificationTrigger
 #[doc(hidden)]
 pub struct IGattCharacteristicNotificationTrigger2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Bluetooth_Background")]
+    #[cfg(feature = "winrt-devices")]
     pub EventTriggeringMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Bluetooth::Background::BluetoothEventTriggeringMode) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_Background"))]
+    #[cfg(not(feature = "winrt-devices"))]
     EventTriggeringMode: usize,
 }
 #[doc(hidden)]
@@ -6528,9 +6528,9 @@ unsafe impl ::windows_core::Interface for IGattCharacteristicNotificationTrigger
 #[doc(hidden)]
 pub struct IGattCharacteristicNotificationTriggerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Bluetooth_GenericAttributeProfile")]
+    #[cfg(feature = "winrt-devices")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, characteristic: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_GenericAttributeProfile"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Create: usize,
 }
 #[doc(hidden)]
@@ -6544,9 +6544,9 @@ unsafe impl ::windows_core::Interface for IGattCharacteristicNotificationTrigger
 #[doc(hidden)]
 pub struct IGattCharacteristicNotificationTriggerFactory2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Devices_Bluetooth_Background", feature = "Devices_Bluetooth_GenericAttributeProfile"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-devices"))]
     pub CreateWithEventTriggeringMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, characteristic: ::windows_core::RawPtr, eventtriggeringmode: ::winrt_devices::Bluetooth::Background::BluetoothEventTriggeringMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Bluetooth_Background", feature = "Devices_Bluetooth_GenericAttributeProfile")))]
+    #[cfg(not(all(feature = "winrt-devices", feature = "winrt-devices")))]
     CreateWithEventTriggeringMode: usize,
 }
 #[doc(hidden)]
@@ -6561,17 +6561,17 @@ unsafe impl ::windows_core::Interface for IGattServiceProviderTrigger {
 pub struct IGattServiceProviderTrigger_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub TriggerId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Bluetooth_GenericAttributeProfile")]
+    #[cfg(feature = "winrt-devices")]
     pub Service: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_GenericAttributeProfile"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Service: usize,
-    #[cfg(feature = "Devices_Bluetooth_GenericAttributeProfile")]
+    #[cfg(feature = "winrt-devices")]
     pub SetAdvertisingParameters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_GenericAttributeProfile"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SetAdvertisingParameters: usize,
-    #[cfg(feature = "Devices_Bluetooth_GenericAttributeProfile")]
+    #[cfg(feature = "winrt-devices")]
     pub AdvertisingParameters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_GenericAttributeProfile"))]
+    #[cfg(not(feature = "winrt-devices"))]
     AdvertisingParameters: usize,
 }
 #[doc(hidden)]
@@ -6586,9 +6586,9 @@ unsafe impl ::windows_core::Interface for IGattServiceProviderTriggerResult {
 pub struct IGattServiceProviderTriggerResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Trigger: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Bluetooth")]
+    #[cfg(feature = "winrt-devices")]
     pub Error: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Bluetooth::BluetoothError) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Error: usize,
 }
 #[doc(hidden)]
@@ -6615,13 +6615,13 @@ unsafe impl ::windows_core::Interface for IGeovisitTrigger {
 #[doc(hidden)]
 pub struct IGeovisitTrigger_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub MonitoringScope: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Geolocation::VisitMonitoringScope) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     MonitoringScope: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub SetMonitoringScope: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_devices::Geolocation::VisitMonitoringScope) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SetMonitoringScope: usize,
 }
 #[doc(hidden)]
@@ -6689,9 +6689,9 @@ unsafe impl ::windows_core::Interface for IMediaProcessingTrigger {
 pub struct IMediaProcessingTrigger_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub RequestAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub RequestAsyncWithArguments: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, arguments: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     RequestAsyncWithArguments: usize,
 }
 #[doc(hidden)]
@@ -6744,9 +6744,9 @@ unsafe impl ::windows_core::Interface for IPhoneTrigger {
 pub struct IPhoneTrigger_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub OneShot: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "ApplicationModel_Calls_Background")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub TriggerType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Calls::Background::PhoneTriggerType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Calls_Background"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     TriggerType: usize,
 }
 #[doc(hidden)]
@@ -6760,9 +6760,9 @@ unsafe impl ::windows_core::Interface for IPhoneTriggerFactory {
 #[doc(hidden)]
 pub struct IPhoneTriggerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "ApplicationModel_Calls_Background")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: super::Calls::Background::PhoneTriggerType, oneshot: bool, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Calls_Background"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     Create: usize,
 }
 #[doc(hidden)]
@@ -6801,43 +6801,43 @@ unsafe impl ::windows_core::Interface for IRfcommConnectionTrigger {
 #[doc(hidden)]
 pub struct IRfcommConnectionTrigger_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Bluetooth_Background")]
+    #[cfg(feature = "winrt-devices")]
     pub InboundConnection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_Background"))]
+    #[cfg(not(feature = "winrt-devices"))]
     InboundConnection: usize,
-    #[cfg(feature = "Devices_Bluetooth_Background")]
+    #[cfg(feature = "winrt-devices")]
     pub OutboundConnection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Bluetooth_Background"))]
+    #[cfg(not(feature = "winrt-devices"))]
     OutboundConnection: usize,
     pub AllowMultipleConnections: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetAllowMultipleConnections: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Networking_Sockets")]
+    #[cfg(feature = "winrt-networking")]
     pub ProtectionLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_networking::Sockets::SocketProtectionLevel) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking_Sockets"))]
+    #[cfg(not(feature = "winrt-networking"))]
     ProtectionLevel: usize,
-    #[cfg(feature = "Networking_Sockets")]
+    #[cfg(feature = "winrt-networking")]
     pub SetProtectionLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_networking::Sockets::SocketProtectionLevel) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking_Sockets"))]
+    #[cfg(not(feature = "winrt-networking"))]
     SetProtectionLevel: usize,
-    #[cfg(feature = "Networking")]
+    #[cfg(feature = "winrt-networking")]
     pub RemoteHostName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking"))]
+    #[cfg(not(feature = "winrt-networking"))]
     RemoteHostName: usize,
-    #[cfg(feature = "Networking")]
+    #[cfg(feature = "winrt-networking")]
     pub SetRemoteHostName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking"))]
+    #[cfg(not(feature = "winrt-networking"))]
     SetRemoteHostName: usize,
 }
 #[doc(hidden)]
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct ISecondaryAuthenticationFactorAuthenticationTrigger(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for ISecondaryAuthenticationFactorAuthenticationTrigger {
     type Vtable = ISecondaryAuthenticationFactorAuthenticationTrigger_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf237f327_5181_4f24_96a7_700a4e5fac62);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct ISecondaryAuthenticationFactorAuthenticationTrigger_Vtbl {
@@ -6866,9 +6866,9 @@ unsafe impl ::windows_core::Interface for ISensorDataThresholdTriggerFactory {
 #[doc(hidden)]
 pub struct ISensorDataThresholdTriggerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Sensors")]
+    #[cfg(feature = "winrt-devices")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, threshold: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Sensors"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Create: usize,
 }
 #[doc(hidden)]
@@ -6882,9 +6882,9 @@ unsafe impl ::windows_core::Interface for ISmartCardTrigger {
 #[doc(hidden)]
 pub struct ISmartCardTrigger_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_SmartCards")]
+    #[cfg(feature = "winrt-devices")]
     pub TriggerType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::SmartCards::SmartCardTriggerType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_SmartCards"))]
+    #[cfg(not(feature = "winrt-devices"))]
     TriggerType: usize,
 }
 #[doc(hidden)]
@@ -6898,9 +6898,9 @@ unsafe impl ::windows_core::Interface for ISmartCardTriggerFactory {
 #[doc(hidden)]
 pub struct ISmartCardTriggerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_SmartCards")]
+    #[cfg(feature = "winrt-devices")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, triggertype: ::winrt_devices::SmartCards::SmartCardTriggerType, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_SmartCards"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Create: usize,
 }
 #[doc(hidden)]
@@ -6914,9 +6914,9 @@ unsafe impl ::windows_core::Interface for ISmsMessageReceivedTriggerFactory {
 #[doc(hidden)]
 pub struct ISmsMessageReceivedTriggerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Sms")]
+    #[cfg(feature = "winrt-devices")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filterrules: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Sms"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Create: usize,
 }
 #[doc(hidden)]
@@ -6943,9 +6943,9 @@ unsafe impl ::windows_core::Interface for IStorageLibraryChangeTrackerTriggerFac
 #[doc(hidden)]
 pub struct IStorageLibraryChangeTrackerTriggerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, tracker: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Create: usize,
 }
 #[doc(hidden)]
@@ -6971,13 +6971,13 @@ unsafe impl ::windows_core::Interface for IStorageLibraryContentChangedTriggerSt
 #[doc(hidden)]
 pub struct IStorageLibraryContentChangedTriggerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, storagelibrary: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Create: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub CreateFromLibraries: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, storagelibraries: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-storage")))]
     CreateFromLibraries: usize,
 }
 #[doc(hidden)]
@@ -7097,9 +7097,9 @@ unsafe impl ::windows_core::Interface for IUserNotificationChangedTriggerFactory
 #[doc(hidden)]
 pub struct IUserNotificationChangedTriggerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, notificationkinds: ::winrt_ui::Notifications::NotificationKinds, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Notifications"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Create: usize,
 }
 #[repr(transparent)]
@@ -7386,7 +7386,7 @@ impl MediaProcessingTrigger {
             (::windows_core::Interface::vtable(this).RequestAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MediaProcessingTriggerResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RequestAsyncWithArguments<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::ValueSet>>(&self, arguments: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MediaProcessingTriggerResult>> {
         let this = self;
         unsafe {
@@ -8483,7 +8483,7 @@ impl PhoneTrigger {
             (::windows_core::Interface::vtable(this).OneShot)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Calls_Background")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn TriggerType(&self) -> ::windows_core::Result<super::Calls::Background::PhoneTriggerType> {
         let this = self;
         unsafe {
@@ -8491,7 +8491,7 @@ impl PhoneTrigger {
             (::windows_core::Interface::vtable(this).TriggerType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Calls::Background::PhoneTriggerType>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Calls_Background")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn Create(r#type: super::Calls::Background::PhoneTriggerType, oneshot: bool) -> ::windows_core::Result<PhoneTrigger> {
         Self::IPhoneTriggerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -8827,7 +8827,7 @@ impl RfcommConnectionTrigger {
         static mut SHARED: ::windows_core::FactoryCache<RfcommConnectionTrigger, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Devices_Bluetooth_Background")]
+    #[cfg(feature = "winrt-devices")]
     pub fn InboundConnection(&self) -> ::windows_core::Result<::winrt_devices::Bluetooth::Background::RfcommInboundConnectionInformation> {
         let this = self;
         unsafe {
@@ -8835,7 +8835,7 @@ impl RfcommConnectionTrigger {
             (::windows_core::Interface::vtable(this).InboundConnection)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Bluetooth::Background::RfcommInboundConnectionInformation>(result__)
         }
     }
-    #[cfg(feature = "Devices_Bluetooth_Background")]
+    #[cfg(feature = "winrt-devices")]
     pub fn OutboundConnection(&self) -> ::windows_core::Result<::winrt_devices::Bluetooth::Background::RfcommOutboundConnectionInformation> {
         let this = self;
         unsafe {
@@ -8854,7 +8854,7 @@ impl RfcommConnectionTrigger {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetAllowMultipleConnections)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Networking_Sockets")]
+    #[cfg(feature = "winrt-networking")]
     pub fn ProtectionLevel(&self) -> ::windows_core::Result<::winrt_networking::Sockets::SocketProtectionLevel> {
         let this = self;
         unsafe {
@@ -8862,12 +8862,12 @@ impl RfcommConnectionTrigger {
             (::windows_core::Interface::vtable(this).ProtectionLevel)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_networking::Sockets::SocketProtectionLevel>(result__)
         }
     }
-    #[cfg(feature = "Networking_Sockets")]
+    #[cfg(feature = "winrt-networking")]
     pub fn SetProtectionLevel(&self, value: ::winrt_networking::Sockets::SocketProtectionLevel) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetProtectionLevel)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Networking")]
+    #[cfg(feature = "winrt-networking")]
     pub fn RemoteHostName(&self) -> ::windows_core::Result<::winrt_networking::HostName> {
         let this = self;
         unsafe {
@@ -8875,7 +8875,7 @@ impl RfcommConnectionTrigger {
             (::windows_core::Interface::vtable(this).RemoteHostName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_networking::HostName>(result__)
         }
     }
-    #[cfg(feature = "Networking")]
+    #[cfg(feature = "winrt-networking")]
     pub fn SetRemoteHostName<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_networking::HostName>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetRemoteHostName)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -8975,10 +8975,10 @@ impl<'a> ::windows_core::IntoParam<'a, IBackgroundTrigger> for &RfcommConnection
 }
 unsafe impl ::core::marker::Send for RfcommConnectionTrigger {}
 unsafe impl ::core::marker::Sync for RfcommConnectionTrigger {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct SecondaryAuthenticationFactorAuthenticationTrigger(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl SecondaryAuthenticationFactorAuthenticationTrigger {
     pub fn new() -> ::windows_core::Result<Self> {
         Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
@@ -8988,27 +8988,27 @@ impl SecondaryAuthenticationFactorAuthenticationTrigger {
         unsafe { SHARED.call(callback) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for SecondaryAuthenticationFactorAuthenticationTrigger {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::PartialEq for SecondaryAuthenticationFactorAuthenticationTrigger {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::Eq for SecondaryAuthenticationFactorAuthenticationTrigger {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::fmt::Debug for SecondaryAuthenticationFactorAuthenticationTrigger {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("SecondaryAuthenticationFactorAuthenticationTrigger").field(&self.0).finish()
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::RuntimeType for SecondaryAuthenticationFactorAuthenticationTrigger {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.ApplicationModel.Background.SecondaryAuthenticationFactorAuthenticationTrigger;{f237f327-5181-4f24-96a7-700a4e5fac62})");
     type DefaultType = ::core::option::Option<Self>;
@@ -9016,84 +9016,84 @@ unsafe impl ::windows_core::RuntimeType for SecondaryAuthenticationFactorAuthent
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for SecondaryAuthenticationFactorAuthenticationTrigger {
     type Vtable = ISecondaryAuthenticationFactorAuthenticationTrigger_Vtbl;
     const IID: ::windows_core::GUID = <ISecondaryAuthenticationFactorAuthenticationTrigger as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::windows_core::RuntimeName for SecondaryAuthenticationFactorAuthenticationTrigger {
     const NAME: &'static str = "Windows.ApplicationModel.Background.SecondaryAuthenticationFactorAuthenticationTrigger";
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<SecondaryAuthenticationFactorAuthenticationTrigger> for ::windows_core::IUnknown {
     fn from(value: SecondaryAuthenticationFactorAuthenticationTrigger) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&SecondaryAuthenticationFactorAuthenticationTrigger> for ::windows_core::IUnknown {
     fn from(value: &SecondaryAuthenticationFactorAuthenticationTrigger) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for SecondaryAuthenticationFactorAuthenticationTrigger {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a SecondaryAuthenticationFactorAuthenticationTrigger {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<SecondaryAuthenticationFactorAuthenticationTrigger> for ::windows_core::IInspectable {
     fn from(value: SecondaryAuthenticationFactorAuthenticationTrigger) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&SecondaryAuthenticationFactorAuthenticationTrigger> for ::windows_core::IInspectable {
     fn from(value: &SecondaryAuthenticationFactorAuthenticationTrigger) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for SecondaryAuthenticationFactorAuthenticationTrigger {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a SecondaryAuthenticationFactorAuthenticationTrigger {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<SecondaryAuthenticationFactorAuthenticationTrigger> for IBackgroundTrigger {
     type Error = ::windows_core::Error;
     fn try_from(value: SecondaryAuthenticationFactorAuthenticationTrigger) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::TryFrom<&SecondaryAuthenticationFactorAuthenticationTrigger> for IBackgroundTrigger {
     type Error = ::windows_core::Error;
     fn try_from(value: &SecondaryAuthenticationFactorAuthenticationTrigger) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IBackgroundTrigger> for SecondaryAuthenticationFactorAuthenticationTrigger {
     fn into_param(self) -> ::windows_core::Param<'a, IBackgroundTrigger> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, IBackgroundTrigger> for &SecondaryAuthenticationFactorAuthenticationTrigger {
     fn into_param(self) -> ::windows_core::Param<'a, IBackgroundTrigger> {
         ::core::convert::TryInto::<IBackgroundTrigger>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -9102,7 +9102,7 @@ impl<'a> ::windows_core::IntoParam<'a, IBackgroundTrigger> for &SecondaryAuthent
 #[repr(transparent)]
 pub struct SensorDataThresholdTrigger(::windows_core::IUnknown);
 impl SensorDataThresholdTrigger {
-    #[cfg(feature = "Devices_Sensors")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Sensors::ISensorDataThreshold>>(threshold: Param0) -> ::windows_core::Result<SensorDataThresholdTrigger> {
         Self::ISensorDataThresholdTriggerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -9211,7 +9211,7 @@ unsafe impl ::core::marker::Sync for SensorDataThresholdTrigger {}
 #[repr(transparent)]
 pub struct SmartCardTrigger(::windows_core::IUnknown);
 impl SmartCardTrigger {
-    #[cfg(feature = "Devices_SmartCards")]
+    #[cfg(feature = "winrt-devices")]
     pub fn TriggerType(&self) -> ::windows_core::Result<::winrt_devices::SmartCards::SmartCardTriggerType> {
         let this = self;
         unsafe {
@@ -9219,7 +9219,7 @@ impl SmartCardTrigger {
             (::windows_core::Interface::vtable(this).TriggerType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::SmartCards::SmartCardTriggerType>(result__)
         }
     }
-    #[cfg(feature = "Devices_SmartCards")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Create(triggertype: ::winrt_devices::SmartCards::SmartCardTriggerType) -> ::windows_core::Result<SmartCardTrigger> {
         Self::ISmartCardTriggerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -9326,7 +9326,7 @@ impl<'a> ::windows_core::IntoParam<'a, IBackgroundTrigger> for &SmartCardTrigger
 #[repr(transparent)]
 pub struct SmsMessageReceivedTrigger(::windows_core::IUnknown);
 impl SmsMessageReceivedTrigger {
-    #[cfg(feature = "Devices_Sms")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Sms::SmsFilterRules>>(filterrules: Param0) -> ::windows_core::Result<SmsMessageReceivedTrigger> {
         Self::ISmsMessageReceivedTriggerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -9547,7 +9547,7 @@ unsafe impl ::core::marker::Sync for SocketActivityTrigger {}
 #[repr(transparent)]
 pub struct StorageLibraryChangeTrackerTrigger(::windows_core::IUnknown);
 impl StorageLibraryChangeTrackerTrigger {
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::StorageLibraryChangeTracker>>(tracker: Param0) -> ::windows_core::Result<StorageLibraryChangeTrackerTrigger> {
         Self::IStorageLibraryChangeTrackerTriggerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -9656,14 +9656,14 @@ unsafe impl ::core::marker::Sync for StorageLibraryChangeTrackerTrigger {}
 #[repr(transparent)]
 pub struct StorageLibraryContentChangedTrigger(::windows_core::IUnknown);
 impl StorageLibraryContentChangedTrigger {
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::StorageLibrary>>(storagelibrary: Param0) -> ::windows_core::Result<StorageLibraryContentChangedTrigger> {
         Self::IStorageLibraryContentChangedTriggerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), storagelibrary.into_param().abi(), result__.as_mut_ptr()).from_abi::<StorageLibraryContentChangedTrigger>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub fn CreateFromLibraries<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_storage::StorageLibrary>>>(storagelibraries: Param0) -> ::windows_core::Result<StorageLibraryContentChangedTrigger> {
         Self::IStorageLibraryContentChangedTriggerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -10545,7 +10545,7 @@ unsafe impl ::core::marker::Sync for ToastNotificationHistoryChangedTrigger {}
 #[repr(transparent)]
 pub struct UserNotificationChangedTrigger(::windows_core::IUnknown);
 impl UserNotificationChangedTrigger {
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Create(notificationkinds: ::winrt_ui::Notifications::NotificationKinds) -> ::windows_core::Result<UserNotificationChangedTrigger> {
         Self::IUserNotificationChangedTriggerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();

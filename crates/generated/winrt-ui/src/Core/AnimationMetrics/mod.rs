@@ -1,7 +1,7 @@
 #[repr(transparent)]
 pub struct AnimationDescription(::windows_core::IUnknown);
 impl AnimationDescription {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Animations(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<IPropertyAnimation>> {
         let this = self;
         unsafe {
@@ -249,9 +249,9 @@ unsafe impl ::windows_core::Interface for IAnimationDescription {
 #[doc(hidden)]
 pub struct IAnimationDescription_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Animations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Animations: usize,
     pub StaggerDelay: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub StaggerDelayFactor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,

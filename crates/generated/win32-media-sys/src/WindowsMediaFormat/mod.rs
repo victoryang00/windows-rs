@@ -294,7 +294,7 @@ pub const WMMEDIATYPE_Script: ::windows_core_sys::GUID = ::windows_core_sys::GUI
 pub const WMMEDIATYPE_Text: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2612666023, data2: 23218, data3: 18473, data4: [186, 87, 9, 64, 32, 155, 207, 62] };
 pub const WMMEDIATYPE_Video: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1935960438, data2: 0, data3: 16, data4: [128, 0, 0, 170, 0, 56, 155, 113] };
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct WMMPEG2VIDEOINFO {
     pub hdr: WMVIDEOINFOHEADER2,
     pub dwStartTimeCode: u32,
@@ -304,9 +304,9 @@ pub struct WMMPEG2VIDEOINFO {
     pub dwFlags: u32,
     pub dwSequenceHeader: [u32; 1],
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for WMMPEG2VIDEOINFO {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for WMMPEG2VIDEOINFO {
     fn clone(&self) -> Self {
         *self
@@ -676,7 +676,7 @@ impl ::core::clone::Clone for WMT_WEBSTREAM_SAMPLE_HEADER {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct WMVIDEOINFOHEADER {
     pub rcSource: ::win32_foundation_sys::RECT,
     pub rcTarget: ::win32_foundation_sys::RECT,
@@ -685,16 +685,16 @@ pub struct WMVIDEOINFOHEADER {
     pub AvgTimePerFrame: i64,
     pub bmiHeader: ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for WMVIDEOINFOHEADER {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for WMVIDEOINFOHEADER {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct WMVIDEOINFOHEADER2 {
     pub rcSource: ::win32_foundation_sys::RECT,
     pub rcTarget: ::win32_foundation_sys::RECT,
@@ -709,9 +709,9 @@ pub struct WMVIDEOINFOHEADER2 {
     pub dwReserved2: u32,
     pub bmiHeader: ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for WMVIDEOINFOHEADER2 {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for WMVIDEOINFOHEADER2 {
     fn clone(&self) -> Self {
         *self

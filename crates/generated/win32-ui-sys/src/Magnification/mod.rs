@@ -3,7 +3,7 @@ extern "system" {
     pub fn MagGetColorEffect(hwnd: ::win32_foundation_sys::HWND, peffect: *mut MAGCOLOREFFECT) -> ::win32_foundation_sys::BOOL;
     pub fn MagGetFullscreenColorEffect(peffect: *mut MAGCOLOREFFECT) -> ::win32_foundation_sys::BOOL;
     pub fn MagGetFullscreenTransform(pmaglevel: *mut f32, pxoffset: *mut i32, pyoffset: *mut i32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn MagGetImageScalingCallback(hwnd: ::win32_foundation_sys::HWND) -> MagImageScalingCallback;
     pub fn MagGetInputTransform(pfenabled: *mut ::win32_foundation_sys::BOOL, prectsource: *mut ::win32_foundation_sys::RECT, prectdest: *mut ::win32_foundation_sys::RECT) -> ::win32_foundation_sys::BOOL;
     pub fn MagGetWindowFilterList(hwnd: ::win32_foundation_sys::HWND, pdwfiltermode: *mut u32, count: i32, phwnd: *mut ::win32_foundation_sys::HWND) -> i32;
@@ -13,7 +13,7 @@ extern "system" {
     pub fn MagSetColorEffect(hwnd: ::win32_foundation_sys::HWND, peffect: *mut MAGCOLOREFFECT) -> ::win32_foundation_sys::BOOL;
     pub fn MagSetFullscreenColorEffect(peffect: *const MAGCOLOREFFECT) -> ::win32_foundation_sys::BOOL;
     pub fn MagSetFullscreenTransform(maglevel: f32, xoffset: i32, yoffset: i32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn MagSetImageScalingCallback(hwnd: ::win32_foundation_sys::HWND, callback: MagImageScalingCallback) -> ::win32_foundation_sys::BOOL;
     pub fn MagSetInputTransform(fenabled: ::win32_foundation_sys::BOOL, prectsource: *const ::win32_foundation_sys::RECT, prectdest: *const ::win32_foundation_sys::RECT) -> ::win32_foundation_sys::BOOL;
     pub fn MagSetWindowFilterList(hwnd: ::win32_foundation_sys::HWND, dwfiltermode: u32, count: i32, phwnd: *mut ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::BOOL;
@@ -62,7 +62,7 @@ pub const MS_INVERTCOLORS: i32 = 4i32;
 pub const MS_SHOWMAGNIFIEDCURSOR: i32 = 1i32;
 pub const MW_FILTERMODE_EXCLUDE: u32 = 0u32;
 pub const MW_FILTERMODE_INCLUDE: u32 = 1u32;
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub type MagImageScalingCallback = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation_sys::HWND, srcdata: *mut ::core::ffi::c_void, srcheader: MAGIMAGEHEADER, destdata: *mut ::core::ffi::c_void, destheader: MAGIMAGEHEADER, unclipped: ::win32_foundation_sys::RECT, clipped: ::win32_foundation_sys::RECT, dirty: ::win32_graphics_sys::Gdi::HRGN) -> ::win32_foundation_sys::BOOL>;
 pub const WC_MAGNIFIER: &str = "Magnifier";
 pub const WC_MAGNIFIERA: &str = "Magnifier";

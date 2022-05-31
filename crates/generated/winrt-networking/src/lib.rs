@@ -184,7 +184,7 @@ unsafe impl ::core::marker::Sync for EndpointPair {}
 #[repr(transparent)]
 pub struct HostName(::windows_core::IUnknown);
 impl HostName {
-    #[cfg(feature = "Networking_Connectivity")]
+    #[cfg(feature = "winrt-networking")]
     pub fn IPInformation(&self) -> ::windows_core::Result<Connectivity::IPInformation> {
         let this = self;
         unsafe {
@@ -489,9 +489,9 @@ unsafe impl ::windows_core::Interface for IHostName {
 #[doc(hidden)]
 pub struct IHostName_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Networking_Connectivity")]
+    #[cfg(feature = "winrt-networking")]
     pub IPInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking_Connectivity"))]
+    #[cfg(not(feature = "winrt-networking"))]
     IPInformation: usize,
     pub RawName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,

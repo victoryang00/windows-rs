@@ -234,7 +234,7 @@ pub struct II2cDeviceProvider_Vtbl {
 #[repr(transparent)]
 pub struct II2cProvider(::windows_core::IUnknown);
 impl II2cProvider {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetControllersAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<II2cControllerProvider>>> {
         let this = self;
         unsafe {
@@ -314,9 +314,9 @@ unsafe impl ::windows_core::Interface for II2cProvider {
 #[doc(hidden)]
 pub struct II2cProvider_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetControllersAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetControllersAsync: usize,
 }
 #[doc(hidden)]

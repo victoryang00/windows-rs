@@ -18,13 +18,13 @@ pub struct IMiracastReceiver_Vtbl {
     pub GetStatusAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub StatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(feature = "ApplicationModel_Core")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub CreateSession: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, view: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Core"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     CreateSession: usize,
-    #[cfg(feature = "ApplicationModel_Core")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub CreateSessionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, view: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Core"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     CreateSessionAsync: usize,
     pub ClearKnownTransmitters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub RemoveKnownTransmitter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, transmitter: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -92,17 +92,17 @@ unsafe impl ::windows_core::Interface for IMiracastReceiverCursorImageChannel {
 pub struct IMiracastReceiverCursorImageChannel_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub MaxImageSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::SizeInt32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     MaxImageSize: usize,
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::PointInt32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     Position: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub ImageStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     ImageStream: usize,
     pub ImageStreamChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveImageStreamChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -122,13 +122,13 @@ pub struct IMiracastReceiverCursorImageChannelSettings_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetIsEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub MaxImageSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::SizeInt32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     MaxImageSize: usize,
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub SetMaxImageSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_graphics::SizeInt32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     SetMaxImageSize: usize,
 }
 #[doc(hidden)]
@@ -208,9 +208,9 @@ unsafe impl ::windows_core::Interface for IMiracastReceiverMediaSourceCreatedEve
 pub struct IMiracastReceiverMediaSourceCreatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Connection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_Core")]
+    #[cfg(feature = "winrt-media")]
     pub MediaSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Core"))]
+    #[cfg(not(feature = "winrt-media"))]
     MediaSource: usize,
     pub CursorImageChannelSettings: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -290,9 +290,9 @@ pub struct IMiracastReceiverStatus_Vtbl {
     pub WiFiStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MiracastReceiverWiFiStatus) -> ::windows_core::HRESULT,
     pub IsConnectionTakeoverSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub MaxSimultaneousConnections: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub KnownTransmitters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     KnownTransmitters: usize,
 }
 #[doc(hidden)]
@@ -324,13 +324,13 @@ unsafe impl ::windows_core::Interface for IMiracastReceiverVideoStreamSettings {
 #[doc(hidden)]
 pub struct IMiracastReceiverVideoStreamSettings_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub Size: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::SizeInt32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     Size: usize,
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub SetSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_graphics::SizeInt32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     SetSize: usize,
     pub Bitrate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
     pub SetBitrate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: i32) -> ::windows_core::HRESULT,
@@ -350,9 +350,9 @@ pub struct IMiracastTransmitter_Vtbl {
     pub SetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub AuthorizationStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MiracastTransmitterAuthorizationStatus) -> ::windows_core::HRESULT,
     pub SetAuthorizationStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: MiracastTransmitterAuthorizationStatus) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetConnections: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetConnections: usize,
     pub MacAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub LastConnectionTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
@@ -427,7 +427,7 @@ impl MiracastReceiver {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveStatusChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "ApplicationModel_Core")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn CreateSession<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_applicationmodel::Core::CoreApplicationView>>(&self, view: Param0) -> ::windows_core::Result<MiracastReceiverSession> {
         let this = self;
         unsafe {
@@ -435,7 +435,7 @@ impl MiracastReceiver {
             (::windows_core::Interface::vtable(this).CreateSession)(::windows_core::Interface::as_raw(this), view.into_param().abi(), result__.as_mut_ptr()).from_abi::<MiracastReceiverSession>(result__)
         }
     }
-    #[cfg(feature = "ApplicationModel_Core")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn CreateSessionAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_applicationmodel::Core::CoreApplicationView>>(&self, view: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MiracastReceiverSession>> {
         let this = self;
         unsafe {
@@ -955,7 +955,7 @@ impl MiracastReceiverCursorImageChannel {
             (::windows_core::Interface::vtable(this).IsEnabled)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn MaxImageSize(&self) -> ::windows_core::Result<::winrt_graphics::SizeInt32> {
         let this = self;
         unsafe {
@@ -963,7 +963,7 @@ impl MiracastReceiverCursorImageChannel {
             (::windows_core::Interface::vtable(this).MaxImageSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::SizeInt32>(result__)
         }
     }
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn Position(&self) -> ::windows_core::Result<::winrt_graphics::PointInt32> {
         let this = self;
         unsafe {
@@ -971,7 +971,7 @@ impl MiracastReceiverCursorImageChannel {
             (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::PointInt32>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ImageStream(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStreamWithContentType> {
         let this = self;
         unsafe {
@@ -1088,7 +1088,7 @@ impl MiracastReceiverCursorImageChannelSettings {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetIsEnabled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn MaxImageSize(&self) -> ::windows_core::Result<::winrt_graphics::SizeInt32> {
         let this = self;
         unsafe {
@@ -1096,7 +1096,7 @@ impl MiracastReceiverCursorImageChannelSettings {
             (::windows_core::Interface::vtable(this).MaxImageSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::SizeInt32>(result__)
         }
     }
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn SetMaxImageSize<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::SizeInt32>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetMaxImageSize)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -1701,7 +1701,7 @@ impl MiracastReceiverMediaSourceCreatedEventArgs {
             (::windows_core::Interface::vtable(this).Connection)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MiracastReceiverConnection>(result__)
         }
     }
-    #[cfg(feature = "Media_Core")]
+    #[cfg(feature = "winrt-media")]
     pub fn MediaSource(&self) -> ::windows_core::Result<super::Core::MediaSource> {
         let this = self;
         unsafe {
@@ -2254,7 +2254,7 @@ impl MiracastReceiverStatus {
             (::windows_core::Interface::vtable(this).MaxSimultaneousConnections)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn KnownTransmitters(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MiracastTransmitter>> {
         let this = self;
         unsafe {
@@ -2450,7 +2450,7 @@ unsafe impl ::core::marker::Sync for MiracastReceiverStreamControl {}
 #[repr(transparent)]
 pub struct MiracastReceiverVideoStreamSettings(::windows_core::IUnknown);
 impl MiracastReceiverVideoStreamSettings {
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn Size(&self) -> ::windows_core::Result<::winrt_graphics::SizeInt32> {
         let this = self;
         unsafe {
@@ -2458,7 +2458,7 @@ impl MiracastReceiverVideoStreamSettings {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::SizeInt32>(result__)
         }
     }
-    #[cfg(feature = "Graphics")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn SetSize<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::SizeInt32>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSize)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -2607,7 +2607,7 @@ impl MiracastTransmitter {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetAuthorizationStatus)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetConnections(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MiracastReceiverConnection>> {
         let this = self;
         unsafe {

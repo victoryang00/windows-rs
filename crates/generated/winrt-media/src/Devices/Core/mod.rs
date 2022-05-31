@@ -1,7 +1,7 @@
 #[repr(transparent)]
 pub struct CameraIntrinsics(::windows_core::IUnknown);
 impl CameraIntrinsics {
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn FocalLength(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -9,7 +9,7 @@ impl CameraIntrinsics {
             (::windows_core::Interface::vtable(this).FocalLength)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn PrincipalPoint(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -17,7 +17,7 @@ impl CameraIntrinsics {
             (::windows_core::Interface::vtable(this).PrincipalPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RadialDistortion(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -25,7 +25,7 @@ impl CameraIntrinsics {
             (::windows_core::Interface::vtable(this).RadialDistortion)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TangentialDistortion(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -47,7 +47,7 @@ impl CameraIntrinsics {
             (::windows_core::Interface::vtable(this).ImageHeight)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ProjectOntoFrame<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, coordinate: Param0) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
@@ -55,7 +55,7 @@ impl CameraIntrinsics {
             (::windows_core::Interface::vtable(this).ProjectOntoFrame)(::windows_core::Interface::as_raw(this), coordinate.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn UnprojectAtUnitDepth<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, pixelcoordinate: Param0) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector2> {
         let this = self;
         unsafe {
@@ -63,17 +63,17 @@ impl CameraIntrinsics {
             (::windows_core::Interface::vtable(this).UnprojectAtUnitDepth)(::windows_core::Interface::as_raw(this), pixelcoordinate.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector2>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ProjectManyOntoFrame(&self, coordinates: &[::winrt_foundation::Numerics::Vector3], results: &mut [::winrt_foundation::Point]) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ProjectManyOntoFrame)(::windows_core::Interface::as_raw(this), coordinates.len() as u32, ::core::mem::transmute(coordinates.as_ptr()), results.len() as u32, ::core::mem::transmute_copy(&results)).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn UnprojectPixelsAtUnitDepth(&self, pixelcoordinates: &[::winrt_foundation::Point], results: &mut [::winrt_foundation::Numerics::Vector2]) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).UnprojectPixelsAtUnitDepth)(::windows_core::Interface::as_raw(this), pixelcoordinates.len() as u32, ::core::mem::transmute(pixelcoordinates.as_ptr()), results.len() as u32, ::core::mem::transmute_copy(&results)).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn UndistortedProjectionTransform(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix4x4> {
         let this = &::windows_core::Interface::cast::<ICameraIntrinsics2>(self)?;
         unsafe {
@@ -103,7 +103,7 @@ impl CameraIntrinsics {
         let this = &::windows_core::Interface::cast::<ICameraIntrinsics2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).UndistortPoints)(::windows_core::Interface::as_raw(this), inputs.len() as u32, ::core::mem::transmute(inputs.as_ptr()), results.len() as u32, ::core::mem::transmute_copy(&results)).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>, Param3: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(focallength: Param0, principalpoint: Param1, radialdistortion: Param2, tangentialdistortion: Param3, imagewidth: u32, imageheight: u32) -> ::windows_core::Result<CameraIntrinsics> {
         Self::ICameraIntrinsicsFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -194,7 +194,7 @@ impl DepthCorrelatedCoordinateMapper {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub fn UnprojectPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>, Param1: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>>(&self, sourcepoint: Param0, targetcoordinatesystem: Param1) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -202,12 +202,12 @@ impl DepthCorrelatedCoordinateMapper {
             (::windows_core::Interface::vtable(this).UnprojectPoint)(::windows_core::Interface::as_raw(this), sourcepoint.into_param().abi(), targetcoordinatesystem.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub fn UnprojectPoints<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>>(&self, sourcepoints: &[::winrt_foundation::Point], targetcoordinatesystem: Param1, results: &mut [::winrt_foundation::Numerics::Vector3]) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).UnprojectPoints)(::windows_core::Interface::as_raw(this), sourcepoints.len() as u32, ::core::mem::transmute(sourcepoints.as_ptr()), targetcoordinatesystem.into_param().abi(), results.len() as u32, ::core::mem::transmute_copy(&results)).ok() }
     }
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub fn MapPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>, Param1: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>, Param2: ::windows_core::IntoParam<'a, CameraIntrinsics>>(&self, sourcepoint: Param0, targetcoordinatesystem: Param1, targetcameraintrinsics: Param2) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
@@ -215,7 +215,7 @@ impl DepthCorrelatedCoordinateMapper {
             (::windows_core::Interface::vtable(this).MapPoint)(::windows_core::Interface::as_raw(this), sourcepoint.into_param().abi(), targetcoordinatesystem.into_param().abi(), targetcameraintrinsics.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub fn MapPoints<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>, Param2: ::windows_core::IntoParam<'a, CameraIntrinsics>>(&self, sourcepoints: &[::winrt_foundation::Point], targetcoordinatesystem: Param1, targetcameraintrinsics: Param2, results: &mut [::winrt_foundation::Point]) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).MapPoints)(::windows_core::Interface::as_raw(this), sourcepoints.len() as u32, ::core::mem::transmute(sourcepoints.as_ptr()), targetcoordinatesystem.into_param().abi(), targetcameraintrinsics.into_param().abi(), results.len() as u32, ::core::mem::transmute_copy(&results)).ok() }
@@ -1588,39 +1588,39 @@ unsafe impl ::windows_core::Interface for ICameraIntrinsics {
 #[doc(hidden)]
 pub struct ICameraIntrinsics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub FocalLength: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     FocalLength: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub PrincipalPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     PrincipalPoint: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub RadialDistortion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     RadialDistortion: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub TangentialDistortion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TangentialDistortion: usize,
     pub ImageWidth: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub ImageHeight: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub ProjectOntoFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinate: ::winrt_foundation::Numerics::Vector3, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ProjectOntoFrame: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub UnprojectAtUnitDepth: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pixelcoordinate: ::winrt_foundation::Point, result__: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     UnprojectAtUnitDepth: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub ProjectManyOntoFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinates_array_size: u32, coordinates: *const ::winrt_foundation::Numerics::Vector3, results_array_size: u32, results: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ProjectManyOntoFrame: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub UnprojectPixelsAtUnitDepth: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pixelCoordinates_array_size: u32, pixelcoordinates: *const ::winrt_foundation::Point, results_array_size: u32, results: *mut ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     UnprojectPixelsAtUnitDepth: usize,
 }
 #[doc(hidden)]
@@ -1634,9 +1634,9 @@ unsafe impl ::windows_core::Interface for ICameraIntrinsics2 {
 #[doc(hidden)]
 pub struct ICameraIntrinsics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub UndistortedProjectionTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Matrix4x4) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     UndistortedProjectionTransform: usize,
     pub DistortPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, input: ::winrt_foundation::Point, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub DistortPoints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, inputs_array_size: u32, inputs: *const ::winrt_foundation::Point, results_array_size: u32, results: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
@@ -1654,9 +1654,9 @@ unsafe impl ::windows_core::Interface for ICameraIntrinsicsFactory {
 #[doc(hidden)]
 pub struct ICameraIntrinsicsFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, focallength: ::winrt_foundation::Numerics::Vector2, principalpoint: ::winrt_foundation::Numerics::Vector2, radialdistortion: ::winrt_foundation::Numerics::Vector3, tangentialdistortion: ::winrt_foundation::Numerics::Vector2, imagewidth: u32, imageheight: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Create: usize,
 }
 #[doc(hidden)]
@@ -1670,21 +1670,21 @@ unsafe impl ::windows_core::Interface for IDepthCorrelatedCoordinateMapper {
 #[doc(hidden)]
 pub struct IDepthCorrelatedCoordinateMapper_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub UnprojectPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sourcepoint: ::winrt_foundation::Point, targetcoordinatesystem: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Numerics", feature = "Perception_Spatial")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-perception")))]
     UnprojectPoint: usize,
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub UnprojectPoints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sourcePoints_array_size: u32, sourcepoints: *const ::winrt_foundation::Point, targetcoordinatesystem: ::windows_core::RawPtr, results_array_size: u32, results: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Numerics", feature = "Perception_Spatial")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-perception")))]
     UnprojectPoints: usize,
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub MapPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sourcepoint: ::winrt_foundation::Point, targetcoordinatesystem: ::windows_core::RawPtr, targetcameraintrinsics: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception_Spatial"))]
+    #[cfg(not(feature = "winrt-perception"))]
     MapPoint: usize,
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub MapPoints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sourcePoints_array_size: u32, sourcepoints: *const ::winrt_foundation::Point, targetcoordinatesystem: ::windows_core::RawPtr, targetcameraintrinsics: ::windows_core::RawPtr, results_array_size: u32, results: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception_Spatial"))]
+    #[cfg(not(feature = "winrt-perception"))]
     MapPoints: usize,
 }
 #[doc(hidden)]
@@ -1922,18 +1922,18 @@ pub struct IVariablePhotoSequenceController_Vtbl {
     pub MaxPhotosPerSecond: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub PhotosPerSecondLimit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetPhotosPerSecondLimit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub GetHighestConcurrentFrameRate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, captureproperties: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     GetHighestConcurrentFrameRate: usize,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub GetCurrentFrameRate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     GetCurrentFrameRate: usize,
     pub FrameCapabilities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub DesiredFrameControllers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     DesiredFrameControllers: usize,
 }
 #[repr(transparent)]
@@ -1964,7 +1964,7 @@ impl VariablePhotoSequenceController {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPhotosPerSecondLimit)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn GetHighestConcurrentFrameRate<'a, Param0: ::windows_core::IntoParam<'a, super::super::MediaProperties::IMediaEncodingProperties>>(&self, captureproperties: Param0) -> ::windows_core::Result<super::super::MediaProperties::MediaRatio> {
         let this = self;
         unsafe {
@@ -1972,7 +1972,7 @@ impl VariablePhotoSequenceController {
             (::windows_core::Interface::vtable(this).GetHighestConcurrentFrameRate)(::windows_core::Interface::as_raw(this), captureproperties.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::MediaProperties::MediaRatio>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn GetCurrentFrameRate(&self) -> ::windows_core::Result<super::super::MediaProperties::MediaRatio> {
         let this = self;
         unsafe {
@@ -1987,7 +1987,7 @@ impl VariablePhotoSequenceController {
             (::windows_core::Interface::vtable(this).FrameCapabilities)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FrameControlCapabilities>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn DesiredFrameControllers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<FrameController>> {
         let this = self;
         unsafe {

@@ -33,9 +33,9 @@ pub struct ILocalLocation_Vtbl {
     pub Identifier: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Description: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Point: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Point: usize,
     pub PhoneNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub DataAttribution: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -53,9 +53,9 @@ pub struct ILocalLocation2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Category: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub RatingInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub HoursOfOperation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     HoursOfOperation: usize,
 }
 #[doc(hidden)]
@@ -69,9 +69,9 @@ unsafe impl ::windows_core::Interface for ILocalLocationFinderResult {
 #[doc(hidden)]
 pub struct ILocalLocationFinderResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub LocalLocations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     LocalLocations: usize,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut LocalLocationFinderStatus) -> ::windows_core::HRESULT,
 }
@@ -86,9 +86,9 @@ unsafe impl ::windows_core::Interface for ILocalLocationFinderStatics {
 #[doc(hidden)]
 pub struct ILocalLocationFinderStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub FindLocalLocationsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, searchterm: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, searcharea: ::windows_core::RawPtr, localcategory: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, maxresults: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     FindLocalLocationsAsync: usize,
 }
 #[doc(hidden)]
@@ -102,9 +102,9 @@ unsafe impl ::windows_core::Interface for ILocalLocationHoursOfOperationItem {
 #[doc(hidden)]
 pub struct ILocalLocationHoursOfOperationItem_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Globalization")]
+    #[cfg(feature = "winrt-globalization")]
     pub Day: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_globalization::DayOfWeek) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Globalization"))]
+    #[cfg(not(feature = "winrt-globalization"))]
     Day: usize,
     pub Start: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub Span: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
@@ -226,7 +226,7 @@ impl LocalLocation {
             (::windows_core::Interface::vtable(this).DisplayName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Point(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
@@ -262,7 +262,7 @@ impl LocalLocation {
             (::windows_core::Interface::vtable(this).RatingInfo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<LocalLocationRatingInfo>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn HoursOfOperation(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<LocalLocationHoursOfOperationItem>> {
         let this = &::windows_core::Interface::cast::<ILocalLocation2>(self)?;
         unsafe {
@@ -345,7 +345,7 @@ unsafe impl ::core::marker::Send for LocalLocation {}
 unsafe impl ::core::marker::Sync for LocalLocation {}
 pub struct LocalLocationFinder;
 impl LocalLocationFinder {
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn FindLocalLocationsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geocircle>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(searchterm: Param0, searcharea: Param1, localcategory: Param2, maxresults: u32) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<LocalLocationFinderResult>> {
         Self::ILocalLocationFinderStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -363,7 +363,7 @@ impl ::windows_core::RuntimeName for LocalLocationFinder {
 #[repr(transparent)]
 pub struct LocalLocationFinderResult(::windows_core::IUnknown);
 impl LocalLocationFinderResult {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn LocalLocations(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<LocalLocation>> {
         let this = self;
         unsafe {
@@ -493,7 +493,7 @@ unsafe impl ::windows_core::RuntimeType for LocalLocationFinderStatus {
 #[repr(transparent)]
 pub struct LocalLocationHoursOfOperationItem(::windows_core::IUnknown);
 impl LocalLocationHoursOfOperationItem {
-    #[cfg(feature = "Globalization")]
+    #[cfg(feature = "winrt-globalization")]
     pub fn Day(&self) -> ::windows_core::Result<::winrt_globalization::DayOfWeek> {
         let this = self;
         unsafe {

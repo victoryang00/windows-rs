@@ -302,7 +302,7 @@ impl GpioChangeReader {
             (::windows_core::Interface::vtable(this).PeekNextItem)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GpioChangeRecord>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetAllItems(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<GpioChangeRecord>> {
         let this = self;
         unsafe {
@@ -502,7 +502,7 @@ impl GpioController {
             (::windows_core::Interface::vtable(this).GetDefault)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GpioController>(result__)
         })
     }
-    #[cfg(all(feature = "Devices_Gpio_Provider", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-foundation"))]
     pub fn GetControllersAsync<'a, Param0: ::windows_core::IntoParam<'a, Provider::IGpioProvider>>(provider: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<GpioController>>> {
         Self::IGpioControllerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1075,9 +1075,9 @@ pub struct IGpioChangeReader_Vtbl {
     pub Clear: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub GetNextItem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GpioChangeRecord) -> ::windows_core::HRESULT,
     pub PeekNextItem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GpioChangeRecord) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetAllItems: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetAllItems: usize,
     pub WaitForItemsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, count: i32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -1135,9 +1135,9 @@ unsafe impl ::windows_core::Interface for IGpioControllerStatics2 {
 #[doc(hidden)]
 pub struct IGpioControllerStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Devices_Gpio_Provider", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-foundation"))]
     pub GetControllersAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, provider: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Gpio_Provider", feature = "Foundation_Collections")))]
+    #[cfg(not(all(feature = "winrt-devices", feature = "winrt-foundation")))]
     GetControllersAsync: usize,
     pub GetDefaultAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }

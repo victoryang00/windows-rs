@@ -1,156 +1,156 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmAssociateContext(param0: ::win32_foundation_sys::HWND, param1: ::win32_globalization_sys::HIMC) -> ::win32_globalization_sys::HIMC;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmAssociateContextEx(param0: ::win32_foundation_sys::HWND, param1: ::win32_globalization_sys::HIMC, param2: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ImmConfigureIMEA(param0: super::super::TextServices::HKL, param1: ::win32_foundation_sys::HWND, param2: u32, param3: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ImmConfigureIMEW(param0: super::super::TextServices::HKL, param1: ::win32_foundation_sys::HWND, param2: u32, param3: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmCreateContext() -> ::win32_globalization_sys::HIMC;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmCreateIMCC(param0: u32) -> ::win32_globalization_sys::HIMCC;
     pub fn ImmCreateSoftKeyboard(param0: u32, param1: ::win32_foundation_sys::HWND, param2: i32, param3: i32) -> ::win32_foundation_sys::HWND;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmDestroyContext(param0: ::win32_globalization_sys::HIMC) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmDestroyIMCC(param0: ::win32_globalization_sys::HIMCC) -> ::win32_globalization_sys::HIMCC;
     pub fn ImmDestroySoftKeyboard(param0: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::BOOL;
     pub fn ImmDisableIME(param0: u32) -> ::win32_foundation_sys::BOOL;
     pub fn ImmDisableLegacyIME() -> ::win32_foundation_sys::BOOL;
     pub fn ImmDisableTextFrameService(idthread: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmEnumInputContext(idthread: u32, lpfn: IMCENUMPROC, lparam: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ImmEnumRegisterWordA(param0: super::super::TextServices::HKL, param1: REGISTERWORDENUMPROCA, lpszreading: ::windows_core_sys::PCSTR, param3: u32, lpszregister: ::windows_core_sys::PCSTR, param5: *mut ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ImmEnumRegisterWordW(param0: super::super::TextServices::HKL, param1: REGISTERWORDENUMPROCW, lpszreading: ::windows_core_sys::PCWSTR, param3: u32, lpszregister: ::windows_core_sys::PCWSTR, param5: *mut ::core::ffi::c_void) -> u32;
-    #[cfg(all(feature = "Win32_Globalization", feature = "Win32_UI_TextServices"))]
+    #[cfg(all(feature = "win32-globalization-sys", feature = "win32-ui-sys"))]
     pub fn ImmEscapeA(param0: super::super::TextServices::HKL, param1: ::win32_globalization_sys::HIMC, param2: u32, param3: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::LRESULT;
-    #[cfg(all(feature = "Win32_Globalization", feature = "Win32_UI_TextServices"))]
+    #[cfg(all(feature = "win32-globalization-sys", feature = "win32-ui-sys"))]
     pub fn ImmEscapeW(param0: super::super::TextServices::HKL, param1: ::win32_globalization_sys::HIMC, param2: u32, param3: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::LRESULT;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmGenerateMessage(param0: ::win32_globalization_sys::HIMC) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmGetCandidateListA(param0: ::win32_globalization_sys::HIMC, deindex: u32, lpcandlist: *mut CANDIDATELIST, dwbuflen: u32) -> u32;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmGetCandidateListCountA(param0: ::win32_globalization_sys::HIMC, lpdwlistcount: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmGetCandidateListCountW(param0: ::win32_globalization_sys::HIMC, lpdwlistcount: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmGetCandidateListW(param0: ::win32_globalization_sys::HIMC, deindex: u32, lpcandlist: *mut CANDIDATELIST, dwbuflen: u32) -> u32;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmGetCandidateWindow(param0: ::win32_globalization_sys::HIMC, param1: u32, lpcandidate: *mut CANDIDATEFORM) -> ::win32_foundation_sys::BOOL;
-    #[cfg(all(feature = "Win32_Globalization", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(all(feature = "win32-globalization-sys", feature = "win32-graphics-sys"))]
     pub fn ImmGetCompositionFontA(param0: ::win32_globalization_sys::HIMC, lplf: *mut ::win32_graphics_sys::Gdi::LOGFONTA) -> ::win32_foundation_sys::BOOL;
-    #[cfg(all(feature = "Win32_Globalization", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(all(feature = "win32-globalization-sys", feature = "win32-graphics-sys"))]
     pub fn ImmGetCompositionFontW(param0: ::win32_globalization_sys::HIMC, lplf: *mut ::win32_graphics_sys::Gdi::LOGFONTW) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmGetCompositionStringA(param0: ::win32_globalization_sys::HIMC, param1: u32, lpbuf: *mut ::core::ffi::c_void, dwbuflen: u32) -> i32;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmGetCompositionStringW(param0: ::win32_globalization_sys::HIMC, param1: u32, lpbuf: *mut ::core::ffi::c_void, dwbuflen: u32) -> i32;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmGetCompositionWindow(param0: ::win32_globalization_sys::HIMC, lpcompform: *mut COMPOSITIONFORM) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmGetContext(param0: ::win32_foundation_sys::HWND) -> ::win32_globalization_sys::HIMC;
-    #[cfg(all(feature = "Win32_Globalization", feature = "Win32_UI_TextServices"))]
+    #[cfg(all(feature = "win32-globalization-sys", feature = "win32-ui-sys"))]
     pub fn ImmGetConversionListA(param0: super::super::TextServices::HKL, param1: ::win32_globalization_sys::HIMC, lpsrc: ::windows_core_sys::PCSTR, lpdst: *mut CANDIDATELIST, dwbuflen: u32, uflag: GET_CONVERSION_LIST_FLAG) -> u32;
-    #[cfg(all(feature = "Win32_Globalization", feature = "Win32_UI_TextServices"))]
+    #[cfg(all(feature = "win32-globalization-sys", feature = "win32-ui-sys"))]
     pub fn ImmGetConversionListW(param0: super::super::TextServices::HKL, param1: ::win32_globalization_sys::HIMC, lpsrc: ::windows_core_sys::PCWSTR, lpdst: *mut CANDIDATELIST, dwbuflen: u32, uflag: GET_CONVERSION_LIST_FLAG) -> u32;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmGetConversionStatus(param0: ::win32_globalization_sys::HIMC, lpfdwconversion: *mut u32, lpfdwsentence: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn ImmGetDefaultIMEWnd(param0: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::HWND;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ImmGetDescriptionA(param0: super::super::TextServices::HKL, lpszdescription: ::windows_core_sys::PSTR, ubuflen: u32) -> u32;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ImmGetDescriptionW(param0: super::super::TextServices::HKL, lpszdescription: ::windows_core_sys::PWSTR, ubuflen: u32) -> u32;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmGetGuideLineA(param0: ::win32_globalization_sys::HIMC, dwindex: GET_GUIDE_LINE_TYPE, lpbuf: ::windows_core_sys::PSTR, dwbuflen: u32) -> u32;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmGetGuideLineW(param0: ::win32_globalization_sys::HIMC, dwindex: GET_GUIDE_LINE_TYPE, lpbuf: ::windows_core_sys::PWSTR, dwbuflen: u32) -> u32;
     pub fn ImmGetHotKey(param0: u32, lpumodifiers: *mut u32, lpuvkey: *mut u32, phkl: *mut isize) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmGetIMCCLockCount(param0: ::win32_globalization_sys::HIMCC) -> u32;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmGetIMCCSize(param0: ::win32_globalization_sys::HIMCC) -> u32;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmGetIMCLockCount(param0: ::win32_globalization_sys::HIMC) -> u32;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ImmGetIMEFileNameA(param0: super::super::TextServices::HKL, lpszfilename: ::windows_core_sys::PSTR, ubuflen: u32) -> u32;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ImmGetIMEFileNameW(param0: super::super::TextServices::HKL, lpszfilename: ::windows_core_sys::PWSTR, ubuflen: u32) -> u32;
-    #[cfg(all(feature = "Win32_Globalization", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(all(feature = "win32-globalization-sys", feature = "win32-graphics-sys"))]
     pub fn ImmGetImeMenuItemsA(param0: ::win32_globalization_sys::HIMC, param1: u32, param2: u32, lpimeparentmenu: *mut IMEMENUITEMINFOA, lpimemenu: *mut IMEMENUITEMINFOA, dwsize: u32) -> u32;
-    #[cfg(all(feature = "Win32_Globalization", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(all(feature = "win32-globalization-sys", feature = "win32-graphics-sys"))]
     pub fn ImmGetImeMenuItemsW(param0: ::win32_globalization_sys::HIMC, param1: u32, param2: u32, lpimeparentmenu: *mut IMEMENUITEMINFOW, lpimemenu: *mut IMEMENUITEMINFOW, dwsize: u32) -> u32;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmGetOpenStatus(param0: ::win32_globalization_sys::HIMC) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ImmGetProperty(param0: super::super::TextServices::HKL, param1: u32) -> u32;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ImmGetRegisterWordStyleA(param0: super::super::TextServices::HKL, nitem: u32, lpstylebuf: *mut STYLEBUFA) -> u32;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ImmGetRegisterWordStyleW(param0: super::super::TextServices::HKL, nitem: u32, lpstylebuf: *mut STYLEBUFW) -> u32;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmGetStatusWindowPos(param0: ::win32_globalization_sys::HIMC, lpptpos: *mut ::win32_foundation_sys::POINT) -> ::win32_foundation_sys::BOOL;
     pub fn ImmGetVirtualKey(param0: ::win32_foundation_sys::HWND) -> u32;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ImmInstallIMEA(lpszimefilename: ::windows_core_sys::PCSTR, lpszlayouttext: ::windows_core_sys::PCSTR) -> super::super::TextServices::HKL;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ImmInstallIMEW(lpszimefilename: ::windows_core_sys::PCWSTR, lpszlayouttext: ::windows_core_sys::PCWSTR) -> super::super::TextServices::HKL;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ImmIsIME(param0: super::super::TextServices::HKL) -> ::win32_foundation_sys::BOOL;
     pub fn ImmIsUIMessageA(param0: ::win32_foundation_sys::HWND, param1: u32, param2: ::win32_foundation_sys::WPARAM, param3: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::BOOL;
     pub fn ImmIsUIMessageW(param0: ::win32_foundation_sys::HWND, param1: u32, param2: ::win32_foundation_sys::WPARAM, param3: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::BOOL;
-    #[cfg(all(feature = "Win32_Globalization", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(all(feature = "win32-globalization-sys", feature = "win32-graphics-sys"))]
     pub fn ImmLockIMC(param0: ::win32_globalization_sys::HIMC) -> *mut INPUTCONTEXT;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmLockIMCC(param0: ::win32_globalization_sys::HIMCC) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmNotifyIME(param0: ::win32_globalization_sys::HIMC, dwaction: NOTIFY_IME_ACTION, dwindex: NOTIFY_IME_INDEX, dwvalue: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmReSizeIMCC(param0: ::win32_globalization_sys::HIMCC, param1: u32) -> ::win32_globalization_sys::HIMCC;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ImmRegisterWordA(param0: super::super::TextServices::HKL, lpszreading: ::windows_core_sys::PCSTR, param2: u32, lpszregister: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ImmRegisterWordW(param0: super::super::TextServices::HKL, lpszreading: ::windows_core_sys::PCWSTR, param2: u32, lpszregister: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmReleaseContext(param0: ::win32_foundation_sys::HWND, param1: ::win32_globalization_sys::HIMC) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmRequestMessageA(param0: ::win32_globalization_sys::HIMC, param1: ::win32_foundation_sys::WPARAM, param2: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::LRESULT;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmRequestMessageW(param0: ::win32_globalization_sys::HIMC, param1: ::win32_foundation_sys::WPARAM, param2: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::LRESULT;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmSetCandidateWindow(param0: ::win32_globalization_sys::HIMC, lpcandidate: *const CANDIDATEFORM) -> ::win32_foundation_sys::BOOL;
-    #[cfg(all(feature = "Win32_Globalization", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(all(feature = "win32-globalization-sys", feature = "win32-graphics-sys"))]
     pub fn ImmSetCompositionFontA(param0: ::win32_globalization_sys::HIMC, lplf: *const ::win32_graphics_sys::Gdi::LOGFONTA) -> ::win32_foundation_sys::BOOL;
-    #[cfg(all(feature = "Win32_Globalization", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(all(feature = "win32-globalization-sys", feature = "win32-graphics-sys"))]
     pub fn ImmSetCompositionFontW(param0: ::win32_globalization_sys::HIMC, lplf: *const ::win32_graphics_sys::Gdi::LOGFONTW) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmSetCompositionStringA(param0: ::win32_globalization_sys::HIMC, dwindex: SET_COMPOSITION_STRING_TYPE, lpcomp: *const ::core::ffi::c_void, dwcomplen: u32, lpread: *const ::core::ffi::c_void, dwreadlen: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmSetCompositionStringW(param0: ::win32_globalization_sys::HIMC, dwindex: SET_COMPOSITION_STRING_TYPE, lpcomp: *const ::core::ffi::c_void, dwcomplen: u32, lpread: *const ::core::ffi::c_void, dwreadlen: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmSetCompositionWindow(param0: ::win32_globalization_sys::HIMC, lpcompform: *const COMPOSITIONFORM) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmSetConversionStatus(param0: ::win32_globalization_sys::HIMC, param1: u32, param2: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ImmSetHotKey(param0: u32, param1: u32, param2: u32, param3: super::super::TextServices::HKL) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmSetOpenStatus(param0: ::win32_globalization_sys::HIMC, param1: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmSetStatusWindowPos(param0: ::win32_globalization_sys::HIMC, lpptpos: *const ::win32_foundation_sys::POINT) -> ::win32_foundation_sys::BOOL;
     pub fn ImmShowSoftKeyboard(param0: ::win32_foundation_sys::HWND, param1: i32) -> ::win32_foundation_sys::BOOL;
     pub fn ImmSimulateHotKey(param0: ::win32_foundation_sys::HWND, param1: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmUnlockIMC(param0: ::win32_globalization_sys::HIMC) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Globalization")]
+    #[cfg(feature = "win32-globalization-sys")]
     pub fn ImmUnlockIMCC(param0: ::win32_globalization_sys::HIMCC) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ImmUnregisterWordA(param0: super::super::TextServices::HKL, lpszreading: ::windows_core_sys::PCSTR, param2: u32, lpszunregister: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_TextServices")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn ImmUnregisterWordW(param0: super::super::TextServices::HKL, lpszreading: ::windows_core_sys::PCWSTR, param2: u32, lpszunregister: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
 }
 #[repr(C)]
@@ -497,7 +497,7 @@ pub type IImePad = *mut ::core::ffi::c_void;
 pub type IImePadApplet = *mut ::core::ffi::c_void;
 pub type IImePlugInDictDictionaryList = *mut ::core::ffi::c_void;
 pub type IImeSpecifyApplets = *mut ::core::ffi::c_void;
-#[cfg(feature = "Win32_Globalization")]
+#[cfg(feature = "win32-globalization-sys")]
 pub type IMCENUMPROC = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_globalization_sys::HIMC, param1: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::BOOL>;
 pub const IMC_CLOSESTATUSWINDOW: u32 = 33u32;
 pub const IMC_GETCANDIDATEPOS: u32 = 7u32;
@@ -520,7 +520,7 @@ pub const IMC_SETSOFTKBDPOS: u32 = 20u32;
 pub const IMC_SETSOFTKBDSUBTYPE: u32 = 22u32;
 pub const IMC_SETSTATUSWINDOWPOS: u32 = 16u32;
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct IMEAPPLETCFG {
     pub dwConfig: u32,
     pub wchTitle: [u16; 64],
@@ -532,9 +532,9 @@ pub struct IMEAPPLETCFG {
     pub dummy: u16,
     pub lReserved1: ::win32_foundation_sys::LPARAM,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for IMEAPPLETCFG {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for IMEAPPLETCFG {
     fn clone(&self) -> Self {
         *self
@@ -701,16 +701,16 @@ pub const IMEKEYCTRLMASK_SHIFT: u32 = 4u32;
 pub const IMEKEYCTRL_DOWN: u32 = 0u32;
 pub const IMEKEYCTRL_UP: u32 = 1u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Globalization")]
+#[cfg(feature = "win32-globalization-sys")]
 pub struct IMEKMS {
     pub cbSize: i32,
     pub hIMC: ::win32_globalization_sys::HIMC,
     pub cKeyList: u32,
     pub pKeyList: *mut IMEKMSKEY,
 }
-#[cfg(feature = "Win32_Globalization")]
+#[cfg(feature = "win32-globalization-sys")]
 impl ::core::marker::Copy for IMEKMS {}
-#[cfg(feature = "Win32_Globalization")]
+#[cfg(feature = "win32-globalization-sys")]
 impl ::core::clone::Clone for IMEKMS {
     fn clone(&self) -> Self {
         *self
@@ -741,15 +741,15 @@ impl ::core::clone::Clone for IMEKMSINIT {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Globalization")]
+#[cfg(feature = "win32-globalization-sys")]
 pub struct IMEKMSINVK {
     pub cbSize: i32,
     pub hIMC: ::win32_globalization_sys::HIMC,
     pub dwControl: u32,
 }
-#[cfg(feature = "Win32_Globalization")]
+#[cfg(feature = "win32-globalization-sys")]
 impl ::core::marker::Copy for IMEKMSINVK {}
-#[cfg(feature = "Win32_Globalization")]
+#[cfg(feature = "win32-globalization-sys")]
 impl ::core::clone::Clone for IMEKMSINVK {
     fn clone(&self) -> Self {
         *self
@@ -792,7 +792,7 @@ impl ::core::clone::Clone for IMEKMSKEY_1 {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Globalization")]
+#[cfg(feature = "win32-globalization-sys")]
 pub struct IMEKMSKMP {
     pub cbSize: i32,
     pub hIMC: ::win32_globalization_sys::HIMC,
@@ -802,24 +802,24 @@ pub struct IMEKMSKMP {
     pub cKeyList: i32,
     pub pKeyList: *mut IMEKMSKEY,
 }
-#[cfg(feature = "Win32_Globalization")]
+#[cfg(feature = "win32-globalization-sys")]
 impl ::core::marker::Copy for IMEKMSKMP {}
-#[cfg(feature = "Win32_Globalization")]
+#[cfg(feature = "win32-globalization-sys")]
 impl ::core::clone::Clone for IMEKMSKMP {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Globalization")]
+#[cfg(feature = "win32-globalization-sys")]
 pub struct IMEKMSNTFY {
     pub cbSize: i32,
     pub hIMC: ::win32_globalization_sys::HIMC,
     pub fSelect: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Globalization")]
+#[cfg(feature = "win32-globalization-sys")]
 impl ::core::marker::Copy for IMEKMSNTFY {}
-#[cfg(feature = "Win32_Globalization")]
+#[cfg(feature = "win32-globalization-sys")]
 impl ::core::clone::Clone for IMEKMSNTFY {
     fn clone(&self) -> Self {
         *self
@@ -834,7 +834,7 @@ pub const IMEKMS_NOCOMPOSITION: u32 = 0u32;
 pub const IMEKMS_SELECTION: u32 = 2u32;
 pub const IMEKMS_TYPECAND: u32 = 7u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct IMEMENUITEMINFOA {
     pub cbSize: u32,
     pub fType: u32,
@@ -846,16 +846,16 @@ pub struct IMEMENUITEMINFOA {
     pub szString: [::win32_foundation_sys::CHAR; 80],
     pub hbmpItem: ::win32_graphics_sys::Gdi::HBITMAP,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for IMEMENUITEMINFOA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for IMEMENUITEMINFOA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct IMEMENUITEMINFOW {
     pub cbSize: u32,
     pub fType: u32,
@@ -867,9 +867,9 @@ pub struct IMEMENUITEMINFOW {
     pub szString: [u16; 80],
     pub hbmpItem: ::win32_graphics_sys::Gdi::HBITMAP,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for IMEMENUITEMINFOW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for IMEMENUITEMINFOW {
     fn clone(&self) -> Self {
         *self
@@ -1184,7 +1184,7 @@ pub const INIT_SENTENCE: u32 = 4u32;
 pub const INIT_SOFTKBDPOS: u32 = 32u32;
 pub const INIT_STATUSWNDPOS: u32 = 1u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Globalization", feature = "Win32_Graphics_Gdi"))]
+#[cfg(all(feature = "win32-globalization-sys", feature = "win32-graphics-sys"))]
 pub struct INPUTCONTEXT {
     pub hWnd: ::win32_foundation_sys::HWND,
     pub fOpen: ::win32_foundation_sys::BOOL,
@@ -1204,23 +1204,23 @@ pub struct INPUTCONTEXT {
     pub fdwInit: u32,
     pub dwReserve: [u32; 3],
 }
-#[cfg(all(feature = "Win32_Globalization", feature = "Win32_Graphics_Gdi"))]
+#[cfg(all(feature = "win32-globalization-sys", feature = "win32-graphics-sys"))]
 impl ::core::marker::Copy for INPUTCONTEXT {}
-#[cfg(all(feature = "Win32_Globalization", feature = "Win32_Graphics_Gdi"))]
+#[cfg(all(feature = "win32-globalization-sys", feature = "win32-graphics-sys"))]
 impl ::core::clone::Clone for INPUTCONTEXT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Globalization", feature = "Win32_Graphics_Gdi"))]
+#[cfg(all(feature = "win32-globalization-sys", feature = "win32-graphics-sys"))]
 pub union INPUTCONTEXT_0 {
     pub A: ::win32_graphics_sys::Gdi::LOGFONTA,
     pub W: ::win32_graphics_sys::Gdi::LOGFONTW,
 }
-#[cfg(all(feature = "Win32_Globalization", feature = "Win32_Graphics_Gdi"))]
+#[cfg(all(feature = "win32-globalization-sys", feature = "win32-graphics-sys"))]
 impl ::core::marker::Copy for INPUTCONTEXT_0 {}
-#[cfg(all(feature = "Win32_Globalization", feature = "Win32_Graphics_Gdi"))]
+#[cfg(all(feature = "win32-globalization-sys", feature = "win32-graphics-sys"))]
 impl ::core::clone::Clone for INPUTCONTEXT_0 {
     fn clone(&self) -> Self {
         *self

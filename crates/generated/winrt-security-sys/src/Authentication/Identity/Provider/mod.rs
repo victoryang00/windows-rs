@@ -1,8 +1,8 @@
 pub type SecondaryAuthenticationFactorAuthentication = *mut ::core::ffi::c_void;
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct SecondaryAuthenticationFactorAuthenticationMessage(pub i32);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl SecondaryAuthenticationFactorAuthenticationMessage {
     pub const Invalid: Self = Self(0i32);
     pub const SwipeUpWelcome: Self = Self(1i32);
@@ -34,35 +34,35 @@ impl SecondaryAuthenticationFactorAuthenticationMessage {
     pub const RecognitionFailed: Self = Self(27i32);
     pub const DeviceUnavailable: Self = Self(28i32);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::marker::Copy for SecondaryAuthenticationFactorAuthenticationMessage {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for SecondaryAuthenticationFactorAuthenticationMessage {
     fn clone(&self) -> Self {
         *self
     }
 }
 pub type SecondaryAuthenticationFactorAuthenticationResult = *mut ::core::ffi::c_void;
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct SecondaryAuthenticationFactorAuthenticationScenario(pub i32);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl SecondaryAuthenticationFactorAuthenticationScenario {
     pub const SignIn: Self = Self(0i32);
     pub const CredentialPrompt: Self = Self(1i32);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::marker::Copy for SecondaryAuthenticationFactorAuthenticationScenario {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for SecondaryAuthenticationFactorAuthenticationScenario {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct SecondaryAuthenticationFactorAuthenticationStage(pub i32);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl SecondaryAuthenticationFactorAuthenticationStage {
     pub const NotStarted: Self = Self(0i32);
     pub const WaitingForUserConfirmation: Self = Self(1i32);
@@ -74,9 +74,9 @@ impl SecondaryAuthenticationFactorAuthenticationStage {
     pub const ReadyForLock: Self = Self(7i32);
     pub const CheckingDevicePresence: Self = Self(8i32);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::marker::Copy for SecondaryAuthenticationFactorAuthenticationStage {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for SecondaryAuthenticationFactorAuthenticationStage {
     fn clone(&self) -> Self {
         *self
@@ -84,10 +84,10 @@ impl ::core::clone::Clone for SecondaryAuthenticationFactorAuthenticationStage {
 }
 pub type SecondaryAuthenticationFactorAuthenticationStageChangedEventArgs = *mut ::core::ffi::c_void;
 pub type SecondaryAuthenticationFactorAuthenticationStageInfo = *mut ::core::ffi::c_void;
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct SecondaryAuthenticationFactorAuthenticationStatus(pub i32);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl SecondaryAuthenticationFactorAuthenticationStatus {
     pub const Failed: Self = Self(0i32);
     pub const Started: Self = Self(1i32);
@@ -95,18 +95,18 @@ impl SecondaryAuthenticationFactorAuthenticationStatus {
     pub const DisabledByPolicy: Self = Self(3i32);
     pub const InvalidAuthenticationStage: Self = Self(4i32);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::marker::Copy for SecondaryAuthenticationFactorAuthenticationStatus {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for SecondaryAuthenticationFactorAuthenticationStatus {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct SecondaryAuthenticationFactorDeviceCapabilities(pub u32);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl SecondaryAuthenticationFactorDeviceCapabilities {
     pub const None: Self = Self(0u32);
     pub const SecureStorage: Self = Self(1u32);
@@ -117,92 +117,92 @@ impl SecondaryAuthenticationFactorDeviceCapabilities {
     pub const HMacSha256: Self = Self(32u32);
     pub const CloseRangeDataTransmission: Self = Self(64u32);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::marker::Copy for SecondaryAuthenticationFactorDeviceCapabilities {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for SecondaryAuthenticationFactorDeviceCapabilities {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct SecondaryAuthenticationFactorDeviceFindScope(pub i32);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl SecondaryAuthenticationFactorDeviceFindScope {
     pub const User: Self = Self(0i32);
     pub const AllUsers: Self = Self(1i32);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::marker::Copy for SecondaryAuthenticationFactorDeviceFindScope {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for SecondaryAuthenticationFactorDeviceFindScope {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct SecondaryAuthenticationFactorDevicePresence(pub i32);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl SecondaryAuthenticationFactorDevicePresence {
     pub const Absent: Self = Self(0i32);
     pub const Present: Self = Self(1i32);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::marker::Copy for SecondaryAuthenticationFactorDevicePresence {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for SecondaryAuthenticationFactorDevicePresence {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct SecondaryAuthenticationFactorDevicePresenceMonitoringMode(pub i32);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl SecondaryAuthenticationFactorDevicePresenceMonitoringMode {
     pub const Unsupported: Self = Self(0i32);
     pub const AppManaged: Self = Self(1i32);
     pub const SystemManaged: Self = Self(2i32);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::marker::Copy for SecondaryAuthenticationFactorDevicePresenceMonitoringMode {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for SecondaryAuthenticationFactorDevicePresenceMonitoringMode {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus(pub i32);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus {
     pub const Unsupported: Self = Self(0i32);
     pub const Succeeded: Self = Self(1i32);
     pub const DisabledByPolicy: Self = Self(2i32);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::marker::Copy for SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct SecondaryAuthenticationFactorFinishAuthenticationStatus(pub i32);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl SecondaryAuthenticationFactorFinishAuthenticationStatus {
     pub const Failed: Self = Self(0i32);
     pub const Completed: Self = Self(1i32);
     pub const NonceExpired: Self = Self(2i32);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::marker::Copy for SecondaryAuthenticationFactorFinishAuthenticationStatus {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for SecondaryAuthenticationFactorFinishAuthenticationStatus {
     fn clone(&self) -> Self {
         *self
@@ -211,10 +211,10 @@ impl ::core::clone::Clone for SecondaryAuthenticationFactorFinishAuthenticationS
 pub type SecondaryAuthenticationFactorInfo = *mut ::core::ffi::c_void;
 pub type SecondaryAuthenticationFactorRegistration = *mut ::core::ffi::c_void;
 pub type SecondaryAuthenticationFactorRegistrationResult = *mut ::core::ffi::c_void;
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct SecondaryAuthenticationFactorRegistrationStatus(pub i32);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl SecondaryAuthenticationFactorRegistrationStatus {
     pub const Failed: Self = Self(0i32);
     pub const Started: Self = Self(1i32);
@@ -222,9 +222,9 @@ impl SecondaryAuthenticationFactorRegistrationStatus {
     pub const PinSetupRequired: Self = Self(3i32);
     pub const DisabledByPolicy: Self = Self(4i32);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::marker::Copy for SecondaryAuthenticationFactorRegistrationStatus {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for SecondaryAuthenticationFactorRegistrationStatus {
     fn clone(&self) -> Self {
         *self

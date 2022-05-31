@@ -24,15 +24,15 @@ pub type AsyncIFtpPreprocessProvider = *mut ::core::ffi::c_void;
 pub type AsyncIFtpRoleProvider = *mut ::core::ffi::c_void;
 pub type AsyncIMSAdminBaseSinkW = *mut ::core::ffi::c_void;
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 pub struct CERT_CONTEXT_EX {
     pub CertContext: ::win32_security_sys::Cryptography::CERT_CONTEXT,
     pub cbAllocated: u32,
     pub dwCertificateFlags: u32,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for CERT_CONTEXT_EX {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for CERT_CONTEXT_EX {
     fn clone(&self) -> Self {
         *self

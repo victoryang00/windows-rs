@@ -385,7 +385,7 @@ pub const DWRITE_FONT_WEIGHT_HEAVY: DWRITE_FONT_WEIGHT = 900i32;
 pub const DWRITE_FONT_WEIGHT_EXTRA_BLACK: DWRITE_FONT_WEIGHT = 950i32;
 pub const DWRITE_FONT_WEIGHT_ULTRA_BLACK: DWRITE_FONT_WEIGHT = 950i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct DWRITE_GLYPH_IMAGE_DATA {
     pub imageData: *const ::core::ffi::c_void,
     pub imageDataSize: u32,
@@ -397,9 +397,9 @@ pub struct DWRITE_GLYPH_IMAGE_DATA {
     pub verticalTopOrigin: ::win32_foundation_sys::POINT,
     pub verticalBottomOrigin: ::win32_foundation_sys::POINT,
 }
-#[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for DWRITE_GLYPH_IMAGE_DATA {}
-#[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for DWRITE_GLYPH_IMAGE_DATA {
     fn clone(&self) -> Self {
         *self

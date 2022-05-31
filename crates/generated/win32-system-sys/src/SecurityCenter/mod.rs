@@ -3,7 +3,7 @@ extern "system" {
     pub fn WscGetAntiMalwareUri(ppszuri: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn WscGetSecurityProviderHealth(providers: u32, phealth: *mut WSC_SECURITY_PROVIDER_HEALTH) -> ::windows_core_sys::HRESULT;
     pub fn WscQueryAntiMalwareUri() -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Threading")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn WscRegisterForChanges(reserved: *mut ::core::ffi::c_void, phcallbackregistration: *mut ::win32_foundation_sys::HANDLE, lpcallbackaddress: super::Threading::LPTHREAD_START_ROUTINE, pcontext: *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn WscRegisterForUserNotifications() -> ::windows_core_sys::HRESULT;
     pub fn WscUnRegisterChanges(hregistrationhandle: ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;

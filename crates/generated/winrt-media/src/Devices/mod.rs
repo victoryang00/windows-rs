@@ -104,7 +104,7 @@ impl AdvancedPhotoControl {
             (::windows_core::Interface::vtable(this).Supported)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SupportedModes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<AdvancedPhotoMode>> {
         let this = self;
         unsafe {
@@ -256,7 +256,7 @@ impl AudioDeviceController {
             (::windows_core::Interface::vtable(this).VolumePercent)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Capture", feature = "Media_MediaProperties"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media", feature = "winrt-media"))]
     pub fn GetAvailableMediaStreamProperties(&self, mediastreamtype: super::Capture::MediaStreamType) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<super::MediaProperties::IMediaEncodingProperties>> {
         let this = &::windows_core::Interface::cast::<IMediaDeviceController>(self)?;
         unsafe {
@@ -264,7 +264,7 @@ impl AudioDeviceController {
             (::windows_core::Interface::vtable(this).GetAvailableMediaStreamProperties)(::windows_core::Interface::as_raw(this), mediastreamtype, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<super::MediaProperties::IMediaEncodingProperties>>(result__)
         }
     }
-    #[cfg(all(feature = "Media_Capture", feature = "Media_MediaProperties"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-media"))]
     pub fn GetMediaStreamProperties(&self, mediastreamtype: super::Capture::MediaStreamType) -> ::windows_core::Result<super::MediaProperties::IMediaEncodingProperties> {
         let this = &::windows_core::Interface::cast::<IMediaDeviceController>(self)?;
         unsafe {
@@ -272,7 +272,7 @@ impl AudioDeviceController {
             (::windows_core::Interface::vtable(this).GetMediaStreamProperties)(::windows_core::Interface::as_raw(this), mediastreamtype, result__.as_mut_ptr()).from_abi::<super::MediaProperties::IMediaEncodingProperties>(result__)
         }
     }
-    #[cfg(all(feature = "Media_Capture", feature = "Media_MediaProperties"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-media"))]
     pub fn SetMediaStreamPropertiesAsync<'a, Param1: ::windows_core::IntoParam<'a, super::MediaProperties::IMediaEncodingProperties>>(&self, mediastreamtype: super::Capture::MediaStreamType, mediaencodingproperties: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = &::windows_core::Interface::cast::<IMediaDeviceController>(self)?;
         unsafe {
@@ -411,7 +411,7 @@ impl AudioDeviceModule {
             (::windows_core::Interface::vtable(this).MinorVersion)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SendCommandAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, command: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ModuleCommandResult>> {
         let this = self;
         unsafe {
@@ -500,7 +500,7 @@ impl AudioDeviceModuleNotificationEventArgs {
             (::windows_core::Interface::vtable(this).Module)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AudioDeviceModule>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn NotificationData(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
@@ -595,7 +595,7 @@ impl AudioDeviceModulesManager {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveModuleNotificationReceived)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn FindAllById<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, moduleid: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<AudioDeviceModule>> {
         let this = self;
         unsafe {
@@ -603,7 +603,7 @@ impl AudioDeviceModulesManager {
             (::windows_core::Interface::vtable(this).FindAllById)(::windows_core::Interface::as_raw(this), moduleid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<AudioDeviceModule>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn FindAll(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<AudioDeviceModule>> {
         let this = self;
         unsafe {
@@ -2157,7 +2157,7 @@ impl DigitalWindowControl {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ConfigureWithBounds)(::windows_core::Interface::as_raw(this), digitalwindowmode, digitalwindowbounds.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SupportedCapabilities(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<DigitalWindowCapability>> {
         let this = self;
         unsafe {
@@ -2786,7 +2786,7 @@ impl FocusControl {
             (::windows_core::Interface::vtable(this).Supported)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SupportedPresets(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<FocusPreset>> {
         let this = self;
         unsafe {
@@ -2871,7 +2871,7 @@ impl FocusControl {
             (::windows_core::Interface::vtable(this).WaitForFocusSupported)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SupportedFocusModes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<FocusMode>> {
         let this = &::windows_core::Interface::cast::<IFocusControl2>(self)?;
         unsafe {
@@ -2879,7 +2879,7 @@ impl FocusControl {
             (::windows_core::Interface::vtable(this).SupportedFocusModes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<FocusMode>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SupportedFocusDistances(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ManualFocusDistance>> {
         let this = &::windows_core::Interface::cast::<IFocusControl2>(self)?;
         unsafe {
@@ -2887,7 +2887,7 @@ impl FocusControl {
             (::windows_core::Interface::vtable(this).SupportedFocusDistances)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<ManualFocusDistance>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SupportedFocusRanges(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<AutoFocusRange>> {
         let this = &::windows_core::Interface::cast::<IFocusControl2>(self)?;
         unsafe {
@@ -3229,7 +3229,7 @@ impl HdrVideoControl {
             (::windows_core::Interface::vtable(this).Supported)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SupportedModes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<HdrVideoMode>> {
         let this = self;
         unsafe {
@@ -3381,9 +3381,9 @@ unsafe impl ::windows_core::Interface for IAdvancedPhotoControl {
 pub struct IAdvancedPhotoControl_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Supported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SupportedModes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SupportedModes: usize,
     pub Mode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut AdvancedPhotoMode) -> ::windows_core::HRESULT,
     pub Configure: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, settings: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -3451,9 +3451,9 @@ unsafe impl ::windows_core::Interface for IAdvancedVideoCaptureDeviceController3
 #[doc(hidden)]
 pub struct IAdvancedVideoCaptureDeviceController3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Media_Devices_Core")]
+    #[cfg(feature = "winrt-media")]
     pub VariablePhotoSequenceController: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Devices_Core"))]
+    #[cfg(not(feature = "winrt-media"))]
     VariablePhotoSequenceController: usize,
     pub PhotoConfirmationControl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ZoomControl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -3577,9 +3577,9 @@ pub struct IAudioDeviceModule_Vtbl {
     pub InstanceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub MajorVersion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub MinorVersion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub SendCommandAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, command: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SendCommandAsync: usize,
 }
 #[doc(hidden)]
@@ -3594,9 +3594,9 @@ unsafe impl ::windows_core::Interface for IAudioDeviceModuleNotificationEventArg
 pub struct IAudioDeviceModuleNotificationEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Module: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub NotificationData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     NotificationData: usize,
 }
 #[doc(hidden)]
@@ -3612,13 +3612,13 @@ pub struct IAudioDeviceModulesManager_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ModuleNotificationReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveModuleNotificationReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub FindAllById: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, moduleid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     FindAllById: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub FindAll: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     FindAll: usize,
 }
 #[doc(hidden)]
@@ -3879,9 +3879,9 @@ pub struct IDigitalWindowControl_Vtbl {
     pub GetBounds: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Configure: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, digitalwindowmode: DigitalWindowMode) -> ::windows_core::HRESULT,
     pub ConfigureWithBounds: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, digitalwindowmode: DigitalWindowMode, digitalwindowbounds: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SupportedCapabilities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SupportedCapabilities: usize,
     pub GetCapabilityForSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, width: i32, height: i32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -3988,9 +3988,9 @@ unsafe impl ::windows_core::Interface for IFocusControl {
 pub struct IFocusControl_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Supported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SupportedPresets: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SupportedPresets: usize,
     pub Preset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FocusPreset) -> ::windows_core::HRESULT,
     pub SetPresetAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, preset: FocusPreset, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -4015,17 +4015,17 @@ pub struct IFocusControl2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub FocusChangedSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub WaitForFocusSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SupportedFocusModes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SupportedFocusModes: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SupportedFocusDistances: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SupportedFocusDistances: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SupportedFocusRanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SupportedFocusRanges: usize,
     pub Mode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FocusMode) -> ::windows_core::HRESULT,
     pub FocusState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MediaCaptureFocusState) -> ::windows_core::HRESULT,
@@ -4069,9 +4069,9 @@ unsafe impl ::windows_core::Interface for IHdrVideoControl {
 pub struct IHdrVideoControl_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Supported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SupportedModes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SupportedModes: usize,
     pub Mode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut HdrVideoMode) -> ::windows_core::HRESULT,
     pub SetMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: HdrVideoMode) -> ::windows_core::HRESULT,
@@ -4088,9 +4088,9 @@ unsafe impl ::windows_core::Interface for IInfraredTorchControl {
 pub struct IInfraredTorchControl_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SupportedModes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SupportedModes: usize,
     pub CurrentMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut InfraredTorchMode) -> ::windows_core::HRESULT,
     pub SetCurrentMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: InfraredTorchMode) -> ::windows_core::HRESULT,
@@ -4112,17 +4112,17 @@ unsafe impl ::windows_core::Interface for IIsoSpeedControl {
 pub struct IIsoSpeedControl_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Supported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-"))]
     pub SupportedPresets: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "deprecated")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-")))]
     SupportedPresets: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub Preset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut IsoSpeedPreset) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     Preset: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub SetPresetAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, preset: IsoSpeedPreset, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     SetPresetAsync: usize,
 }
 #[doc(hidden)]
@@ -4168,23 +4168,23 @@ unsafe impl ::windows_core::Interface for ILowLagPhotoControl {
 #[doc(hidden)]
 pub struct ILowLagPhotoControl_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub GetHighestConcurrentFrameRate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, captureproperties: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     GetHighestConcurrentFrameRate: usize,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub GetCurrentFrameRate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     GetCurrentFrameRate: usize,
     pub ThumbnailEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetThumbnailEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub ThumbnailFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::MediaProperties::MediaThumbnailFormat) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     ThumbnailFormat: usize,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub SetThumbnailFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::MediaProperties::MediaThumbnailFormat) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     SetThumbnailFormat: usize,
     pub DesiredThumbnailSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub SetDesiredThumbnailSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
@@ -4208,23 +4208,23 @@ pub struct ILowLagPhotoSequenceControl_Vtbl {
     pub SetPastPhotoLimit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
     pub PhotosPerSecondLimit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetPhotosPerSecondLimit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub GetHighestConcurrentFrameRate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, captureproperties: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     GetHighestConcurrentFrameRate: usize,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub GetCurrentFrameRate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     GetCurrentFrameRate: usize,
     pub ThumbnailEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetThumbnailEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub ThumbnailFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::MediaProperties::MediaThumbnailFormat) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     ThumbnailFormat: usize,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub SetThumbnailFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::MediaProperties::MediaThumbnailFormat) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     SetThumbnailFormat: usize,
     pub DesiredThumbnailSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub SetDesiredThumbnailSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
@@ -4268,7 +4268,7 @@ pub struct IMediaDeviceControlCapabilities_Vtbl {
 #[repr(transparent)]
 pub struct IMediaDeviceController(::windows_core::IUnknown);
 impl IMediaDeviceController {
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Capture", feature = "Media_MediaProperties"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media", feature = "winrt-media"))]
     pub fn GetAvailableMediaStreamProperties(&self, mediastreamtype: super::Capture::MediaStreamType) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<super::MediaProperties::IMediaEncodingProperties>> {
         let this = self;
         unsafe {
@@ -4276,7 +4276,7 @@ impl IMediaDeviceController {
             (::windows_core::Interface::vtable(this).GetAvailableMediaStreamProperties)(::windows_core::Interface::as_raw(this), mediastreamtype, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<super::MediaProperties::IMediaEncodingProperties>>(result__)
         }
     }
-    #[cfg(all(feature = "Media_Capture", feature = "Media_MediaProperties"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-media"))]
     pub fn GetMediaStreamProperties(&self, mediastreamtype: super::Capture::MediaStreamType) -> ::windows_core::Result<super::MediaProperties::IMediaEncodingProperties> {
         let this = self;
         unsafe {
@@ -4284,7 +4284,7 @@ impl IMediaDeviceController {
             (::windows_core::Interface::vtable(this).GetMediaStreamProperties)(::windows_core::Interface::as_raw(this), mediastreamtype, result__.as_mut_ptr()).from_abi::<super::MediaProperties::IMediaEncodingProperties>(result__)
         }
     }
-    #[cfg(all(feature = "Media_Capture", feature = "Media_MediaProperties"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-media"))]
     pub fn SetMediaStreamPropertiesAsync<'a, Param1: ::windows_core::IntoParam<'a, super::MediaProperties::IMediaEncodingProperties>>(&self, mediastreamtype: super::Capture::MediaStreamType, mediaencodingproperties: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
@@ -4364,17 +4364,17 @@ unsafe impl ::windows_core::Interface for IMediaDeviceController {
 #[doc(hidden)]
 pub struct IMediaDeviceController_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Capture", feature = "Media_MediaProperties"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media", feature = "winrt-media"))]
     pub GetAvailableMediaStreamProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mediastreamtype: super::Capture::MediaStreamType, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Media_Capture", feature = "Media_MediaProperties")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-media", feature = "winrt-media")))]
     GetAvailableMediaStreamProperties: usize,
-    #[cfg(all(feature = "Media_Capture", feature = "Media_MediaProperties"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-media"))]
     pub GetMediaStreamProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mediastreamtype: super::Capture::MediaStreamType, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Media_Capture", feature = "Media_MediaProperties")))]
+    #[cfg(not(all(feature = "winrt-media", feature = "winrt-media")))]
     GetMediaStreamProperties: usize,
-    #[cfg(all(feature = "Media_Capture", feature = "Media_MediaProperties"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-media"))]
     pub SetMediaStreamPropertiesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mediastreamtype: super::Capture::MediaStreamType, mediaencodingproperties: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Media_Capture", feature = "Media_MediaProperties")))]
+    #[cfg(not(all(feature = "winrt-media", feature = "winrt-media")))]
     SetMediaStreamPropertiesAsync: usize,
 }
 #[doc(hidden)]
@@ -4410,9 +4410,9 @@ unsafe impl ::windows_core::Interface for IModuleCommandResult {
 pub struct IModuleCommandResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SendCommandStatus) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub Result: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Result: usize,
 }
 #[doc(hidden)]
@@ -4427,9 +4427,9 @@ unsafe impl ::windows_core::Interface for IOpticalImageStabilizationControl {
 pub struct IOpticalImageStabilizationControl_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Supported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SupportedModes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SupportedModes: usize,
     pub Mode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut OpticalImageStabilizationMode) -> ::windows_core::HRESULT,
     pub SetMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: OpticalImageStabilizationMode) -> ::windows_core::HRESULT,
@@ -4446,13 +4446,13 @@ unsafe impl ::windows_core::Interface for IPanelBasedOptimizationControl {
 pub struct IPanelBasedOptimizationControl_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub Panel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Enumeration::Panel) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Enumeration"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Panel: usize,
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub SetPanel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_devices::Enumeration::Panel) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Enumeration"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SetPanel: usize,
 }
 #[doc(hidden)]
@@ -4469,13 +4469,13 @@ pub struct IPhotoConfirmationControl_Vtbl {
     pub Supported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub Enabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub PixelFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::MediaProperties::MediaPixelFormat) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     PixelFormat: usize,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub SetPixelFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: super::MediaProperties::MediaPixelFormat) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     SetPixelFormat: usize,
 }
 #[doc(hidden)]
@@ -4541,13 +4541,13 @@ unsafe impl ::windows_core::Interface for IRegionsOfInterestControl {
 pub struct IRegionsOfInterestControl_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub MaxRegions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetRegionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, regions: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetRegionsAsync: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetRegionsWithLockAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, regions: ::windows_core::RawPtr, lockvalues: bool, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetRegionsWithLockAsync: usize,
     pub ClearRegionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub AutoFocusSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -4565,9 +4565,9 @@ unsafe impl ::windows_core::Interface for ISceneModeControl {
 #[doc(hidden)]
 pub struct ISceneModeControl_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SupportedModes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SupportedModes: usize,
     pub Value: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut CaptureSceneMode) -> ::windows_core::HRESULT,
     pub SetValueAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scenemode: CaptureSceneMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -4612,13 +4612,13 @@ pub struct IVideoDeviceController_Vtbl {
     pub Roll: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Exposure: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Focus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_Capture")]
+    #[cfg(feature = "winrt-media")]
     pub TrySetPowerlineFrequency: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Capture::PowerlineFrequency, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Capture"))]
+    #[cfg(not(feature = "winrt-media"))]
     TrySetPowerlineFrequency: usize,
-    #[cfg(feature = "Media_Capture")]
+    #[cfg(feature = "winrt-media")]
     pub TryGetPowerlineFrequency: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut super::Capture::PowerlineFrequency, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Capture"))]
+    #[cfg(not(feature = "winrt-media"))]
     TryGetPowerlineFrequency: usize,
 }
 #[doc(hidden)]
@@ -4647,9 +4647,9 @@ unsafe impl ::windows_core::Interface for IVideoTemporalDenoisingControl {
 pub struct IVideoTemporalDenoisingControl_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Supported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SupportedModes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SupportedModes: usize,
     pub Mode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut VideoTemporalDenoisingMode) -> ::windows_core::HRESULT,
     pub SetMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: VideoTemporalDenoisingMode) -> ::windows_core::HRESULT,
@@ -4703,9 +4703,9 @@ unsafe impl ::windows_core::Interface for IZoomControl2 {
 #[doc(hidden)]
 pub struct IZoomControl2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SupportedModes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SupportedModes: usize,
     pub Mode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ZoomTransitionMode) -> ::windows_core::HRESULT,
     pub Configure: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, settings: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -4736,7 +4736,7 @@ impl InfraredTorchControl {
             (::windows_core::Interface::vtable(this).IsSupported)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SupportedModes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<InfraredTorchMode>> {
         let this = self;
         unsafe {
@@ -4904,7 +4904,7 @@ impl IsoSpeedControl {
             (::windows_core::Interface::vtable(this).Supported)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-"))]
     pub fn SupportedPresets(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<IsoSpeedPreset>> {
         let this = self;
         unsafe {
@@ -4912,7 +4912,7 @@ impl IsoSpeedControl {
             (::windows_core::Interface::vtable(this).SupportedPresets)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<IsoSpeedPreset>>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn Preset(&self) -> ::windows_core::Result<IsoSpeedPreset> {
         let this = self;
         unsafe {
@@ -4920,7 +4920,7 @@ impl IsoSpeedControl {
             (::windows_core::Interface::vtable(this).Preset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IsoSpeedPreset>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn SetPresetAsync(&self, preset: IsoSpeedPreset) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
@@ -5048,11 +5048,11 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Iso
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
 pub struct IsoSpeedPreset(pub i32);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl IsoSpeedPreset {
     pub const Auto: Self = Self(0i32);
     pub const Iso50: Self = Self(1i32);
@@ -5067,31 +5067,31 @@ impl IsoSpeedPreset {
     pub const Iso12800: Self = Self(10i32);
     pub const Iso25600: Self = Self(11i32);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::marker::Copy for IsoSpeedPreset {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for IsoSpeedPreset {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::default::Default for IsoSpeedPreset {
     fn default() -> Self {
         Self(0)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Abi for IsoSpeedPreset {
     type Abi = Self;
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::fmt::Debug for IsoSpeedPreset {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("IsoSpeedPreset").field(&self.0).finish()
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::RuntimeType for IsoSpeedPreset {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Media.Devices.IsoSpeedPreset;i4)");
     type DefaultType = Self;
@@ -5268,7 +5268,7 @@ pub struct KeypadPressedEventHandler_Vtbl {
 #[repr(transparent)]
 pub struct LowLagPhotoControl(::windows_core::IUnknown);
 impl LowLagPhotoControl {
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn GetHighestConcurrentFrameRate<'a, Param0: ::windows_core::IntoParam<'a, super::MediaProperties::IMediaEncodingProperties>>(&self, captureproperties: Param0) -> ::windows_core::Result<super::MediaProperties::MediaRatio> {
         let this = self;
         unsafe {
@@ -5276,7 +5276,7 @@ impl LowLagPhotoControl {
             (::windows_core::Interface::vtable(this).GetHighestConcurrentFrameRate)(::windows_core::Interface::as_raw(this), captureproperties.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::MediaProperties::MediaRatio>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn GetCurrentFrameRate(&self) -> ::windows_core::Result<super::MediaProperties::MediaRatio> {
         let this = self;
         unsafe {
@@ -5295,7 +5295,7 @@ impl LowLagPhotoControl {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetThumbnailEnabled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn ThumbnailFormat(&self) -> ::windows_core::Result<super::MediaProperties::MediaThumbnailFormat> {
         let this = self;
         unsafe {
@@ -5303,7 +5303,7 @@ impl LowLagPhotoControl {
             (::windows_core::Interface::vtable(this).ThumbnailFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::MediaProperties::MediaThumbnailFormat>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn SetThumbnailFormat(&self, value: super::MediaProperties::MediaThumbnailFormat) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetThumbnailFormat)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -5443,7 +5443,7 @@ impl LowLagPhotoSequenceControl {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPhotosPerSecondLimit)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn GetHighestConcurrentFrameRate<'a, Param0: ::windows_core::IntoParam<'a, super::MediaProperties::IMediaEncodingProperties>>(&self, captureproperties: Param0) -> ::windows_core::Result<super::MediaProperties::MediaRatio> {
         let this = self;
         unsafe {
@@ -5451,7 +5451,7 @@ impl LowLagPhotoSequenceControl {
             (::windows_core::Interface::vtable(this).GetHighestConcurrentFrameRate)(::windows_core::Interface::as_raw(this), captureproperties.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::MediaProperties::MediaRatio>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn GetCurrentFrameRate(&self) -> ::windows_core::Result<super::MediaProperties::MediaRatio> {
         let this = self;
         unsafe {
@@ -5470,7 +5470,7 @@ impl LowLagPhotoSequenceControl {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetThumbnailEnabled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn ThumbnailFormat(&self) -> ::windows_core::Result<super::MediaProperties::MediaThumbnailFormat> {
         let this = self;
         unsafe {
@@ -5478,7 +5478,7 @@ impl LowLagPhotoSequenceControl {
             (::windows_core::Interface::vtable(this).ThumbnailFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::MediaProperties::MediaThumbnailFormat>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn SetThumbnailFormat(&self, value: super::MediaProperties::MediaThumbnailFormat) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetThumbnailFormat)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -6006,7 +6006,7 @@ impl ModuleCommandResult {
             (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SendCommandStatus>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Result(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
@@ -6095,7 +6095,7 @@ impl OpticalImageStabilizationControl {
             (::windows_core::Interface::vtable(this).Supported)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SupportedModes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<OpticalImageStabilizationMode>> {
         let this = self;
         unsafe {
@@ -6231,7 +6231,7 @@ impl PanelBasedOptimizationControl {
             (::windows_core::Interface::vtable(this).IsSupported)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Panel(&self) -> ::windows_core::Result<::winrt_devices::Enumeration::Panel> {
         let this = self;
         unsafe {
@@ -6239,7 +6239,7 @@ impl PanelBasedOptimizationControl {
             (::windows_core::Interface::vtable(this).Panel)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Enumeration::Panel>(result__)
         }
     }
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SetPanel(&self, value: ::winrt_devices::Enumeration::Panel) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPanel)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -6338,7 +6338,7 @@ impl PhotoConfirmationControl {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetEnabled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn PixelFormat(&self) -> ::windows_core::Result<super::MediaProperties::MediaPixelFormat> {
         let this = self;
         unsafe {
@@ -6346,7 +6346,7 @@ impl PhotoConfirmationControl {
             (::windows_core::Interface::vtable(this).PixelFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::MediaProperties::MediaPixelFormat>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn SetPixelFormat(&self, format: super::MediaProperties::MediaPixelFormat) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPixelFormat)(::windows_core::Interface::as_raw(this), format).ok() }
@@ -6788,7 +6788,7 @@ impl RegionsOfInterestControl {
             (::windows_core::Interface::vtable(this).MaxRegions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRegionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<RegionOfInterest>>>(&self, regions: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
@@ -6796,7 +6796,7 @@ impl RegionsOfInterestControl {
             (::windows_core::Interface::vtable(this).SetRegionsAsync)(::windows_core::Interface::as_raw(this), regions.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetRegionsWithLockAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<RegionOfInterest>>>(&self, regions: Param0, lockvalues: bool) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
@@ -6906,7 +6906,7 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Reg
 #[repr(transparent)]
 pub struct SceneModeControl(::windows_core::IUnknown);
 impl SceneModeControl {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SupportedModes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<CaptureSceneMode>> {
         let this = self;
         unsafe {
@@ -7298,7 +7298,7 @@ impl VideoDeviceController {
         let this = &::windows_core::Interface::cast::<IAdvancedVideoCaptureDeviceController2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetPrimaryUse)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Media_Devices_Core")]
+    #[cfg(feature = "winrt-media")]
     pub fn VariablePhotoSequenceController(&self) -> ::windows_core::Result<Core::VariablePhotoSequenceController> {
         let this = &::windows_core::Interface::cast::<IAdvancedVideoCaptureDeviceController3>(self)?;
         unsafe {
@@ -7422,7 +7422,7 @@ impl VideoDeviceController {
             (::windows_core::Interface::vtable(this).DigitalWindowControl)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<DigitalWindowControl>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Capture", feature = "Media_MediaProperties"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media", feature = "winrt-media"))]
     pub fn GetAvailableMediaStreamProperties(&self, mediastreamtype: super::Capture::MediaStreamType) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<super::MediaProperties::IMediaEncodingProperties>> {
         let this = &::windows_core::Interface::cast::<IMediaDeviceController>(self)?;
         unsafe {
@@ -7430,7 +7430,7 @@ impl VideoDeviceController {
             (::windows_core::Interface::vtable(this).GetAvailableMediaStreamProperties)(::windows_core::Interface::as_raw(this), mediastreamtype, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<super::MediaProperties::IMediaEncodingProperties>>(result__)
         }
     }
-    #[cfg(all(feature = "Media_Capture", feature = "Media_MediaProperties"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-media"))]
     pub fn GetMediaStreamProperties(&self, mediastreamtype: super::Capture::MediaStreamType) -> ::windows_core::Result<super::MediaProperties::IMediaEncodingProperties> {
         let this = &::windows_core::Interface::cast::<IMediaDeviceController>(self)?;
         unsafe {
@@ -7438,7 +7438,7 @@ impl VideoDeviceController {
             (::windows_core::Interface::vtable(this).GetMediaStreamProperties)(::windows_core::Interface::as_raw(this), mediastreamtype, result__.as_mut_ptr()).from_abi::<super::MediaProperties::IMediaEncodingProperties>(result__)
         }
     }
-    #[cfg(all(feature = "Media_Capture", feature = "Media_MediaProperties"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-media"))]
     pub fn SetMediaStreamPropertiesAsync<'a, Param1: ::windows_core::IntoParam<'a, super::MediaProperties::IMediaEncodingProperties>>(&self, mediastreamtype: super::Capture::MediaStreamType, mediaencodingproperties: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = &::windows_core::Interface::cast::<IMediaDeviceController>(self)?;
         unsafe {
@@ -7523,7 +7523,7 @@ impl VideoDeviceController {
             (::windows_core::Interface::vtable(this).Focus)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaDeviceControl>(result__)
         }
     }
-    #[cfg(feature = "Media_Capture")]
+    #[cfg(feature = "winrt-media")]
     pub fn TrySetPowerlineFrequency(&self, value: super::Capture::PowerlineFrequency) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
@@ -7531,7 +7531,7 @@ impl VideoDeviceController {
             (::windows_core::Interface::vtable(this).TrySetPowerlineFrequency)(::windows_core::Interface::as_raw(this), value, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Media_Capture")]
+    #[cfg(feature = "winrt-media")]
     pub fn TryGetPowerlineFrequency(&self, value: &mut super::Capture::PowerlineFrequency) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
@@ -7807,7 +7807,7 @@ impl VideoTemporalDenoisingControl {
             (::windows_core::Interface::vtable(this).Supported)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SupportedModes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<VideoTemporalDenoisingMode>> {
         let this = self;
         unsafe {
@@ -8105,7 +8105,7 @@ impl ZoomControl {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetValue)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SupportedModes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ZoomTransitionMode>> {
         let this = &::windows_core::Interface::cast::<IZoomControl2>(self)?;
         unsafe {

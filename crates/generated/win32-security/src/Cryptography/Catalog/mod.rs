@@ -98,7 +98,7 @@ impl ::core::default::Default for CRYPTCATCDF {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 pub struct CRYPTCATMEMBER {
     pub cbStruct: u32,
     pub pwszReferenceTag: ::windows_core::PWSTR,
@@ -112,15 +112,15 @@ pub struct CRYPTCATMEMBER {
     pub sEncodedIndirectData: super::CRYPTOAPI_BLOB,
     pub sEncodedMemberInfo: super::CRYPTOAPI_BLOB,
 }
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for CRYPTCATMEMBER {}
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for CRYPTCATMEMBER {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for CRYPTCATMEMBER {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CRYPTCATMEMBER")
@@ -138,19 +138,19 @@ impl ::core::fmt::Debug for CRYPTCATMEMBER {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for CRYPTCATMEMBER {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for CRYPTCATMEMBER {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPTCATMEMBER>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for CRYPTCATMEMBER {}
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for CRYPTCATMEMBER {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -445,7 +445,7 @@ pub unsafe fn CryptCATAdminResolveCatalogPath<'a, Param1: ::windows_core::IntoPa
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CryptCATAllocSortedMemberInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hcatalog: Param0, pwszreferencetag: Param1) -> *mut CRYPTCATMEMBER {
     #[cfg(windows)]
@@ -472,7 +472,7 @@ pub unsafe fn CryptCATCDFClose(pcdf: *mut CRYPTCATCDF) -> ::win32_foundation::BO
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CryptCATCDFEnumAttributes(pcdf: *mut CRYPTCATCDF, pmember: *mut CRYPTCATMEMBER, pprevattr: *mut CRYPTCATATTRIBUTE, pfnparseerror: PFN_CDF_PARSE_ERROR_CALLBACK) -> *mut CRYPTCATATTRIBUTE {
     #[cfg(windows)]
@@ -499,7 +499,7 @@ pub unsafe fn CryptCATCDFEnumCatAttributes(pcdf: *mut CRYPTCATCDF, pprevattr: *m
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CryptCATCDFEnumMembers(pcdf: *mut CRYPTCATCDF, pprevmember: *mut CRYPTCATMEMBER, pfnparseerror: PFN_CDF_PARSE_ERROR_CALLBACK) -> *mut CRYPTCATMEMBER {
     #[cfg(windows)]
@@ -552,7 +552,7 @@ pub unsafe fn CryptCATClose<'a, Param0: ::windows_core::IntoParam<'a, ::win32_fo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CryptCATEnumerateAttr<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hcatalog: Param0, pcatmember: *mut CRYPTCATMEMBER, pprevattr: *mut CRYPTCATATTRIBUTE) -> *mut CRYPTCATATTRIBUTE {
     #[cfg(windows)]
@@ -579,7 +579,7 @@ pub unsafe fn CryptCATEnumerateCatAttr<'a, Param0: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CryptCATEnumerateMember<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hcatalog: Param0, pprevmember: *mut CRYPTCATMEMBER) -> *mut CRYPTCATMEMBER {
     #[cfg(windows)]
@@ -593,7 +593,7 @@ pub unsafe fn CryptCATEnumerateMember<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CryptCATFreeSortedMemberInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hcatalog: Param0, pcatmember: *mut CRYPTCATMEMBER) {
     #[cfg(windows)]
@@ -607,7 +607,7 @@ pub unsafe fn CryptCATFreeSortedMemberInfo<'a, Param0: ::windows_core::IntoParam
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CryptCATGetAttrInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hcatalog: Param0, pcatmember: *mut CRYPTCATMEMBER, pwszreferencetag: Param2) -> *mut CRYPTCATATTRIBUTE {
     #[cfg(windows)]
@@ -634,7 +634,7 @@ pub unsafe fn CryptCATGetCatAttrInfo<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CryptCATGetMemberInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hcatalog: Param0, pwszreferencetag: Param1) -> *mut CRYPTCATMEMBER {
     #[cfg(windows)]
@@ -687,7 +687,7 @@ pub unsafe fn CryptCATPersistStore<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CryptCATPutAttrInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hcatalog: Param0, pcatmember: *mut CRYPTCATMEMBER, pwszreferencetag: Param2, dwattrtypeandaction: u32, cbdata: u32, pbdata: *mut u8) -> *mut CRYPTCATATTRIBUTE {
     #[cfg(windows)]
@@ -714,7 +714,7 @@ pub unsafe fn CryptCATPutCatAttrInfo<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CryptCATPutMemberInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hcatalog: Param0, pwszfilename: Param1, pwszreferencetag: Param2, pgsubjecttype: *mut ::windows_core::GUID, dwcertversion: u32, cbsipindirectdata: u32, pbsipindirectdata: *mut u8) -> *mut CRYPTCATMEMBER {
     #[cfg(windows)]
@@ -755,39 +755,39 @@ pub unsafe fn IsCatalogFile<'a, Param0: ::windows_core::IntoParam<'a, ::win32_fo
     unimplemented!("Unsupported target OS");
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 pub struct MS_ADDINFO_CATALOGMEMBER {
     pub cbStruct: u32,
     pub pStore: *mut CRYPTCATSTORE,
     pub pMember: *mut CRYPTCATMEMBER,
 }
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 impl ::core::marker::Copy for MS_ADDINFO_CATALOGMEMBER {}
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 impl ::core::clone::Clone for MS_ADDINFO_CATALOGMEMBER {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 impl ::core::fmt::Debug for MS_ADDINFO_CATALOGMEMBER {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MS_ADDINFO_CATALOGMEMBER").field("cbStruct", &self.cbStruct).field("pStore", &self.pStore).field("pMember", &self.pMember).finish()
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 unsafe impl ::windows_core::Abi for MS_ADDINFO_CATALOGMEMBER {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::PartialEq for MS_ADDINFO_CATALOGMEMBER {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MS_ADDINFO_CATALOGMEMBER>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 impl ::core::cmp::Eq for MS_ADDINFO_CATALOGMEMBER {}
-#[cfg(feature = "Win32_Security_Cryptography_Sip")]
+#[cfg(feature = "win32-security")]
 impl ::core::default::Default for MS_ADDINFO_CATALOGMEMBER {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

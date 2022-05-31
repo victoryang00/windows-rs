@@ -117,9 +117,9 @@ unsafe impl ::windows_core::Interface for IPrintCustomItemListOptionDetails2 {
 #[doc(hidden)]
 pub struct IPrintCustomItemListOptionDetails2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub AddItem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, itemid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, displayname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, description: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, icon: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     AddItem: usize,
 }
 #[doc(hidden)]
@@ -380,7 +380,7 @@ pub struct IPrintHolePunchOptionDetails_Vtbl {
 #[repr(transparent)]
 pub struct IPrintItemListOptionDetails(::windows_core::IUnknown);
 impl IPrintItemListOptionDetails {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = self;
         unsafe {
@@ -532,9 +532,9 @@ unsafe impl ::windows_core::Interface for IPrintItemListOptionDetails {
 #[doc(hidden)]
 pub struct IPrintItemListOptionDetails_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Items: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Items: usize,
 }
 #[doc(hidden)]
@@ -955,9 +955,9 @@ unsafe impl ::windows_core::Interface for IPrintTaskOptionDetails {
 #[doc(hidden)]
 pub struct IPrintTaskOptionDetails_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Options: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Options: usize,
     pub CreateItemListOption: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, optionid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, displayname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateTextOption: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, optionid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, displayname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -1173,7 +1173,7 @@ impl PrintBindingOptionDetails {
             (::windows_core::Interface::vtable(this).Description)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IPrintItemListOptionDetails>(self)?;
         unsafe {
@@ -1373,7 +1373,7 @@ impl PrintBorderingOptionDetails {
             (::windows_core::Interface::vtable(this).Description)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IPrintItemListOptionDetails>(self)?;
         unsafe {
@@ -1573,7 +1573,7 @@ impl PrintCollationOptionDetails {
             (::windows_core::Interface::vtable(this).Description)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IPrintItemListOptionDetails>(self)?;
         unsafe {
@@ -1773,7 +1773,7 @@ impl PrintColorModeOptionDetails {
             (::windows_core::Interface::vtable(this).Description)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IPrintItemListOptionDetails>(self)?;
         unsafe {
@@ -2255,7 +2255,7 @@ impl PrintCustomItemListOptionDetails {
         let this = &::windows_core::Interface::cast::<IPrintCustomItemListOptionDetails>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).AddItem)(::windows_core::Interface::as_raw(this), itemid.into_param().abi(), displayname.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn AddItem2<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamWithContentType>>(&self, itemid: Param0, displayname: Param1, description: Param2, icon: Param3) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IPrintCustomItemListOptionDetails2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).AddItem)(::windows_core::Interface::as_raw(this), itemid.into_param().abi(), displayname.into_param().abi(), description.into_param().abi(), icon.into_param().abi()).ok() }
@@ -2293,7 +2293,7 @@ impl PrintCustomItemListOptionDetails {
             (::windows_core::Interface::vtable(this).DisplayName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IPrintItemListOptionDetails>(self)?;
         unsafe {
@@ -2932,7 +2932,7 @@ impl PrintDuplexOptionDetails {
             (::windows_core::Interface::vtable(this).Description)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IPrintItemListOptionDetails>(self)?;
         unsafe {
@@ -3132,7 +3132,7 @@ impl PrintHolePunchOptionDetails {
             (::windows_core::Interface::vtable(this).Description)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IPrintItemListOptionDetails>(self)?;
         unsafe {
@@ -3310,7 +3310,7 @@ unsafe impl ::core::marker::Sync for PrintHolePunchOptionDetails {}
 #[repr(transparent)]
 pub struct PrintMediaSizeOptionDetails(::windows_core::IUnknown);
 impl PrintMediaSizeOptionDetails {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IPrintItemListOptionDetails>(self)?;
         unsafe {
@@ -3510,7 +3510,7 @@ unsafe impl ::core::marker::Sync for PrintMediaSizeOptionDetails {}
 #[repr(transparent)]
 pub struct PrintMediaTypeOptionDetails(::windows_core::IUnknown);
 impl PrintMediaTypeOptionDetails {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IPrintItemListOptionDetails>(self)?;
         unsafe {
@@ -3808,7 +3808,7 @@ unsafe impl ::windows_core::RuntimeType for PrintOptionType {
 #[repr(transparent)]
 pub struct PrintOrientationOptionDetails(::windows_core::IUnknown);
 impl PrintOrientationOptionDetails {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IPrintItemListOptionDetails>(self)?;
         unsafe {
@@ -4178,7 +4178,7 @@ unsafe impl ::core::marker::Sync for PrintPageRangeOptionDetails {}
 #[repr(transparent)]
 pub struct PrintQualityOptionDetails(::windows_core::IUnknown);
 impl PrintQualityOptionDetails {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IPrintItemListOptionDetails>(self)?;
         unsafe {
@@ -4378,7 +4378,7 @@ unsafe impl ::core::marker::Sync for PrintQualityOptionDetails {}
 #[repr(transparent)]
 pub struct PrintStapleOptionDetails(::windows_core::IUnknown);
 impl PrintStapleOptionDetails {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IPrintItemListOptionDetails>(self)?;
         unsafe {
@@ -4661,7 +4661,7 @@ unsafe impl ::core::marker::Sync for PrintTaskOptionChangedEventArgs {}
 #[repr(transparent)]
 pub struct PrintTaskOptionDetails(::windows_core::IUnknown);
 impl PrintTaskOptionDetails {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Options(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, IPrintOptionDetails>> {
         let this = self;
         unsafe {
@@ -4725,7 +4725,7 @@ impl PrintTaskOptionDetails {
             (::windows_core::Interface::vtable(this).GetPageDescription)(::windows_core::Interface::as_raw(this), jobpagenumber, result__.as_mut_ptr()).from_abi::<super::PrintPageDescription>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn DisplayedOptions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<super::IPrintTaskOptionsCoreUIConfiguration>(self)?;
         unsafe {

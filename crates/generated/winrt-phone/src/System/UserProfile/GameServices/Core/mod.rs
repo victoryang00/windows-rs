@@ -36,7 +36,7 @@ impl GameService {
     pub fn GrantAvatarAward(avatarawardid: u32) -> ::windows_core::Result<()> {
         Self::IGameService(|this| unsafe { (::windows_core::Interface::vtable(this).GrantAvatarAward)(::windows_core::Interface::as_raw(this), avatarawardid).ok() })
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn PostResult<'a, Param4: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(gamevariant: u32, scorekind: GameServiceScoreKind, scorevalue: i64, gameoutcome: GameServiceGameOutcome, buffer: Param4) -> ::windows_core::Result<()> {
         Self::IGameService(|this| unsafe { (::windows_core::Interface::vtable(this).PostResult)(::windows_core::Interface::as_raw(this), gamevariant, scorekind, scorevalue, gameoutcome, buffer.into_param().abi()).ok() })
     }
@@ -230,9 +230,9 @@ pub struct IGameService_Vtbl {
     pub GetPrivilegesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GrantAchievement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, achievementid: u32) -> ::windows_core::HRESULT,
     pub GrantAvatarAward: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, avatarawardid: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub PostResult: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, gamevariant: u32, scorekind: GameServiceScoreKind, scorevalue: i64, gameoutcome: GameServiceGameOutcome, buffer: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     PostResult: usize,
 }
 #[doc(hidden)]

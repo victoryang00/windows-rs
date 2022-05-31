@@ -93,9 +93,9 @@ unsafe impl ::windows_core::Interface for ISpatialHoldStartedEventArgs {
 pub struct ISpatialHoldStartedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub InteractionSourceKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SpatialInteractionSourceKind) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub TryGetPointerPose: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception_Spatial"))]
+    #[cfg(not(feature = "winrt-perception"))]
     TryGetPointerPose: usize,
 }
 #[doc(hidden)]
@@ -124,9 +124,9 @@ pub struct ISpatialInteractionController_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub HasTouchpad: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub HasThumbstick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Haptics")]
+    #[cfg(feature = "winrt-devices")]
     pub SimpleHapticsController: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Haptics"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SimpleHapticsController: usize,
     pub VendorId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u16) -> ::windows_core::HRESULT,
     pub ProductId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u16) -> ::windows_core::HRESULT,
@@ -143,9 +143,9 @@ unsafe impl ::windows_core::Interface for ISpatialInteractionController2 {
 #[doc(hidden)]
 pub struct ISpatialInteractionController2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub TryGetRenderableModelAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     TryGetRenderableModelAsync: usize,
 }
 #[doc(hidden)]
@@ -159,9 +159,9 @@ unsafe impl ::windows_core::Interface for ISpatialInteractionController3 {
 #[doc(hidden)]
 pub struct ISpatialInteractionController3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Power")]
+    #[cfg(feature = "winrt-devices")]
     pub TryGetBatteryReport: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Power"))]
+    #[cfg(not(feature = "winrt-devices"))]
     TryGetBatteryReport: usize,
 }
 #[doc(hidden)]
@@ -195,9 +195,9 @@ unsafe impl ::windows_core::Interface for ISpatialInteractionDetectedEventArgs {
 pub struct ISpatialInteractionDetectedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub InteractionSourceKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SpatialInteractionSourceKind) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub TryGetPointerPose: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception_Spatial"))]
+    #[cfg(not(feature = "winrt-perception"))]
     TryGetPointerPose: usize,
     pub Interaction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -237,9 +237,9 @@ pub struct ISpatialInteractionManager_Vtbl {
     pub RemoveSourceReleased: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub InteractionDetected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveInteractionDetected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Perception"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub GetDetectedSourcesAtTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, timestamp: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Perception")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-perception")))]
     GetDetectedSourcesAtTimestamp: usize,
 }
 #[doc(hidden)]
@@ -297,9 +297,9 @@ pub struct ISpatialInteractionSource2_Vtbl {
     pub IsMenuSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsGraspSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub Controller: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Perception")]
+    #[cfg(feature = "winrt-perception")]
     pub TryGetStateAtTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, timestamp: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception"))]
+    #[cfg(not(feature = "winrt-perception"))]
     TryGetStateAtTimestamp: usize,
 }
 #[doc(hidden)]
@@ -326,13 +326,13 @@ unsafe impl ::windows_core::Interface for ISpatialInteractionSource4 {
 #[doc(hidden)]
 pub struct ISpatialInteractionSource4_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Perception_People")]
+    #[cfg(feature = "winrt-perception")]
     pub TryCreateHandMeshObserver: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception_People"))]
+    #[cfg(not(feature = "winrt-perception"))]
     TryCreateHandMeshObserver: usize,
-    #[cfg(feature = "Perception_People")]
+    #[cfg(feature = "winrt-perception")]
     pub TryCreateHandMeshObserverAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception_People"))]
+    #[cfg(not(feature = "winrt-perception"))]
     TryCreateHandMeshObserverAsync: usize,
 }
 #[doc(hidden)]
@@ -372,13 +372,13 @@ unsafe impl ::windows_core::Interface for ISpatialInteractionSourceLocation {
 #[doc(hidden)]
 pub struct ISpatialInteractionSourceLocation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Position: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Velocity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Velocity: usize,
 }
 #[doc(hidden)]
@@ -392,9 +392,9 @@ unsafe impl ::windows_core::Interface for ISpatialInteractionSourceLocation2 {
 #[doc(hidden)]
 pub struct ISpatialInteractionSourceLocation2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Orientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Orientation: usize,
 }
 #[doc(hidden)]
@@ -409,9 +409,9 @@ unsafe impl ::windows_core::Interface for ISpatialInteractionSourceLocation3 {
 pub struct ISpatialInteractionSourceLocation3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub PositionAccuracy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SpatialInteractionSourcePositionAccuracy) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub AngularVelocity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     AngularVelocity: usize,
     pub SourcePointerPose: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -426,14 +426,14 @@ unsafe impl ::windows_core::Interface for ISpatialInteractionSourceProperties {
 #[doc(hidden)]
 pub struct ISpatialInteractionSourceProperties_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub TryGetSourceLossMitigationDirection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Numerics", feature = "Perception_Spatial")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-perception")))]
     TryGetSourceLossMitigationDirection: usize,
     pub SourceLossRisk: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub TryGetLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception_Spatial"))]
+    #[cfg(not(feature = "winrt-perception"))]
     TryGetLocation: usize,
 }
 #[doc(hidden)]
@@ -450,13 +450,13 @@ pub struct ISpatialInteractionSourceState_Vtbl {
     pub Source: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub IsPressed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Perception")]
+    #[cfg(feature = "winrt-perception")]
     pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception"))]
+    #[cfg(not(feature = "winrt-perception"))]
     Timestamp: usize,
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub TryGetPointerPose: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception_Spatial"))]
+    #[cfg(not(feature = "winrt-perception"))]
     TryGetPointerPose: usize,
 }
 #[doc(hidden)]
@@ -487,9 +487,9 @@ unsafe impl ::windows_core::Interface for ISpatialInteractionSourceState3 {
 #[doc(hidden)]
 pub struct ISpatialInteractionSourceState3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Perception_People")]
+    #[cfg(feature = "winrt-perception")]
     pub TryGetHandPose: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception_People"))]
+    #[cfg(not(feature = "winrt-perception"))]
     TryGetHandPose: usize,
 }
 #[doc(hidden)]
@@ -517,9 +517,9 @@ unsafe impl ::windows_core::Interface for ISpatialManipulationCompletedEventArgs
 pub struct ISpatialManipulationCompletedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub InteractionSourceKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SpatialInteractionSourceKind) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub TryGetCumulativeDelta: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception_Spatial"))]
+    #[cfg(not(feature = "winrt-perception"))]
     TryGetCumulativeDelta: usize,
 }
 #[doc(hidden)]
@@ -533,9 +533,9 @@ unsafe impl ::windows_core::Interface for ISpatialManipulationDelta {
 #[doc(hidden)]
 pub struct ISpatialManipulationDelta_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Translation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Translation: usize,
 }
 #[doc(hidden)]
@@ -550,9 +550,9 @@ unsafe impl ::windows_core::Interface for ISpatialManipulationStartedEventArgs {
 pub struct ISpatialManipulationStartedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub InteractionSourceKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SpatialInteractionSourceKind) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub TryGetPointerPose: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception_Spatial"))]
+    #[cfg(not(feature = "winrt-perception"))]
     TryGetPointerPose: usize,
 }
 #[doc(hidden)]
@@ -567,9 +567,9 @@ unsafe impl ::windows_core::Interface for ISpatialManipulationUpdatedEventArgs {
 pub struct ISpatialManipulationUpdatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub InteractionSourceKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SpatialInteractionSourceKind) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub TryGetCumulativeDelta: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception_Spatial"))]
+    #[cfg(not(feature = "winrt-perception"))]
     TryGetCumulativeDelta: usize,
 }
 #[doc(hidden)]
@@ -597,9 +597,9 @@ unsafe impl ::windows_core::Interface for ISpatialNavigationCompletedEventArgs {
 pub struct ISpatialNavigationCompletedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub InteractionSourceKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SpatialInteractionSourceKind) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub NormalizedOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     NormalizedOffset: usize,
 }
 #[doc(hidden)]
@@ -614,9 +614,9 @@ unsafe impl ::windows_core::Interface for ISpatialNavigationStartedEventArgs {
 pub struct ISpatialNavigationStartedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub InteractionSourceKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SpatialInteractionSourceKind) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub TryGetPointerPose: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception_Spatial"))]
+    #[cfg(not(feature = "winrt-perception"))]
     TryGetPointerPose: usize,
     pub IsNavigatingX: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsNavigatingY: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -634,9 +634,9 @@ unsafe impl ::windows_core::Interface for ISpatialNavigationUpdatedEventArgs {
 pub struct ISpatialNavigationUpdatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub InteractionSourceKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SpatialInteractionSourceKind) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub NormalizedOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     NormalizedOffset: usize,
 }
 #[doc(hidden)]
@@ -650,17 +650,17 @@ unsafe impl ::windows_core::Interface for ISpatialPointerInteractionSourcePose {
 #[doc(hidden)]
 pub struct ISpatialPointerInteractionSourcePose_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Position: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub ForwardDirection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ForwardDirection: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub UpDirection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     UpDirection: usize,
 }
 #[doc(hidden)]
@@ -674,9 +674,9 @@ unsafe impl ::windows_core::Interface for ISpatialPointerInteractionSourcePose2 
 #[doc(hidden)]
 pub struct ISpatialPointerInteractionSourcePose2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Orientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Quaternion) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Orientation: usize,
     pub PositionAccuracy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SpatialInteractionSourcePositionAccuracy) -> ::windows_core::HRESULT,
 }
@@ -691,13 +691,13 @@ unsafe impl ::windows_core::Interface for ISpatialPointerPose {
 #[doc(hidden)]
 pub struct ISpatialPointerPose_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Perception")]
+    #[cfg(feature = "winrt-perception")]
     pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception"))]
+    #[cfg(not(feature = "winrt-perception"))]
     Timestamp: usize,
-    #[cfg(feature = "Perception_People")]
+    #[cfg(feature = "winrt-perception")]
     pub Head: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception_People"))]
+    #[cfg(not(feature = "winrt-perception"))]
     Head: usize,
 }
 #[doc(hidden)]
@@ -724,9 +724,9 @@ unsafe impl ::windows_core::Interface for ISpatialPointerPose3 {
 #[doc(hidden)]
 pub struct ISpatialPointerPose3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Perception_People")]
+    #[cfg(feature = "winrt-perception")]
     pub Eyes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception_People"))]
+    #[cfg(not(feature = "winrt-perception"))]
     Eyes: usize,
     pub IsHeadCapturedBySystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
 }
@@ -741,9 +741,9 @@ unsafe impl ::windows_core::Interface for ISpatialPointerPoseStatics {
 #[doc(hidden)]
 pub struct ISpatialPointerPoseStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub TryGetAtTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, timestamp: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception_Spatial"))]
+    #[cfg(not(feature = "winrt-perception"))]
     TryGetAtTimestamp: usize,
 }
 #[doc(hidden)]
@@ -771,9 +771,9 @@ unsafe impl ::windows_core::Interface for ISpatialRecognitionStartedEventArgs {
 pub struct ISpatialRecognitionStartedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub InteractionSourceKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SpatialInteractionSourceKind) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub TryGetPointerPose: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception_Spatial"))]
+    #[cfg(not(feature = "winrt-perception"))]
     TryGetPointerPose: usize,
     pub IsGesturePossible: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, gesture: SpatialGestureSettings, result__: *mut bool) -> ::windows_core::HRESULT,
 }
@@ -789,9 +789,9 @@ unsafe impl ::windows_core::Interface for ISpatialTappedEventArgs {
 pub struct ISpatialTappedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub InteractionSourceKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SpatialInteractionSourceKind) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub TryGetPointerPose: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception_Spatial"))]
+    #[cfg(not(feature = "winrt-perception"))]
     TryGetPointerPose: usize,
     pub TapCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
 }
@@ -1303,7 +1303,7 @@ impl SpatialHoldStartedEventArgs {
             (::windows_core::Interface::vtable(this).InteractionSourceKind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SpatialInteractionSourceKind>(result__)
         }
     }
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub fn TryGetPointerPose<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>>(&self, coordinatesystem: Param0) -> ::windows_core::Result<SpatialPointerPose> {
         let this = self;
         unsafe {
@@ -1484,7 +1484,7 @@ impl SpatialInteractionController {
             (::windows_core::Interface::vtable(this).HasThumbstick)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Devices_Haptics")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SimpleHapticsController(&self) -> ::windows_core::Result<::winrt_devices::Haptics::SimpleHapticsController> {
         let this = self;
         unsafe {
@@ -1513,7 +1513,7 @@ impl SpatialInteractionController {
             (::windows_core::Interface::vtable(this).Version)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u16>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn TryGetRenderableModelAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IRandomAccessStreamWithContentType>> {
         let this = &::windows_core::Interface::cast::<ISpatialInteractionController2>(self)?;
         unsafe {
@@ -1521,7 +1521,7 @@ impl SpatialInteractionController {
             (::windows_core::Interface::vtable(this).TryGetRenderableModelAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IRandomAccessStreamWithContentType>>(result__)
         }
     }
-    #[cfg(feature = "Devices_Power")]
+    #[cfg(feature = "winrt-devices")]
     pub fn TryGetBatteryReport(&self) -> ::windows_core::Result<::winrt_devices::Power::BatteryReport> {
         let this = &::windows_core::Interface::cast::<ISpatialInteractionController3>(self)?;
         unsafe {
@@ -1737,7 +1737,7 @@ impl SpatialInteractionDetectedEventArgs {
             (::windows_core::Interface::vtable(this).InteractionSourceKind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SpatialInteractionSourceKind>(result__)
         }
     }
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub fn TryGetPointerPose<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>>(&self, coordinatesystem: Param0) -> ::windows_core::Result<SpatialPointerPose> {
         let this = self;
         unsafe {
@@ -1901,7 +1901,7 @@ impl SpatialInteractionManager {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveInteractionDetected)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Perception"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub fn GetDetectedSourcesAtTimestamp<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_perception::PerceptionTimestamp>>(&self, timestamp: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<SpatialInteractionSourceState>> {
         let this = self;
         unsafe {
@@ -2084,7 +2084,7 @@ impl SpatialInteractionSource {
             (::windows_core::Interface::vtable(this).Controller)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SpatialInteractionController>(result__)
         }
     }
-    #[cfg(feature = "Perception")]
+    #[cfg(feature = "winrt-perception")]
     pub fn TryGetStateAtTimestamp<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_perception::PerceptionTimestamp>>(&self, timestamp: Param0) -> ::windows_core::Result<SpatialInteractionSourceState> {
         let this = &::windows_core::Interface::cast::<ISpatialInteractionSource2>(self)?;
         unsafe {
@@ -2099,7 +2099,7 @@ impl SpatialInteractionSource {
             (::windows_core::Interface::vtable(this).Handedness)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SpatialInteractionSourceHandedness>(result__)
         }
     }
-    #[cfg(feature = "Perception_People")]
+    #[cfg(feature = "winrt-perception")]
     pub fn TryCreateHandMeshObserver(&self) -> ::windows_core::Result<::winrt_perception::People::HandMeshObserver> {
         let this = &::windows_core::Interface::cast::<ISpatialInteractionSource4>(self)?;
         unsafe {
@@ -2107,7 +2107,7 @@ impl SpatialInteractionSource {
             (::windows_core::Interface::vtable(this).TryCreateHandMeshObserver)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_perception::People::HandMeshObserver>(result__)
         }
     }
-    #[cfg(feature = "Perception_People")]
+    #[cfg(feature = "winrt-perception")]
     pub fn TryCreateHandMeshObserverAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_perception::People::HandMeshObserver>> {
         let this = &::windows_core::Interface::cast::<ISpatialInteractionSource4>(self)?;
         unsafe {
@@ -2350,7 +2350,7 @@ unsafe impl ::windows_core::RuntimeType for SpatialInteractionSourceKind {
 #[repr(transparent)]
 pub struct SpatialInteractionSourceLocation(::windows_core::IUnknown);
 impl SpatialInteractionSourceLocation {
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>> {
         let this = self;
         unsafe {
@@ -2358,7 +2358,7 @@ impl SpatialInteractionSourceLocation {
             (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Velocity(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>> {
         let this = self;
         unsafe {
@@ -2366,7 +2366,7 @@ impl SpatialInteractionSourceLocation {
             (::windows_core::Interface::vtable(this).Velocity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Orientation(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::Numerics::Quaternion>> {
         let this = &::windows_core::Interface::cast::<ISpatialInteractionSourceLocation2>(self)?;
         unsafe {
@@ -2381,7 +2381,7 @@ impl SpatialInteractionSourceLocation {
             (::windows_core::Interface::vtable(this).PositionAccuracy)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SpatialInteractionSourcePositionAccuracy>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AngularVelocity(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>> {
         let this = &::windows_core::Interface::cast::<ISpatialInteractionSourceLocation3>(self)?;
         unsafe {
@@ -2505,7 +2505,7 @@ unsafe impl ::windows_core::RuntimeType for SpatialInteractionSourcePositionAccu
 #[repr(transparent)]
 pub struct SpatialInteractionSourceProperties(::windows_core::IUnknown);
 impl SpatialInteractionSourceProperties {
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-perception"))]
     pub fn TryGetSourceLossMitigationDirection<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>>(&self, coordinatesystem: Param0) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>> {
         let this = self;
         unsafe {
@@ -2520,7 +2520,7 @@ impl SpatialInteractionSourceProperties {
             (::windows_core::Interface::vtable(this).SourceLossRisk)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub fn TryGetLocation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>>(&self, coordinatesystem: Param0) -> ::windows_core::Result<SpatialInteractionSourceLocation> {
         let this = self;
         unsafe {
@@ -2625,7 +2625,7 @@ impl SpatialInteractionSourceState {
             (::windows_core::Interface::vtable(this).IsPressed)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Perception")]
+    #[cfg(feature = "winrt-perception")]
     pub fn Timestamp(&self) -> ::windows_core::Result<::winrt_perception::PerceptionTimestamp> {
         let this = self;
         unsafe {
@@ -2633,7 +2633,7 @@ impl SpatialInteractionSourceState {
             (::windows_core::Interface::vtable(this).Timestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_perception::PerceptionTimestamp>(result__)
         }
     }
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub fn TryGetPointerPose<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>>(&self, coordinatesystem: Param0) -> ::windows_core::Result<SpatialPointerPose> {
         let this = self;
         unsafe {
@@ -2676,7 +2676,7 @@ impl SpatialInteractionSourceState {
             (::windows_core::Interface::vtable(this).ControllerProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SpatialInteractionControllerProperties>(result__)
         }
     }
-    #[cfg(feature = "Perception_People")]
+    #[cfg(feature = "winrt-perception")]
     pub fn TryGetHandPose(&self) -> ::windows_core::Result<::winrt_perception::People::HandPose> {
         let this = &::windows_core::Interface::cast::<ISpatialInteractionSourceState3>(self)?;
         unsafe {
@@ -2850,7 +2850,7 @@ impl SpatialManipulationCompletedEventArgs {
             (::windows_core::Interface::vtable(this).InteractionSourceKind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SpatialInteractionSourceKind>(result__)
         }
     }
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub fn TryGetCumulativeDelta<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>>(&self, coordinatesystem: Param0) -> ::windows_core::Result<SpatialManipulationDelta> {
         let this = self;
         unsafe {
@@ -2934,7 +2934,7 @@ unsafe impl ::core::marker::Sync for SpatialManipulationCompletedEventArgs {}
 #[repr(transparent)]
 pub struct SpatialManipulationDelta(::windows_core::IUnknown);
 impl SpatialManipulationDelta {
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Translation(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -3025,7 +3025,7 @@ impl SpatialManipulationStartedEventArgs {
             (::windows_core::Interface::vtable(this).InteractionSourceKind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SpatialInteractionSourceKind>(result__)
         }
     }
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub fn TryGetPointerPose<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>>(&self, coordinatesystem: Param0) -> ::windows_core::Result<SpatialPointerPose> {
         let this = self;
         unsafe {
@@ -3116,7 +3116,7 @@ impl SpatialManipulationUpdatedEventArgs {
             (::windows_core::Interface::vtable(this).InteractionSourceKind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SpatialInteractionSourceKind>(result__)
         }
     }
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub fn TryGetCumulativeDelta<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>>(&self, coordinatesystem: Param0) -> ::windows_core::Result<SpatialManipulationDelta> {
         let this = self;
         unsafe {
@@ -3290,7 +3290,7 @@ impl SpatialNavigationCompletedEventArgs {
             (::windows_core::Interface::vtable(this).InteractionSourceKind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SpatialInteractionSourceKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn NormalizedOffset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -3381,7 +3381,7 @@ impl SpatialNavigationStartedEventArgs {
             (::windows_core::Interface::vtable(this).InteractionSourceKind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SpatialInteractionSourceKind>(result__)
         }
     }
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub fn TryGetPointerPose<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>>(&self, coordinatesystem: Param0) -> ::windows_core::Result<SpatialPointerPose> {
         let this = self;
         unsafe {
@@ -3493,7 +3493,7 @@ impl SpatialNavigationUpdatedEventArgs {
             (::windows_core::Interface::vtable(this).InteractionSourceKind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SpatialInteractionSourceKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn NormalizedOffset(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -3577,7 +3577,7 @@ unsafe impl ::core::marker::Sync for SpatialNavigationUpdatedEventArgs {}
 #[repr(transparent)]
 pub struct SpatialPointerInteractionSourcePose(::windows_core::IUnknown);
 impl SpatialPointerInteractionSourcePose {
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -3585,7 +3585,7 @@ impl SpatialPointerInteractionSourcePose {
             (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ForwardDirection(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -3593,7 +3593,7 @@ impl SpatialPointerInteractionSourcePose {
             (::windows_core::Interface::vtable(this).ForwardDirection)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn UpDirection(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -3601,7 +3601,7 @@ impl SpatialPointerInteractionSourcePose {
             (::windows_core::Interface::vtable(this).UpDirection)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Orientation(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Quaternion> {
         let this = &::windows_core::Interface::cast::<ISpatialPointerInteractionSourcePose2>(self)?;
         unsafe {
@@ -3692,7 +3692,7 @@ unsafe impl ::core::marker::Sync for SpatialPointerInteractionSourcePose {}
 #[repr(transparent)]
 pub struct SpatialPointerPose(::windows_core::IUnknown);
 impl SpatialPointerPose {
-    #[cfg(feature = "Perception")]
+    #[cfg(feature = "winrt-perception")]
     pub fn Timestamp(&self) -> ::windows_core::Result<::winrt_perception::PerceptionTimestamp> {
         let this = self;
         unsafe {
@@ -3700,7 +3700,7 @@ impl SpatialPointerPose {
             (::windows_core::Interface::vtable(this).Timestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_perception::PerceptionTimestamp>(result__)
         }
     }
-    #[cfg(feature = "Perception_People")]
+    #[cfg(feature = "winrt-perception")]
     pub fn Head(&self) -> ::windows_core::Result<::winrt_perception::People::HeadPose> {
         let this = self;
         unsafe {
@@ -3715,7 +3715,7 @@ impl SpatialPointerPose {
             (::windows_core::Interface::vtable(this).TryGetInteractionSourcePose)(::windows_core::Interface::as_raw(this), source.into_param().abi(), result__.as_mut_ptr()).from_abi::<SpatialPointerInteractionSourcePose>(result__)
         }
     }
-    #[cfg(feature = "Perception_People")]
+    #[cfg(feature = "winrt-perception")]
     pub fn Eyes(&self) -> ::windows_core::Result<::winrt_perception::People::EyesPose> {
         let this = &::windows_core::Interface::cast::<ISpatialPointerPose3>(self)?;
         unsafe {
@@ -3730,7 +3730,7 @@ impl SpatialPointerPose {
             (::windows_core::Interface::vtable(this).IsHeadCapturedBySystem)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub fn TryGetAtTimestamp<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>, Param1: ::windows_core::IntoParam<'a, ::winrt_perception::PerceptionTimestamp>>(coordinatesystem: Param0, timestamp: Param1) -> ::windows_core::Result<SpatialPointerPose> {
         Self::ISpatialPointerPoseStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -3907,7 +3907,7 @@ impl SpatialRecognitionStartedEventArgs {
             (::windows_core::Interface::vtable(this).InteractionSourceKind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SpatialInteractionSourceKind>(result__)
         }
     }
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub fn TryGetPointerPose<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>>(&self, coordinatesystem: Param0) -> ::windows_core::Result<SpatialPointerPose> {
         let this = self;
         unsafe {
@@ -4005,7 +4005,7 @@ impl SpatialTappedEventArgs {
             (::windows_core::Interface::vtable(this).InteractionSourceKind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SpatialInteractionSourceKind>(result__)
         }
     }
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub fn TryGetPointerPose<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>>(&self, coordinatesystem: Param0) -> ::windows_core::Result<SpatialPointerPose> {
         let this = self;
         unsafe {

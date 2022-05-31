@@ -562,15 +562,15 @@ pub const RTCWS_DENIED: RTC_WATCHER_STATE = 4i32;
 pub const RTCWS_PROMPT: RTC_WATCHER_STATE = 5i32;
 pub const STATUS_SEVERITY_RTC_ERROR: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 pub struct TRANSPORT_SETTING {
     pub SettingId: ::win32_networking_sys::WinSock::TRANSPORT_SETTING_ID,
     pub Length: *mut u32,
     pub Value: *mut u8,
 }
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::marker::Copy for TRANSPORT_SETTING {}
-#[cfg(feature = "Win32_Networking_WinSock")]
+#[cfg(feature = "win32-networking-sys")]
 impl ::core::clone::Clone for TRANSPORT_SETTING {
     fn clone(&self) -> Self {
         *self

@@ -112,7 +112,7 @@ pub unsafe fn AccSetRunningUtilityState<'a, Param0: ::windows_core::IntoParam<'a
 }
 pub const AcceleratorKey_Property_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x514865df_2557_4cb9_aeed_6ced084ce52c);
 pub const AccessKey_Property_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x06827b12_a7f9_4a15_917c_ffa5ad3eb0a7);
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn AccessibleChildren<'a, Param0: ::windows_core::IntoParam<'a, IAccessible>>(pacccontainer: Param0, ichildstart: i32, rgvarchildren: &mut [::win32_system::Com::VARIANT], pcobtained: *mut i32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -126,7 +126,7 @@ pub unsafe fn AccessibleChildren<'a, Param0: ::windows_core::IntoParam<'a, IAcce
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn AccessibleObjectFromEvent<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0, dwid: u32, dwchildid: u32, ppacc: *mut ::core::option::Option<IAccessible>, pvarchild: *mut ::win32_system::Com::VARIANT) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -140,7 +140,7 @@ pub unsafe fn AccessibleObjectFromEvent<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn AccessibleObjectFromPoint<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::POINT>>(ptscreen: Param0, ppacc: *mut ::core::option::Option<IAccessible>, pvarchild: *mut ::win32_system::Com::VARIANT) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1366,7 +1366,7 @@ pub struct IAccIdentity_Vtbl {
 #[repr(transparent)]
 pub struct IAccPropServer(::windows_core::IUnknown);
 impl IAccPropServer {
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetPropValue<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, pidstring: &[u8], idprop: Param2, pvarvalue: *mut ::win32_system::Com::VARIANT, pfhasprop: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetPropValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(pidstring)), pidstring.len() as _, idprop.into_param().abi(), ::core::mem::transmute(pvarvalue), ::core::mem::transmute(pfhasprop)).ok()
     }
@@ -1415,15 +1415,15 @@ unsafe impl ::windows_core::Interface for IAccPropServer {
 #[doc(hidden)]
 pub struct IAccPropServer_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub GetPropValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pidstring: *const u8, dwidstringlen: u32, idprop: ::windows_core::GUID, pvarvalue: *mut ::win32_system::Com::VARIANT, pfhasprop: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     GetPropValue: usize,
 }
 #[repr(transparent)]
 pub struct IAccPropServices(::windows_core::IUnknown);
 impl IAccPropServices {
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn SetPropValue<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param3: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, pidstring: &[u8], idprop: Param2, var: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetPropValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(pidstring)), pidstring.len() as _, idprop.into_param().abi(), var.into_param().abi()).ok()
     }
@@ -1433,7 +1433,7 @@ impl IAccPropServices {
     pub unsafe fn ClearProps(&self, pidstring: &[u8], paprops: &[::windows_core::GUID]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ClearProps)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(pidstring)), pidstring.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(paprops)), paprops.len() as _).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn SetHwndProp<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param3: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param4: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, hwnd: Param0, idobject: u32, idchild: u32, idprop: Param3, var: Param4) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetHwndProp)(::windows_core::Interface::as_raw(self), hwnd.into_param().abi(), ::core::mem::transmute(idobject), ::core::mem::transmute(idchild), idprop.into_param().abi(), var.into_param().abi()).ok()
     }
@@ -1452,27 +1452,27 @@ impl IAccPropServices {
     pub unsafe fn DecomposeHwndIdentityString(&self, pidstring: &[u8], phwnd: *mut ::win32_foundation::HWND, pidobject: *mut u32, pidchild: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).DecomposeHwndIdentityString)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(pidstring)), pidstring.len() as _, ::core::mem::transmute(phwnd), ::core::mem::transmute(pidobject), ::core::mem::transmute(pidchild)).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_WindowsAndMessaging"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system", feature = "win32-ui"))]
     pub unsafe fn SetHmenuProp<'a, Param0: ::windows_core::IntoParam<'a, super::WindowsAndMessaging::HMENU>, Param2: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param3: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, hmenu: Param0, idchild: u32, idprop: Param2, var: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetHmenuProp)(::windows_core::Interface::as_raw(self), hmenu.into_param().abi(), ::core::mem::transmute(idchild), idprop.into_param().abi(), var.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn SetHmenuPropStr<'a, Param0: ::windows_core::IntoParam<'a, super::WindowsAndMessaging::HMENU>, Param2: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, hmenu: Param0, idchild: u32, idprop: Param2, str: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetHmenuPropStr)(::windows_core::Interface::as_raw(self), hmenu.into_param().abi(), ::core::mem::transmute(idchild), idprop.into_param().abi(), str.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn SetHmenuPropServer<'a, Param0: ::windows_core::IntoParam<'a, super::WindowsAndMessaging::HMENU>, Param4: ::windows_core::IntoParam<'a, IAccPropServer>>(&self, hmenu: Param0, idchild: u32, paprops: &[::windows_core::GUID], pserver: Param4, annoscope: AnnoScope) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetHmenuPropServer)(::windows_core::Interface::as_raw(self), hmenu.into_param().abi(), ::core::mem::transmute(idchild), ::core::mem::transmute(::windows_core::as_ptr_or_null(paprops)), paprops.len() as _, pserver.into_param().abi(), ::core::mem::transmute(annoscope)).ok()
     }
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn ClearHmenuProps<'a, Param0: ::windows_core::IntoParam<'a, super::WindowsAndMessaging::HMENU>>(&self, hmenu: Param0, idchild: u32, paprops: &[::windows_core::GUID]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ClearHmenuProps)(::windows_core::Interface::as_raw(self), hmenu.into_param().abi(), ::core::mem::transmute(idchild), ::core::mem::transmute(::windows_core::as_ptr_or_null(paprops)), paprops.len() as _).ok()
     }
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn ComposeHmenuIdentityString<'a, Param0: ::windows_core::IntoParam<'a, super::WindowsAndMessaging::HMENU>>(&self, hmenu: Param0, idchild: u32, ppidstring: *mut *mut u8, pdwidstringlen: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ComposeHmenuIdentityString)(::windows_core::Interface::as_raw(self), hmenu.into_param().abi(), ::core::mem::transmute(idchild), ::core::mem::transmute(ppidstring), ::core::mem::transmute(pdwidstringlen)).ok()
     }
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn DecomposeHmenuIdentityString(&self, pidstring: &[u8], phmenu: *mut super::WindowsAndMessaging::HMENU, pidchild: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).DecomposeHmenuIdentityString)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(pidstring)), pidstring.len() as _, ::core::mem::transmute(phmenu), ::core::mem::transmute(pidchild)).ok()
     }
@@ -1521,52 +1521,52 @@ unsafe impl ::windows_core::Interface for IAccPropServices {
 #[doc(hidden)]
 pub struct IAccPropServices_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub SetPropValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pidstring: *const u8, dwidstringlen: u32, idprop: ::windows_core::GUID, var: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     SetPropValue: usize,
     pub SetPropServer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pidstring: *const u8, dwidstringlen: u32, paprops: *const ::windows_core::GUID, cprops: i32, pserver: ::windows_core::RawPtr, annoscope: AnnoScope) -> ::windows_core::HRESULT,
     pub ClearProps: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pidstring: *const u8, dwidstringlen: u32, paprops: *const ::windows_core::GUID, cprops: i32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub SetHwndProp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: ::win32_foundation::HWND, idobject: u32, idchild: u32, idprop: ::windows_core::GUID, var: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     SetHwndProp: usize,
     pub SetHwndPropStr: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: ::win32_foundation::HWND, idobject: u32, idchild: u32, idprop: ::windows_core::GUID, str: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     pub SetHwndPropServer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: ::win32_foundation::HWND, idobject: u32, idchild: u32, paprops: *const ::windows_core::GUID, cprops: i32, pserver: ::windows_core::RawPtr, annoscope: AnnoScope) -> ::windows_core::HRESULT,
     pub ClearHwndProps: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: ::win32_foundation::HWND, idobject: u32, idchild: u32, paprops: *const ::windows_core::GUID, cprops: i32) -> ::windows_core::HRESULT,
     pub ComposeHwndIdentityString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: ::win32_foundation::HWND, idobject: u32, idchild: u32, ppidstring: *mut *mut u8, pdwidstringlen: *mut u32) -> ::windows_core::HRESULT,
     pub DecomposeHwndIdentityString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pidstring: *const u8, dwidstringlen: u32, phwnd: *mut ::win32_foundation::HWND, pidobject: *mut u32, pidchild: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_WindowsAndMessaging"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system", feature = "win32-ui"))]
     pub SetHmenuProp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmenu: super::WindowsAndMessaging::HMENU, idchild: u32, idprop: ::windows_core::GUID, var: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_WindowsAndMessaging")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system", feature = "win32-ui")))]
     SetHmenuProp: usize,
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui")]
     pub SetHmenuPropStr: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmenu: super::WindowsAndMessaging::HMENU, idchild: u32, idprop: ::windows_core::GUID, str: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_UI_WindowsAndMessaging"))]
+    #[cfg(not(feature = "win32-ui"))]
     SetHmenuPropStr: usize,
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui")]
     pub SetHmenuPropServer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmenu: super::WindowsAndMessaging::HMENU, idchild: u32, paprops: *const ::windows_core::GUID, cprops: i32, pserver: ::windows_core::RawPtr, annoscope: AnnoScope) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_UI_WindowsAndMessaging"))]
+    #[cfg(not(feature = "win32-ui"))]
     SetHmenuPropServer: usize,
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui")]
     pub ClearHmenuProps: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmenu: super::WindowsAndMessaging::HMENU, idchild: u32, paprops: *const ::windows_core::GUID, cprops: i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_UI_WindowsAndMessaging"))]
+    #[cfg(not(feature = "win32-ui"))]
     ClearHmenuProps: usize,
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui")]
     pub ComposeHmenuIdentityString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmenu: super::WindowsAndMessaging::HMENU, idchild: u32, ppidstring: *mut *mut u8, pdwidstringlen: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_UI_WindowsAndMessaging"))]
+    #[cfg(not(feature = "win32-ui"))]
     ComposeHmenuIdentityString: usize,
-    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    #[cfg(feature = "win32-ui")]
     pub DecomposeHmenuIdentityString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pidstring: *const u8, dwidstringlen: u32, phmenu: *mut super::WindowsAndMessaging::HMENU, pidchild: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_UI_WindowsAndMessaging"))]
+    #[cfg(not(feature = "win32-ui"))]
     DecomposeHmenuIdentityString: usize,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(transparent)]
 pub struct IAccessible(::windows_core::IUnknown);
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl IAccessible {
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn accParent(&self) -> ::windows_core::Result<::win32_system::Com::IDispatch> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).accParent)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IDispatch>(result__)
@@ -1575,254 +1575,254 @@ impl IAccessible {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).accChildCount)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn get_accChild<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<::win32_system::Com::IDispatch> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).get_accChild)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IDispatch>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn get_accName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<::win32_foundation::BSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).get_accName)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn get_accValue<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<::win32_foundation::BSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).get_accValue)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn get_accDescription<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<::win32_foundation::BSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).get_accDescription)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn get_accRole<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).get_accRole)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn get_accState<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).get_accState)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn get_accHelp<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<::win32_foundation::BSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).get_accHelp)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn get_accHelpTopic<'a, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, pszhelpfile: *mut ::win32_foundation::BSTR, varchild: Param1, pidtopic: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).get_accHelpTopic)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pszhelpfile), varchild.into_param().abi(), ::core::mem::transmute(pidtopic)).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn get_accKeyboardShortcut<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<::win32_foundation::BSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).get_accKeyboardShortcut)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn accFocus(&self) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).accFocus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn accSelection(&self) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).accSelection)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn get_accDefaultAction<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<::win32_foundation::BSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).get_accDefaultAction)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn accSelect<'a, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, flagsselect: i32, varchild: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).accSelect)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(flagsselect), varchild.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn accLocation<'a, Param4: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, pxleft: *mut i32, pytop: *mut i32, pcxwidth: *mut i32, pcyheight: *mut i32, varchild: Param4) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).accLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pxleft), ::core::mem::transmute(pytop), ::core::mem::transmute(pcxwidth), ::core::mem::transmute(pcyheight), varchild.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn accNavigate<'a, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, navdir: i32, varstart: Param1) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).accNavigate)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(navdir), varstart.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn accHitTest(&self, xleft: i32, ytop: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).accHitTest)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(xleft), ::core::mem::transmute(ytop), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn accDoDefaultAction<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).accDoDefaultAction)(::windows_core::Interface::as_raw(self), varchild.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn put_accName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, varchild: Param0, szname: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).put_accName)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), szname.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn put_accValue<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, varchild: Param0, szvalue: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).put_accValue)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), szvalue.into_param().abi()).ok()
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IAccessible> for ::windows_core::IUnknown {
     fn from(value: IAccessible) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IAccessible> for ::windows_core::IUnknown {
     fn from(value: &IAccessible) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IAccessible {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IAccessible {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<IAccessible> for ::win32_system::Com::IDispatch {
     fn from(value: IAccessible) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::convert::From<&IAccessible> for ::win32_system::Com::IDispatch {
     fn from(value: &IAccessible) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IAccessible {
     fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IAccessible {
     fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for IAccessible {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for IAccessible {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for IAccessible {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for IAccessible {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("IAccessible").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Interface for IAccessible {
     type Vtable = IAccessible_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x618736e0_3c3d_11cf_810c_00aa00389b71);
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IAccessible_Vtbl {
     pub base__: ::win32_system::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub accParent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppdispparent: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     accParent: usize,
     pub accChildCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcountchildren: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub get_accChild: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, varchild: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, ppdispchild: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     get_accChild: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub get_accName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, varchild: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, pszname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     get_accName: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub get_accValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, varchild: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, pszvalue: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     get_accValue: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub get_accDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, varchild: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, pszdescription: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     get_accDescription: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub get_accRole: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, varchild: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, pvarrole: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     get_accRole: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub get_accState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, varchild: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, pvarstate: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     get_accState: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub get_accHelp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, varchild: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, pszhelp: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     get_accHelp: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub get_accHelpTopic: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszhelpfile: *mut ::win32_foundation::BSTR, varchild: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, pidtopic: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     get_accHelpTopic: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub get_accKeyboardShortcut: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, varchild: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, pszkeyboardshortcut: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     get_accKeyboardShortcut: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub accFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvarchild: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     accFocus: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub accSelection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvarchildren: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     accSelection: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub get_accDefaultAction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, varchild: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, pszdefaultaction: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     get_accDefaultAction: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub accSelect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, flagsselect: i32, varchild: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     accSelect: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub accLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pxleft: *mut i32, pytop: *mut i32, pcxwidth: *mut i32, pcyheight: *mut i32, varchild: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     accLocation: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub accNavigate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, navdir: i32, varstart: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, pvarendupat: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     accNavigate: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub accHitTest: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xleft: i32, ytop: i32, pvarchild: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     accHitTest: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub accDoDefaultAction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, varchild: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     accDoDefaultAction: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub put_accName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, varchild: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, szname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     put_accName: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub put_accValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, varchild: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, szvalue: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     put_accValue: usize,
 }
 #[repr(transparent)]
@@ -1832,11 +1832,11 @@ impl IAccessibleEx {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetObjectForChild)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(idchild), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IAccessibleEx>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetIAccessiblePair(&self, ppacc: *mut ::core::option::Option<IAccessible>, pidchild: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetIAccessiblePair)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppacc), ::core::mem::transmute(pidchild)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetRuntimeId(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetRuntimeId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -1891,20 +1891,20 @@ unsafe impl ::windows_core::Interface for IAccessibleEx {
 pub struct IAccessibleEx_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetObjectForChild: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, idchild: i32, pretval: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetIAccessiblePair: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppacc: *mut ::windows_core::RawPtr, pidchild: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetIAccessiblePair: usize,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetRuntimeId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetRuntimeId: usize,
     pub ConvertReturnedElement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pin: ::windows_core::RawPtr, ppretvalout: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IAccessibleHandler(::windows_core::IUnknown);
 impl IAccessibleHandler {
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn AccessibleObjectFromID(&self, hwnd: i32, lobjectid: i32) -> ::windows_core::Result<IAccessible> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).AccessibleObjectFromID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hwnd), ::core::mem::transmute(lobjectid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IAccessible>(result__)
@@ -1954,15 +1954,15 @@ unsafe impl ::windows_core::Interface for IAccessibleHandler {
 #[doc(hidden)]
 pub struct IAccessibleHandler_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub AccessibleObjectFromID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: i32, lobjectid: i32, piaccessible: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     AccessibleObjectFromID: usize,
 }
 #[repr(transparent)]
 pub struct IAccessibleHostingElementProviders(::windows_core::IUnknown);
 impl IAccessibleHostingElementProviders {
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetEmbeddedFragmentRoots(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetEmbeddedFragmentRoots)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -2016,9 +2016,9 @@ unsafe impl ::windows_core::Interface for IAccessibleHostingElementProviders {
 #[doc(hidden)]
 pub struct IAccessibleHostingElementProviders_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetEmbeddedFragmentRoots: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetEmbeddedFragmentRoots: usize,
     pub GetObjectIdForProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pprovider: ::windows_core::RawPtr, pidobject: *mut i32) -> ::windows_core::HRESULT,
 }
@@ -2032,12 +2032,12 @@ impl IAccessibleWindowlessSite {
     pub unsafe fn ReleaseObjectIdRange<'a, Param1: ::windows_core::IntoParam<'a, IAccessibleHandler>>(&self, rangebase: i32, prangeowner: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ReleaseObjectIdRange)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(rangebase), prangeowner.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn QueryObjectIdRanges<'a, Param0: ::windows_core::IntoParam<'a, IAccessibleHandler>>(&self, prangesowner: Param0) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).QueryObjectIdRanges)(::windows_core::Interface::as_raw(self), prangesowner.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetParentAccessible(&self) -> ::windows_core::Result<IAccessible> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetParentAccessible)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IAccessible>(result__)
@@ -2089,13 +2089,13 @@ pub struct IAccessibleWindowlessSite_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub AcquireObjectIdRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, rangesize: i32, prangeowner: ::windows_core::RawPtr, prangebase: *mut i32) -> ::windows_core::HRESULT,
     pub ReleaseObjectIdRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, rangebase: i32, prangeowner: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub QueryObjectIdRanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, prangesowner: ::windows_core::RawPtr, psaranges: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     QueryObjectIdRanges: usize,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetParentAccessible: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppparent: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetParentAccessible: usize,
 }
 #[repr(transparent)]
@@ -2295,12 +2295,12 @@ impl IDragProvider {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).DropEffect)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn DropEffects(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).DropEffects)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetGrabbedItems(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetGrabbedItems)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -2352,13 +2352,13 @@ pub struct IDragProvider_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub IsGrabbed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub DropEffect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub DropEffects: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     DropEffects: usize,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetGrabbedItems: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetGrabbedItems: usize,
 }
 #[repr(transparent)]
@@ -2368,7 +2368,7 @@ impl IDropTargetProvider {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).DropTargetEffect)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn DropTargetEffects(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).DropTargetEffects)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -2419,9 +2419,9 @@ unsafe impl ::windows_core::Interface for IDropTargetProvider {
 pub struct IDropTargetProvider_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub DropTargetEffect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub DropTargetEffects: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     DropTargetEffects: usize,
 }
 #[repr(transparent)]
@@ -2682,7 +2682,7 @@ pub struct IInvokeProvider_Vtbl {
 #[repr(transparent)]
 pub struct IItemContainerProvider(::windows_core::IUnknown);
 impl IItemContainerProvider {
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn FindItemByProperty<'a, Param0: ::windows_core::IntoParam<'a, IRawElementProviderSimple>, Param2: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, pstartafter: Param0, propertyid: i32, value: Param2) -> ::windows_core::Result<IRawElementProviderSimple> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).FindItemByProperty)(::windows_core::Interface::as_raw(self), pstartafter.into_param().abi(), ::core::mem::transmute(propertyid), value.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IRawElementProviderSimple>(result__)
@@ -2732,9 +2732,9 @@ unsafe impl ::windows_core::Interface for IItemContainerProvider {
 #[doc(hidden)]
 pub struct IItemContainerProvider_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub FindItemByProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstartafter: ::windows_core::RawPtr, propertyid: i32, value: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, pfound: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     FindItemByProperty: usize,
 }
 #[repr(transparent)]
@@ -2749,7 +2749,7 @@ impl ILegacyIAccessibleProvider {
     pub unsafe fn SetValue<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, szvalue: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetValue)(::windows_core::Interface::as_raw(self), szvalue.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetIAccessible(&self) -> ::windows_core::Result<IAccessible> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetIAccessible)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IAccessible>(result__)
@@ -2786,7 +2786,7 @@ impl ILegacyIAccessibleProvider {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).KeyboardShortcut)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetSelection(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetSelection)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -2843,9 +2843,9 @@ pub struct ILegacyIAccessibleProvider_Vtbl {
     pub Select: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, flagsselect: i32) -> ::windows_core::HRESULT,
     pub DoDefaultAction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub SetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, szvalue: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetIAccessible: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppaccessible: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetIAccessible: usize,
     pub ChildId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut i32) -> ::windows_core::HRESULT,
     pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
@@ -2855,9 +2855,9 @@ pub struct ILegacyIAccessibleProvider_Vtbl {
     pub State: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwstate: *mut u32) -> ::windows_core::HRESULT,
     pub Help: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszhelp: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub KeyboardShortcut: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszkeyboardshortcut: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetSelection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvarselectedchildren: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetSelection: usize,
     pub DefaultAction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszdefaultaction: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
 }
@@ -2875,7 +2875,7 @@ impl IMultipleViewProvider {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).CurrentView)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetSupportedViews(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetSupportedViews)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -2928,9 +2928,9 @@ pub struct IMultipleViewProvider_Vtbl {
     pub GetViewName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, viewid: i32, pretval: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub SetCurrentView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, viewid: i32) -> ::windows_core::HRESULT,
     pub CurrentView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetSupportedViews: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetSupportedViews: usize,
 }
 #[repr(transparent)]
@@ -3043,14 +3043,14 @@ pub struct IProxyProviderWinEventHandler_Vtbl {
 #[repr(transparent)]
 pub struct IProxyProviderWinEventSink(::windows_core::IUnknown);
 impl IProxyProviderWinEventSink {
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn AddAutomationPropertyChangedEvent<'a, Param0: ::windows_core::IntoParam<'a, IRawElementProviderSimple>, Param2: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, pprovider: Param0, id: i32, newvalue: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AddAutomationPropertyChangedEvent)(::windows_core::Interface::as_raw(self), pprovider.into_param().abi(), ::core::mem::transmute(id), newvalue.into_param().abi()).ok()
     }
     pub unsafe fn AddAutomationEvent<'a, Param0: ::windows_core::IntoParam<'a, IRawElementProviderSimple>>(&self, pprovider: Param0, id: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AddAutomationEvent)(::windows_core::Interface::as_raw(self), pprovider.into_param().abi(), ::core::mem::transmute(id)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn AddStructureChangedEvent<'a, Param0: ::windows_core::IntoParam<'a, IRawElementProviderSimple>>(&self, pprovider: Param0, structurechangetype: StructureChangeType, runtimeid: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AddStructureChangedEvent)(::windows_core::Interface::as_raw(self), pprovider.into_param().abi(), ::core::mem::transmute(structurechangetype), ::core::mem::transmute(runtimeid)).ok()
     }
@@ -3099,14 +3099,14 @@ unsafe impl ::windows_core::Interface for IProxyProviderWinEventSink {
 #[doc(hidden)]
 pub struct IProxyProviderWinEventSink_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub AddAutomationPropertyChangedEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pprovider: ::windows_core::RawPtr, id: i32, newvalue: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     AddAutomationPropertyChangedEvent: usize,
     pub AddAutomationEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pprovider: ::windows_core::RawPtr, id: i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub AddStructureChangedEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pprovider: ::windows_core::RawPtr, structurechangetype: StructureChangeType, runtimeid: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     AddStructureChangedEvent: usize,
 }
 #[repr(transparent)]
@@ -3195,11 +3195,11 @@ pub struct IRangeValueProvider_Vtbl {
 #[repr(transparent)]
 pub struct IRawElementProviderAdviseEvents(::windows_core::IUnknown);
 impl IRawElementProviderAdviseEvents {
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn AdviseEventAdded(&self, eventid: i32, propertyids: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AdviseEventAdded)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(eventid), ::core::mem::transmute(propertyids)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn AdviseEventRemoved(&self, eventid: i32, propertyids: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AdviseEventRemoved)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(eventid), ::core::mem::transmute(propertyids)).ok()
     }
@@ -3248,13 +3248,13 @@ unsafe impl ::windows_core::Interface for IRawElementProviderAdviseEvents {
 #[doc(hidden)]
 pub struct IRawElementProviderAdviseEvents_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub AdviseEventAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventid: i32, propertyids: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     AdviseEventAdded: usize,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub AdviseEventRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventid: i32, propertyids: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     AdviseEventRemoved: usize,
 }
 #[repr(transparent)]
@@ -3264,7 +3264,7 @@ impl IRawElementProviderFragment {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).Navigate)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(direction), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IRawElementProviderFragment>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetRuntimeId(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetRuntimeId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -3273,7 +3273,7 @@ impl IRawElementProviderFragment {
         let mut result__ = ::core::mem::MaybeUninit::<UiaRect>::zeroed();
         (::windows_core::Interface::vtable(self).BoundingRectangle)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<UiaRect>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetEmbeddedFragmentRoots(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetEmbeddedFragmentRoots)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -3331,14 +3331,14 @@ unsafe impl ::windows_core::Interface for IRawElementProviderFragment {
 pub struct IRawElementProviderFragment_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub Navigate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, direction: NavigateDirection, pretval: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetRuntimeId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetRuntimeId: usize,
     pub BoundingRectangle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut UiaRect) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetEmbeddedFragmentRoots: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetEmbeddedFragmentRoots: usize,
     pub SetFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub FragmentRoot: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -3405,7 +3405,7 @@ pub struct IRawElementProviderFragmentRoot_Vtbl {
 #[repr(transparent)]
 pub struct IRawElementProviderHostingAccessibles(::windows_core::IUnknown);
 impl IRawElementProviderHostingAccessibles {
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetEmbeddedAccessibles(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetEmbeddedAccessibles)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -3455,9 +3455,9 @@ unsafe impl ::windows_core::Interface for IRawElementProviderHostingAccessibles 
 #[doc(hidden)]
 pub struct IRawElementProviderHostingAccessibles_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetEmbeddedAccessibles: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetEmbeddedAccessibles: usize,
 }
 #[repr(transparent)]
@@ -3525,7 +3525,7 @@ impl IRawElementProviderSimple {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).GetPatternProvider)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(patternid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetPropertyValue(&self, propertyid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).GetPropertyValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
@@ -3581,9 +3581,9 @@ pub struct IRawElementProviderSimple_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub ProviderOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut ProviderOptions) -> ::windows_core::HRESULT,
     pub GetPatternProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, patternid: i32, pretval: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub GetPropertyValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: i32, pretval: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     GetPropertyValue: usize,
     pub HostRawElementProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -3598,7 +3598,7 @@ impl IRawElementProviderSimple2 {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetPatternProvider)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(patternid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetPropertyValue(&self, propertyid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetPropertyValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
@@ -3688,7 +3688,7 @@ impl IRawElementProviderSimple3 {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.GetPatternProvider)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(patternid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetPropertyValue(&self, propertyid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.GetPropertyValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
@@ -3700,7 +3700,7 @@ impl IRawElementProviderSimple3 {
     pub unsafe fn ShowContextMenu(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.ShowContextMenu)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetMetadataValue(&self, targetid: i32, metadataid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).GetMetadataValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(targetid), ::core::mem::transmute(metadataid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
@@ -3790,9 +3790,9 @@ unsafe impl ::windows_core::Interface for IRawElementProviderSimple3 {
 #[doc(hidden)]
 pub struct IRawElementProviderSimple3_Vtbl {
     pub base__: IRawElementProviderSimple2_Vtbl,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub GetMetadataValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, targetid: i32, metadataid: i32, returnval: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     GetMetadataValue: usize,
 }
 #[repr(transparent)]
@@ -3802,7 +3802,7 @@ impl IRawElementProviderWindowlessSite {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetAdjacentFragment)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(direction), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IRawElementProviderFragment>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetRuntimeIdPrefix(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetRuntimeIdPrefix)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -3853,9 +3853,9 @@ unsafe impl ::windows_core::Interface for IRawElementProviderWindowlessSite {
 pub struct IRawElementProviderWindowlessSite_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetAdjacentFragment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, direction: NavigateDirection, ppparent: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetRuntimeIdPrefix: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetRuntimeIdPrefix: usize,
 }
 #[repr(transparent)]
@@ -4183,7 +4183,7 @@ pub struct ISelectionItemProvider_Vtbl {
 #[repr(transparent)]
 pub struct ISelectionProvider(::windows_core::IUnknown);
 impl ISelectionProvider {
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetSelection(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetSelection)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -4241,9 +4241,9 @@ unsafe impl ::windows_core::Interface for ISelectionProvider {
 #[doc(hidden)]
 pub struct ISelectionProvider_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetSelection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetSelection: usize,
     pub CanSelectMultiple: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub IsSelectionRequired: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
@@ -4251,7 +4251,7 @@ pub struct ISelectionProvider_Vtbl {
 #[repr(transparent)]
 pub struct ISelectionProvider2(::windows_core::IUnknown);
 impl ISelectionProvider2 {
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetSelection(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetSelection)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -4357,12 +4357,12 @@ impl ISpreadsheetItemProvider {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).Formula)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetAnnotationObjects(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetAnnotationObjects)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetAnnotationTypes(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetAnnotationTypes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -4413,13 +4413,13 @@ unsafe impl ::windows_core::Interface for ISpreadsheetItemProvider {
 pub struct ISpreadsheetItemProvider_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub Formula: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetAnnotationObjects: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetAnnotationObjects: usize,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetAnnotationTypes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetAnnotationTypes: usize,
 }
 #[repr(transparent)]
@@ -4620,12 +4620,12 @@ pub struct ISynchronizedInputProvider_Vtbl {
 #[repr(transparent)]
 pub struct ITableItemProvider(::windows_core::IUnknown);
 impl ITableItemProvider {
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetRowHeaderItems(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetRowHeaderItems)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetColumnHeaderItems(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetColumnHeaderItems)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -4675,24 +4675,24 @@ unsafe impl ::windows_core::Interface for ITableItemProvider {
 #[doc(hidden)]
 pub struct ITableItemProvider_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetRowHeaderItems: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetRowHeaderItems: usize,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetColumnHeaderItems: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetColumnHeaderItems: usize,
 }
 #[repr(transparent)]
 pub struct ITableProvider(::windows_core::IUnknown);
 impl ITableProvider {
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetRowHeaders(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetRowHeaders)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetColumnHeaders(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetColumnHeaders)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -4746,13 +4746,13 @@ unsafe impl ::windows_core::Interface for ITableProvider {
 #[doc(hidden)]
 pub struct ITableProvider_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetRowHeaders: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetRowHeaders: usize,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetColumnHeaders: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetColumnHeaders: usize,
     pub RowOrColumnMajor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut RowOrColumnMajor) -> ::windows_core::HRESULT,
 }
@@ -4818,12 +4818,12 @@ pub struct ITextChildProvider_Vtbl {
 #[repr(transparent)]
 pub struct ITextEditProvider(::windows_core::IUnknown);
 impl ITextEditProvider {
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetSelection(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetSelection)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetVisibleRanges(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetVisibleRanges)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -4923,12 +4923,12 @@ pub struct ITextEditProvider_Vtbl {
 #[repr(transparent)]
 pub struct ITextProvider(::windows_core::IUnknown);
 impl ITextProvider {
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetSelection(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetSelection)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetVisibleRanges(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetVisibleRanges)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -4994,13 +4994,13 @@ unsafe impl ::windows_core::Interface for ITextProvider {
 #[doc(hidden)]
 pub struct ITextProvider_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetSelection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetSelection: usize,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetVisibleRanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetVisibleRanges: usize,
     pub RangeFromChild: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, childelement: ::windows_core::RawPtr, pretval: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RangeFromPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, point: UiaPoint, pretval: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -5010,12 +5010,12 @@ pub struct ITextProvider_Vtbl {
 #[repr(transparent)]
 pub struct ITextProvider2(::windows_core::IUnknown);
 impl ITextProvider2 {
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetSelection(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetSelection)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetVisibleRanges(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetVisibleRanges)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -5129,7 +5129,7 @@ impl ITextRangeProvider {
     pub unsafe fn ExpandToEnclosingUnit(&self, unit: TextUnit) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ExpandToEnclosingUnit)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(unit)).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn FindAttribute<'a, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, attributeid: i32, val: Param1, backward: Param2) -> ::windows_core::Result<ITextRangeProvider> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).FindAttribute)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(attributeid), val.into_param().abi(), backward.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ITextRangeProvider>(result__)
@@ -5138,12 +5138,12 @@ impl ITextRangeProvider {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).FindText)(::windows_core::Interface::as_raw(self), text.into_param().abi(), backward.into_param().abi(), ignorecase.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ITextRangeProvider>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetAttributeValue(&self, attributeid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).GetAttributeValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(attributeid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetBoundingRectangles(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetBoundingRectangles)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -5179,7 +5179,7 @@ impl ITextRangeProvider {
     pub unsafe fn ScrollIntoView<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, aligntotop: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ScrollIntoView)(::windows_core::Interface::as_raw(self), aligntotop.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetChildren(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetChildren)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -5233,18 +5233,18 @@ pub struct ITextRangeProvider_Vtbl {
     pub Compare: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, range: ::windows_core::RawPtr, pretval: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub CompareEndpoints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, endpoint: TextPatternRangeEndpoint, targetrange: ::windows_core::RawPtr, targetendpoint: TextPatternRangeEndpoint, pretval: *mut i32) -> ::windows_core::HRESULT,
     pub ExpandToEnclosingUnit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextUnit) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub FindAttribute: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, attributeid: i32, val: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, backward: ::win32_foundation::BOOL, pretval: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     FindAttribute: usize,
     pub FindText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, text: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, backward: ::win32_foundation::BOOL, ignorecase: ::win32_foundation::BOOL, pretval: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub GetAttributeValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, attributeid: i32, pretval: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     GetAttributeValue: usize,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetBoundingRectangles: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetBoundingRectangles: usize,
     pub GetEnclosingElement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, maxlength: i32, pretval: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
@@ -5255,9 +5255,9 @@ pub struct ITextRangeProvider_Vtbl {
     pub AddToSelection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub RemoveFromSelection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub ScrollIntoView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, aligntotop: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetChildren: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetChildren: usize,
 }
 #[repr(transparent)]
@@ -5278,7 +5278,7 @@ impl ITextRangeProvider2 {
     pub unsafe fn ExpandToEnclosingUnit(&self, unit: TextUnit) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.ExpandToEnclosingUnit)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(unit)).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn FindAttribute<'a, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, attributeid: i32, val: Param1, backward: Param2) -> ::windows_core::Result<ITextRangeProvider> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.FindAttribute)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(attributeid), val.into_param().abi(), backward.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ITextRangeProvider>(result__)
@@ -5287,12 +5287,12 @@ impl ITextRangeProvider2 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.FindText)(::windows_core::Interface::as_raw(self), text.into_param().abi(), backward.into_param().abi(), ignorecase.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ITextRangeProvider>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetAttributeValue(&self, attributeid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetAttributeValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(attributeid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetBoundingRectangles(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetBoundingRectangles)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -5328,7 +5328,7 @@ impl ITextRangeProvider2 {
     pub unsafe fn ScrollIntoView<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, aligntotop: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.ScrollIntoView)(::windows_core::Interface::as_raw(self), aligntotop.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetChildren(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetChildren)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -5662,7 +5662,7 @@ impl IUIAutomation {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
         (::windows_core::Interface::vtable(self).CompareElements)(::windows_core::Interface::as_raw(self), el1.into_param().abi(), el2.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CompareRuntimeIds(&self, runtimeid1: *const ::win32_system::Com::SAFEARRAY, runtimeid2: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<::win32_foundation::BOOL> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
         (::windows_core::Interface::vtable(self).CompareRuntimeIds)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(runtimeid1), ::core::mem::transmute(runtimeid2), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
@@ -5739,12 +5739,12 @@ impl IUIAutomation {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateFalseCondition)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn CreatePropertyCondition<'a, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, propertyid: i32, value: Param1) -> ::windows_core::Result<IUIAutomationCondition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreatePropertyCondition)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), value.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn CreatePropertyConditionEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, propertyid: i32, value: Param1, flags: PropertyConditionFlags) -> ::windows_core::Result<IUIAutomationCondition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreatePropertyConditionEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), value.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
@@ -5753,7 +5753,7 @@ impl IUIAutomation {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateAndCondition)(::windows_core::Interface::as_raw(self), condition1.into_param().abi(), condition2.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CreateAndConditionFromArray(&self, conditions: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<IUIAutomationCondition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateAndConditionFromArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(conditions), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
@@ -5766,7 +5766,7 @@ impl IUIAutomation {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateOrCondition)(::windows_core::Interface::as_raw(self), condition1.into_param().abi(), condition2.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CreateOrConditionFromArray(&self, conditions: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<IUIAutomationCondition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateOrConditionFromArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(conditions), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
@@ -5788,7 +5788,7 @@ impl IUIAutomation {
     pub unsafe fn AddPropertyChangedEventHandlerNativeArray<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>, Param2: ::windows_core::IntoParam<'a, IUIAutomationCacheRequest>, Param3: ::windows_core::IntoParam<'a, IUIAutomationPropertyChangedEventHandler>>(&self, element: Param0, scope: TreeScope, cacherequest: Param2, handler: Param3, propertyarray: &[i32]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AddPropertyChangedEventHandlerNativeArray)(::windows_core::Interface::as_raw(self), element.into_param().abi(), ::core::mem::transmute(scope), cacherequest.into_param().abi(), handler.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(propertyarray)), propertyarray.len() as _).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn AddPropertyChangedEventHandler<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>, Param2: ::windows_core::IntoParam<'a, IUIAutomationCacheRequest>, Param3: ::windows_core::IntoParam<'a, IUIAutomationPropertyChangedEventHandler>>(&self, element: Param0, scope: TreeScope, cacherequest: Param2, handler: Param3, propertyarray: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AddPropertyChangedEventHandler)(::windows_core::Interface::as_raw(self), element.into_param().abi(), ::core::mem::transmute(scope), cacherequest.into_param().abi(), handler.into_param().abi(), ::core::mem::transmute(propertyarray)).ok()
     }
@@ -5810,26 +5810,26 @@ impl IUIAutomation {
     pub unsafe fn RemoveAllEventHandlers(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RemoveAllEventHandlers)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn IntNativeArrayToSafeArray(&self, array: &[i32]) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).IntNativeArrayToSafeArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(array)), array.len() as _, ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn IntSafeArrayToNativeArray(&self, intarray: *const ::win32_system::Com::SAFEARRAY, array: *mut *mut i32, arraycount: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).IntSafeArrayToNativeArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(intarray), ::core::mem::transmute(array), ::core::mem::transmute(arraycount)).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn RectToVariant<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::RECT>>(&self, rc: Param0) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).RectToVariant)(::windows_core::Interface::as_raw(self), rc.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn VariantToRect<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, var: Param0) -> ::windows_core::Result<::win32_foundation::RECT> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::RECT>::zeroed();
         (::windows_core::Interface::vtable(self).VariantToRect)(::windows_core::Interface::as_raw(self), var.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::RECT>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn SafeArrayToRectNativeArray(&self, rects: *const ::win32_system::Com::SAFEARRAY, rectarray: *mut *mut ::win32_foundation::RECT, rectarraycount: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SafeArrayToRectNativeArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(rects), ::core::mem::transmute(rectarray), ::core::mem::transmute(rectarraycount)).ok()
     }
@@ -5849,15 +5849,15 @@ impl IUIAutomation {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).GetPatternProgrammaticName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pattern), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn PollForPotentialSupportedPatterns<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>>(&self, pelement: Param0, patternids: *mut *mut ::win32_system::Com::SAFEARRAY, patternnames: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).PollForPotentialSupportedPatterns)(::windows_core::Interface::as_raw(self), pelement.into_param().abi(), ::core::mem::transmute(patternids), ::core::mem::transmute(patternnames)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn PollForPotentialSupportedProperties<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>>(&self, pelement: Param0, propertyids: *mut *mut ::win32_system::Com::SAFEARRAY, propertynames: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).PollForPotentialSupportedProperties)(::windows_core::Interface::as_raw(self), pelement.into_param().abi(), ::core::mem::transmute(propertyids), ::core::mem::transmute(propertynames)).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn CheckNotSupported<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, value: Param0) -> ::windows_core::Result<::win32_foundation::BOOL> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
         (::windows_core::Interface::vtable(self).CheckNotSupported)(::windows_core::Interface::as_raw(self), value.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
@@ -5870,12 +5870,12 @@ impl IUIAutomation {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).ReservedMixedAttributeValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn ElementFromIAccessible<'a, Param0: ::windows_core::IntoParam<'a, IAccessible>>(&self, accessible: Param0, childid: i32) -> ::windows_core::Result<IUIAutomationElement> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).ElementFromIAccessible)(::windows_core::Interface::as_raw(self), accessible.into_param().abi(), ::core::mem::transmute(childid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElement>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn ElementFromIAccessibleBuildCache<'a, Param0: ::windows_core::IntoParam<'a, IAccessible>, Param2: ::windows_core::IntoParam<'a, IUIAutomationCacheRequest>>(&self, accessible: Param0, childid: i32, cacherequest: Param2) -> ::windows_core::Result<IUIAutomationElement> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).ElementFromIAccessibleBuildCache)(::windows_core::Interface::as_raw(self), accessible.into_param().abi(), ::core::mem::transmute(childid), cacherequest.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElement>(result__)
@@ -5926,9 +5926,9 @@ unsafe impl ::windows_core::Interface for IUIAutomation {
 pub struct IUIAutomation_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub CompareElements: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, el1: ::windows_core::RawPtr, el2: ::windows_core::RawPtr, aresame: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub CompareRuntimeIds: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, runtimeid1: *const ::win32_system::Com::SAFEARRAY, runtimeid2: *const ::win32_system::Com::SAFEARRAY, aresame: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     CompareRuntimeIds: usize,
     pub GetRootElement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, root: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ElementFromHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: ::win32_foundation::HWND, element: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -5948,33 +5948,33 @@ pub struct IUIAutomation_Vtbl {
     pub CreateCacheRequest: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cacherequest: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateTrueCondition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, newcondition: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateFalseCondition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, newcondition: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub CreatePropertyCondition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: i32, value: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, newcondition: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     CreatePropertyCondition: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub CreatePropertyConditionEx: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: i32, value: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, flags: PropertyConditionFlags, newcondition: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     CreatePropertyConditionEx: usize,
     pub CreateAndCondition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, condition1: ::windows_core::RawPtr, condition2: ::windows_core::RawPtr, newcondition: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub CreateAndConditionFromArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, conditions: *const ::win32_system::Com::SAFEARRAY, newcondition: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     CreateAndConditionFromArray: usize,
     pub CreateAndConditionFromNativeArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, conditions: *const ::windows_core::RawPtr, conditioncount: i32, newcondition: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateOrCondition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, condition1: ::windows_core::RawPtr, condition2: ::windows_core::RawPtr, newcondition: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub CreateOrConditionFromArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, conditions: *const ::win32_system::Com::SAFEARRAY, newcondition: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     CreateOrConditionFromArray: usize,
     pub CreateOrConditionFromNativeArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, conditions: *const ::windows_core::RawPtr, conditioncount: i32, newcondition: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateNotCondition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, condition: ::windows_core::RawPtr, newcondition: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub AddAutomationEventHandler: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventid: i32, element: ::windows_core::RawPtr, scope: TreeScope, cacherequest: ::windows_core::RawPtr, handler: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RemoveAutomationEventHandler: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventid: i32, element: ::windows_core::RawPtr, handler: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub AddPropertyChangedEventHandlerNativeArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, scope: TreeScope, cacherequest: ::windows_core::RawPtr, handler: ::windows_core::RawPtr, propertyarray: *const i32, propertycount: i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub AddPropertyChangedEventHandler: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, scope: TreeScope, cacherequest: ::windows_core::RawPtr, handler: ::windows_core::RawPtr, propertyarray: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     AddPropertyChangedEventHandler: usize,
     pub RemovePropertyChangedEventHandler: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, handler: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub AddStructureChangedEventHandler: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, scope: TreeScope, cacherequest: ::windows_core::RawPtr, handler: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -5982,51 +5982,51 @@ pub struct IUIAutomation_Vtbl {
     pub AddFocusChangedEventHandler: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cacherequest: ::windows_core::RawPtr, handler: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RemoveFocusChangedEventHandler: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RemoveAllEventHandlers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub IntNativeArrayToSafeArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, array: *const i32, arraycount: i32, safearray: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     IntNativeArrayToSafeArray: usize,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub IntSafeArrayToNativeArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, intarray: *const ::win32_system::Com::SAFEARRAY, array: *mut *mut i32, arraycount: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     IntSafeArrayToNativeArray: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub RectToVariant: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, rc: ::win32_foundation::RECT, var: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     RectToVariant: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub VariantToRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, var: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, rc: *mut ::win32_foundation::RECT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     VariantToRect: usize,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub SafeArrayToRectNativeArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, rects: *const ::win32_system::Com::SAFEARRAY, rectarray: *mut *mut ::win32_foundation::RECT, rectarraycount: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     SafeArrayToRectNativeArray: usize,
     pub CreateProxyFactoryEntry: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, factory: ::windows_core::RawPtr, factoryentry: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ProxyFactoryMapping: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, factorymapping: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetPropertyProgrammaticName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, property: i32, name: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub GetPatternProgrammaticName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pattern: i32, name: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub PollForPotentialSupportedPatterns: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pelement: ::windows_core::RawPtr, patternids: *mut *mut ::win32_system::Com::SAFEARRAY, patternnames: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     PollForPotentialSupportedPatterns: usize,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub PollForPotentialSupportedProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pelement: ::windows_core::RawPtr, propertyids: *mut *mut ::win32_system::Com::SAFEARRAY, propertynames: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     PollForPotentialSupportedProperties: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub CheckNotSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, isnotsupported: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     CheckNotSupported: usize,
     pub ReservedNotSupportedValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, notsupportedvalue: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub ReservedMixedAttributeValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mixedattributevalue: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub ElementFromIAccessible: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, accessible: ::windows_core::RawPtr, childid: i32, element: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     ElementFromIAccessible: usize,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub ElementFromIAccessibleBuildCache: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, accessible: ::windows_core::RawPtr, childid: i32, cacherequest: ::windows_core::RawPtr, element: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     ElementFromIAccessibleBuildCache: usize,
 }
 #[repr(transparent)]
@@ -6036,7 +6036,7 @@ impl IUIAutomation2 {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CompareElements)(::windows_core::Interface::as_raw(self), el1.into_param().abi(), el2.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CompareRuntimeIds(&self, runtimeid1: *const ::win32_system::Com::SAFEARRAY, runtimeid2: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<::win32_foundation::BOOL> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CompareRuntimeIds)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(runtimeid1), ::core::mem::transmute(runtimeid2), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
@@ -6113,12 +6113,12 @@ impl IUIAutomation2 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateFalseCondition)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn CreatePropertyCondition<'a, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, propertyid: i32, value: Param1) -> ::windows_core::Result<IUIAutomationCondition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreatePropertyCondition)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), value.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn CreatePropertyConditionEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, propertyid: i32, value: Param1, flags: PropertyConditionFlags) -> ::windows_core::Result<IUIAutomationCondition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreatePropertyConditionEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), value.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
@@ -6127,7 +6127,7 @@ impl IUIAutomation2 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateAndCondition)(::windows_core::Interface::as_raw(self), condition1.into_param().abi(), condition2.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CreateAndConditionFromArray(&self, conditions: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<IUIAutomationCondition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateAndConditionFromArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(conditions), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
@@ -6140,7 +6140,7 @@ impl IUIAutomation2 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateOrCondition)(::windows_core::Interface::as_raw(self), condition1.into_param().abi(), condition2.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CreateOrConditionFromArray(&self, conditions: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<IUIAutomationCondition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateOrConditionFromArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(conditions), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
@@ -6162,7 +6162,7 @@ impl IUIAutomation2 {
     pub unsafe fn AddPropertyChangedEventHandlerNativeArray<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>, Param2: ::windows_core::IntoParam<'a, IUIAutomationCacheRequest>, Param3: ::windows_core::IntoParam<'a, IUIAutomationPropertyChangedEventHandler>>(&self, element: Param0, scope: TreeScope, cacherequest: Param2, handler: Param3, propertyarray: &[i32]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.AddPropertyChangedEventHandlerNativeArray)(::windows_core::Interface::as_raw(self), element.into_param().abi(), ::core::mem::transmute(scope), cacherequest.into_param().abi(), handler.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(propertyarray)), propertyarray.len() as _).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn AddPropertyChangedEventHandler<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>, Param2: ::windows_core::IntoParam<'a, IUIAutomationCacheRequest>, Param3: ::windows_core::IntoParam<'a, IUIAutomationPropertyChangedEventHandler>>(&self, element: Param0, scope: TreeScope, cacherequest: Param2, handler: Param3, propertyarray: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.AddPropertyChangedEventHandler)(::windows_core::Interface::as_raw(self), element.into_param().abi(), ::core::mem::transmute(scope), cacherequest.into_param().abi(), handler.into_param().abi(), ::core::mem::transmute(propertyarray)).ok()
     }
@@ -6184,26 +6184,26 @@ impl IUIAutomation2 {
     pub unsafe fn RemoveAllEventHandlers(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.RemoveAllEventHandlers)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn IntNativeArrayToSafeArray(&self, array: &[i32]) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.IntNativeArrayToSafeArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(array)), array.len() as _, ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn IntSafeArrayToNativeArray(&self, intarray: *const ::win32_system::Com::SAFEARRAY, array: *mut *mut i32, arraycount: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.IntSafeArrayToNativeArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(intarray), ::core::mem::transmute(array), ::core::mem::transmute(arraycount)).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn RectToVariant<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::RECT>>(&self, rc: Param0) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.RectToVariant)(::windows_core::Interface::as_raw(self), rc.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn VariantToRect<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, var: Param0) -> ::windows_core::Result<::win32_foundation::RECT> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::RECT>::zeroed();
         (::windows_core::Interface::vtable(self).base__.VariantToRect)(::windows_core::Interface::as_raw(self), var.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::RECT>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn SafeArrayToRectNativeArray(&self, rects: *const ::win32_system::Com::SAFEARRAY, rectarray: *mut *mut ::win32_foundation::RECT, rectarraycount: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SafeArrayToRectNativeArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(rects), ::core::mem::transmute(rectarray), ::core::mem::transmute(rectarraycount)).ok()
     }
@@ -6223,15 +6223,15 @@ impl IUIAutomation2 {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetPatternProgrammaticName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pattern), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn PollForPotentialSupportedPatterns<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>>(&self, pelement: Param0, patternids: *mut *mut ::win32_system::Com::SAFEARRAY, patternnames: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.PollForPotentialSupportedPatterns)(::windows_core::Interface::as_raw(self), pelement.into_param().abi(), ::core::mem::transmute(patternids), ::core::mem::transmute(patternnames)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn PollForPotentialSupportedProperties<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>>(&self, pelement: Param0, propertyids: *mut *mut ::win32_system::Com::SAFEARRAY, propertynames: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.PollForPotentialSupportedProperties)(::windows_core::Interface::as_raw(self), pelement.into_param().abi(), ::core::mem::transmute(propertyids), ::core::mem::transmute(propertynames)).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn CheckNotSupported<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, value: Param0) -> ::windows_core::Result<::win32_foundation::BOOL> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CheckNotSupported)(::windows_core::Interface::as_raw(self), value.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
@@ -6244,12 +6244,12 @@ impl IUIAutomation2 {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.ReservedMixedAttributeValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn ElementFromIAccessible<'a, Param0: ::windows_core::IntoParam<'a, IAccessible>>(&self, accessible: Param0, childid: i32) -> ::windows_core::Result<IUIAutomationElement> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.ElementFromIAccessible)(::windows_core::Interface::as_raw(self), accessible.into_param().abi(), ::core::mem::transmute(childid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElement>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn ElementFromIAccessibleBuildCache<'a, Param0: ::windows_core::IntoParam<'a, IAccessible>, Param2: ::windows_core::IntoParam<'a, IUIAutomationCacheRequest>>(&self, accessible: Param0, childid: i32, cacherequest: Param2) -> ::windows_core::Result<IUIAutomationElement> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.ElementFromIAccessibleBuildCache)(::windows_core::Interface::as_raw(self), accessible.into_param().abi(), ::core::mem::transmute(childid), cacherequest.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElement>(result__)
@@ -6354,7 +6354,7 @@ impl IUIAutomation3 {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.CompareElements)(::windows_core::Interface::as_raw(self), el1.into_param().abi(), el2.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CompareRuntimeIds(&self, runtimeid1: *const ::win32_system::Com::SAFEARRAY, runtimeid2: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<::win32_foundation::BOOL> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.CompareRuntimeIds)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(runtimeid1), ::core::mem::transmute(runtimeid2), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
@@ -6431,12 +6431,12 @@ impl IUIAutomation3 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.CreateFalseCondition)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn CreatePropertyCondition<'a, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, propertyid: i32, value: Param1) -> ::windows_core::Result<IUIAutomationCondition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.CreatePropertyCondition)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), value.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn CreatePropertyConditionEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, propertyid: i32, value: Param1, flags: PropertyConditionFlags) -> ::windows_core::Result<IUIAutomationCondition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.CreatePropertyConditionEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), value.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
@@ -6445,7 +6445,7 @@ impl IUIAutomation3 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.CreateAndCondition)(::windows_core::Interface::as_raw(self), condition1.into_param().abi(), condition2.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CreateAndConditionFromArray(&self, conditions: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<IUIAutomationCondition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.CreateAndConditionFromArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(conditions), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
@@ -6458,7 +6458,7 @@ impl IUIAutomation3 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.CreateOrCondition)(::windows_core::Interface::as_raw(self), condition1.into_param().abi(), condition2.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CreateOrConditionFromArray(&self, conditions: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<IUIAutomationCondition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.CreateOrConditionFromArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(conditions), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
@@ -6480,7 +6480,7 @@ impl IUIAutomation3 {
     pub unsafe fn AddPropertyChangedEventHandlerNativeArray<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>, Param2: ::windows_core::IntoParam<'a, IUIAutomationCacheRequest>, Param3: ::windows_core::IntoParam<'a, IUIAutomationPropertyChangedEventHandler>>(&self, element: Param0, scope: TreeScope, cacherequest: Param2, handler: Param3, propertyarray: &[i32]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.AddPropertyChangedEventHandlerNativeArray)(::windows_core::Interface::as_raw(self), element.into_param().abi(), ::core::mem::transmute(scope), cacherequest.into_param().abi(), handler.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(propertyarray)), propertyarray.len() as _).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn AddPropertyChangedEventHandler<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>, Param2: ::windows_core::IntoParam<'a, IUIAutomationCacheRequest>, Param3: ::windows_core::IntoParam<'a, IUIAutomationPropertyChangedEventHandler>>(&self, element: Param0, scope: TreeScope, cacherequest: Param2, handler: Param3, propertyarray: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.AddPropertyChangedEventHandler)(::windows_core::Interface::as_raw(self), element.into_param().abi(), ::core::mem::transmute(scope), cacherequest.into_param().abi(), handler.into_param().abi(), ::core::mem::transmute(propertyarray)).ok()
     }
@@ -6502,26 +6502,26 @@ impl IUIAutomation3 {
     pub unsafe fn RemoveAllEventHandlers(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.RemoveAllEventHandlers)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn IntNativeArrayToSafeArray(&self, array: &[i32]) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.IntNativeArrayToSafeArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(array)), array.len() as _, ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn IntSafeArrayToNativeArray(&self, intarray: *const ::win32_system::Com::SAFEARRAY, array: *mut *mut i32, arraycount: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.IntSafeArrayToNativeArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(intarray), ::core::mem::transmute(array), ::core::mem::transmute(arraycount)).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn RectToVariant<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::RECT>>(&self, rc: Param0) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.RectToVariant)(::windows_core::Interface::as_raw(self), rc.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn VariantToRect<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, var: Param0) -> ::windows_core::Result<::win32_foundation::RECT> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::RECT>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.VariantToRect)(::windows_core::Interface::as_raw(self), var.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::RECT>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn SafeArrayToRectNativeArray(&self, rects: *const ::win32_system::Com::SAFEARRAY, rectarray: *mut *mut ::win32_foundation::RECT, rectarraycount: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.SafeArrayToRectNativeArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(rects), ::core::mem::transmute(rectarray), ::core::mem::transmute(rectarraycount)).ok()
     }
@@ -6541,15 +6541,15 @@ impl IUIAutomation3 {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.GetPatternProgrammaticName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pattern), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn PollForPotentialSupportedPatterns<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>>(&self, pelement: Param0, patternids: *mut *mut ::win32_system::Com::SAFEARRAY, patternnames: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.PollForPotentialSupportedPatterns)(::windows_core::Interface::as_raw(self), pelement.into_param().abi(), ::core::mem::transmute(patternids), ::core::mem::transmute(patternnames)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn PollForPotentialSupportedProperties<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>>(&self, pelement: Param0, propertyids: *mut *mut ::win32_system::Com::SAFEARRAY, propertynames: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.PollForPotentialSupportedProperties)(::windows_core::Interface::as_raw(self), pelement.into_param().abi(), ::core::mem::transmute(propertyids), ::core::mem::transmute(propertynames)).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn CheckNotSupported<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, value: Param0) -> ::windows_core::Result<::win32_foundation::BOOL> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.CheckNotSupported)(::windows_core::Interface::as_raw(self), value.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
@@ -6562,12 +6562,12 @@ impl IUIAutomation3 {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.ReservedMixedAttributeValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn ElementFromIAccessible<'a, Param0: ::windows_core::IntoParam<'a, IAccessible>>(&self, accessible: Param0, childid: i32) -> ::windows_core::Result<IUIAutomationElement> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.ElementFromIAccessible)(::windows_core::Interface::as_raw(self), accessible.into_param().abi(), ::core::mem::transmute(childid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElement>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn ElementFromIAccessibleBuildCache<'a, Param0: ::windows_core::IntoParam<'a, IAccessible>, Param2: ::windows_core::IntoParam<'a, IUIAutomationCacheRequest>>(&self, accessible: Param0, childid: i32, cacherequest: Param2) -> ::windows_core::Result<IUIAutomationElement> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.ElementFromIAccessibleBuildCache)(::windows_core::Interface::as_raw(self), accessible.into_param().abi(), ::core::mem::transmute(childid), cacherequest.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElement>(result__)
@@ -6694,7 +6694,7 @@ impl IUIAutomation4 {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.CompareElements)(::windows_core::Interface::as_raw(self), el1.into_param().abi(), el2.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CompareRuntimeIds(&self, runtimeid1: *const ::win32_system::Com::SAFEARRAY, runtimeid2: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<::win32_foundation::BOOL> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.CompareRuntimeIds)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(runtimeid1), ::core::mem::transmute(runtimeid2), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
@@ -6771,12 +6771,12 @@ impl IUIAutomation4 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.CreateFalseCondition)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn CreatePropertyCondition<'a, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, propertyid: i32, value: Param1) -> ::windows_core::Result<IUIAutomationCondition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.CreatePropertyCondition)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), value.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn CreatePropertyConditionEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, propertyid: i32, value: Param1, flags: PropertyConditionFlags) -> ::windows_core::Result<IUIAutomationCondition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.CreatePropertyConditionEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), value.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
@@ -6785,7 +6785,7 @@ impl IUIAutomation4 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.CreateAndCondition)(::windows_core::Interface::as_raw(self), condition1.into_param().abi(), condition2.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CreateAndConditionFromArray(&self, conditions: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<IUIAutomationCondition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.CreateAndConditionFromArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(conditions), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
@@ -6798,7 +6798,7 @@ impl IUIAutomation4 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.CreateOrCondition)(::windows_core::Interface::as_raw(self), condition1.into_param().abi(), condition2.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CreateOrConditionFromArray(&self, conditions: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<IUIAutomationCondition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.CreateOrConditionFromArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(conditions), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
@@ -6820,7 +6820,7 @@ impl IUIAutomation4 {
     pub unsafe fn AddPropertyChangedEventHandlerNativeArray<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>, Param2: ::windows_core::IntoParam<'a, IUIAutomationCacheRequest>, Param3: ::windows_core::IntoParam<'a, IUIAutomationPropertyChangedEventHandler>>(&self, element: Param0, scope: TreeScope, cacherequest: Param2, handler: Param3, propertyarray: &[i32]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.AddPropertyChangedEventHandlerNativeArray)(::windows_core::Interface::as_raw(self), element.into_param().abi(), ::core::mem::transmute(scope), cacherequest.into_param().abi(), handler.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(propertyarray)), propertyarray.len() as _).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn AddPropertyChangedEventHandler<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>, Param2: ::windows_core::IntoParam<'a, IUIAutomationCacheRequest>, Param3: ::windows_core::IntoParam<'a, IUIAutomationPropertyChangedEventHandler>>(&self, element: Param0, scope: TreeScope, cacherequest: Param2, handler: Param3, propertyarray: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.AddPropertyChangedEventHandler)(::windows_core::Interface::as_raw(self), element.into_param().abi(), ::core::mem::transmute(scope), cacherequest.into_param().abi(), handler.into_param().abi(), ::core::mem::transmute(propertyarray)).ok()
     }
@@ -6842,26 +6842,26 @@ impl IUIAutomation4 {
     pub unsafe fn RemoveAllEventHandlers(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.RemoveAllEventHandlers)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn IntNativeArrayToSafeArray(&self, array: &[i32]) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.IntNativeArrayToSafeArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(array)), array.len() as _, ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn IntSafeArrayToNativeArray(&self, intarray: *const ::win32_system::Com::SAFEARRAY, array: *mut *mut i32, arraycount: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.IntSafeArrayToNativeArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(intarray), ::core::mem::transmute(array), ::core::mem::transmute(arraycount)).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn RectToVariant<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::RECT>>(&self, rc: Param0) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.RectToVariant)(::windows_core::Interface::as_raw(self), rc.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn VariantToRect<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, var: Param0) -> ::windows_core::Result<::win32_foundation::RECT> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::RECT>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.VariantToRect)(::windows_core::Interface::as_raw(self), var.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::RECT>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn SafeArrayToRectNativeArray(&self, rects: *const ::win32_system::Com::SAFEARRAY, rectarray: *mut *mut ::win32_foundation::RECT, rectarraycount: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.SafeArrayToRectNativeArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(rects), ::core::mem::transmute(rectarray), ::core::mem::transmute(rectarraycount)).ok()
     }
@@ -6881,15 +6881,15 @@ impl IUIAutomation4 {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.GetPatternProgrammaticName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pattern), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn PollForPotentialSupportedPatterns<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>>(&self, pelement: Param0, patternids: *mut *mut ::win32_system::Com::SAFEARRAY, patternnames: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.PollForPotentialSupportedPatterns)(::windows_core::Interface::as_raw(self), pelement.into_param().abi(), ::core::mem::transmute(patternids), ::core::mem::transmute(patternnames)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn PollForPotentialSupportedProperties<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>>(&self, pelement: Param0, propertyids: *mut *mut ::win32_system::Com::SAFEARRAY, propertynames: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.PollForPotentialSupportedProperties)(::windows_core::Interface::as_raw(self), pelement.into_param().abi(), ::core::mem::transmute(propertyids), ::core::mem::transmute(propertynames)).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn CheckNotSupported<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, value: Param0) -> ::windows_core::Result<::win32_foundation::BOOL> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.CheckNotSupported)(::windows_core::Interface::as_raw(self), value.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
@@ -6902,12 +6902,12 @@ impl IUIAutomation4 {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.ReservedMixedAttributeValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn ElementFromIAccessible<'a, Param0: ::windows_core::IntoParam<'a, IAccessible>>(&self, accessible: Param0, childid: i32) -> ::windows_core::Result<IUIAutomationElement> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.ElementFromIAccessible)(::windows_core::Interface::as_raw(self), accessible.into_param().abi(), ::core::mem::transmute(childid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElement>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn ElementFromIAccessibleBuildCache<'a, Param0: ::windows_core::IntoParam<'a, IAccessible>, Param2: ::windows_core::IntoParam<'a, IUIAutomationCacheRequest>>(&self, accessible: Param0, childid: i32, cacherequest: Param2) -> ::windows_core::Result<IUIAutomationElement> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.ElementFromIAccessibleBuildCache)(::windows_core::Interface::as_raw(self), accessible.into_param().abi(), ::core::mem::transmute(childid), cacherequest.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElement>(result__)
@@ -7060,7 +7060,7 @@ impl IUIAutomation5 {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.CompareElements)(::windows_core::Interface::as_raw(self), el1.into_param().abi(), el2.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CompareRuntimeIds(&self, runtimeid1: *const ::win32_system::Com::SAFEARRAY, runtimeid2: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<::win32_foundation::BOOL> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.CompareRuntimeIds)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(runtimeid1), ::core::mem::transmute(runtimeid2), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
@@ -7137,12 +7137,12 @@ impl IUIAutomation5 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.CreateFalseCondition)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn CreatePropertyCondition<'a, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, propertyid: i32, value: Param1) -> ::windows_core::Result<IUIAutomationCondition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.CreatePropertyCondition)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), value.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn CreatePropertyConditionEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, propertyid: i32, value: Param1, flags: PropertyConditionFlags) -> ::windows_core::Result<IUIAutomationCondition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.CreatePropertyConditionEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), value.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
@@ -7151,7 +7151,7 @@ impl IUIAutomation5 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.CreateAndCondition)(::windows_core::Interface::as_raw(self), condition1.into_param().abi(), condition2.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CreateAndConditionFromArray(&self, conditions: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<IUIAutomationCondition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.CreateAndConditionFromArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(conditions), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
@@ -7164,7 +7164,7 @@ impl IUIAutomation5 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.CreateOrCondition)(::windows_core::Interface::as_raw(self), condition1.into_param().abi(), condition2.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CreateOrConditionFromArray(&self, conditions: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<IUIAutomationCondition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.CreateOrConditionFromArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(conditions), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
@@ -7186,7 +7186,7 @@ impl IUIAutomation5 {
     pub unsafe fn AddPropertyChangedEventHandlerNativeArray<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>, Param2: ::windows_core::IntoParam<'a, IUIAutomationCacheRequest>, Param3: ::windows_core::IntoParam<'a, IUIAutomationPropertyChangedEventHandler>>(&self, element: Param0, scope: TreeScope, cacherequest: Param2, handler: Param3, propertyarray: &[i32]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.AddPropertyChangedEventHandlerNativeArray)(::windows_core::Interface::as_raw(self), element.into_param().abi(), ::core::mem::transmute(scope), cacherequest.into_param().abi(), handler.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(propertyarray)), propertyarray.len() as _).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn AddPropertyChangedEventHandler<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>, Param2: ::windows_core::IntoParam<'a, IUIAutomationCacheRequest>, Param3: ::windows_core::IntoParam<'a, IUIAutomationPropertyChangedEventHandler>>(&self, element: Param0, scope: TreeScope, cacherequest: Param2, handler: Param3, propertyarray: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.AddPropertyChangedEventHandler)(::windows_core::Interface::as_raw(self), element.into_param().abi(), ::core::mem::transmute(scope), cacherequest.into_param().abi(), handler.into_param().abi(), ::core::mem::transmute(propertyarray)).ok()
     }
@@ -7208,26 +7208,26 @@ impl IUIAutomation5 {
     pub unsafe fn RemoveAllEventHandlers(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.RemoveAllEventHandlers)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn IntNativeArrayToSafeArray(&self, array: &[i32]) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.IntNativeArrayToSafeArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(array)), array.len() as _, ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn IntSafeArrayToNativeArray(&self, intarray: *const ::win32_system::Com::SAFEARRAY, array: *mut *mut i32, arraycount: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.IntSafeArrayToNativeArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(intarray), ::core::mem::transmute(array), ::core::mem::transmute(arraycount)).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn RectToVariant<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::RECT>>(&self, rc: Param0) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.RectToVariant)(::windows_core::Interface::as_raw(self), rc.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn VariantToRect<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, var: Param0) -> ::windows_core::Result<::win32_foundation::RECT> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::RECT>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.VariantToRect)(::windows_core::Interface::as_raw(self), var.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::RECT>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn SafeArrayToRectNativeArray(&self, rects: *const ::win32_system::Com::SAFEARRAY, rectarray: *mut *mut ::win32_foundation::RECT, rectarraycount: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.SafeArrayToRectNativeArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(rects), ::core::mem::transmute(rectarray), ::core::mem::transmute(rectarraycount)).ok()
     }
@@ -7247,15 +7247,15 @@ impl IUIAutomation5 {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.GetPatternProgrammaticName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pattern), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn PollForPotentialSupportedPatterns<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>>(&self, pelement: Param0, patternids: *mut *mut ::win32_system::Com::SAFEARRAY, patternnames: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.PollForPotentialSupportedPatterns)(::windows_core::Interface::as_raw(self), pelement.into_param().abi(), ::core::mem::transmute(patternids), ::core::mem::transmute(patternnames)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn PollForPotentialSupportedProperties<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>>(&self, pelement: Param0, propertyids: *mut *mut ::win32_system::Com::SAFEARRAY, propertynames: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.PollForPotentialSupportedProperties)(::windows_core::Interface::as_raw(self), pelement.into_param().abi(), ::core::mem::transmute(propertyids), ::core::mem::transmute(propertynames)).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn CheckNotSupported<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, value: Param0) -> ::windows_core::Result<::win32_foundation::BOOL> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.CheckNotSupported)(::windows_core::Interface::as_raw(self), value.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
@@ -7268,12 +7268,12 @@ impl IUIAutomation5 {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.ReservedMixedAttributeValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn ElementFromIAccessible<'a, Param0: ::windows_core::IntoParam<'a, IAccessible>>(&self, accessible: Param0, childid: i32) -> ::windows_core::Result<IUIAutomationElement> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.ElementFromIAccessible)(::windows_core::Interface::as_raw(self), accessible.into_param().abi(), ::core::mem::transmute(childid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElement>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn ElementFromIAccessibleBuildCache<'a, Param0: ::windows_core::IntoParam<'a, IAccessible>, Param2: ::windows_core::IntoParam<'a, IUIAutomationCacheRequest>>(&self, accessible: Param0, childid: i32, cacherequest: Param2) -> ::windows_core::Result<IUIAutomationElement> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.ElementFromIAccessibleBuildCache)(::windows_core::Interface::as_raw(self), accessible.into_param().abi(), ::core::mem::transmute(childid), cacherequest.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElement>(result__)
@@ -7452,7 +7452,7 @@ impl IUIAutomation6 {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.CompareElements)(::windows_core::Interface::as_raw(self), el1.into_param().abi(), el2.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CompareRuntimeIds(&self, runtimeid1: *const ::win32_system::Com::SAFEARRAY, runtimeid2: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<::win32_foundation::BOOL> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.CompareRuntimeIds)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(runtimeid1), ::core::mem::transmute(runtimeid2), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
@@ -7529,12 +7529,12 @@ impl IUIAutomation6 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.CreateFalseCondition)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn CreatePropertyCondition<'a, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, propertyid: i32, value: Param1) -> ::windows_core::Result<IUIAutomationCondition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.CreatePropertyCondition)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), value.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn CreatePropertyConditionEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, propertyid: i32, value: Param1, flags: PropertyConditionFlags) -> ::windows_core::Result<IUIAutomationCondition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.CreatePropertyConditionEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), value.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
@@ -7543,7 +7543,7 @@ impl IUIAutomation6 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.CreateAndCondition)(::windows_core::Interface::as_raw(self), condition1.into_param().abi(), condition2.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CreateAndConditionFromArray(&self, conditions: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<IUIAutomationCondition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.CreateAndConditionFromArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(conditions), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
@@ -7556,7 +7556,7 @@ impl IUIAutomation6 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.CreateOrCondition)(::windows_core::Interface::as_raw(self), condition1.into_param().abi(), condition2.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CreateOrConditionFromArray(&self, conditions: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<IUIAutomationCondition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.CreateOrConditionFromArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(conditions), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationCondition>(result__)
@@ -7578,7 +7578,7 @@ impl IUIAutomation6 {
     pub unsafe fn AddPropertyChangedEventHandlerNativeArray<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>, Param2: ::windows_core::IntoParam<'a, IUIAutomationCacheRequest>, Param3: ::windows_core::IntoParam<'a, IUIAutomationPropertyChangedEventHandler>>(&self, element: Param0, scope: TreeScope, cacherequest: Param2, handler: Param3, propertyarray: &[i32]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.AddPropertyChangedEventHandlerNativeArray)(::windows_core::Interface::as_raw(self), element.into_param().abi(), ::core::mem::transmute(scope), cacherequest.into_param().abi(), handler.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(propertyarray)), propertyarray.len() as _).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn AddPropertyChangedEventHandler<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>, Param2: ::windows_core::IntoParam<'a, IUIAutomationCacheRequest>, Param3: ::windows_core::IntoParam<'a, IUIAutomationPropertyChangedEventHandler>>(&self, element: Param0, scope: TreeScope, cacherequest: Param2, handler: Param3, propertyarray: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.AddPropertyChangedEventHandler)(::windows_core::Interface::as_raw(self), element.into_param().abi(), ::core::mem::transmute(scope), cacherequest.into_param().abi(), handler.into_param().abi(), ::core::mem::transmute(propertyarray)).ok()
     }
@@ -7600,26 +7600,26 @@ impl IUIAutomation6 {
     pub unsafe fn RemoveAllEventHandlers(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.RemoveAllEventHandlers)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn IntNativeArrayToSafeArray(&self, array: &[i32]) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.IntNativeArrayToSafeArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(array)), array.len() as _, ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn IntSafeArrayToNativeArray(&self, intarray: *const ::win32_system::Com::SAFEARRAY, array: *mut *mut i32, arraycount: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.IntSafeArrayToNativeArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(intarray), ::core::mem::transmute(array), ::core::mem::transmute(arraycount)).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn RectToVariant<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::RECT>>(&self, rc: Param0) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.RectToVariant)(::windows_core::Interface::as_raw(self), rc.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn VariantToRect<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, var: Param0) -> ::windows_core::Result<::win32_foundation::RECT> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::RECT>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.VariantToRect)(::windows_core::Interface::as_raw(self), var.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::RECT>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn SafeArrayToRectNativeArray(&self, rects: *const ::win32_system::Com::SAFEARRAY, rectarray: *mut *mut ::win32_foundation::RECT, rectarraycount: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.SafeArrayToRectNativeArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(rects), ::core::mem::transmute(rectarray), ::core::mem::transmute(rectarraycount)).ok()
     }
@@ -7639,15 +7639,15 @@ impl IUIAutomation6 {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.GetPatternProgrammaticName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pattern), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn PollForPotentialSupportedPatterns<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>>(&self, pelement: Param0, patternids: *mut *mut ::win32_system::Com::SAFEARRAY, patternnames: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.PollForPotentialSupportedPatterns)(::windows_core::Interface::as_raw(self), pelement.into_param().abi(), ::core::mem::transmute(patternids), ::core::mem::transmute(patternnames)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn PollForPotentialSupportedProperties<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>>(&self, pelement: Param0, propertyids: *mut *mut ::win32_system::Com::SAFEARRAY, propertynames: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.PollForPotentialSupportedProperties)(::windows_core::Interface::as_raw(self), pelement.into_param().abi(), ::core::mem::transmute(propertyids), ::core::mem::transmute(propertynames)).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn CheckNotSupported<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, value: Param0) -> ::windows_core::Result<::win32_foundation::BOOL> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.CheckNotSupported)(::windows_core::Interface::as_raw(self), value.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
@@ -7660,12 +7660,12 @@ impl IUIAutomation6 {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.ReservedMixedAttributeValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn ElementFromIAccessible<'a, Param0: ::windows_core::IntoParam<'a, IAccessible>>(&self, accessible: Param0, childid: i32) -> ::windows_core::Result<IUIAutomationElement> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.ElementFromIAccessible)(::windows_core::Interface::as_raw(self), accessible.into_param().abi(), ::core::mem::transmute(childid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElement>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn ElementFromIAccessibleBuildCache<'a, Param0: ::windows_core::IntoParam<'a, IAccessible>, Param2: ::windows_core::IntoParam<'a, IUIAutomationCacheRequest>>(&self, accessible: Param0, childid: i32, cacherequest: Param2) -> ::windows_core::Result<IUIAutomationElement> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.ElementFromIAccessibleBuildCache)(::windows_core::Interface::as_raw(self), accessible.into_param().abi(), ::core::mem::transmute(childid), cacherequest.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElement>(result__)
@@ -7957,7 +7957,7 @@ impl IUIAutomationAndCondition {
     pub unsafe fn GetChildrenAsNativeArray(&self, childarray: *mut *mut ::core::option::Option<IUIAutomationCondition>, childarraycount: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetChildrenAsNativeArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(childarray), ::core::mem::transmute(childarraycount)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetChildren(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetChildren)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -8029,9 +8029,9 @@ pub struct IUIAutomationAndCondition_Vtbl {
     pub base__: IUIAutomationCondition_Vtbl,
     pub ChildCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, childcount: *mut i32) -> ::windows_core::HRESULT,
     pub GetChildrenAsNativeArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, childarray: *mut *mut ::windows_core::RawPtr, childarraycount: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetChildren: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, childarray: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetChildren: usize,
 }
 #[repr(transparent)]
@@ -8299,7 +8299,7 @@ pub struct IUIAutomationCacheRequest_Vtbl {
 #[repr(transparent)]
 pub struct IUIAutomationChangesEventHandler(::windows_core::IUnknown);
 impl IUIAutomationChangesEventHandler {
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn HandleChangesEvent<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>>(&self, sender: Param0, uiachanges: &[UiaChangeInfo]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).HandleChangesEvent)(::windows_core::Interface::as_raw(self), sender.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(uiachanges)), uiachanges.len() as _).ok()
     }
@@ -8348,9 +8348,9 @@ unsafe impl ::windows_core::Interface for IUIAutomationChangesEventHandler {
 #[doc(hidden)]
 pub struct IUIAutomationChangesEventHandler_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub HandleChangesEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sender: ::windows_core::RawPtr, uiachanges: *const UiaChangeInfo, changescount: i32) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     HandleChangesEvent: usize,
 }
 #[repr(transparent)]
@@ -8537,12 +8537,12 @@ impl IUIAutomationDragPattern {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).CachedDropEffect)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CurrentDropEffects(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).CurrentDropEffects)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CachedDropEffects(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).CachedDropEffects)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -8604,13 +8604,13 @@ pub struct IUIAutomationDragPattern_Vtbl {
     pub CachedIsGrabbed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub CurrentDropEffect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub CachedDropEffect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub CurrentDropEffects: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     CurrentDropEffects: usize,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub CachedDropEffects: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     CachedDropEffects: usize,
     pub GetCurrentGrabbedItems: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetCachedGrabbedItems: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -8626,12 +8626,12 @@ impl IUIAutomationDropTargetPattern {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).CachedDropTargetEffect)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CurrentDropTargetEffects(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).CurrentDropTargetEffects)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CachedDropTargetEffects(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).CachedDropTargetEffects)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -8683,13 +8683,13 @@ pub struct IUIAutomationDropTargetPattern_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub CurrentDropTargetEffect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub CachedDropTargetEffect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub CurrentDropTargetEffects: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     CurrentDropTargetEffects: usize,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub CachedDropTargetEffects: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     CachedDropTargetEffects: usize,
 }
 #[repr(transparent)]
@@ -8698,7 +8698,7 @@ impl IUIAutomationElement {
     pub unsafe fn SetFocus(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetFocus)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetRuntimeId(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetRuntimeId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -8723,22 +8723,22 @@ impl IUIAutomationElement {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).BuildUpdatedCache)(::windows_core::Interface::as_raw(self), cacherequest.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElement>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCurrentPropertyValue(&self, propertyid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).GetCurrentPropertyValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCurrentPropertyValueEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, propertyid: i32, ignoredefaultvalue: Param1) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).GetCurrentPropertyValueEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ignoredefaultvalue.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCachedPropertyValue(&self, propertyid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).GetCachedPropertyValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCachedPropertyValueEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, propertyid: i32, ignoredefaultvalue: Param1) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).GetCachedPropertyValueEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ignoredefaultvalue.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
@@ -9072,30 +9072,30 @@ unsafe impl ::windows_core::Interface for IUIAutomationElement {
 pub struct IUIAutomationElement_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub SetFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetRuntimeId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, runtimeid: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetRuntimeId: usize,
     pub FindFirst: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scope: TreeScope, condition: ::windows_core::RawPtr, found: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub FindAll: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scope: TreeScope, condition: ::windows_core::RawPtr, found: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub FindFirstBuildCache: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scope: TreeScope, condition: ::windows_core::RawPtr, cacherequest: ::windows_core::RawPtr, found: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub FindAllBuildCache: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scope: TreeScope, condition: ::windows_core::RawPtr, cacherequest: ::windows_core::RawPtr, found: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub BuildUpdatedCache: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cacherequest: ::windows_core::RawPtr, updatedelement: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub GetCurrentPropertyValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: i32, retval: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     GetCurrentPropertyValue: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub GetCurrentPropertyValueEx: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: i32, ignoredefaultvalue: ::win32_foundation::BOOL, retval: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     GetCurrentPropertyValueEx: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub GetCachedPropertyValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: i32, retval: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     GetCachedPropertyValue: usize,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub GetCachedPropertyValueEx: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: i32, ignoredefaultvalue: ::win32_foundation::BOOL, retval: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     GetCachedPropertyValueEx: usize,
     pub GetCurrentPatternAs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, patternid: i32, riid: *const ::windows_core::GUID, patternobject: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub GetCachedPatternAs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, patternid: i32, riid: *const ::windows_core::GUID, patternobject: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -9175,7 +9175,7 @@ impl IUIAutomationElement2 {
     pub unsafe fn SetFocus(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetFocus)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetRuntimeId(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetRuntimeId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -9200,22 +9200,22 @@ impl IUIAutomationElement2 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.BuildUpdatedCache)(::windows_core::Interface::as_raw(self), cacherequest.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElement>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCurrentPropertyValue(&self, propertyid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetCurrentPropertyValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCurrentPropertyValueEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, propertyid: i32, ignoredefaultvalue: Param1) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetCurrentPropertyValueEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ignoredefaultvalue.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCachedPropertyValue(&self, propertyid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetCachedPropertyValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCachedPropertyValueEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, propertyid: i32, ignoredefaultvalue: Param1) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetCachedPropertyValueEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ignoredefaultvalue.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
@@ -9605,7 +9605,7 @@ impl IUIAutomationElement3 {
     pub unsafe fn SetFocus(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.SetFocus)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetRuntimeId(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.GetRuntimeId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -9630,22 +9630,22 @@ impl IUIAutomationElement3 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.BuildUpdatedCache)(::windows_core::Interface::as_raw(self), cacherequest.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElement>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCurrentPropertyValue(&self, propertyid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.GetCurrentPropertyValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCurrentPropertyValueEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, propertyid: i32, ignoredefaultvalue: Param1) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.GetCurrentPropertyValueEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ignoredefaultvalue.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCachedPropertyValue(&self, propertyid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.GetCachedPropertyValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCachedPropertyValueEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, propertyid: i32, ignoredefaultvalue: Param1) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.GetCachedPropertyValueEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ignoredefaultvalue.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
@@ -10063,7 +10063,7 @@ impl IUIAutomationElement4 {
     pub unsafe fn SetFocus(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.SetFocus)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetRuntimeId(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.GetRuntimeId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -10088,22 +10088,22 @@ impl IUIAutomationElement4 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.BuildUpdatedCache)(::windows_core::Interface::as_raw(self), cacherequest.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElement>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCurrentPropertyValue(&self, propertyid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.GetCurrentPropertyValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCurrentPropertyValueEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, propertyid: i32, ignoredefaultvalue: Param1) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.GetCurrentPropertyValueEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ignoredefaultvalue.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCachedPropertyValue(&self, propertyid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.GetCachedPropertyValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCachedPropertyValueEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, propertyid: i32, ignoredefaultvalue: Param1) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.GetCachedPropertyValueEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ignoredefaultvalue.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
@@ -10438,7 +10438,7 @@ impl IUIAutomationElement4 {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).CurrentLevel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CurrentAnnotationTypes(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).CurrentAnnotationTypes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -10459,7 +10459,7 @@ impl IUIAutomationElement4 {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).CachedLevel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CachedAnnotationTypes(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).CachedAnnotationTypes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -10576,17 +10576,17 @@ pub struct IUIAutomationElement4_Vtbl {
     pub CurrentPositionInSet: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut i32) -> ::windows_core::HRESULT,
     pub CurrentSizeOfSet: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut i32) -> ::windows_core::HRESULT,
     pub CurrentLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub CurrentAnnotationTypes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     CurrentAnnotationTypes: usize,
     pub CurrentAnnotationObjects: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CachedPositionInSet: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut i32) -> ::windows_core::HRESULT,
     pub CachedSizeOfSet: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut i32) -> ::windows_core::HRESULT,
     pub CachedLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub CachedAnnotationTypes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     CachedAnnotationTypes: usize,
     pub CachedAnnotationObjects: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -10596,7 +10596,7 @@ impl IUIAutomationElement5 {
     pub unsafe fn SetFocus(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.SetFocus)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetRuntimeId(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.GetRuntimeId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -10621,22 +10621,22 @@ impl IUIAutomationElement5 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.BuildUpdatedCache)(::windows_core::Interface::as_raw(self), cacherequest.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElement>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCurrentPropertyValue(&self, propertyid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.GetCurrentPropertyValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCurrentPropertyValueEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, propertyid: i32, ignoredefaultvalue: Param1) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.GetCurrentPropertyValueEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ignoredefaultvalue.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCachedPropertyValue(&self, propertyid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.GetCachedPropertyValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCachedPropertyValueEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, propertyid: i32, ignoredefaultvalue: Param1) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.GetCachedPropertyValueEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ignoredefaultvalue.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
@@ -10971,7 +10971,7 @@ impl IUIAutomationElement5 {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CurrentLevel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CurrentAnnotationTypes(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CurrentAnnotationTypes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -10992,7 +10992,7 @@ impl IUIAutomationElement5 {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CachedLevel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CachedAnnotationTypes(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CachedAnnotationTypes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -11153,7 +11153,7 @@ impl IUIAutomationElement6 {
     pub unsafe fn SetFocus(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.SetFocus)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetRuntimeId(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.GetRuntimeId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -11178,22 +11178,22 @@ impl IUIAutomationElement6 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.BuildUpdatedCache)(::windows_core::Interface::as_raw(self), cacherequest.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElement>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCurrentPropertyValue(&self, propertyid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.GetCurrentPropertyValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCurrentPropertyValueEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, propertyid: i32, ignoredefaultvalue: Param1) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.GetCurrentPropertyValueEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ignoredefaultvalue.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCachedPropertyValue(&self, propertyid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.GetCachedPropertyValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCachedPropertyValueEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, propertyid: i32, ignoredefaultvalue: Param1) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.GetCachedPropertyValueEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ignoredefaultvalue.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
@@ -11528,7 +11528,7 @@ impl IUIAutomationElement6 {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.CurrentLevel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CurrentAnnotationTypes(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.CurrentAnnotationTypes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -11549,7 +11549,7 @@ impl IUIAutomationElement6 {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.CachedLevel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CachedAnnotationTypes(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.CachedAnnotationTypes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -11736,7 +11736,7 @@ impl IUIAutomationElement7 {
     pub unsafe fn SetFocus(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.base__.SetFocus)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetRuntimeId(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.base__.GetRuntimeId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -11761,22 +11761,22 @@ impl IUIAutomationElement7 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.base__.BuildUpdatedCache)(::windows_core::Interface::as_raw(self), cacherequest.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElement>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCurrentPropertyValue(&self, propertyid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.base__.GetCurrentPropertyValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCurrentPropertyValueEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, propertyid: i32, ignoredefaultvalue: Param1) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.base__.GetCurrentPropertyValueEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ignoredefaultvalue.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCachedPropertyValue(&self, propertyid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.base__.GetCachedPropertyValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCachedPropertyValueEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, propertyid: i32, ignoredefaultvalue: Param1) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.base__.GetCachedPropertyValueEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ignoredefaultvalue.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
@@ -12111,7 +12111,7 @@ impl IUIAutomationElement7 {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.CurrentLevel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CurrentAnnotationTypes(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.CurrentAnnotationTypes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -12132,7 +12132,7 @@ impl IUIAutomationElement7 {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.CachedLevel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CachedAnnotationTypes(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.CachedAnnotationTypes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -12181,7 +12181,7 @@ impl IUIAutomationElement7 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).FindAllWithOptionsBuildCache)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(scope), condition.into_param().abi(), cacherequest.into_param().abi(), ::core::mem::transmute(traversaloptions), root.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElementArray>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCurrentMetadataValue(&self, targetid: i32, metadataid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).GetCurrentMetadataValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(targetid), ::core::mem::transmute(metadataid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
@@ -12355,9 +12355,9 @@ pub struct IUIAutomationElement7_Vtbl {
     pub FindAllWithOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scope: TreeScope, condition: ::windows_core::RawPtr, traversaloptions: TreeTraversalOptions, root: ::windows_core::RawPtr, found: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub FindFirstWithOptionsBuildCache: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scope: TreeScope, condition: ::windows_core::RawPtr, cacherequest: ::windows_core::RawPtr, traversaloptions: TreeTraversalOptions, root: ::windows_core::RawPtr, found: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub FindAllWithOptionsBuildCache: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scope: TreeScope, condition: ::windows_core::RawPtr, cacherequest: ::windows_core::RawPtr, traversaloptions: TreeTraversalOptions, root: ::windows_core::RawPtr, found: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub GetCurrentMetadataValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, targetid: i32, metadataid: i32, returnval: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     GetCurrentMetadataValue: usize,
 }
 #[repr(transparent)]
@@ -12366,7 +12366,7 @@ impl IUIAutomationElement8 {
     pub unsafe fn SetFocus(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.base__.base__.SetFocus)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetRuntimeId(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.base__.base__.GetRuntimeId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -12391,22 +12391,22 @@ impl IUIAutomationElement8 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.base__.base__.BuildUpdatedCache)(::windows_core::Interface::as_raw(self), cacherequest.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElement>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCurrentPropertyValue(&self, propertyid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.base__.base__.GetCurrentPropertyValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCurrentPropertyValueEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, propertyid: i32, ignoredefaultvalue: Param1) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.base__.base__.GetCurrentPropertyValueEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ignoredefaultvalue.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCachedPropertyValue(&self, propertyid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.base__.base__.GetCachedPropertyValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCachedPropertyValueEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, propertyid: i32, ignoredefaultvalue: Param1) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.base__.base__.GetCachedPropertyValueEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ignoredefaultvalue.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
@@ -12741,7 +12741,7 @@ impl IUIAutomationElement8 {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.CurrentLevel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CurrentAnnotationTypes(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.CurrentAnnotationTypes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -12762,7 +12762,7 @@ impl IUIAutomationElement8 {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.CachedLevel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CachedAnnotationTypes(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.CachedAnnotationTypes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -12811,7 +12811,7 @@ impl IUIAutomationElement8 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.FindAllWithOptionsBuildCache)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(scope), condition.into_param().abi(), cacherequest.into_param().abi(), ::core::mem::transmute(traversaloptions), root.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElementArray>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCurrentMetadataValue(&self, targetid: i32, metadataid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetCurrentMetadataValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(targetid), ::core::mem::transmute(metadataid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
@@ -13018,7 +13018,7 @@ impl IUIAutomationElement9 {
     pub unsafe fn SetFocus(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.base__.base__.base__.SetFocus)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetRuntimeId(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.base__.base__.base__.GetRuntimeId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -13043,22 +13043,22 @@ impl IUIAutomationElement9 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.base__.base__.base__.BuildUpdatedCache)(::windows_core::Interface::as_raw(self), cacherequest.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElement>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCurrentPropertyValue(&self, propertyid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.base__.base__.base__.GetCurrentPropertyValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCurrentPropertyValueEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, propertyid: i32, ignoredefaultvalue: Param1) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.base__.base__.base__.GetCurrentPropertyValueEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ignoredefaultvalue.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCachedPropertyValue(&self, propertyid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.base__.base__.base__.GetCachedPropertyValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCachedPropertyValueEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, propertyid: i32, ignoredefaultvalue: Param1) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.base__.base__.base__.GetCachedPropertyValueEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ignoredefaultvalue.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
@@ -13393,7 +13393,7 @@ impl IUIAutomationElement9 {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.CurrentLevel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CurrentAnnotationTypes(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.CurrentAnnotationTypes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -13414,7 +13414,7 @@ impl IUIAutomationElement9 {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.CachedLevel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn CachedAnnotationTypes(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.CachedAnnotationTypes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -13463,7 +13463,7 @@ impl IUIAutomationElement9 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.FindAllWithOptionsBuildCache)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(scope), condition.into_param().abi(), cacherequest.into_param().abi(), ::core::mem::transmute(traversaloptions), root.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElementArray>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetCurrentMetadataValue(&self, targetid: i32, metadataid: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.GetCurrentMetadataValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(targetid), ::core::mem::transmute(metadataid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
@@ -14230,7 +14230,7 @@ pub struct IUIAutomationInvokePattern_Vtbl {
 #[repr(transparent)]
 pub struct IUIAutomationItemContainerPattern(::windows_core::IUnknown);
 impl IUIAutomationItemContainerPattern {
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn FindItemByProperty<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>, Param2: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, pstartafter: Param0, propertyid: i32, value: Param2) -> ::windows_core::Result<IUIAutomationElement> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).FindItemByProperty)(::windows_core::Interface::as_raw(self), pstartafter.into_param().abi(), ::core::mem::transmute(propertyid), value.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElement>(result__)
@@ -14280,9 +14280,9 @@ unsafe impl ::windows_core::Interface for IUIAutomationItemContainerPattern {
 #[doc(hidden)]
 pub struct IUIAutomationItemContainerPattern_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub FindItemByProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstartafter: ::windows_core::RawPtr, propertyid: i32, value: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, pfound: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     FindItemByProperty: usize,
 }
 #[repr(transparent)]
@@ -14377,7 +14377,7 @@ impl IUIAutomationLegacyIAccessiblePattern {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
         (::windows_core::Interface::vtable(self).CachedDefaultAction)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetIAccessible(&self) -> ::windows_core::Result<IAccessible> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetIAccessible)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IAccessible>(result__)
@@ -14450,9 +14450,9 @@ pub struct IUIAutomationLegacyIAccessiblePattern_Vtbl {
     pub CachedKeyboardShortcut: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszkeyboardshortcut: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub GetCachedSelection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvarselectedchildren: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CachedDefaultAction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszdefaultaction: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetIAccessible: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppaccessible: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetIAccessible: usize,
 }
 #[repr(transparent)]
@@ -14469,7 +14469,7 @@ impl IUIAutomationMultipleViewPattern {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).CurrentCurrentView)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetCurrentSupportedViews(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetCurrentSupportedViews)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -14478,7 +14478,7 @@ impl IUIAutomationMultipleViewPattern {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).CachedCurrentView)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetCachedSupportedViews(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetCachedSupportedViews)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -14531,14 +14531,14 @@ pub struct IUIAutomationMultipleViewPattern_Vtbl {
     pub GetViewName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, view: i32, name: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub SetCurrentView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, view: i32) -> ::windows_core::HRESULT,
     pub CurrentCurrentView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetCurrentSupportedViews: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetCurrentSupportedViews: usize,
     pub CachedCurrentView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetCachedSupportedViews: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetCachedSupportedViews: usize,
 }
 #[repr(transparent)]
@@ -14732,7 +14732,7 @@ impl IUIAutomationOrCondition {
     pub unsafe fn GetChildrenAsNativeArray(&self, childarray: *mut *mut ::core::option::Option<IUIAutomationCondition>, childarraycount: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetChildrenAsNativeArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(childarray), ::core::mem::transmute(childarraycount)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetChildren(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetChildren)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -14804,9 +14804,9 @@ pub struct IUIAutomationOrCondition_Vtbl {
     pub base__: IUIAutomationCondition_Vtbl,
     pub ChildCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, childcount: *mut i32) -> ::windows_core::HRESULT,
     pub GetChildrenAsNativeArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, childarray: *mut *mut ::windows_core::RawPtr, childarraycount: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetChildren: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, childarray: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetChildren: usize,
 }
 #[repr(transparent)]
@@ -14927,7 +14927,7 @@ pub struct IUIAutomationPatternInstance_Vtbl {
 #[repr(transparent)]
 pub struct IUIAutomationPropertyChangedEventHandler(::windows_core::IUnknown);
 impl IUIAutomationPropertyChangedEventHandler {
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn HandlePropertyChangedEvent<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>, Param2: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, sender: Param0, propertyid: i32, newvalue: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).HandlePropertyChangedEvent)(::windows_core::Interface::as_raw(self), sender.into_param().abi(), ::core::mem::transmute(propertyid), newvalue.into_param().abi()).ok()
     }
@@ -14976,9 +14976,9 @@ unsafe impl ::windows_core::Interface for IUIAutomationPropertyChangedEventHandl
 #[doc(hidden)]
 pub struct IUIAutomationPropertyChangedEventHandler_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub HandlePropertyChangedEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sender: ::windows_core::RawPtr, propertyid: i32, newvalue: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     HandlePropertyChangedEvent: usize,
 }
 #[repr(transparent)]
@@ -14988,7 +14988,7 @@ impl IUIAutomationPropertyCondition {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).PropertyId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn PropertyValue(&self) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).PropertyValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
@@ -15063,9 +15063,9 @@ unsafe impl ::windows_core::Interface for IUIAutomationPropertyCondition {
 pub struct IUIAutomationPropertyCondition_Vtbl {
     pub base__: IUIAutomationCondition_Vtbl,
     pub PropertyId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub PropertyValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyvalue: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     PropertyValue: usize,
     pub PropertyConditionFlags: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, flags: *mut PropertyConditionFlags) -> ::windows_core::HRESULT,
 }
@@ -15170,11 +15170,11 @@ impl IUIAutomationProxyFactoryEntry {
     pub unsafe fn SetNeedsAdviseEvents<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, adviseevents: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetNeedsAdviseEvents)(::windows_core::Interface::as_raw(self), adviseevents.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn SetWinEventsForAutomationEvent(&self, eventid: i32, propertyid: i32, winevents: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetWinEventsForAutomationEvent)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(eventid), ::core::mem::transmute(propertyid), ::core::mem::transmute(winevents)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetWinEventsForAutomationEvent(&self, eventid: i32, propertyid: i32) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetWinEventsForAutomationEvent)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(eventid), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -15235,13 +15235,13 @@ pub struct IUIAutomationProxyFactoryEntry_Vtbl {
     pub SetAllowSubstringMatch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, allowsubstringmatch: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub SetCanCheckBaseClass: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cancheckbaseclass: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub SetNeedsAdviseEvents: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, adviseevents: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub SetWinEventsForAutomationEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventid: i32, propertyid: i32, winevents: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     SetWinEventsForAutomationEvent: usize,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetWinEventsForAutomationEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventid: i32, propertyid: i32, winevents: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetWinEventsForAutomationEvent: usize,
 }
 #[repr(transparent)]
@@ -15251,7 +15251,7 @@ impl IUIAutomationProxyFactoryMapping {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).Count)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetTable(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetTable)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -15260,11 +15260,11 @@ impl IUIAutomationProxyFactoryMapping {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetEntry)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationProxyFactoryEntry>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn SetTable(&self, factorylist: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetTable)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(factorylist)).ok()
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn InsertEntries(&self, before: u32, factorylist: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).InsertEntries)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(before), ::core::mem::transmute(factorylist)).ok()
     }
@@ -15326,18 +15326,18 @@ unsafe impl ::windows_core::Interface for IUIAutomationProxyFactoryMapping {
 pub struct IUIAutomationProxyFactoryMapping_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, count: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetTable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, table: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetTable: usize,
     pub GetEntry: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32, entry: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub SetTable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, factorylist: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     SetTable: usize,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub InsertEntries: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, before: u32, factorylist: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     InsertEntries: usize,
     pub InsertEntry: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, before: u32, factory: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RemoveEntry: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32) -> ::windows_core::HRESULT,
@@ -15994,7 +15994,7 @@ impl IUIAutomationSpreadsheetItemPattern {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetCurrentAnnotationObjects)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElementArray>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetCurrentAnnotationTypes(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetCurrentAnnotationTypes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -16007,7 +16007,7 @@ impl IUIAutomationSpreadsheetItemPattern {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetCachedAnnotationObjects)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElementArray>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetCachedAnnotationTypes(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetCachedAnnotationTypes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -16059,15 +16059,15 @@ pub struct IUIAutomationSpreadsheetItemPattern_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub CurrentFormula: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub GetCurrentAnnotationObjects: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetCurrentAnnotationTypes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetCurrentAnnotationTypes: usize,
     pub CachedFormula: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub GetCachedAnnotationObjects: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetCachedAnnotationTypes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetCachedAnnotationTypes: usize,
 }
 #[repr(transparent)]
@@ -16127,7 +16127,7 @@ pub struct IUIAutomationSpreadsheetPattern_Vtbl {
 #[repr(transparent)]
 pub struct IUIAutomationStructureChangedEventHandler(::windows_core::IUnknown);
 impl IUIAutomationStructureChangedEventHandler {
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn HandleStructureChangedEvent<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>>(&self, sender: Param0, changetype: StructureChangeType, runtimeid: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).HandleStructureChangedEvent)(::windows_core::Interface::as_raw(self), sender.into_param().abi(), ::core::mem::transmute(changetype), ::core::mem::transmute(runtimeid)).ok()
     }
@@ -16176,9 +16176,9 @@ unsafe impl ::windows_core::Interface for IUIAutomationStructureChangedEventHand
 #[doc(hidden)]
 pub struct IUIAutomationStructureChangedEventHandler_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub HandleStructureChangedEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sender: ::windows_core::RawPtr, changetype: StructureChangeType, runtimeid: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     HandleStructureChangedEvent: usize,
 }
 #[repr(transparent)]
@@ -16678,7 +16678,7 @@ pub struct IUIAutomationTextEditPattern_Vtbl {
 #[repr(transparent)]
 pub struct IUIAutomationTextEditTextChangedEventHandler(::windows_core::IUnknown);
 impl IUIAutomationTextEditTextChangedEventHandler {
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn HandleTextEditTextChangedEvent<'a, Param0: ::windows_core::IntoParam<'a, IUIAutomationElement>>(&self, sender: Param0, texteditchangetype: TextEditChangeType, eventstrings: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).HandleTextEditTextChangedEvent)(::windows_core::Interface::as_raw(self), sender.into_param().abi(), ::core::mem::transmute(texteditchangetype), ::core::mem::transmute(eventstrings)).ok()
     }
@@ -16727,9 +16727,9 @@ unsafe impl ::windows_core::Interface for IUIAutomationTextEditTextChangedEventH
 #[doc(hidden)]
 pub struct IUIAutomationTextEditTextChangedEventHandler_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub HandleTextEditTextChangedEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sender: ::windows_core::RawPtr, texteditchangetype: TextEditChangeType, eventstrings: *const ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     HandleTextEditTextChangedEvent: usize,
 }
 #[repr(transparent)]
@@ -16931,7 +16931,7 @@ impl IUIAutomationTextRange {
     pub unsafe fn ExpandToEnclosingUnit(&self, textunit: TextUnit) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ExpandToEnclosingUnit)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(textunit)).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn FindAttribute<'a, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, attr: i32, val: Param1, backward: Param2) -> ::windows_core::Result<IUIAutomationTextRange> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).FindAttribute)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(attr), val.into_param().abi(), backward.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationTextRange>(result__)
@@ -16940,12 +16940,12 @@ impl IUIAutomationTextRange {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).FindText)(::windows_core::Interface::as_raw(self), text.into_param().abi(), backward.into_param().abi(), ignorecase.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationTextRange>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetAttributeValue(&self, attr: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).GetAttributeValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(attr), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetBoundingRectangles(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetBoundingRectangles)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -17034,18 +17034,18 @@ pub struct IUIAutomationTextRange_Vtbl {
     pub Compare: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, range: ::windows_core::RawPtr, aresame: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub CompareEndpoints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, srcendpoint: TextPatternRangeEndpoint, range: ::windows_core::RawPtr, targetendpoint: TextPatternRangeEndpoint, compvalue: *mut i32) -> ::windows_core::HRESULT,
     pub ExpandToEnclosingUnit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, textunit: TextUnit) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub FindAttribute: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, attr: i32, val: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, backward: ::win32_foundation::BOOL, found: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     FindAttribute: usize,
     pub FindText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, text: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, backward: ::win32_foundation::BOOL, ignorecase: ::win32_foundation::BOOL, found: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub GetAttributeValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, attr: i32, value: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "win32-system", feature = "win32-system")))]
     GetAttributeValue: usize,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetBoundingRectangles: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, boundingrects: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetBoundingRectangles: usize,
     pub GetEnclosingElement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, enclosingelement: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, maxlength: i32, text: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
@@ -17076,7 +17076,7 @@ impl IUIAutomationTextRange2 {
     pub unsafe fn ExpandToEnclosingUnit(&self, textunit: TextUnit) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.ExpandToEnclosingUnit)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(textunit)).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn FindAttribute<'a, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, attr: i32, val: Param1, backward: Param2) -> ::windows_core::Result<IUIAutomationTextRange> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.FindAttribute)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(attr), val.into_param().abi(), backward.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationTextRange>(result__)
@@ -17085,12 +17085,12 @@ impl IUIAutomationTextRange2 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.FindText)(::windows_core::Interface::as_raw(self), text.into_param().abi(), backward.into_param().abi(), ignorecase.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationTextRange>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetAttributeValue(&self, attr: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetAttributeValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(attr), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetBoundingRectangles(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetBoundingRectangles)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -17218,7 +17218,7 @@ impl IUIAutomationTextRange3 {
     pub unsafe fn ExpandToEnclosingUnit(&self, textunit: TextUnit) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.ExpandToEnclosingUnit)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(textunit)).ok()
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn FindAttribute<'a, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, attr: i32, val: Param1, backward: Param2) -> ::windows_core::Result<IUIAutomationTextRange> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.FindAttribute)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(attr), val.into_param().abi(), backward.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationTextRange>(result__)
@@ -17227,12 +17227,12 @@ impl IUIAutomationTextRange3 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.FindText)(::windows_core::Interface::as_raw(self), text.into_param().abi(), backward.into_param().abi(), ignorecase.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationTextRange>(result__)
     }
-    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "win32-system", feature = "win32-system"))]
     pub unsafe fn GetAttributeValue(&self, attr: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.GetAttributeValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(attr), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetBoundingRectangles(&self) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.GetBoundingRectangles)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -17283,7 +17283,7 @@ impl IUIAutomationTextRange3 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetChildrenBuildCache)(::windows_core::Interface::as_raw(self), cacherequest.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IUIAutomationElementArray>(result__)
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn GetAttributeValues(&self, attributeids: &[i32]) -> ::windows_core::Result<*mut ::win32_system::Com::SAFEARRAY> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::win32_system::Com::SAFEARRAY>::zeroed();
         (::windows_core::Interface::vtable(self).GetAttributeValues)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(attributeids)), attributeids.len() as _, ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::win32_system::Com::SAFEARRAY>(result__)
@@ -17375,9 +17375,9 @@ pub struct IUIAutomationTextRange3_Vtbl {
     pub base__: IUIAutomationTextRange2_Vtbl,
     pub GetEnclosingElementBuildCache: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cacherequest: ::windows_core::RawPtr, enclosingelement: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetChildrenBuildCache: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cacherequest: ::windows_core::RawPtr, children: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub GetAttributeValues: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, attributeids: *const i32, attributeidcount: i32, attributevalues: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     GetAttributeValues: usize,
 }
 #[repr(transparent)]
@@ -18391,7 +18391,7 @@ pub unsafe fn IsWinEventHookInstalled(event: u32) -> ::win32_foundation::BOOL {
     unimplemented!("Unsupported target OS");
 }
 pub const IsWindowPatternAvailable_Property_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe7a57bb1_5888_4155_98dc_b422fd57f2bc);
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn ItemContainerPattern_FindItemByProperty<'a, Param0: ::windows_core::IntoParam<'a, HUIAPATTERNOBJECT>, Param1: ::windows_core::IntoParam<'a, HUIANODE>, Param3: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(hobj: Param0, hnodestartafter: Param1, propertyid: i32, value: Param3, pfound: *mut HUIANODE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -18409,9 +18409,9 @@ pub const ItemContainer_Pattern_GUID: ::windows_core::GUID = ::windows_core::GUI
 pub const ItemStatus_Property_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x51de0321_3973_43e7_8913_0b08e813c37f);
 pub const ItemType_Property_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xcdda434d_6222_413b_a68a_325dd1d40f39);
 pub const LIBID_Accessibility: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1ea4dbf0_3c3b_11cf_810c_00aa00389b71);
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 pub type LPFNACCESSIBLECHILDREN = ::core::option::Option<unsafe extern "system" fn(pacccontainer: ::core::option::Option<IAccessible>, ichildstart: i32, cchildren: i32, rgvarchildren: *mut ::win32_system::Com::VARIANT, pcobtained: *mut i32) -> ::windows_core::HRESULT>;
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 pub type LPFNACCESSIBLEOBJECTFROMPOINT = ::core::option::Option<unsafe extern "system" fn(ptscreen: ::win32_foundation::POINT, ppacc: *mut ::core::option::Option<IAccessible>, pvarchild: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT>;
 pub type LPFNACCESSIBLEOBJECTFROMWINDOW = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation::HWND, dwid: u32, riid: *const ::windows_core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT>;
 pub type LPFNCREATESTDACCESSIBLEOBJECT = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation::HWND, idobject: i32, riid: *const ::windows_core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT>;
@@ -18433,7 +18433,7 @@ pub unsafe fn LegacyIAccessiblePattern_DoDefaultAction<'a, Param0: ::windows_cor
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn LegacyIAccessiblePattern_GetIAccessible<'a, Param0: ::windows_core::IntoParam<'a, HUIAPATTERNOBJECT>>(hobj: Param0) -> ::windows_core::Result<IAccessible> {
     #[cfg(windows)]
@@ -19031,7 +19031,7 @@ pub const RangeValue_Minimum_Property_GUID: ::windows_core::GUID = ::windows_cor
 pub const RangeValue_Pattern_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x18b00d87_b1c9_476a_bfbd_5f0bdb926f63);
 pub const RangeValue_SmallChange_Property_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x81c2c457_3941_4107_9975_139760f7c072);
 pub const RangeValue_Value_Property_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x131f5d98_c50c_489d_abe5_ae220898c5f7);
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn RegisterPointerInputTarget<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0, pointertype: super::WindowsAndMessaging::POINTER_INPUT_TYPE) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -19045,7 +19045,7 @@ pub unsafe fn RegisterPointerInputTarget<'a, Param0: ::windows_core::IntoParam<'
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn RegisterPointerInputTargetEx<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(hwnd: Param0, pointertype: super::WindowsAndMessaging::POINTER_INPUT_TYPE, fobserve: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -20058,7 +20058,7 @@ impl ::core::fmt::Debug for TextPatternRangeEndpoint {
         f.debug_tuple("TextPatternRangeEndpoint").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn TextPattern_GetSelection<'a, Param0: ::windows_core::IntoParam<'a, HUIAPATTERNOBJECT>>(hobj: Param0, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -20072,7 +20072,7 @@ pub unsafe fn TextPattern_GetSelection<'a, Param0: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn TextPattern_GetVisibleRanges<'a, Param0: ::windows_core::IntoParam<'a, HUIAPATTERNOBJECT>>(hobj: Param0, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -20203,7 +20203,7 @@ pub unsafe fn TextRange_ExpandToEnclosingUnit<'a, Param0: ::windows_core::IntoPa
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn TextRange_FindAttribute<'a, Param0: ::windows_core::IntoParam<'a, HUIATEXTRANGE>, Param2: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(hobj: Param0, attributeid: i32, val: Param2, backward: Param3, pretval: *mut HUIATEXTRANGE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -20230,7 +20230,7 @@ pub unsafe fn TextRange_FindText<'a, Param0: ::windows_core::IntoParam<'a, HUIAT
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn TextRange_GetAttributeValue<'a, Param0: ::windows_core::IntoParam<'a, HUIATEXTRANGE>>(hobj: Param0, attributeid: i32, pretval: *mut ::win32_system::Com::VARIANT) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -20244,7 +20244,7 @@ pub unsafe fn TextRange_GetAttributeValue<'a, Param0: ::windows_core::IntoParam<
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn TextRange_GetBoundingRectangles<'a, Param0: ::windows_core::IntoParam<'a, HUIATEXTRANGE>>(hobj: Param0, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -20258,7 +20258,7 @@ pub unsafe fn TextRange_GetBoundingRectangles<'a, Param0: ::windows_core::IntoPa
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn TextRange_GetChildren<'a, Param0: ::windows_core::IntoParam<'a, HUIATEXTRANGE>>(hobj: Param0, pretval: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -21196,7 +21196,7 @@ impl ::core::fmt::Debug for UIAutomationType {
         f.debug_tuple("UIAutomationType").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn UiaAddEvent<'a, Param0: ::windows_core::IntoParam<'a, HUIANODE>>(hnode: Param0, eventid: i32, pcallback: *mut UiaEventCallback, scope: TreeScope, pproperties: *mut i32, cproperties: i32, prequest: *mut UiaCacheRequest, phevent: *mut HUIAEVENT) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -21310,71 +21310,71 @@ impl ::core::default::Default for UiaCacheRequest {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 pub struct UiaChangeInfo {
     pub uiaId: i32,
     pub payload: ::win32_system::Com::VARIANT,
     pub extraInfo: ::win32_system::Com::VARIANT,
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 impl ::core::clone::Clone for UiaChangeInfo {
     fn clone(&self) -> Self {
         Self { uiaId: self.uiaId, payload: self.payload.clone(), extraInfo: self.extraInfo.clone() }
     }
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 unsafe impl ::windows_core::Abi for UiaChangeInfo {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 impl ::core::cmp::PartialEq for UiaChangeInfo {
     fn eq(&self, other: &Self) -> bool {
         self.uiaId == other.uiaId && self.payload == other.payload && self.extraInfo == other.extraInfo
     }
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 impl ::core::cmp::Eq for UiaChangeInfo {}
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 impl ::core::default::Default for UiaChangeInfo {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 pub struct UiaChangesEventArgs {
     pub Type: EventArgsType,
     pub EventId: i32,
     pub EventIdCount: i32,
     pub pUiaChanges: *mut UiaChangeInfo,
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 impl ::core::marker::Copy for UiaChangesEventArgs {}
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 impl ::core::clone::Clone for UiaChangesEventArgs {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 impl ::core::fmt::Debug for UiaChangesEventArgs {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("UiaChangesEventArgs").field("Type", &self.Type).field("EventId", &self.EventId).field("EventIdCount", &self.EventIdCount).field("pUiaChanges", &self.pUiaChanges).finish()
     }
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 unsafe impl ::windows_core::Abi for UiaChangesEventArgs {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 impl ::core::cmp::PartialEq for UiaChangesEventArgs {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<UiaChangesEventArgs>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 impl ::core::cmp::Eq for UiaChangesEventArgs {}
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 impl ::core::default::Default for UiaChangesEventArgs {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -21491,7 +21491,7 @@ impl ::core::default::Default for UiaEventArgs {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 pub type UiaEventCallback = ::core::option::Option<unsafe extern "system" fn(pargs: *mut UiaEventArgs, prequesteddata: *mut ::win32_system::Com::SAFEARRAY, ptreestructure: ::win32_foundation::BSTR)>;
 #[inline]
 pub unsafe fn UiaEventRemoveWindow<'a, Param0: ::windows_core::IntoParam<'a, HUIAEVENT>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hevent: Param0, hwnd: Param1) -> ::windows_core::Result<()> {
@@ -21506,7 +21506,7 @@ pub unsafe fn UiaEventRemoveWindow<'a, Param0: ::windows_core::IntoParam<'a, HUI
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn UiaFind<'a, Param0: ::windows_core::IntoParam<'a, HUIANODE>>(hnode: Param0, pparams: *mut UiaFindParams, prequest: *mut UiaCacheRequest, pprequesteddata: *mut *mut ::win32_system::Com::SAFEARRAY, ppoffsets: *mut *mut ::win32_system::Com::SAFEARRAY, pptreestructures: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -21578,7 +21578,7 @@ pub unsafe fn UiaGetPatternProvider<'a, Param0: ::windows_core::IntoParam<'a, HU
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn UiaGetPropertyValue<'a, Param0: ::windows_core::IntoParam<'a, HUIANODE>>(hnode: Param0, propertyid: i32, pvalue: *mut ::win32_system::Com::VARIANT) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -21633,7 +21633,7 @@ pub unsafe fn UiaGetRootNode(phnode: *mut HUIANODE) -> ::windows_core::Result<()
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn UiaGetRuntimeId<'a, Param0: ::windows_core::IntoParam<'a, HUIANODE>>(hnode: Param0, pruntimeid: *mut *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -21647,7 +21647,7 @@ pub unsafe fn UiaGetRuntimeId<'a, Param0: ::windows_core::IntoParam<'a, HUIANODE
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn UiaGetUpdatedCache<'a, Param0: ::windows_core::IntoParam<'a, HUIANODE>>(hnode: Param0, prequest: *mut UiaCacheRequest, normalizestate: NormalizeState, pnormalizecondition: *mut UiaCondition, pprequesteddata: *mut *mut ::win32_system::Com::SAFEARRAY, pptreestructure: *mut ::win32_foundation::BSTR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -21661,7 +21661,7 @@ pub unsafe fn UiaGetUpdatedCache<'a, Param0: ::windows_core::IntoParam<'a, HUIAN
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn UiaHPatternObjectFromVariant(pvar: *mut ::win32_system::Com::VARIANT, phobj: *mut HUIAPATTERNOBJECT) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -21675,7 +21675,7 @@ pub unsafe fn UiaHPatternObjectFromVariant(pvar: *mut ::win32_system::Com::VARIA
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn UiaHTextRangeFromVariant(pvar: *mut ::win32_system::Com::VARIANT, phtextrange: *mut HUIATEXTRANGE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -21689,7 +21689,7 @@ pub unsafe fn UiaHTextRangeFromVariant(pvar: *mut ::win32_system::Com::VARIANT, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn UiaHUiaNodeFromVariant(pvar: *mut ::win32_system::Com::VARIANT, phnode: *mut HUIANODE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -21730,7 +21730,7 @@ pub unsafe fn UiaHostProviderFromHwnd<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn UiaIAccessibleFromProvider<'a, Param0: ::windows_core::IntoParam<'a, IRawElementProviderSimple>>(pprovider: Param0, dwflags: u32, ppaccessible: *mut ::core::option::Option<IAccessible>, pvarchild: *mut ::win32_system::Com::VARIANT) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -21757,7 +21757,7 @@ pub unsafe fn UiaLookupId(r#type: AutomationIdentifierType, pguid: *const ::wind
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn UiaNavigate<'a, Param0: ::windows_core::IntoParam<'a, HUIANODE>>(hnode: Param0, direction: NavigateDirection, pcondition: *mut UiaCondition, prequest: *mut UiaCacheRequest, pprequesteddata: *mut *mut ::win32_system::Com::SAFEARRAY, pptreestructure: *mut ::win32_foundation::BSTR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -21771,7 +21771,7 @@ pub unsafe fn UiaNavigate<'a, Param0: ::windows_core::IntoParam<'a, HUIANODE>>(h
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn UiaNodeFromFocus(prequest: *mut UiaCacheRequest, pprequesteddata: *mut *mut ::win32_system::Com::SAFEARRAY, pptreestructure: *mut ::win32_foundation::BSTR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -21798,7 +21798,7 @@ pub unsafe fn UiaNodeFromHandle<'a, Param0: ::windows_core::IntoParam<'a, ::win3
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn UiaNodeFromPoint(x: f64, y: f64, prequest: *mut UiaCacheRequest, pprequesteddata: *mut *mut ::win32_system::Com::SAFEARRAY, pptreestructure: *mut ::win32_foundation::BSTR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -21912,7 +21912,7 @@ impl ::core::default::Default for UiaPoint {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 pub struct UiaPropertyChangedEventArgs {
     pub Type: EventArgsType,
     pub EventId: i32,
@@ -21920,63 +21920,63 @@ pub struct UiaPropertyChangedEventArgs {
     pub OldValue: ::win32_system::Com::VARIANT,
     pub NewValue: ::win32_system::Com::VARIANT,
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 impl ::core::clone::Clone for UiaPropertyChangedEventArgs {
     fn clone(&self) -> Self {
         Self { Type: self.Type, EventId: self.EventId, PropertyId: self.PropertyId, OldValue: self.OldValue.clone(), NewValue: self.NewValue.clone() }
     }
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 unsafe impl ::windows_core::Abi for UiaPropertyChangedEventArgs {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 impl ::core::cmp::PartialEq for UiaPropertyChangedEventArgs {
     fn eq(&self, other: &Self) -> bool {
         self.Type == other.Type && self.EventId == other.EventId && self.PropertyId == other.PropertyId && self.OldValue == other.OldValue && self.NewValue == other.NewValue
     }
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 impl ::core::cmp::Eq for UiaPropertyChangedEventArgs {}
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 impl ::core::default::Default for UiaPropertyChangedEventArgs {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 pub struct UiaPropertyCondition {
     pub ConditionType: ConditionType,
     pub PropertyId: i32,
     pub Value: ::win32_system::Com::VARIANT,
     pub Flags: PropertyConditionFlags,
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 impl ::core::clone::Clone for UiaPropertyCondition {
     fn clone(&self) -> Self {
         Self { ConditionType: self.ConditionType, PropertyId: self.PropertyId, Value: self.Value.clone(), Flags: self.Flags }
     }
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 unsafe impl ::windows_core::Abi for UiaPropertyCondition {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 impl ::core::cmp::PartialEq for UiaPropertyCondition {
     fn eq(&self, other: &Self) -> bool {
         self.ConditionType == other.ConditionType && self.PropertyId == other.PropertyId && self.Value == other.Value && self.Flags == other.Flags
     }
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 impl ::core::cmp::Eq for UiaPropertyCondition {}
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 impl ::core::default::Default for UiaPropertyCondition {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 pub type UiaProviderCallback = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation::HWND, providertype: ProviderType) -> *mut ::win32_system::Com::SAFEARRAY>;
 #[inline]
 pub unsafe fn UiaProviderForNonClient<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0, idobject: i32, idchild: i32) -> ::windows_core::Result<IRawElementProviderSimple> {
@@ -21992,7 +21992,7 @@ pub unsafe fn UiaProviderForNonClient<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn UiaProviderFromIAccessible<'a, Param0: ::windows_core::IntoParam<'a, IAccessible>>(paccessible: Param0, idchild: i32, dwflags: u32) -> ::windows_core::Result<IRawElementProviderSimple> {
     #[cfg(windows)]
@@ -22046,7 +22046,7 @@ pub unsafe fn UiaRaiseAutomationEvent<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn UiaRaiseAutomationPropertyChangedEvent<'a, Param0: ::windows_core::IntoParam<'a, IRawElementProviderSimple>, Param2: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>, Param3: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(pprovider: Param0, id: i32, oldvalue: Param2, newvalue: Param3) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -22060,7 +22060,7 @@ pub unsafe fn UiaRaiseAutomationPropertyChangedEvent<'a, Param0: ::windows_core:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system", feature = "win32-system"))]
 #[inline]
 pub unsafe fn UiaRaiseChangesEvent<'a, Param0: ::windows_core::IntoParam<'a, IRawElementProviderSimple>>(pprovider: Param0, eventidcount: i32, puiachanges: *mut UiaChangeInfo) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -22100,7 +22100,7 @@ pub unsafe fn UiaRaiseStructureChangedEvent<'a, Param0: ::windows_core::IntoPara
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn UiaRaiseTextEditTextChangedEvent<'a, Param0: ::windows_core::IntoParam<'a, IRawElementProviderSimple>>(pprovider: Param0, texteditchangetype: TextEditChangeType, pchangeddata: *mut ::win32_system::Com::SAFEARRAY) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -22146,7 +22146,7 @@ impl ::core::default::Default for UiaRect {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn UiaRegisterProviderCallback(pcallback: *mut UiaProviderCallback) {
     #[cfg(windows)]
@@ -22234,40 +22234,40 @@ impl ::core::default::Default for UiaStructureChangedEventArgs {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 pub struct UiaTextEditTextChangedEventArgs {
     pub Type: EventArgsType,
     pub EventId: i32,
     pub TextEditChangeType: TextEditChangeType,
     pub pTextChange: *mut ::win32_system::Com::SAFEARRAY,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for UiaTextEditTextChangedEventArgs {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for UiaTextEditTextChangedEventArgs {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for UiaTextEditTextChangedEventArgs {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("UiaTextEditTextChangedEventArgs").field("Type", &self.Type).field("EventId", &self.EventId).field("TextEditChangeType", &self.TextEditChangeType).field("pTextChange", &self.pTextChange).finish()
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for UiaTextEditTextChangedEventArgs {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for UiaTextEditTextChangedEventArgs {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<UiaTextEditTextChangedEventArgs>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for UiaTextEditTextChangedEventArgs {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for UiaTextEditTextChangedEventArgs {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -22331,7 +22331,7 @@ pub unsafe fn UnhookWinEvent<'a, Param0: ::windows_core::IntoParam<'a, HWINEVENT
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn UnregisterPointerInputTarget<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0, pointertype: super::WindowsAndMessaging::POINTER_INPUT_TYPE) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -22345,7 +22345,7 @@ pub unsafe fn UnregisterPointerInputTarget<'a, Param0: ::windows_core::IntoParam
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn UnregisterPointerInputTargetEx<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0, pointertype: super::WindowsAndMessaging::POINTER_INPUT_TYPE) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -22419,7 +22419,7 @@ impl ::core::fmt::Debug for VisualEffects {
 }
 pub const VisualEffects_Property_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe61a8565_aad9_46d7_9e70_4e8a8420d420);
 pub type WINEVENTPROC = ::core::option::Option<unsafe extern "system" fn(hwineventhook: HWINEVENTHOOK, event: u32, hwnd: ::win32_foundation::HWND, idobject: i32, idchild: i32, ideventthread: u32, dwmseventtime: u32)>;
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn WindowFromAccessibleObject<'a, Param0: ::windows_core::IntoParam<'a, IAccessible>>(param0: Param0) -> ::windows_core::Result<::win32_foundation::HWND> {
     #[cfg(windows)]

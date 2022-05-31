@@ -11,9 +11,9 @@ extern "system" {
     pub fn DdeAddData(hdata: HDDEDATA, psrc: *const u8, cb: u32, cboff: u32) -> HDDEDATA;
     pub fn DdeClientTransaction(pdata: *const u8, cbdata: u32, hconv: HCONV, hszitem: HSZ, wfmt: u32, wtype: DDE_CLIENT_TRANSACTION_TYPE, dwtimeout: u32, pdwresult: *mut u32) -> HDDEDATA;
     pub fn DdeCmpStringHandles(hsz1: HSZ, hsz2: HSZ) -> i32;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn DdeConnect(idinst: u32, hszservice: HSZ, hsztopic: HSZ, pcc: *const CONVCONTEXT) -> HCONV;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn DdeConnectList(idinst: u32, hszservice: HSZ, hsztopic: HSZ, hconvlist: HCONVLIST, pcc: *const CONVCONTEXT) -> HCONVLIST;
     pub fn DdeCreateDataHandle(idinst: u32, psrc: *const u8, cb: u32, cboff: u32, hszitem: HSZ, wfmt: u32, afcmd: u32) -> HDDEDATA;
     pub fn DdeCreateStringHandleA(idinst: u32, psz: ::windows_core_sys::PCSTR, icodepage: i32) -> HSZ;
@@ -31,13 +31,13 @@ extern "system" {
     pub fn DdeKeepStringHandle(idinst: u32, hsz: HSZ) -> ::win32_foundation_sys::BOOL;
     pub fn DdeNameService(idinst: u32, hsz1: HSZ, hsz2: HSZ, afcmd: DDE_NAME_SERVICE_CMD) -> HDDEDATA;
     pub fn DdePostAdvise(idinst: u32, hsztopic: HSZ, hszitem: HSZ) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn DdeQueryConvInfo(hconv: HCONV, idtransaction: u32, pconvinfo: *mut CONVINFO) -> u32;
     pub fn DdeQueryNextServer(hconvlist: HCONVLIST, hconvprev: HCONV) -> HCONV;
     pub fn DdeQueryStringA(idinst: u32, hsz: HSZ, psz: ::windows_core_sys::PSTR, cchmax: u32, icodepage: i32) -> u32;
     pub fn DdeQueryStringW(idinst: u32, hsz: HSZ, psz: ::windows_core_sys::PWSTR, cchmax: u32, icodepage: i32) -> u32;
     pub fn DdeReconnect(hconv: HCONV) -> HCONV;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn DdeSetQualityOfService(hwndclient: ::win32_foundation_sys::HWND, pqosnew: *const ::win32_security_sys::SECURITY_QUALITY_OF_SERVICE, pqosprev: *mut ::win32_security_sys::SECURITY_QUALITY_OF_SERVICE) -> ::win32_foundation_sys::BOOL;
     pub fn DdeSetUserHandle(hconv: HCONV, id: u32, huser: usize) -> ::win32_foundation_sys::BOOL;
     pub fn DdeUnaccessData(hdata: HDDEDATA) -> ::win32_foundation_sys::BOOL;
@@ -79,7 +79,7 @@ extern "system" {
     pub fn ReuseDDElParam(lparam: ::win32_foundation_sys::LPARAM, msgin: u32, msgout: u32, uilo: usize, uihi: usize) -> ::win32_foundation_sys::LPARAM;
     pub fn SetClipboardData(uformat: u32, hmem: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::HANDLE;
     pub fn SetClipboardViewer(hwndnewviewer: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::HWND;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn SetWinMetaFileBits(nsize: u32, lpmeta16data: *const u8, hdcref: ::win32_graphics_sys::Gdi::HDC, lpmfp: *const METAFILEPICT) -> ::win32_graphics_sys::Gdi::HENHMETAFILE;
     pub fn UnpackDDElParam(msg: u32, lparam: ::win32_foundation_sys::LPARAM, puilo: *mut usize, puihi: *mut usize) -> ::win32_foundation_sys::BOOL;
 }
@@ -87,7 +87,7 @@ pub const APPCLASS_MASK: i32 = 15i32;
 pub const APPCMD_MASK: i32 = 4080i32;
 pub const CADV_LATEACK: u32 = 65535u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct CONVCONTEXT {
     pub cb: u32,
     pub wFlags: u32,
@@ -97,16 +97,16 @@ pub struct CONVCONTEXT {
     pub dwSecurity: u32,
     pub qos: ::win32_security_sys::SECURITY_QUALITY_OF_SERVICE,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for CONVCONTEXT {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for CONVCONTEXT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct CONVINFO {
     pub cb: u32,
     pub hUser: usize,
@@ -125,9 +125,9 @@ pub struct CONVINFO {
     pub hwnd: ::win32_foundation_sys::HWND,
     pub hwndPartner: ::win32_foundation_sys::HWND,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for CONVINFO {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for CONVINFO {
     fn clone(&self) -> Self {
         *self
@@ -354,16 +354,16 @@ impl ::core::clone::Clone for HSZPAIR {
 }
 pub const MAX_MONITORS: u32 = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct METAFILEPICT {
     pub mm: i32,
     pub xExt: i32,
     pub yExt: i32,
     pub hMF: ::win32_graphics_sys::Gdi::HMETAFILE,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for METAFILEPICT {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for METAFILEPICT {
     fn clone(&self) -> Self {
         *self
@@ -375,7 +375,7 @@ pub const MH_CREATE: u32 = 1u32;
 pub const MH_DELETE: u32 = 3u32;
 pub const MH_KEEP: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct MONCBSTRUCT {
     pub cb: u32,
     pub dwTime: u32,
@@ -393,9 +393,9 @@ pub struct MONCBSTRUCT {
     pub cbData: u32,
     pub Data: [u32; 8],
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for MONCBSTRUCT {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for MONCBSTRUCT {
     fn clone(&self) -> Self {
         *self

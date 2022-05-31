@@ -1,8 +1,8 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DMLCreateDevice(d3d12device: ::win32_graphics_sys::Direct3D12::ID3D12Device, flags: DML_CREATE_DEVICE_FLAGS, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DMLCreateDevice1(d3d12device: ::win32_graphics_sys::Direct3D12::ID3D12Device, flags: DML_CREATE_DEVICE_FLAGS, minimumfeaturelevel: DML_FEATURE_LEVEL, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
 }
 #[repr(C)]
@@ -401,16 +401,16 @@ impl ::core::clone::Clone for DML_BINDING_PROPERTIES {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct DML_BINDING_TABLE_DESC {
     pub Dispatchable: IDMLDispatchable,
     pub CPUDescriptorHandle: ::win32_graphics_sys::Direct3D12::D3D12_CPU_DESCRIPTOR_HANDLE,
     pub GPUDescriptorHandle: ::win32_graphics_sys::Direct3D12::D3D12_GPU_DESCRIPTOR_HANDLE,
     pub SizeInDescriptors: u32,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for DML_BINDING_TABLE_DESC {}
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for DML_BINDING_TABLE_DESC {
     fn clone(&self) -> Self {
         *self
@@ -421,29 +421,29 @@ pub const DML_BINDING_TYPE_NONE: DML_BINDING_TYPE = 0i32;
 pub const DML_BINDING_TYPE_BUFFER: DML_BINDING_TYPE = 1i32;
 pub const DML_BINDING_TYPE_BUFFER_ARRAY: DML_BINDING_TYPE = 2i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct DML_BUFFER_ARRAY_BINDING {
     pub BindingCount: u32,
     pub Bindings: *const DML_BUFFER_BINDING,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for DML_BUFFER_ARRAY_BINDING {}
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for DML_BUFFER_ARRAY_BINDING {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct DML_BUFFER_BINDING {
     pub Buffer: ::win32_graphics_sys::Direct3D12::ID3D12Resource,
     pub Offset: u64,
     pub SizeInBytes: u64,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for DML_BUFFER_BINDING {}
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for DML_BUFFER_BINDING {
     fn clone(&self) -> Self {
         *self

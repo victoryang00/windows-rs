@@ -55,21 +55,21 @@ pub const DD_KEYBOARD_DEVICE_NAME: &str = "\\Device\\KeyboardClass";
 pub const DD_KEYBOARD_DEVICE_NAME_U: &str = "\\Device\\KeyboardClass";
 pub const DD_MOUSE_DEVICE_NAME: &str = "\\Device\\PointerClass";
 pub const DD_MOUSE_DEVICE_NAME_U: &str = "\\Device\\PointerClass";
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_DeviceInterface_HID_BackgroundAccess: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0xcbf38310_4a17_4310_a1eb_247f0b67593b), pid: 8u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_DeviceInterface_HID_IsReadOnly: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0xcbf38310_4a17_4310_a1eb_247f0b67593b), pid: 4u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_DeviceInterface_HID_ProductId: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0xcbf38310_4a17_4310_a1eb_247f0b67593b), pid: 6u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_DeviceInterface_HID_UsageId: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0xcbf38310_4a17_4310_a1eb_247f0b67593b), pid: 3u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_DeviceInterface_HID_UsagePage: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0xcbf38310_4a17_4310_a1eb_247f0b67593b), pid: 2u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_DeviceInterface_HID_VendorId: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0xcbf38310_4a17_4310_a1eb_247f0b67593b), pid: 5u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_DeviceInterface_HID_VersionNumber: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0xcbf38310_4a17_4310_a1eb_247f0b67593b), pid: 7u32 };
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices")]
 pub const DEVPKEY_DeviceInterface_HID_WakeScreenOnInputCapable: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0xcbf38310_4a17_4310_a1eb_247f0b67593b), pid: 9u32 };
 pub const DI8DEVCLASS_ALL: u32 = 0u32;
 pub const DI8DEVCLASS_DEVICE: u32 = 1u32;
@@ -8223,11 +8223,11 @@ impl IDirectInputJoyConfig {
     pub unsafe fn AddNewHardware<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, param0: Param0, param1: *const ::windows_core::GUID) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AddNewHardware)(::windows_core::Interface::as_raw(self), param0.into_param().abi(), ::core::mem::transmute(param1)).ok()
     }
-    #[cfg(feature = "Win32_System_Registry")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn OpenTypeKey<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, param0: Param0, param1: u32, param2: *mut ::win32_system::Registry::HKEY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OpenTypeKey)(::windows_core::Interface::as_raw(self), param0.into_param().abi(), ::core::mem::transmute(param1), ::core::mem::transmute(param2)).ok()
     }
-    #[cfg(feature = "Win32_System_Registry")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn OpenConfigKey(&self, param0: u32, param1: u32, param2: *mut ::win32_system::Registry::HKEY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OpenConfigKey)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)).ok()
     }
@@ -8290,13 +8290,13 @@ pub struct IDirectInputJoyConfig_Vtbl {
     pub GetUserValues: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, param0: *mut DIJOYUSERVALUES, param1: u32) -> ::windows_core::HRESULT,
     pub SetUserValues: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, param0: *mut DIJOYUSERVALUES, param1: u32) -> ::windows_core::HRESULT,
     pub AddNewHardware: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, param0: ::win32_foundation::HWND, param1: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Registry")]
+    #[cfg(feature = "win32-system")]
     pub OpenTypeKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, param0: ::windows_core::PCWSTR, param1: u32, param2: *mut ::win32_system::Registry::HKEY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Registry"))]
+    #[cfg(not(feature = "win32-system"))]
     OpenTypeKey: usize,
-    #[cfg(feature = "Win32_System_Registry")]
+    #[cfg(feature = "win32-system")]
     pub OpenConfigKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, param0: u32, param1: u32, param2: *mut ::win32_system::Registry::HKEY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Registry"))]
+    #[cfg(not(feature = "win32-system"))]
     OpenConfigKey: usize,
 }
 #[repr(transparent)]
@@ -8344,11 +8344,11 @@ impl IDirectInputJoyConfig8 {
     pub unsafe fn AddNewHardware<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, param0: Param0, param1: *const ::windows_core::GUID) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AddNewHardware)(::windows_core::Interface::as_raw(self), param0.into_param().abi(), ::core::mem::transmute(param1)).ok()
     }
-    #[cfg(feature = "Win32_System_Registry")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn OpenTypeKey<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, param0: Param0, param1: u32, param2: *mut ::win32_system::Registry::HKEY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OpenTypeKey)(::windows_core::Interface::as_raw(self), param0.into_param().abi(), ::core::mem::transmute(param1), ::core::mem::transmute(param2)).ok()
     }
-    #[cfg(feature = "Win32_System_Registry")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn OpenAppStatusKey(&self, param0: *mut ::win32_system::Registry::HKEY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OpenAppStatusKey)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(param0)).ok()
     }
@@ -8411,13 +8411,13 @@ pub struct IDirectInputJoyConfig8_Vtbl {
     pub GetUserValues: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, param0: *mut DIJOYUSERVALUES, param1: u32) -> ::windows_core::HRESULT,
     pub SetUserValues: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, param0: *mut DIJOYUSERVALUES, param1: u32) -> ::windows_core::HRESULT,
     pub AddNewHardware: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, param0: ::win32_foundation::HWND, param1: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_System_Registry")]
+    #[cfg(feature = "win32-system")]
     pub OpenTypeKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, param0: ::windows_core::PCWSTR, param1: u32, param2: *mut ::win32_system::Registry::HKEY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Registry"))]
+    #[cfg(not(feature = "win32-system"))]
     OpenTypeKey: usize,
-    #[cfg(feature = "Win32_System_Registry")]
+    #[cfg(feature = "win32-system")]
     pub OpenAppStatusKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, param0: *mut ::win32_system::Registry::HKEY) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Registry"))]
+    #[cfg(not(feature = "win32-system"))]
     OpenAppStatusKey: usize,
 }
 #[repr(transparent)]

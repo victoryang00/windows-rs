@@ -2,9 +2,9 @@
 extern "system" {
     pub fn AddLogContainer(hlog: ::win32_foundation_sys::HANDLE, pcbcontainer: *const u64, pwszcontainerpath: ::windows_core_sys::PCWSTR, preserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn AddLogContainerSet(hlog: ::win32_foundation_sys::HANDLE, ccontainer: u16, pcbcontainer: *const u64, rgwszcontainerpath: *const ::windows_core_sys::PWSTR, preserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn AddUsersToEncryptedFile(lpfilename: ::windows_core_sys::PCWSTR, pencryptioncertificates: *const ENCRYPTION_CERTIFICATE_LIST) -> u32;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn AdvanceLogBase(pvmarshal: *mut ::core::ffi::c_void, plsnbase: *mut CLS_LSN, fflags: u32, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
     pub fn AlignReservedLog(pvmarshal: *mut ::core::ffi::c_void, creservedrecords: u32, rgcbreservation: *mut i64, pcbalignreservation: *mut i64) -> ::win32_foundation_sys::BOOL;
     pub fn AllocReservedLog(pvmarshal: *mut ::core::ffi::c_void, creservedrecords: u32, pcbadjustment: *mut i64) -> ::win32_foundation_sys::BOOL;
@@ -36,60 +36,60 @@ extern "system" {
     pub fn CopyFileTransactedW(lpexistingfilename: ::windows_core_sys::PCWSTR, lpnewfilename: ::windows_core_sys::PCWSTR, lpprogressroutine: LPPROGRESS_ROUTINE, lpdata: *const ::core::ffi::c_void, pbcancel: *const i32, dwcopyflags: u32, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn CopyFileW(lpexistingfilename: ::windows_core_sys::PCWSTR, lpnewfilename: ::windows_core_sys::PCWSTR, bfailifexists: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     pub fn CopyLZFile(hfsource: i32, hfdest: i32) -> i32;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateDirectoryA(lppathname: ::windows_core_sys::PCSTR, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateDirectoryExA(lptemplatedirectory: ::windows_core_sys::PCSTR, lpnewdirectory: ::windows_core_sys::PCSTR, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateDirectoryExW(lptemplatedirectory: ::windows_core_sys::PCWSTR, lpnewdirectory: ::windows_core_sys::PCWSTR, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateDirectoryFromAppW(lppathname: ::windows_core_sys::PCWSTR, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateDirectoryTransactedA(lptemplatedirectory: ::windows_core_sys::PCSTR, lpnewdirectory: ::windows_core_sys::PCSTR, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateDirectoryTransactedW(lptemplatedirectory: ::windows_core_sys::PCWSTR, lpnewdirectory: ::windows_core_sys::PCWSTR, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateDirectoryW(lppathname: ::windows_core_sys::PCWSTR, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateEnlistment(lpenlistmentattributes: *mut ::win32_security_sys::SECURITY_ATTRIBUTES, resourcemanagerhandle: ::win32_foundation_sys::HANDLE, transactionhandle: ::win32_foundation_sys::HANDLE, notificationmask: u32, createoptions: u32, enlistmentkey: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateFile2(lpfilename: ::windows_core_sys::PCWSTR, dwdesiredaccess: FILE_ACCESS_FLAGS, dwsharemode: FILE_SHARE_MODE, dwcreationdisposition: FILE_CREATION_DISPOSITION, pcreateexparams: *const CREATEFILE2_EXTENDED_PARAMETERS) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateFile2FromAppW(lpfilename: ::windows_core_sys::PCWSTR, dwdesiredaccess: u32, dwsharemode: u32, dwcreationdisposition: u32, pcreateexparams: *const CREATEFILE2_EXTENDED_PARAMETERS) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateFileA(lpfilename: ::windows_core_sys::PCSTR, dwdesiredaccess: FILE_ACCESS_FLAGS, dwsharemode: FILE_SHARE_MODE, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, dwcreationdisposition: FILE_CREATION_DISPOSITION, dwflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES, htemplatefile: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateFileFromAppW(lpfilename: ::windows_core_sys::PCWSTR, dwdesiredaccess: u32, dwsharemode: u32, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, dwcreationdisposition: u32, dwflagsandattributes: u32, htemplatefile: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateFileTransactedA(lpfilename: ::windows_core_sys::PCSTR, dwdesiredaccess: u32, dwsharemode: FILE_SHARE_MODE, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, dwcreationdisposition: FILE_CREATION_DISPOSITION, dwflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES, htemplatefile: ::win32_foundation_sys::HANDLE, htransaction: ::win32_foundation_sys::HANDLE, pusminiversion: *const TXFS_MINIVERSION, lpextendedparameter: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateFileTransactedW(lpfilename: ::windows_core_sys::PCWSTR, dwdesiredaccess: u32, dwsharemode: FILE_SHARE_MODE, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, dwcreationdisposition: FILE_CREATION_DISPOSITION, dwflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES, htemplatefile: ::win32_foundation_sys::HANDLE, htransaction: ::win32_foundation_sys::HANDLE, pusminiversion: *const TXFS_MINIVERSION, lpextendedparameter: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateFileW(lpfilename: ::windows_core_sys::PCWSTR, dwdesiredaccess: FILE_ACCESS_FLAGS, dwsharemode: FILE_SHARE_MODE, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, dwcreationdisposition: FILE_CREATION_DISPOSITION, dwflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES, htemplatefile: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateHardLinkA(lpfilename: ::windows_core_sys::PCSTR, lpexistingfilename: ::windows_core_sys::PCSTR, lpsecurityattributes: *mut ::win32_security_sys::SECURITY_ATTRIBUTES) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateHardLinkTransactedA(lpfilename: ::windows_core_sys::PCSTR, lpexistingfilename: ::windows_core_sys::PCSTR, lpsecurityattributes: *mut ::win32_security_sys::SECURITY_ATTRIBUTES, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateHardLinkTransactedW(lpfilename: ::windows_core_sys::PCWSTR, lpexistingfilename: ::windows_core_sys::PCWSTR, lpsecurityattributes: *mut ::win32_security_sys::SECURITY_ATTRIBUTES, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateHardLinkW(lpfilename: ::windows_core_sys::PCWSTR, lpexistingfilename: ::windows_core_sys::PCWSTR, lpsecurityattributes: *mut ::win32_security_sys::SECURITY_ATTRIBUTES) -> ::win32_foundation_sys::BOOL;
     pub fn CreateIoRing(ioringversion: IORING_VERSION, flags: IORING_CREATE_FLAGS, submissionqueuesize: u32, completionqueuesize: u32, h: *mut *mut HIORING__) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn CreateLogContainerScanContext(hlog: ::win32_foundation_sys::HANDLE, cfromcontainer: u32, ccontainers: u32, escanmode: u8, pcxscan: *mut CLS_SCAN_CONTEXT, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateLogFile(pszlogfilename: ::windows_core_sys::PCWSTR, fdesiredaccess: FILE_ACCESS_FLAGS, dwsharemode: FILE_SHARE_MODE, psalogfile: *mut ::win32_security_sys::SECURITY_ATTRIBUTES, fcreatedisposition: FILE_CREATION_DISPOSITION, fflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES) -> ::win32_foundation_sys::HANDLE;
     pub fn CreateLogMarshallingArea(hlog: ::win32_foundation_sys::HANDLE, pfnallocbuffer: CLFS_BLOCK_ALLOCATION, pfnfreebuffer: CLFS_BLOCK_DEALLOCATION, pvblockalloccontext: *mut ::core::ffi::c_void, cbmarshallingbuffer: u32, cmaxwritebuffers: u32, cmaxreadbuffers: u32, ppvmarshal: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateResourceManager(lpresourcemanagerattributes: *mut ::win32_security_sys::SECURITY_ATTRIBUTES, resourcemanagerid: *mut ::windows_core_sys::GUID, createoptions: u32, tmhandle: ::win32_foundation_sys::HANDLE, description: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HANDLE;
     pub fn CreateSymbolicLinkA(lpsymlinkfilename: ::windows_core_sys::PCSTR, lptargetfilename: ::windows_core_sys::PCSTR, dwflags: SYMBOLIC_LINK_FLAGS) -> ::win32_foundation_sys::BOOLEAN;
     pub fn CreateSymbolicLinkTransactedA(lpsymlinkfilename: ::windows_core_sys::PCSTR, lptargetfilename: ::windows_core_sys::PCSTR, dwflags: SYMBOLIC_LINK_FLAGS, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOLEAN;
     pub fn CreateSymbolicLinkTransactedW(lpsymlinkfilename: ::windows_core_sys::PCWSTR, lptargetfilename: ::windows_core_sys::PCWSTR, dwflags: SYMBOLIC_LINK_FLAGS, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOLEAN;
     pub fn CreateSymbolicLinkW(lpsymlinkfilename: ::windows_core_sys::PCWSTR, lptargetfilename: ::windows_core_sys::PCWSTR, dwflags: SYMBOLIC_LINK_FLAGS) -> ::win32_foundation_sys::BOOLEAN;
     pub fn CreateTapePartition(hdevice: ::win32_foundation_sys::HANDLE, dwpartitionmethod: CREATE_TAPE_PARTITION_METHOD, dwcount: u32, dwsize: u32) -> u32;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateTransaction(lptransactionattributes: *mut ::win32_security_sys::SECURITY_ATTRIBUTES, uow: *mut ::windows_core_sys::GUID, createoptions: u32, isolationlevel: u32, isolationflags: u32, timeout: u32, description: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateTransactionManager(lptransactionattributes: *mut ::win32_security_sys::SECURITY_ATTRIBUTES, logfilename: ::windows_core_sys::PCWSTR, createoptions: u32, commitstrength: u32) -> ::win32_foundation_sys::HANDLE;
     pub fn DecryptFileA(lpfilename: ::windows_core_sys::PCSTR, dwreserved: u32) -> ::win32_foundation_sys::BOOL;
     pub fn DecryptFileW(lpfilename: ::windows_core_sys::PCWSTR, dwreserved: u32) -> ::win32_foundation_sys::BOOL;
@@ -106,7 +106,7 @@ extern "system" {
     pub fn DeleteVolumeMountPointA(lpszvolumemountpoint: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
     pub fn DeleteVolumeMountPointW(lpszvolumemountpoint: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
     pub fn DeregisterManageableLogClient(hlog: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn DuplicateEncryptionInfoFile(srcfilename: ::windows_core_sys::PCWSTR, dstfilename: ::windows_core_sys::PCWSTR, dwcreationdistribution: u32, dwattributes: u32, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> u32;
     pub fn EncryptFileA(lpfilename: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
     pub fn EncryptFileW(lpfilename: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
@@ -146,12 +146,12 @@ extern "system" {
     pub fn FindVolumeClose(hfindvolume: FindVolumeHandle) -> ::win32_foundation_sys::BOOL;
     pub fn FindVolumeMountPointClose(hfindvolumemountpoint: FindVolumeMointPointHandle) -> ::win32_foundation_sys::BOOL;
     pub fn FlushFileBuffers(hfile: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn FlushLogBuffers(pvmarshal: *mut ::core::ffi::c_void, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn FlushLogToLsn(pvmarshalcontext: *mut ::core::ffi::c_void, plsnflush: *mut CLS_LSN, plsnlastflushed: *mut CLS_LSN, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
     pub fn FreeEncryptedFileMetadata(pbmetadata: *const u8);
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn FreeEncryptionCertificateHashList(pusers: *const ENCRYPTION_CERTIFICATE_HASH_LIST);
     pub fn FreeReservedLog(pvmarshal: *mut ::core::ffi::c_void, creservedrecords: u32, pcbadjustment: *mut i64) -> ::win32_foundation_sys::BOOL;
     pub fn GetBinaryTypeA(lpapplicationname: ::windows_core_sys::PCSTR, lpbinarytype: *mut u32) -> ::win32_foundation_sys::BOOL;
@@ -216,7 +216,7 @@ extern "system" {
     pub fn GetLongPathNameW(lpszshortpath: ::windows_core_sys::PCWSTR, lpszlongpath: ::windows_core_sys::PWSTR, cchbuffer: u32) -> u32;
     pub fn GetNextLogArchiveExtent(pvarchivecontext: *mut ::core::ffi::c_void, rgadextent: *mut CLS_ARCHIVE_DESCRIPTOR, cdescriptors: u32, pcdescriptorsreturned: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn GetNotificationResourceManager(resourcemanagerhandle: ::win32_foundation_sys::HANDLE, transactionnotification: *mut TRANSACTION_NOTIFICATION, notificationlength: u32, dwmilliseconds: u32, returnlength: *mut u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn GetNotificationResourceManagerAsync(resourcemanagerhandle: ::win32_foundation_sys::HANDLE, transactionnotification: *mut TRANSACTION_NOTIFICATION, transactionnotificationlength: u32, returnlength: *mut u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
     pub fn GetShortPathNameA(lpszlongpath: ::windows_core_sys::PCSTR, lpszshortpath: ::windows_core_sys::PSTR, cchbuffer: u32) -> u32;
     pub fn GetShortPathNameW(lpszlongpath: ::windows_core_sys::PCWSTR, lpszshortpath: ::windows_core_sys::PWSTR, cchbuffer: u32) -> u32;
@@ -255,7 +255,7 @@ extern "system" {
     pub fn LZStart() -> i32;
     pub fn LocalFileTimeToFileTime(lplocalfiletime: *const ::win32_foundation_sys::FILETIME, lpfiletime: *mut ::win32_foundation_sys::FILETIME) -> ::win32_foundation_sys::BOOL;
     pub fn LockFile(hfile: ::win32_foundation_sys::HANDLE, dwfileoffsetlow: u32, dwfileoffsethigh: u32, nnumberofbytestolocklow: u32, nnumberofbytestolockhigh: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn LockFileEx(hfile: ::win32_foundation_sys::HANDLE, dwflags: LOCK_FILE_FLAGS, dwreserved: u32, nnumberofbytestolocklow: u32, nnumberofbytestolockhigh: u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
     pub fn LogTailAdvanceFailure(hlog: ::win32_foundation_sys::HANDLE, dwreason: u32) -> ::win32_foundation_sys::BOOL;
     pub fn LsnBlockOffset(plsn: *const CLS_LSN) -> u32;
@@ -297,13 +297,13 @@ extern "system" {
     pub fn NetShareGetInfo(servername: ::windows_core_sys::PCWSTR, netname: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
     pub fn NetShareSetInfo(servername: ::windows_core_sys::PCWSTR, netname: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
     pub fn NetStatisticsGet(servername: *const i8, service: *const i8, level: u32, options: u32, buffer: *mut *mut u8) -> u32;
-    #[cfg(feature = "Win32_System_WindowsProgramming")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn NtCreateFile(filehandle: *mut ::win32_foundation_sys::HANDLE, desiredaccess: u32, objectattributes: *mut ::win32_system_sys::WindowsProgramming::OBJECT_ATTRIBUTES, iostatusblock: *mut ::win32_system_sys::WindowsProgramming::IO_STATUS_BLOCK, allocationsize: *mut i64, fileattributes: u32, shareaccess: FILE_SHARE_MODE, createdisposition: NT_CREATE_FILE_DISPOSITION, createoptions: u32, eabuffer: *mut ::core::ffi::c_void, ealength: u32) -> ::win32_foundation_sys::NTSTATUS;
     pub fn OpenEncryptedFileRawA(lpfilename: ::windows_core_sys::PCSTR, ulflags: u32, pvcontext: *mut *mut ::core::ffi::c_void) -> u32;
     pub fn OpenEncryptedFileRawW(lpfilename: ::windows_core_sys::PCWSTR, ulflags: u32, pvcontext: *mut *mut ::core::ffi::c_void) -> u32;
     pub fn OpenEnlistment(dwdesiredaccess: u32, resourcemanagerhandle: ::win32_foundation_sys::HANDLE, enlistmentid: *mut ::windows_core_sys::GUID) -> ::win32_foundation_sys::HANDLE;
     pub fn OpenFile(lpfilename: ::windows_core_sys::PCSTR, lpreopenbuff: *mut OFSTRUCT, ustyle: LZOPENFILE_STYLE) -> i32;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn OpenFileById(hvolumehint: ::win32_foundation_sys::HANDLE, lpfileid: *const FILE_ID_DESCRIPTOR, dwdesiredaccess: FILE_ACCESS_FLAGS, dwsharemode: FILE_SHARE_MODE, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, dwflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES) -> ::win32_foundation_sys::HANDLE;
     pub fn OpenResourceManager(dwdesiredaccess: u32, tmhandle: ::win32_foundation_sys::HANDLE, resourcemanagerid: *mut ::windows_core_sys::GUID) -> ::win32_foundation_sys::HANDLE;
     pub fn OpenTransaction(dwdesiredaccess: u32, transactionid: *mut ::windows_core_sys::GUID) -> ::win32_foundation_sys::HANDLE;
@@ -320,33 +320,33 @@ extern "system" {
     pub fn QueryDosDeviceW(lpdevicename: ::windows_core_sys::PCWSTR, lptargetpath: ::windows_core_sys::PWSTR, ucchmax: u32) -> u32;
     pub fn QueryIoRingCapabilities(capabilities: *mut IORING_CAPABILITIES) -> ::windows_core_sys::HRESULT;
     pub fn QueryLogPolicy(hlog: ::win32_foundation_sys::HANDLE, epolicytype: CLFS_MGMT_POLICY_TYPE, ppolicybuffer: *mut CLFS_MGMT_POLICY, pcbpolicybuffer: *mut u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn QueryRecoveryAgentsOnEncryptedFile(lpfilename: ::windows_core_sys::PCWSTR, precoveryagents: *mut *mut ENCRYPTION_CERTIFICATE_HASH_LIST) -> u32;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn QueryUsersOnEncryptedFile(lpfilename: ::windows_core_sys::PCWSTR, pusers: *mut *mut ENCRYPTION_CERTIFICATE_HASH_LIST) -> u32;
     pub fn ReOpenFile(horiginalfile: ::win32_foundation_sys::HANDLE, dwdesiredaccess: FILE_ACCESS_FLAGS, dwsharemode: FILE_SHARE_MODE, dwflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn ReadDirectoryChangesExW(hdirectory: ::win32_foundation_sys::HANDLE, lpbuffer: *mut ::core::ffi::c_void, nbufferlength: u32, bwatchsubtree: ::win32_foundation_sys::BOOL, dwnotifyfilter: FILE_NOTIFY_CHANGE, lpbytesreturned: *mut u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED, lpcompletionroutine: ::win32_system_sys::IO::LPOVERLAPPED_COMPLETION_ROUTINE, readdirectorynotifyinformationclass: READ_DIRECTORY_NOTIFY_INFORMATION_CLASS) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn ReadDirectoryChangesW(hdirectory: ::win32_foundation_sys::HANDLE, lpbuffer: *mut ::core::ffi::c_void, nbufferlength: u32, bwatchsubtree: ::win32_foundation_sys::BOOL, dwnotifyfilter: FILE_NOTIFY_CHANGE, lpbytesreturned: *mut u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED, lpcompletionroutine: ::win32_system_sys::IO::LPOVERLAPPED_COMPLETION_ROUTINE) -> ::win32_foundation_sys::BOOL;
     pub fn ReadEncryptedFileRaw(pfexportcallback: PFE_EXPORT_FUNC, pvcallbackcontext: *const ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn ReadFile(hfile: ::win32_foundation_sys::HANDLE, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytestoread: u32, lpnumberofbytesread: *mut u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn ReadFileEx(hfile: ::win32_foundation_sys::HANDLE, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytestoread: u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED, lpcompletionroutine: ::win32_system_sys::IO::LPOVERLAPPED_COMPLETION_ROUTINE) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn ReadFileScatter(hfile: ::win32_foundation_sys::HANDLE, asegmentarray: *const FILE_SEGMENT_ELEMENT, nnumberofbytestoread: u32, lpreserved: *mut u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
     pub fn ReadLogArchiveMetadata(pvarchivecontext: *mut ::core::ffi::c_void, cboffset: u32, cbbytestoread: u32, pbreadbuffer: *mut u8, pcbbytesread: *mut u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn ReadLogNotification(hlog: ::win32_foundation_sys::HANDLE, pnotification: *mut CLFS_MGMT_NOTIFICATION, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn ReadLogRecord(pvmarshal: *mut ::core::ffi::c_void, plsnfirst: *mut CLS_LSN, econtextmode: CLFS_CONTEXT_MODE, ppvreadbuffer: *mut *mut ::core::ffi::c_void, pcbreadbuffer: *mut u32, perecordtype: *mut u8, plsnundonext: *mut CLS_LSN, plsnprevious: *mut CLS_LSN, ppvreadcontext: *mut *mut ::core::ffi::c_void, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn ReadLogRestartArea(pvmarshal: *mut ::core::ffi::c_void, ppvrestartbuffer: *mut *mut ::core::ffi::c_void, pcbrestartbuffer: *mut u32, plsn: *mut CLS_LSN, ppvcontext: *mut *mut ::core::ffi::c_void, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn ReadNextLogRecord(pvreadcontext: *mut ::core::ffi::c_void, ppvbuffer: *mut *mut ::core::ffi::c_void, pcbbuffer: *mut u32, perecordtype: *mut u8, plsnuser: *mut CLS_LSN, plsnundonext: *mut CLS_LSN, plsnprevious: *mut CLS_LSN, plsnrecord: *mut CLS_LSN, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
     pub fn ReadOnlyEnlistment(enlistmenthandle: ::win32_foundation_sys::HANDLE, tmvirtualclock: *mut i64) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn ReadPreviousLogRestartArea(pvreadcontext: *mut ::core::ffi::c_void, ppvrestartbuffer: *mut *mut ::core::ffi::c_void, pcbrestartbuffer: *mut u32, plsnrestart: *mut CLS_LSN, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
     pub fn RecoverEnlistment(enlistmenthandle: ::win32_foundation_sys::HANDLE, enlistmentkey: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn RecoverResourceManager(resourcemanagerhandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
@@ -361,15 +361,15 @@ extern "system" {
     pub fn RemoveLogContainer(hlog: ::win32_foundation_sys::HANDLE, pwszcontainerpath: ::windows_core_sys::PCWSTR, fforce: ::win32_foundation_sys::BOOL, preserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn RemoveLogContainerSet(hlog: ::win32_foundation_sys::HANDLE, ccontainer: u16, rgwszcontainerpath: *const ::windows_core_sys::PWSTR, fforce: ::win32_foundation_sys::BOOL, preserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn RemoveLogPolicy(hlog: ::win32_foundation_sys::HANDLE, epolicytype: CLFS_MGMT_POLICY_TYPE) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn RemoveUsersFromEncryptedFile(lpfilename: ::windows_core_sys::PCWSTR, phashes: *const ENCRYPTION_CERTIFICATE_HASH_LIST) -> u32;
     pub fn RenameTransactionManager(logfilename: ::windows_core_sys::PCWSTR, existingtransactionmanagerguid: *mut ::windows_core_sys::GUID) -> ::win32_foundation_sys::BOOL;
     pub fn ReplaceFileA(lpreplacedfilename: ::windows_core_sys::PCSTR, lpreplacementfilename: ::windows_core_sys::PCSTR, lpbackupfilename: ::windows_core_sys::PCSTR, dwreplaceflags: REPLACE_FILE_FLAGS, lpexclude: *mut ::core::ffi::c_void, lpreserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn ReplaceFileFromAppW(lpreplacedfilename: ::windows_core_sys::PCWSTR, lpreplacementfilename: ::windows_core_sys::PCWSTR, lpbackupfilename: ::windows_core_sys::PCWSTR, dwreplaceflags: u32, lpexclude: *mut ::core::ffi::c_void, lpreserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn ReplaceFileW(lpreplacedfilename: ::windows_core_sys::PCWSTR, lpreplacementfilename: ::windows_core_sys::PCWSTR, lpbackupfilename: ::windows_core_sys::PCWSTR, dwreplaceflags: REPLACE_FILE_FLAGS, lpexclude: *mut ::core::ffi::c_void, lpreserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn ReserveAndAppendLog(pvmarshal: *mut ::core::ffi::c_void, rgwriteentries: *mut CLS_WRITE_ENTRY, cwriteentries: u32, plsnundonext: *mut CLS_LSN, plsnprevious: *mut CLS_LSN, creserverecords: u32, rgcbreservation: *mut i64, fflags: CLFS_FLAG, plsn: *mut CLS_LSN, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn ReserveAndAppendLogAligned(pvmarshal: *mut ::core::ffi::c_void, rgwriteentries: *mut CLS_WRITE_ENTRY, cwriteentries: u32, cbentryalignment: u32, plsnundonext: *mut CLS_LSN, plsnprevious: *mut CLS_LSN, creserverecords: u32, rgcbreservation: *mut i64, fflags: CLFS_FLAG, plsn: *mut CLS_LSN, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
     pub fn RollbackComplete(enlistmenthandle: ::win32_foundation_sys::HANDLE, tmvirtualclock: *mut i64) -> ::win32_foundation_sys::BOOL;
     pub fn RollbackEnlistment(enlistmenthandle: ::win32_foundation_sys::HANDLE, tmvirtualclock: *mut i64) -> ::win32_foundation_sys::BOOL;
@@ -379,10 +379,10 @@ extern "system" {
     pub fn ScanLogContainers(pcxscan: *mut CLS_SCAN_CONTEXT, escanmode: u8, preserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn SearchPathA(lppath: ::windows_core_sys::PCSTR, lpfilename: ::windows_core_sys::PCSTR, lpextension: ::windows_core_sys::PCSTR, nbufferlength: u32, lpbuffer: ::windows_core_sys::PSTR, lpfilepart: *mut ::windows_core_sys::PSTR) -> u32;
     pub fn SearchPathW(lppath: ::windows_core_sys::PCWSTR, lpfilename: ::windows_core_sys::PCWSTR, lpextension: ::windows_core_sys::PCWSTR, nbufferlength: u32, lpbuffer: ::windows_core_sys::PWSTR, lpfilepart: *mut ::windows_core_sys::PWSTR) -> u32;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn SetEncryptedFileMetadata(lpfilename: ::windows_core_sys::PCWSTR, pboldmetadata: *const u8, pbnewmetadata: *const u8, pownerhash: *const ENCRYPTION_CERTIFICATE_HASH, dwoperation: u32, pcertificatesadded: *const ENCRYPTION_CERTIFICATE_HASH_LIST) -> u32;
     pub fn SetEndOfFile(hfile: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn SetEndOfLog(hlog: ::win32_foundation_sys::HANDLE, plsnend: *mut CLS_LSN, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
     pub fn SetEnlistmentRecoveryInformation(enlistmenthandle: ::win32_foundation_sys::HANDLE, buffersize: u32, buffer: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn SetFileApisToANSI();
@@ -411,9 +411,9 @@ extern "system" {
     pub fn SetTapeParameters(hdevice: ::win32_foundation_sys::HANDLE, dwoperation: TAPE_INFORMATION_TYPE, lptapeinformation: *const ::core::ffi::c_void) -> u32;
     pub fn SetTapePosition(hdevice: ::win32_foundation_sys::HANDLE, dwpositionmethod: TAPE_POSITION_METHOD, dwpartition: u32, dwoffsetlow: u32, dwoffsethigh: u32, bimmediate: ::win32_foundation_sys::BOOL) -> u32;
     pub fn SetTransactionInformation(transactionhandle: ::win32_foundation_sys::HANDLE, isolationlevel: u32, isolationflags: u32, timeout: u32, description: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn SetUserFileEncryptionKey(pencryptioncertificate: *const ENCRYPTION_CERTIFICATE) -> u32;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn SetUserFileEncryptionKeyEx(pencryptioncertificate: *const ENCRYPTION_CERTIFICATE, dwcapabilities: u32, dwflags: u32, pvreserved: *mut ::core::ffi::c_void) -> u32;
     pub fn SetVolumeLabelA(lprootpathname: ::windows_core_sys::PCSTR, lpvolumename: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
     pub fn SetVolumeLabelW(lprootpathname: ::windows_core_sys::PCWSTR, lpvolumename: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
@@ -423,7 +423,7 @@ extern "system" {
     pub fn SubmitIoRing(ioring: *const HIORING__, waitoperations: u32, milliseconds: u32, submittedentries: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn TerminateLogArchive(pvarchivecontext: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn TerminateReadLog(pvcursorcontext: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn TruncateLog(pvmarshal: *const ::core::ffi::c_void, plsnend: *const CLS_LSN, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
     pub fn TxfGetThreadMiniVersionForCreate(miniversion: *mut u16);
     pub fn TxfLogCreateFileReadContext(logpath: ::windows_core_sys::PCWSTR, beginninglsn: CLS_LSN, endinglsn: CLS_LSN, txffileid: *const TXF_ID, txflogcontext: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
@@ -435,9 +435,9 @@ extern "system" {
     pub fn TxfReadMetadataInfo(filehandle: ::win32_foundation_sys::HANDLE, txffileid: *mut TXF_ID, lastlsn: *mut CLS_LSN, transactionstate: *mut u32, lockingtransaction: *mut ::windows_core_sys::GUID) -> ::win32_foundation_sys::BOOL;
     pub fn TxfSetThreadMiniVersionForCreate(miniversion: u16);
     pub fn UnlockFile(hfile: ::win32_foundation_sys::HANDLE, dwfileoffsetlow: u32, dwfileoffsethigh: u32, nnumberofbytestounlocklow: u32, nnumberofbytestounlockhigh: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn UnlockFileEx(hfile: ::win32_foundation_sys::HANDLE, dwreserved: u32, nnumberofbytestounlocklow: u32, nnumberofbytestounlockhigh: u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn ValidateLog(pszlogfilename: ::windows_core_sys::PCWSTR, psalogfile: *mut ::win32_security_sys::SECURITY_ATTRIBUTES, pinfobuffer: *mut CLS_INFORMATION, pcbbuffer: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn VerFindFileA(uflags: VER_FIND_FILE_FLAGS, szfilename: ::windows_core_sys::PCSTR, szwindir: ::windows_core_sys::PCSTR, szappdir: ::windows_core_sys::PCSTR, szcurdir: ::windows_core_sys::PSTR, pucurdirlen: *mut u32, szdestdir: ::windows_core_sys::PSTR, pudestdirlen: *mut u32) -> VER_FIND_FILE_STATUS;
     pub fn VerFindFileW(uflags: VER_FIND_FILE_FLAGS, szfilename: ::windows_core_sys::PCWSTR, szwindir: ::windows_core_sys::PCWSTR, szappdir: ::windows_core_sys::PCWSTR, szcurdir: ::windows_core_sys::PWSTR, pucurdirlen: *mut u32, szdestdir: ::windows_core_sys::PWSTR, pudestdirlen: *mut u32) -> VER_FIND_FILE_STATUS;
@@ -462,13 +462,13 @@ extern "system" {
     pub fn Wow64EnableWow64FsRedirection(wow64fsenableredirection: ::win32_foundation_sys::BOOLEAN) -> ::win32_foundation_sys::BOOLEAN;
     pub fn Wow64RevertWow64FsRedirection(olvalue: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn WriteEncryptedFileRaw(pfimportcallback: PFE_IMPORT_FUNC, pvcallbackcontext: *const ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn WriteFile(hfile: ::win32_foundation_sys::HANDLE, lpbuffer: *const ::core::ffi::c_void, nnumberofbytestowrite: u32, lpnumberofbyteswritten: *mut u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn WriteFileEx(hfile: ::win32_foundation_sys::HANDLE, lpbuffer: *const ::core::ffi::c_void, nnumberofbytestowrite: u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED, lpcompletionroutine: ::win32_system_sys::IO::LPOVERLAPPED_COMPLETION_ROUTINE) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn WriteFileGather(hfile: ::win32_foundation_sys::HANDLE, asegmentarray: *const FILE_SEGMENT_ELEMENT, nnumberofbytestowrite: u32, lpreserved: *mut u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_IO")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn WriteLogRestartArea(pvmarshal: *mut ::core::ffi::c_void, pvrestartbuffer: *mut ::core::ffi::c_void, cbrestartbuffer: u32, plsnbase: *mut CLS_LSN, fflags: CLFS_FLAG, pcbwritten: *mut u32, plsnnext: *mut CLS_LSN, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
     pub fn WriteTapemark(hdevice: ::win32_foundation_sys::HANDLE, dwtapemarktype: TAPEMARK_TYPE, dwtapemarkcount: u32, bimmediate: ::win32_foundation_sys::BOOL) -> u32;
 }
@@ -491,7 +491,7 @@ impl ::core::clone::Clone for BY_HANDLE_FILE_INFORMATION {
         *self
     }
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub type CACHE_ACCESS_CHECK = ::core::option::Option<unsafe extern "system" fn(psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR, hclienttoken: ::win32_foundation_sys::HANDLE, dwdesiredaccess: u32, genericmapping: *mut ::win32_security_sys::GENERIC_MAPPING, privilegeset: *mut ::win32_security_sys::PRIVILEGE_SET, privilegesetlength: *mut u32, grantedaccess: *mut u32, accessstatus: *mut i32) -> ::win32_foundation_sys::BOOL>;
 pub type CACHE_DESTROY_CALLBACK = ::core::option::Option<unsafe extern "system" fn(cb: u32, lpb: *mut u8)>;
 pub type CACHE_KEY_COMPARE = ::core::option::Option<unsafe extern "system" fn(cbkey1: u32, lpbkey1: *mut u8, cbkey2: u32, lpbkey2: *mut u8) -> i32>;
@@ -1095,7 +1095,7 @@ pub const COPYFILE2_CALLBACK_POLL_CONTINUE: COPYFILE2_MESSAGE_TYPE = 5i32;
 pub const COPYFILE2_CALLBACK_ERROR: COPYFILE2_MESSAGE_TYPE = 6i32;
 pub const COPYFILE2_CALLBACK_MAX: COPYFILE2_MESSAGE_TYPE = 7i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct CREATEFILE2_EXTENDED_PARAMETERS {
     pub dwSize: u32,
     pub dwFileAttributes: u32,
@@ -1104,9 +1104,9 @@ pub struct CREATEFILE2_EXTENDED_PARAMETERS {
     pub lpSecurityAttributes: *mut ::win32_security_sys::SECURITY_ATTRIBUTES,
     pub hTemplateFile: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for CREATEFILE2_EXTENDED_PARAMETERS {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for CREATEFILE2_EXTENDED_PARAMETERS {
     fn clone(&self) -> Self {
         *self
@@ -1318,104 +1318,104 @@ impl ::core::clone::Clone for EFS_VERSION_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct ENCRYPTED_FILE_METADATA_SIGNATURE {
     pub dwEfsAccessType: u32,
     pub pCertificatesAdded: *mut ENCRYPTION_CERTIFICATE_HASH_LIST,
     pub pEncryptionCertificate: *mut ENCRYPTION_CERTIFICATE,
     pub pEfsStreamSignature: *mut EFS_RPC_BLOB,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for ENCRYPTED_FILE_METADATA_SIGNATURE {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for ENCRYPTED_FILE_METADATA_SIGNATURE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct ENCRYPTION_CERTIFICATE {
     pub cbTotalLength: u32,
     pub pUserSid: *mut ::win32_security_sys::SID,
     pub pCertBlob: *mut EFS_CERTIFICATE_BLOB,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for ENCRYPTION_CERTIFICATE {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for ENCRYPTION_CERTIFICATE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct ENCRYPTION_CERTIFICATE_HASH {
     pub cbTotalLength: u32,
     pub pUserSid: *mut ::win32_security_sys::SID,
     pub pHash: *mut EFS_HASH_BLOB,
     pub lpDisplayInformation: ::windows_core_sys::PWSTR,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for ENCRYPTION_CERTIFICATE_HASH {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for ENCRYPTION_CERTIFICATE_HASH {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct ENCRYPTION_CERTIFICATE_HASH_LIST {
     pub nCert_Hash: u32,
     pub pUsers: *mut *mut ENCRYPTION_CERTIFICATE_HASH,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for ENCRYPTION_CERTIFICATE_HASH_LIST {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for ENCRYPTION_CERTIFICATE_HASH_LIST {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct ENCRYPTION_CERTIFICATE_LIST {
     pub nUsers: u32,
     pub pUsers: *mut *mut ENCRYPTION_CERTIFICATE,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for ENCRYPTION_CERTIFICATE_LIST {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for ENCRYPTION_CERTIFICATE_LIST {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct ENCRYPTION_PROTECTOR {
     pub cbTotalLength: u32,
     pub pUserSid: *mut ::win32_security_sys::SID,
     pub lpProtectorDescriptor: ::windows_core_sys::PWSTR,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for ENCRYPTION_PROTECTOR {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for ENCRYPTION_PROTECTOR {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct ENCRYPTION_PROTECTOR_LIST {
     pub nProtectors: u32,
     pub pProtectors: *mut *mut ENCRYPTION_PROTECTOR,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for ENCRYPTION_PROTECTOR_LIST {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for ENCRYPTION_PROTECTOR_LIST {
     fn clone(&self) -> Self {
         *self
@@ -3795,14 +3795,14 @@ impl ::core::clone::Clone for SHARE_INFO_1006 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct SHARE_INFO_1501 {
     pub shi1501_reserved: u32,
     pub shi1501_security_descriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for SHARE_INFO_1501 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for SHARE_INFO_1501 {
     fn clone(&self) -> Self {
         *self
@@ -3849,7 +3849,7 @@ impl ::core::clone::Clone for SHARE_INFO_501 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct SHARE_INFO_502 {
     pub shi502_netname: ::windows_core_sys::PWSTR,
     pub shi502_type: SHARE_TYPE,
@@ -3862,16 +3862,16 @@ pub struct SHARE_INFO_502 {
     pub shi502_reserved: u32,
     pub shi502_security_descriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for SHARE_INFO_502 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for SHARE_INFO_502 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct SHARE_INFO_503 {
     pub shi503_netname: ::windows_core_sys::PWSTR,
     pub shi503_type: SHARE_TYPE,
@@ -3885,9 +3885,9 @@ pub struct SHARE_INFO_503 {
     pub shi503_reserved: u32,
     pub shi503_security_descriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for SHARE_INFO_503 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for SHARE_INFO_503 {
     fn clone(&self) -> Self {
         *self

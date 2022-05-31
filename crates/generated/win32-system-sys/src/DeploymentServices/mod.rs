@@ -24,7 +24,7 @@ extern "system" {
     pub fn PxeProviderEnumNext(henum: ::win32_foundation_sys::HANDLE, ppprovider: *mut *mut PXE_PROVIDER) -> u32;
     pub fn PxeProviderFreeInfo(pprovider: *const PXE_PROVIDER) -> u32;
     pub fn PxeProviderQueryIndex(pszprovidername: ::windows_core_sys::PCWSTR, puindex: *mut u32) -> u32;
-    #[cfg(feature = "Win32_System_Registry")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn PxeProviderRegister(pszprovidername: ::windows_core_sys::PCWSTR, pszmodulepath: ::windows_core_sys::PCWSTR, index: u32, biscritical: ::win32_foundation_sys::BOOL, phproviderkey: *mut super::Registry::HKEY) -> u32;
     pub fn PxeProviderSetAttribute(hprovider: ::win32_foundation_sys::HANDLE, attribute: u32, pparameterbuffer: *const ::core::ffi::c_void, uparamlen: u32) -> u32;
     pub fn PxeProviderUnRegister(pszprovidername: ::windows_core_sys::PCWSTR) -> u32;
@@ -629,16 +629,16 @@ pub const WDS_TRANSPORTCLIENT_STATUS_FAILURE: u32 = 3u32;
 pub const WDS_TRANSPORTCLIENT_STATUS_IN_PROGRESS: u32 = 1u32;
 pub const WDS_TRANSPORTCLIENT_STATUS_SUCCESS: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 pub struct WDS_TRANSPORTPROVIDER_INIT_PARAMS {
     pub ulLength: u32,
     pub ulMcServerVersion: u32,
     pub hRegistryKey: super::Registry::HKEY,
     pub hProvider: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for WDS_TRANSPORTPROVIDER_INIT_PARAMS {}
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for WDS_TRANSPORTPROVIDER_INIT_PARAMS {
     fn clone(&self) -> Self {
         *self

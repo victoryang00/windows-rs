@@ -1,7 +1,7 @@
 #[repr(transparent)]
 pub struct CoreAppWindowPreview(::windows_core::IUnknown);
 impl CoreAppWindowPreview {
-    #[cfg(feature = "UI_WindowManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GetIdFromWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::WindowManagement::AppWindow>>(window: Param0) -> ::windows_core::Result<i32> {
         Self::ICoreAppWindowPreviewStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -108,9 +108,9 @@ unsafe impl ::windows_core::Interface for ICoreAppWindowPreviewStatics {
 #[doc(hidden)]
 pub struct ICoreAppWindowPreviewStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_WindowManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub GetIdFromWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, window: ::windows_core::RawPtr, result__: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_WindowManagement"))]
+    #[cfg(not(feature = "winrt-ui"))]
     GetIdFromWindow: usize,
 }
 #[doc(hidden)]

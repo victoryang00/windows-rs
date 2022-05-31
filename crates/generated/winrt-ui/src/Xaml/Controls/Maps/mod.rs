@@ -156,7 +156,7 @@ impl HttpMapTileDataSource {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetUriFormatString)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AdditionalRequestHeaders(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -369,9 +369,9 @@ pub struct IHttpMapTileDataSource_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub UriFormatString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetUriFormatString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub AdditionalRequestHeaders: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     AdditionalRequestHeaders: usize,
     pub AllowCaching: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetAllowCaching: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -485,23 +485,23 @@ unsafe impl ::windows_core::Interface for IMapBillboard {
 #[doc(hidden)]
 pub struct IMapBillboard_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Location: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub SetLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SetLocation: usize,
     pub NormalizedAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub SetNormalizedAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub Image: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Image: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub SetImage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SetImage: usize,
     pub CollisionBehaviorDesired: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MapElementCollisionBehavior) -> ::windows_core::HRESULT,
     pub SetCollisionBehaviorDesired: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: MapElementCollisionBehavior) -> ::windows_core::HRESULT,
@@ -546,13 +546,13 @@ unsafe impl ::windows_core::Interface for IMapCamera {
 #[doc(hidden)]
 pub struct IMapCamera_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Location: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub SetLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SetLocation: usize,
     pub Heading: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetHeading: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
@@ -574,21 +574,21 @@ unsafe impl ::windows_core::Interface for IMapCameraFactory {
 #[doc(hidden)]
 pub struct IMapCameraFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub CreateInstanceWithLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, location: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     CreateInstanceWithLocation: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub CreateInstanceWithLocationAndHeading: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, location: ::windows_core::RawPtr, headingindegrees: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     CreateInstanceWithLocationAndHeading: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub CreateInstanceWithLocationHeadingAndPitch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, location: ::windows_core::RawPtr, headingindegrees: f64, pitchindegrees: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     CreateInstanceWithLocationHeadingAndPitch: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub CreateInstanceWithLocationHeadingPitchRollAndFieldOfView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, location: ::windows_core::RawPtr, headingindegrees: f64, pitchindegrees: f64, rollindegrees: f64, fieldofviewindegrees: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     CreateInstanceWithLocationHeadingPitchRollAndFieldOfView: usize,
 }
 #[doc(hidden)]
@@ -603,13 +603,13 @@ unsafe impl ::windows_core::Interface for IMapContextRequestedEventArgs {
 pub struct IMapContextRequestedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Location: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub MapElements: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     MapElements: usize,
 }
 #[doc(hidden)]
@@ -623,17 +623,17 @@ unsafe impl ::windows_core::Interface for IMapControl {
 #[doc(hidden)]
 pub struct IMapControl_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Center: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Center: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub SetCenter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SetCenter: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Children: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Children: usize,
     pub ColorScheme: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MapColorScheme) -> ::windows_core::HRESULT,
     pub SetColorScheme: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: MapColorScheme) -> ::windows_core::HRESULT,
@@ -661,17 +661,17 @@ pub struct IMapControl_Vtbl {
     pub SetWatermarkMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: MapWatermarkMode) -> ::windows_core::HRESULT,
     pub ZoomLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetZoomLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub MapElements: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     MapElements: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Routes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Routes: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub TileSources: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TileSources: usize,
     pub CenterChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveCenterChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -691,41 +691,41 @@ pub struct IMapControl_Vtbl {
     pub RemoveTransformOriginChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub ZoomLevelChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveZoomLevelChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub FindMapElementsAtOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: ::winrt_foundation::Point, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     FindMapElementsAtOffset: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub GetLocationFromOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: ::winrt_foundation::Point, location: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     GetLocationFromOffset: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub GetOffsetFromLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, location: ::windows_core::RawPtr, offset: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     GetOffsetFromLocation: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub IsLocationInView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, location: ::windows_core::RawPtr, isinview: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     IsLocationInView: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub TrySetViewBoundsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bounds: ::windows_core::RawPtr, margin: ::windows_core::RawPtr, animation: MapAnimationKind, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     TrySetViewBoundsAsync: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub TrySetViewWithCenterAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, center: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     TrySetViewWithCenterAsync: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub TrySetViewWithCenterAndZoomAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, center: ::windows_core::RawPtr, zoomlevel: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     TrySetViewWithCenterAndZoomAsync: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub TrySetViewWithCenterZoomHeadingAndPitchAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, center: ::windows_core::RawPtr, zoomlevel: ::windows_core::RawPtr, heading: ::windows_core::RawPtr, desiredpitch: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     TrySetViewWithCenterZoomHeadingAndPitchAsync: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, center: ::windows_core::RawPtr, zoomlevel: ::windows_core::RawPtr, heading: ::windows_core::RawPtr, desiredpitch: ::windows_core::RawPtr, animation: MapAnimationKind, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync: usize,
 }
 #[doc(hidden)]
@@ -818,9 +818,9 @@ pub struct IMapControl4_Vtbl {
     pub SetBusinessLandmarksEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub TransitFeaturesEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetTransitFeaturesEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub GetVisibleRegion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, region: MapVisibleRegionKind, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     GetVisibleRegion: usize,
 }
 #[doc(hidden)]
@@ -842,20 +842,20 @@ pub struct IMapControl5_Vtbl {
     pub SetViewPadding: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Thickness) -> ::windows_core::HRESULT,
     pub MapContextRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveMapContextRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub FindMapElementsAtOffsetWithRadius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: ::winrt_foundation::Point, radius: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     FindMapElementsAtOffsetWithRadius: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub GetLocationFromOffsetWithReferenceSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: ::winrt_foundation::Point, desiredreferencesystem: ::winrt_devices::Geolocation::AltitudeReferenceSystem, location: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     GetLocationFromOffsetWithReferenceSystem: usize,
     pub StartContinuousPan: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, horizontalpixelspersecond: f64, verticalpixelspersecond: f64) -> ::windows_core::HRESULT,
     pub StopContinuousPan: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub TryPanAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, horizontalpixels: f64, verticalpixels: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub TryPanToAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, location: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     TryPanToAsync: usize,
 }
 #[doc(hidden)]
@@ -869,21 +869,21 @@ unsafe impl ::windows_core::Interface for IMapControl6 {
 #[doc(hidden)]
 pub struct IMapControl6_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Layers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Layers: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetLayers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetLayers: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub TryGetLocationFromOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: ::winrt_foundation::Point, location: *mut ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     TryGetLocationFromOffset: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub TryGetLocationFromOffsetWithReferenceSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: ::winrt_foundation::Point, desiredreferencesystem: ::winrt_devices::Geolocation::AltitudeReferenceSystem, location: *mut ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     TryGetLocationFromOffsetWithReferenceSystem: usize,
 }
 #[doc(hidden)]
@@ -927,9 +927,9 @@ unsafe impl ::windows_core::Interface for IMapControlBusinessLandmarkClickEventA
 #[doc(hidden)]
 pub struct IMapControlBusinessLandmarkClickEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Services_Maps_LocalSearch"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-services"))]
     pub LocalLocations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Services_Maps_LocalSearch")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-services")))]
     LocalLocations: usize,
 }
 #[doc(hidden)]
@@ -943,9 +943,9 @@ unsafe impl ::windows_core::Interface for IMapControlBusinessLandmarkPointerEnte
 #[doc(hidden)]
 pub struct IMapControlBusinessLandmarkPointerEnteredEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Services_Maps_LocalSearch"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-services"))]
     pub LocalLocations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Services_Maps_LocalSearch")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-services")))]
     LocalLocations: usize,
 }
 #[doc(hidden)]
@@ -959,9 +959,9 @@ unsafe impl ::windows_core::Interface for IMapControlBusinessLandmarkPointerExit
 #[doc(hidden)]
 pub struct IMapControlBusinessLandmarkPointerExitedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Services_Maps_LocalSearch"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-services"))]
     pub LocalLocations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Services_Maps_LocalSearch")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-services")))]
     LocalLocations: usize,
 }
 #[doc(hidden)]
@@ -975,9 +975,9 @@ unsafe impl ::windows_core::Interface for IMapControlBusinessLandmarkRightTapped
 #[doc(hidden)]
 pub struct IMapControlBusinessLandmarkRightTappedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Services_Maps_LocalSearch"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-services"))]
     pub LocalLocations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Services_Maps_LocalSearch")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-services")))]
     LocalLocations: usize,
 }
 #[doc(hidden)]
@@ -1076,13 +1076,13 @@ pub struct IMapControlStatics_Vtbl {
     pub RoutesProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub TileSourcesProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub LocationProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub GetLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     GetLocation: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub SetLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SetLocation: usize,
     pub NormalizedAnchorPointProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetNormalizedAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
@@ -1192,13 +1192,13 @@ unsafe impl ::windows_core::Interface for IMapControlTransitFeatureClickEventArg
 pub struct IMapControlTransitFeatureClickEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Location: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub TransitProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TransitProperties: usize,
 }
 #[doc(hidden)]
@@ -1213,13 +1213,13 @@ unsafe impl ::windows_core::Interface for IMapControlTransitFeaturePointerEntere
 pub struct IMapControlTransitFeaturePointerEnteredEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Location: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub TransitProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TransitProperties: usize,
 }
 #[doc(hidden)]
@@ -1234,13 +1234,13 @@ unsafe impl ::windows_core::Interface for IMapControlTransitFeaturePointerExited
 pub struct IMapControlTransitFeaturePointerExitedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Location: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub TransitProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TransitProperties: usize,
 }
 #[doc(hidden)]
@@ -1255,13 +1255,13 @@ unsafe impl ::windows_core::Interface for IMapControlTransitFeatureRightTappedEv
 pub struct IMapControlTransitFeatureRightTappedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Location: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub TransitProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TransitProperties: usize,
 }
 #[doc(hidden)]
@@ -1360,13 +1360,13 @@ unsafe impl ::windows_core::Interface for IMapElement3D {
 #[doc(hidden)]
 pub struct IMapElement3D_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Location: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub SetLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SetLocation: usize,
     pub Model: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetModel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -1376,13 +1376,13 @@ pub struct IMapElement3D_Vtbl {
     pub SetPitch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
     pub Roll: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetRoll: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Scale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Scale: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetScale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetScale: usize,
 }
 #[doc(hidden)]
@@ -1428,13 +1428,13 @@ unsafe impl ::windows_core::Interface for IMapElementClickEventArgs {
 pub struct IMapElementClickEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Location: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub MapElements: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     MapElements: usize,
 }
 #[doc(hidden)]
@@ -1462,9 +1462,9 @@ unsafe impl ::windows_core::Interface for IMapElementPointerEnteredEventArgs {
 pub struct IMapElementPointerEnteredEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Location: usize,
     pub MapElement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -1480,9 +1480,9 @@ unsafe impl ::windows_core::Interface for IMapElementPointerExitedEventArgs {
 pub struct IMapElementPointerExitedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Location: usize,
     pub MapElement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -1552,13 +1552,13 @@ unsafe impl ::windows_core::Interface for IMapElementsLayer {
 #[doc(hidden)]
 pub struct IMapElementsLayer_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub MapElements: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     MapElements: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetMapElements: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetMapElements: usize,
     pub MapElementClick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveMapElementClick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -1581,13 +1581,13 @@ unsafe impl ::windows_core::Interface for IMapElementsLayerClickEventArgs {
 pub struct IMapElementsLayerClickEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Location: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub MapElements: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     MapElements: usize,
 }
 #[doc(hidden)]
@@ -1602,13 +1602,13 @@ unsafe impl ::windows_core::Interface for IMapElementsLayerContextRequestedEvent
 pub struct IMapElementsLayerContextRequestedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Location: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub MapElements: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     MapElements: usize,
 }
 #[doc(hidden)]
@@ -1623,9 +1623,9 @@ unsafe impl ::windows_core::Interface for IMapElementsLayerPointerEnteredEventAr
 pub struct IMapElementsLayerPointerEnteredEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Location: usize,
     pub MapElement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -1641,9 +1641,9 @@ unsafe impl ::windows_core::Interface for IMapElementsLayerPointerExitedEventArg
 pub struct IMapElementsLayerPointerExitedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Location: usize,
     pub MapElement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -1671,25 +1671,25 @@ unsafe impl ::windows_core::Interface for IMapIcon {
 #[doc(hidden)]
 pub struct IMapIcon_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Location: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub SetLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SetLocation: usize,
     pub Title: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetTitle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub NormalizedAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub SetNormalizedAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub Image: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Image: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub SetImage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SetImage: usize,
 }
 #[doc(hidden)]
@@ -1746,9 +1746,9 @@ unsafe impl ::windows_core::Interface for IMapInputEventArgs {
 pub struct IMapInputEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Location: usize,
 }
 #[doc(hidden)]
@@ -1764,9 +1764,9 @@ pub struct IMapItemsControl_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ItemsSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub SetItemsSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Items: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Items: usize,
     pub ItemTemplate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetItemTemplate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -1868,13 +1868,13 @@ unsafe impl ::windows_core::Interface for IMapModel3DStatics {
 #[doc(hidden)]
 pub struct IMapModel3DStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateFrom3MFAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, source: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateFrom3MFAsync: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateFrom3MFWithShadingOptionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, source: ::windows_core::RawPtr, shadingoption: MapModel3DShadingOption, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateFrom3MFWithShadingOptionAsync: usize,
 }
 #[doc(hidden)]
@@ -1888,13 +1888,13 @@ unsafe impl ::windows_core::Interface for IMapPolygon {
 #[doc(hidden)]
 pub struct IMapPolygon_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Path: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Path: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub SetPath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SetPath: usize,
     pub StrokeColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Color) -> ::windows_core::HRESULT,
     pub SetStrokeColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::Color) -> ::windows_core::HRESULT,
@@ -1916,9 +1916,9 @@ unsafe impl ::windows_core::Interface for IMapPolygon2 {
 #[doc(hidden)]
 pub struct IMapPolygon2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-foundation"))]
     pub Paths: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation_Collections")))]
+    #[cfg(not(all(feature = "winrt-devices", feature = "winrt-foundation")))]
     Paths: usize,
 }
 #[doc(hidden)]
@@ -1947,13 +1947,13 @@ unsafe impl ::windows_core::Interface for IMapPolyline {
 #[doc(hidden)]
 pub struct IMapPolyline_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Path: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Path: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub SetPath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SetPath: usize,
     pub StrokeColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Color) -> ::windows_core::HRESULT,
     pub SetStrokeColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::Color) -> ::windows_core::HRESULT,
@@ -1988,9 +1988,9 @@ unsafe impl ::windows_core::Interface for IMapRightTappedEventArgs {
 pub struct IMapRightTappedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Location: usize,
 }
 #[doc(hidden)]
@@ -2008,9 +2008,9 @@ pub struct IMapRouteView_Vtbl {
     pub SetRouteColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::Color) -> ::windows_core::HRESULT,
     pub OutlineColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Color) -> ::windows_core::HRESULT,
     pub SetOutlineColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::Color) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Services_Maps")]
+    #[cfg(feature = "winrt-services")]
     pub Route: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Services_Maps"))]
+    #[cfg(not(feature = "winrt-services"))]
     Route: usize,
 }
 #[doc(hidden)]
@@ -2024,9 +2024,9 @@ unsafe impl ::windows_core::Interface for IMapRouteViewFactory {
 #[doc(hidden)]
 pub struct IMapRouteViewFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Services_Maps")]
+    #[cfg(feature = "winrt-services")]
     pub CreateInstanceWithMapRoute: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, route: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Services_Maps"))]
+    #[cfg(not(feature = "winrt-services"))]
     CreateInstanceWithMapRoute: usize,
 }
 #[doc(hidden)]
@@ -2055,38 +2055,38 @@ unsafe impl ::windows_core::Interface for IMapSceneStatics {
 #[doc(hidden)]
 pub struct IMapSceneStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub CreateFromBoundingBox: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bounds: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     CreateFromBoundingBox: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub CreateFromBoundingBoxWithHeadingAndPitch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bounds: ::windows_core::RawPtr, headingindegrees: f64, pitchindegrees: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     CreateFromBoundingBoxWithHeadingAndPitch: usize,
     pub CreateFromCamera: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, camera: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub CreateFromLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, location: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     CreateFromLocation: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub CreateFromLocationWithHeadingAndPitch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, location: ::windows_core::RawPtr, headingindegrees: f64, pitchindegrees: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     CreateFromLocationWithHeadingAndPitch: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub CreateFromLocationAndRadius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, location: ::windows_core::RawPtr, radiusinmeters: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     CreateFromLocationAndRadius: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub CreateFromLocationAndRadiusWithHeadingAndPitch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, location: ::windows_core::RawPtr, radiusinmeters: f64, headingindegrees: f64, pitchindegrees: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     CreateFromLocationAndRadiusWithHeadingAndPitch: usize,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-foundation"))]
     pub CreateFromLocations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, locations: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation_Collections")))]
+    #[cfg(not(all(feature = "winrt-devices", feature = "winrt-foundation")))]
     CreateFromLocations: usize,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-foundation"))]
     pub CreateFromLocationsWithHeadingAndPitch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, locations: ::windows_core::RawPtr, headingindegrees: f64, pitchindegrees: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation_Collections")))]
+    #[cfg(not(all(feature = "winrt-devices", feature = "winrt-foundation")))]
     CreateFromLocationsWithHeadingAndPitch: usize,
 }
 #[doc(hidden)]
@@ -2209,9 +2209,9 @@ pub struct IMapStyleSheetStatics_Vtbl {
     pub RoadDark: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RoadHighContrastLight: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RoadHighContrastDark: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Combine: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stylesheets: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Combine: usize,
     pub ParseFromJson: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, styleasjson: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub TryParseFromJson: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, styleasjson: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, stylesheet: *mut ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -2253,13 +2253,13 @@ unsafe impl ::windows_core::Interface for IMapTileBitmapRequest {
 #[doc(hidden)]
 pub struct IMapTileBitmapRequest_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub PixelData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     PixelData: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub SetPixelData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SetPixelData: usize,
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -2347,13 +2347,13 @@ pub struct IMapTileSource_Vtbl {
     pub SetLayer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: MapTileLayer) -> ::windows_core::HRESULT,
     pub ZoomLevelRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MapZoomLevelRange) -> ::windows_core::HRESULT,
     pub SetZoomLevelRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: MapZoomLevelRange) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Bounds: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Bounds: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub SetBounds: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SetBounds: usize,
     pub AllowOverstretch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetAllowOverstretch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -2406,13 +2406,13 @@ pub struct IMapTileSourceFactory_Vtbl {
     pub CreateInstance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateInstanceWithDataSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, datasource: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateInstanceWithDataSourceAndZoomRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, datasource: ::windows_core::RawPtr, zoomlevelrange: MapZoomLevelRange, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub CreateInstanceWithDataSourceZoomRangeAndBounds: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, datasource: ::windows_core::RawPtr, zoomlevelrange: MapZoomLevelRange, bounds: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     CreateInstanceWithDataSourceZoomRangeAndBounds: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, datasource: ::windows_core::RawPtr, zoomlevelrange: MapZoomLevelRange, bounds: ::windows_core::RawPtr, tilesizeinpixels: i32, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize: usize,
 }
 #[doc(hidden)]
@@ -2560,9 +2560,9 @@ unsafe impl ::windows_core::Interface for IStreetsidePanorama {
 #[doc(hidden)]
 pub struct IStreetsidePanorama_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Location: usize,
 }
 #[doc(hidden)]
@@ -2576,13 +2576,13 @@ unsafe impl ::windows_core::Interface for IStreetsidePanoramaStatics {
 #[doc(hidden)]
 pub struct IStreetsidePanoramaStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub FindNearbyWithLocationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, location: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     FindNearbyWithLocationAsync: usize,
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub FindNearbyWithLocationAndRadiusAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, location: ::windows_core::RawPtr, radiusinmeters: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Geolocation"))]
+    #[cfg(not(feature = "winrt-devices"))]
     FindNearbyWithLocationAndRadiusAsync: usize,
 }
 #[repr(transparent)]
@@ -2985,7 +2985,7 @@ unsafe impl ::windows_core::RuntimeType for MapAnimationKind {
 #[repr(transparent)]
 pub struct MapBillboard(::windows_core::IUnknown);
 impl MapBillboard {
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
@@ -2993,7 +2993,7 @@ impl MapBillboard {
             (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SetLocation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetLocation)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -3009,7 +3009,7 @@ impl MapBillboard {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetNormalizedAnchorPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Image(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStreamReference> {
         let this = self;
         unsafe {
@@ -3017,7 +3017,7 @@ impl MapBillboard {
             (::windows_core::Interface::vtable(this).Image)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IRandomAccessStreamReference>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SetImage<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetImage)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -3188,7 +3188,7 @@ unsafe impl ::core::marker::Sync for MapBillboard {}
 #[repr(transparent)]
 pub struct MapCamera(::windows_core::IUnknown);
 impl MapCamera {
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
@@ -3196,7 +3196,7 @@ impl MapCamera {
             (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SetLocation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetLocation)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -3245,28 +3245,28 @@ impl MapCamera {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFieldOfView)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn CreateInstanceWithLocation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(location: Param0) -> ::windows_core::Result<MapCamera> {
         Self::IMapCameraFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithLocation)(::windows_core::Interface::as_raw(this), location.into_param().abi(), result__.as_mut_ptr()).from_abi::<MapCamera>(result__)
         })
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn CreateInstanceWithLocationAndHeading<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(location: Param0, headingindegrees: f64) -> ::windows_core::Result<MapCamera> {
         Self::IMapCameraFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithLocationAndHeading)(::windows_core::Interface::as_raw(this), location.into_param().abi(), headingindegrees, result__.as_mut_ptr()).from_abi::<MapCamera>(result__)
         })
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn CreateInstanceWithLocationHeadingAndPitch<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(location: Param0, headingindegrees: f64, pitchindegrees: f64) -> ::windows_core::Result<MapCamera> {
         Self::IMapCameraFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithLocationHeadingAndPitch)(::windows_core::Interface::as_raw(this), location.into_param().abi(), headingindegrees, pitchindegrees, result__.as_mut_ptr()).from_abi::<MapCamera>(result__)
         })
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn CreateInstanceWithLocationHeadingPitchRollAndFieldOfView<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(location: Param0, headingindegrees: f64, pitchindegrees: f64, rollindegrees: f64, fieldofviewindegrees: f64) -> ::windows_core::Result<MapCamera> {
         Self::IMapCameraFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -3454,7 +3454,7 @@ impl MapContextRequestedEventArgs {
             (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
@@ -3462,7 +3462,7 @@ impl MapContextRequestedEventArgs {
             (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn MapElements(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MapElement>> {
         let this = self;
         unsafe {
@@ -3553,7 +3553,7 @@ impl MapControl {
         static mut SHARED: ::windows_core::FactoryCache<MapControl, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Center(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
@@ -3561,12 +3561,12 @@ impl MapControl {
             (::windows_core::Interface::vtable(this).Center)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SetCenter<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCenter)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Children(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::super::DependencyObject>> {
         let this = self;
         unsafe {
@@ -3723,7 +3723,7 @@ impl MapControl {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetZoomLevel)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn MapElements(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<MapElement>> {
         let this = self;
         unsafe {
@@ -3731,7 +3731,7 @@ impl MapControl {
             (::windows_core::Interface::vtable(this).MapElements)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<MapElement>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Routes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<MapRouteView>> {
         let this = self;
         unsafe {
@@ -3739,7 +3739,7 @@ impl MapControl {
             (::windows_core::Interface::vtable(this).Routes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<MapRouteView>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TileSources(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<MapTileSource>> {
         let this = self;
         unsafe {
@@ -3846,7 +3846,7 @@ impl MapControl {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveZoomLevelChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn FindMapElementsAtOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, offset: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MapElement>> {
         let this = self;
         unsafe {
@@ -3854,22 +3854,22 @@ impl MapControl {
             (::windows_core::Interface::vtable(this).FindMapElementsAtOffset)(::windows_core::Interface::as_raw(this), offset.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<MapElement>>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn GetLocationFromOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, offset: Param0, location: &mut ::core::option::Option<::winrt_devices::Geolocation::Geopoint>) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).GetLocationFromOffset)(::windows_core::Interface::as_raw(this), offset.into_param().abi(), location as *mut _ as _).ok() }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn GetOffsetFromLocation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(&self, location: Param0, offset: &mut ::winrt_foundation::Point) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).GetOffsetFromLocation)(::windows_core::Interface::as_raw(this), location.into_param().abi(), offset).ok() }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn IsLocationInView<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(&self, location: Param0, isinview: &mut bool) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).IsLocationInView)(::windows_core::Interface::as_raw(this), location.into_param().abi(), isinview).ok() }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn TrySetViewBoundsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::GeoboundingBox>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<super::super::Thickness>>>(&self, bounds: Param0, margin: Param1, animation: MapAnimationKind) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
@@ -3877,7 +3877,7 @@ impl MapControl {
             (::windows_core::Interface::vtable(this).TrySetViewBoundsAsync)(::windows_core::Interface::as_raw(this), bounds.into_param().abi(), margin.into_param().abi(), animation, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn TrySetViewWithCenterAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(&self, center: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
@@ -3885,7 +3885,7 @@ impl MapControl {
             (::windows_core::Interface::vtable(this).TrySetViewWithCenterAsync)(::windows_core::Interface::as_raw(this), center.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn TrySetViewWithCenterAndZoomAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<f64>>>(&self, center: Param0, zoomlevel: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
@@ -3893,7 +3893,7 @@ impl MapControl {
             (::windows_core::Interface::vtable(this).TrySetViewWithCenterAndZoomAsync)(::windows_core::Interface::as_raw(this), center.into_param().abi(), zoomlevel.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn TrySetViewWithCenterZoomHeadingAndPitchAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<f64>>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<f64>>, Param3: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<f64>>>(&self, center: Param0, zoomlevel: Param1, heading: Param2, desiredpitch: Param3) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
@@ -3901,7 +3901,7 @@ impl MapControl {
             (::windows_core::Interface::vtable(this).TrySetViewWithCenterZoomHeadingAndPitchAsync)(::windows_core::Interface::as_raw(this), center.into_param().abi(), zoomlevel.into_param().abi(), heading.into_param().abi(), desiredpitch.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<f64>>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<f64>>, Param3: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<f64>>>(&self, center: Param0, zoomlevel: Param1, heading: Param2, desiredpitch: Param3, animation: MapAnimationKind) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
@@ -4222,7 +4222,7 @@ impl MapControl {
         let this = &::windows_core::Interface::cast::<IMapControl4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTransitFeaturesEnabled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn GetVisibleRegion(&self, region: MapVisibleRegionKind) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopath> {
         let this = &::windows_core::Interface::cast::<IMapControl4>(self)?;
         unsafe {
@@ -4274,7 +4274,7 @@ impl MapControl {
         let this = &::windows_core::Interface::cast::<IMapControl5>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveMapContextRequested)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn FindMapElementsAtOffsetWithRadius<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, offset: Param0, radius: f64) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MapElement>> {
         let this = &::windows_core::Interface::cast::<IMapControl5>(self)?;
         unsafe {
@@ -4282,7 +4282,7 @@ impl MapControl {
             (::windows_core::Interface::vtable(this).FindMapElementsAtOffsetWithRadius)(::windows_core::Interface::as_raw(this), offset.into_param().abi(), radius, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<MapElement>>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn GetLocationFromOffsetWithReferenceSystem<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, offset: Param0, desiredreferencesystem: ::winrt_devices::Geolocation::AltitudeReferenceSystem, location: &mut ::core::option::Option<::winrt_devices::Geolocation::Geopoint>) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMapControl5>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).GetLocationFromOffsetWithReferenceSystem)(::windows_core::Interface::as_raw(this), offset.into_param().abi(), desiredreferencesystem, location as *mut _ as _).ok() }
@@ -4302,7 +4302,7 @@ impl MapControl {
             (::windows_core::Interface::vtable(this).TryPanAsync)(::windows_core::Interface::as_raw(this), horizontalpixels, verticalpixels, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn TryPanToAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(&self, location: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IMapControl5>(self)?;
         unsafe {
@@ -4310,7 +4310,7 @@ impl MapControl {
             (::windows_core::Interface::vtable(this).TryPanToAsync)(::windows_core::Interface::as_raw(this), location.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Layers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<MapLayer>> {
         let this = &::windows_core::Interface::cast::<IMapControl6>(self)?;
         unsafe {
@@ -4318,12 +4318,12 @@ impl MapControl {
             (::windows_core::Interface::vtable(this).Layers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<MapLayer>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetLayers<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<MapLayer>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMapControl6>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetLayers)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn TryGetLocationFromOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, offset: Param0, location: &mut ::core::option::Option<::winrt_devices::Geolocation::Geopoint>) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<IMapControl6>(self)?;
         unsafe {
@@ -4331,7 +4331,7 @@ impl MapControl {
             (::windows_core::Interface::vtable(this).TryGetLocationFromOffset)(::windows_core::Interface::as_raw(this), offset.into_param().abi(), location as *mut _ as _, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn TryGetLocationFromOffsetWithReferenceSystem<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, offset: Param0, desiredreferencesystem: ::winrt_devices::Geolocation::AltitudeReferenceSystem, location: &mut ::core::option::Option<::winrt_devices::Geolocation::Geopoint>) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<IMapControl6>(self)?;
         unsafe {
@@ -4492,14 +4492,14 @@ impl MapControl {
             (::windows_core::Interface::vtable(this).LocationProperty)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::DependencyProperty>(result__)
         })
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn GetLocation<'a, Param0: ::windows_core::IntoParam<'a, super::super::DependencyObject>>(element: Param0) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         Self::IMapControlStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetLocation)(::windows_core::Interface::as_raw(this), element.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         })
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SetLocation<'a, Param0: ::windows_core::IntoParam<'a, super::super::DependencyObject>, Param1: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(element: Param0, value: Param1) -> ::windows_core::Result<()> {
         Self::IMapControlStatics(|this| unsafe { (::windows_core::Interface::vtable(this).SetLocation)(::windows_core::Interface::as_raw(this), element.into_param().abi(), value.into_param().abi()).ok() })
     }
@@ -4737,53 +4737,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Map
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<MapControl> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: MapControl) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&MapControl> for super::super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &MapControl) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for MapControl {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IAnimationObject> for &MapControl {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<MapControl> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: MapControl) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&MapControl> for super::super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &MapControl) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for MapControl {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::super::Composition::IVisualElement> for &MapControl {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -4881,7 +4881,7 @@ impl MapControlBusinessLandmarkClickEventArgs {
         static mut SHARED: ::windows_core::FactoryCache<MapControlBusinessLandmarkClickEventArgs, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Services_Maps_LocalSearch"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-services"))]
     pub fn LocalLocations(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_services::Maps::LocalSearch::LocalLocation>> {
         let this = self;
         unsafe {
@@ -4972,7 +4972,7 @@ impl MapControlBusinessLandmarkPointerEnteredEventArgs {
         static mut SHARED: ::windows_core::FactoryCache<MapControlBusinessLandmarkPointerEnteredEventArgs, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Services_Maps_LocalSearch"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-services"))]
     pub fn LocalLocations(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_services::Maps::LocalSearch::LocalLocation>> {
         let this = self;
         unsafe {
@@ -5063,7 +5063,7 @@ impl MapControlBusinessLandmarkPointerExitedEventArgs {
         static mut SHARED: ::windows_core::FactoryCache<MapControlBusinessLandmarkPointerExitedEventArgs, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Services_Maps_LocalSearch"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-services"))]
     pub fn LocalLocations(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_services::Maps::LocalSearch::LocalLocation>> {
         let this = self;
         unsafe {
@@ -5154,7 +5154,7 @@ impl MapControlBusinessLandmarkRightTappedEventArgs {
         static mut SHARED: ::windows_core::FactoryCache<MapControlBusinessLandmarkRightTappedEventArgs, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Services_Maps_LocalSearch"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-services"))]
     pub fn LocalLocations(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_services::Maps::LocalSearch::LocalLocation>> {
         let this = self;
         unsafe {
@@ -5456,7 +5456,7 @@ impl MapControlTransitFeatureClickEventArgs {
             (::windows_core::Interface::vtable(this).DisplayName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
@@ -5464,7 +5464,7 @@ impl MapControlTransitFeatureClickEventArgs {
             (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TransitProperties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
@@ -5562,7 +5562,7 @@ impl MapControlTransitFeaturePointerEnteredEventArgs {
             (::windows_core::Interface::vtable(this).DisplayName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
@@ -5570,7 +5570,7 @@ impl MapControlTransitFeaturePointerEnteredEventArgs {
             (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TransitProperties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
@@ -5668,7 +5668,7 @@ impl MapControlTransitFeaturePointerExitedEventArgs {
             (::windows_core::Interface::vtable(this).DisplayName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
@@ -5676,7 +5676,7 @@ impl MapControlTransitFeaturePointerExitedEventArgs {
             (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TransitProperties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
@@ -5774,7 +5774,7 @@ impl MapControlTransitFeatureRightTappedEventArgs {
             (::windows_core::Interface::vtable(this).DisplayName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
@@ -5782,7 +5782,7 @@ impl MapControlTransitFeatureRightTappedEventArgs {
             (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TransitProperties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
@@ -6317,7 +6317,7 @@ impl MapElement3D {
         static mut SHARED: ::windows_core::FactoryCache<MapElement3D, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
@@ -6325,7 +6325,7 @@ impl MapElement3D {
             (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SetLocation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetLocation)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -6374,7 +6374,7 @@ impl MapElement3D {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetRoll)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Scale(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -6382,7 +6382,7 @@ impl MapElement3D {
             (::windows_core::Interface::vtable(this).Scale)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetScale<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetScale)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -6551,7 +6551,7 @@ impl MapElementClickEventArgs {
             (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
@@ -6559,7 +6559,7 @@ impl MapElementClickEventArgs {
             (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn MapElements(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<MapElement>> {
         let this = self;
         unsafe {
@@ -6690,7 +6690,7 @@ impl MapElementPointerEnteredEventArgs {
             (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
@@ -6795,7 +6795,7 @@ impl MapElementPointerExitedEventArgs {
             (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
@@ -6893,7 +6893,7 @@ impl MapElementsLayer {
         static mut SHARED: ::windows_core::FactoryCache<MapElementsLayer, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn MapElements(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<MapElement>> {
         let this = self;
         unsafe {
@@ -6901,7 +6901,7 @@ impl MapElementsLayer {
             (::windows_core::Interface::vtable(this).MapElements)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<MapElement>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetMapElements<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<MapElement>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetMapElements)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -7090,7 +7090,7 @@ impl MapElementsLayerClickEventArgs {
             (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
@@ -7098,7 +7098,7 @@ impl MapElementsLayerClickEventArgs {
             (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn MapElements(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<MapElement>> {
         let this = self;
         unsafe {
@@ -7196,7 +7196,7 @@ impl MapElementsLayerContextRequestedEventArgs {
             (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
@@ -7204,7 +7204,7 @@ impl MapElementsLayerContextRequestedEventArgs {
             (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn MapElements(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MapElement>> {
         let this = self;
         unsafe {
@@ -7302,7 +7302,7 @@ impl MapElementsLayerPointerEnteredEventArgs {
             (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
@@ -7407,7 +7407,7 @@ impl MapElementsLayerPointerExitedEventArgs {
             (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
@@ -7505,7 +7505,7 @@ impl MapIcon {
         static mut SHARED: ::windows_core::FactoryCache<MapIcon, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
@@ -7513,7 +7513,7 @@ impl MapIcon {
             (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SetLocation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetLocation)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -7540,7 +7540,7 @@ impl MapIcon {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetNormalizedAnchorPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Image(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStreamReference> {
         let this = self;
         unsafe {
@@ -7548,7 +7548,7 @@ impl MapIcon {
             (::windows_core::Interface::vtable(this).Image)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IRandomAccessStreamReference>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SetImage<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetImage)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -7726,7 +7726,7 @@ impl MapInputEventArgs {
             (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
@@ -7887,7 +7887,7 @@ impl MapItemsControl {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetItemsSource)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::super::DependencyObject>> {
         let this = self;
         unsafe {
@@ -8240,14 +8240,14 @@ impl MapModel3D {
             (::windows_core::Interface::vtable(this).CreateInstance)(::windows_core::Interface::as_raw(this), ::core::mem::transmute_copy(&derived__), base__ as *mut _ as _, result__.as_mut_ptr()).from_abi::<MapModel3D>(result__)
         })
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFrom3MFAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>>(source: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MapModel3D>> {
         Self::IMapModel3DStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFrom3MFAsync)(::windows_core::Interface::as_raw(this), source.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MapModel3D>>(result__)
         })
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFrom3MFWithShadingOptionAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>>(source: Param0, shadingoption: MapModel3DShadingOption) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MapModel3D>> {
         Self::IMapModel3DStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -8432,7 +8432,7 @@ impl MapPolygon {
         static mut SHARED: ::windows_core::FactoryCache<MapPolygon, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Path(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopath> {
         let this = self;
         unsafe {
@@ -8440,7 +8440,7 @@ impl MapPolygon {
             (::windows_core::Interface::vtable(this).Path)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopath>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SetPath<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopath>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPath)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -8489,7 +8489,7 @@ impl MapPolygon {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFillColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-foundation"))]
     pub fn Paths(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_devices::Geolocation::Geopath>> {
         let this = &::windows_core::Interface::cast::<IMapPolygon2>(self)?;
         unsafe {
@@ -8642,7 +8642,7 @@ impl MapPolyline {
         static mut SHARED: ::windows_core::FactoryCache<MapPolyline, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Path(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopath> {
         let this = self;
         unsafe {
@@ -8650,7 +8650,7 @@ impl MapPolyline {
             (::windows_core::Interface::vtable(this).Path)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopath>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SetPath<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopath>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPath)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -8867,7 +8867,7 @@ impl MapRightTappedEventArgs {
             (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
@@ -8973,7 +8973,7 @@ impl MapRouteView {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetOutlineColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Services_Maps")]
+    #[cfg(feature = "winrt-services")]
     pub fn Route(&self) -> ::windows_core::Result<::winrt_services::Maps::MapRoute> {
         let this = self;
         unsafe {
@@ -8981,14 +8981,14 @@ impl MapRouteView {
             (::windows_core::Interface::vtable(this).Route)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_services::Maps::MapRoute>(result__)
         }
     }
-    #[cfg(feature = "Services_Maps")]
+    #[cfg(feature = "winrt-services")]
     pub fn CreateInstanceWithMapRoute<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_services::Maps::MapRoute>>(route: Param0) -> ::windows_core::Result<MapRouteView> {
         Self::IMapRouteViewFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithMapRoute)(::windows_core::Interface::as_raw(this), route.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<MapRouteView>(result__)
         })
     }
-    #[cfg(feature = "Services_Maps")]
+    #[cfg(feature = "winrt-services")]
     pub fn CreateInstanceWithMapRoute_compose<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_services::Maps::MapRoute>, T: ::windows_core::Compose>(route: Param0, compose: T) -> ::windows_core::Result<MapRouteView> {
         Self::IMapRouteViewFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -9114,14 +9114,14 @@ impl MapScene {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveTargetCameraChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn CreateFromBoundingBox<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::GeoboundingBox>>(bounds: Param0) -> ::windows_core::Result<MapScene> {
         Self::IMapSceneStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromBoundingBox)(::windows_core::Interface::as_raw(this), bounds.into_param().abi(), result__.as_mut_ptr()).from_abi::<MapScene>(result__)
         })
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn CreateFromBoundingBoxWithHeadingAndPitch<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::GeoboundingBox>>(bounds: Param0, headingindegrees: f64, pitchindegrees: f64) -> ::windows_core::Result<MapScene> {
         Self::IMapSceneStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -9134,42 +9134,42 @@ impl MapScene {
             (::windows_core::Interface::vtable(this).CreateFromCamera)(::windows_core::Interface::as_raw(this), camera.into_param().abi(), result__.as_mut_ptr()).from_abi::<MapScene>(result__)
         })
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn CreateFromLocation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(location: Param0) -> ::windows_core::Result<MapScene> {
         Self::IMapSceneStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromLocation)(::windows_core::Interface::as_raw(this), location.into_param().abi(), result__.as_mut_ptr()).from_abi::<MapScene>(result__)
         })
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn CreateFromLocationWithHeadingAndPitch<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(location: Param0, headingindegrees: f64, pitchindegrees: f64) -> ::windows_core::Result<MapScene> {
         Self::IMapSceneStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromLocationWithHeadingAndPitch)(::windows_core::Interface::as_raw(this), location.into_param().abi(), headingindegrees, pitchindegrees, result__.as_mut_ptr()).from_abi::<MapScene>(result__)
         })
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn CreateFromLocationAndRadius<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(location: Param0, radiusinmeters: f64) -> ::windows_core::Result<MapScene> {
         Self::IMapSceneStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromLocationAndRadius)(::windows_core::Interface::as_raw(this), location.into_param().abi(), radiusinmeters, result__.as_mut_ptr()).from_abi::<MapScene>(result__)
         })
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn CreateFromLocationAndRadiusWithHeadingAndPitch<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(location: Param0, radiusinmeters: f64, headingindegrees: f64, pitchindegrees: f64) -> ::windows_core::Result<MapScene> {
         Self::IMapSceneStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromLocationAndRadiusWithHeadingAndPitch)(::windows_core::Interface::as_raw(this), location.into_param().abi(), radiusinmeters, headingindegrees, pitchindegrees, result__.as_mut_ptr()).from_abi::<MapScene>(result__)
         })
     }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-foundation"))]
     pub fn CreateFromLocations<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_devices::Geolocation::Geopoint>>>(locations: Param0) -> ::windows_core::Result<MapScene> {
         Self::IMapSceneStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromLocations)(::windows_core::Interface::as_raw(this), locations.into_param().abi(), result__.as_mut_ptr()).from_abi::<MapScene>(result__)
         })
     }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-foundation"))]
     pub fn CreateFromLocationsWithHeadingAndPitch<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_devices::Geolocation::Geopoint>>>(locations: Param0, headingindegrees: f64, pitchindegrees: f64) -> ::windows_core::Result<MapScene> {
         Self::IMapSceneStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -9351,7 +9351,7 @@ impl MapStyleSheet {
             (::windows_core::Interface::vtable(this).RoadHighContrastDark)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MapStyleSheet>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Combine<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<MapStyleSheet>>>(stylesheets: Param0) -> ::windows_core::Result<MapStyleSheet> {
         Self::IMapStyleSheetStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -10030,7 +10030,7 @@ impl MapTileBitmapRequest {
         static mut SHARED: ::windows_core::FactoryCache<MapTileBitmapRequest, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn PixelData(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStreamReference> {
         let this = self;
         unsafe {
@@ -10038,7 +10038,7 @@ impl MapTileBitmapRequest {
             (::windows_core::Interface::vtable(this).PixelData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IRandomAccessStreamReference>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SetPixelData<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPixelData)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -10513,7 +10513,7 @@ impl MapTileSource {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetZoomLevelRange)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Bounds(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::GeoboundingBox> {
         let this = self;
         unsafe {
@@ -10521,7 +10521,7 @@ impl MapTileSource {
             (::windows_core::Interface::vtable(this).Bounds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::GeoboundingBox>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SetBounds<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::GeoboundingBox>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetBounds)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -10694,14 +10694,14 @@ impl MapTileSource {
             (::windows_core::Interface::vtable(this).CreateInstanceWithDataSourceAndZoomRange)(::windows_core::Interface::as_raw(this), datasource.into_param().abi(), zoomlevelrange.into_param().abi(), ::core::mem::transmute_copy(&derived__), base__ as *mut _ as _, result__.as_mut_ptr()).from_abi::<MapTileSource>(result__)
         })
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn CreateInstanceWithDataSourceZoomRangeAndBounds<'a, Param0: ::windows_core::IntoParam<'a, MapTileDataSource>, Param1: ::windows_core::IntoParam<'a, MapZoomLevelRange>, Param2: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::GeoboundingBox>>(datasource: Param0, zoomlevelrange: Param1, bounds: Param2) -> ::windows_core::Result<MapTileSource> {
         Self::IMapTileSourceFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithDataSourceZoomRangeAndBounds)(::windows_core::Interface::as_raw(this), datasource.into_param().abi(), zoomlevelrange.into_param().abi(), bounds.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<MapTileSource>(result__)
         })
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn CreateInstanceWithDataSourceZoomRangeAndBounds_compose<'a, Param0: ::windows_core::IntoParam<'a, MapTileDataSource>, Param1: ::windows_core::IntoParam<'a, MapZoomLevelRange>, Param2: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::GeoboundingBox>, T: ::windows_core::Compose>(datasource: Param0, zoomlevelrange: Param1, bounds: Param2, compose: T) -> ::windows_core::Result<MapTileSource> {
         Self::IMapTileSourceFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -10709,14 +10709,14 @@ impl MapTileSource {
             (::windows_core::Interface::vtable(this).CreateInstanceWithDataSourceZoomRangeAndBounds)(::windows_core::Interface::as_raw(this), datasource.into_param().abi(), zoomlevelrange.into_param().abi(), bounds.into_param().abi(), ::core::mem::transmute_copy(&derived__), base__ as *mut _ as _, result__.as_mut_ptr()).from_abi::<MapTileSource>(result__)
         })
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize<'a, Param0: ::windows_core::IntoParam<'a, MapTileDataSource>, Param1: ::windows_core::IntoParam<'a, MapZoomLevelRange>, Param2: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::GeoboundingBox>>(datasource: Param0, zoomlevelrange: Param1, bounds: Param2, tilesizeinpixels: i32) -> ::windows_core::Result<MapTileSource> {
         Self::IMapTileSourceFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize)(::windows_core::Interface::as_raw(this), datasource.into_param().abi(), zoomlevelrange.into_param().abi(), bounds.into_param().abi(), tilesizeinpixels, ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<MapTileSource>(result__)
         })
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize_compose<'a, Param0: ::windows_core::IntoParam<'a, MapTileDataSource>, Param1: ::windows_core::IntoParam<'a, MapZoomLevelRange>, Param2: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::GeoboundingBox>, T: ::windows_core::Compose>(datasource: Param0, zoomlevelrange: Param1, bounds: Param2, tilesizeinpixels: i32, compose: T) -> ::windows_core::Result<MapTileSource> {
         Self::IMapTileSourceFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -11529,7 +11529,7 @@ unsafe impl ::core::marker::Sync for StreetsideExperience {}
 #[repr(transparent)]
 pub struct StreetsidePanorama(::windows_core::IUnknown);
 impl StreetsidePanorama {
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
@@ -11537,14 +11537,14 @@ impl StreetsidePanorama {
             (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn FindNearbyWithLocationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(location: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<StreetsidePanorama>> {
         Self::IStreetsidePanoramaStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).FindNearbyWithLocationAsync)(::windows_core::Interface::as_raw(this), location.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<StreetsidePanorama>>(result__)
         })
     }
-    #[cfg(feature = "Devices_Geolocation")]
+    #[cfg(feature = "winrt-devices")]
     pub fn FindNearbyWithLocationAndRadiusAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(location: Param0, radiusinmeters: f64) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<StreetsidePanorama>> {
         Self::IStreetsidePanoramaStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();

@@ -13,9 +13,9 @@ extern "system" {
     pub fn AddRadiusServerA(address: ::windows_core_sys::PCSTR) -> u32;
     pub fn AddRadiusServerW(address: ::windows_core_sys::PCWSTR) -> u32;
     pub fn ClearPersistentIScsiDevices() -> u32;
-    #[cfg(feature = "Win32_System_Ioctl")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn GetDevicesForIScsiSessionA(uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, devicecount: *mut u32, devices: *mut ISCSI_DEVICE_ON_SESSIONA) -> u32;
-    #[cfg(feature = "Win32_System_Ioctl")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn GetDevicesForIScsiSessionW(uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, devicecount: *mut u32, devices: *mut ISCSI_DEVICE_ON_SESSIONW) -> u32;
     pub fn GetIScsiIKEInfoA(initiatorname: ::windows_core_sys::PCSTR, initiatorportnumber: u32, reserved: *mut u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION) -> u32;
     pub fn GetIScsiIKEInfoW(initiatorname: ::windows_core_sys::PCWSTR, initiatorportnumber: u32, reserved: *mut u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION) -> u32;
@@ -601,7 +601,7 @@ impl ::core::clone::Clone for ISCSI_CONNECTION_INFO_EX {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Ioctl")]
+#[cfg(feature = "win32-system-sys")]
 pub struct ISCSI_DEVICE_ON_SESSIONA {
     pub InitiatorName: [::win32_foundation_sys::CHAR; 256],
     pub TargetName: [::win32_foundation_sys::CHAR; 224],
@@ -612,16 +612,16 @@ pub struct ISCSI_DEVICE_ON_SESSIONA {
     pub StorageDeviceNumber: ::win32_system_sys::Ioctl::STORAGE_DEVICE_NUMBER,
     pub DeviceInstance: u32,
 }
-#[cfg(feature = "Win32_System_Ioctl")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for ISCSI_DEVICE_ON_SESSIONA {}
-#[cfg(feature = "Win32_System_Ioctl")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for ISCSI_DEVICE_ON_SESSIONA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Ioctl")]
+#[cfg(feature = "win32-system-sys")]
 pub struct ISCSI_DEVICE_ON_SESSIONW {
     pub InitiatorName: [u16; 256],
     pub TargetName: [u16; 224],
@@ -632,9 +632,9 @@ pub struct ISCSI_DEVICE_ON_SESSIONW {
     pub StorageDeviceNumber: ::win32_system_sys::Ioctl::STORAGE_DEVICE_NUMBER,
     pub DeviceInstance: u32,
 }
-#[cfg(feature = "Win32_System_Ioctl")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for ISCSI_DEVICE_ON_SESSIONW {}
-#[cfg(feature = "Win32_System_Ioctl")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for ISCSI_DEVICE_ON_SESSIONW {
     fn clone(&self) -> Self {
         *self

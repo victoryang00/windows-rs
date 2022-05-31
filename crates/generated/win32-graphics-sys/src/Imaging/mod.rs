@@ -9,9 +9,9 @@ extern "system" {
     pub fn WICMapGuidToShortName(guid: *const ::windows_core_sys::GUID, cchname: u32, wzname: ::windows_core_sys::PWSTR, pcchactual: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn WICMapSchemaToName(guidmetadataformat: *const ::windows_core_sys::GUID, pwzschema: ::windows_core_sys::PCWSTR, cchname: u32, wzname: ::windows_core_sys::PWSTR, pcchactual: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn WICMapShortNameToGuid(wzname: ::windows_core_sys::PCWSTR, pguid: *mut ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn WICMatchMetadataContent(guidcontainerformat: *const ::windows_core_sys::GUID, pguidvendor: *const ::windows_core_sys::GUID, pistream: ::win32_system_sys::Com::IStream, pguidmetadataformat: *mut ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn WICSerializeMetadataContent(guidcontainerformat: *const ::windows_core_sys::GUID, piwriter: IWICMetadataWriter, dwpersistoptions: u32, pistream: ::win32_system_sys::Com::IStream) -> ::windows_core_sys::HRESULT;
 }
 pub const CATID_WICBitmapDecoders: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2128177207, data2: 38640, data3: 18450, data4: [178, 17, 241, 60, 36, 17, 126, 211] };
@@ -497,23 +497,23 @@ pub const WICDdsTexture3D: WICDdsDimension = 2i32;
 pub const WICDdsTextureCube: WICDdsDimension = 3i32;
 pub const WICDDSTEXTURE_FORCE_DWORD: WICDdsDimension = 2147483647i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct WICDdsFormatInfo {
     pub DxgiFormat: super::Dxgi::Common::DXGI_FORMAT,
     pub BytesPerBlock: u32,
     pub BlockWidth: u32,
     pub BlockHeight: u32,
 }
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for WICDdsFormatInfo {}
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for WICDdsFormatInfo {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct WICDdsParameters {
     pub Width: u32,
     pub Height: u32,
@@ -524,9 +524,9 @@ pub struct WICDdsParameters {
     pub Dimension: WICDdsDimension,
     pub AlphaMode: WICDdsAlphaMode,
 }
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for WICDdsParameters {}
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for WICDdsParameters {
     fn clone(&self) -> Self {
         *self
@@ -582,7 +582,7 @@ pub type WICHeifProperties = u32;
 pub const WICHeifOrientation: WICHeifProperties = 1u32;
 pub const WICHeifProperties_FORCE_DWORD: WICHeifProperties = 2147483647u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Direct2D_Common", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
 pub struct WICImageParameters {
     pub PixelFormat: super::Direct2D::Common::D2D1_PIXEL_FORMAT,
     pub DpiX: f32,
@@ -592,9 +592,9 @@ pub struct WICImageParameters {
     pub PixelWidth: u32,
     pub PixelHeight: u32,
 }
-#[cfg(all(feature = "Win32_Graphics_Direct2D_Common", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
 impl ::core::marker::Copy for WICImageParameters {}
-#[cfg(all(feature = "Win32_Graphics_Direct2D_Common", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
 impl ::core::clone::Clone for WICImageParameters {
     fn clone(&self) -> Self {
         *self

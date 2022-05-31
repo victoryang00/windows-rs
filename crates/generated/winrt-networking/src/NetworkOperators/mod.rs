@@ -119,7 +119,7 @@ impl ESim {
             (::windows_core::Interface::vtable(this).State)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ESimState>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetProfiles(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ESimProfile>> {
         let this = self;
         unsafe {
@@ -470,7 +470,7 @@ unsafe impl ::core::marker::Sync for ESimDiscoverEvent {}
 #[repr(transparent)]
 pub struct ESimDiscoverResult(::windows_core::IUnknown);
 impl ESimDiscoverResult {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Events(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ESimDiscoverEvent>> {
         let this = self;
         unsafe {
@@ -984,7 +984,7 @@ impl ESimProfile {
             (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ProviderIcon(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStreamReference> {
         let this = self;
         unsafe {
@@ -1202,7 +1202,7 @@ impl ESimProfileMetadata {
             (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ProviderIcon(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStreamReference> {
         let this = self;
         unsafe {
@@ -2013,7 +2013,7 @@ impl HotspotAuthenticationContext {
             (::windows_core::Interface::vtable(this).WirelessNetworkId)(::windows_core::Interface::as_raw(this), ::windows_core::Array::<u8>::set_abi_len(result__.assume_init_mut()), result__.as_mut_ptr() as *mut _ as _).and_then(|| result__.assume_init())
         }
     }
-    #[cfg(feature = "Networking_Connectivity")]
+    #[cfg(feature = "winrt-networking")]
     pub fn NetworkAdapter(&self) -> ::windows_core::Result<super::Connectivity::NetworkAdapter> {
         let this = self;
         unsafe {
@@ -2028,7 +2028,7 @@ impl HotspotAuthenticationContext {
             (::windows_core::Interface::vtable(this).RedirectMessageUrl)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn RedirectMessageXml(&self) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         let this = self;
         unsafe {
@@ -2290,7 +2290,7 @@ impl HotspotCredentialsAuthenticationResult {
             (::windows_core::Interface::vtable(this).LogoffUrl)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn AuthenticationReplyXml(&self) -> ::windows_core::Result<::winrt_data::Xml::Dom::XmlDocument> {
         let this = self;
         unsafe {
@@ -2386,9 +2386,9 @@ pub struct IESim_Vtbl {
     pub MobileBroadbandModemDeviceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Policy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub State: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ESimState) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetProfiles: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetProfiles: usize,
     pub DeleteProfileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, profileid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub DownloadProfileMetadataAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, activationcode: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -2450,9 +2450,9 @@ unsafe impl ::windows_core::Interface for IESimDiscoverResult {
 #[doc(hidden)]
 pub struct IESimDiscoverResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Events: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Events: usize,
     pub Kind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ESimDiscoverResultKind) -> ::windows_core::HRESULT,
     pub ProfileMetadata: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -2529,9 +2529,9 @@ pub struct IESimProfile_Vtbl {
     pub Nickname: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Policy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub ProviderIcon: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     ProviderIcon: usize,
     pub ProviderId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub ProviderName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -2554,9 +2554,9 @@ pub struct IESimProfileMetadata_Vtbl {
     pub IsConfirmationCodeRequired: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub Policy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub ProviderIcon: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     ProviderIcon: usize,
     pub ProviderId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub ProviderName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -2673,14 +2673,14 @@ unsafe impl ::windows_core::Interface for IHotspotAuthenticationContext {
 pub struct IHotspotAuthenticationContext_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub WirelessNetworkId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result_size__: *mut u32, result__: *mut *mut u8) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Networking_Connectivity")]
+    #[cfg(feature = "winrt-networking")]
     pub NetworkAdapter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking_Connectivity"))]
+    #[cfg(not(feature = "winrt-networking"))]
     NetworkAdapter: usize,
     pub RedirectMessageUrl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub RedirectMessageXml: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     RedirectMessageXml: usize,
     pub AuthenticationUrl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub IssueCredentials: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, username: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, password: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, extraparameters: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, markasmanualconnectonfailure: bool) -> ::windows_core::HRESULT,
@@ -2741,9 +2741,9 @@ pub struct IHotspotCredentialsAuthenticationResult_Vtbl {
     pub HasNetworkErrorOccurred: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub ResponseCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut HotspotAuthenticationResponseCode) -> ::windows_core::HRESULT,
     pub LogoffUrl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub AuthenticationReplyXml: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     AuthenticationReplyXml: usize,
 }
 #[doc(hidden)]
@@ -2757,17 +2757,17 @@ unsafe impl ::windows_core::Interface for IKnownCSimFilePathsStatics {
 #[doc(hidden)]
 pub struct IKnownCSimFilePathsStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub EFSpn: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     EFSpn: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Gid1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Gid1: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Gid2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Gid2: usize,
 }
 #[doc(hidden)]
@@ -2781,17 +2781,17 @@ unsafe impl ::windows_core::Interface for IKnownRuimFilePathsStatics {
 #[doc(hidden)]
 pub struct IKnownRuimFilePathsStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub EFSpn: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     EFSpn: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Gid1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Gid1: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Gid2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Gid2: usize,
 }
 #[doc(hidden)]
@@ -2805,21 +2805,21 @@ unsafe impl ::windows_core::Interface for IKnownSimFilePathsStatics {
 #[doc(hidden)]
 pub struct IKnownSimFilePathsStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub EFOns: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     EFOns: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub EFSpn: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     EFSpn: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Gid1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Gid1: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Gid2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Gid2: usize,
 }
 #[doc(hidden)]
@@ -2833,25 +2833,25 @@ unsafe impl ::windows_core::Interface for IKnownUSimFilePathsStatics {
 #[doc(hidden)]
 pub struct IKnownUSimFilePathsStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub EFSpn: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     EFSpn: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub EFOpl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     EFOpl: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub EFPnn: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     EFPnn: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Gid1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Gid1: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Gid2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Gid2: usize,
 }
 #[doc(hidden)]
@@ -2882,9 +2882,9 @@ unsafe impl ::windows_core::Interface for IMobileBroadbandAccount2 {
 #[doc(hidden)]
 pub struct IMobileBroadbandAccount2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Networking_Connectivity"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-networking"))]
     pub GetConnectionProfiles: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Networking_Connectivity")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-networking")))]
     GetConnectionProfiles: usize,
 }
 #[doc(hidden)]
@@ -2924,9 +2924,9 @@ unsafe impl ::windows_core::Interface for IMobileBroadbandAccountStatics {
 #[doc(hidden)]
 pub struct IMobileBroadbandAccountStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub AvailableNetworkAccountIds: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     AvailableNetworkAccountIds: usize,
     pub CreateFromNetworkAccountId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, networkaccountid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -3128,45 +3128,45 @@ unsafe impl ::windows_core::Interface for IMobileBroadbandCellsInfo {
 #[doc(hidden)]
 pub struct IMobileBroadbandCellsInfo_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub NeighboringCellsCdma: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     NeighboringCellsCdma: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub NeighboringCellsGsm: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     NeighboringCellsGsm: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub NeighboringCellsLte: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     NeighboringCellsLte: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub NeighboringCellsTdscdma: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     NeighboringCellsTdscdma: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub NeighboringCellsUmts: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     NeighboringCellsUmts: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub ServingCellsCdma: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ServingCellsCdma: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub ServingCellsGsm: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ServingCellsGsm: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub ServingCellsLte: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ServingCellsLte: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub ServingCellsTdscdma: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ServingCellsTdscdma: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub ServingCellsUmts: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ServingCellsUmts: usize,
 }
 #[doc(hidden)]
@@ -3180,13 +3180,13 @@ unsafe impl ::windows_core::Interface for IMobileBroadbandCellsInfo2 {
 #[doc(hidden)]
 pub struct IMobileBroadbandCellsInfo2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub NeighboringCellsNR: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     NeighboringCellsNR: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub ServingCellsNR: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ServingCellsNR: usize,
 }
 #[doc(hidden)]
@@ -3217,16 +3217,16 @@ pub struct IMobileBroadbandDeviceInformation_Vtbl {
     pub Manufacturer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Model: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub FirmwareInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Sms")]
+    #[cfg(feature = "winrt-devices")]
     pub CellularClass: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Sms::CellularClass) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Sms"))]
+    #[cfg(not(feature = "winrt-devices"))]
     CellularClass: usize,
     pub DataClasses: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut DataClasses) -> ::windows_core::HRESULT,
     pub CustomDataClass: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub MobileEquipmentId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub TelephoneNumbers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     TelephoneNumbers: usize,
     pub SubscriberId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SimIccId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -3289,9 +3289,9 @@ unsafe impl ::windows_core::Interface for IMobileBroadbandDeviceService {
 pub struct IMobileBroadbandDeviceService_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub DeviceServiceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SupportedCommands: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SupportedCommands: usize,
     pub OpenDataSession: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub OpenCommandSession: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -3308,9 +3308,9 @@ unsafe impl ::windows_core::Interface for IMobileBroadbandDeviceServiceCommandRe
 pub struct IMobileBroadbandDeviceServiceCommandResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub StatusCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub ResponseData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     ResponseData: usize,
 }
 #[doc(hidden)]
@@ -3324,13 +3324,13 @@ unsafe impl ::windows_core::Interface for IMobileBroadbandDeviceServiceCommandSe
 #[doc(hidden)]
 pub struct IMobileBroadbandDeviceServiceCommandSession_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub SendQueryCommandAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, commandid: u32, data: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SendQueryCommandAsync: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub SendSetCommandAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, commandid: u32, data: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SendSetCommandAsync: usize,
     pub CloseSession: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -3345,9 +3345,9 @@ unsafe impl ::windows_core::Interface for IMobileBroadbandDeviceServiceDataRecei
 #[doc(hidden)]
 pub struct IMobileBroadbandDeviceServiceDataReceivedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub ReceivedData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     ReceivedData: usize,
 }
 #[doc(hidden)]
@@ -3361,9 +3361,9 @@ unsafe impl ::windows_core::Interface for IMobileBroadbandDeviceServiceDataSessi
 #[doc(hidden)]
 pub struct IMobileBroadbandDeviceServiceDataSession_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub WriteDataAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     WriteDataAsync: usize,
     pub CloseSession: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub DataReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -3397,9 +3397,9 @@ pub struct IMobileBroadbandDeviceServiceTriggerDetails_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub DeviceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub DeviceServiceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub ReceivedData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     ReceivedData: usize,
 }
 #[doc(hidden)]
@@ -3417,9 +3417,9 @@ pub struct IMobileBroadbandModem_Vtbl {
     pub DeviceInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub MaxDeviceServiceCommandSizeInBytes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub MaxDeviceServiceDataSizeInBytes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub DeviceServices: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     DeviceServices: usize,
     pub GetDeviceService: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceserviceid: ::windows_core::GUID, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub IsResetSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -3540,9 +3540,9 @@ unsafe impl ::windows_core::Interface for IMobileBroadbandNetwork {
 #[doc(hidden)]
 pub struct IMobileBroadbandNetwork_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Networking_Connectivity")]
+    #[cfg(feature = "winrt-networking")]
     pub NetworkAdapter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking_Connectivity"))]
+    #[cfg(not(feature = "winrt-networking"))]
     NetworkAdapter: usize,
     pub NetworkRegistrationState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut NetworkRegistrationState) -> ::windows_core::HRESULT,
     pub RegistrationNetworkError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
@@ -3566,9 +3566,9 @@ unsafe impl ::windows_core::Interface for IMobileBroadbandNetwork2 {
 pub struct IMobileBroadbandNetwork2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub GetVoiceCallSupportAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub RegistrationUiccApps: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     RegistrationUiccApps: usize,
 }
 #[doc(hidden)]
@@ -3609,9 +3609,9 @@ unsafe impl ::windows_core::Interface for IMobileBroadbandNetworkRegistrationSta
 #[doc(hidden)]
 pub struct IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub NetworkRegistrationStateChanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     NetworkRegistrationStateChanges: usize,
 }
 #[doc(hidden)]
@@ -3625,9 +3625,9 @@ unsafe impl ::windows_core::Interface for IMobileBroadbandPco {
 #[doc(hidden)]
 pub struct IMobileBroadbandPco_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub Data: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Data: usize,
     pub IsComplete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub DeviceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -3695,9 +3695,9 @@ unsafe impl ::windows_core::Interface for IMobileBroadbandPinLockStateChangeTrig
 #[doc(hidden)]
 pub struct IMobileBroadbandPinLockStateChangeTriggerDetails_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub PinLockStateChanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     PinLockStateChanges: usize,
 }
 #[doc(hidden)]
@@ -3711,9 +3711,9 @@ unsafe impl ::windows_core::Interface for IMobileBroadbandPinManager {
 #[doc(hidden)]
 pub struct IMobileBroadbandPinManager_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SupportedPins: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SupportedPins: usize,
     pub GetPin: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pintype: MobileBroadbandPinType, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -3756,9 +3756,9 @@ unsafe impl ::windows_core::Interface for IMobileBroadbandRadioStateChangeTrigge
 #[doc(hidden)]
 pub struct IMobileBroadbandRadioStateChangeTriggerDetails_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub RadioStateChanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     RadioStateChanges: usize,
 }
 #[doc(hidden)]
@@ -3775,18 +3775,18 @@ pub struct IMobileBroadbandSarManager_Vtbl {
     pub IsBackoffEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsWiFiHardwareIntegrated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsSarControlledByHardware: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Antennas: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Antennas: usize,
     pub HysteresisTimerPeriod: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub TransmissionStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveTransmissionStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub EnableBackoffAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub DisableBackoffAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetConfigurationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, antennas: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetConfigurationAsync: usize,
     pub RevertSarToHardwareControlAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetTransmissionStateChangedHysteresisAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, timerperiod: ::winrt_foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -3832,9 +3832,9 @@ unsafe impl ::windows_core::Interface for IMobileBroadbandSlotManager {
 #[doc(hidden)]
 pub struct IMobileBroadbandSlotManager_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SlotInfos: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SlotInfos: usize,
     pub CurrentSlotIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
     pub SetCurrentSlot: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, slotindex: i32, result__: *mut MobileBroadbandModemStatus) -> ::windows_core::HRESULT,
@@ -3882,18 +3882,18 @@ unsafe impl ::windows_core::Interface for IMobileBroadbandUiccApp {
 #[doc(hidden)]
 pub struct IMobileBroadbandUiccApp_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Id: usize,
     pub Kind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut UiccAppKind) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetRecordDetailsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uiccfilepath: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetRecordDetailsAsync: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub ReadRecordAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uiccfilepath: ::windows_core::RawPtr, recordindex: i32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ReadRecordAsync: usize,
 }
 #[doc(hidden)]
@@ -3908,9 +3908,9 @@ unsafe impl ::windows_core::Interface for IMobileBroadbandUiccAppReadRecordResul
 pub struct IMobileBroadbandUiccAppReadRecordResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MobileBroadbandUiccAppOperationStatus) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub Data: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Data: usize,
 }
 #[doc(hidden)]
@@ -3943,9 +3943,9 @@ unsafe impl ::windows_core::Interface for IMobileBroadbandUiccAppsResult {
 pub struct IMobileBroadbandUiccAppsResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MobileBroadbandUiccAppOperationStatus) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub UiccApps: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     UiccApps: usize,
 }
 #[doc(hidden)]
@@ -3977,9 +3977,9 @@ pub struct INetworkOperatorNotificationEventDetails_Vtbl {
     pub EncodingType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u8) -> ::windows_core::HRESULT,
     pub Message: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub RuleId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Sms")]
+    #[cfg(feature = "winrt-devices")]
     pub SmsMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Sms"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SmsMessage: usize,
 }
 #[doc(hidden)]
@@ -4026,9 +4026,9 @@ unsafe impl ::windows_core::Interface for INetworkOperatorTetheringClient {
 pub struct INetworkOperatorTetheringClient_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub MacAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub HostNames: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     HostNames: usize,
 }
 #[doc(hidden)]
@@ -4042,9 +4042,9 @@ unsafe impl ::windows_core::Interface for INetworkOperatorTetheringClientManager
 #[doc(hidden)]
 pub struct INetworkOperatorTetheringClientManager_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetTetheringClients: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetTetheringClients: usize,
 }
 #[doc(hidden)]
@@ -4104,13 +4104,13 @@ unsafe impl ::windows_core::Interface for INetworkOperatorTetheringManagerStatic
 #[doc(hidden)]
 pub struct INetworkOperatorTetheringManagerStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Networking_Connectivity")]
+    #[cfg(feature = "winrt-networking")]
     pub GetTetheringCapabilityFromConnectionProfile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, profile: ::windows_core::RawPtr, result__: *mut TetheringCapability) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking_Connectivity"))]
+    #[cfg(not(feature = "winrt-networking"))]
     GetTetheringCapabilityFromConnectionProfile: usize,
-    #[cfg(feature = "Networking_Connectivity")]
+    #[cfg(feature = "winrt-networking")]
     pub CreateFromConnectionProfile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, profile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking_Connectivity"))]
+    #[cfg(not(feature = "winrt-networking"))]
     CreateFromConnectionProfile: usize,
 }
 #[doc(hidden)]
@@ -4124,9 +4124,9 @@ unsafe impl ::windows_core::Interface for INetworkOperatorTetheringManagerStatic
 #[doc(hidden)]
 pub struct INetworkOperatorTetheringManagerStatics3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Networking_Connectivity")]
+    #[cfg(feature = "winrt-networking")]
     pub CreateFromConnectionProfileWithTargetAdapter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, profile: ::windows_core::RawPtr, adapter: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking_Connectivity"))]
+    #[cfg(not(feature = "winrt-networking"))]
     CreateFromConnectionProfileWithTargetAdapter: usize,
 }
 #[doc(hidden)]
@@ -4185,9 +4185,9 @@ unsafe impl ::windows_core::Interface for IProvisionedProfile {
 #[doc(hidden)]
 pub struct IProvisionedProfile_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Networking_Connectivity")]
+    #[cfg(feature = "winrt-networking")]
     pub UpdateCost: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Connectivity::NetworkCostType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Networking_Connectivity"))]
+    #[cfg(not(feature = "winrt-networking"))]
     UpdateCost: usize,
     pub UpdateUsage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ProfileUsage) -> ::windows_core::HRESULT,
 }
@@ -4308,21 +4308,21 @@ pub struct IUssdSessionStatics_Vtbl {
 }
 pub struct KnownCSimFilePaths;
 impl KnownCSimFilePaths {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn EFSpn() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         Self::IKnownCSimFilePathsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).EFSpn)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u32>>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Gid1() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         Self::IKnownCSimFilePathsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Gid1)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u32>>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Gid2() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         Self::IKnownCSimFilePathsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -4339,21 +4339,21 @@ impl ::windows_core::RuntimeName for KnownCSimFilePaths {
 }
 pub struct KnownRuimFilePaths;
 impl KnownRuimFilePaths {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn EFSpn() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         Self::IKnownRuimFilePathsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).EFSpn)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u32>>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Gid1() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         Self::IKnownRuimFilePathsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Gid1)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u32>>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Gid2() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         Self::IKnownRuimFilePathsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -4370,28 +4370,28 @@ impl ::windows_core::RuntimeName for KnownRuimFilePaths {
 }
 pub struct KnownSimFilePaths;
 impl KnownSimFilePaths {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn EFOns() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         Self::IKnownSimFilePathsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).EFOns)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u32>>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn EFSpn() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         Self::IKnownSimFilePathsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).EFSpn)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u32>>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Gid1() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         Self::IKnownSimFilePathsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Gid1)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u32>>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Gid2() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         Self::IKnownSimFilePathsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -4408,35 +4408,35 @@ impl ::windows_core::RuntimeName for KnownSimFilePaths {
 }
 pub struct KnownUSimFilePaths;
 impl KnownUSimFilePaths {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn EFSpn() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         Self::IKnownUSimFilePathsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).EFSpn)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u32>>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn EFOpl() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         Self::IKnownUSimFilePathsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).EFOpl)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u32>>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn EFPnn() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         Self::IKnownUSimFilePathsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).EFPnn)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u32>>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Gid1() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         Self::IKnownUSimFilePathsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Gid1)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u32>>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Gid2() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         Self::IKnownUSimFilePathsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -4489,7 +4489,7 @@ impl MobileBroadbandAccount {
             (::windows_core::Interface::vtable(this).CurrentDeviceInformation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MobileBroadbandDeviceInformation>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Networking_Connectivity"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-networking"))]
     pub fn GetConnectionProfiles(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<super::Connectivity::ConnectionProfile>> {
         let this = &::windows_core::Interface::cast::<IMobileBroadbandAccount2>(self)?;
         unsafe {
@@ -4504,7 +4504,7 @@ impl MobileBroadbandAccount {
             (::windows_core::Interface::vtable(this).AccountExperienceUrl)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AvailableNetworkAccountIds() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         Self::IMobileBroadbandAccountStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -5850,7 +5850,7 @@ unsafe impl ::core::marker::Sync for MobileBroadbandCellUmts {}
 #[repr(transparent)]
 pub struct MobileBroadbandCellsInfo(::windows_core::IUnknown);
 impl MobileBroadbandCellsInfo {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn NeighboringCellsCdma(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MobileBroadbandCellCdma>> {
         let this = self;
         unsafe {
@@ -5858,7 +5858,7 @@ impl MobileBroadbandCellsInfo {
             (::windows_core::Interface::vtable(this).NeighboringCellsCdma)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<MobileBroadbandCellCdma>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn NeighboringCellsGsm(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MobileBroadbandCellGsm>> {
         let this = self;
         unsafe {
@@ -5866,7 +5866,7 @@ impl MobileBroadbandCellsInfo {
             (::windows_core::Interface::vtable(this).NeighboringCellsGsm)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<MobileBroadbandCellGsm>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn NeighboringCellsLte(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MobileBroadbandCellLte>> {
         let this = self;
         unsafe {
@@ -5874,7 +5874,7 @@ impl MobileBroadbandCellsInfo {
             (::windows_core::Interface::vtable(this).NeighboringCellsLte)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<MobileBroadbandCellLte>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn NeighboringCellsTdscdma(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MobileBroadbandCellTdscdma>> {
         let this = self;
         unsafe {
@@ -5882,7 +5882,7 @@ impl MobileBroadbandCellsInfo {
             (::windows_core::Interface::vtable(this).NeighboringCellsTdscdma)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<MobileBroadbandCellTdscdma>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn NeighboringCellsUmts(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MobileBroadbandCellUmts>> {
         let this = self;
         unsafe {
@@ -5890,7 +5890,7 @@ impl MobileBroadbandCellsInfo {
             (::windows_core::Interface::vtable(this).NeighboringCellsUmts)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<MobileBroadbandCellUmts>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ServingCellsCdma(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MobileBroadbandCellCdma>> {
         let this = self;
         unsafe {
@@ -5898,7 +5898,7 @@ impl MobileBroadbandCellsInfo {
             (::windows_core::Interface::vtable(this).ServingCellsCdma)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<MobileBroadbandCellCdma>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ServingCellsGsm(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MobileBroadbandCellGsm>> {
         let this = self;
         unsafe {
@@ -5906,7 +5906,7 @@ impl MobileBroadbandCellsInfo {
             (::windows_core::Interface::vtable(this).ServingCellsGsm)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<MobileBroadbandCellGsm>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ServingCellsLte(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MobileBroadbandCellLte>> {
         let this = self;
         unsafe {
@@ -5914,7 +5914,7 @@ impl MobileBroadbandCellsInfo {
             (::windows_core::Interface::vtable(this).ServingCellsLte)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<MobileBroadbandCellLte>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ServingCellsTdscdma(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MobileBroadbandCellTdscdma>> {
         let this = self;
         unsafe {
@@ -5922,7 +5922,7 @@ impl MobileBroadbandCellsInfo {
             (::windows_core::Interface::vtable(this).ServingCellsTdscdma)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<MobileBroadbandCellTdscdma>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ServingCellsUmts(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MobileBroadbandCellUmts>> {
         let this = self;
         unsafe {
@@ -5930,7 +5930,7 @@ impl MobileBroadbandCellsInfo {
             (::windows_core::Interface::vtable(this).ServingCellsUmts)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<MobileBroadbandCellUmts>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn NeighboringCellsNR(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MobileBroadbandCellNR>> {
         let this = &::windows_core::Interface::cast::<IMobileBroadbandCellsInfo2>(self)?;
         unsafe {
@@ -5938,7 +5938,7 @@ impl MobileBroadbandCellsInfo {
             (::windows_core::Interface::vtable(this).NeighboringCellsNR)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<MobileBroadbandCellNR>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ServingCellsNR(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MobileBroadbandCellNR>> {
         let this = &::windows_core::Interface::cast::<IMobileBroadbandCellsInfo2>(self)?;
         unsafe {
@@ -6133,7 +6133,7 @@ impl MobileBroadbandDeviceInformation {
             (::windows_core::Interface::vtable(this).FirmwareInformation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Devices_Sms")]
+    #[cfg(feature = "winrt-devices")]
     pub fn CellularClass(&self) -> ::windows_core::Result<::winrt_devices::Sms::CellularClass> {
         let this = self;
         unsafe {
@@ -6162,7 +6162,7 @@ impl MobileBroadbandDeviceInformation {
             (::windows_core::Interface::vtable(this).MobileEquipmentId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn TelephoneNumbers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -6335,7 +6335,7 @@ impl MobileBroadbandDeviceService {
             (::windows_core::Interface::vtable(this).DeviceServiceId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::GUID>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SupportedCommands(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         let this = self;
         unsafe {
@@ -6440,7 +6440,7 @@ impl MobileBroadbandDeviceServiceCommandResult {
             (::windows_core::Interface::vtable(this).StatusCode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ResponseData(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
@@ -6524,7 +6524,7 @@ unsafe impl ::core::marker::Sync for MobileBroadbandDeviceServiceCommandResult {
 #[repr(transparent)]
 pub struct MobileBroadbandDeviceServiceCommandSession(::windows_core::IUnknown);
 impl MobileBroadbandDeviceServiceCommandSession {
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SendQueryCommandAsync<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, commandid: u32, data: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MobileBroadbandDeviceServiceCommandResult>> {
         let this = self;
         unsafe {
@@ -6532,7 +6532,7 @@ impl MobileBroadbandDeviceServiceCommandSession {
             (::windows_core::Interface::vtable(this).SendQueryCommandAsync)(::windows_core::Interface::as_raw(this), commandid, data.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MobileBroadbandDeviceServiceCommandResult>>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SendSetCommandAsync<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, commandid: u32, data: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MobileBroadbandDeviceServiceCommandResult>> {
         let this = self;
         unsafe {
@@ -6620,7 +6620,7 @@ unsafe impl ::core::marker::Sync for MobileBroadbandDeviceServiceCommandSession 
 #[repr(transparent)]
 pub struct MobileBroadbandDeviceServiceDataReceivedEventArgs(::windows_core::IUnknown);
 impl MobileBroadbandDeviceServiceDataReceivedEventArgs {
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ReceivedData(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
@@ -6704,7 +6704,7 @@ unsafe impl ::core::marker::Sync for MobileBroadbandDeviceServiceDataReceivedEve
 #[repr(transparent)]
 pub struct MobileBroadbandDeviceServiceDataSession(::windows_core::IUnknown);
 impl MobileBroadbandDeviceServiceDataSession {
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn WriteDataAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
@@ -6914,7 +6914,7 @@ impl MobileBroadbandDeviceServiceTriggerDetails {
             (::windows_core::Interface::vtable(this).DeviceServiceId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::GUID>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ReceivedData(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
@@ -7061,7 +7061,7 @@ impl MobileBroadbandModem {
             (::windows_core::Interface::vtable(this).MaxDeviceServiceDataSizeInBytes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn DeviceServices(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MobileBroadbandDeviceServiceInformation>> {
         let this = self;
         unsafe {
@@ -7486,7 +7486,7 @@ unsafe impl ::windows_core::RuntimeType for MobileBroadbandModemStatus {
 #[repr(transparent)]
 pub struct MobileBroadbandNetwork(::windows_core::IUnknown);
 impl MobileBroadbandNetwork {
-    #[cfg(feature = "Networking_Connectivity")]
+    #[cfg(feature = "winrt-networking")]
     pub fn NetworkAdapter(&self) -> ::windows_core::Result<super::Connectivity::NetworkAdapter> {
         let this = self;
         unsafe {
@@ -7561,7 +7561,7 @@ impl MobileBroadbandNetwork {
             (::windows_core::Interface::vtable(this).GetVoiceCallSupportAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RegistrationUiccApps(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MobileBroadbandUiccApp>> {
         let this = &::windows_core::Interface::cast::<IMobileBroadbandNetwork2>(self)?;
         unsafe {
@@ -7740,7 +7740,7 @@ unsafe impl ::core::marker::Sync for MobileBroadbandNetworkRegistrationStateChan
 #[repr(transparent)]
 pub struct MobileBroadbandNetworkRegistrationStateChangeTriggerDetails(::windows_core::IUnknown);
 impl MobileBroadbandNetworkRegistrationStateChangeTriggerDetails {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn NetworkRegistrationStateChanges(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MobileBroadbandNetworkRegistrationStateChange>> {
         let this = self;
         unsafe {
@@ -7824,7 +7824,7 @@ unsafe impl ::core::marker::Sync for MobileBroadbandNetworkRegistrationStateChan
 #[repr(transparent)]
 pub struct MobileBroadbandPco(::windows_core::IUnknown);
 impl MobileBroadbandPco {
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Data(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
@@ -8331,7 +8331,7 @@ unsafe impl ::core::marker::Sync for MobileBroadbandPinLockStateChange {}
 #[repr(transparent)]
 pub struct MobileBroadbandPinLockStateChangeTriggerDetails(::windows_core::IUnknown);
 impl MobileBroadbandPinLockStateChangeTriggerDetails {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn PinLockStateChanges(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MobileBroadbandPinLockStateChange>> {
         let this = self;
         unsafe {
@@ -8415,7 +8415,7 @@ unsafe impl ::core::marker::Sync for MobileBroadbandPinLockStateChangeTriggerDet
 #[repr(transparent)]
 pub struct MobileBroadbandPinManager(::windows_core::IUnknown);
 impl MobileBroadbandPinManager {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SupportedPins(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MobileBroadbandPinType>> {
         let this = self;
         unsafe {
@@ -8761,7 +8761,7 @@ unsafe impl ::core::marker::Sync for MobileBroadbandRadioStateChange {}
 #[repr(transparent)]
 pub struct MobileBroadbandRadioStateChangeTriggerDetails(::windows_core::IUnknown);
 impl MobileBroadbandRadioStateChangeTriggerDetails {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RadioStateChanges(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MobileBroadbandRadioStateChange>> {
         let this = self;
         unsafe {
@@ -8866,7 +8866,7 @@ impl MobileBroadbandSarManager {
             (::windows_core::Interface::vtable(this).IsSarControlledByHardware)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Antennas(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MobileBroadbandAntennaSar>> {
         let this = self;
         unsafe {
@@ -8906,7 +8906,7 @@ impl MobileBroadbandSarManager {
             (::windows_core::Interface::vtable(this).DisableBackoffAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetConfigurationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<MobileBroadbandAntennaSar>>>(&self, antennas: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
@@ -9192,7 +9192,7 @@ unsafe impl ::core::marker::Sync for MobileBroadbandSlotInfoChangedEventArgs {}
 #[repr(transparent)]
 pub struct MobileBroadbandSlotManager(::windows_core::IUnknown);
 impl MobileBroadbandSlotManager {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SlotInfos(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MobileBroadbandSlotInfo>> {
         let this = self;
         unsafe {
@@ -9533,7 +9533,7 @@ unsafe impl ::core::marker::Sync for MobileBroadbandUicc {}
 #[repr(transparent)]
 pub struct MobileBroadbandUiccApp(::windows_core::IUnknown);
 impl MobileBroadbandUiccApp {
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Id(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
@@ -9548,7 +9548,7 @@ impl MobileBroadbandUiccApp {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<UiccAppKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetRecordDetailsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<u32>>>(&self, uiccfilepath: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MobileBroadbandUiccAppRecordDetailsResult>> {
         let this = self;
         unsafe {
@@ -9556,7 +9556,7 @@ impl MobileBroadbandUiccApp {
             (::windows_core::Interface::vtable(this).GetRecordDetailsAsync)(::windows_core::Interface::as_raw(this), uiccfilepath.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MobileBroadbandUiccAppRecordDetailsResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ReadRecordAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<u32>>>(&self, uiccfilepath: Param0, recordindex: i32) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MobileBroadbandUiccAppReadRecordResult>> {
         let this = self;
         unsafe {
@@ -9682,7 +9682,7 @@ impl MobileBroadbandUiccAppReadRecordResult {
             (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MobileBroadbandUiccAppOperationStatus>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Data(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
@@ -9891,7 +9891,7 @@ impl MobileBroadbandUiccAppsResult {
             (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MobileBroadbandUiccAppOperationStatus>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn UiccApps(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MobileBroadbandUiccApp>> {
         let this = self;
         unsafe {
@@ -10208,7 +10208,7 @@ impl NetworkOperatorNotificationEventDetails {
             (::windows_core::Interface::vtable(this).RuleId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Devices_Sms")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SmsMessage(&self) -> ::windows_core::Result<::winrt_devices::Sms::ISmsMessage> {
         let this = self;
         unsafe {
@@ -10433,7 +10433,7 @@ impl NetworkOperatorTetheringClient {
             (::windows_core::Interface::vtable(this).MacAddress)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn HostNames(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<super::HostName>> {
         let this = self;
         unsafe {
@@ -10517,7 +10517,7 @@ unsafe impl ::core::marker::Sync for NetworkOperatorTetheringClient {}
 #[repr(transparent)]
 pub struct NetworkOperatorTetheringManager(::windows_core::IUnknown);
 impl NetworkOperatorTetheringManager {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetTetheringClients(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<NetworkOperatorTetheringClient>> {
         let this = &::windows_core::Interface::cast::<INetworkOperatorTetheringClientManager>(self)?;
         unsafe {
@@ -10586,21 +10586,21 @@ impl NetworkOperatorTetheringManager {
             (::windows_core::Interface::vtable(this).CreateFromNetworkAccountId)(::windows_core::Interface::as_raw(this), networkaccountid.into_param().abi(), result__.as_mut_ptr()).from_abi::<NetworkOperatorTetheringManager>(result__)
         })
     }
-    #[cfg(feature = "Networking_Connectivity")]
+    #[cfg(feature = "winrt-networking")]
     pub fn GetTetheringCapabilityFromConnectionProfile<'a, Param0: ::windows_core::IntoParam<'a, super::Connectivity::ConnectionProfile>>(profile: Param0) -> ::windows_core::Result<TetheringCapability> {
         Self::INetworkOperatorTetheringManagerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<TetheringCapability>::zeroed();
             (::windows_core::Interface::vtable(this).GetTetheringCapabilityFromConnectionProfile)(::windows_core::Interface::as_raw(this), profile.into_param().abi(), result__.as_mut_ptr()).from_abi::<TetheringCapability>(result__)
         })
     }
-    #[cfg(feature = "Networking_Connectivity")]
+    #[cfg(feature = "winrt-networking")]
     pub fn CreateFromConnectionProfile<'a, Param0: ::windows_core::IntoParam<'a, super::Connectivity::ConnectionProfile>>(profile: Param0) -> ::windows_core::Result<NetworkOperatorTetheringManager> {
         Self::INetworkOperatorTetheringManagerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromConnectionProfile)(::windows_core::Interface::as_raw(this), profile.into_param().abi(), result__.as_mut_ptr()).from_abi::<NetworkOperatorTetheringManager>(result__)
         })
     }
-    #[cfg(feature = "Networking_Connectivity")]
+    #[cfg(feature = "winrt-networking")]
     pub fn CreateFromConnectionProfileWithTargetAdapter<'a, Param0: ::windows_core::IntoParam<'a, super::Connectivity::ConnectionProfile>, Param1: ::windows_core::IntoParam<'a, super::Connectivity::NetworkAdapter>>(profile: Param0, adapter: Param1) -> ::windows_core::Result<NetworkOperatorTetheringManager> {
         Self::INetworkOperatorTetheringManagerStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -11005,7 +11005,7 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Pro
 #[repr(transparent)]
 pub struct ProvisionedProfile(::windows_core::IUnknown);
 impl ProvisionedProfile {
-    #[cfg(feature = "Networking_Connectivity")]
+    #[cfg(feature = "winrt-networking")]
     pub fn UpdateCost(&self, value: super::Connectivity::NetworkCostType) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).UpdateCost)(::windows_core::Interface::as_raw(this), value).ok() }

@@ -9,13 +9,13 @@ extern "system" {
     pub fn RegCopyTreeA(hkeysrc: HKEY, lpsubkey: ::windows_core_sys::PCSTR, hkeydest: HKEY) -> ::win32_foundation_sys::WIN32_ERROR;
     pub fn RegCopyTreeW(hkeysrc: HKEY, lpsubkey: ::windows_core_sys::PCWSTR, hkeydest: HKEY) -> ::win32_foundation_sys::WIN32_ERROR;
     pub fn RegCreateKeyA(hkey: HKEY, lpsubkey: ::windows_core_sys::PCSTR, phkresult: *mut HKEY) -> ::win32_foundation_sys::WIN32_ERROR;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn RegCreateKeyExA(hkey: HKEY, lpsubkey: ::windows_core_sys::PCSTR, reserved: u32, lpclass: ::windows_core_sys::PCSTR, dwoptions: REG_OPEN_CREATE_OPTIONS, samdesired: REG_SAM_FLAGS, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, phkresult: *mut HKEY, lpdwdisposition: *mut REG_CREATE_KEY_DISPOSITION) -> ::win32_foundation_sys::WIN32_ERROR;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn RegCreateKeyExW(hkey: HKEY, lpsubkey: ::windows_core_sys::PCWSTR, reserved: u32, lpclass: ::windows_core_sys::PCWSTR, dwoptions: REG_OPEN_CREATE_OPTIONS, samdesired: REG_SAM_FLAGS, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, phkresult: *mut HKEY, lpdwdisposition: *mut REG_CREATE_KEY_DISPOSITION) -> ::win32_foundation_sys::WIN32_ERROR;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn RegCreateKeyTransactedA(hkey: HKEY, lpsubkey: ::windows_core_sys::PCSTR, reserved: u32, lpclass: ::windows_core_sys::PCSTR, dwoptions: REG_OPEN_CREATE_OPTIONS, samdesired: REG_SAM_FLAGS, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, phkresult: *mut HKEY, lpdwdisposition: *mut REG_CREATE_KEY_DISPOSITION, htransaction: ::win32_foundation_sys::HANDLE, pextendedparemeter: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::WIN32_ERROR;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn RegCreateKeyTransactedW(hkey: HKEY, lpsubkey: ::windows_core_sys::PCWSTR, reserved: u32, lpclass: ::windows_core_sys::PCWSTR, dwoptions: REG_OPEN_CREATE_OPTIONS, samdesired: REG_SAM_FLAGS, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, phkresult: *mut HKEY, lpdwdisposition: *mut REG_CREATE_KEY_DISPOSITION, htransaction: ::win32_foundation_sys::HANDLE, pextendedparemeter: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::WIN32_ERROR;
     pub fn RegCreateKeyW(hkey: HKEY, lpsubkey: ::windows_core_sys::PCWSTR, phkresult: *mut HKEY) -> ::win32_foundation_sys::WIN32_ERROR;
     pub fn RegDeleteKeyA(hkey: HKEY, lpsubkey: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::WIN32_ERROR;
@@ -41,7 +41,7 @@ extern "system" {
     pub fn RegEnumValueA(hkey: HKEY, dwindex: u32, lpvaluename: ::windows_core_sys::PSTR, lpcchvaluename: *mut u32, lpreserved: *mut u32, lptype: *mut u32, lpdata: *mut u8, lpcbdata: *mut u32) -> ::win32_foundation_sys::WIN32_ERROR;
     pub fn RegEnumValueW(hkey: HKEY, dwindex: u32, lpvaluename: ::windows_core_sys::PWSTR, lpcchvaluename: *mut u32, lpreserved: *mut u32, lptype: *mut u32, lpdata: *mut u8, lpcbdata: *mut u32) -> ::win32_foundation_sys::WIN32_ERROR;
     pub fn RegFlushKey(hkey: HKEY) -> ::win32_foundation_sys::WIN32_ERROR;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn RegGetKeySecurity(hkey: HKEY, securityinformation: u32, psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> ::win32_foundation_sys::WIN32_ERROR;
     pub fn RegGetValueA(hkey: HKEY, lpsubkey: ::windows_core_sys::PCSTR, lpvalue: ::windows_core_sys::PCSTR, dwflags: RRF_RT, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> ::win32_foundation_sys::WIN32_ERROR;
     pub fn RegGetValueW(hkey: HKEY, lpsubkey: ::windows_core_sys::PCWSTR, lpvalue: ::windows_core_sys::PCWSTR, dwflags: RRF_RT, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> ::win32_foundation_sys::WIN32_ERROR;
@@ -75,15 +75,15 @@ extern "system" {
     pub fn RegReplaceKeyW(hkey: HKEY, lpsubkey: ::windows_core_sys::PCWSTR, lpnewfile: ::windows_core_sys::PCWSTR, lpoldfile: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
     pub fn RegRestoreKeyA(hkey: HKEY, lpfile: ::windows_core_sys::PCSTR, dwflags: REG_RESTORE_KEY_FLAGS) -> ::win32_foundation_sys::WIN32_ERROR;
     pub fn RegRestoreKeyW(hkey: HKEY, lpfile: ::windows_core_sys::PCWSTR, dwflags: REG_RESTORE_KEY_FLAGS) -> ::win32_foundation_sys::WIN32_ERROR;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn RegSaveKeyA(hkey: HKEY, lpfile: ::windows_core_sys::PCSTR, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> ::win32_foundation_sys::WIN32_ERROR;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn RegSaveKeyExA(hkey: HKEY, lpfile: ::windows_core_sys::PCSTR, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, flags: REG_SAVE_FORMAT) -> ::win32_foundation_sys::WIN32_ERROR;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn RegSaveKeyExW(hkey: HKEY, lpfile: ::windows_core_sys::PCWSTR, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, flags: REG_SAVE_FORMAT) -> ::win32_foundation_sys::WIN32_ERROR;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn RegSaveKeyW(hkey: HKEY, lpfile: ::windows_core_sys::PCWSTR, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> ::win32_foundation_sys::WIN32_ERROR;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn RegSetKeySecurity(hkey: HKEY, securityinformation: u32, psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR) -> ::win32_foundation_sys::WIN32_ERROR;
     pub fn RegSetKeyValueA(hkey: HKEY, lpsubkey: ::windows_core_sys::PCSTR, lpvaluename: ::windows_core_sys::PCSTR, dwtype: u32, lpdata: *const ::core::ffi::c_void, cbdata: u32) -> ::win32_foundation_sys::WIN32_ERROR;
     pub fn RegSetKeyValueW(hkey: HKEY, lpsubkey: ::windows_core_sys::PCWSTR, lpvaluename: ::windows_core_sys::PCWSTR, dwtype: u32, lpdata: *const ::core::ffi::c_void, cbdata: u32) -> ::win32_foundation_sys::WIN32_ERROR;

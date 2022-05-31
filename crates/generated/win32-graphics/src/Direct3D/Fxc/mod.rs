@@ -144,7 +144,7 @@ pub unsafe fn D3DCreateBlob(size: usize) -> ::windows_core::Result<super::ID3DBl
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Direct3D11")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn D3DCreateFunctionLinkingGraph(uflags: u32) -> ::windows_core::Result<super::super::Direct3D11::ID3D11FunctionLinkingGraph> {
     #[cfg(windows)]
@@ -159,7 +159,7 @@ pub unsafe fn D3DCreateFunctionLinkingGraph(uflags: u32) -> ::windows_core::Resu
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Direct3D11")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn D3DCreateLinker() -> ::windows_core::Result<super::super::Direct3D11::ID3D11Linker> {
     #[cfg(windows)]
@@ -201,7 +201,7 @@ pub unsafe fn D3DDisassemble<'a, Param3: ::windows_core::IntoParam<'a, ::windows
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Direct3D10")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn D3DDisassemble10Effect<'a, Param0: ::windows_core::IntoParam<'a, super::super::Direct3D10::ID3D10Effect>>(peffect: Param0, flags: u32) -> ::windows_core::Result<super::ID3DBlob> {
     #[cfg(windows)]
@@ -312,7 +312,7 @@ pub unsafe fn D3DGetTraceInstructionOffsets(psrcdata: *const ::core::ffi::c_void
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Direct3D11")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn D3DLoadModule(psrcdata: *const ::core::ffi::c_void, cbsrcdatasize: usize) -> ::windows_core::Result<super::super::Direct3D11::ID3D11Module> {
     #[cfg(windows)]

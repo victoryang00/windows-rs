@@ -8,7 +8,7 @@ impl AddPagesEventArgs {
         static mut SHARED: ::windows_core::FactoryCache<AddPagesEventArgs, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Graphics_Printing")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn PrintTaskOptions(&self) -> ::windows_core::Result<::winrt_graphics::Printing::PrintTaskOptions> {
         let this = self;
         unsafe {
@@ -356,9 +356,9 @@ unsafe impl ::windows_core::Interface for IAddPagesEventArgs {
 #[doc(hidden)]
 pub struct IAddPagesEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_Printing")]
+    #[cfg(feature = "winrt-graphics")]
     pub PrintTaskOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Printing"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     PrintTaskOptions: usize,
 }
 #[doc(hidden)]
@@ -385,9 +385,9 @@ unsafe impl ::windows_core::Interface for IPaginateEventArgs {
 #[doc(hidden)]
 pub struct IPaginateEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_Printing")]
+    #[cfg(feature = "winrt-graphics")]
     pub PrintTaskOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Printing"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     PrintTaskOptions: usize,
     pub CurrentPreviewPageNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
 }
@@ -402,9 +402,9 @@ unsafe impl ::windows_core::Interface for IPrintDocument {
 #[doc(hidden)]
 pub struct IPrintDocument_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_Printing")]
+    #[cfg(feature = "winrt-graphics")]
     pub DocumentSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Printing"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     DocumentSource: usize,
     pub Paginate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemovePaginate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -454,7 +454,7 @@ impl PaginateEventArgs {
         static mut SHARED: ::windows_core::FactoryCache<PaginateEventArgs, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Graphics_Printing")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn PrintTaskOptions(&self) -> ::windows_core::Result<::winrt_graphics::Printing::PrintTaskOptions> {
         let this = self;
         unsafe {
@@ -661,7 +661,7 @@ unsafe impl ::windows_core::RuntimeType for PreviewPageCountType {
 #[repr(transparent)]
 pub struct PrintDocument(::windows_core::IUnknown);
 impl PrintDocument {
-    #[cfg(feature = "Graphics_Printing")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn DocumentSource(&self) -> ::windows_core::Result<::winrt_graphics::Printing::IPrintDocumentSource> {
         let this = self;
         unsafe {

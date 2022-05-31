@@ -8,7 +8,7 @@ impl AudioMediaFrame {
             (::windows_core::Interface::vtable(this).FrameReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameReference>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn AudioEncodingProperties(&self) -> ::windows_core::Result<super::super::MediaProperties::AudioEncodingProperties> {
         let this = self;
         unsafe {
@@ -106,7 +106,7 @@ impl BufferMediaFrame {
             (::windows_core::Interface::vtable(this).FrameReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameReference>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Buffer(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
@@ -211,7 +211,7 @@ impl DepthMediaFrame {
             (::windows_core::Interface::vtable(this).DepthFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<DepthMediaFrameFormat>(result__)
         }
     }
-    #[cfg(all(feature = "Media_Devices_Core", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-perception"))]
     pub fn TryCreateCoordinateMapper<'a, Param0: ::windows_core::IntoParam<'a, super::super::Devices::Core::CameraIntrinsics>, Param1: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>>(&self, cameraintrinsics: Param0, coordinatesystem: Param1) -> ::windows_core::Result<super::super::Devices::Core::DepthCorrelatedCoordinateMapper> {
         let this = self;
         unsafe {
@@ -408,9 +408,9 @@ unsafe impl ::windows_core::Interface for IAudioMediaFrame {
 pub struct IAudioMediaFrame_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub FrameReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub AudioEncodingProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     AudioEncodingProperties: usize,
     pub GetAudioFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -426,9 +426,9 @@ unsafe impl ::windows_core::Interface for IBufferMediaFrame {
 pub struct IBufferMediaFrame_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub FrameReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub Buffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Buffer: usize,
 }
 #[doc(hidden)]
@@ -445,9 +445,9 @@ pub struct IDepthMediaFrame_Vtbl {
     pub FrameReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub VideoMediaFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub DepthFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Media_Devices_Core", feature = "Perception_Spatial"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-perception"))]
     pub TryCreateCoordinateMapper: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cameraintrinsics: ::windows_core::RawPtr, coordinatesystem: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Media_Devices_Core", feature = "Perception_Spatial")))]
+    #[cfg(not(all(feature = "winrt-media", feature = "winrt-perception")))]
     TryCreateCoordinateMapper: usize,
 }
 #[doc(hidden)]
@@ -518,13 +518,13 @@ pub struct IMediaFrameFormat_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub MajorType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Subtype: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub FrameRate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     FrameRate: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Properties: usize,
     pub VideoFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -539,9 +539,9 @@ unsafe impl ::windows_core::Interface for IMediaFrameFormat2 {
 #[doc(hidden)]
 pub struct IMediaFrameFormat2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub AudioEncodingProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     AudioEncodingProperties: usize,
 }
 #[doc(hidden)]
@@ -590,15 +590,15 @@ pub struct IMediaFrameReference_Vtbl {
     pub Format: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SystemRelativeTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Duration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Properties: usize,
     pub BufferMediaFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub VideoMediaFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub CoordinateSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception_Spatial"))]
+    #[cfg(not(feature = "winrt-perception"))]
     CoordinateSystem: usize,
 }
 #[doc(hidden)]
@@ -627,17 +627,17 @@ pub struct IMediaFrameSource_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Info: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Controller: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SupportedFormats: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SupportedFormats: usize,
     pub CurrentFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetFormatAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub FormatChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveFormatChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_Devices_Core")]
+    #[cfg(feature = "winrt-media")]
     pub TryGetCameraIntrinsics: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Devices_Core"))]
+    #[cfg(not(feature = "winrt-media"))]
     TryGetCameraIntrinsics: usize,
 }
 #[doc(hidden)]
@@ -653,9 +653,9 @@ pub struct IMediaFrameSourceController_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub GetPropertyAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetPropertyAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, propertyvalue: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_Devices")]
+    #[cfg(feature = "winrt-media")]
     pub VideoDeviceController: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Devices"))]
+    #[cfg(not(feature = "winrt-media"))]
     VideoDeviceController: usize,
 }
 #[doc(hidden)]
@@ -683,9 +683,9 @@ unsafe impl ::windows_core::Interface for IMediaFrameSourceController3 {
 #[doc(hidden)]
 pub struct IMediaFrameSourceController3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Media_Devices")]
+    #[cfg(feature = "winrt-media")]
     pub AudioDeviceController: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Devices"))]
+    #[cfg(not(feature = "winrt-media"))]
     AudioDeviceController: usize,
 }
 #[doc(hidden)]
@@ -715,9 +715,9 @@ pub struct IMediaFrameSourceGroup_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SourceInfos: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SourceInfos: usize,
 }
 #[doc(hidden)]
@@ -731,9 +731,9 @@ unsafe impl ::windows_core::Interface for IMediaFrameSourceGroupStatics {
 #[doc(hidden)]
 pub struct IMediaFrameSourceGroupStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub FindAllAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     FindAllAsync: usize,
     pub FromIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -753,17 +753,17 @@ pub struct IMediaFrameSourceInfo_Vtbl {
     pub MediaStreamType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::MediaStreamType) -> ::windows_core::HRESULT,
     pub SourceKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MediaFrameSourceKind) -> ::windows_core::HRESULT,
     pub SourceGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub DeviceInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Enumeration"))]
+    #[cfg(not(feature = "winrt-devices"))]
     DeviceInformation: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Properties: usize,
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub CoordinateSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Perception_Spatial"))]
+    #[cfg(not(feature = "winrt-perception"))]
     CoordinateSystem: usize,
 }
 #[doc(hidden)]
@@ -778,9 +778,9 @@ unsafe impl ::windows_core::Interface for IMediaFrameSourceInfo2 {
 pub struct IMediaFrameSourceInfo2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ProfileId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub VideoProfileMediaDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     VideoProfileMediaDescription: usize,
 }
 #[doc(hidden)]
@@ -794,9 +794,9 @@ unsafe impl ::windows_core::Interface for IMediaFrameSourceInfo3 {
 #[doc(hidden)]
 pub struct IMediaFrameSourceInfo3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Devices_Enumeration", feature = "UI_WindowManagement"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-ui"))]
     pub GetRelativePanel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, displayregion: ::windows_core::RawPtr, result__: *mut ::winrt_devices::Enumeration::Panel) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Enumeration", feature = "UI_WindowManagement")))]
+    #[cfg(not(all(feature = "winrt-devices", feature = "winrt-ui")))]
     GetRelativePanel: usize,
 }
 #[doc(hidden)]
@@ -868,17 +868,17 @@ pub struct IVideoMediaFrame_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub FrameReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub VideoFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Graphics_Imaging")]
+    #[cfg(feature = "winrt-graphics")]
     pub SoftwareBitmap: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Imaging"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     SoftwareBitmap: usize,
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub Direct3DSurface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_DirectX_Direct3D11"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     Direct3DSurface: usize,
-    #[cfg(feature = "Media_Devices_Core")]
+    #[cfg(feature = "winrt-media")]
     pub CameraIntrinsics: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Devices_Core"))]
+    #[cfg(not(feature = "winrt-media"))]
     CameraIntrinsics: usize,
     pub InfraredMediaFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub DepthMediaFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -1089,7 +1089,7 @@ impl MediaFrameFormat {
             (::windows_core::Interface::vtable(this).Subtype)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn FrameRate(&self) -> ::windows_core::Result<super::super::MediaProperties::MediaRatio> {
         let this = self;
         unsafe {
@@ -1097,7 +1097,7 @@ impl MediaFrameFormat {
             (::windows_core::Interface::vtable(this).FrameRate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::MediaProperties::MediaRatio>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
@@ -1112,7 +1112,7 @@ impl MediaFrameFormat {
             (::windows_core::Interface::vtable(this).VideoFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VideoMediaFrameFormat>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn AudioEncodingProperties(&self) -> ::windows_core::Result<super::super::MediaProperties::AudioEncodingProperties> {
         let this = &::windows_core::Interface::cast::<IMediaFrameFormat2>(self)?;
         unsafe {
@@ -1442,7 +1442,7 @@ impl MediaFrameReference {
             (::windows_core::Interface::vtable(this).Duration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
@@ -1464,7 +1464,7 @@ impl MediaFrameReference {
             (::windows_core::Interface::vtable(this).VideoMediaFrame)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VideoMediaFrame>(result__)
         }
     }
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub fn CoordinateSystem(&self) -> ::windows_core::Result<::winrt_perception::Spatial::SpatialCoordinateSystem> {
         let this = self;
         unsafe {
@@ -1591,7 +1591,7 @@ impl MediaFrameSource {
             (::windows_core::Interface::vtable(this).Controller)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameSourceController>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SupportedFormats(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MediaFrameFormat>> {
         let this = self;
         unsafe {
@@ -1624,7 +1624,7 @@ impl MediaFrameSource {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveFormatChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Media_Devices_Core")]
+    #[cfg(feature = "winrt-media")]
     pub fn TryGetCameraIntrinsics<'a, Param0: ::windows_core::IntoParam<'a, MediaFrameFormat>>(&self, format: Param0) -> ::windows_core::Result<super::super::Devices::Core::CameraIntrinsics> {
         let this = self;
         unsafe {
@@ -1722,7 +1722,7 @@ impl MediaFrameSourceController {
             (::windows_core::Interface::vtable(this).SetPropertyAsync)(::windows_core::Interface::as_raw(this), propertyid.into_param().abi(), propertyvalue.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MediaFrameSourceSetPropertyStatus>>(result__)
         }
     }
-    #[cfg(feature = "Media_Devices")]
+    #[cfg(feature = "winrt-media")]
     pub fn VideoDeviceController(&self) -> ::windows_core::Result<super::super::Devices::VideoDeviceController> {
         let this = self;
         unsafe {
@@ -1744,7 +1744,7 @@ impl MediaFrameSourceController {
             (::windows_core::Interface::vtable(this).SetPropertyByExtendedIdAsync)(::windows_core::Interface::as_raw(this), extendedpropertyid.len() as u32, ::core::mem::transmute(extendedpropertyid.as_ptr()), propertyvalue.len() as u32, ::core::mem::transmute(propertyvalue.as_ptr()), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MediaFrameSourceSetPropertyStatus>>(result__)
         }
     }
-    #[cfg(feature = "Media_Devices")]
+    #[cfg(feature = "winrt-media")]
     pub fn AudioDeviceController(&self) -> ::windows_core::Result<super::super::Devices::AudioDeviceController> {
         let this = &::windows_core::Interface::cast::<IMediaFrameSourceController3>(self)?;
         unsafe {
@@ -1969,7 +1969,7 @@ impl MediaFrameSourceGroup {
             (::windows_core::Interface::vtable(this).DisplayName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SourceInfos(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MediaFrameSourceInfo>> {
         let this = self;
         unsafe {
@@ -1977,7 +1977,7 @@ impl MediaFrameSourceGroup {
             (::windows_core::Interface::vtable(this).SourceInfos)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<MediaFrameSourceInfo>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn FindAllAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<MediaFrameSourceGroup>>> {
         Self::IMediaFrameSourceGroupStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -2104,7 +2104,7 @@ impl MediaFrameSourceInfo {
             (::windows_core::Interface::vtable(this).SourceGroup)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameSourceGroup>(result__)
         }
     }
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub fn DeviceInformation(&self) -> ::windows_core::Result<::winrt_devices::Enumeration::DeviceInformation> {
         let this = self;
         unsafe {
@@ -2112,7 +2112,7 @@ impl MediaFrameSourceInfo {
             (::windows_core::Interface::vtable(this).DeviceInformation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Enumeration::DeviceInformation>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
@@ -2120,7 +2120,7 @@ impl MediaFrameSourceInfo {
             (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>>(result__)
         }
     }
-    #[cfg(feature = "Perception_Spatial")]
+    #[cfg(feature = "winrt-perception")]
     pub fn CoordinateSystem(&self) -> ::windows_core::Result<::winrt_perception::Spatial::SpatialCoordinateSystem> {
         let this = self;
         unsafe {
@@ -2135,7 +2135,7 @@ impl MediaFrameSourceInfo {
             (::windows_core::Interface::vtable(this).ProfileId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn VideoProfileMediaDescription(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<super::MediaCaptureVideoProfileMediaDescription>> {
         let this = &::windows_core::Interface::cast::<IMediaFrameSourceInfo2>(self)?;
         unsafe {
@@ -2143,7 +2143,7 @@ impl MediaFrameSourceInfo {
             (::windows_core::Interface::vtable(this).VideoProfileMediaDescription)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<super::MediaCaptureVideoProfileMediaDescription>>(result__)
         }
     }
-    #[cfg(all(feature = "Devices_Enumeration", feature = "UI_WindowManagement"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-ui"))]
     pub fn GetRelativePanel<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::WindowManagement::DisplayRegion>>(&self, displayregion: Param0) -> ::windows_core::Result<::winrt_devices::Enumeration::Panel> {
         let this = &::windows_core::Interface::cast::<IMediaFrameSourceInfo3>(self)?;
         unsafe {
@@ -2681,7 +2681,7 @@ impl VideoMediaFrame {
             (::windows_core::Interface::vtable(this).VideoFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VideoMediaFrameFormat>(result__)
         }
     }
-    #[cfg(feature = "Graphics_Imaging")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn SoftwareBitmap(&self) -> ::windows_core::Result<::winrt_graphics::Imaging::SoftwareBitmap> {
         let this = self;
         unsafe {
@@ -2689,7 +2689,7 @@ impl VideoMediaFrame {
             (::windows_core::Interface::vtable(this).SoftwareBitmap)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::Imaging::SoftwareBitmap>(result__)
         }
     }
-    #[cfg(feature = "Graphics_DirectX_Direct3D11")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn Direct3DSurface(&self) -> ::windows_core::Result<::winrt_graphics::DirectX::Direct3D11::IDirect3DSurface> {
         let this = self;
         unsafe {
@@ -2697,7 +2697,7 @@ impl VideoMediaFrame {
             (::windows_core::Interface::vtable(this).Direct3DSurface)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::DirectX::Direct3D11::IDirect3DSurface>(result__)
         }
     }
-    #[cfg(feature = "Media_Devices_Core")]
+    #[cfg(feature = "winrt-media")]
     pub fn CameraIntrinsics(&self) -> ::windows_core::Result<super::super::Devices::Core::CameraIntrinsics> {
         let this = self;
         unsafe {

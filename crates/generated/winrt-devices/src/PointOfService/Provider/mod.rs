@@ -1022,7 +1022,7 @@ impl BarcodeScannerProviderConnection {
             (::windows_core::Interface::vtable(this).VideoDeviceId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SupportedSymbologies(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<u32>> {
         let this = self;
         unsafe {
@@ -1190,7 +1190,7 @@ impl BarcodeScannerProviderConnection {
             (::windows_core::Interface::vtable(this).CreateFrameReaderAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<BarcodeScannerFrameReader>>(result__)
         }
     }
-    #[cfg(feature = "Graphics_Imaging")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn CreateFrameReaderWithFormatAsync(&self, preferredformat: ::winrt_graphics::Imaging::BitmapPixelFormat) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<BarcodeScannerFrameReader>> {
         let this = &::windows_core::Interface::cast::<IBarcodeScannerProviderConnection2>(self)?;
         unsafe {
@@ -1198,7 +1198,7 @@ impl BarcodeScannerProviderConnection {
             (::windows_core::Interface::vtable(this).CreateFrameReaderWithFormatAsync)(::windows_core::Interface::as_raw(this), preferredformat, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<BarcodeScannerFrameReader>>(result__)
         }
     }
-    #[cfg(feature = "Graphics_Imaging")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn CreateFrameReaderWithFormatAndSizeAsync<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_graphics::Imaging::BitmapSize>>(&self, preferredformat: ::winrt_graphics::Imaging::BitmapPixelFormat, preferredsize: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<BarcodeScannerFrameReader>> {
         let this = &::windows_core::Interface::cast::<IBarcodeScannerProviderConnection2>(self)?;
         unsafe {
@@ -1391,7 +1391,7 @@ unsafe impl ::core::marker::Sync for BarcodeScannerProviderTriggerDetails {}
 #[repr(transparent)]
 pub struct BarcodeScannerSetActiveSymbologiesRequest(::windows_core::IUnknown);
 impl BarcodeScannerSetActiveSymbologiesRequest {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Symbologies(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         let this = self;
         unsafe {
@@ -2222,7 +2222,7 @@ unsafe impl ::windows_core::RuntimeType for BarcodeScannerTriggerState {
 #[repr(transparent)]
 pub struct BarcodeScannerVideoFrame(::windows_core::IUnknown);
 impl BarcodeScannerVideoFrame {
-    #[cfg(feature = "Graphics_Imaging")]
+    #[cfg(feature = "winrt-graphics")]
     pub fn Format(&self) -> ::windows_core::Result<::winrt_graphics::Imaging::BitmapPixelFormat> {
         let this = self;
         unsafe {
@@ -2244,7 +2244,7 @@ impl BarcodeScannerVideoFrame {
             (::windows_core::Interface::vtable(this).Height)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn PixelData(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
@@ -2687,9 +2687,9 @@ pub struct IBarcodeScannerProviderConnection_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub VideoDeviceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SupportedSymbologies: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SupportedSymbologies: usize,
     pub CompanyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetCompanyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -2731,13 +2731,13 @@ unsafe impl ::windows_core::Interface for IBarcodeScannerProviderConnection2 {
 pub struct IBarcodeScannerProviderConnection2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub CreateFrameReaderAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Graphics_Imaging")]
+    #[cfg(feature = "winrt-graphics")]
     pub CreateFrameReaderWithFormatAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, preferredformat: ::winrt_graphics::Imaging::BitmapPixelFormat, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Imaging"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     CreateFrameReaderWithFormatAsync: usize,
-    #[cfg(feature = "Graphics_Imaging")]
+    #[cfg(feature = "winrt-graphics")]
     pub CreateFrameReaderWithFormatAndSizeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, preferredformat: ::winrt_graphics::Imaging::BitmapPixelFormat, preferredsize: ::winrt_graphics::Imaging::BitmapSize, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Imaging"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     CreateFrameReaderWithFormatAndSizeAsync: usize,
 }
 #[doc(hidden)]
@@ -2764,9 +2764,9 @@ unsafe impl ::windows_core::Interface for IBarcodeScannerSetActiveSymbologiesReq
 #[doc(hidden)]
 pub struct IBarcodeScannerSetActiveSymbologiesRequest_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Symbologies: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Symbologies: usize,
     pub ReportCompletedAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ReportFailedAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -2938,15 +2938,15 @@ unsafe impl ::windows_core::Interface for IBarcodeScannerVideoFrame {
 #[doc(hidden)]
 pub struct IBarcodeScannerVideoFrame_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Graphics_Imaging")]
+    #[cfg(feature = "winrt-graphics")]
     pub Format: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::Imaging::BitmapPixelFormat) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Graphics_Imaging"))]
+    #[cfg(not(feature = "winrt-graphics"))]
     Format: usize,
     pub Width: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub Height: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub PixelData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     PixelData: usize,
 }
 #[doc(hidden)]

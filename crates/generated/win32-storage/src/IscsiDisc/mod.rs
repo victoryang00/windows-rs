@@ -711,7 +711,7 @@ pub const FIRMWARE_STATUS_OUTPUT_BUFFER_TOO_SMALL: u32 = 5u32;
 pub const FIRMWARE_STATUS_POWER_CYCLE_REQUIRED: u32 = 32u32;
 pub const FIRMWARE_STATUS_SUCCESS: u32 = 0u32;
 pub const FIRMWARE_STATUS_UNCORRECTABLE_DATA_ERROR: u32 = 129u32;
-#[cfg(feature = "Win32_System_Ioctl")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn GetDevicesForIScsiSessionA(uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, devicecount: *mut u32, devices: *mut ISCSI_DEVICE_ON_SESSIONA) -> u32 {
     #[cfg(windows)]
@@ -725,7 +725,7 @@ pub unsafe fn GetDevicesForIScsiSessionA(uniquesessionid: *mut ISCSI_UNIQUE_SESS
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Ioctl")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn GetDevicesForIScsiSessionW(uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, devicecount: *mut u32, devices: *mut ISCSI_DEVICE_ON_SESSIONW) -> u32 {
     #[cfg(windows)]
@@ -1460,7 +1460,7 @@ impl ::core::default::Default for ISCSI_CONNECTION_INFO_EX {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Ioctl")]
+#[cfg(feature = "win32-system")]
 pub struct ISCSI_DEVICE_ON_SESSIONA {
     pub InitiatorName: [::win32_foundation::CHAR; 256],
     pub TargetName: [::win32_foundation::CHAR; 224],
@@ -1471,40 +1471,40 @@ pub struct ISCSI_DEVICE_ON_SESSIONA {
     pub StorageDeviceNumber: ::win32_system::Ioctl::STORAGE_DEVICE_NUMBER,
     pub DeviceInstance: u32,
 }
-#[cfg(feature = "Win32_System_Ioctl")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for ISCSI_DEVICE_ON_SESSIONA {}
-#[cfg(feature = "Win32_System_Ioctl")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for ISCSI_DEVICE_ON_SESSIONA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Ioctl")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for ISCSI_DEVICE_ON_SESSIONA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ISCSI_DEVICE_ON_SESSIONA").field("InitiatorName", &self.InitiatorName).field("TargetName", &self.TargetName).field("ScsiAddress", &self.ScsiAddress).field("DeviceInterfaceType", &self.DeviceInterfaceType).field("DeviceInterfaceName", &self.DeviceInterfaceName).field("LegacyName", &self.LegacyName).field("StorageDeviceNumber", &self.StorageDeviceNumber).field("DeviceInstance", &self.DeviceInstance).finish()
     }
 }
-#[cfg(feature = "Win32_System_Ioctl")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for ISCSI_DEVICE_ON_SESSIONA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Ioctl")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for ISCSI_DEVICE_ON_SESSIONA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_DEVICE_ON_SESSIONA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Ioctl")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for ISCSI_DEVICE_ON_SESSIONA {}
-#[cfg(feature = "Win32_System_Ioctl")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for ISCSI_DEVICE_ON_SESSIONA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Ioctl")]
+#[cfg(feature = "win32-system")]
 pub struct ISCSI_DEVICE_ON_SESSIONW {
     pub InitiatorName: [u16; 256],
     pub TargetName: [u16; 224],
@@ -1515,33 +1515,33 @@ pub struct ISCSI_DEVICE_ON_SESSIONW {
     pub StorageDeviceNumber: ::win32_system::Ioctl::STORAGE_DEVICE_NUMBER,
     pub DeviceInstance: u32,
 }
-#[cfg(feature = "Win32_System_Ioctl")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for ISCSI_DEVICE_ON_SESSIONW {}
-#[cfg(feature = "Win32_System_Ioctl")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for ISCSI_DEVICE_ON_SESSIONW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Ioctl")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for ISCSI_DEVICE_ON_SESSIONW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ISCSI_DEVICE_ON_SESSIONW").field("InitiatorName", &self.InitiatorName).field("TargetName", &self.TargetName).field("ScsiAddress", &self.ScsiAddress).field("DeviceInterfaceType", &self.DeviceInterfaceType).field("DeviceInterfaceName", &self.DeviceInterfaceName).field("LegacyName", &self.LegacyName).field("StorageDeviceNumber", &self.StorageDeviceNumber).field("DeviceInstance", &self.DeviceInstance).finish()
     }
 }
-#[cfg(feature = "Win32_System_Ioctl")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for ISCSI_DEVICE_ON_SESSIONW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Ioctl")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for ISCSI_DEVICE_ON_SESSIONW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_DEVICE_ON_SESSIONW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Ioctl")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for ISCSI_DEVICE_ON_SESSIONW {}
-#[cfg(feature = "Win32_System_Ioctl")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for ISCSI_DEVICE_ON_SESSIONW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

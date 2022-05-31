@@ -48,7 +48,7 @@ impl BackgroundDownloader {
         static mut SHARED: ::windows_core::FactoryCache<BackgroundDownloader, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateDownload<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(&self, uri: Param0, resultfile: Param1) -> ::windows_core::Result<DownloadOperation> {
         let this = self;
         unsafe {
@@ -56,7 +56,7 @@ impl BackgroundDownloader {
             (::windows_core::Interface::vtable(this).CreateDownload)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), resultfile.into_param().abi(), result__.as_mut_ptr()).from_abi::<DownloadOperation>(result__)
         }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateDownloadFromFile<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>, Param2: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(&self, uri: Param0, resultfile: Param1, requestbodyfile: Param2) -> ::windows_core::Result<DownloadOperation> {
         let this = self;
         unsafe {
@@ -64,7 +64,7 @@ impl BackgroundDownloader {
             (::windows_core::Interface::vtable(this).CreateDownloadFromFile)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), resultfile.into_param().abi(), requestbodyfile.into_param().abi(), result__.as_mut_ptr()).from_abi::<DownloadOperation>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateDownloadAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>, Param2: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IInputStream>>(&self, uri: Param0, resultfile: Param1, requestbodystream: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<DownloadOperation>> {
         let this = self;
         unsafe {
@@ -83,7 +83,7 @@ impl BackgroundDownloader {
         let this = &::windows_core::Interface::cast::<IBackgroundDownloader2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTransferGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SuccessToastNotification(&self) -> ::windows_core::Result<::winrt_ui::Notifications::ToastNotification> {
         let this = &::windows_core::Interface::cast::<IBackgroundDownloader2>(self)?;
         unsafe {
@@ -91,12 +91,12 @@ impl BackgroundDownloader {
             (::windows_core::Interface::vtable(this).SuccessToastNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Notifications::ToastNotification>(result__)
         }
     }
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetSuccessToastNotification<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Notifications::ToastNotification>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundDownloader2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSuccessToastNotification)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub fn FailureToastNotification(&self) -> ::windows_core::Result<::winrt_ui::Notifications::ToastNotification> {
         let this = &::windows_core::Interface::cast::<IBackgroundDownloader2>(self)?;
         unsafe {
@@ -104,12 +104,12 @@ impl BackgroundDownloader {
             (::windows_core::Interface::vtable(this).FailureToastNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Notifications::ToastNotification>(result__)
         }
     }
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetFailureToastNotification<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Notifications::ToastNotification>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundDownloader2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetFailureToastNotification)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SuccessTileNotification(&self) -> ::windows_core::Result<::winrt_ui::Notifications::TileNotification> {
         let this = &::windows_core::Interface::cast::<IBackgroundDownloader2>(self)?;
         unsafe {
@@ -117,12 +117,12 @@ impl BackgroundDownloader {
             (::windows_core::Interface::vtable(this).SuccessTileNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Notifications::TileNotification>(result__)
         }
     }
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetSuccessTileNotification<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Notifications::TileNotification>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundDownloader2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSuccessTileNotification)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub fn FailureTileNotification(&self) -> ::windows_core::Result<::winrt_ui::Notifications::TileNotification> {
         let this = &::windows_core::Interface::cast::<IBackgroundDownloader2>(self)?;
         unsafe {
@@ -130,7 +130,7 @@ impl BackgroundDownloader {
             (::windows_core::Interface::vtable(this).FailureTileNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Notifications::TileNotification>(result__)
         }
     }
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetFailureTileNotification<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Notifications::TileNotification>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundDownloader2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetFailureTileNotification)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -148,28 +148,28 @@ impl BackgroundDownloader {
             (::windows_core::Interface::vtable(this).CreateWithCompletionGroup)(::windows_core::Interface::as_raw(this), completiongroup.into_param().abi(), result__.as_mut_ptr()).from_abi::<BackgroundDownloader>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetCurrentDownloadsAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<DownloadOperation>>> {
         Self::IBackgroundDownloaderStaticMethods(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetCurrentDownloadsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<DownloadOperation>>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-"))]
     pub fn GetCurrentDownloadsForGroupAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(group: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<DownloadOperation>>> {
         Self::IBackgroundDownloaderStaticMethods(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetCurrentDownloadsForGroupAsync)(::windows_core::Interface::as_raw(this), group.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<DownloadOperation>>>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetCurrentDownloadsForTransferGroupAsync<'a, Param0: ::windows_core::IntoParam<'a, BackgroundTransferGroup>>(group: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<DownloadOperation>>> {
         Self::IBackgroundDownloaderStaticMethods2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetCurrentDownloadsForTransferGroupAsync)(::windows_core::Interface::as_raw(this), group.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<DownloadOperation>>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-"))]
     pub fn RequestUnconstrainedDownloadsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<DownloadOperation>>>(operations: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<UnconstrainedTransferRequestResult>> {
         Self::IBackgroundDownloaderUserConsent(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -180,7 +180,7 @@ impl BackgroundDownloader {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRequestHeader)(::windows_core::Interface::as_raw(this), headername.into_param().abi(), headervalue.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn ServerCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe {
@@ -188,12 +188,12 @@ impl BackgroundDownloader {
             (::windows_core::Interface::vtable(this).ServerCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetServerCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, credential: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetServerCredential)(::windows_core::Interface::as_raw(this), credential.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn ProxyCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe {
@@ -201,7 +201,7 @@ impl BackgroundDownloader {
             (::windows_core::Interface::vtable(this).ProxyCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetProxyCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, credential: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetProxyCredential)(::windows_core::Interface::as_raw(this), credential.into_param().abi()).ok() }
@@ -217,7 +217,7 @@ impl BackgroundDownloader {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMethod)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn Group(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe {
@@ -225,7 +225,7 @@ impl BackgroundDownloader {
             (::windows_core::Interface::vtable(this).Group)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn SetGroup<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -253,7 +253,7 @@ impl BackgroundDownloader {
         static mut SHARED: ::windows_core::FactoryCache<BackgroundDownloader, IBackgroundDownloaderStaticMethods2> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn IBackgroundDownloaderUserConsent<R, F: FnOnce(&IBackgroundDownloaderUserConsent) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
         static mut SHARED: ::windows_core::FactoryCache<BackgroundDownloader, IBackgroundDownloaderUserConsent> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
@@ -396,7 +396,7 @@ impl BackgroundTransferCompletionGroup {
         static mut SHARED: ::windows_core::FactoryCache<BackgroundTransferCompletionGroup, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "ApplicationModel_Background")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub fn Trigger(&self) -> ::windows_core::Result<::winrt_applicationmodel::Background::IBackgroundTrigger> {
         let this = self;
         unsafe {
@@ -491,7 +491,7 @@ unsafe impl ::core::marker::Sync for BackgroundTransferCompletionGroup {}
 #[repr(transparent)]
 pub struct BackgroundTransferCompletionGroupTriggerDetails(::windows_core::IUnknown);
 impl BackgroundTransferCompletionGroupTriggerDetails {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Downloads(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<DownloadOperation>> {
         let this = self;
         unsafe {
@@ -499,7 +499,7 @@ impl BackgroundTransferCompletionGroupTriggerDetails {
             (::windows_core::Interface::vtable(this).Downloads)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<DownloadOperation>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Uploads(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<UploadOperation>> {
         let this = self;
         unsafe {
@@ -598,7 +598,7 @@ impl BackgroundTransferContentPart {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetText)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SetFile<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFile)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -728,7 +728,7 @@ unsafe impl ::windows_core::RuntimeType for BackgroundTransferCostPolicy {
 }
 pub struct BackgroundTransferError;
 impl BackgroundTransferError {
-    #[cfg(feature = "Web")]
+    #[cfg(feature = "winrt-web")]
     pub fn GetStatus(hresult: i32) -> ::windows_core::Result<::winrt_web::WebErrorStatus> {
         Self::IBackgroundTransferErrorStaticMethods(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::winrt_web::WebErrorStatus>::zeroed();
@@ -928,7 +928,7 @@ impl BackgroundTransferRangesDownloadedEventArgs {
             (::windows_core::Interface::vtable(this).WasDownloadRestarted)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn AddedRanges(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<BackgroundTransferFileRange>> {
         let this = self;
         unsafe {
@@ -1113,7 +1113,7 @@ impl BackgroundUploader {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRequestHeader)(::windows_core::Interface::as_raw(this), headername.into_param().abi(), headervalue.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn ServerCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe {
@@ -1121,12 +1121,12 @@ impl BackgroundUploader {
             (::windows_core::Interface::vtable(this).ServerCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetServerCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, credential: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetServerCredential)(::windows_core::Interface::as_raw(this), credential.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn ProxyCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe {
@@ -1134,7 +1134,7 @@ impl BackgroundUploader {
             (::windows_core::Interface::vtable(this).ProxyCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetProxyCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, credential: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetProxyCredential)(::windows_core::Interface::as_raw(this), credential.into_param().abi()).ok() }
@@ -1150,7 +1150,7 @@ impl BackgroundUploader {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMethod)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn Group(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe {
@@ -1158,7 +1158,7 @@ impl BackgroundUploader {
             (::windows_core::Interface::vtable(this).Group)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn SetGroup<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -1174,7 +1174,7 @@ impl BackgroundUploader {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCostPolicy)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateUpload<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(&self, uri: Param0, sourcefile: Param1) -> ::windows_core::Result<UploadOperation> {
         let this = self;
         unsafe {
@@ -1182,7 +1182,7 @@ impl BackgroundUploader {
             (::windows_core::Interface::vtable(this).CreateUpload)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), sourcefile.into_param().abi(), result__.as_mut_ptr()).from_abi::<UploadOperation>(result__)
         }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateUploadFromStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IInputStream>>(&self, uri: Param0, sourcestream: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<UploadOperation>> {
         let this = self;
         unsafe {
@@ -1190,7 +1190,7 @@ impl BackgroundUploader {
             (::windows_core::Interface::vtable(this).CreateUploadFromStreamAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), sourcestream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<UploadOperation>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CreateUploadWithFormDataAndAutoBoundaryAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<BackgroundTransferContentPart>>>(&self, uri: Param0, parts: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<UploadOperation>> {
         let this = self;
         unsafe {
@@ -1198,7 +1198,7 @@ impl BackgroundUploader {
             (::windows_core::Interface::vtable(this).CreateUploadWithFormDataAndAutoBoundaryAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), parts.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<UploadOperation>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CreateUploadWithSubTypeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<BackgroundTransferContentPart>>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, uri: Param0, parts: Param1, subtype: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<UploadOperation>> {
         let this = self;
         unsafe {
@@ -1206,7 +1206,7 @@ impl BackgroundUploader {
             (::windows_core::Interface::vtable(this).CreateUploadWithSubTypeAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), parts.into_param().abi(), subtype.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<UploadOperation>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CreateUploadWithSubTypeAndBoundaryAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<BackgroundTransferContentPart>>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, uri: Param0, parts: Param1, subtype: Param2, boundary: Param3) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<UploadOperation>> {
         let this = self;
         unsafe {
@@ -1225,7 +1225,7 @@ impl BackgroundUploader {
         let this = &::windows_core::Interface::cast::<IBackgroundUploader2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTransferGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SuccessToastNotification(&self) -> ::windows_core::Result<::winrt_ui::Notifications::ToastNotification> {
         let this = &::windows_core::Interface::cast::<IBackgroundUploader2>(self)?;
         unsafe {
@@ -1233,12 +1233,12 @@ impl BackgroundUploader {
             (::windows_core::Interface::vtable(this).SuccessToastNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Notifications::ToastNotification>(result__)
         }
     }
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetSuccessToastNotification<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Notifications::ToastNotification>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundUploader2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSuccessToastNotification)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub fn FailureToastNotification(&self) -> ::windows_core::Result<::winrt_ui::Notifications::ToastNotification> {
         let this = &::windows_core::Interface::cast::<IBackgroundUploader2>(self)?;
         unsafe {
@@ -1246,12 +1246,12 @@ impl BackgroundUploader {
             (::windows_core::Interface::vtable(this).FailureToastNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Notifications::ToastNotification>(result__)
         }
     }
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetFailureToastNotification<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Notifications::ToastNotification>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundUploader2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetFailureToastNotification)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SuccessTileNotification(&self) -> ::windows_core::Result<::winrt_ui::Notifications::TileNotification> {
         let this = &::windows_core::Interface::cast::<IBackgroundUploader2>(self)?;
         unsafe {
@@ -1259,12 +1259,12 @@ impl BackgroundUploader {
             (::windows_core::Interface::vtable(this).SuccessTileNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Notifications::TileNotification>(result__)
         }
     }
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetSuccessTileNotification<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Notifications::TileNotification>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundUploader2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSuccessTileNotification)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub fn FailureTileNotification(&self) -> ::windows_core::Result<::winrt_ui::Notifications::TileNotification> {
         let this = &::windows_core::Interface::cast::<IBackgroundUploader2>(self)?;
         unsafe {
@@ -1272,7 +1272,7 @@ impl BackgroundUploader {
             (::windows_core::Interface::vtable(this).FailureTileNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Notifications::TileNotification>(result__)
         }
     }
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetFailureTileNotification<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Notifications::TileNotification>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundUploader2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetFailureTileNotification)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -1290,28 +1290,28 @@ impl BackgroundUploader {
             (::windows_core::Interface::vtable(this).CreateWithCompletionGroup)(::windows_core::Interface::as_raw(this), completiongroup.into_param().abi(), result__.as_mut_ptr()).from_abi::<BackgroundUploader>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetCurrentUploadsAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<UploadOperation>>> {
         Self::IBackgroundUploaderStaticMethods(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetCurrentUploadsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<UploadOperation>>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-"))]
     pub fn GetCurrentUploadsForGroupAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(group: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<UploadOperation>>> {
         Self::IBackgroundUploaderStaticMethods(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetCurrentUploadsForGroupAsync)(::windows_core::Interface::as_raw(this), group.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<UploadOperation>>>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetCurrentUploadsForTransferGroupAsync<'a, Param0: ::windows_core::IntoParam<'a, BackgroundTransferGroup>>(group: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<UploadOperation>>> {
         Self::IBackgroundUploaderStaticMethods2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetCurrentUploadsForTransferGroupAsync)(::windows_core::Interface::as_raw(this), group.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<UploadOperation>>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-"))]
     pub fn RequestUnconstrainedUploadsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<UploadOperation>>>(operations: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<UnconstrainedTransferRequestResult>> {
         Self::IBackgroundUploaderUserConsent(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1330,7 +1330,7 @@ impl BackgroundUploader {
         static mut SHARED: ::windows_core::FactoryCache<BackgroundUploader, IBackgroundUploaderStaticMethods2> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn IBackgroundUploaderUserConsent<R, F: FnOnce(&IBackgroundUploaderUserConsent) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
         static mut SHARED: ::windows_core::FactoryCache<BackgroundUploader, IBackgroundUploaderUserConsent> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
@@ -1432,7 +1432,7 @@ unsafe impl ::core::marker::Send for BackgroundUploader {}
 unsafe impl ::core::marker::Sync for BackgroundUploader {}
 pub struct ContentPrefetcher;
 impl ContentPrefetcher {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ContentUris() -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>> {
         Self::IContentPrefetcher(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1490,7 +1490,7 @@ impl DownloadOperation {
             (::windows_core::Interface::vtable(this).Method)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn Group(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferOperation>(self)?;
         unsafe {
@@ -1509,7 +1509,7 @@ impl DownloadOperation {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferOperation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCostPolicy)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetResultStreamAt(&self, position: u64) -> ::windows_core::Result<::winrt_storage::Streams::IInputStream> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferOperation>(self)?;
         unsafe {
@@ -1535,7 +1535,7 @@ impl DownloadOperation {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferOperationPriority>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetPriority)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn ResultFile(&self) -> ::windows_core::Result<::winrt_storage::IStorageFile> {
         let this = self;
         unsafe {
@@ -1590,7 +1590,7 @@ impl DownloadOperation {
         let this = &::windows_core::Interface::cast::<IDownloadOperation3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetIsRandomAccessRequired)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetResultRandomAccessStreamReference(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStreamReference> {
         let this = &::windows_core::Interface::cast::<IDownloadOperation3>(self)?;
         unsafe {
@@ -1598,7 +1598,7 @@ impl DownloadOperation {
             (::windows_core::Interface::vtable(this).GetResultRandomAccessStreamReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IRandomAccessStreamReference>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetDownloadedRanges(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<BackgroundTransferFileRange>> {
         let this = &::windows_core::Interface::cast::<IDownloadOperation3>(self)?;
         unsafe {
@@ -1621,7 +1621,7 @@ impl DownloadOperation {
         let this = &::windows_core::Interface::cast::<IDownloadOperation3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRequestedUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Web"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-web"))]
     pub fn RecoverableWebErrorStatuses(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_web::WebErrorStatus>> {
         let this = &::windows_core::Interface::cast::<IDownloadOperation3>(self)?;
         unsafe {
@@ -1629,7 +1629,7 @@ impl DownloadOperation {
             (::windows_core::Interface::vtable(this).RecoverableWebErrorStatuses)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_web::WebErrorStatus>>(result__)
         }
     }
-    #[cfg(feature = "Web")]
+    #[cfg(feature = "winrt-web")]
     pub fn CurrentWebErrorStatus(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_web::WebErrorStatus>> {
         let this = &::windows_core::Interface::cast::<IDownloadOperation3>(self)?;
         unsafe {
@@ -1777,17 +1777,17 @@ unsafe impl ::windows_core::Interface for IBackgroundDownloader {
 #[doc(hidden)]
 pub struct IBackgroundDownloader_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateDownload: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, resultfile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateDownload: usize,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateDownloadFromFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, resultfile: ::windows_core::RawPtr, requestbodyfile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateDownloadFromFile: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateDownloadAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, resultfile: ::windows_core::RawPtr, requestbodystream: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateDownloadAsync: usize,
 }
 #[doc(hidden)]
@@ -1803,37 +1803,37 @@ pub struct IBackgroundDownloader2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub TransferGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetTransferGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub SuccessToastNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Notifications"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SuccessToastNotification: usize,
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub SetSuccessToastNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Notifications"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetSuccessToastNotification: usize,
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub FailureToastNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Notifications"))]
+    #[cfg(not(feature = "winrt-ui"))]
     FailureToastNotification: usize,
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub SetFailureToastNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Notifications"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetFailureToastNotification: usize,
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub SuccessTileNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Notifications"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SuccessTileNotification: usize,
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub SetSuccessTileNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Notifications"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetSuccessTileNotification: usize,
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub FailureTileNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Notifications"))]
+    #[cfg(not(feature = "winrt-ui"))]
     FailureTileNotification: usize,
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub SetFailureTileNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Notifications"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetFailureTileNotification: usize,
 }
 #[doc(hidden)]
@@ -1873,13 +1873,13 @@ unsafe impl ::windows_core::Interface for IBackgroundDownloaderStaticMethods {
 #[doc(hidden)]
 pub struct IBackgroundDownloaderStaticMethods_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetCurrentDownloadsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetCurrentDownloadsAsync: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-"))]
     pub GetCurrentDownloadsForGroupAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, group: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "deprecated")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-")))]
     GetCurrentDownloadsForGroupAsync: usize,
 }
 #[doc(hidden)]
@@ -1893,28 +1893,28 @@ unsafe impl ::windows_core::Interface for IBackgroundDownloaderStaticMethods2 {
 #[doc(hidden)]
 pub struct IBackgroundDownloaderStaticMethods2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetCurrentDownloadsForTransferGroupAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, group: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetCurrentDownloadsForTransferGroupAsync: usize,
 }
 #[doc(hidden)]
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct IBackgroundDownloaderUserConsent(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for IBackgroundDownloaderUserConsent {
     type Vtable = IBackgroundDownloaderUserConsent_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x5d14e906_9266_4808_bd71_5925f2a3130a);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IBackgroundDownloaderUserConsent_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-"))]
     pub RequestUnconstrainedDownloadsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, operations: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "deprecated")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-")))]
     RequestUnconstrainedDownloadsAsync: usize,
 }
 #[repr(transparent)]
@@ -1924,7 +1924,7 @@ impl IBackgroundTransferBase {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetRequestHeader)(::windows_core::Interface::as_raw(this), headername.into_param().abi(), headervalue.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn ServerCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = self;
         unsafe {
@@ -1932,12 +1932,12 @@ impl IBackgroundTransferBase {
             (::windows_core::Interface::vtable(this).ServerCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetServerCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, credential: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetServerCredential)(::windows_core::Interface::as_raw(this), credential.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn ProxyCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = self;
         unsafe {
@@ -1945,7 +1945,7 @@ impl IBackgroundTransferBase {
             (::windows_core::Interface::vtable(this).ProxyCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub fn SetProxyCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, credential: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetProxyCredential)(::windows_core::Interface::as_raw(this), credential.into_param().abi()).ok() }
@@ -1961,7 +1961,7 @@ impl IBackgroundTransferBase {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetMethod)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn Group(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
@@ -1969,7 +1969,7 @@ impl IBackgroundTransferBase {
             (::windows_core::Interface::vtable(this).Group)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn SetGroup<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -2058,31 +2058,31 @@ unsafe impl ::windows_core::Interface for IBackgroundTransferBase {
 pub struct IBackgroundTransferBase_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub SetRequestHeader: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, headername: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, headervalue: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub ServerCredential: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     ServerCredential: usize,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub SetServerCredential: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, credential: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     SetServerCredential: usize,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub ProxyCredential: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     ProxyCredential: usize,
-    #[cfg(feature = "Security_Credentials")]
+    #[cfg(feature = "winrt-security")]
     pub SetProxyCredential: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, credential: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Security_Credentials"))]
+    #[cfg(not(feature = "winrt-security"))]
     SetProxyCredential: usize,
     pub Method: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetMethod: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub Group: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     Group: usize,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub SetGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     SetGroup: usize,
     pub CostPolicy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut BackgroundTransferCostPolicy) -> ::windows_core::HRESULT,
     pub SetCostPolicy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: BackgroundTransferCostPolicy) -> ::windows_core::HRESULT,
@@ -2098,9 +2098,9 @@ unsafe impl ::windows_core::Interface for IBackgroundTransferCompletionGroup {
 #[doc(hidden)]
 pub struct IBackgroundTransferCompletionGroup_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "ApplicationModel_Background")]
+    #[cfg(feature = "winrt-applicationmodel")]
     pub Trigger: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "ApplicationModel_Background"))]
+    #[cfg(not(feature = "winrt-applicationmodel"))]
     Trigger: usize,
     pub IsEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub Enable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -2116,13 +2116,13 @@ unsafe impl ::windows_core::Interface for IBackgroundTransferCompletionGroupTrig
 #[doc(hidden)]
 pub struct IBackgroundTransferCompletionGroupTriggerDetails_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Downloads: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Downloads: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Uploads: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Uploads: usize,
 }
 #[doc(hidden)]
@@ -2138,9 +2138,9 @@ pub struct IBackgroundTransferContentPart_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub SetHeader: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, headername: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, headervalue: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub SetFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SetFile: usize,
 }
 #[repr(transparent)]
@@ -2246,9 +2246,9 @@ unsafe impl ::windows_core::Interface for IBackgroundTransferErrorStaticMethods 
 #[doc(hidden)]
 pub struct IBackgroundTransferErrorStaticMethods_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Web")]
+    #[cfg(feature = "winrt-web")]
     pub GetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hresult: i32, result__: *mut ::winrt_web::WebErrorStatus) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Web"))]
+    #[cfg(not(feature = "winrt-web"))]
     GetStatus: usize,
 }
 #[doc(hidden)]
@@ -2303,7 +2303,7 @@ impl IBackgroundTransferOperation {
             (::windows_core::Interface::vtable(this).Method)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn Group(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
@@ -2322,7 +2322,7 @@ impl IBackgroundTransferOperation {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCostPolicy)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetResultStreamAt(&self, position: u64) -> ::windows_core::Result<::winrt_storage::Streams::IInputStream> {
         let this = self;
         unsafe {
@@ -2412,15 +2412,15 @@ pub struct IBackgroundTransferOperation_Vtbl {
     pub Guid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub RequestedUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Method: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub Group: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     Group: usize,
     pub CostPolicy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut BackgroundTransferCostPolicy) -> ::windows_core::HRESULT,
     pub SetCostPolicy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: BackgroundTransferCostPolicy) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub GetResultStreamAt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, position: u64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     GetResultStreamAt: usize,
     pub GetResponseInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -2525,9 +2525,9 @@ unsafe impl ::windows_core::Interface for IBackgroundTransferRangesDownloadedEve
 pub struct IBackgroundTransferRangesDownloadedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub WasDownloadRestarted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub AddedRanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     AddedRanges: usize,
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -2542,25 +2542,25 @@ unsafe impl ::windows_core::Interface for IBackgroundUploader {
 #[doc(hidden)]
 pub struct IBackgroundUploader_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateUpload: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, sourcefile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateUpload: usize,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateUploadFromStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, sourcestream: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateUploadFromStreamAsync: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub CreateUploadWithFormDataAndAutoBoundaryAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, parts: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CreateUploadWithFormDataAndAutoBoundaryAsync: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub CreateUploadWithSubTypeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, parts: ::windows_core::RawPtr, subtype: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CreateUploadWithSubTypeAsync: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub CreateUploadWithSubTypeAndBoundaryAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, parts: ::windows_core::RawPtr, subtype: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, boundary: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CreateUploadWithSubTypeAndBoundaryAsync: usize,
 }
 #[doc(hidden)]
@@ -2576,37 +2576,37 @@ pub struct IBackgroundUploader2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub TransferGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetTransferGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub SuccessToastNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Notifications"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SuccessToastNotification: usize,
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub SetSuccessToastNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Notifications"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetSuccessToastNotification: usize,
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub FailureToastNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Notifications"))]
+    #[cfg(not(feature = "winrt-ui"))]
     FailureToastNotification: usize,
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub SetFailureToastNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Notifications"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetFailureToastNotification: usize,
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub SuccessTileNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Notifications"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SuccessTileNotification: usize,
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub SetSuccessTileNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Notifications"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetSuccessTileNotification: usize,
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub FailureTileNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Notifications"))]
+    #[cfg(not(feature = "winrt-ui"))]
     FailureTileNotification: usize,
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub SetFailureTileNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Notifications"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetFailureTileNotification: usize,
 }
 #[doc(hidden)]
@@ -2646,13 +2646,13 @@ unsafe impl ::windows_core::Interface for IBackgroundUploaderStaticMethods {
 #[doc(hidden)]
 pub struct IBackgroundUploaderStaticMethods_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetCurrentUploadsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetCurrentUploadsAsync: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-"))]
     pub GetCurrentUploadsForGroupAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, group: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "deprecated")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-")))]
     GetCurrentUploadsForGroupAsync: usize,
 }
 #[doc(hidden)]
@@ -2666,28 +2666,28 @@ unsafe impl ::windows_core::Interface for IBackgroundUploaderStaticMethods2 {
 #[doc(hidden)]
 pub struct IBackgroundUploaderStaticMethods2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetCurrentUploadsForTransferGroupAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, group: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetCurrentUploadsForTransferGroupAsync: usize,
 }
 #[doc(hidden)]
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct IBackgroundUploaderUserConsent(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for IBackgroundUploaderUserConsent {
     type Vtable = IBackgroundUploaderUserConsent_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x3bb384cb_0760_461d_907f_5138f84d44c1);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IBackgroundUploaderUserConsent_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-"))]
     pub RequestUnconstrainedUploadsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, operations: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "deprecated")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-")))]
     RequestUnconstrainedUploadsAsync: usize,
 }
 #[doc(hidden)]
@@ -2701,9 +2701,9 @@ unsafe impl ::windows_core::Interface for IContentPrefetcher {
 #[doc(hidden)]
 pub struct IContentPrefetcher_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub ContentUris: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     ContentUris: usize,
     pub SetIndirectContentUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub IndirectContentUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -2732,9 +2732,9 @@ unsafe impl ::windows_core::Interface for IDownloadOperation {
 #[doc(hidden)]
 pub struct IDownloadOperation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub ResultFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     ResultFile: usize,
     pub Progress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut BackgroundDownloadProgress) -> ::windows_core::HRESULT,
     pub StartAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -2768,24 +2768,24 @@ pub struct IDownloadOperation3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsRandomAccessRequired: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetIsRandomAccessRequired: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub GetResultRandomAccessStreamReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage_Streams"))]
+    #[cfg(not(feature = "winrt-storage"))]
     GetResultRandomAccessStreamReference: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetDownloadedRanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetDownloadedRanges: usize,
     pub RangesDownloaded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveRangesDownloaded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub SetRequestedUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Web"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-web"))]
     pub RecoverableWebErrorStatuses: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Web")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-web")))]
     RecoverableWebErrorStatuses: usize,
-    #[cfg(feature = "Web")]
+    #[cfg(feature = "winrt-web")]
     pub CurrentWebErrorStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Web"))]
+    #[cfg(not(feature = "winrt-web"))]
     CurrentWebErrorStatus: usize,
 }
 #[doc(hidden)]
@@ -2829,28 +2829,28 @@ pub struct IResponseInformation_Vtbl {
     pub IsResumable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub ActualUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub StatusCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Headers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Headers: usize,
 }
 #[doc(hidden)]
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct IUnconstrainedTransferRequestResult(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for IUnconstrainedTransferRequestResult {
     type Vtable = IUnconstrainedTransferRequestResult_Vtbl;
     const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4c24b81f_d944_4112_a98e_6a69522b7ebb);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IUnconstrainedTransferRequestResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub IsUnconstrained: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     IsUnconstrained: usize,
 }
 #[doc(hidden)]
@@ -2864,9 +2864,9 @@ unsafe impl ::windows_core::Interface for IUploadOperation {
 #[doc(hidden)]
 pub struct IUploadOperation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub SourceFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SourceFile: usize,
     pub Progress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut BackgroundUploadProgress) -> ::windows_core::HRESULT,
     pub StartAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -2936,7 +2936,7 @@ impl ResponseInformation {
             (::windows_core::Interface::vtable(this).StatusCode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Headers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -3017,12 +3017,12 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Res
 }
 unsafe impl ::core::marker::Send for ResponseInformation {}
 unsafe impl ::core::marker::Sync for ResponseInformation {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct UnconstrainedTransferRequestResult(::windows_core::IUnknown);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl UnconstrainedTransferRequestResult {
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn IsUnconstrained(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
@@ -3031,27 +3031,27 @@ impl UnconstrainedTransferRequestResult {
         }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for UnconstrainedTransferRequestResult {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::PartialEq for UnconstrainedTransferRequestResult {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::cmp::Eq for UnconstrainedTransferRequestResult {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::fmt::Debug for UnconstrainedTransferRequestResult {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("UnconstrainedTransferRequestResult").field(&self.0).finish()
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::RuntimeType for UnconstrainedTransferRequestResult {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Networking.BackgroundTransfer.UnconstrainedTransferRequestResult;{4c24b81f-d944-4112-a98e-6a69522b7ebb})");
     type DefaultType = ::core::option::Option<Self>;
@@ -3059,66 +3059,66 @@ unsafe impl ::windows_core::RuntimeType for UnconstrainedTransferRequestResult {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::windows_core::Interface for UnconstrainedTransferRequestResult {
     type Vtable = IUnconstrainedTransferRequestResult_Vtbl;
     const IID: ::windows_core::GUID = <IUnconstrainedTransferRequestResult as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::windows_core::RuntimeName for UnconstrainedTransferRequestResult {
     const NAME: &'static str = "Windows.Networking.BackgroundTransfer.UnconstrainedTransferRequestResult";
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<UnconstrainedTransferRequestResult> for ::windows_core::IUnknown {
     fn from(value: UnconstrainedTransferRequestResult) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&UnconstrainedTransferRequestResult> for ::windows_core::IUnknown {
     fn from(value: &UnconstrainedTransferRequestResult) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for UnconstrainedTransferRequestResult {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a UnconstrainedTransferRequestResult {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<UnconstrainedTransferRequestResult> for ::windows_core::IInspectable {
     fn from(value: UnconstrainedTransferRequestResult) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::convert::From<&UnconstrainedTransferRequestResult> for ::windows_core::IInspectable {
     fn from(value: &UnconstrainedTransferRequestResult) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for UnconstrainedTransferRequestResult {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a UnconstrainedTransferRequestResult {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::core::marker::Send for UnconstrainedTransferRequestResult {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 unsafe impl ::core::marker::Sync for UnconstrainedTransferRequestResult {}
 #[repr(transparent)]
 pub struct UploadOperation(::windows_core::IUnknown);
@@ -3144,7 +3144,7 @@ impl UploadOperation {
             (::windows_core::Interface::vtable(this).Method)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn Group(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferOperation>(self)?;
         unsafe {
@@ -3163,7 +3163,7 @@ impl UploadOperation {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferOperation>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCostPolicy)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Storage_Streams")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GetResultStreamAt(&self, position: u64) -> ::windows_core::Result<::winrt_storage::Streams::IInputStream> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferOperation>(self)?;
         unsafe {
@@ -3189,7 +3189,7 @@ impl UploadOperation {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferOperationPriority>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetPriority)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SourceFile(&self) -> ::windows_core::Result<::winrt_storage::IStorageFile> {
         let this = self;
         unsafe {

@@ -26,9 +26,9 @@ extern "system" {
     pub fn AddPrinterDriverExW(pname: ::windows_core_sys::PCWSTR, level: u32, lpbdriverinfo: *const u8, dwfilecopyflags: u32) -> ::win32_foundation_sys::BOOL;
     pub fn AddPrinterDriverW(pname: ::windows_core_sys::PCWSTR, level: u32, pdriverinfo: *const u8) -> ::win32_foundation_sys::BOOL;
     pub fn AddPrinterW(pname: ::windows_core_sys::PCWSTR, level: u32, pprinter: *const u8) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn AdvancedDocumentPropertiesA(hwnd: ::win32_foundation_sys::HWND, hprinter: ::win32_foundation_sys::HANDLE, pdevicename: ::windows_core_sys::PCSTR, pdevmodeoutput: *mut super::Gdi::DEVMODEA, pdevmodeinput: *const super::Gdi::DEVMODEA) -> i32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn AdvancedDocumentPropertiesW(hwnd: ::win32_foundation_sys::HWND, hprinter: ::win32_foundation_sys::HANDLE, pdevicename: ::windows_core_sys::PCWSTR, pdevmodeoutput: *mut super::Gdi::DEVMODEW, pdevmodeinput: *const super::Gdi::DEVMODEW) -> i32;
     pub fn AppendPrinterNotifyInfoData(pinfodest: *const PRINTER_NOTIFY_INFO, pdatasrc: *const PRINTER_NOTIFY_INFO_DATA, fdwflags: u32) -> ::win32_foundation_sys::BOOL;
     pub fn CallRouterFindFirstPrinterChangeNotification(hprinterrpc: ::win32_foundation_sys::HANDLE, fdwfilterflags: u32, fdwoptions: u32, hnotify: ::win32_foundation_sys::HANDLE, pprinternotifyoptions: *const PRINTER_NOTIFY_OPTIONS) -> u32;
@@ -43,7 +43,7 @@ extern "system" {
     pub fn CorePrinterDriverInstalledA(pszserver: ::windows_core_sys::PCSTR, pszenvironment: ::windows_core_sys::PCSTR, coredriverguid: ::windows_core_sys::GUID, ftdriverdate: ::win32_foundation_sys::FILETIME, dwldriverversion: u64, pbdriverinstalled: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn CorePrinterDriverInstalledW(pszserver: ::windows_core_sys::PCWSTR, pszenvironment: ::windows_core_sys::PCWSTR, coredriverguid: ::windows_core_sys::GUID, ftdriverdate: ::win32_foundation_sys::FILETIME, dwldriverversion: u64, pbdriverinstalled: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn CreatePrintAsyncNotifyChannel(pszname: ::windows_core_sys::PCWSTR, pnotificationtype: *const ::windows_core_sys::GUID, euserfilter: PrintAsyncNotifyUserFilter, econversationstyle: PrintAsyncNotifyConversationStyle, pcallback: IPrintAsyncNotifyCallback, ppiasynchnotification: *mut IPrintAsyncNotifyChannel) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn CreatePrinterIC(hprinter: ::win32_foundation_sys::HANDLE, pdevmode: *const super::Gdi::DEVMODEW) -> ::win32_foundation_sys::HANDLE;
     pub fn DeleteFormA(hprinter: ::win32_foundation_sys::HANDLE, pformname: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
     pub fn DeleteFormW(hprinter: ::win32_foundation_sys::HANDLE, pformname: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
@@ -72,13 +72,13 @@ extern "system" {
     pub fn DeletePrinterIC(hprinteric: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn DeletePrinterKeyA(hprinter: ::win32_foundation_sys::HANDLE, pkeyname: ::windows_core_sys::PCSTR) -> u32;
     pub fn DeletePrinterKeyW(hprinter: ::win32_foundation_sys::HANDLE, pkeyname: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DevQueryPrint(hprinter: ::win32_foundation_sys::HANDLE, pdevmode: *const super::Gdi::DEVMODEA, presid: *mut u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DevQueryPrintEx(pdqpinfo: *mut DEVQUERYPRINT_INFO) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DocumentPropertiesA(hwnd: ::win32_foundation_sys::HWND, hprinter: ::win32_foundation_sys::HANDLE, pdevicename: ::windows_core_sys::PCSTR, pdevmodeoutput: *mut super::Gdi::DEVMODEA, pdevmodeinput: *const super::Gdi::DEVMODEA, fmode: u32) -> i32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DocumentPropertiesW(hwnd: ::win32_foundation_sys::HWND, hprinter: ::win32_foundation_sys::HANDLE, pdevicename: ::windows_core_sys::PCWSTR, pdevmodeoutput: *mut super::Gdi::DEVMODEW, pdevmodeinput: *const super::Gdi::DEVMODEW, fmode: u32) -> i32;
     pub fn EndDocPrinter(hprinter: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn EndPagePrinter(hprinter: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
@@ -105,7 +105,7 @@ extern "system" {
     pub fn EnumPrinterKeyW(hprinter: ::win32_foundation_sys::HANDLE, pkeyname: ::windows_core_sys::PCWSTR, psubkey: ::windows_core_sys::PWSTR, cbsubkey: u32, pcbsubkey: *mut u32) -> u32;
     pub fn EnumPrintersA(flags: u32, name: ::windows_core_sys::PCSTR, level: u32, pprinterenum: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn EnumPrintersW(flags: u32, name: ::windows_core_sys::PCWSTR, level: u32, pprinterenum: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ExtDeviceMode(hwnd: ::win32_foundation_sys::HWND, hinst: ::win32_foundation_sys::HANDLE, pdevmodeoutput: *mut super::Gdi::DEVMODEA, pdevicename: ::windows_core_sys::PCSTR, pport: ::windows_core_sys::PCSTR, pdevmodeinput: *const super::Gdi::DEVMODEA, pprofile: ::windows_core_sys::PCSTR, fmode: u32) -> i32;
     pub fn FindClosePrinterChangeNotification(hchange: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn FindFirstPrinterChangeNotification(hprinter: ::win32_foundation_sys::HANDLE, fdwfilter: u32, fdwoptions: u32, pprinternotifyoptions: *const ::core::ffi::c_void) -> ::win32_foundation_sys::HANDLE;
@@ -117,18 +117,18 @@ extern "system" {
     pub fn GdiDeleteSpoolFileHandle(spoolfilehandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn GdiEndDocEMF(spoolfilehandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn GdiEndPageEMF(spoolfilehandle: ::win32_foundation_sys::HANDLE, dwoptimization: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GdiGetDC(spoolfilehandle: ::win32_foundation_sys::HANDLE) -> super::Gdi::HDC;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GdiGetDevmodeForPage(spoolfilehandle: ::win32_foundation_sys::HANDLE, dwpagenumber: u32, pcurrdm: *mut *mut super::Gdi::DEVMODEW, plastdm: *mut *mut super::Gdi::DEVMODEW) -> ::win32_foundation_sys::BOOL;
     pub fn GdiGetPageCount(spoolfilehandle: ::win32_foundation_sys::HANDLE) -> u32;
     pub fn GdiGetPageHandle(spoolfilehandle: ::win32_foundation_sys::HANDLE, page: u32, pdwpagetype: *mut u32) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GdiGetSpoolFileHandle(pwszprintername: ::windows_core_sys::PCWSTR, pdevmode: *mut super::Gdi::DEVMODEW, pwszdocname: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HANDLE;
     pub fn GdiPlayPageEMF(spoolfilehandle: ::win32_foundation_sys::HANDLE, hemf: ::win32_foundation_sys::HANDLE, prectdocument: *mut ::win32_foundation_sys::RECT, prectborder: *mut ::win32_foundation_sys::RECT, prectclip: *mut ::win32_foundation_sys::RECT) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GdiResetDCEMF(spoolfilehandle: ::win32_foundation_sys::HANDLE, pcurrdm: *mut super::Gdi::DEVMODEW) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Storage_Xps")]
+    #[cfg(feature = "win32-storage-sys")]
     pub fn GdiStartDocEMF(spoolfilehandle: ::win32_foundation_sys::HANDLE, pdocinfo: *mut ::win32_storage_sys::Xps::DOCINFOW) -> ::win32_foundation_sys::BOOL;
     pub fn GdiStartPageEMF(spoolfilehandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn GenerateCopyFilePaths(pszprintername: ::windows_core_sys::PCWSTR, pszdirectory: ::windows_core_sys::PCWSTR, psplclientinfo: *const u8, dwlevel: u32, pszsourcedir: ::windows_core_sys::PWSTR, pcchsourcedirsize: *mut u32, psztargetdir: ::windows_core_sys::PWSTR, pcchtargetdirsize: *mut u32, dwflags: u32) -> u32;
@@ -140,9 +140,9 @@ extern "system" {
     pub fn GetFormA(hprinter: ::win32_foundation_sys::HANDLE, pformname: ::windows_core_sys::PCSTR, level: u32, pform: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn GetFormW(hprinter: ::win32_foundation_sys::HANDLE, pformname: ::windows_core_sys::PCWSTR, level: u32, pform: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn GetJobA(hprinter: ::win32_foundation_sys::HANDLE, jobid: u32, level: u32, pjob: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetJobAttributes(pprintername: ::windows_core_sys::PCWSTR, pdevmode: *const super::Gdi::DEVMODEW, pattributeinfo: *mut ATTRIBUTE_INFO_3) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetJobAttributesEx(pprintername: ::windows_core_sys::PCWSTR, pdevmode: *const super::Gdi::DEVMODEW, dwlevel: u32, pattributeinfo: *mut u8, nsize: u32, dwflags: u32) -> ::win32_foundation_sys::BOOL;
     pub fn GetJobNamedPropertyValue(hprinter: ::win32_foundation_sys::HANDLE, jobid: u32, pszname: ::windows_core_sys::PCWSTR, pvalue: *mut PrintPropertyValue) -> u32;
     pub fn GetJobW(hprinter: ::win32_foundation_sys::HANDLE, jobid: u32, level: u32, pjob: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation_sys::BOOL;
@@ -168,17 +168,17 @@ extern "system" {
     pub fn ImpersonatePrinterClient(htoken: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn InstallPrinterDriverFromPackageA(pszserver: ::windows_core_sys::PCSTR, pszinfpath: ::windows_core_sys::PCSTR, pszdrivername: ::windows_core_sys::PCSTR, pszenvironment: ::windows_core_sys::PCSTR, dwflags: u32) -> ::windows_core_sys::HRESULT;
     pub fn InstallPrinterDriverFromPackageW(pszserver: ::windows_core_sys::PCWSTR, pszinfpath: ::windows_core_sys::PCWSTR, pszdrivername: ::windows_core_sys::PCWSTR, pszenvironment: ::windows_core_sys::PCWSTR, dwflags: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn IsValidDevmodeA(pdevmode: *const super::Gdi::DEVMODEA, devmodesize: usize) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn IsValidDevmodeW(pdevmode: *const super::Gdi::DEVMODEW, devmodesize: usize) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn OpenPrinter2A(pprintername: ::windows_core_sys::PCSTR, phprinter: *mut ::win32_foundation_sys::HANDLE, pdefault: *const PRINTER_DEFAULTSA, poptions: *const PRINTER_OPTIONSA) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn OpenPrinter2W(pprintername: ::windows_core_sys::PCWSTR, phprinter: *mut ::win32_foundation_sys::HANDLE, pdefault: *const PRINTER_DEFAULTSW, poptions: *const PRINTER_OPTIONSW) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn OpenPrinterA(pprintername: ::windows_core_sys::PCSTR, phprinter: *mut ::win32_foundation_sys::HANDLE, pdefault: *const PRINTER_DEFAULTSA) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn OpenPrinterW(pprintername: ::windows_core_sys::PCWSTR, phprinter: *mut ::win32_foundation_sys::HANDLE, pdefault: *const PRINTER_DEFAULTSW) -> ::win32_foundation_sys::BOOL;
     pub fn PartialReplyPrinterChangeNotification(hprinter: ::win32_foundation_sys::HANDLE, pdatasrc: *const PRINTER_NOTIFY_INFO_DATA) -> ::win32_foundation_sys::BOOL;
     pub fn PlayGdiScriptOnPrinterIC(hprinteric: ::win32_foundation_sys::HANDLE, pin: *const u8, cin: u32, pout: *mut u8, cout: u32, ul: u32) -> ::win32_foundation_sys::BOOL;
@@ -193,9 +193,9 @@ extern "system" {
     pub fn ReplyPrinterChangeNotification(hprinter: ::win32_foundation_sys::HANDLE, fdwchangeflags: u32, pdwresult: *mut u32, pprinternotifyinfo: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn ReplyPrinterChangeNotificationEx(hnotify: ::win32_foundation_sys::HANDLE, dwcolor: u32, fdwflags: u32, pdwresult: *mut u32, pprinternotifyinfo: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn ReportJobProcessingProgress(printerhandle: ::win32_foundation_sys::HANDLE, jobid: u32, joboperation: EPrintXPSJobOperation, jobprogress: EPrintXPSJobProgress) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ResetPrinterA(hprinter: ::win32_foundation_sys::HANDLE, pdefault: *const PRINTER_DEFAULTSA) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ResetPrinterW(hprinter: ::win32_foundation_sys::HANDLE, pdefault: *const PRINTER_DEFAULTSW) -> ::win32_foundation_sys::BOOL;
     pub fn RevertToPrinterSelf() -> ::win32_foundation_sys::HANDLE;
     pub fn RouterAllocBidiMem(numbytes: usize) -> *mut ::core::ffi::c_void;
@@ -600,7 +600,7 @@ pub const CLSID_PTPROVIDER: ::windows_core_sys::GUID = ::windows_core_sys::GUID 
 pub const CLSID_XPSRASTERIZER_FACTORY: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1346271679, data2: 7433, data3: 18276, data4: [157, 114, 30, 176, 198, 89, 103, 198] };
 pub const COLOR_OPTIMIZATION: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct COMPROPSHEETUI {
     pub cbSize: u16,
     pub Flags: u16,
@@ -619,9 +619,9 @@ pub struct COMPROPSHEETUI {
     pub OptItemVersion: u16,
     pub dwReserved: [usize; 4],
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for COMPROPSHEETUI {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for COMPROPSHEETUI {
     fn clone(&self) -> Self {
         *self
@@ -705,7 +705,7 @@ pub const CPSFUNC_SET_PSUIPAGE_TITLEA: u32 = 18u32;
 pub const CPSFUNC_SET_PSUIPAGE_TITLEW: u32 = 19u32;
 pub const CPSFUNC_SET_RESULT: u32 = 9u32;
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct CPSUICBPARAM {
     pub cbSize: u16,
     pub Reason: u16,
@@ -718,23 +718,23 @@ pub struct CPSUICBPARAM {
     pub UserData: usize,
     pub Result: usize,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for CPSUICBPARAM {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for CPSUICBPARAM {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub union CPSUICBPARAM_0 {
     pub OldSel: i32,
     pub pOldSel: *mut i8,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for CPSUICBPARAM_0 {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for CPSUICBPARAM_0 {
     fn clone(&self) -> Self {
         *self
@@ -855,7 +855,7 @@ impl ::core::clone::Clone for DEVICEPROPERTYHEADER {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct DEVQUERYPRINT_INFO {
     pub cbSize: u16,
     pub Level: u16,
@@ -865,9 +865,9 @@ pub struct DEVQUERYPRINT_INFO {
     pub cchErrorStr: u32,
     pub cchNeeded: u32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for DEVQUERYPRINT_INFO {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for DEVQUERYPRINT_INFO {
     fn clone(&self) -> Self {
         *self
@@ -1023,7 +1023,7 @@ pub const DI_CHANNEL: u32 = 1u32;
 pub const DI_MEMORYMAP_WRITE: u32 = 1u32;
 pub const DI_READ_SPOOL_JOB: u32 = 3u32;
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct DLGPAGE {
     pub cbSize: u16,
     pub Flags: u16,
@@ -1032,23 +1032,23 @@ pub struct DLGPAGE {
     pub IconID: usize,
     pub Anonymous: DLGPAGE_0,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for DLGPAGE {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for DLGPAGE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub union DLGPAGE_0 {
     pub DlgTemplateID: u16,
     pub hDlgTemplate: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for DLGPAGE_0 {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for DLGPAGE_0 {
     fn clone(&self) -> Self {
         *self
@@ -1089,16 +1089,16 @@ pub const DM_PROMPT_NON_MODAL: u32 = 1073741824u32;
 pub const DM_RESERVED: u32 = 2147483648u32;
 pub const DM_USER_DEFAULT: u32 = 64u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct DOCEVENT_CREATEDCPRE {
     pub pszDriver: ::windows_core_sys::PWSTR,
     pub pszDevice: ::windows_core_sys::PWSTR,
     pub pdm: *mut super::Gdi::DEVMODEW,
     pub bIC: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for DOCEVENT_CREATEDCPRE {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for DOCEVENT_CREATEDCPRE {
     fn clone(&self) -> Self {
         *self
@@ -1166,7 +1166,7 @@ pub const DOCUMENTEVENT_XPS_ADDFIXEDPAGEPRINTTICKETPOST: u32 = 10u32;
 pub const DOCUMENTEVENT_XPS_ADDFIXEDPAGEPRINTTICKETPRE: u32 = 9u32;
 pub const DOCUMENTEVENT_XPS_CANCELJOB: u32 = 6u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct DOCUMENTPROPERTYHEADER {
     pub cbSize: u16,
     pub Reserved: u16,
@@ -1177,9 +1177,9 @@ pub struct DOCUMENTPROPERTYHEADER {
     pub cbOut: u32,
     pub fMode: u32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for DOCUMENTPROPERTYHEADER {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for DOCUMENTPROPERTYHEADER {
     fn clone(&self) -> Self {
         *self
@@ -1627,7 +1627,7 @@ pub const ECBF_OVERLAY_ECBICON_IF_CHECKED: u32 = 16u32;
 pub const ECBF_OVERLAY_NO_ICON: u32 = 64u32;
 pub const ECBF_OVERLAY_STOP_ICON: u32 = 32u32;
 pub const ECBF_OVERLAY_WARNING_ICON: u32 = 8u32;
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub type EMFPLAYPROC = ::core::option::Option<unsafe extern "system" fn(param0: super::Gdi::HDC, param1: i32, param2: ::win32_foundation_sys::HANDLE) -> i32>;
 pub const EMF_PP_COLOR_OPTIMIZATION: u32 = 1u32;
 pub const EPF_ICONID_AS_HICON: u32 = 8u32;
@@ -1747,7 +1747,7 @@ impl ::core::clone::Clone for EXTCHKBOX {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct EXTPUSH {
     pub cbSize: u16,
     pub Flags: u16,
@@ -1757,37 +1757,37 @@ pub struct EXTPUSH {
     pub Anonymous2: EXTPUSH_1,
     pub dwReserved: [usize; 3],
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for EXTPUSH {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for EXTPUSH {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub union EXTPUSH_0 {
     pub DlgProc: ::win32_ui_sys::WindowsAndMessaging::DLGPROC,
     pub pfnCallBack: ::win32_foundation_sys::FARPROC,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for EXTPUSH_0 {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for EXTPUSH_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub union EXTPUSH_1 {
     pub DlgTemplateID: u16,
     pub hDlgTemplate: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for EXTPUSH_1 {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for EXTPUSH_1 {
     fn clone(&self) -> Self {
         *self
@@ -2462,7 +2462,7 @@ impl ::core::clone::Clone for JOB_INFO_1W {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys"))]
 pub struct JOB_INFO_2A {
     pub JobId: u32,
     pub pPrinterName: ::windows_core_sys::PSTR,
@@ -2488,16 +2488,16 @@ pub struct JOB_INFO_2A {
     pub Time: u32,
     pub PagesPrinted: u32,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys"))]
 impl ::core::marker::Copy for JOB_INFO_2A {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys"))]
 impl ::core::clone::Clone for JOB_INFO_2A {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys"))]
 pub struct JOB_INFO_2W {
     pub JobId: u32,
     pub pPrinterName: ::windows_core_sys::PWSTR,
@@ -2523,9 +2523,9 @@ pub struct JOB_INFO_2W {
     pub Time: u32,
     pub PagesPrinted: u32,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys"))]
 impl ::core::marker::Copy for JOB_INFO_2W {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys"))]
 impl ::core::clone::Clone for JOB_INFO_2W {
     fn clone(&self) -> Self {
         *self
@@ -2544,7 +2544,7 @@ impl ::core::clone::Clone for JOB_INFO_3 {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys"))]
 pub struct JOB_INFO_4A {
     pub JobId: u32,
     pub pPrinterName: ::windows_core_sys::PSTR,
@@ -2571,16 +2571,16 @@ pub struct JOB_INFO_4A {
     pub PagesPrinted: u32,
     pub SizeHigh: i32,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys"))]
 impl ::core::marker::Copy for JOB_INFO_4A {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys"))]
 impl ::core::clone::Clone for JOB_INFO_4A {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys"))]
 pub struct JOB_INFO_4W {
     pub JobId: u32,
     pub pPrinterName: ::windows_core_sys::PWSTR,
@@ -2607,9 +2607,9 @@ pub struct JOB_INFO_4W {
     pub PagesPrinted: u32,
     pub SizeHigh: i32,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys"))]
 impl ::core::marker::Copy for JOB_INFO_4W {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys"))]
 impl ::core::clone::Clone for JOB_INFO_4W {
     fn clone(&self) -> Self {
         *self
@@ -2658,15 +2658,15 @@ pub const JOB_STATUS_RETAINED: u32 = 8192u32;
 pub const JOB_STATUS_SPOOLING: u32 = 8u32;
 pub const JOB_STATUS_USER_INTERVENTION: u32 = 1024u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Devices_Display")]
+#[cfg(feature = "win32-devices-sys")]
 pub struct KERNDATA {
     pub dwSize: u32,
     pub dwKernPairNum: u32,
     pub KernPair: [::win32_devices_sys::Display::FD_KERNINGPAIR; 1],
 }
-#[cfg(feature = "Win32_Devices_Display")]
+#[cfg(feature = "win32-devices-sys")]
 impl ::core::marker::Copy for KERNDATA {}
-#[cfg(feature = "Win32_Devices_Display")]
+#[cfg(feature = "win32-devices-sys")]
 impl ::core::clone::Clone for KERNDATA {
     fn clone(&self) -> Self {
         *self
@@ -2786,7 +2786,7 @@ impl ::core::clone::Clone for MONITOREX {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 pub struct MONITORINIT {
     pub cbSize: u32,
     pub hSpooler: ::win32_foundation_sys::HANDLE,
@@ -2795,9 +2795,9 @@ pub struct MONITORINIT {
     pub bLocal: ::win32_foundation_sys::BOOL,
     pub pszServerName: ::windows_core_sys::PCWSTR,
 }
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for MONITORINIT {}
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for MONITORINIT {
     fn clone(&self) -> Self {
         *self
@@ -3045,10 +3045,10 @@ pub const NOTIFICATION_RELEASE: ::windows_core_sys::GUID = ::windows_core_sys::G
 pub const NO_BORDER_PRINT: u32 = 1u32;
 pub const NO_COLOR_OPTIMIZATION: u32 = 0u32;
 pub const NO_PRIORITY: u32 = 0u32;
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub type OEMCUIPCALLBACK = ::core::option::Option<unsafe extern "system" fn(param0: *mut CPSUICBPARAM, param1: *mut OEMCUIPPARAM) -> i32>;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 pub struct OEMCUIPPARAM {
     pub cbSize: u32,
     pub poemuiobj: *mut OEMUIOBJ,
@@ -3066,9 +3066,9 @@ pub struct OEMCUIPPARAM {
     pub pOEMUserData: *mut ::core::ffi::c_void,
     pub OEMCUIPCallback: OEMCUIPCALLBACK,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for OEMCUIPPARAM {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for OEMCUIPPARAM {
     fn clone(&self) -> Self {
         *self
@@ -3077,7 +3077,7 @@ impl ::core::clone::Clone for OEMCUIPPARAM {
 pub const OEMCUIP_DOCPROP: u32 = 1u32;
 pub const OEMCUIP_PRNPROP: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct OEMDMPARAM {
     pub cbSize: u32,
     pub pdriverobj: *mut ::core::ffi::c_void,
@@ -3089,9 +3089,9 @@ pub struct OEMDMPARAM {
     pub pOEMDMOut: *mut ::core::ffi::c_void,
     pub cbBufSize: u32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for OEMDMPARAM {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for OEMDMPARAM {
     fn clone(&self) -> Self {
         *self
@@ -3168,7 +3168,7 @@ impl ::core::clone::Clone for OEMUIPROCS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct OEMUIPSPARAM {
     pub cbSize: u32,
     pub poemuiobj: *mut OEMUIOBJ,
@@ -3182,9 +3182,9 @@ pub struct OEMUIPSPARAM {
     pub dwFlags: u32,
     pub pOemEntry: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for OEMUIPSPARAM {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for OEMUIPSPARAM {
     fn clone(&self) -> Self {
         *self
@@ -3254,7 +3254,7 @@ pub const OPTIF_OVERLAY_STOP_ICON: i32 = 8192i32;
 pub const OPTIF_OVERLAY_WARNING_ICON: i32 = 4096i32;
 pub const OPTIF_SEL_AS_HICON: i32 = 512i32;
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct OPTITEM {
     pub cbSize: u16,
     pub Level: u8,
@@ -3272,37 +3272,37 @@ pub struct OPTITEM {
     pub pOIExt: *mut OIEXT,
     pub dwReserved: [usize; 3],
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for OPTITEM {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for OPTITEM {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub union OPTITEM_0 {
     pub Sel: i32,
     pub pSel: *mut i8,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for OPTITEM_0 {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for OPTITEM_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub union OPTITEM_1 {
     pub pExtChkBox: *mut EXTCHKBOX,
     pub pExtPush: *mut EXTPUSH,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for OPTITEM_1 {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for OPTITEM_1 {
     fn clone(&self) -> Self {
         *self
@@ -3627,30 +3627,30 @@ pub const PRINTER_CONTROL_PURGE: u32 = 3u32;
 pub const PRINTER_CONTROL_RESUME: u32 = 2u32;
 pub const PRINTER_CONTROL_SET_STATUS: u32 = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct PRINTER_DEFAULTSA {
     pub pDatatype: ::windows_core_sys::PSTR,
     pub pDevMode: *mut super::Gdi::DEVMODEA,
     pub DesiredAccess: PRINTER_ACCESS_RIGHTS,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for PRINTER_DEFAULTSA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for PRINTER_DEFAULTSA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct PRINTER_DEFAULTSW {
     pub pDatatype: ::windows_core_sys::PWSTR,
     pub pDevMode: *mut super::Gdi::DEVMODEW,
     pub DesiredAccess: PRINTER_ACCESS_RIGHTS,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for PRINTER_DEFAULTSW {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for PRINTER_DEFAULTSW {
     fn clone(&self) -> Self {
         *self
@@ -3780,7 +3780,7 @@ impl ::core::clone::Clone for PRINTER_INFO_1W {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys"))]
 pub struct PRINTER_INFO_2A {
     pub pServerName: ::windows_core_sys::PSTR,
     pub pPrinterName: ::windows_core_sys::PSTR,
@@ -3804,16 +3804,16 @@ pub struct PRINTER_INFO_2A {
     pub cJobs: u32,
     pub AveragePPM: u32,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys"))]
 impl ::core::marker::Copy for PRINTER_INFO_2A {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys"))]
 impl ::core::clone::Clone for PRINTER_INFO_2A {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys"))]
 pub struct PRINTER_INFO_2W {
     pub pServerName: ::windows_core_sys::PWSTR,
     pub pPrinterName: ::windows_core_sys::PWSTR,
@@ -3837,22 +3837,22 @@ pub struct PRINTER_INFO_2W {
     pub cJobs: u32,
     pub AveragePPM: u32,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys"))]
 impl ::core::marker::Copy for PRINTER_INFO_2W {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys"))]
 impl ::core::clone::Clone for PRINTER_INFO_2W {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct PRINTER_INFO_3 {
     pub pSecurityDescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for PRINTER_INFO_3 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for PRINTER_INFO_3 {
     fn clone(&self) -> Self {
         *self
@@ -3943,52 +3943,52 @@ impl ::core::clone::Clone for PRINTER_INFO_7W {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct PRINTER_INFO_8A {
     pub pDevMode: *mut super::Gdi::DEVMODEA,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for PRINTER_INFO_8A {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for PRINTER_INFO_8A {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct PRINTER_INFO_8W {
     pub pDevMode: *mut super::Gdi::DEVMODEW,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for PRINTER_INFO_8W {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for PRINTER_INFO_8W {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct PRINTER_INFO_9A {
     pub pDevMode: *mut super::Gdi::DEVMODEA,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for PRINTER_INFO_9A {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for PRINTER_INFO_9A {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct PRINTER_INFO_9W {
     pub pDevMode: *mut super::Gdi::DEVMODEW,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for PRINTER_INFO_9W {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for PRINTER_INFO_9W {
     fn clone(&self) -> Self {
         *self
@@ -4177,7 +4177,7 @@ pub const PRINTER_STATUS_USER_INTERVENTION: u32 = 1048576u32;
 pub const PRINTER_STATUS_WAITING: u32 = 8192u32;
 pub const PRINTER_STATUS_WARMING_UP: u32 = 65536u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct PRINTIFI32 {
     pub cjThis: u32,
     pub cjIfiExtra: u32,
@@ -4239,16 +4239,16 @@ pub struct PRINTIFI32 {
     pub ulPanoseCulture: u32,
     pub panose: super::Gdi::PANOSE,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for PRINTIFI32 {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for PRINTIFI32 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct PRINTPROCESSOROPENDATA {
     pub pDevMode: *mut super::Gdi::DEVMODEA,
     pub pDatatype: ::windows_core_sys::PWSTR,
@@ -4258,9 +4258,9 @@ pub struct PRINTPROCESSOROPENDATA {
     pub pOutputFile: ::windows_core_sys::PWSTR,
     pub pPrinterName: ::windows_core_sys::PWSTR,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for PRINTPROCESSOROPENDATA {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for PRINTPROCESSOROPENDATA {
     fn clone(&self) -> Self {
         *self
@@ -4463,7 +4463,7 @@ impl ::core::clone::Clone for PRINT_FEATURE_OPTION {
 }
 pub const PRINT_PORT_MONITOR_NOTIFY_CHANNEL: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 635386638, data2: 29865, data3: 18421, data4: [128, 206, 121, 180, 177, 235, 92, 88] };
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct PROPSHEETUI_GETICON_INFO {
     pub cbSize: u16,
     pub Flags: u16,
@@ -4471,9 +4471,9 @@ pub struct PROPSHEETUI_GETICON_INFO {
     pub cyIcon: u16,
     pub hIcon: ::win32_ui_sys::WindowsAndMessaging::HICON,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for PROPSHEETUI_GETICON_INFO {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for PROPSHEETUI_GETICON_INFO {
     fn clone(&self) -> Self {
         *self
@@ -4498,7 +4498,7 @@ impl ::core::clone::Clone for PROPSHEETUI_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct PROPSHEETUI_INFO_HEADER {
     pub cbSize: u16,
     pub Flags: u16,
@@ -4507,23 +4507,23 @@ pub struct PROPSHEETUI_INFO_HEADER {
     pub hInst: ::win32_foundation_sys::HINSTANCE,
     pub Anonymous: PROPSHEETUI_INFO_HEADER_0,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for PROPSHEETUI_INFO_HEADER {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for PROPSHEETUI_INFO_HEADER {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub union PROPSHEETUI_INFO_HEADER_0 {
     pub hIcon: ::win32_ui_sys::WindowsAndMessaging::HICON,
     pub IconID: usize,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for PROPSHEETUI_INFO_HEADER_0 {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for PROPSHEETUI_INFO_HEADER_0 {
     fn clone(&self) -> Self {
         *self
@@ -5211,7 +5211,7 @@ pub const XPS_FP_QUEUE_PROPERTY_BAG: &str = "QueuePropertyBag";
 pub const XPS_FP_RESOURCE_DLL_PATHS: &str = "ResourceDLLPaths";
 pub const XPS_FP_USER_PRINT_TICKET: &str = "PerUserPrintTicket";
 pub const XPS_FP_USER_TOKEN: &str = "UserSecurityToken";
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub type _CPSUICALLBACK = ::core::option::Option<unsafe extern "system" fn(pcpsuicbparam: *mut CPSUICBPARAM) -> i32>;
 #[repr(C)]
 pub struct _SPLCLIENT_INFO_2_V1 {

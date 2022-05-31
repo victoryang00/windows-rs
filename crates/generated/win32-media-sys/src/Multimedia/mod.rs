@@ -35,7 +35,7 @@ extern "system" {
     pub fn AVIStreamFindSample(pavi: IAVIStream, lpos: i32, lflags: i32) -> i32;
     pub fn AVIStreamGetFrame(pg: IGetFrame, lpos: i32) -> *mut ::core::ffi::c_void;
     pub fn AVIStreamGetFrameClose(pg: IGetFrame) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn AVIStreamGetFrameOpen(pavi: IAVIStream, lpbiwanted: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER) -> IGetFrame;
     pub fn AVIStreamInfoA(pavi: IAVIStream, psi: *mut AVISTREAMINFOA, lsize: i32) -> ::windows_core_sys::HRESULT;
     pub fn AVIStreamInfoW(pavi: IAVIStream, psi: *mut AVISTREAMINFOW, lsize: i32) -> ::windows_core_sys::HRESULT;
@@ -55,24 +55,24 @@ extern "system" {
     pub fn CloseDriver(hdriver: HDRVR, lparam1: ::win32_foundation_sys::LPARAM, lparam2: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::LRESULT;
     pub fn CreateEditableStream(ppseditable: *mut IAVIStream, pssource: IAVIStream) -> ::windows_core_sys::HRESULT;
     pub fn DefDriverProc(dwdriveridentifier: usize, hdrvr: HDRVR, umsg: u32, lparam1: ::win32_foundation_sys::LPARAM, lparam2: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::LRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DrawDibBegin(hdd: isize, hdc: ::win32_graphics_sys::Gdi::HDC, dxdst: i32, dydst: i32, lpbi: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, dxsrc: i32, dysrc: i32, wflags: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DrawDibChangePalette(hdd: isize, istart: i32, ilen: i32, lppe: *const ::win32_graphics_sys::Gdi::PALETTEENTRY) -> ::win32_foundation_sys::BOOL;
     pub fn DrawDibClose(hdd: isize) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DrawDibDraw(hdd: isize, hdc: ::win32_graphics_sys::Gdi::HDC, xdst: i32, ydst: i32, dxdst: i32, dydst: i32, lpbi: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, lpbits: *const ::core::ffi::c_void, xsrc: i32, ysrc: i32, dxsrc: i32, dysrc: i32, wflags: u32) -> ::win32_foundation_sys::BOOL;
     pub fn DrawDibEnd(hdd: isize) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DrawDibGetBuffer(hdd: isize, lpbi: *mut ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, dwsize: u32, dwflags: u32) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DrawDibGetPalette(hdd: isize) -> ::win32_graphics_sys::Gdi::HPALETTE;
     pub fn DrawDibOpen() -> isize;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DrawDibProfileDisplay(lpbi: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER) -> ::win32_foundation_sys::LRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DrawDibRealize(hdd: isize, hdc: ::win32_graphics_sys::Gdi::HDC, fbackground: ::win32_foundation_sys::BOOL) -> u32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DrawDibSetPalette(hdd: isize, hpal: ::win32_graphics_sys::Gdi::HPALETTE) -> ::win32_foundation_sys::BOOL;
     pub fn DrawDibStart(hdd: isize, rate: u32) -> ::win32_foundation_sys::BOOL;
     pub fn DrawDibStop(hdd: isize) -> ::win32_foundation_sys::BOOL;
@@ -88,46 +88,46 @@ extern "system" {
     pub fn EditStreamSetNameA(pavi: IAVIStream, lpszname: ::windows_core_sys::PCSTR) -> ::windows_core_sys::HRESULT;
     pub fn EditStreamSetNameW(pavi: IAVIStream, lpszname: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn GetDriverModuleHandle(hdriver: HDRVR) -> ::win32_foundation_sys::HINSTANCE;
-    #[cfg(feature = "Win32_UI_Controls_Dialogs")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn GetOpenFileNamePreviewA(lpofn: *mut ::win32_ui_sys::Controls::Dialogs::OPENFILENAMEA) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_Controls_Dialogs")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn GetOpenFileNamePreviewW(lpofn: *mut ::win32_ui_sys::Controls::Dialogs::OPENFILENAMEW) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_Controls_Dialogs")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn GetSaveFileNamePreviewA(lpofn: *mut ::win32_ui_sys::Controls::Dialogs::OPENFILENAMEA) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_UI_Controls_Dialogs")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn GetSaveFileNamePreviewW(lpofn: *mut ::win32_ui_sys::Controls::Dialogs::OPENFILENAMEW) -> ::win32_foundation_sys::BOOL;
     pub fn ICClose(hic: HIC) -> ::win32_foundation_sys::LRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ICCompress(hic: HIC, dwflags: u32, lpbioutput: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, lpdata: *mut ::core::ffi::c_void, lpbiinput: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, lpbits: *const ::core::ffi::c_void, lpckid: *mut u32, lpdwflags: *mut u32, lframenum: i32, dwframesize: u32, dwquality: u32, lpbiprev: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, lpprev: *const ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ICCompressorChoose(hwnd: ::win32_foundation_sys::HWND, uiflags: u32, pvin: *const ::core::ffi::c_void, lpdata: *const ::core::ffi::c_void, pc: *mut COMPVARS, lpsztitle: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ICCompressorFree(pc: *const COMPVARS);
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ICDecompress(hic: HIC, dwflags: u32, lpbiformat: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, lpdata: *const ::core::ffi::c_void, lpbi: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, lpbits: *mut ::core::ffi::c_void) -> u32;
     pub fn ICDraw(hic: HIC, dwflags: u32, lpformat: *const ::core::ffi::c_void, lpdata: *const ::core::ffi::c_void, cbdata: u32, ltime: i32) -> u32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ICDrawBegin(hic: HIC, dwflags: u32, hpal: ::win32_graphics_sys::Gdi::HPALETTE, hwnd: ::win32_foundation_sys::HWND, hdc: ::win32_graphics_sys::Gdi::HDC, xdst: i32, ydst: i32, dxdst: i32, dydst: i32, lpbi: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, xsrc: i32, ysrc: i32, dxsrc: i32, dysrc: i32, dwrate: u32, dwscale: u32) -> u32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ICGetDisplayFormat(hic: HIC, lpbiin: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, lpbiout: *mut ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, bitdepth: i32, dx: i32, dy: i32) -> HIC;
     pub fn ICGetInfo(hic: HIC, picinfo: *mut ICINFO, cb: u32) -> ::win32_foundation_sys::LRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ICImageCompress(hic: HIC, uiflags: u32, lpbiin: *const ::win32_graphics_sys::Gdi::BITMAPINFO, lpbits: *const ::core::ffi::c_void, lpbiout: *const ::win32_graphics_sys::Gdi::BITMAPINFO, lquality: i32, plsize: *mut i32) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ICImageDecompress(hic: HIC, uiflags: u32, lpbiin: *const ::win32_graphics_sys::Gdi::BITMAPINFO, lpbits: *const ::core::ffi::c_void, lpbiout: *const ::win32_graphics_sys::Gdi::BITMAPINFO) -> ::win32_foundation_sys::HANDLE;
     pub fn ICInfo(fcctype: u32, fcchandler: u32, lpicinfo: *mut ICINFO) -> ::win32_foundation_sys::BOOL;
     pub fn ICInstall(fcctype: u32, fcchandler: u32, lparam: ::win32_foundation_sys::LPARAM, szdesc: ::windows_core_sys::PCSTR, wflags: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ICLocate(fcctype: u32, fcchandler: u32, lpbiin: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, lpbiout: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, wflags: u16) -> HIC;
     pub fn ICOpen(fcctype: u32, fcchandler: u32, wmode: u32) -> HIC;
     pub fn ICOpenFunction(fcctype: u32, fcchandler: u32, wmode: u32, lpfnhandler: ::win32_foundation_sys::FARPROC) -> HIC;
     pub fn ICRemove(fcctype: u32, fcchandler: u32, wflags: u32) -> ::win32_foundation_sys::BOOL;
     pub fn ICSendMessage(hic: HIC, msg: u32, dw1: usize, dw2: usize) -> ::win32_foundation_sys::LRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ICSeqCompressFrame(pc: *const COMPVARS, uiflags: u32, lpbits: *const ::core::ffi::c_void, pfkey: *mut ::win32_foundation_sys::BOOL, plsize: *mut i32) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ICSeqCompressFrameEnd(pc: *const COMPVARS);
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ICSeqCompressFrameStart(pc: *const COMPVARS, lpbiin: *const ::win32_graphics_sys::Gdi::BITMAPINFO) -> ::win32_foundation_sys::BOOL;
     pub fn MCIWndCreateA(hwndparent: ::win32_foundation_sys::HWND, hinstance: ::win32_foundation_sys::HINSTANCE, dwstyle: u32, szfile: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::HWND;
     pub fn MCIWndCreateW(hwndparent: ::win32_foundation_sys::HWND, hinstance: ::win32_foundation_sys::HINSTANCE, dwstyle: u32, szfile: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HWND;
@@ -221,69 +221,69 @@ impl ::core::clone::Clone for ADPCMCOEFSET {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct ADPCMEWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wSamplesPerBlock: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for ADPCMEWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for ADPCMEWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct ADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wSamplesPerBlock: u16,
     pub wNumCoef: u16,
     pub aCoef: [ADPCMCOEFSET; 1],
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for ADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for ADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct APTXWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for APTXWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for APTXWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct AUDIOFILE_AF10WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for AUDIOFILE_AF10WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for AUDIOFILE_AF10WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct AUDIOFILE_AF36WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for AUDIOFILE_AF36WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for AUDIOFILE_AF36WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
@@ -474,7 +474,7 @@ impl ::core::clone::Clone for CAPINFOCHUNK {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct CAPSTATUS {
     pub uiImageWidth: u32,
     pub uiImageHeight: u32,
@@ -495,9 +495,9 @@ pub struct CAPSTATUS {
     pub wNumVideoAllocated: u32,
     pub wNumAudioAllocated: u32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for CAPSTATUS {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for CAPSTATUS {
     fn clone(&self) -> Self {
         *self
@@ -539,7 +539,7 @@ impl ::core::clone::Clone for CAPTUREPARMS {
     }
 }
 pub type CAPVIDEOCALLBACK = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation_sys::HWND, lpvhdr: *const VIDEOHDR) -> ::win32_foundation_sys::LRESULT>;
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub type CAPWAVECALLBACK = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation_sys::HWND, lpwhdr: *const super::Audio::WAVEHDR) -> ::win32_foundation_sys::LRESULT>;
 pub type CAPYIELDCALLBACK = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::LRESULT>;
 #[repr(C)]
@@ -563,7 +563,7 @@ impl ::core::clone::Clone for CHANNEL_CAPS {
 pub const CLSID_AVIFile: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 131072, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 pub const CLSID_AVISimpleUnMarshal: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 131081, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct COMPVARS {
     pub cbSize: i32,
     pub dwFlags: u32,
@@ -582,37 +582,37 @@ pub struct COMPVARS {
     pub lpState: *mut ::core::ffi::c_void,
     pub cbState: i32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for COMPVARS {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for COMPVARS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct CONTRESCR10WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wSamplesPerBlock: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for CONTRESCR10WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for CONTRESCR10WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct CONTRESVQLPCWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wSamplesPerBlock: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for CONTRESVQLPCWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for CONTRESVQLPCWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
@@ -621,42 +621,42 @@ impl ::core::clone::Clone for CONTRESVQLPCWAVEFORMAT {
 pub const CONTROLCALLBACK_CAPTURING: u32 = 2u32;
 pub const CONTROLCALLBACK_PREROLL: u32 = 1u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct CREATIVEADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wRevision: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for CREATIVEADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for CREATIVEADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct CREATIVEFASTSPEECH10WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wRevision: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for CREATIVEFASTSPEECH10WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for CREATIVEFASTSPEECH10WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct CREATIVEFASTSPEECH8WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wRevision: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for CREATIVEFASTSPEECH8WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for CREATIVEFASTSPEECH8WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
@@ -664,13 +664,13 @@ impl ::core::clone::Clone for CREATIVEFASTSPEECH8WAVEFORMAT {
 }
 pub const CRYSTAL_NET_SFM_CODEC: u32 = 1u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct CSIMAADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for CSIMAADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for CSIMAADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
@@ -701,67 +701,67 @@ pub const DDF_SAME_HDC: u32 = 4u32;
 pub const DDF_SAME_SIZE: u32 = 8u32;
 pub const DDF_UPDATE: u32 = 2u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct DIALOGICOKIADPCMWAVEFORMAT {
     pub ewf: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for DIALOGICOKIADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for DIALOGICOKIADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct DIGIADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wSamplesPerBlock: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for DIGIADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for DIGIADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct DIGIFIXWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for DIGIFIXWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for DIGIFIXWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct DIGIREALWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wSamplesPerBlock: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for DIGIREALWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for DIGIREALWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct DIGISTDWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for DIGISTDWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for DIGISTDWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
@@ -770,14 +770,14 @@ impl ::core::clone::Clone for DIGISTDWAVEFORMAT {
 pub const DLG_ACMFILTERCHOOSE_ID: u32 = 71u32;
 pub const DLG_ACMFORMATCHOOSE_ID: u32 = 70u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct DOLBYAC2WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub nAuxBitsCode: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for DOLBYAC2WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for DOLBYAC2WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
@@ -803,16 +803,16 @@ pub type DRIVERMSGPROC = ::core::option::Option<unsafe extern "system" fn(param0
 pub type DRIVERPROC = ::core::option::Option<unsafe extern "system" fn(param0: usize, param1: HDRVR, param2: u32, param3: ::win32_foundation_sys::LPARAM, param4: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::LRESULT>;
 pub const DRIVERS_SECTION: &str = "DRIVERS32";
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct DRMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wReserved: u16,
     pub ulContentId: u32,
     pub wfxSecure: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for DRMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for DRMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
@@ -904,14 +904,14 @@ pub const DRV_RESERVED: u32 = 2048u32;
 pub const DRV_RESTART: u32 = 2u32;
 pub const DRV_USER: u32 = 16384u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct DVIADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wSamplesPerBlock: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for DVIADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for DVIADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
@@ -962,27 +962,27 @@ pub const DV_VM_DATA: u32 = 978u32;
 pub const DV_VM_ERROR: u32 = 979u32;
 pub const DV_VM_OPEN: u32 = 976u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct ECHOSC1WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for ECHOSC1WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for ECHOSC1WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct EXBMINFOHEADER {
     pub bmi: ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
     pub biExtDataOffset: u32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for EXBMINFOHEADER {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for EXBMINFOHEADER {
     fn clone(&self) -> Self {
         *self
@@ -1005,57 +1005,57 @@ pub const FIND_RET: i32 = 61440i32;
 pub const FIND_SIZE: i32 = 12288i32;
 pub const FIND_TYPE: i32 = 240i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct FMTOWNS_SND_WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wRevision: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for FMTOWNS_SND_WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for FMTOWNS_SND_WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct G721_ADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub nAuxBlockSize: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for G721_ADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for G721_ADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct G723_ADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub cbExtraSize: u16,
     pub nAuxBlockSize: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for G723_ADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for G723_ADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct GSM610WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wSamplesPerBlock: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for GSM610WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for GSM610WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
@@ -1071,7 +1071,7 @@ pub type IAVIPersistFile = *mut ::core::ffi::c_void;
 pub type IAVIStream = *mut ::core::ffi::c_void;
 pub type IAVIStreaming = *mut ::core::ffi::c_void;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct ICCOMPRESS {
     pub dwFlags: u32,
     pub lpbiOutput: *mut ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
@@ -1086,16 +1086,16 @@ pub struct ICCOMPRESS {
     pub lpbiPrev: *mut ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
     pub lpPrev: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for ICCOMPRESS {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for ICCOMPRESS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct ICCOMPRESSFRAMES {
     pub dwFlags: u32,
     pub lpbiOutput: *mut ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
@@ -1114,9 +1114,9 @@ pub struct ICCOMPRESSFRAMES {
     pub GetData: isize,
     pub PutData: isize,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for ICCOMPRESSFRAMES {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for ICCOMPRESSFRAMES {
     fn clone(&self) -> Self {
         *self
@@ -1125,7 +1125,7 @@ impl ::core::clone::Clone for ICCOMPRESSFRAMES {
 pub const ICCOMPRESSFRAMES_PADDING: u32 = 1u32;
 pub const ICCOMPRESS_KEYFRAME: i32 = 1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct ICDECOMPRESS {
     pub dwFlags: u32,
     pub lpbiInput: *mut ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
@@ -1134,16 +1134,16 @@ pub struct ICDECOMPRESS {
     pub lpOutput: *mut ::core::ffi::c_void,
     pub ckid: u32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for ICDECOMPRESS {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for ICDECOMPRESS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct ICDECOMPRESSEX {
     pub dwFlags: u32,
     pub lpbiSrc: *mut ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
@@ -1159,9 +1159,9 @@ pub struct ICDECOMPRESSEX {
     pub dxSrc: i32,
     pub dySrc: i32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for ICDECOMPRESSEX {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for ICDECOMPRESSEX {
     fn clone(&self) -> Self {
         *self
@@ -1187,7 +1187,7 @@ impl ::core::clone::Clone for ICDRAW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct ICDRAWBEGIN {
     pub dwFlags: u32,
     pub hpal: ::win32_graphics_sys::Gdi::HPALETTE,
@@ -1205,16 +1205,16 @@ pub struct ICDRAWBEGIN {
     pub dwRate: u32,
     pub dwScale: u32,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for ICDRAWBEGIN {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for ICDRAWBEGIN {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct ICDRAWSUGGEST {
     pub lpbiIn: *mut ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
     pub lpbiSuggest: *mut ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
@@ -1224,9 +1224,9 @@ pub struct ICDRAWSUGGEST {
     pub dyDst: i32,
     pub hicDecompressor: HIC,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for ICDRAWSUGGEST {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for ICDRAWSUGGEST {
     fn clone(&self) -> Self {
         *self
@@ -1381,16 +1381,16 @@ impl ::core::clone::Clone for ICOPEN {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct ICPALETTE {
     pub dwFlags: u32,
     pub iStart: i32,
     pub iLen: i32,
     pub lppe: *mut ::win32_graphics_sys::Gdi::PALETTEENTRY,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for ICPALETTE {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for ICPALETTE {
     fn clone(&self) -> Self {
         *self
@@ -1489,14 +1489,14 @@ pub const IDS_CAP_WAVE_SIZE_ERROR: u32 = 423u32;
 pub const IDS_CAP_WRITEERROR: u32 = 414u32;
 pub type IGetFrame = *mut ::core::ffi::c_void;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct IMAADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wSamplesPerBlock: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for IMAADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for IMAADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
@@ -1838,7 +1838,7 @@ pub const JPEG_RGB: u32 = 3u32;
 pub const JPEG_Y: u32 = 1u32;
 pub const JPEG_YCbCr: u32 = 2u32;
 pub const KSDATAFORMAT_SUBTYPE_IEEE_FLOAT: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3, data2: 0, data3: 16, data4: [128, 0, 0, 170, 0, 56, 155, 113] };
-#[cfg(feature = "Win32_System_IO")]
+#[cfg(feature = "win32-system-sys")]
 pub type LPFNEXTDEVIO = ::core::option::Option<unsafe extern "system" fn(lparam: ::win32_foundation_sys::LPARAM, dwflags: u32, dwiocontrolcode: u32, lpinbuffer: *mut ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesreturned: *mut u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL>;
 pub type LPMMIOPROC = ::core::option::Option<unsafe extern "system" fn(lpmmioinfo: ::windows_core_sys::PCSTR, umsg: u32, lparam1: ::win32_foundation_sys::LPARAM, lparam2: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::LRESULT>;
 pub type LPTASKCALLBACK = ::core::option::Option<unsafe extern "system" fn(dwinst: usize)>;
@@ -2133,15 +2133,15 @@ impl ::core::clone::Clone for MCI_ANIM_STEP_PARMS {
 pub const MCI_ANIM_STEP_REVERSE: i32 = 65536i32;
 pub const MCI_ANIM_UPDATE_HDC: i32 = 131072i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct MCI_ANIM_UPDATE_PARMS {
     pub dwCallback: usize,
     pub rc: ::win32_foundation_sys::RECT,
     pub hDC: ::win32_graphics_sys::Gdi::HDC,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for MCI_ANIM_UPDATE_PARMS {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for MCI_ANIM_UPDATE_PARMS {
     fn clone(&self) -> Self {
         *self
@@ -2918,15 +2918,15 @@ pub const MCI_DGV_STOP_HOLD: i32 = 65536i32;
 pub const MCI_DGV_UPDATE_HDC: i32 = 131072i32;
 pub const MCI_DGV_UPDATE_PAINT: i32 = 262144i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct MCI_DGV_UPDATE_PARMS {
     pub dwCallback: usize,
     pub rc: ::win32_foundation_sys::RECT,
     pub hDC: ::win32_graphics_sys::Gdi::HDC,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for MCI_DGV_UPDATE_PARMS {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for MCI_DGV_UPDATE_PARMS {
     fn clone(&self) -> Self {
         *self
@@ -3698,14 +3698,14 @@ pub const MCI_WINDOW: u32 = 2113u32;
 pub const MCMADM_E_REGKEY_NOT_FOUND: ::windows_core_sys::HRESULT = -1072889750i32;
 pub const MCMADM_I_NO_EVENTS: ::windows_core_sys::HRESULT = 1074593897i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct MEDIASPACEADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wRevision: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for MEDIASPACEADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for MEDIASPACEADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
@@ -3743,7 +3743,7 @@ pub const MIXERCONTROL_CONTROLTYPE_SRS_MTS: u32 = 536936454u32;
 pub const MIXERCONTROL_CONTROLTYPE_SRS_ONOFF: u32 = 536936455u32;
 pub const MIXERCONTROL_CONTROLTYPE_SRS_SYNTHSELECT: u32 = 536936456u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct MIXEROPENDESC {
     pub hmx: super::Audio::HMIXER,
     pub pReserved0: *mut ::core::ffi::c_void,
@@ -3751,9 +3751,9 @@ pub struct MIXEROPENDESC {
     pub dwInstance: usize,
     pub dnDevNode: usize,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for MIXEROPENDESC {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for MIXEROPENDESC {
     fn clone(&self) -> Self {
         *self
@@ -5393,15 +5393,15 @@ pub const MPEGLAYER3_ID_MPEG: u32 = 1u32;
 pub const MPEGLAYER3_ID_UNKNOWN: u32 = 0u32;
 pub const MPEGLAYER3_WFX_EXTRA_BYTES: u32 = 12u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct MSAUDIO1WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wSamplesPerBlock: u16,
     pub wEncodeOptions: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for MSAUDIO1WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for MSAUDIO1WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
@@ -5422,14 +5422,14 @@ pub const MXDM_OPEN: u32 = 3u32;
 pub const MXDM_SETCONTROLDETAILS: u32 = 8u32;
 pub const MXDM_USER: u32 = 16384u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct NMS_VBXADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wSamplesPerBlock: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for NMS_VBXADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for NMS_VBXADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
@@ -6641,65 +6641,65 @@ pub const NS_W_FILE_BANDWIDTH_LIMIT: ::windows_core_sys::HRESULT = -2146631676i3
 pub const NS_W_SERVER_BANDWIDTH_LIMIT: ::windows_core_sys::HRESULT = -2146631677i32;
 pub const NS_W_UNKNOWN_EVENT: ::windows_core_sys::HRESULT = -2146631584i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct OLIADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for OLIADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for OLIADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct OLICELPWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for OLICELPWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for OLICELPWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct OLIGSMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for OLIGSMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for OLIGSMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct OLIOPRWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for OLIOPRWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for OLIOPRWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct OLISBCWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for OLISBCWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for OLISBCWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
@@ -6731,28 +6731,28 @@ pub const SEEK_CUR: u32 = 1u32;
 pub const SEEK_END: u32 = 2u32;
 pub const SEEK_SET: u32 = 0u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct SIERRAADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wRevision: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for SIERRAADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for SIERRAADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct SONARCWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wCompType: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for SONARCWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for SONARCWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
@@ -6784,16 +6784,16 @@ impl ::core::clone::Clone for TIMEREVENT {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct TRUESPEECHWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wRevision: u16,
     pub nSamplesPerBlock: u16,
     pub abReserved: [u8; 28],
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for TRUESPEECHWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for TRUESPEECHWAVEFORMAT {
     fn clone(&self) -> Self {
         *self
@@ -6804,7 +6804,7 @@ pub const VCAPS_CAN_SCALE: u32 = 8u32;
 pub const VCAPS_DST_CAN_CLIP: u32 = 4u32;
 pub const VCAPS_OVERLAY: u32 = 1u32;
 pub const VCAPS_SRC_CAN_CLIP: u32 = 2u32;
-#[cfg(feature = "Win32_UI_Controls")]
+#[cfg(feature = "win32-ui-sys")]
 pub type VFWWDMExtensionProc = ::core::option::Option<unsafe extern "system" fn(pfndeviceiocontrol: *mut ::core::ffi::c_void, pfnaddpropertypage: ::win32_ui_sys::Controls::LPFNSVADDPROPSHEETPAGE, lparam: ::win32_foundation_sys::LPARAM) -> u32>;
 pub const VFW_HIDE_CAMERACONTROL_PAGE: u32 = 4u32;
 pub const VFW_HIDE_SETTINGS_PAGE: u32 = 1u32;
@@ -6893,7 +6893,7 @@ pub const VP_TV_STANDARD_SECAM_L: u32 = 16384u32;
 pub const VP_TV_STANDARD_SECAM_L1: u32 = 524288u32;
 pub const VP_TV_STANDARD_WIN_VGA: u32 = 32768u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct WAVEOPENDESC {
     pub hWave: super::Audio::HWAVE,
     pub lpFormat: *mut super::Audio::WAVEFORMAT,
@@ -6902,9 +6902,9 @@ pub struct WAVEOPENDESC {
     pub uMappedDeviceID: u32,
     pub dnDevNode: usize,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for WAVEOPENDESC {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for WAVEOPENDESC {
     fn clone(&self) -> Self {
         *self
@@ -7198,16 +7198,16 @@ pub const WIDM_START: u32 = 57u32;
 pub const WIDM_STOP: u32 = 58u32;
 pub const WIDM_UNPREPARE: u32 = 55u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct WMAUDIO2WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub dwSamplesPerBlock: u32,
     pub wEncodeOptions: u16,
     pub dwSuperBlockAlign: u32,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for WMAUDIO2WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for WMAUDIO2WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
@@ -7216,7 +7216,7 @@ impl ::core::clone::Clone for WMAUDIO2WAVEFORMAT {
 pub const WMAUDIO2_BITS_PER_SAMPLE: u32 = 16u32;
 pub const WMAUDIO2_MAX_CHANNELS: u32 = 2u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct WMAUDIO3WAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
     pub wValidBitsPerSample: u16,
@@ -7226,9 +7226,9 @@ pub struct WMAUDIO3WAVEFORMAT {
     pub wEncodeOptions: u16,
     pub wReserved3: u16,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for WMAUDIO3WAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for WMAUDIO3WAVEFORMAT {
     fn clone(&self) -> Self {
         *self
@@ -7341,13 +7341,13 @@ pub const WODM_SETVOLUME: u32 = 17u32;
 pub const WODM_UNPREPARE: u32 = 8u32;
 pub const WODM_WRITE: u32 = 9u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 pub struct YAMAHA_ADPCMWAVEFORMAT {
     pub wfx: super::Audio::WAVEFORMATEX,
 }
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::marker::Copy for YAMAHA_ADPCMWAVEFORMAT {}
-#[cfg(feature = "Win32_Media_Audio")]
+#[cfg(feature = "win32-media-sys")]
 impl ::core::clone::Clone for YAMAHA_ADPCMWAVEFORMAT {
     fn clone(&self) -> Self {
         *self

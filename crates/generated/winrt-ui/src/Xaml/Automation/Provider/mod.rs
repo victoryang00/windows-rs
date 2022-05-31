@@ -117,7 +117,7 @@ pub struct IAnnotationProvider_Vtbl {
 #[repr(transparent)]
 pub struct ICustomNavigationProvider(::windows_core::IUnknown);
 impl ICustomNavigationProvider {
-    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    #[cfg(feature = "winrt-ui")]
     pub fn NavigateCustom(&self, direction: super::Peers::AutomationNavigationDirection) -> ::windows_core::Result<::windows_core::IInspectable> {
         let this = self;
         unsafe {
@@ -197,9 +197,9 @@ unsafe impl ::windows_core::Interface for ICustomNavigationProvider {
 #[doc(hidden)]
 pub struct ICustomNavigationProvider_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    #[cfg(feature = "winrt-ui")]
     pub NavigateCustom: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, direction: super::Peers::AutomationNavigationDirection, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Automation_Peers"))]
+    #[cfg(not(feature = "winrt-ui"))]
     NavigateCustom: usize,
 }
 #[repr(transparent)]
@@ -2952,7 +2952,7 @@ impl ITextRangeProvider {
             (::windows_core::Interface::vtable(this).Compare)(::windows_core::Interface::as_raw(this), textrangeprovider.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CompareEndpoints<'a, Param1: ::windows_core::IntoParam<'a, ITextRangeProvider>>(&self, endpoint: super::Text::TextPatternRangeEndpoint, textrangeprovider: Param1, targetendpoint: super::Text::TextPatternRangeEndpoint) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
@@ -2960,7 +2960,7 @@ impl ITextRangeProvider {
             (::windows_core::Interface::vtable(this).CompareEndpoints)(::windows_core::Interface::as_raw(this), endpoint, textrangeprovider.into_param().abi(), targetendpoint, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ExpandToEnclosingUnit(&self, unit: super::Text::TextUnit) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ExpandToEnclosingUnit)(::windows_core::Interface::as_raw(this), unit).ok() }
@@ -3004,7 +3004,7 @@ impl ITextRangeProvider {
             (::windows_core::Interface::vtable(this).GetText)(::windows_core::Interface::as_raw(this), maxlength, result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Move(&self, unit: super::Text::TextUnit, count: i32) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
@@ -3012,7 +3012,7 @@ impl ITextRangeProvider {
             (::windows_core::Interface::vtable(this).Move)(::windows_core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub fn MoveEndpointByUnit(&self, endpoint: super::Text::TextPatternRangeEndpoint, unit: super::Text::TextUnit, count: i32) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
@@ -3020,7 +3020,7 @@ impl ITextRangeProvider {
             (::windows_core::Interface::vtable(this).MoveEndpointByUnit)(::windows_core::Interface::as_raw(this), endpoint, unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub fn MoveEndpointByRange<'a, Param1: ::windows_core::IntoParam<'a, ITextRangeProvider>>(&self, endpoint: super::Text::TextPatternRangeEndpoint, textrangeprovider: Param1, targetendpoint: super::Text::TextPatternRangeEndpoint) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).MoveEndpointByRange)(::windows_core::Interface::as_raw(this), endpoint, textrangeprovider.into_param().abi(), targetendpoint).ok() }
@@ -3122,13 +3122,13 @@ pub struct ITextRangeProvider_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Compare: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, textrangeprovider: ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Automation_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub CompareEndpoints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, endpoint: super::Text::TextPatternRangeEndpoint, textrangeprovider: ::windows_core::RawPtr, targetendpoint: super::Text::TextPatternRangeEndpoint, result__: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Automation_Text"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CompareEndpoints: usize,
-    #[cfg(feature = "UI_Xaml_Automation_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub ExpandToEnclosingUnit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: super::Text::TextUnit) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Automation_Text"))]
+    #[cfg(not(feature = "winrt-ui"))]
     ExpandToEnclosingUnit: usize,
     pub FindAttribute: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, attributeid: i32, value: *mut ::core::ffi::c_void, backward: bool, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub FindText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, text: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, backward: bool, ignorecase: bool, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -3136,17 +3136,17 @@ pub struct ITextRangeProvider_Vtbl {
     pub GetBoundingRectangles: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, returnValue_array_size: *mut u32, returnvalue: *mut *mut f64) -> ::windows_core::HRESULT,
     pub GetEnclosingElement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, maxlength: i32, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Automation_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub Move: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: super::Text::TextUnit, count: i32, result__: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Automation_Text"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Move: usize,
-    #[cfg(feature = "UI_Xaml_Automation_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub MoveEndpointByUnit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, endpoint: super::Text::TextPatternRangeEndpoint, unit: super::Text::TextUnit, count: i32, result__: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Automation_Text"))]
+    #[cfg(not(feature = "winrt-ui"))]
     MoveEndpointByUnit: usize,
-    #[cfg(feature = "UI_Xaml_Automation_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub MoveEndpointByRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, endpoint: super::Text::TextPatternRangeEndpoint, textrangeprovider: ::windows_core::RawPtr, targetendpoint: super::Text::TextPatternRangeEndpoint) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Automation_Text"))]
+    #[cfg(not(feature = "winrt-ui"))]
     MoveEndpointByRange: usize,
     pub Select: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub AddToSelection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -3175,7 +3175,7 @@ impl ITextRangeProvider2 {
             (::windows_core::Interface::vtable(this).Compare)(::windows_core::Interface::as_raw(this), textrangeprovider.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CompareEndpoints<'a, Param1: ::windows_core::IntoParam<'a, ITextRangeProvider>>(&self, endpoint: super::Text::TextPatternRangeEndpoint, textrangeprovider: Param1, targetendpoint: super::Text::TextPatternRangeEndpoint) -> ::windows_core::Result<i32> {
         let this = &::windows_core::Interface::cast::<ITextRangeProvider>(self)?;
         unsafe {
@@ -3183,7 +3183,7 @@ impl ITextRangeProvider2 {
             (::windows_core::Interface::vtable(this).CompareEndpoints)(::windows_core::Interface::as_raw(this), endpoint, textrangeprovider.into_param().abi(), targetendpoint, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ExpandToEnclosingUnit(&self, unit: super::Text::TextUnit) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ITextRangeProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ExpandToEnclosingUnit)(::windows_core::Interface::as_raw(this), unit).ok() }
@@ -3227,7 +3227,7 @@ impl ITextRangeProvider2 {
             (::windows_core::Interface::vtable(this).GetText)(::windows_core::Interface::as_raw(this), maxlength, result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Move(&self, unit: super::Text::TextUnit, count: i32) -> ::windows_core::Result<i32> {
         let this = &::windows_core::Interface::cast::<ITextRangeProvider>(self)?;
         unsafe {
@@ -3235,7 +3235,7 @@ impl ITextRangeProvider2 {
             (::windows_core::Interface::vtable(this).Move)(::windows_core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub fn MoveEndpointByUnit(&self, endpoint: super::Text::TextPatternRangeEndpoint, unit: super::Text::TextUnit, count: i32) -> ::windows_core::Result<i32> {
         let this = &::windows_core::Interface::cast::<ITextRangeProvider>(self)?;
         unsafe {
@@ -3243,7 +3243,7 @@ impl ITextRangeProvider2 {
             (::windows_core::Interface::vtable(this).MoveEndpointByUnit)(::windows_core::Interface::as_raw(this), endpoint, unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub fn MoveEndpointByRange<'a, Param1: ::windows_core::IntoParam<'a, ITextRangeProvider>>(&self, endpoint: super::Text::TextPatternRangeEndpoint, textrangeprovider: Param1, targetendpoint: super::Text::TextPatternRangeEndpoint) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ITextRangeProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).MoveEndpointByRange)(::windows_core::Interface::as_raw(this), endpoint, textrangeprovider.into_param().abi(), targetendpoint).ok() }

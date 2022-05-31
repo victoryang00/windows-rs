@@ -217,10 +217,10 @@ impl ::core::clone::Clone for InfraredTorchMode {
     }
 }
 pub type IsoSpeedControl = *mut ::core::ffi::c_void;
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 #[repr(transparent)]
 pub struct IsoSpeedPreset(pub i32);
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl IsoSpeedPreset {
     pub const Auto: Self = Self(0i32);
     pub const Iso50: Self = Self(1i32);
@@ -235,9 +235,9 @@ impl IsoSpeedPreset {
     pub const Iso12800: Self = Self(10i32);
     pub const Iso25600: Self = Self(11i32);
 }
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::marker::Copy for IsoSpeedPreset {}
-#[cfg(feature = "deprecated")]
+#[cfg(feature = "winrt-")]
 impl ::core::clone::Clone for IsoSpeedPreset {
     fn clone(&self) -> Self {
         *self

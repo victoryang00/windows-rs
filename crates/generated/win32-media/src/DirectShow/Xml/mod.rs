@@ -2,7 +2,7 @@ pub const CLSID_XMLGraphBuilder: ::windows_core::GUID = ::windows_core::GUID::fr
 #[repr(transparent)]
 pub struct IXMLGraphBuilder(::windows_core::IUnknown);
 impl IXMLGraphBuilder {
-    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
+    #[cfg(all(feature = "win32-data", feature = "win32-system"))]
     pub unsafe fn BuildFromXML<'a, Param0: ::windows_core::IntoParam<'a, super::IGraphBuilder>, Param1: ::windows_core::IntoParam<'a, ::win32_data::Xml::MsXml::IXMLElement>>(&self, pgraph: Param0, pxml: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).BuildFromXML)(::windows_core::Interface::as_raw(self), pgraph.into_param().abi(), pxml.into_param().abi()).ok()
     }
@@ -57,9 +57,9 @@ unsafe impl ::windows_core::Interface for IXMLGraphBuilder {
 #[doc(hidden)]
 pub struct IXMLGraphBuilder_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
+    #[cfg(all(feature = "win32-data", feature = "win32-system"))]
     pub BuildFromXML: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pgraph: ::windows_core::RawPtr, pxml: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com")))]
+    #[cfg(not(all(feature = "win32-data", feature = "win32-system")))]
     BuildFromXML: usize,
     pub SaveToXML: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pgraph: ::windows_core::RawPtr, pbstrxml: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub BuildFromXMLFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pgraph: ::windows_core::RawPtr, wszfilename: ::windows_core::PCWSTR, wszbaseurl: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,

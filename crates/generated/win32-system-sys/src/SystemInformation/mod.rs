@@ -9,7 +9,7 @@ extern "system" {
     pub fn GetLocalTime(lpsystemtime: *mut ::win32_foundation_sys::SYSTEMTIME);
     pub fn GetLogicalProcessorInformation(buffer: *mut SYSTEM_LOGICAL_PROCESSOR_INFORMATION, returnedlength: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn GetLogicalProcessorInformationEx(relationshiptype: LOGICAL_PROCESSOR_RELATIONSHIP, buffer: *mut SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX, returnedlength: *mut u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_Diagnostics_Debug")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn GetNativeSystemInfo(lpsysteminfo: *mut SYSTEM_INFO);
     pub fn GetOsManufacturingMode(pbenabled: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     pub fn GetOsSafeBootMode(flags: *mut u32) -> ::win32_foundation_sys::BOOL;
@@ -21,7 +21,7 @@ extern "system" {
     pub fn GetSystemDirectoryA(lpbuffer: ::windows_core_sys::PSTR, usize: u32) -> u32;
     pub fn GetSystemDirectoryW(lpbuffer: ::windows_core_sys::PWSTR, usize: u32) -> u32;
     pub fn GetSystemFirmwareTable(firmwaretableprovidersignature: FIRMWARE_TABLE_PROVIDER, firmwaretableid: FIRMWARE_TABLE_ID, pfirmwaretablebuffer: *mut ::core::ffi::c_void, buffersize: u32) -> u32;
-    #[cfg(feature = "Win32_System_Diagnostics_Debug")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn GetSystemInfo(lpsysteminfo: *mut SYSTEM_INFO);
     pub fn GetSystemLeapSecondInformation(enabled: *mut ::win32_foundation_sys::BOOL, flags: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn GetSystemTime(lpsystemtime: *mut ::win32_foundation_sys::SYSTEMTIME);
@@ -646,7 +646,7 @@ pub const SYSTEM_CPU_SET_INFORMATION_ALLOCATED_TO_TARGET_PROCESS: u32 = 4u32;
 pub const SYSTEM_CPU_SET_INFORMATION_PARKED: u32 = 1u32;
 pub const SYSTEM_CPU_SET_INFORMATION_REALTIME: u32 = 8u32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system-sys")]
 pub struct SYSTEM_INFO {
     pub Anonymous: SYSTEM_INFO_0,
     pub dwPageSize: u32,
@@ -659,37 +659,37 @@ pub struct SYSTEM_INFO {
     pub wProcessorLevel: u16,
     pub wProcessorRevision: u16,
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for SYSTEM_INFO {}
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for SYSTEM_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system-sys")]
 pub union SYSTEM_INFO_0 {
     pub dwOemId: u32,
     pub Anonymous: SYSTEM_INFO_0_0,
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for SYSTEM_INFO_0 {}
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for SYSTEM_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system-sys")]
 pub struct SYSTEM_INFO_0_0 {
     pub wProcessorArchitecture: super::Diagnostics::Debug::PROCESSOR_ARCHITECTURE,
     pub wReserved: u16,
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for SYSTEM_INFO_0_0 {}
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for SYSTEM_INFO_0_0 {
     fn clone(&self) -> Self {
         *self

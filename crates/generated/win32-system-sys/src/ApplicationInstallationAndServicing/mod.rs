@@ -31,11 +31,11 @@ extern "system" {
     pub fn ExtractPatchHeaderToFileA(patchfilename: ::windows_core_sys::PCSTR, patchheaderfilename: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
     pub fn ExtractPatchHeaderToFileByHandles(patchfilehandle: ::win32_foundation_sys::HANDLE, patchheaderfilehandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn ExtractPatchHeaderToFileW(patchfilename: ::windows_core_sys::PCWSTR, patchheaderfilename: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_WindowsProgramming")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn FindActCtxSectionGuid(dwflags: u32, lpextensionguid: *const ::windows_core_sys::GUID, ulsectionid: u32, lpguidtofind: *const ::windows_core_sys::GUID, returneddata: *mut ACTCTX_SECTION_KEYED_DATA) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_WindowsProgramming")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn FindActCtxSectionStringA(dwflags: u32, lpextensionguid: *const ::windows_core_sys::GUID, ulsectionid: u32, lpstringtofind: ::windows_core_sys::PCSTR, returneddata: *mut ACTCTX_SECTION_KEYED_DATA) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_WindowsProgramming")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn FindActCtxSectionStringW(dwflags: u32, lpextensionguid: *const ::windows_core_sys::GUID, ulsectionid: u32, lpstringtofind: ::windows_core_sys::PCWSTR, returneddata: *mut ACTCTX_SECTION_KEYED_DATA) -> ::win32_foundation_sys::BOOL;
     pub fn GetCurrentActCtx(lphactctx: *mut ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn GetDeltaInfoA(lpdeltaname: ::windows_core_sys::PCSTR, lpheaderinfo: *mut DELTA_HEADER_INFO) -> ::win32_foundation_sys::BOOL;
@@ -52,9 +52,9 @@ extern "system" {
     pub fn MsiAdvertiseProductExA(szpackagepath: ::windows_core_sys::PCSTR, szscriptfilepath: ::windows_core_sys::PCSTR, sztransforms: ::windows_core_sys::PCSTR, lgidlanguage: u16, dwplatform: u32, dwoptions: u32) -> u32;
     pub fn MsiAdvertiseProductExW(szpackagepath: ::windows_core_sys::PCWSTR, szscriptfilepath: ::windows_core_sys::PCWSTR, sztransforms: ::windows_core_sys::PCWSTR, lgidlanguage: u16, dwplatform: u32, dwoptions: u32) -> u32;
     pub fn MsiAdvertiseProductW(szpackagepath: ::windows_core_sys::PCWSTR, szscriptfilepath: ::windows_core_sys::PCWSTR, sztransforms: ::windows_core_sys::PCWSTR, lgidlanguage: u16) -> u32;
-    #[cfg(feature = "Win32_System_Registry")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn MsiAdvertiseScriptA(szscriptfile: ::windows_core_sys::PCSTR, dwflags: u32, phregdata: *const super::Registry::HKEY, fremoveitems: ::win32_foundation_sys::BOOL) -> u32;
-    #[cfg(feature = "Win32_System_Registry")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn MsiAdvertiseScriptW(szscriptfile: ::windows_core_sys::PCWSTR, dwflags: u32, phregdata: *const super::Registry::HKEY, fremoveitems: ::win32_foundation_sys::BOOL) -> u32;
     pub fn MsiApplyMultiplePatchesA(szpatchpackages: ::windows_core_sys::PCSTR, szproductcode: ::windows_core_sys::PCSTR, szpropertieslist: ::windows_core_sys::PCSTR) -> u32;
     pub fn MsiApplyMultiplePatchesW(szpatchpackages: ::windows_core_sys::PCWSTR, szproductcode: ::windows_core_sys::PCWSTR, szpropertieslist: ::windows_core_sys::PCWSTR) -> u32;
@@ -152,9 +152,9 @@ extern "system" {
     pub fn MsiGetFeatureValidStatesW(hinstall: MSIHANDLE, szfeature: ::windows_core_sys::PCWSTR, lpinstallstates: *mut u32) -> u32;
     pub fn MsiGetFileHashA(szfilepath: ::windows_core_sys::PCSTR, dwoptions: u32, phash: *mut MSIFILEHASHINFO) -> u32;
     pub fn MsiGetFileHashW(szfilepath: ::windows_core_sys::PCWSTR, dwoptions: u32, phash: *mut MSIFILEHASHINFO) -> u32;
-    #[cfg(feature = "Win32_Security_Cryptography")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn MsiGetFileSignatureInformationA(szsignedobjectpath: ::windows_core_sys::PCSTR, dwflags: u32, ppccertcontext: *mut *mut ::win32_security_sys::Cryptography::CERT_CONTEXT, pbhashdata: *mut u8, pcbhashdata: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Security_Cryptography")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn MsiGetFileSignatureInformationW(szsignedobjectpath: ::windows_core_sys::PCWSTR, dwflags: u32, ppccertcontext: *mut *mut ::win32_security_sys::Cryptography::CERT_CONTEXT, pbhashdata: *mut u8, pcbhashdata: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn MsiGetFileVersionA(szfilepath: ::windows_core_sys::PCSTR, lpversionbuf: ::windows_core_sys::PSTR, pcchversionbuf: *mut u32, lplangbuf: ::windows_core_sys::PSTR, pcchlangbuf: *mut u32) -> u32;
     pub fn MsiGetFileVersionW(szfilepath: ::windows_core_sys::PCWSTR, lpversionbuf: ::windows_core_sys::PWSTR, pcchversionbuf: *mut u32, lplangbuf: ::windows_core_sys::PWSTR, pcchlangbuf: *mut u32) -> u32;
@@ -214,9 +214,9 @@ extern "system" {
     pub fn MsiPreviewBillboardW(hpreview: MSIHANDLE, szcontrolname: ::windows_core_sys::PCWSTR, szbillboard: ::windows_core_sys::PCWSTR) -> u32;
     pub fn MsiPreviewDialogA(hpreview: MSIHANDLE, szdialogname: ::windows_core_sys::PCSTR) -> u32;
     pub fn MsiPreviewDialogW(hpreview: MSIHANDLE, szdialogname: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_System_Registry")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn MsiProcessAdvertiseScriptA(szscriptfile: ::windows_core_sys::PCSTR, sziconfolder: ::windows_core_sys::PCSTR, hregdata: super::Registry::HKEY, fshortcuts: ::win32_foundation_sys::BOOL, fremoveitems: ::win32_foundation_sys::BOOL) -> u32;
-    #[cfg(feature = "Win32_System_Registry")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn MsiProcessAdvertiseScriptW(szscriptfile: ::windows_core_sys::PCWSTR, sziconfolder: ::windows_core_sys::PCWSTR, hregdata: super::Registry::HKEY, fshortcuts: ::win32_foundation_sys::BOOL, fremoveitems: ::win32_foundation_sys::BOOL) -> u32;
     pub fn MsiProcessMessage(hinstall: MSIHANDLE, emessagetype: INSTALLMESSAGE, hrecord: MSIHANDLE) -> i32;
     pub fn MsiProvideAssemblyA(szassemblyname: ::windows_core_sys::PCSTR, szappcontext: ::windows_core_sys::PCSTR, dwinstallmode: INSTALLMODE, dwassemblyinfo: MSIASSEMBLYINFO, lppathbuf: ::windows_core_sys::PSTR, pcchpathbuf: *mut u32) -> u32;
@@ -324,7 +324,7 @@ extern "system" {
     pub fn ReleaseActCtx(hactctx: ::win32_foundation_sys::HANDLE);
     pub fn SfcGetNextProtectedFile(rpchandle: ::win32_foundation_sys::HANDLE, protfiledata: *mut PROTECTED_FILE_DATA) -> ::win32_foundation_sys::BOOL;
     pub fn SfcIsFileProtected(rpchandle: ::win32_foundation_sys::HANDLE, protfilename: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_Registry")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn SfcIsKeyProtected(keyhandle: super::Registry::HKEY, subkeyname: ::windows_core_sys::PCWSTR, keysam: u32) -> ::win32_foundation_sys::BOOL;
     pub fn SfpVerifyFile(pszfilename: ::windows_core_sys::PCSTR, pszerror: ::windows_core_sys::PCSTR, dwerrsize: u32) -> ::win32_foundation_sys::BOOL;
     pub fn TestApplyPatchToFileA(patchfilename: ::windows_core_sys::PCSTR, oldfilename: ::windows_core_sys::PCSTR, applyoptionflags: u32) -> ::win32_foundation_sys::BOOL;
@@ -381,7 +381,7 @@ pub const ACTCTX_RUN_LEVEL_HIGHEST_AVAILABLE: ACTCTX_REQUESTED_RUN_LEVEL = 2i32;
 pub const ACTCTX_RUN_LEVEL_REQUIRE_ADMIN: ACTCTX_REQUESTED_RUN_LEVEL = 3i32;
 pub const ACTCTX_RUN_LEVEL_NUMBERS: ACTCTX_REQUESTED_RUN_LEVEL = 4i32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_WindowsProgramming")]
+#[cfg(feature = "win32-system-sys")]
 pub struct ACTCTX_SECTION_KEYED_DATA {
     pub cbSize: u32,
     pub ulDataFormatVersion: u32,
@@ -396,9 +396,9 @@ pub struct ACTCTX_SECTION_KEYED_DATA {
     pub ulFlags: u32,
     pub AssemblyMetadata: super::WindowsProgramming::ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA,
 }
-#[cfg(feature = "Win32_System_WindowsProgramming")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for ACTCTX_SECTION_KEYED_DATA {}
-#[cfg(feature = "Win32_System_WindowsProgramming")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for ACTCTX_SECTION_KEYED_DATA {
     fn clone(&self) -> Self {
         *self

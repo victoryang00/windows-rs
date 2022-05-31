@@ -11,10 +11,10 @@ extern "system" {
     pub fn GetHGlobalFromILockBytes(plkbyt: ILockBytes, phglobal: *mut isize) -> ::windows_core_sys::HRESULT;
     pub fn GetHGlobalFromStream(pstm: super::IStream, phglobal: *mut isize) -> ::windows_core_sys::HRESULT;
     pub fn OleConvertIStorageToOLESTREAM(pstg: IStorage, lpolestream: *mut OLESTREAM) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn OleConvertIStorageToOLESTREAMEx(pstg: IStorage, cfformat: u16, lwidth: i32, lheight: i32, dwsize: u32, pmedium: *mut super::STGMEDIUM, polestm: *mut OLESTREAM) -> ::windows_core_sys::HRESULT;
     pub fn OleConvertOLESTREAMToIStorage(lpolestream: *mut OLESTREAM, pstg: IStorage, ptd: *const super::DVTARGETDEVICE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn OleConvertOLESTREAMToIStorageEx(polestm: *mut OLESTREAM, pstg: IStorage, pcfformat: *mut u16, plwwidth: *mut i32, plheight: *mut i32, pdwsize: *mut u32, pmedium: *mut super::STGMEDIUM) -> ::windows_core_sys::HRESULT;
     pub fn PropStgNameToFmtId(oszname: ::windows_core_sys::PCWSTR, pfmtid: *mut ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
     pub fn PropVariantClear(pvar: *mut PROPVARIANT) -> ::windows_core_sys::HRESULT;
@@ -29,7 +29,7 @@ extern "system" {
     pub fn StgCreateDocfileOnILockBytes(plkbyt: ILockBytes, grfmode: STGM, reserved: u32, ppstgopen: *mut IStorage) -> ::windows_core_sys::HRESULT;
     pub fn StgCreatePropSetStg(pstorage: IStorage, dwreserved: u32, pppropsetstg: *mut IPropertySetStorage) -> ::windows_core_sys::HRESULT;
     pub fn StgCreatePropStg(punk: ::windows_core_sys::IUnknown, fmtid: *const ::windows_core_sys::GUID, pclsid: *const ::windows_core_sys::GUID, grfflags: u32, dwreserved: u32, pppropstg: *mut IPropertyStorage) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn StgCreateStorageEx(pwcsname: ::windows_core_sys::PCWSTR, grfmode: STGM, stgfmt: STGFMT, grfattrs: u32, pstgoptions: *mut STGOPTIONS, psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR, riid: *const ::windows_core_sys::GUID, ppobjectopen: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn StgDeserializePropVariant(pprop: *const SERIALIZEDPROPERTYVALUE, cbmax: u32, ppropvar: *mut PROPVARIANT) -> ::windows_core_sys::HRESULT;
     pub fn StgGetIFillLockBytesOnFile(pwcsname: ::windows_core_sys::PCWSTR, ppflb: *mut IFillLockBytes) -> ::windows_core_sys::HRESULT;
@@ -40,7 +40,7 @@ extern "system" {
     pub fn StgOpenLayoutDocfile(pwcsdfname: ::windows_core_sys::PCWSTR, grfmode: u32, reserved: u32, ppstgopen: *mut IStorage) -> ::windows_core_sys::HRESULT;
     pub fn StgOpenPropStg(punk: ::windows_core_sys::IUnknown, fmtid: *const ::windows_core_sys::GUID, grfflags: u32, dwreserved: u32, pppropstg: *mut IPropertyStorage) -> ::windows_core_sys::HRESULT;
     pub fn StgOpenStorage(pwcsname: ::windows_core_sys::PCWSTR, pstgpriority: IStorage, grfmode: STGM, snbexclude: *const *const u16, reserved: u32, ppstgopen: *mut IStorage) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn StgOpenStorageEx(pwcsname: ::windows_core_sys::PCWSTR, grfmode: STGM, stgfmt: STGFMT, grfattrs: u32, pstgoptions: *mut STGOPTIONS, psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR, riid: *const ::windows_core_sys::GUID, ppobjectopen: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn StgOpenStorageOnILockBytes(plkbyt: ILockBytes, pstgpriority: IStorage, grfmode: u32, snbexclude: *const *const u16, reserved: u32, ppstgopen: *mut IStorage) -> ::windows_core_sys::HRESULT;
     pub fn StgPropertyLengthAsVariant(pprop: *const SERIALIZEDPROPERTYVALUE, cbprop: u32, codepage: u16, breserved: u8) -> u32;

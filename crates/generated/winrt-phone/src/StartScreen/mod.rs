@@ -59,42 +59,42 @@ impl DualSimTile {
             (::windows_core::Interface::vtable(this).UpdateDisplayNameForSim1Async)(::windows_core::Interface::as_raw(this), name.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateTileUpdaterForSim1() -> ::windows_core::Result<::winrt_ui::Notifications::TileUpdater> {
         Self::IDualSimTileStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateTileUpdaterForSim1)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Notifications::TileUpdater>(result__)
         })
     }
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateTileUpdaterForSim2() -> ::windows_core::Result<::winrt_ui::Notifications::TileUpdater> {
         Self::IDualSimTileStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateTileUpdaterForSim2)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Notifications::TileUpdater>(result__)
         })
     }
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateBadgeUpdaterForSim1() -> ::windows_core::Result<::winrt_ui::Notifications::BadgeUpdater> {
         Self::IDualSimTileStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateBadgeUpdaterForSim1)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Notifications::BadgeUpdater>(result__)
         })
     }
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateBadgeUpdaterForSim2() -> ::windows_core::Result<::winrt_ui::Notifications::BadgeUpdater> {
         Self::IDualSimTileStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateBadgeUpdaterForSim2)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Notifications::BadgeUpdater>(result__)
         })
     }
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateToastNotifierForSim1() -> ::windows_core::Result<::winrt_ui::Notifications::ToastNotifier> {
         Self::IDualSimTileStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateToastNotifierForSim1)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Notifications::ToastNotifier>(result__)
         })
     }
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateToastNotifierForSim2() -> ::windows_core::Result<::winrt_ui::Notifications::ToastNotifier> {
         Self::IDualSimTileStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -207,35 +207,35 @@ pub struct IDualSimTileStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub GetTileForSim2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub UpdateDisplayNameForSim1Async: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateTileUpdaterForSim1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Notifications"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateTileUpdaterForSim1: usize,
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateTileUpdaterForSim2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Notifications"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateTileUpdaterForSim2: usize,
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateBadgeUpdaterForSim1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Notifications"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateBadgeUpdaterForSim1: usize,
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateBadgeUpdaterForSim2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Notifications"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateBadgeUpdaterForSim2: usize,
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateToastNotifierForSim1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Notifications"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateToastNotifierForSim1: usize,
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateToastNotifierForSim2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Notifications"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateToastNotifierForSim2: usize,
 }
 #[repr(transparent)]
 pub struct IToastNotificationManagerStatics3(::windows_core::IUnknown);
 impl IToastNotificationManagerStatics3 {
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateToastNotifierForSecondaryTile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, tileid: Param0) -> ::windows_core::Result<::winrt_ui::Notifications::ToastNotifier> {
         let this = self;
         unsafe {
@@ -315,8 +315,8 @@ unsafe impl ::windows_core::Interface for IToastNotificationManagerStatics3 {
 #[doc(hidden)]
 pub struct IToastNotificationManagerStatics3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Notifications")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateToastNotifierForSecondaryTile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, tileid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Notifications"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateToastNotifierForSecondaryTile: usize,
 }

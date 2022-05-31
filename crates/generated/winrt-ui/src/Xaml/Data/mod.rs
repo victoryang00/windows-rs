@@ -1240,7 +1240,7 @@ impl ICollectionView {
             (::windows_core::Interface::vtable(this).IsCurrentBeforeFirst)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CollectionGroups(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IObservableVector<::windows_core::IInspectable>> {
         let this = self;
         unsafe {
@@ -1326,7 +1326,7 @@ impl ICollectionView {
             (::windows_core::Interface::vtable(this).LoadMoreItemsAsync)(::windows_core::Interface::as_raw(this), count, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<LoadMoreItemsResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<::windows_core::IInspectable>>(self)?;
         unsafe {
@@ -1334,7 +1334,7 @@ impl ICollectionView {
             (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<::windows_core::IInspectable>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn VectorChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::VectorChangedEventHandler<::windows_core::IInspectable>>>(&self, vhnd: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IObservableVector<::windows_core::IInspectable>>(self)?;
         unsafe {
@@ -1342,12 +1342,12 @@ impl ICollectionView {
             (::windows_core::Interface::vtable(this).VectorChanged)(::windows_core::Interface::as_raw(this), vhnd.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveVectorChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IObservableVector<::windows_core::IInspectable>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveVectorChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetAt(&self, index: u32) -> ::windows_core::Result<::windows_core::IInspectable> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<::windows_core::IInspectable>>(self)?;
         unsafe {
@@ -1355,7 +1355,7 @@ impl ICollectionView {
             (::windows_core::Interface::vtable(this).GetAt)(::windows_core::Interface::as_raw(this), index, result__.as_mut_ptr()).from_abi::<::windows_core::IInspectable>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<::windows_core::IInspectable>>(self)?;
         unsafe {
@@ -1363,7 +1363,7 @@ impl ICollectionView {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<::windows_core::IInspectable>>(self)?;
         unsafe {
@@ -1371,7 +1371,7 @@ impl ICollectionView {
             (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn IndexOf<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>>(&self, value: Param0, index: &mut u32) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<::windows_core::IInspectable>>(self)?;
         unsafe {
@@ -1379,37 +1379,37 @@ impl ICollectionView {
             (::windows_core::Interface::vtable(this).IndexOf)(::windows_core::Interface::as_raw(this), value.into_param().abi(), index, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAt<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<::windows_core::IInspectable>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertAt<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<::windows_core::IInspectable>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).InsertAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAt(&self, index: u32) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<::windows_core::IInspectable>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAt)(::windows_core::Interface::as_raw(this), index).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Append<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<::windows_core::IInspectable>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Append)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAtEnd(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<::windows_core::IInspectable>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAtEnd)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Clear(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<::windows_core::IInspectable>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Clear)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetMany(&self, startindex: u32, items: &mut [::core::option::Option<::windows_core::IInspectable>]) -> ::windows_core::Result<u32> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<::windows_core::IInspectable>>(self)?;
         unsafe {
@@ -1417,7 +1417,7 @@ impl ICollectionView {
             (::windows_core::Interface::vtable(this).GetMany)(::windows_core::Interface::as_raw(this), startindex, items.len() as u32, ::core::mem::transmute_copy(&items), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ReplaceAll(&self, items: &[::core::option::Option<::windows_core::IInspectable>]) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<::windows_core::IInspectable>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ReplaceAll)(::windows_core::Interface::as_raw(this), items.len() as u32, ::core::mem::transmute(items.as_ptr())).ok() }
@@ -1463,79 +1463,79 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a ICo
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<ICollectionView> for ::winrt_foundation::Collections::IIterable<::windows_core::IInspectable> {
     type Error = ::windows_core::Error;
     fn try_from(value: ICollectionView) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&ICollectionView> for ::winrt_foundation::Collections::IIterable<::windows_core::IInspectable> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ICollectionView) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::IInspectable>> for ICollectionView {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::windows_core::IInspectable>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::IInspectable>> for &ICollectionView {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::windows_core::IInspectable>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<::windows_core::IInspectable>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<ICollectionView> for ::winrt_foundation::Collections::IObservableVector<::windows_core::IInspectable> {
     type Error = ::windows_core::Error;
     fn try_from(value: ICollectionView) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&ICollectionView> for ::winrt_foundation::Collections::IObservableVector<::windows_core::IInspectable> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ICollectionView) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IObservableVector<::windows_core::IInspectable>> for ICollectionView {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IObservableVector<::windows_core::IInspectable>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IObservableVector<::windows_core::IInspectable>> for &ICollectionView {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IObservableVector<::windows_core::IInspectable>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IObservableVector<::windows_core::IInspectable>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<ICollectionView> for ::winrt_foundation::Collections::IVector<::windows_core::IInspectable> {
     type Error = ::windows_core::Error;
     fn try_from(value: ICollectionView) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&ICollectionView> for ::winrt_foundation::Collections::IVector<::windows_core::IInspectable> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ICollectionView) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<::windows_core::IInspectable>> for ICollectionView {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<::windows_core::IInspectable>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<::windows_core::IInspectable>> for &ICollectionView {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<::windows_core::IInspectable>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IVector<::windows_core::IInspectable>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -1564,7 +1564,7 @@ unsafe impl ::windows_core::RuntimeType for ICollectionView {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for ICollectionView {
     type Item = ::windows_core::IInspectable;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -1572,7 +1572,7 @@ impl ::core::iter::IntoIterator for ICollectionView {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &ICollectionView {
     type Item = ::windows_core::IInspectable;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -1592,9 +1592,9 @@ pub struct ICollectionView_Vtbl {
     pub CurrentPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
     pub IsCurrentAfterLast: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsCurrentBeforeFirst: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub CollectionGroups: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CollectionGroups: usize,
     pub HasMoreItems: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub CurrentChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -1703,7 +1703,7 @@ impl ICollectionViewGroup {
             (::windows_core::Interface::vtable(this).Group)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::IInspectable>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GroupItems(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IObservableVector<::windows_core::IInspectable>> {
         let this = self;
         unsafe {
@@ -1784,9 +1784,9 @@ unsafe impl ::windows_core::Interface for ICollectionViewGroup {
 pub struct ICollectionViewGroup_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Group: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GroupItems: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GroupItems: usize,
 }
 #[doc(hidden)]
@@ -1856,7 +1856,7 @@ pub struct ICurrentChangingEventArgsFactory_Vtbl {
 #[repr(transparent)]
 pub struct ICustomProperty(::windows_core::IUnknown);
 impl ICustomProperty {
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Type(&self) -> ::windows_core::Result<super::Interop::TypeName> {
         let this = self;
         unsafe {
@@ -1979,9 +1979,9 @@ unsafe impl ::windows_core::Interface for ICustomProperty {
 #[doc(hidden)]
 pub struct ICustomProperty_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub Type: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<super::Interop::TypeName>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Interop"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Type: usize,
     pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, target: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -2001,7 +2001,7 @@ impl ICustomPropertyProvider {
             (::windows_core::Interface::vtable(this).GetCustomProperty)(::windows_core::Interface::as_raw(this), name.into_param().abi(), result__.as_mut_ptr()).from_abi::<ICustomProperty>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GetIndexedProperty<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::Interop::TypeName>>(&self, name: Param0, r#type: Param1) -> ::windows_core::Result<ICustomProperty> {
         let this = self;
         unsafe {
@@ -2016,7 +2016,7 @@ impl ICustomPropertyProvider {
             (::windows_core::Interface::vtable(this).GetStringRepresentation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Type(&self) -> ::windows_core::Result<super::Interop::TypeName> {
         let this = self;
         unsafe {
@@ -2097,14 +2097,14 @@ unsafe impl ::windows_core::Interface for ICustomPropertyProvider {
 pub struct ICustomPropertyProvider_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub GetCustomProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub GetIndexedProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, r#type: ::core::mem::ManuallyDrop<super::Interop::TypeName>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Interop"))]
+    #[cfg(not(feature = "winrt-ui"))]
     GetIndexedProperty: usize,
     pub GetStringRepresentation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub Type: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<super::Interop::TypeName>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Interop"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Type: usize,
 }
 #[doc(hidden)]
@@ -2138,7 +2138,7 @@ pub struct IItemIndexRangeFactory_Vtbl {
 #[repr(transparent)]
 pub struct IItemsRangeInfo(::windows_core::IUnknown);
 impl IItemsRangeInfo {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RangesChanged<'a, Param0: ::windows_core::IntoParam<'a, ItemIndexRange>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<ItemIndexRange>>>(&self, visiblerange: Param0, trackeditems: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RangesChanged)(::windows_core::Interface::as_raw(this), visiblerange.into_param().abi(), trackeditems.into_param().abi()).ok() }
@@ -2241,9 +2241,9 @@ unsafe impl ::windows_core::Interface for IItemsRangeInfo {
 #[doc(hidden)]
 pub struct IItemsRangeInfo_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub RangesChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, visiblerange: ::windows_core::RawPtr, trackeditems: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     RangesChanged: usize,
 }
 #[repr(transparent)]
@@ -2406,7 +2406,7 @@ impl ISelectionInfo {
             (::windows_core::Interface::vtable(this).IsSelected)(::windows_core::Interface::as_raw(this), index, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetSelectedRanges(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ItemIndexRange>> {
         let this = self;
         unsafe {
@@ -2489,9 +2489,9 @@ pub struct ISelectionInfo_Vtbl {
     pub SelectRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, itemindexrange: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub DeselectRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, itemindexrange: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub IsSelected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: i32, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetSelectedRanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetSelectedRanges: usize,
 }
 #[repr(transparent)]
@@ -2589,7 +2589,7 @@ pub struct ISupportIncrementalLoading_Vtbl {
 #[repr(transparent)]
 pub struct IValueConverter(::windows_core::IUnknown);
 impl IValueConverter {
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Convert<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, super::Interop::TypeName>, Param2: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0, targettype: Param1, parameter: Param2, language: Param3) -> ::windows_core::Result<::windows_core::IInspectable> {
         let this = self;
         unsafe {
@@ -2597,7 +2597,7 @@ impl IValueConverter {
             (::windows_core::Interface::vtable(this).Convert)(::windows_core::Interface::as_raw(this), value.into_param().abi(), targettype.into_param().abi(), parameter.into_param().abi(), language.into_param().abi(), result__.as_mut_ptr()).from_abi::<::windows_core::IInspectable>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ConvertBack<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, super::Interop::TypeName>, Param2: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0, targettype: Param1, parameter: Param2, language: Param3) -> ::windows_core::Result<::windows_core::IInspectable> {
         let this = self;
         unsafe {
@@ -2677,13 +2677,13 @@ unsafe impl ::windows_core::Interface for IValueConverter {
 #[doc(hidden)]
 pub struct IValueConverter_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub Convert: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut ::core::ffi::c_void, targettype: ::core::mem::ManuallyDrop<super::Interop::TypeName>, parameter: *mut ::core::ffi::c_void, language: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Interop"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Convert: usize,
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub ConvertBack: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut ::core::ffi::c_void, targettype: ::core::mem::ManuallyDrop<super::Interop::TypeName>, parameter: *mut ::core::ffi::c_void, language: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Interop"))]
+    #[cfg(not(feature = "winrt-ui"))]
     ConvertBack: usize,
 }
 #[repr(transparent)]

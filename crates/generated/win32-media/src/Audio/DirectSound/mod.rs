@@ -8,7 +8,7 @@ pub const DS3DALG_HRTF_FULL: ::windows_core::GUID = ::windows_core::GUID::from_u
 pub const DS3DALG_HRTF_LIGHT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc2413342_1c1b_11d2_94f5_00c04fc28aca);
 pub const DS3DALG_NO_VIRTUALIZATION: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc241333f_1c1b_11d2_94f5_00c04fc28aca);
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics")]
 pub struct DS3DBUFFER {
     pub dwSize: u32,
     pub vPosition: ::win32_graphics::Direct3D::D3DVECTOR,
@@ -21,40 +21,40 @@ pub struct DS3DBUFFER {
     pub flMaxDistance: f32,
     pub dwMode: u32,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for DS3DBUFFER {}
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for DS3DBUFFER {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for DS3DBUFFER {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DS3DBUFFER").field("dwSize", &self.dwSize).field("vPosition", &self.vPosition).field("vVelocity", &self.vVelocity).field("dwInsideConeAngle", &self.dwInsideConeAngle).field("dwOutsideConeAngle", &self.dwOutsideConeAngle).field("vConeOrientation", &self.vConeOrientation).field("lConeOutsideVolume", &self.lConeOutsideVolume).field("flMinDistance", &self.flMinDistance).field("flMaxDistance", &self.flMaxDistance).field("dwMode", &self.dwMode).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for DS3DBUFFER {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for DS3DBUFFER {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DS3DBUFFER>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for DS3DBUFFER {}
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for DS3DBUFFER {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics")]
 pub struct DS3DLISTENER {
     pub dwSize: u32,
     pub vPosition: ::win32_graphics::Direct3D::D3DVECTOR,
@@ -65,33 +65,33 @@ pub struct DS3DLISTENER {
     pub flRolloffFactor: f32,
     pub flDopplerFactor: f32,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::marker::Copy for DS3DLISTENER {}
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::clone::Clone for DS3DLISTENER {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::fmt::Debug for DS3DLISTENER {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DS3DLISTENER").field("dwSize", &self.dwSize).field("vPosition", &self.vPosition).field("vVelocity", &self.vVelocity).field("vOrientFront", &self.vOrientFront).field("vOrientTop", &self.vOrientTop).field("flDistanceFactor", &self.flDistanceFactor).field("flRolloffFactor", &self.flRolloffFactor).field("flDopplerFactor", &self.flDopplerFactor).finish()
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics")]
 unsafe impl ::windows_core::Abi for DS3DLISTENER {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::PartialEq for DS3DLISTENER {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DS3DLISTENER>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::cmp::Eq for DS3DLISTENER {}
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics")]
 impl ::core::default::Default for DS3DLISTENER {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1410,7 +1410,7 @@ pub struct IDirectSound_Vtbl {
 #[repr(transparent)]
 pub struct IDirectSound3DBuffer(::windows_core::IUnknown);
 impl IDirectSound3DBuffer {
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetAllParameters(&self) -> ::windows_core::Result<DS3DBUFFER> {
         let mut result__ = ::core::mem::MaybeUninit::<DS3DBUFFER>::zeroed();
         (::windows_core::Interface::vtable(self).GetAllParameters)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DS3DBUFFER>(result__)
@@ -1418,7 +1418,7 @@ impl IDirectSound3DBuffer {
     pub unsafe fn GetConeAngles(&self, pdwinsideconeangle: *mut u32, pdwoutsideconeangle: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetConeAngles)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdwinsideconeangle), ::core::mem::transmute(pdwoutsideconeangle)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetConeOrientation(&self) -> ::windows_core::Result<::win32_graphics::Direct3D::D3DVECTOR> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_graphics::Direct3D::D3DVECTOR>::zeroed();
         (::windows_core::Interface::vtable(self).GetConeOrientation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_graphics::Direct3D::D3DVECTOR>(result__)
@@ -1439,17 +1439,17 @@ impl IDirectSound3DBuffer {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).GetMode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetPosition(&self) -> ::windows_core::Result<::win32_graphics::Direct3D::D3DVECTOR> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_graphics::Direct3D::D3DVECTOR>::zeroed();
         (::windows_core::Interface::vtable(self).GetPosition)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_graphics::Direct3D::D3DVECTOR>(result__)
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetVelocity(&self) -> ::windows_core::Result<::win32_graphics::Direct3D::D3DVECTOR> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_graphics::Direct3D::D3DVECTOR>::zeroed();
         (::windows_core::Interface::vtable(self).GetVelocity)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_graphics::Direct3D::D3DVECTOR>(result__)
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetAllParameters(&self, pcds3dbuffer: *const DS3DBUFFER, dwapply: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetAllParameters)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pcds3dbuffer), ::core::mem::transmute(dwapply)).ok()
     }
@@ -1522,30 +1522,30 @@ unsafe impl ::windows_core::Interface for IDirectSound3DBuffer {
 #[doc(hidden)]
 pub struct IDirectSound3DBuffer_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub GetAllParameters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pds3dbuffer: *mut DS3DBUFFER) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct3D"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetAllParameters: usize,
     pub GetConeAngles: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwinsideconeangle: *mut u32, pdwoutsideconeangle: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub GetConeOrientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvorientation: *mut ::win32_graphics::Direct3D::D3DVECTOR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct3D"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetConeOrientation: usize,
     pub GetConeOutsideVolume: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plconeoutsidevolume: *mut i32) -> ::windows_core::HRESULT,
     pub GetMaxDistance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pflmaxdistance: *mut f32) -> ::windows_core::HRESULT,
     pub GetMinDistance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pflmindistance: *mut f32) -> ::windows_core::HRESULT,
     pub GetMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwmode: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub GetPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvposition: *mut ::win32_graphics::Direct3D::D3DVECTOR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct3D"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetPosition: usize,
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub GetVelocity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvvelocity: *mut ::win32_graphics::Direct3D::D3DVECTOR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct3D"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetVelocity: usize,
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub SetAllParameters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcds3dbuffer: *const DS3DBUFFER, dwapply: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct3D"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetAllParameters: usize,
     pub SetConeAngles: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwinsideconeangle: u32, dwoutsideconeangle: u32, dwapply: u32) -> ::windows_core::HRESULT,
     pub SetConeOrientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, x: f32, y: f32, z: f32, dwapply: u32) -> ::windows_core::HRESULT,
@@ -1559,7 +1559,7 @@ pub struct IDirectSound3DBuffer_Vtbl {
 #[repr(transparent)]
 pub struct IDirectSound3DListener(::windows_core::IUnknown);
 impl IDirectSound3DListener {
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetAllParameters(&self) -> ::windows_core::Result<DS3DLISTENER> {
         let mut result__ = ::core::mem::MaybeUninit::<DS3DLISTENER>::zeroed();
         (::windows_core::Interface::vtable(self).GetAllParameters)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DS3DLISTENER>(result__)
@@ -1572,11 +1572,11 @@ impl IDirectSound3DListener {
         let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
         (::windows_core::Interface::vtable(self).GetDopplerFactor)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<f32>(result__)
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetOrientation(&self, pvorientfront: *mut ::win32_graphics::Direct3D::D3DVECTOR, pvorienttop: *mut ::win32_graphics::Direct3D::D3DVECTOR) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetOrientation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pvorientfront), ::core::mem::transmute(pvorienttop)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetPosition(&self) -> ::windows_core::Result<::win32_graphics::Direct3D::D3DVECTOR> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_graphics::Direct3D::D3DVECTOR>::zeroed();
         (::windows_core::Interface::vtable(self).GetPosition)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_graphics::Direct3D::D3DVECTOR>(result__)
@@ -1585,12 +1585,12 @@ impl IDirectSound3DListener {
         let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
         (::windows_core::Interface::vtable(self).GetRolloffFactor)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<f32>(result__)
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetVelocity(&self) -> ::windows_core::Result<::win32_graphics::Direct3D::D3DVECTOR> {
         let mut result__ = ::core::mem::MaybeUninit::<::win32_graphics::Direct3D::D3DVECTOR>::zeroed();
         (::windows_core::Interface::vtable(self).GetVelocity)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_graphics::Direct3D::D3DVECTOR>(result__)
     }
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetAllParameters(&self, pclistener: *const DS3DLISTENER, dwapply: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetAllParameters)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pclistener), ::core::mem::transmute(dwapply)).ok()
     }
@@ -1660,28 +1660,28 @@ unsafe impl ::windows_core::Interface for IDirectSound3DListener {
 #[doc(hidden)]
 pub struct IDirectSound3DListener_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub GetAllParameters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plistener: *mut DS3DLISTENER) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct3D"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetAllParameters: usize,
     pub GetDistanceFactor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfldistancefactor: *mut f32) -> ::windows_core::HRESULT,
     pub GetDopplerFactor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfldopplerfactor: *mut f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub GetOrientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvorientfront: *mut ::win32_graphics::Direct3D::D3DVECTOR, pvorienttop: *mut ::win32_graphics::Direct3D::D3DVECTOR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct3D"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetOrientation: usize,
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub GetPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvposition: *mut ::win32_graphics::Direct3D::D3DVECTOR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct3D"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetPosition: usize,
     pub GetRolloffFactor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pflrollofffactor: *mut f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub GetVelocity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvvelocity: *mut ::win32_graphics::Direct3D::D3DVECTOR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct3D"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetVelocity: usize,
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics")]
     pub SetAllParameters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pclistener: *const DS3DLISTENER, dwapply: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Direct3D"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetAllParameters: usize,
     pub SetDistanceFactor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fldistancefactor: f32, dwapply: u32) -> ::windows_core::HRESULT,
     pub SetDopplerFactor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fldopplerfactor: f32, dwapply: u32) -> ::windows_core::HRESULT,

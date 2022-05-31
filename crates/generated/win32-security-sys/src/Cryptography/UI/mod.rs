@@ -3,9 +3,9 @@ extern "system" {
     pub fn CertSelectionGetSerializedBlob(pcsi: *const CERT_SELECTUI_INPUT, ppoutbuffer: *mut *mut ::core::ffi::c_void, puloutbuffersize: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn CryptUIDlgCertMgr(pcryptuicertmgr: *const CRYPTUI_CERT_MGR_STRUCT) -> ::win32_foundation_sys::BOOL;
     pub fn CryptUIDlgSelectCertificateFromStore(hcertstore: super::HCERTSTORE, hwnd: ::win32_foundation_sys::HWND, pwsztitle: ::windows_core_sys::PCWSTR, pwszdisplaystring: ::windows_core_sys::PCWSTR, dwdontusecolumn: u32, dwflags: u32, pvreserved: *const ::core::ffi::c_void) -> *mut super::CERT_CONTEXT;
-    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+    #[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-ui-sys", feature = "win32-ui-sys"))]
     pub fn CryptUIDlgViewCertificateA(pcertviewinfo: *const CRYPTUI_VIEWCERTIFICATE_STRUCTA, pfpropertieschanged: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
-    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+    #[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-ui-sys", feature = "win32-ui-sys"))]
     pub fn CryptUIDlgViewCertificateW(pcertviewinfo: *const CRYPTUI_VIEWCERTIFICATE_STRUCTW, pfpropertieschanged: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     pub fn CryptUIDlgViewContext(dwcontexttype: u32, pvcontext: *const ::core::ffi::c_void, hwnd: ::win32_foundation_sys::HWND, pwsztitle: ::windows_core_sys::PCWSTR, dwflags: u32, pvreserved: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn CryptUIWizDigitalSign(dwflags: u32, hwndparent: ::win32_foundation_sys::HWND, pwszwizardtitle: ::windows_core_sys::PCWSTR, pdigitalsigninfo: *const CRYPTUI_WIZ_DIGITAL_SIGN_INFO, ppsigncontext: *mut *mut CRYPTUI_WIZ_DIGITAL_SIGN_CONTEXT) -> ::win32_foundation_sys::BOOL;
@@ -159,7 +159,7 @@ impl ::core::clone::Clone for CERT_VERIFY_CERTIFICATE_TRUST {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys", feature = "win32-ui-sys"))]
 pub struct CERT_VIEWPROPERTIES_STRUCT_A {
     pub dwSize: u32,
     pub hwndParent: ::win32_foundation_sys::HWND,
@@ -184,9 +184,9 @@ pub struct CERT_VIEWPROPERTIES_STRUCT_A {
     pub cArrayPropSheetPages: u32,
     pub arrayPropSheetPages: *mut ::win32_ui_sys::Controls::PROPSHEETPAGEA,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for CERT_VIEWPROPERTIES_STRUCT_A {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for CERT_VIEWPROPERTIES_STRUCT_A {
     fn clone(&self) -> Self {
         *self
@@ -204,7 +204,7 @@ pub const CM_NO_EDITTRUST: CERT_VIEWPROPERTIES_STRUCT_FLAGS = 128u32;
 pub const CM_HIDE_DETAILPAGE: CERT_VIEWPROPERTIES_STRUCT_FLAGS = 256u32;
 pub const CM_ADD_CERT_STORES: CERT_VIEWPROPERTIES_STRUCT_FLAGS = 512u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys", feature = "win32-ui-sys"))]
 pub struct CERT_VIEWPROPERTIES_STRUCT_W {
     pub dwSize: u32,
     pub hwndParent: ::win32_foundation_sys::HWND,
@@ -229,9 +229,9 @@ pub struct CERT_VIEWPROPERTIES_STRUCT_W {
     pub cArrayPropSheetPages: u32,
     pub arrayPropSheetPages: *mut ::win32_ui_sys::Controls::PROPSHEETPAGEA,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for CERT_VIEWPROPERTIES_STRUCT_W {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-ui-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for CERT_VIEWPROPERTIES_STRUCT_W {
     fn clone(&self) -> Self {
         *self
@@ -328,7 +328,7 @@ pub const CRYPTUI_DISABLE_HTMLLINK: CRYPTUI_VIEWCERTIFICATE_FLAGS = 65536u32;
 pub const CRYPTUI_DISABLE_ISSUERSTATEMENT: CRYPTUI_VIEWCERTIFICATE_FLAGS = 131072u32;
 pub const CRYPTUI_CACHE_ONLY_URL_RETRIEVAL: CRYPTUI_VIEWCERTIFICATE_FLAGS = 262144u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-ui-sys", feature = "win32-ui-sys"))]
 pub struct CRYPTUI_VIEWCERTIFICATE_STRUCTA {
     pub dwSize: u32,
     pub hwndParent: ::win32_foundation_sys::HWND,
@@ -349,30 +349,30 @@ pub struct CRYPTUI_VIEWCERTIFICATE_STRUCTA {
     pub rgPropSheetPages: *mut ::win32_ui_sys::Controls::PROPSHEETPAGEA,
     pub nStartPage: u32,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-ui-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for CRYPTUI_VIEWCERTIFICATE_STRUCTA {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-ui-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for CRYPTUI_VIEWCERTIFICATE_STRUCTA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-ui-sys", feature = "win32-ui-sys"))]
 pub union CRYPTUI_VIEWCERTIFICATE_STRUCTA_0 {
     pub pCryptProviderData: *const super::super::WinTrust::CRYPT_PROVIDER_DATA,
     pub hWVTStateData: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-ui-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for CRYPTUI_VIEWCERTIFICATE_STRUCTA_0 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-ui-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for CRYPTUI_VIEWCERTIFICATE_STRUCTA_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-ui-sys", feature = "win32-ui-sys"))]
 pub struct CRYPTUI_VIEWCERTIFICATE_STRUCTW {
     pub dwSize: u32,
     pub hwndParent: ::win32_foundation_sys::HWND,
@@ -393,23 +393,23 @@ pub struct CRYPTUI_VIEWCERTIFICATE_STRUCTW {
     pub rgPropSheetPages: *mut ::win32_ui_sys::Controls::PROPSHEETPAGEW,
     pub nStartPage: u32,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-ui-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for CRYPTUI_VIEWCERTIFICATE_STRUCTW {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-ui-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for CRYPTUI_VIEWCERTIFICATE_STRUCTW {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-ui-sys", feature = "win32-ui-sys"))]
 pub union CRYPTUI_VIEWCERTIFICATE_STRUCTW_0 {
     pub pCryptProviderData: *const super::super::WinTrust::CRYPT_PROVIDER_DATA,
     pub hWVTStateData: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-ui-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for CRYPTUI_VIEWCERTIFICATE_STRUCTW_0 {}
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-security-sys", feature = "win32-ui-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for CRYPTUI_VIEWCERTIFICATE_STRUCTW_0 {
     fn clone(&self) -> Self {
         *self

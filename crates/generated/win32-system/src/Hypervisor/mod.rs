@@ -931,7 +931,7 @@ pub unsafe fn HdvDestroySectionBackedMmioRange(requestor: *const ::core::ffi::c_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_HostComputeSystem")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn HdvInitializeDeviceHost<'a, Param0: ::windows_core::IntoParam<'a, super::HostComputeSystem::HCS_SYSTEM>>(computesystem: Param0, devicehosthandle: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -7993,7 +7993,7 @@ pub unsafe fn WHvSetVirtualProcessorXsaveState<'a, Param0: ::windows_core::IntoP
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_Power")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn WHvSetVpciDevicePowerState<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64, powerstate: super::Power::DEVICE_POWER_STATE) -> ::windows_core::Result<()> {
     #[cfg(windows)]

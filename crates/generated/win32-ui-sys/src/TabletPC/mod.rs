@@ -1,6 +1,6 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn AddStroke(hrc: HRECOCONTEXT, ppacketdesc: *const PACKET_DESCRIPTION, cbpacket: u32, ppacket: *const u8, pxform: *const ::win32_graphics_sys::Gdi::XFORM) -> ::windows_core_sys::HRESULT;
     pub fn AddWordsToWordList(hwl: HRECOWORDLIST, pwcwords: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn AdviseInkChange(hrc: HRECOCONTEXT, bnewstroke: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
@@ -849,45 +849,45 @@ pub const IECN_RECOGNITIONRESULT: u32 = 2051u32;
 pub const IECN_STROKE: u32 = 2049u32;
 pub const IECN__BASE: u32 = 2048u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Controls"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys", feature = "win32-ui-sys"))]
 pub struct IEC_GESTUREINFO {
     pub nmhdr: super::Controls::NMHDR,
     pub Cursor: IInkCursor,
     pub Strokes: IInkStrokes,
     pub Gestures: ::win32_system_sys::Com::VARIANT,
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Controls"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for IEC_GESTUREINFO {}
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Controls"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for IEC_GESTUREINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Controls"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-ui-sys"))]
 pub struct IEC_RECOGNITIONRESULTINFO {
     pub nmhdr: super::Controls::NMHDR,
     pub RecognitionResult: IInkRecognitionResult,
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Controls"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for IEC_RECOGNITIONRESULTINFO {}
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Controls"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for IEC_RECOGNITIONRESULTINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Controls"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-ui-sys"))]
 pub struct IEC_STROKEINFO {
     pub nmhdr: super::Controls::NMHDR,
     pub Cursor: IInkCursor,
     pub Stroke: IInkStrokeDisp,
 }
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Controls"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for IEC_STROKEINFO {}
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Controls"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for IEC_STROKEINFO {
     fn clone(&self) -> Self {
         *self

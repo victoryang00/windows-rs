@@ -272,22 +272,22 @@ impl ::core::clone::Clone for MLOperatorTensorDataType {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct WINML_BINDING_DESC {
     pub Name: ::windows_core_sys::PCWSTR,
     pub BindType: WINML_BINDING_TYPE,
     pub Anonymous: WINML_BINDING_DESC_0,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for WINML_BINDING_DESC {}
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for WINML_BINDING_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics-sys")]
 pub union WINML_BINDING_DESC_0 {
     pub Tensor: WINML_TENSOR_BINDING_DESC,
     pub Sequence: WINML_SEQUENCE_BINDING_DESC,
@@ -295,9 +295,9 @@ pub union WINML_BINDING_DESC_0 {
     pub Image: WINML_IMAGE_BINDING_DESC,
     pub Resource: WINML_RESOURCE_BINDING_DESC,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for WINML_BINDING_DESC_0 {}
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for WINML_BINDING_DESC_0 {
     fn clone(&self) -> Self {
         *self
@@ -406,16 +406,16 @@ impl ::core::clone::Clone for WINML_MODEL_DESC {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct WINML_RESOURCE_BINDING_DESC {
     pub ElementType: WINML_TENSOR_DATA_TYPE,
     pub NumDimensions: u32,
     pub pShape: *mut i64,
     pub pResource: ::win32_graphics_sys::Direct3D12::ID3D12Resource,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for WINML_RESOURCE_BINDING_DESC {}
-#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for WINML_RESOURCE_BINDING_DESC {
     fn clone(&self) -> Self {
         *self

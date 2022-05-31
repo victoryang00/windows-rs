@@ -7,7 +7,7 @@ pub const CLSID_MILBitmapEffectOuterGlow: ::windows_core::GUID = ::windows_core:
 #[repr(transparent)]
 pub struct IMILBitmapEffect(::windows_core::IUnknown);
 impl IMILBitmapEffect {
-    #[cfg(feature = "Win32_Graphics_Imaging")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetOutput<'a, Param1: ::windows_core::IntoParam<'a, IMILBitmapEffectRenderContext>>(&self, uiindex: u32, pcontext: Param1) -> ::windows_core::Result<::win32_graphics::Imaging::IWICBitmapSource> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetOutput)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uiindex), pcontext.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_graphics::Imaging::IWICBitmapSource>(result__)
@@ -16,7 +16,7 @@ impl IMILBitmapEffect {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetParentEffect)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IMILBitmapEffectGroup>(result__)
     }
-    #[cfg(feature = "Win32_Graphics_Imaging")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn SetInputSource<'a, Param1: ::windows_core::IntoParam<'a, ::win32_graphics::Imaging::IWICBitmapSource>>(&self, uiindex: u32, pbitmapsource: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetInputSource)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uiindex), pbitmapsource.into_param().abi()).ok()
     }
@@ -65,14 +65,14 @@ unsafe impl ::windows_core::Interface for IMILBitmapEffect {
 #[doc(hidden)]
 pub struct IMILBitmapEffect_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Graphics_Imaging")]
+    #[cfg(feature = "win32-graphics")]
     pub GetOutput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uiindex: u32, pcontext: ::windows_core::RawPtr, ppbitmapsource: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Imaging"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetOutput: usize,
     pub GetParentEffect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppparenteffect: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Imaging")]
+    #[cfg(feature = "win32-graphics")]
     pub SetInputSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uiindex: u32, pbitmapsource: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Imaging"))]
+    #[cfg(not(feature = "win32-graphics"))]
     SetInputSource: usize,
 }
 #[repr(transparent)]
@@ -624,7 +624,7 @@ impl IMILBitmapEffectImpl {
     pub unsafe fn SetParentEffect<'a, Param0: ::windows_core::IntoParam<'a, IMILBitmapEffectGroup>>(&self, pparenteffect: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetParentEffect)(::windows_core::Interface::as_raw(self), pparenteffect.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Imaging")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetInputSource(&self, uiindex: u32) -> ::windows_core::Result<::win32_graphics::Imaging::IWICBitmapSource> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetInputSource)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uiindex), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_graphics::Imaging::IWICBitmapSource>(result__)
@@ -633,11 +633,11 @@ impl IMILBitmapEffectImpl {
         let mut result__ = ::core::mem::MaybeUninit::<MilRectD>::zeroed();
         (::windows_core::Interface::vtable(self).GetInputSourceBounds)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uiindex), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<MilRectD>(result__)
     }
-    #[cfg(feature = "Win32_Graphics_Imaging")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetInputBitmapSource<'a, Param1: ::windows_core::IntoParam<'a, IMILBitmapEffectRenderContext>>(&self, uiindex: u32, prendercontext: Param1, pfmodifyinplace: *mut i16, ppbitmapsource: *mut ::core::option::Option<::win32_graphics::Imaging::IWICBitmapSource>) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetInputBitmapSource)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uiindex), prendercontext.into_param().abi(), ::core::mem::transmute(pfmodifyinplace), ::core::mem::transmute(ppbitmapsource)).ok()
     }
-    #[cfg(feature = "Win32_Graphics_Imaging")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetOutputBitmapSource<'a, Param1: ::windows_core::IntoParam<'a, IMILBitmapEffectRenderContext>>(&self, uiindex: u32, prendercontext: Param1, pfmodifyinplace: *mut i16, ppbitmapsource: *mut ::core::option::Option<::win32_graphics::Imaging::IWICBitmapSource>) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetOutputBitmapSource)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uiindex), prendercontext.into_param().abi(), ::core::mem::transmute(pfmodifyinplace), ::core::mem::transmute(ppbitmapsource)).ok()
     }
@@ -691,18 +691,18 @@ pub struct IMILBitmapEffectImpl_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub IsInPlaceModificationAllowed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, poutputconnector: ::windows_core::RawPtr, pfmodifyinplace: *mut i16) -> ::windows_core::HRESULT,
     pub SetParentEffect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pparenteffect: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Imaging")]
+    #[cfg(feature = "win32-graphics")]
     pub GetInputSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uiindex: u32, ppbitmapsource: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Imaging"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetInputSource: usize,
     pub GetInputSourceBounds: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uiindex: u32, prect: *mut MilRectD) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Imaging")]
+    #[cfg(feature = "win32-graphics")]
     pub GetInputBitmapSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uiindex: u32, prendercontext: ::windows_core::RawPtr, pfmodifyinplace: *mut i16, ppbitmapsource: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Imaging"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetInputBitmapSource: usize,
-    #[cfg(feature = "Win32_Graphics_Imaging")]
+    #[cfg(feature = "win32-graphics")]
     pub GetOutputBitmapSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uiindex: u32, prendercontext: ::windows_core::RawPtr, pfmodifyinplace: *mut i16, ppbitmapsource: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Imaging"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetOutputBitmapSource: usize,
     pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pinner: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -1119,7 +1119,7 @@ pub struct IMILBitmapEffectOutputConnectorImpl_Vtbl {
 #[repr(transparent)]
 pub struct IMILBitmapEffectPrimitive(::windows_core::IUnknown);
 impl IMILBitmapEffectPrimitive {
-    #[cfg(feature = "Win32_Graphics_Imaging")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetOutput<'a, Param1: ::windows_core::IntoParam<'a, IMILBitmapEffectRenderContext>>(&self, uiindex: u32, pcontext: Param1, pfmodifyinplace: *mut i16, ppbitmapsource: *mut ::core::option::Option<::win32_graphics::Imaging::IWICBitmapSource>) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetOutput)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uiindex), pcontext.into_param().abi(), ::core::mem::transmute(pfmodifyinplace), ::core::mem::transmute(ppbitmapsource)).ok()
     }
@@ -1137,7 +1137,7 @@ impl IMILBitmapEffectPrimitive {
         let mut result__ = ::core::mem::MaybeUninit::<i16>::zeroed();
         (::windows_core::Interface::vtable(self).HasInverseTransform)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uiindex), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i16>(result__)
     }
-    #[cfg(feature = "Win32_Graphics_Dwm")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetAffineMatrix(&self, uiindex: u32, pmatrix: *mut ::win32_graphics::Dwm::MilMatrix3x2D) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetAffineMatrix)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uiindex), ::core::mem::transmute(pmatrix)).ok()
     }
@@ -1186,17 +1186,17 @@ unsafe impl ::windows_core::Interface for IMILBitmapEffectPrimitive {
 #[doc(hidden)]
 pub struct IMILBitmapEffectPrimitive_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Graphics_Imaging")]
+    #[cfg(feature = "win32-graphics")]
     pub GetOutput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uiindex: u32, pcontext: ::windows_core::RawPtr, pfmodifyinplace: *mut i16, ppbitmapsource: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Imaging"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetOutput: usize,
     pub TransformPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uiindex: u32, p: *mut MilPoint2D, fforwardtransform: i16, pcontext: ::windows_core::RawPtr, pfpointtransformed: *mut i16) -> ::windows_core::HRESULT,
     pub TransformRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uiindex: u32, p: *mut MilRectD, fforwardtransform: i16, pcontext: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub HasAffineTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uiindex: u32, pfaffine: *mut i16) -> ::windows_core::HRESULT,
     pub HasInverseTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uiindex: u32, pfhasinverse: *mut i16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_Dwm")]
+    #[cfg(feature = "win32-graphics")]
     pub GetAffineMatrix: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uiindex: u32, pmatrix: *mut ::win32_graphics::Dwm::MilMatrix3x2D) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_Dwm"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetAffineMatrix: usize,
 }
 #[repr(transparent)]

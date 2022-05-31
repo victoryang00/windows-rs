@@ -35,14 +35,14 @@ unsafe impl ::windows_core::RuntimeType for AccessibilityView {
 #[repr(transparent)]
 pub struct AppBarAutomationPeer(::windows_core::IUnknown);
 impl AppBarAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::AppBar>>(owner: Param0) -> ::windows_core::Result<AppBarAutomationPeer> {
         Self::IAppBarAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<AppBarAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::AppBar>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<AppBarAutomationPeer> {
         Self::IAppBarAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -50,7 +50,7 @@ impl AppBarAutomationPeer {
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::mem::transmute_copy(&derived__), base__ as *mut _ as _, result__.as_mut_ptr()).from_abi::<AppBarAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ExpandCollapseState(&self) -> ::windows_core::Result<super::ExpandCollapseState> {
         let this = &::windows_core::Interface::cast::<super::Provider::IExpandCollapseProvider>(self)?;
         unsafe {
@@ -58,17 +58,17 @@ impl AppBarAutomationPeer {
             (::windows_core::Interface::vtable(this).ExpandCollapseState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::ExpandCollapseState>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Collapse(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IExpandCollapseProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Collapse)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Expand(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IExpandCollapseProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Expand)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ToggleState(&self) -> ::windows_core::Result<super::ToggleState> {
         let this = &::windows_core::Interface::cast::<super::Provider::IToggleProvider>(self)?;
         unsafe {
@@ -76,12 +76,12 @@ impl AppBarAutomationPeer {
             (::windows_core::Interface::vtable(this).ToggleState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::ToggleState>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Toggle(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IToggleProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Toggle)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn IsModal(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::IWindowProvider>(self)?;
         unsafe {
@@ -89,7 +89,7 @@ impl AppBarAutomationPeer {
             (::windows_core::Interface::vtable(this).IsModal)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn IsTopmost(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::IWindowProvider>(self)?;
         unsafe {
@@ -97,7 +97,7 @@ impl AppBarAutomationPeer {
             (::windows_core::Interface::vtable(this).IsTopmost)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Maximizable(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::IWindowProvider>(self)?;
         unsafe {
@@ -105,7 +105,7 @@ impl AppBarAutomationPeer {
             (::windows_core::Interface::vtable(this).Maximizable)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Minimizable(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::IWindowProvider>(self)?;
         unsafe {
@@ -113,7 +113,7 @@ impl AppBarAutomationPeer {
             (::windows_core::Interface::vtable(this).Minimizable)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn InteractionState(&self) -> ::windows_core::Result<super::WindowInteractionState> {
         let this = &::windows_core::Interface::cast::<super::Provider::IWindowProvider>(self)?;
         unsafe {
@@ -121,7 +121,7 @@ impl AppBarAutomationPeer {
             (::windows_core::Interface::vtable(this).InteractionState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::WindowInteractionState>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn VisualState(&self) -> ::windows_core::Result<super::WindowVisualState> {
         let this = &::windows_core::Interface::cast::<super::Provider::IWindowProvider>(self)?;
         unsafe {
@@ -129,17 +129,17 @@ impl AppBarAutomationPeer {
             (::windows_core::Interface::vtable(this).VisualState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::WindowVisualState>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IWindowProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetVisualState(&self, state: super::WindowVisualState) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IWindowProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVisualState)(::windows_core::Interface::as_raw(this), state).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn WaitForInputIdle(&self, milliseconds: i32) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::IWindowProvider>(self)?;
         unsafe {
@@ -222,79 +222,79 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a App
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<AppBarAutomationPeer> for super::Provider::IExpandCollapseProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: AppBarAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&AppBarAutomationPeer> for super::Provider::IExpandCollapseProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &AppBarAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IExpandCollapseProvider> for AppBarAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IExpandCollapseProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IExpandCollapseProvider> for &AppBarAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IExpandCollapseProvider> {
         ::core::convert::TryInto::<super::Provider::IExpandCollapseProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<AppBarAutomationPeer> for super::Provider::IToggleProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: AppBarAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&AppBarAutomationPeer> for super::Provider::IToggleProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &AppBarAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IToggleProvider> for AppBarAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IToggleProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IToggleProvider> for &AppBarAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IToggleProvider> {
         ::core::convert::TryInto::<super::Provider::IToggleProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<AppBarAutomationPeer> for super::Provider::IWindowProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: AppBarAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&AppBarAutomationPeer> for super::Provider::IWindowProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &AppBarAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IWindowProvider> for AppBarAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IWindowProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IWindowProvider> for &AppBarAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IWindowProvider> {
         ::core::convert::TryInto::<super::Provider::IWindowProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -365,14 +365,14 @@ unsafe impl ::core::marker::Sync for AppBarAutomationPeer {}
 #[repr(transparent)]
 pub struct AppBarButtonAutomationPeer(::windows_core::IUnknown);
 impl AppBarButtonAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::AppBarButton>>(owner: Param0) -> ::windows_core::Result<AppBarButtonAutomationPeer> {
         Self::IAppBarButtonAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<AppBarButtonAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::AppBarButton>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<AppBarButtonAutomationPeer> {
         Self::IAppBarButtonAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -380,7 +380,7 @@ impl AppBarButtonAutomationPeer {
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::mem::transmute_copy(&derived__), base__ as *mut _ as _, result__.as_mut_ptr()).from_abi::<AppBarButtonAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ExpandCollapseState(&self) -> ::windows_core::Result<super::ExpandCollapseState> {
         let this = &::windows_core::Interface::cast::<super::Provider::IExpandCollapseProvider>(self)?;
         unsafe {
@@ -388,12 +388,12 @@ impl AppBarButtonAutomationPeer {
             (::windows_core::Interface::vtable(this).ExpandCollapseState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::ExpandCollapseState>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Collapse(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IExpandCollapseProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Collapse)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Expand(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IExpandCollapseProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Expand)(::windows_core::Interface::as_raw(this)).ok() }
@@ -473,53 +473,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a App
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<AppBarButtonAutomationPeer> for super::Provider::IExpandCollapseProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: AppBarButtonAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&AppBarButtonAutomationPeer> for super::Provider::IExpandCollapseProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &AppBarButtonAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IExpandCollapseProvider> for AppBarButtonAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IExpandCollapseProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IExpandCollapseProvider> for &AppBarButtonAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IExpandCollapseProvider> {
         ::core::convert::TryInto::<super::Provider::IExpandCollapseProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<AppBarButtonAutomationPeer> for super::Provider::IInvokeProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: AppBarButtonAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&AppBarButtonAutomationPeer> for super::Provider::IInvokeProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &AppBarButtonAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IInvokeProvider> for AppBarButtonAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IInvokeProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IInvokeProvider> for &AppBarButtonAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IInvokeProvider> {
         ::core::convert::TryInto::<super::Provider::IInvokeProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -630,14 +630,14 @@ unsafe impl ::core::marker::Sync for AppBarButtonAutomationPeer {}
 #[repr(transparent)]
 pub struct AppBarToggleButtonAutomationPeer(::windows_core::IUnknown);
 impl AppBarToggleButtonAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::AppBarToggleButton>>(owner: Param0) -> ::windows_core::Result<AppBarToggleButtonAutomationPeer> {
         Self::IAppBarToggleButtonAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<AppBarToggleButtonAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::AppBarToggleButton>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<AppBarToggleButtonAutomationPeer> {
         Self::IAppBarToggleButtonAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -720,27 +720,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a App
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<AppBarToggleButtonAutomationPeer> for super::Provider::IToggleProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: AppBarToggleButtonAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&AppBarToggleButtonAutomationPeer> for super::Provider::IToggleProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &AppBarToggleButtonAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IToggleProvider> for AppBarToggleButtonAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IToggleProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IToggleProvider> for &AppBarToggleButtonAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IToggleProvider> {
         ::core::convert::TryInto::<super::Provider::IToggleProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -851,14 +851,14 @@ unsafe impl ::core::marker::Sync for AppBarToggleButtonAutomationPeer {}
 #[repr(transparent)]
 pub struct AutoSuggestBoxAutomationPeer(::windows_core::IUnknown);
 impl AutoSuggestBoxAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::AutoSuggestBox>>(owner: Param0) -> ::windows_core::Result<AutoSuggestBoxAutomationPeer> {
         Self::IAutoSuggestBoxAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), result__.as_mut_ptr()).from_abi::<AutoSuggestBoxAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Invoke(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IInvokeProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Invoke)(::windows_core::Interface::as_raw(this)).ok() }
@@ -938,27 +938,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Aut
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<AutoSuggestBoxAutomationPeer> for super::Provider::IInvokeProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: AutoSuggestBoxAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&AutoSuggestBoxAutomationPeer> for super::Provider::IInvokeProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &AutoSuggestBoxAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IInvokeProvider> for AutoSuggestBoxAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IInvokeProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IInvokeProvider> for &AutoSuggestBoxAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IInvokeProvider> {
         ::core::convert::TryInto::<super::Provider::IInvokeProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -1477,7 +1477,7 @@ impl AutomationPeer {
             (::windows_core::Interface::vtable(this).GetBoundingRectangle)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetChildren(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<AutomationPeer>> {
         let this = self;
         unsafe {
@@ -1608,7 +1608,7 @@ impl AutomationPeer {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFocus)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn GetParent(&self) -> ::windows_core::Result<AutomationPeer> {
         let this = self;
         unsafe {
@@ -1620,7 +1620,7 @@ impl AutomationPeer {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InvalidatePeer)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub fn GetPeerFromPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, point: Param0) -> ::windows_core::Result<AutomationPeer> {
         let this = self;
         unsafe {
@@ -1660,7 +1660,7 @@ impl AutomationPeer {
         let this = &::windows_core::Interface::cast::<IAutomationPeer3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ShowContextMenu)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetControlledPeers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<AutomationPeer>> {
         let this = &::windows_core::Interface::cast::<IAutomationPeer3>(self)?;
         unsafe {
@@ -1668,7 +1668,7 @@ impl AutomationPeer {
             (::windows_core::Interface::vtable(this).GetControlledPeers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<AutomationPeer>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetAnnotations(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<AutomationPeerAnnotation>> {
         let this = &::windows_core::Interface::cast::<IAutomationPeer3>(self)?;
         unsafe {
@@ -1680,7 +1680,7 @@ impl AutomationPeer {
         let this = &::windows_core::Interface::cast::<IAutomationPeer3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetParent)(::windows_core::Interface::as_raw(this), peer.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RaiseTextEditTextChangedEvent<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>>(&self, automationtexteditchangetype: super::AutomationTextEditChangeType, changeddata: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAutomationPeer3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RaiseTextEditTextChangedEvent)(::windows_core::Interface::as_raw(this), automationtexteditchangetype, changeddata.into_param().abi()).ok() }
@@ -1770,7 +1770,7 @@ impl AutomationPeer {
             (::windows_core::Interface::vtable(this).IsDialog)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn PeerFromProvider<'a, Param0: ::windows_core::IntoParam<'a, super::Provider::IRawElementProviderSimple>>(&self, provider: Param0) -> ::windows_core::Result<AutomationPeer> {
         let this = &::windows_core::Interface::cast::<IAutomationPeerProtected>(self)?;
         unsafe {
@@ -1778,7 +1778,7 @@ impl AutomationPeer {
             (::windows_core::Interface::vtable(this).PeerFromProvider)(::windows_core::Interface::as_raw(this), provider.into_param().abi(), result__.as_mut_ptr()).from_abi::<AutomationPeer>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ProviderFromPeer<'a, Param0: ::windows_core::IntoParam<'a, AutomationPeer>>(&self, peer: Param0) -> ::windows_core::Result<super::Provider::IRawElementProviderSimple> {
         let this = &::windows_core::Interface::cast::<IAutomationPeerProtected>(self)?;
         unsafe {
@@ -2096,14 +2096,14 @@ unsafe impl ::windows_core::RuntimeType for AutomationStructureChangeType {
 #[repr(transparent)]
 pub struct ButtonAutomationPeer(::windows_core::IUnknown);
 impl ButtonAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Button>>(owner: Param0) -> ::windows_core::Result<ButtonAutomationPeer> {
         Self::IButtonAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<ButtonAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Button>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<ButtonAutomationPeer> {
         Self::IButtonAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -2111,7 +2111,7 @@ impl ButtonAutomationPeer {
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::mem::transmute_copy(&derived__), base__ as *mut _ as _, result__.as_mut_ptr()).from_abi::<ButtonAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Invoke(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IInvokeProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Invoke)(::windows_core::Interface::as_raw(this)).ok() }
@@ -2191,27 +2191,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a But
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ButtonAutomationPeer> for super::Provider::IInvokeProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ButtonAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ButtonAutomationPeer> for super::Provider::IInvokeProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ButtonAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IInvokeProvider> for ButtonAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IInvokeProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IInvokeProvider> for &ButtonAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IInvokeProvider> {
         ::core::convert::TryInto::<super::Provider::IInvokeProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -2437,14 +2437,14 @@ unsafe impl ::core::marker::Sync for ButtonBaseAutomationPeer {}
 #[repr(transparent)]
 pub struct CalendarDatePickerAutomationPeer(::windows_core::IUnknown);
 impl CalendarDatePickerAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::CalendarDatePicker>>(owner: Param0) -> ::windows_core::Result<CalendarDatePickerAutomationPeer> {
         Self::ICalendarDatePickerAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<CalendarDatePickerAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::CalendarDatePicker>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<CalendarDatePickerAutomationPeer> {
         Self::ICalendarDatePickerAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -2452,12 +2452,12 @@ impl CalendarDatePickerAutomationPeer {
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::mem::transmute_copy(&derived__), base__ as *mut _ as _, result__.as_mut_ptr()).from_abi::<CalendarDatePickerAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Invoke(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IInvokeProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Invoke)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn IsReadOnly(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::IValueProvider>(self)?;
         unsafe {
@@ -2465,7 +2465,7 @@ impl CalendarDatePickerAutomationPeer {
             (::windows_core::Interface::vtable(this).IsReadOnly)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Value(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = &::windows_core::Interface::cast::<super::Provider::IValueProvider>(self)?;
         unsafe {
@@ -2473,7 +2473,7 @@ impl CalendarDatePickerAutomationPeer {
             (::windows_core::Interface::vtable(this).Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetValue<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IValueProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetValue)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -2553,53 +2553,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Cal
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<CalendarDatePickerAutomationPeer> for super::Provider::IInvokeProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: CalendarDatePickerAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&CalendarDatePickerAutomationPeer> for super::Provider::IInvokeProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &CalendarDatePickerAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IInvokeProvider> for CalendarDatePickerAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IInvokeProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IInvokeProvider> for &CalendarDatePickerAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IInvokeProvider> {
         ::core::convert::TryInto::<super::Provider::IInvokeProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<CalendarDatePickerAutomationPeer> for super::Provider::IValueProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: CalendarDatePickerAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&CalendarDatePickerAutomationPeer> for super::Provider::IValueProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &CalendarDatePickerAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IValueProvider> for CalendarDatePickerAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IValueProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IValueProvider> for &CalendarDatePickerAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IValueProvider> {
         ::core::convert::TryInto::<super::Provider::IValueProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -2670,14 +2670,14 @@ unsafe impl ::core::marker::Sync for CalendarDatePickerAutomationPeer {}
 #[repr(transparent)]
 pub struct CaptureElementAutomationPeer(::windows_core::IUnknown);
 impl CaptureElementAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::CaptureElement>>(owner: Param0) -> ::windows_core::Result<CaptureElementAutomationPeer> {
         Self::ICaptureElementAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<CaptureElementAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::CaptureElement>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<CaptureElementAutomationPeer> {
         Self::ICaptureElementAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -2825,14 +2825,14 @@ unsafe impl ::core::marker::Sync for CaptureElementAutomationPeer {}
 #[repr(transparent)]
 pub struct CheckBoxAutomationPeer(::windows_core::IUnknown);
 impl CheckBoxAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::CheckBox>>(owner: Param0) -> ::windows_core::Result<CheckBoxAutomationPeer> {
         Self::ICheckBoxAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<CheckBoxAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::CheckBox>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<CheckBoxAutomationPeer> {
         Self::ICheckBoxAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -2915,27 +2915,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Che
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<CheckBoxAutomationPeer> for super::Provider::IToggleProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: CheckBoxAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&CheckBoxAutomationPeer> for super::Provider::IToggleProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &CheckBoxAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IToggleProvider> for CheckBoxAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IToggleProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IToggleProvider> for &CheckBoxAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IToggleProvider> {
         ::core::convert::TryInto::<super::Provider::IToggleProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -3046,14 +3046,14 @@ unsafe impl ::core::marker::Sync for CheckBoxAutomationPeer {}
 #[repr(transparent)]
 pub struct ColorPickerSliderAutomationPeer(::windows_core::IUnknown);
 impl ColorPickerSliderAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Primitives::ColorPickerSlider>>(owner: Param0) -> ::windows_core::Result<ColorPickerSliderAutomationPeer> {
         Self::IColorPickerSliderAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<ColorPickerSliderAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Primitives::ColorPickerSlider>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<ColorPickerSliderAutomationPeer> {
         Self::IColorPickerSliderAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -3136,27 +3136,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Col
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ColorPickerSliderAutomationPeer> for super::Provider::IRangeValueProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ColorPickerSliderAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ColorPickerSliderAutomationPeer> for super::Provider::IRangeValueProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ColorPickerSliderAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IRangeValueProvider> for ColorPickerSliderAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IRangeValueProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IRangeValueProvider> for &ColorPickerSliderAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IRangeValueProvider> {
         ::core::convert::TryInto::<super::Provider::IRangeValueProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -3267,14 +3267,14 @@ unsafe impl ::core::marker::Sync for ColorPickerSliderAutomationPeer {}
 #[repr(transparent)]
 pub struct ColorSpectrumAutomationPeer(::windows_core::IUnknown);
 impl ColorSpectrumAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Primitives::ColorSpectrum>>(owner: Param0) -> ::windows_core::Result<ColorSpectrumAutomationPeer> {
         Self::IColorSpectrumAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<ColorSpectrumAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Primitives::ColorSpectrum>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<ColorSpectrumAutomationPeer> {
         Self::IColorSpectrumAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -3422,14 +3422,14 @@ unsafe impl ::core::marker::Sync for ColorSpectrumAutomationPeer {}
 #[repr(transparent)]
 pub struct ComboBoxAutomationPeer(::windows_core::IUnknown);
 impl ComboBoxAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ComboBox>>(owner: Param0) -> ::windows_core::Result<ComboBoxAutomationPeer> {
         Self::IComboBoxAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<ComboBoxAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ComboBox>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<ComboBoxAutomationPeer> {
         Self::IComboBoxAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -3437,7 +3437,7 @@ impl ComboBoxAutomationPeer {
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::mem::transmute_copy(&derived__), base__ as *mut _ as _, result__.as_mut_ptr()).from_abi::<ComboBoxAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ExpandCollapseState(&self) -> ::windows_core::Result<super::ExpandCollapseState> {
         let this = &::windows_core::Interface::cast::<super::Provider::IExpandCollapseProvider>(self)?;
         unsafe {
@@ -3445,17 +3445,17 @@ impl ComboBoxAutomationPeer {
             (::windows_core::Interface::vtable(this).ExpandCollapseState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::ExpandCollapseState>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Collapse(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IExpandCollapseProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Collapse)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Expand(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IExpandCollapseProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Expand)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn IsReadOnly(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::IValueProvider>(self)?;
         unsafe {
@@ -3463,7 +3463,7 @@ impl ComboBoxAutomationPeer {
             (::windows_core::Interface::vtable(this).IsReadOnly)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Value(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = &::windows_core::Interface::cast::<super::Provider::IValueProvider>(self)?;
         unsafe {
@@ -3471,12 +3471,12 @@ impl ComboBoxAutomationPeer {
             (::windows_core::Interface::vtable(this).Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetValue<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IValueProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetValue)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn IsModal(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::IWindowProvider>(self)?;
         unsafe {
@@ -3484,7 +3484,7 @@ impl ComboBoxAutomationPeer {
             (::windows_core::Interface::vtable(this).IsModal)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn IsTopmost(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::IWindowProvider>(self)?;
         unsafe {
@@ -3492,7 +3492,7 @@ impl ComboBoxAutomationPeer {
             (::windows_core::Interface::vtable(this).IsTopmost)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Maximizable(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::IWindowProvider>(self)?;
         unsafe {
@@ -3500,7 +3500,7 @@ impl ComboBoxAutomationPeer {
             (::windows_core::Interface::vtable(this).Maximizable)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Minimizable(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::IWindowProvider>(self)?;
         unsafe {
@@ -3508,7 +3508,7 @@ impl ComboBoxAutomationPeer {
             (::windows_core::Interface::vtable(this).Minimizable)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn InteractionState(&self) -> ::windows_core::Result<super::WindowInteractionState> {
         let this = &::windows_core::Interface::cast::<super::Provider::IWindowProvider>(self)?;
         unsafe {
@@ -3516,7 +3516,7 @@ impl ComboBoxAutomationPeer {
             (::windows_core::Interface::vtable(this).InteractionState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::WindowInteractionState>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn VisualState(&self) -> ::windows_core::Result<super::WindowVisualState> {
         let this = &::windows_core::Interface::cast::<super::Provider::IWindowProvider>(self)?;
         unsafe {
@@ -3524,17 +3524,17 @@ impl ComboBoxAutomationPeer {
             (::windows_core::Interface::vtable(this).VisualState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::WindowVisualState>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IWindowProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetVisualState(&self, state: super::WindowVisualState) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IWindowProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVisualState)(::windows_core::Interface::as_raw(this), state).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn WaitForInputIdle(&self, milliseconds: i32) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::IWindowProvider>(self)?;
         unsafe {
@@ -3617,131 +3617,131 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Com
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ComboBoxAutomationPeer> for super::Provider::IExpandCollapseProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ComboBoxAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ComboBoxAutomationPeer> for super::Provider::IExpandCollapseProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ComboBoxAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IExpandCollapseProvider> for ComboBoxAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IExpandCollapseProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IExpandCollapseProvider> for &ComboBoxAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IExpandCollapseProvider> {
         ::core::convert::TryInto::<super::Provider::IExpandCollapseProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ComboBoxAutomationPeer> for super::Provider::IItemContainerProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ComboBoxAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ComboBoxAutomationPeer> for super::Provider::IItemContainerProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ComboBoxAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IItemContainerProvider> for ComboBoxAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IItemContainerProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IItemContainerProvider> for &ComboBoxAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IItemContainerProvider> {
         ::core::convert::TryInto::<super::Provider::IItemContainerProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ComboBoxAutomationPeer> for super::Provider::ISelectionProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ComboBoxAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ComboBoxAutomationPeer> for super::Provider::ISelectionProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ComboBoxAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionProvider> for ComboBoxAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionProvider> for &ComboBoxAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionProvider> {
         ::core::convert::TryInto::<super::Provider::ISelectionProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ComboBoxAutomationPeer> for super::Provider::IValueProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ComboBoxAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ComboBoxAutomationPeer> for super::Provider::IValueProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ComboBoxAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IValueProvider> for ComboBoxAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IValueProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IValueProvider> for &ComboBoxAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IValueProvider> {
         ::core::convert::TryInto::<super::Provider::IValueProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ComboBoxAutomationPeer> for super::Provider::IWindowProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ComboBoxAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ComboBoxAutomationPeer> for super::Provider::IWindowProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ComboBoxAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IWindowProvider> for ComboBoxAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IWindowProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IWindowProvider> for &ComboBoxAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IWindowProvider> {
         ::core::convert::TryInto::<super::Provider::IWindowProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -3852,14 +3852,14 @@ unsafe impl ::core::marker::Sync for ComboBoxAutomationPeer {}
 #[repr(transparent)]
 pub struct ComboBoxItemAutomationPeer(::windows_core::IUnknown);
 impl ComboBoxItemAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ComboBoxItem>>(owner: Param0) -> ::windows_core::Result<ComboBoxItemAutomationPeer> {
         Self::IComboBoxItemAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<ComboBoxItemAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ComboBoxItem>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<ComboBoxItemAutomationPeer> {
         Self::IComboBoxItemAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -4020,7 +4020,7 @@ impl ComboBoxItemDataAutomationPeer {
             (::windows_core::Interface::vtable(this).CreateInstanceWithParentAndItem)(::windows_core::Interface::as_raw(this), item.into_param().abi(), parent.into_param().abi(), ::core::mem::transmute_copy(&derived__), base__ as *mut _ as _, result__.as_mut_ptr()).from_abi::<ComboBoxItemDataAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ScrollIntoView(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollItemProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ScrollIntoView)(::windows_core::Interface::as_raw(this)).ok() }
@@ -4100,79 +4100,79 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Com
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ComboBoxItemDataAutomationPeer> for super::Provider::IScrollItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ComboBoxItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ComboBoxItemDataAutomationPeer> for super::Provider::IScrollItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ComboBoxItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IScrollItemProvider> for ComboBoxItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IScrollItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IScrollItemProvider> for &ComboBoxItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IScrollItemProvider> {
         ::core::convert::TryInto::<super::Provider::IScrollItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ComboBoxItemDataAutomationPeer> for super::Provider::ISelectionItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ComboBoxItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ComboBoxItemDataAutomationPeer> for super::Provider::ISelectionItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ComboBoxItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionItemProvider> for ComboBoxItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionItemProvider> for &ComboBoxItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionItemProvider> {
         ::core::convert::TryInto::<super::Provider::ISelectionItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ComboBoxItemDataAutomationPeer> for super::Provider::IVirtualizedItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ComboBoxItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ComboBoxItemDataAutomationPeer> for super::Provider::IVirtualizedItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ComboBoxItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IVirtualizedItemProvider> for ComboBoxItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IVirtualizedItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IVirtualizedItemProvider> for &ComboBoxItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IVirtualizedItemProvider> {
         ::core::convert::TryInto::<super::Provider::IVirtualizedItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -4263,14 +4263,14 @@ unsafe impl ::core::marker::Sync for ComboBoxItemDataAutomationPeer {}
 #[repr(transparent)]
 pub struct DatePickerAutomationPeer(::windows_core::IUnknown);
 impl DatePickerAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::DatePicker>>(owner: Param0) -> ::windows_core::Result<DatePickerAutomationPeer> {
         Self::IDatePickerAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<DatePickerAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::DatePicker>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<DatePickerAutomationPeer> {
         Self::IDatePickerAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -4553,14 +4553,14 @@ unsafe impl ::core::marker::Sync for DatePickerFlyoutPresenterAutomationPeer {}
 #[repr(transparent)]
 pub struct FlipViewAutomationPeer(::windows_core::IUnknown);
 impl FlipViewAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::FlipView>>(owner: Param0) -> ::windows_core::Result<FlipViewAutomationPeer> {
         Self::IFlipViewAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<FlipViewAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::FlipView>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<FlipViewAutomationPeer> {
         Self::IFlipViewAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -4643,53 +4643,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Fli
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<FlipViewAutomationPeer> for super::Provider::IItemContainerProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: FlipViewAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&FlipViewAutomationPeer> for super::Provider::IItemContainerProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &FlipViewAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IItemContainerProvider> for FlipViewAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IItemContainerProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IItemContainerProvider> for &FlipViewAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IItemContainerProvider> {
         ::core::convert::TryInto::<super::Provider::IItemContainerProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<FlipViewAutomationPeer> for super::Provider::ISelectionProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: FlipViewAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&FlipViewAutomationPeer> for super::Provider::ISelectionProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &FlipViewAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionProvider> for FlipViewAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionProvider> for &FlipViewAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionProvider> {
         ::core::convert::TryInto::<super::Provider::ISelectionProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -4800,14 +4800,14 @@ unsafe impl ::core::marker::Sync for FlipViewAutomationPeer {}
 #[repr(transparent)]
 pub struct FlipViewItemAutomationPeer(::windows_core::IUnknown);
 impl FlipViewItemAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::FlipViewItem>>(owner: Param0) -> ::windows_core::Result<FlipViewItemAutomationPeer> {
         Self::IFlipViewItemAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<FlipViewItemAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::FlipViewItem>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<FlipViewItemAutomationPeer> {
         Self::IFlipViewItemAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -4968,7 +4968,7 @@ impl FlipViewItemDataAutomationPeer {
             (::windows_core::Interface::vtable(this).CreateInstanceWithParentAndItem)(::windows_core::Interface::as_raw(this), item.into_param().abi(), parent.into_param().abi(), ::core::mem::transmute_copy(&derived__), base__ as *mut _ as _, result__.as_mut_ptr()).from_abi::<FlipViewItemDataAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ScrollIntoView(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollItemProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ScrollIntoView)(::windows_core::Interface::as_raw(this)).ok() }
@@ -5048,79 +5048,79 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Fli
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<FlipViewItemDataAutomationPeer> for super::Provider::IScrollItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: FlipViewItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&FlipViewItemDataAutomationPeer> for super::Provider::IScrollItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &FlipViewItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IScrollItemProvider> for FlipViewItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IScrollItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IScrollItemProvider> for &FlipViewItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IScrollItemProvider> {
         ::core::convert::TryInto::<super::Provider::IScrollItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<FlipViewItemDataAutomationPeer> for super::Provider::ISelectionItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: FlipViewItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&FlipViewItemDataAutomationPeer> for super::Provider::ISelectionItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &FlipViewItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionItemProvider> for FlipViewItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionItemProvider> for &FlipViewItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionItemProvider> {
         ::core::convert::TryInto::<super::Provider::ISelectionItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<FlipViewItemDataAutomationPeer> for super::Provider::IVirtualizedItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: FlipViewItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&FlipViewItemDataAutomationPeer> for super::Provider::IVirtualizedItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &FlipViewItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IVirtualizedItemProvider> for FlipViewItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IVirtualizedItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IVirtualizedItemProvider> for &FlipViewItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IVirtualizedItemProvider> {
         ::core::convert::TryInto::<super::Provider::IVirtualizedItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -5211,14 +5211,14 @@ unsafe impl ::core::marker::Sync for FlipViewItemDataAutomationPeer {}
 #[repr(transparent)]
 pub struct FlyoutPresenterAutomationPeer(::windows_core::IUnknown);
 impl FlyoutPresenterAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::FlyoutPresenter>>(owner: Param0) -> ::windows_core::Result<FlyoutPresenterAutomationPeer> {
         Self::IFlyoutPresenterAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<FlyoutPresenterAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::FlyoutPresenter>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<FlyoutPresenterAutomationPeer> {
         Self::IFlyoutPresenterAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -5522,14 +5522,14 @@ unsafe impl ::core::marker::Sync for FrameworkElementAutomationPeer {}
 #[repr(transparent)]
 pub struct GridViewAutomationPeer(::windows_core::IUnknown);
 impl GridViewAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::GridView>>(owner: Param0) -> ::windows_core::Result<GridViewAutomationPeer> {
         Self::IGridViewAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<GridViewAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::GridView>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<GridViewAutomationPeer> {
         Self::IGridViewAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -5612,79 +5612,79 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Gri
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<GridViewAutomationPeer> for super::Provider::IDropTargetProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: GridViewAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&GridViewAutomationPeer> for super::Provider::IDropTargetProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &GridViewAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IDropTargetProvider> for GridViewAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IDropTargetProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IDropTargetProvider> for &GridViewAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IDropTargetProvider> {
         ::core::convert::TryInto::<super::Provider::IDropTargetProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<GridViewAutomationPeer> for super::Provider::IItemContainerProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: GridViewAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&GridViewAutomationPeer> for super::Provider::IItemContainerProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &GridViewAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IItemContainerProvider> for GridViewAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IItemContainerProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IItemContainerProvider> for &GridViewAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IItemContainerProvider> {
         ::core::convert::TryInto::<super::Provider::IItemContainerProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<GridViewAutomationPeer> for super::Provider::ISelectionProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: GridViewAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&GridViewAutomationPeer> for super::Provider::ISelectionProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &GridViewAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionProvider> for GridViewAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionProvider> for &GridViewAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionProvider> {
         ::core::convert::TryInto::<super::Provider::ISelectionProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -5815,14 +5815,14 @@ unsafe impl ::core::marker::Sync for GridViewAutomationPeer {}
 #[repr(transparent)]
 pub struct GridViewHeaderItemAutomationPeer(::windows_core::IUnknown);
 impl GridViewHeaderItemAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::GridViewHeaderItem>>(owner: Param0) -> ::windows_core::Result<GridViewHeaderItemAutomationPeer> {
         Self::IGridViewHeaderItemAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<GridViewHeaderItemAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::GridViewHeaderItem>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<GridViewHeaderItemAutomationPeer> {
         Self::IGridViewHeaderItemAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -5990,14 +5990,14 @@ unsafe impl ::core::marker::Sync for GridViewHeaderItemAutomationPeer {}
 #[repr(transparent)]
 pub struct GridViewItemAutomationPeer(::windows_core::IUnknown);
 impl GridViewItemAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::GridViewItem>>(owner: Param0) -> ::windows_core::Result<GridViewItemAutomationPeer> {
         Self::IGridViewItemAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<GridViewItemAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::GridViewItem>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<GridViewItemAutomationPeer> {
         Self::IGridViewItemAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -6158,7 +6158,7 @@ impl GridViewItemDataAutomationPeer {
             (::windows_core::Interface::vtable(this).CreateInstanceWithParentAndItem)(::windows_core::Interface::as_raw(this), item.into_param().abi(), parent.into_param().abi(), ::core::mem::transmute_copy(&derived__), base__ as *mut _ as _, result__.as_mut_ptr()).from_abi::<GridViewItemDataAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ScrollIntoView(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollItemProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ScrollIntoView)(::windows_core::Interface::as_raw(this)).ok() }
@@ -6238,79 +6238,79 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Gri
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<GridViewItemDataAutomationPeer> for super::Provider::IScrollItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: GridViewItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&GridViewItemDataAutomationPeer> for super::Provider::IScrollItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &GridViewItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IScrollItemProvider> for GridViewItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IScrollItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IScrollItemProvider> for &GridViewItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IScrollItemProvider> {
         ::core::convert::TryInto::<super::Provider::IScrollItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<GridViewItemDataAutomationPeer> for super::Provider::ISelectionItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: GridViewItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&GridViewItemDataAutomationPeer> for super::Provider::ISelectionItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &GridViewItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionItemProvider> for GridViewItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionItemProvider> for &GridViewItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionItemProvider> {
         ::core::convert::TryInto::<super::Provider::ISelectionItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<GridViewItemDataAutomationPeer> for super::Provider::IVirtualizedItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: GridViewItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&GridViewItemDataAutomationPeer> for super::Provider::IVirtualizedItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &GridViewItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IVirtualizedItemProvider> for GridViewItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IVirtualizedItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IVirtualizedItemProvider> for &GridViewItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IVirtualizedItemProvider> {
         ::core::convert::TryInto::<super::Provider::IVirtualizedItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -6401,14 +6401,14 @@ unsafe impl ::core::marker::Sync for GridViewItemDataAutomationPeer {}
 #[repr(transparent)]
 pub struct GroupItemAutomationPeer(::windows_core::IUnknown);
 impl GroupItemAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::GroupItem>>(owner: Param0) -> ::windows_core::Result<GroupItemAutomationPeer> {
         Self::IGroupItemAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<GroupItemAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::GroupItem>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<GroupItemAutomationPeer> {
         Self::IGroupItemAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -6556,14 +6556,14 @@ unsafe impl ::core::marker::Sync for GroupItemAutomationPeer {}
 #[repr(transparent)]
 pub struct HubAutomationPeer(::windows_core::IUnknown);
 impl HubAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Hub>>(owner: Param0) -> ::windows_core::Result<HubAutomationPeer> {
         Self::IHubAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<HubAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Hub>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<HubAutomationPeer> {
         Self::IHubAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -6711,14 +6711,14 @@ unsafe impl ::core::marker::Sync for HubAutomationPeer {}
 #[repr(transparent)]
 pub struct HubSectionAutomationPeer(::windows_core::IUnknown);
 impl HubSectionAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::HubSection>>(owner: Param0) -> ::windows_core::Result<HubSectionAutomationPeer> {
         Self::IHubSectionAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<HubSectionAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::HubSection>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<HubSectionAutomationPeer> {
         Self::IHubSectionAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -6726,7 +6726,7 @@ impl HubSectionAutomationPeer {
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::mem::transmute_copy(&derived__), base__ as *mut _ as _, result__.as_mut_ptr()).from_abi::<HubSectionAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ScrollIntoView(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollItemProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ScrollIntoView)(::windows_core::Interface::as_raw(this)).ok() }
@@ -6806,27 +6806,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Hub
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<HubSectionAutomationPeer> for super::Provider::IScrollItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: HubSectionAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&HubSectionAutomationPeer> for super::Provider::IScrollItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &HubSectionAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IScrollItemProvider> for HubSectionAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IScrollItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IScrollItemProvider> for &HubSectionAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IScrollItemProvider> {
         ::core::convert::TryInto::<super::Provider::IScrollItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -6897,14 +6897,14 @@ unsafe impl ::core::marker::Sync for HubSectionAutomationPeer {}
 #[repr(transparent)]
 pub struct HyperlinkButtonAutomationPeer(::windows_core::IUnknown);
 impl HyperlinkButtonAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::HyperlinkButton>>(owner: Param0) -> ::windows_core::Result<HyperlinkButtonAutomationPeer> {
         Self::IHyperlinkButtonAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<HyperlinkButtonAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::HyperlinkButton>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<HyperlinkButtonAutomationPeer> {
         Self::IHyperlinkButtonAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -6912,7 +6912,7 @@ impl HyperlinkButtonAutomationPeer {
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::mem::transmute_copy(&derived__), base__ as *mut _ as _, result__.as_mut_ptr()).from_abi::<HyperlinkButtonAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Invoke(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IInvokeProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Invoke)(::windows_core::Interface::as_raw(this)).ok() }
@@ -6992,27 +6992,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Hyp
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<HyperlinkButtonAutomationPeer> for super::Provider::IInvokeProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: HyperlinkButtonAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&HyperlinkButtonAutomationPeer> for super::Provider::IInvokeProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &HyperlinkButtonAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IInvokeProvider> for HyperlinkButtonAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IInvokeProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IInvokeProvider> for &HyperlinkButtonAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IInvokeProvider> {
         ::core::convert::TryInto::<super::Provider::IInvokeProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -7123,9 +7123,9 @@ unsafe impl ::windows_core::Interface for IAppBarAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IAppBarAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -7151,9 +7151,9 @@ unsafe impl ::windows_core::Interface for IAppBarButtonAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IAppBarButtonAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -7179,9 +7179,9 @@ unsafe impl ::windows_core::Interface for IAppBarToggleButtonAutomationPeerFacto
 #[doc(hidden)]
 pub struct IAppBarToggleButtonAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -7207,9 +7207,9 @@ unsafe impl ::windows_core::Interface for IAutoSuggestBoxAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IAutoSuggestBoxAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -7233,9 +7233,9 @@ pub struct IAutomationPeer_Vtbl {
     pub GetAutomationControlType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut AutomationControlType) -> ::windows_core::HRESULT,
     pub GetAutomationId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetBoundingRectangle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetChildren: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetChildren: usize,
     pub GetClassName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetClickablePoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
@@ -7255,14 +7255,14 @@ pub struct IAutomationPeer_Vtbl {
     pub IsPassword: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsRequiredForForm: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub GetParent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     GetParent: usize,
     pub InvalidatePeer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "deprecated")]
+    #[cfg(feature = "winrt-")]
     pub GetPeerFromPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, point: ::winrt_foundation::Point, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "deprecated"))]
+    #[cfg(not(feature = "winrt-"))]
     GetPeerFromPoint: usize,
     pub GetLiveSetting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut AutomationLiveSetting) -> ::windows_core::HRESULT,
 }
@@ -7293,18 +7293,18 @@ pub struct IAutomationPeer3_Vtbl {
     pub GetElementFromPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pointinwindowcoordinates: ::winrt_foundation::Point, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub GetFocusedElement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub ShowContextMenu: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetControlledPeers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetControlledPeers: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetAnnotations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetAnnotations: usize,
     pub SetParent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, peer: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub RaiseTextEditTextChangedEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, automationtexteditchangetype: super::AutomationTextEditChangeType, changeddata: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     RaiseTextEditTextChangedEvent: usize,
     pub GetPositionInSet: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
     pub GetSizeOfSet: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
@@ -7466,9 +7466,9 @@ pub struct IAutomationPeerOverrides_Vtbl {
     pub GetAutomationControlTypeCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut AutomationControlType) -> ::windows_core::HRESULT,
     pub GetAutomationIdCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetBoundingRectangleCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetChildrenCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetChildrenCore: usize,
     pub GetClassNameCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetClickablePointCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
@@ -7503,9 +7503,9 @@ unsafe impl ::windows_core::Interface for IAutomationPeerOverrides2 {
 pub struct IAutomationPeerOverrides2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ShowContextMenuCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetControlledPeersCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetControlledPeersCore: usize,
 }
 #[doc(hidden)]
@@ -7522,9 +7522,9 @@ pub struct IAutomationPeerOverrides3_Vtbl {
     pub NavigateCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, direction: AutomationNavigationDirection, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub GetElementFromPointCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pointinwindowcoordinates: ::winrt_foundation::Point, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub GetFocusedElementCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetAnnotationsCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetAnnotationsCore: usize,
     pub GetPositionInSetCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
     pub GetSizeOfSetCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
@@ -7558,17 +7558,17 @@ pub struct IAutomationPeerOverrides5_Vtbl {
     pub IsPeripheralCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsDataValidForFormCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub GetFullDescriptionCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetDescribedByCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetDescribedByCore: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetFlowsToCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetFlowsToCore: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetFlowsFromCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetFlowsFromCore: usize,
 }
 #[doc(hidden)]
@@ -7621,13 +7621,13 @@ unsafe impl ::windows_core::Interface for IAutomationPeerProtected {
 #[doc(hidden)]
 pub struct IAutomationPeerProtected_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub PeerFromProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, provider: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Automation_Provider"))]
+    #[cfg(not(feature = "winrt-ui"))]
     PeerFromProvider: usize,
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub ProviderFromPeer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, peer: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Automation_Provider"))]
+    #[cfg(not(feature = "winrt-ui"))]
     ProviderFromPeer: usize,
 }
 #[doc(hidden)]
@@ -7679,9 +7679,9 @@ unsafe impl ::windows_core::Interface for IButtonAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IButtonAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -7707,9 +7707,9 @@ unsafe impl ::windows_core::Interface for IButtonBaseAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IButtonBaseAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -7735,9 +7735,9 @@ unsafe impl ::windows_core::Interface for ICalendarDatePickerAutomationPeerFacto
 #[doc(hidden)]
 pub struct ICalendarDatePickerAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -7763,9 +7763,9 @@ unsafe impl ::windows_core::Interface for ICaptureElementAutomationPeerFactory {
 #[doc(hidden)]
 pub struct ICaptureElementAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -7791,9 +7791,9 @@ unsafe impl ::windows_core::Interface for ICheckBoxAutomationPeerFactory {
 #[doc(hidden)]
 pub struct ICheckBoxAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -7819,9 +7819,9 @@ unsafe impl ::windows_core::Interface for IColorPickerSliderAutomationPeerFactor
 #[doc(hidden)]
 pub struct IColorPickerSliderAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -7847,9 +7847,9 @@ unsafe impl ::windows_core::Interface for IColorSpectrumAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IColorSpectrumAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -7875,9 +7875,9 @@ unsafe impl ::windows_core::Interface for IComboBoxAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IComboBoxAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -7903,9 +7903,9 @@ unsafe impl ::windows_core::Interface for IComboBoxItemAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IComboBoxItemAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -7956,9 +7956,9 @@ unsafe impl ::windows_core::Interface for IDatePickerAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IDatePickerAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -7996,9 +7996,9 @@ unsafe impl ::windows_core::Interface for IFlipViewAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IFlipViewAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -8024,9 +8024,9 @@ unsafe impl ::windows_core::Interface for IFlipViewItemAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IFlipViewItemAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -8077,9 +8077,9 @@ unsafe impl ::windows_core::Interface for IFlyoutPresenterAutomationPeerFactory 
 #[doc(hidden)]
 pub struct IFlyoutPresenterAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -8145,9 +8145,9 @@ unsafe impl ::windows_core::Interface for IGridViewAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IGridViewAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -8173,9 +8173,9 @@ unsafe impl ::windows_core::Interface for IGridViewHeaderItemAutomationPeerFacto
 #[doc(hidden)]
 pub struct IGridViewHeaderItemAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -8201,9 +8201,9 @@ unsafe impl ::windows_core::Interface for IGridViewItemAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IGridViewItemAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -8254,9 +8254,9 @@ unsafe impl ::windows_core::Interface for IGroupItemAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IGroupItemAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -8282,9 +8282,9 @@ unsafe impl ::windows_core::Interface for IHubAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IHubAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -8310,9 +8310,9 @@ unsafe impl ::windows_core::Interface for IHubSectionAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IHubSectionAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -8338,9 +8338,9 @@ unsafe impl ::windows_core::Interface for IHyperlinkButtonAutomationPeerFactory 
 #[doc(hidden)]
 pub struct IHyperlinkButtonAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -8366,9 +8366,9 @@ unsafe impl ::windows_core::Interface for IImageAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IImageAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -8446,9 +8446,9 @@ unsafe impl ::windows_core::Interface for IItemsControlAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IItemsControlAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -8487,9 +8487,9 @@ unsafe impl ::windows_core::Interface for IListBoxAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IListBoxAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -8515,9 +8515,9 @@ unsafe impl ::windows_core::Interface for IListBoxItemAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IListBoxItemAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -8580,9 +8580,9 @@ unsafe impl ::windows_core::Interface for IListViewAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IListViewAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -8608,9 +8608,9 @@ unsafe impl ::windows_core::Interface for IListViewBaseAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IListViewBaseAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -8636,9 +8636,9 @@ unsafe impl ::windows_core::Interface for IListViewBaseHeaderItemAutomationPeerF
 #[doc(hidden)]
 pub struct IListViewBaseHeaderItemAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -8664,9 +8664,9 @@ unsafe impl ::windows_core::Interface for IListViewHeaderItemAutomationPeerFacto
 #[doc(hidden)]
 pub struct IListViewHeaderItemAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -8692,9 +8692,9 @@ unsafe impl ::windows_core::Interface for IListViewItemAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IListViewItemAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -8793,9 +8793,9 @@ unsafe impl ::windows_core::Interface for IMediaElementAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IMediaElementAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -8821,9 +8821,9 @@ unsafe impl ::windows_core::Interface for IMediaPlayerElementAutomationPeerFacto
 #[doc(hidden)]
 pub struct IMediaPlayerElementAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -8849,9 +8849,9 @@ unsafe impl ::windows_core::Interface for IMediaTransportControlsAutomationPeerF
 #[doc(hidden)]
 pub struct IMediaTransportControlsAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -8877,9 +8877,9 @@ unsafe impl ::windows_core::Interface for IMenuBarAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IMenuBarAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstance: usize,
 }
 #[doc(hidden)]
@@ -8905,9 +8905,9 @@ unsafe impl ::windows_core::Interface for IMenuBarItemAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IMenuBarItemAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstance: usize,
 }
 #[doc(hidden)]
@@ -8933,9 +8933,9 @@ unsafe impl ::windows_core::Interface for IMenuFlyoutItemAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IMenuFlyoutItemAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -8961,9 +8961,9 @@ unsafe impl ::windows_core::Interface for IMenuFlyoutPresenterAutomationPeerFact
 #[doc(hidden)]
 pub struct IMenuFlyoutPresenterAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -8989,9 +8989,9 @@ unsafe impl ::windows_core::Interface for INavigationViewItemAutomationPeerFacto
 #[doc(hidden)]
 pub struct INavigationViewItemAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9017,9 +9017,9 @@ unsafe impl ::windows_core::Interface for IPasswordBoxAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IPasswordBoxAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9045,9 +9045,9 @@ unsafe impl ::windows_core::Interface for IPersonPictureAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IPersonPictureAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9085,9 +9085,9 @@ unsafe impl ::windows_core::Interface for IPivotAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IPivotAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9113,9 +9113,9 @@ unsafe impl ::windows_core::Interface for IPivotItemAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IPivotItemAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9166,9 +9166,9 @@ unsafe impl ::windows_core::Interface for IProgressBarAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IProgressBarAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9194,9 +9194,9 @@ unsafe impl ::windows_core::Interface for IProgressRingAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IProgressRingAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9222,9 +9222,9 @@ unsafe impl ::windows_core::Interface for IRadioButtonAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IRadioButtonAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9250,9 +9250,9 @@ unsafe impl ::windows_core::Interface for IRangeBaseAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IRangeBaseAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9278,9 +9278,9 @@ unsafe impl ::windows_core::Interface for IRatingControlAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IRatingControlAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9306,9 +9306,9 @@ unsafe impl ::windows_core::Interface for IRepeatButtonAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IRepeatButtonAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9334,9 +9334,9 @@ unsafe impl ::windows_core::Interface for IRichEditBoxAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IRichEditBoxAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9362,9 +9362,9 @@ unsafe impl ::windows_core::Interface for IRichTextBlockAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IRichTextBlockAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9390,9 +9390,9 @@ unsafe impl ::windows_core::Interface for IRichTextBlockOverflowAutomationPeerFa
 #[doc(hidden)]
 pub struct IRichTextBlockOverflowAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9418,9 +9418,9 @@ unsafe impl ::windows_core::Interface for IScrollBarAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IScrollBarAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9446,9 +9446,9 @@ unsafe impl ::windows_core::Interface for IScrollViewerAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IScrollViewerAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9474,9 +9474,9 @@ unsafe impl ::windows_core::Interface for ISearchBoxAutomationPeerFactory {
 #[doc(hidden)]
 pub struct ISearchBoxAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9502,9 +9502,9 @@ unsafe impl ::windows_core::Interface for ISelectorAutomationPeerFactory {
 #[doc(hidden)]
 pub struct ISelectorAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9555,9 +9555,9 @@ unsafe impl ::windows_core::Interface for ISemanticZoomAutomationPeerFactory {
 #[doc(hidden)]
 pub struct ISemanticZoomAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9583,9 +9583,9 @@ unsafe impl ::windows_core::Interface for ISettingsFlyoutAutomationPeerFactory {
 #[doc(hidden)]
 pub struct ISettingsFlyoutAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9611,9 +9611,9 @@ unsafe impl ::windows_core::Interface for ISliderAutomationPeerFactory {
 #[doc(hidden)]
 pub struct ISliderAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9639,9 +9639,9 @@ unsafe impl ::windows_core::Interface for ITextBlockAutomationPeerFactory {
 #[doc(hidden)]
 pub struct ITextBlockAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9667,9 +9667,9 @@ unsafe impl ::windows_core::Interface for ITextBoxAutomationPeerFactory {
 #[doc(hidden)]
 pub struct ITextBoxAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9695,9 +9695,9 @@ unsafe impl ::windows_core::Interface for IThumbAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IThumbAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9723,9 +9723,9 @@ unsafe impl ::windows_core::Interface for ITimePickerAutomationPeerFactory {
 #[doc(hidden)]
 pub struct ITimePickerAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9763,9 +9763,9 @@ unsafe impl ::windows_core::Interface for IToggleButtonAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IToggleButtonAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9791,9 +9791,9 @@ unsafe impl ::windows_core::Interface for IToggleMenuFlyoutItemAutomationPeerFac
 #[doc(hidden)]
 pub struct IToggleMenuFlyoutItemAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9819,9 +9819,9 @@ unsafe impl ::windows_core::Interface for IToggleSwitchAutomationPeerFactory {
 #[doc(hidden)]
 pub struct IToggleSwitchAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9847,9 +9847,9 @@ unsafe impl ::windows_core::Interface for ITreeViewItemAutomationPeerFactory {
 #[doc(hidden)]
 pub struct ITreeViewItemAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[doc(hidden)]
@@ -9875,22 +9875,22 @@ unsafe impl ::windows_core::Interface for ITreeViewListAutomationPeerFactory {
 #[doc(hidden)]
 pub struct ITreeViewListAutomationPeerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: ::windows_core::RawPtr, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateInstanceWithOwner: usize,
 }
 #[repr(transparent)]
 pub struct ImageAutomationPeer(::windows_core::IUnknown);
 impl ImageAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Image>>(owner: Param0) -> ::windows_core::Result<ImageAutomationPeer> {
         Self::IImageAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<ImageAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Image>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<ImageAutomationPeer> {
         Self::IImageAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -10200,7 +10200,7 @@ impl ItemAutomationPeer {
             (::windows_core::Interface::vtable(this).CreateInstanceWithParentAndItem)(::windows_core::Interface::as_raw(this), item.into_param().abi(), parent.into_param().abi(), ::core::mem::transmute_copy(&derived__), base__ as *mut _ as _, result__.as_mut_ptr()).from_abi::<ItemAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Realize(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IVirtualizedItemProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Realize)(::windows_core::Interface::as_raw(this)).ok() }
@@ -10280,27 +10280,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ite
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ItemAutomationPeer> for super::Provider::IVirtualizedItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ItemAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ItemAutomationPeer> for super::Provider::IVirtualizedItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ItemAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IVirtualizedItemProvider> for ItemAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IVirtualizedItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IVirtualizedItemProvider> for &ItemAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IVirtualizedItemProvider> {
         ::core::convert::TryInto::<super::Provider::IVirtualizedItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -10351,7 +10351,7 @@ unsafe impl ::core::marker::Sync for ItemAutomationPeer {}
 #[repr(transparent)]
 pub struct ItemsControlAutomationPeer(::windows_core::IUnknown);
 impl ItemsControlAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn FindItemByProperty<'a, Param0: ::windows_core::IntoParam<'a, super::Provider::IRawElementProviderSimple>, Param1: ::windows_core::IntoParam<'a, super::AutomationProperty>, Param2: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>>(&self, startafter: Param0, automationproperty: Param1, value: Param2) -> ::windows_core::Result<super::Provider::IRawElementProviderSimple> {
         let this = &::windows_core::Interface::cast::<super::Provider::IItemContainerProvider>(self)?;
         unsafe {
@@ -10366,14 +10366,14 @@ impl ItemsControlAutomationPeer {
             (::windows_core::Interface::vtable(this).CreateItemAutomationPeer)(::windows_core::Interface::as_raw(this), item.into_param().abi(), result__.as_mut_ptr()).from_abi::<ItemAutomationPeer>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ItemsControl>>(owner: Param0) -> ::windows_core::Result<ItemsControlAutomationPeer> {
         Self::IItemsControlAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<ItemsControlAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ItemsControl>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<ItemsControlAutomationPeer> {
         Self::IItemsControlAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -10456,27 +10456,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ite
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ItemsControlAutomationPeer> for super::Provider::IItemContainerProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ItemsControlAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ItemsControlAutomationPeer> for super::Provider::IItemContainerProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ItemsControlAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IItemContainerProvider> for ItemsControlAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IItemContainerProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IItemContainerProvider> for &ItemsControlAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IItemContainerProvider> {
         ::core::convert::TryInto::<super::Provider::IItemContainerProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -10547,14 +10547,14 @@ unsafe impl ::core::marker::Sync for ItemsControlAutomationPeer {}
 #[repr(transparent)]
 pub struct ListBoxAutomationPeer(::windows_core::IUnknown);
 impl ListBoxAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ListBox>>(owner: Param0) -> ::windows_core::Result<ListBoxAutomationPeer> {
         Self::IListBoxAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<ListBoxAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ListBox>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<ListBoxAutomationPeer> {
         Self::IListBoxAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -10637,53 +10637,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Lis
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ListBoxAutomationPeer> for super::Provider::IItemContainerProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ListBoxAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ListBoxAutomationPeer> for super::Provider::IItemContainerProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ListBoxAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IItemContainerProvider> for ListBoxAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IItemContainerProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IItemContainerProvider> for &ListBoxAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IItemContainerProvider> {
         ::core::convert::TryInto::<super::Provider::IItemContainerProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ListBoxAutomationPeer> for super::Provider::ISelectionProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ListBoxAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ListBoxAutomationPeer> for super::Provider::ISelectionProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ListBoxAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionProvider> for ListBoxAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionProvider> for &ListBoxAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionProvider> {
         ::core::convert::TryInto::<super::Provider::ISelectionProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -10794,14 +10794,14 @@ unsafe impl ::core::marker::Sync for ListBoxAutomationPeer {}
 #[repr(transparent)]
 pub struct ListBoxItemAutomationPeer(::windows_core::IUnknown);
 impl ListBoxItemAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ListBoxItem>>(owner: Param0) -> ::windows_core::Result<ListBoxItemAutomationPeer> {
         Self::IListBoxItemAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<ListBoxItemAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ListBoxItem>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<ListBoxItemAutomationPeer> {
         Self::IListBoxItemAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -10962,7 +10962,7 @@ impl ListBoxItemDataAutomationPeer {
             (::windows_core::Interface::vtable(this).CreateInstanceWithParentAndItem)(::windows_core::Interface::as_raw(this), item.into_param().abi(), parent.into_param().abi(), ::core::mem::transmute_copy(&derived__), base__ as *mut _ as _, result__.as_mut_ptr()).from_abi::<ListBoxItemDataAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ScrollIntoView(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollItemProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ScrollIntoView)(::windows_core::Interface::as_raw(this)).ok() }
@@ -11042,79 +11042,79 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Lis
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ListBoxItemDataAutomationPeer> for super::Provider::IScrollItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ListBoxItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ListBoxItemDataAutomationPeer> for super::Provider::IScrollItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ListBoxItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IScrollItemProvider> for ListBoxItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IScrollItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IScrollItemProvider> for &ListBoxItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IScrollItemProvider> {
         ::core::convert::TryInto::<super::Provider::IScrollItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ListBoxItemDataAutomationPeer> for super::Provider::ISelectionItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ListBoxItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ListBoxItemDataAutomationPeer> for super::Provider::ISelectionItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ListBoxItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionItemProvider> for ListBoxItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionItemProvider> for &ListBoxItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionItemProvider> {
         ::core::convert::TryInto::<super::Provider::ISelectionItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ListBoxItemDataAutomationPeer> for super::Provider::IVirtualizedItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ListBoxItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ListBoxItemDataAutomationPeer> for super::Provider::IVirtualizedItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ListBoxItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IVirtualizedItemProvider> for ListBoxItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IVirtualizedItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IVirtualizedItemProvider> for &ListBoxItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IVirtualizedItemProvider> {
         ::core::convert::TryInto::<super::Provider::IVirtualizedItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -11340,14 +11340,14 @@ unsafe impl ::core::marker::Sync for ListPickerFlyoutPresenterAutomationPeer {}
 #[repr(transparent)]
 pub struct ListViewAutomationPeer(::windows_core::IUnknown);
 impl ListViewAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ListView>>(owner: Param0) -> ::windows_core::Result<ListViewAutomationPeer> {
         Self::IListViewAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<ListViewAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ListView>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<ListViewAutomationPeer> {
         Self::IListViewAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -11430,79 +11430,79 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Lis
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ListViewAutomationPeer> for super::Provider::IDropTargetProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ListViewAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ListViewAutomationPeer> for super::Provider::IDropTargetProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ListViewAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IDropTargetProvider> for ListViewAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IDropTargetProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IDropTargetProvider> for &ListViewAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IDropTargetProvider> {
         ::core::convert::TryInto::<super::Provider::IDropTargetProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ListViewAutomationPeer> for super::Provider::IItemContainerProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ListViewAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ListViewAutomationPeer> for super::Provider::IItemContainerProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ListViewAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IItemContainerProvider> for ListViewAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IItemContainerProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IItemContainerProvider> for &ListViewAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IItemContainerProvider> {
         ::core::convert::TryInto::<super::Provider::IItemContainerProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ListViewAutomationPeer> for super::Provider::ISelectionProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ListViewAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ListViewAutomationPeer> for super::Provider::ISelectionProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ListViewAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionProvider> for ListViewAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionProvider> for &ListViewAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionProvider> {
         ::core::convert::TryInto::<super::Provider::ISelectionProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -11633,7 +11633,7 @@ unsafe impl ::core::marker::Sync for ListViewAutomationPeer {}
 #[repr(transparent)]
 pub struct ListViewBaseAutomationPeer(::windows_core::IUnknown);
 impl ListViewBaseAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn DropEffect(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = &::windows_core::Interface::cast::<super::Provider::IDropTargetProvider>(self)?;
         unsafe {
@@ -11641,7 +11641,7 @@ impl ListViewBaseAutomationPeer {
             (::windows_core::Interface::vtable(this).DropEffect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn DropEffects(&self) -> ::windows_core::Result<::windows_core::Array<::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<super::Provider::IDropTargetProvider>(self)?;
         unsafe {
@@ -11649,14 +11649,14 @@ impl ListViewBaseAutomationPeer {
             (::windows_core::Interface::vtable(this).DropEffects)(::windows_core::Interface::as_raw(this), ::windows_core::Array::<::windows_core::HSTRING>::set_abi_len(result__.assume_init_mut()), result__.as_mut_ptr() as *mut _ as _).and_then(|| result__.assume_init())
         }
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ListViewBase>>(owner: Param0) -> ::windows_core::Result<ListViewBaseAutomationPeer> {
         Self::IListViewBaseAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<ListViewBaseAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ListViewBase>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<ListViewBaseAutomationPeer> {
         Self::IListViewBaseAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -11739,79 +11739,79 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Lis
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ListViewBaseAutomationPeer> for super::Provider::IDropTargetProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ListViewBaseAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ListViewBaseAutomationPeer> for super::Provider::IDropTargetProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ListViewBaseAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IDropTargetProvider> for ListViewBaseAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IDropTargetProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IDropTargetProvider> for &ListViewBaseAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IDropTargetProvider> {
         ::core::convert::TryInto::<super::Provider::IDropTargetProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ListViewBaseAutomationPeer> for super::Provider::IItemContainerProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ListViewBaseAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ListViewBaseAutomationPeer> for super::Provider::IItemContainerProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ListViewBaseAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IItemContainerProvider> for ListViewBaseAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IItemContainerProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IItemContainerProvider> for &ListViewBaseAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IItemContainerProvider> {
         ::core::convert::TryInto::<super::Provider::IItemContainerProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ListViewBaseAutomationPeer> for super::Provider::ISelectionProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ListViewBaseAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ListViewBaseAutomationPeer> for super::Provider::ISelectionProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ListViewBaseAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionProvider> for ListViewBaseAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionProvider> for &ListViewBaseAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionProvider> {
         ::core::convert::TryInto::<super::Provider::ISelectionProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -12057,14 +12057,14 @@ unsafe impl ::core::marker::Sync for ListViewBaseHeaderItemAutomationPeer {}
 #[repr(transparent)]
 pub struct ListViewHeaderItemAutomationPeer(::windows_core::IUnknown);
 impl ListViewHeaderItemAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ListViewHeaderItem>>(owner: Param0) -> ::windows_core::Result<ListViewHeaderItemAutomationPeer> {
         Self::IListViewHeaderItemAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<ListViewHeaderItemAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ListViewHeaderItem>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<ListViewHeaderItemAutomationPeer> {
         Self::IListViewHeaderItemAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -12232,14 +12232,14 @@ unsafe impl ::core::marker::Sync for ListViewHeaderItemAutomationPeer {}
 #[repr(transparent)]
 pub struct ListViewItemAutomationPeer(::windows_core::IUnknown);
 impl ListViewItemAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ListViewItem>>(owner: Param0) -> ::windows_core::Result<ListViewItemAutomationPeer> {
         Self::IListViewItemAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<ListViewItemAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ListViewItem>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<ListViewItemAutomationPeer> {
         Self::IListViewItemAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -12400,7 +12400,7 @@ impl ListViewItemDataAutomationPeer {
             (::windows_core::Interface::vtable(this).CreateInstanceWithParentAndItem)(::windows_core::Interface::as_raw(this), item.into_param().abi(), parent.into_param().abi(), ::core::mem::transmute_copy(&derived__), base__ as *mut _ as _, result__.as_mut_ptr()).from_abi::<ListViewItemDataAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ScrollIntoView(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollItemProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ScrollIntoView)(::windows_core::Interface::as_raw(this)).ok() }
@@ -12480,79 +12480,79 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Lis
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ListViewItemDataAutomationPeer> for super::Provider::IScrollItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ListViewItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ListViewItemDataAutomationPeer> for super::Provider::IScrollItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ListViewItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IScrollItemProvider> for ListViewItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IScrollItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IScrollItemProvider> for &ListViewItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IScrollItemProvider> {
         ::core::convert::TryInto::<super::Provider::IScrollItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ListViewItemDataAutomationPeer> for super::Provider::ISelectionItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ListViewItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ListViewItemDataAutomationPeer> for super::Provider::ISelectionItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ListViewItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionItemProvider> for ListViewItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionItemProvider> for &ListViewItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionItemProvider> {
         ::core::convert::TryInto::<super::Provider::ISelectionItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ListViewItemDataAutomationPeer> for super::Provider::IVirtualizedItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ListViewItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ListViewItemDataAutomationPeer> for super::Provider::IVirtualizedItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ListViewItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IVirtualizedItemProvider> for ListViewItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IVirtualizedItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IVirtualizedItemProvider> for &ListViewItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IVirtualizedItemProvider> {
         ::core::convert::TryInto::<super::Provider::IVirtualizedItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -12643,7 +12643,7 @@ unsafe impl ::core::marker::Sync for ListViewItemDataAutomationPeer {}
 #[repr(transparent)]
 pub struct LoopingSelectorAutomationPeer(::windows_core::IUnknown);
 impl LoopingSelectorAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ExpandCollapseState(&self) -> ::windows_core::Result<super::ExpandCollapseState> {
         let this = &::windows_core::Interface::cast::<super::Provider::IExpandCollapseProvider>(self)?;
         unsafe {
@@ -12651,17 +12651,17 @@ impl LoopingSelectorAutomationPeer {
             (::windows_core::Interface::vtable(this).ExpandCollapseState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::ExpandCollapseState>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Collapse(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IExpandCollapseProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Collapse)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Expand(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IExpandCollapseProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Expand)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn FindItemByProperty<'a, Param0: ::windows_core::IntoParam<'a, super::Provider::IRawElementProviderSimple>, Param1: ::windows_core::IntoParam<'a, super::AutomationProperty>, Param2: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>>(&self, startafter: Param0, automationproperty: Param1, value: Param2) -> ::windows_core::Result<super::Provider::IRawElementProviderSimple> {
         let this = &::windows_core::Interface::cast::<super::Provider::IItemContainerProvider>(self)?;
         unsafe {
@@ -12669,7 +12669,7 @@ impl LoopingSelectorAutomationPeer {
             (::windows_core::Interface::vtable(this).FindItemByProperty)(::windows_core::Interface::as_raw(this), startafter.into_param().abi(), automationproperty.into_param().abi(), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Provider::IRawElementProviderSimple>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn HorizontallyScrollable(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe {
@@ -12677,7 +12677,7 @@ impl LoopingSelectorAutomationPeer {
             (::windows_core::Interface::vtable(this).HorizontallyScrollable)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn HorizontalScrollPercent(&self) -> ::windows_core::Result<f64> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe {
@@ -12685,7 +12685,7 @@ impl LoopingSelectorAutomationPeer {
             (::windows_core::Interface::vtable(this).HorizontalScrollPercent)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn HorizontalViewSize(&self) -> ::windows_core::Result<f64> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe {
@@ -12693,7 +12693,7 @@ impl LoopingSelectorAutomationPeer {
             (::windows_core::Interface::vtable(this).HorizontalViewSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn VerticallyScrollable(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe {
@@ -12701,7 +12701,7 @@ impl LoopingSelectorAutomationPeer {
             (::windows_core::Interface::vtable(this).VerticallyScrollable)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn VerticalScrollPercent(&self) -> ::windows_core::Result<f64> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe {
@@ -12709,7 +12709,7 @@ impl LoopingSelectorAutomationPeer {
             (::windows_core::Interface::vtable(this).VerticalScrollPercent)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn VerticalViewSize(&self) -> ::windows_core::Result<f64> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe {
@@ -12717,17 +12717,17 @@ impl LoopingSelectorAutomationPeer {
             (::windows_core::Interface::vtable(this).VerticalViewSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Scroll(&self, horizontalamount: super::ScrollAmount, verticalamount: super::ScrollAmount) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Scroll)(::windows_core::Interface::as_raw(this), horizontalamount, verticalamount).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetScrollPercent(&self, horizontalpercent: f64, verticalpercent: f64) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScrollPercent)(::windows_core::Interface::as_raw(this), horizontalpercent, verticalpercent).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CanSelectMultiple(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionProvider>(self)?;
         unsafe {
@@ -12735,7 +12735,7 @@ impl LoopingSelectorAutomationPeer {
             (::windows_core::Interface::vtable(this).CanSelectMultiple)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn IsSelectionRequired(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionProvider>(self)?;
         unsafe {
@@ -12743,7 +12743,7 @@ impl LoopingSelectorAutomationPeer {
             (::windows_core::Interface::vtable(this).IsSelectionRequired)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GetSelection(&self) -> ::windows_core::Result<::windows_core::Array<super::Provider::IRawElementProviderSimple>> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionProvider>(self)?;
         unsafe {
@@ -12822,105 +12822,105 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Loo
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<LoopingSelectorAutomationPeer> for super::Provider::IExpandCollapseProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: LoopingSelectorAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&LoopingSelectorAutomationPeer> for super::Provider::IExpandCollapseProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &LoopingSelectorAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IExpandCollapseProvider> for LoopingSelectorAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IExpandCollapseProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IExpandCollapseProvider> for &LoopingSelectorAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IExpandCollapseProvider> {
         ::core::convert::TryInto::<super::Provider::IExpandCollapseProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<LoopingSelectorAutomationPeer> for super::Provider::IItemContainerProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: LoopingSelectorAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&LoopingSelectorAutomationPeer> for super::Provider::IItemContainerProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &LoopingSelectorAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IItemContainerProvider> for LoopingSelectorAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IItemContainerProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IItemContainerProvider> for &LoopingSelectorAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IItemContainerProvider> {
         ::core::convert::TryInto::<super::Provider::IItemContainerProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<LoopingSelectorAutomationPeer> for super::Provider::IScrollProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: LoopingSelectorAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&LoopingSelectorAutomationPeer> for super::Provider::IScrollProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &LoopingSelectorAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IScrollProvider> for LoopingSelectorAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IScrollProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IScrollProvider> for &LoopingSelectorAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IScrollProvider> {
         ::core::convert::TryInto::<super::Provider::IScrollProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<LoopingSelectorAutomationPeer> for super::Provider::ISelectionProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: LoopingSelectorAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&LoopingSelectorAutomationPeer> for super::Provider::ISelectionProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &LoopingSelectorAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionProvider> for LoopingSelectorAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionProvider> for &LoopingSelectorAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionProvider> {
         ::core::convert::TryInto::<super::Provider::ISelectionProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -12991,12 +12991,12 @@ unsafe impl ::core::marker::Sync for LoopingSelectorAutomationPeer {}
 #[repr(transparent)]
 pub struct LoopingSelectorItemAutomationPeer(::windows_core::IUnknown);
 impl LoopingSelectorItemAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ScrollIntoView(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollItemProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ScrollIntoView)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn IsSelected(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionItemProvider>(self)?;
         unsafe {
@@ -13004,7 +13004,7 @@ impl LoopingSelectorItemAutomationPeer {
             (::windows_core::Interface::vtable(this).IsSelected)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SelectionContainer(&self) -> ::windows_core::Result<super::Provider::IRawElementProviderSimple> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionItemProvider>(self)?;
         unsafe {
@@ -13012,17 +13012,17 @@ impl LoopingSelectorItemAutomationPeer {
             (::windows_core::Interface::vtable(this).SelectionContainer)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Provider::IRawElementProviderSimple>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn AddToSelection(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionItemProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).AddToSelection)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn RemoveFromSelection(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionItemProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveFromSelection)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Select(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionItemProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Select)(::windows_core::Interface::as_raw(this)).ok() }
@@ -13098,53 +13098,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Loo
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<LoopingSelectorItemAutomationPeer> for super::Provider::IScrollItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: LoopingSelectorItemAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&LoopingSelectorItemAutomationPeer> for super::Provider::IScrollItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &LoopingSelectorItemAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IScrollItemProvider> for LoopingSelectorItemAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IScrollItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IScrollItemProvider> for &LoopingSelectorItemAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IScrollItemProvider> {
         ::core::convert::TryInto::<super::Provider::IScrollItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<LoopingSelectorItemAutomationPeer> for super::Provider::ISelectionItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: LoopingSelectorItemAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&LoopingSelectorItemAutomationPeer> for super::Provider::ISelectionItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &LoopingSelectorItemAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionItemProvider> for LoopingSelectorItemAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionItemProvider> for &LoopingSelectorItemAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionItemProvider> {
         ::core::convert::TryInto::<super::Provider::ISelectionItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -13215,7 +13215,7 @@ unsafe impl ::core::marker::Sync for LoopingSelectorItemAutomationPeer {}
 #[repr(transparent)]
 pub struct LoopingSelectorItemDataAutomationPeer(::windows_core::IUnknown);
 impl LoopingSelectorItemDataAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Realize(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IVirtualizedItemProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Realize)(::windows_core::Interface::as_raw(this)).ok() }
@@ -13291,27 +13291,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Loo
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<LoopingSelectorItemDataAutomationPeer> for super::Provider::IVirtualizedItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: LoopingSelectorItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&LoopingSelectorItemDataAutomationPeer> for super::Provider::IVirtualizedItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &LoopingSelectorItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IVirtualizedItemProvider> for LoopingSelectorItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IVirtualizedItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IVirtualizedItemProvider> for &LoopingSelectorItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IVirtualizedItemProvider> {
         ::core::convert::TryInto::<super::Provider::IVirtualizedItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -13362,7 +13362,7 @@ unsafe impl ::core::marker::Sync for LoopingSelectorItemDataAutomationPeer {}
 #[repr(transparent)]
 pub struct MapControlAutomationPeer(::windows_core::IUnknown);
 impl MapControlAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn HorizontallyScrollable(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe {
@@ -13370,7 +13370,7 @@ impl MapControlAutomationPeer {
             (::windows_core::Interface::vtable(this).HorizontallyScrollable)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn HorizontalScrollPercent(&self) -> ::windows_core::Result<f64> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe {
@@ -13378,7 +13378,7 @@ impl MapControlAutomationPeer {
             (::windows_core::Interface::vtable(this).HorizontalScrollPercent)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn HorizontalViewSize(&self) -> ::windows_core::Result<f64> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe {
@@ -13386,7 +13386,7 @@ impl MapControlAutomationPeer {
             (::windows_core::Interface::vtable(this).HorizontalViewSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn VerticallyScrollable(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe {
@@ -13394,7 +13394,7 @@ impl MapControlAutomationPeer {
             (::windows_core::Interface::vtable(this).VerticallyScrollable)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn VerticalScrollPercent(&self) -> ::windows_core::Result<f64> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe {
@@ -13402,7 +13402,7 @@ impl MapControlAutomationPeer {
             (::windows_core::Interface::vtable(this).VerticalScrollPercent)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn VerticalViewSize(&self) -> ::windows_core::Result<f64> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe {
@@ -13410,17 +13410,17 @@ impl MapControlAutomationPeer {
             (::windows_core::Interface::vtable(this).VerticalViewSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Scroll(&self, horizontalamount: super::ScrollAmount, verticalamount: super::ScrollAmount) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Scroll)(::windows_core::Interface::as_raw(this), horizontalamount, verticalamount).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetScrollPercent(&self, horizontalpercent: f64, verticalpercent: f64) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScrollPercent)(::windows_core::Interface::as_raw(this), horizontalpercent, verticalpercent).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CanMove(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::ITransformProvider>(self)?;
         unsafe {
@@ -13428,7 +13428,7 @@ impl MapControlAutomationPeer {
             (::windows_core::Interface::vtable(this).CanMove)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CanResize(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::ITransformProvider>(self)?;
         unsafe {
@@ -13436,7 +13436,7 @@ impl MapControlAutomationPeer {
             (::windows_core::Interface::vtable(this).CanResize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CanRotate(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::ITransformProvider>(self)?;
         unsafe {
@@ -13444,22 +13444,22 @@ impl MapControlAutomationPeer {
             (::windows_core::Interface::vtable(this).CanRotate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Move(&self, x: f64, y: f64) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::ITransformProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Move)(::windows_core::Interface::as_raw(this), x, y).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Resize(&self, width: f64, height: f64) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::ITransformProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Resize)(::windows_core::Interface::as_raw(this), width, height).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Rotate(&self, degrees: f64) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::ITransformProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Rotate)(::windows_core::Interface::as_raw(this), degrees).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CanZoom(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::ITransformProvider2>(self)?;
         unsafe {
@@ -13467,7 +13467,7 @@ impl MapControlAutomationPeer {
             (::windows_core::Interface::vtable(this).CanZoom)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ZoomLevel(&self) -> ::windows_core::Result<f64> {
         let this = &::windows_core::Interface::cast::<super::Provider::ITransformProvider2>(self)?;
         unsafe {
@@ -13475,7 +13475,7 @@ impl MapControlAutomationPeer {
             (::windows_core::Interface::vtable(this).ZoomLevel)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn MaxZoom(&self) -> ::windows_core::Result<f64> {
         let this = &::windows_core::Interface::cast::<super::Provider::ITransformProvider2>(self)?;
         unsafe {
@@ -13483,7 +13483,7 @@ impl MapControlAutomationPeer {
             (::windows_core::Interface::vtable(this).MaxZoom)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn MinZoom(&self) -> ::windows_core::Result<f64> {
         let this = &::windows_core::Interface::cast::<super::Provider::ITransformProvider2>(self)?;
         unsafe {
@@ -13491,12 +13491,12 @@ impl MapControlAutomationPeer {
             (::windows_core::Interface::vtable(this).MinZoom)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Zoom(&self, zoom: f64) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::ITransformProvider2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Zoom)(::windows_core::Interface::as_raw(this), zoom).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ZoomByUnit(&self, zoomunit: super::ZoomUnit) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::ITransformProvider2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ZoomByUnit)(::windows_core::Interface::as_raw(this), zoomunit).ok() }
@@ -13572,79 +13572,79 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Map
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<MapControlAutomationPeer> for super::Provider::IScrollProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: MapControlAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&MapControlAutomationPeer> for super::Provider::IScrollProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &MapControlAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IScrollProvider> for MapControlAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IScrollProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IScrollProvider> for &MapControlAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IScrollProvider> {
         ::core::convert::TryInto::<super::Provider::IScrollProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<MapControlAutomationPeer> for super::Provider::ITransformProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: MapControlAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&MapControlAutomationPeer> for super::Provider::ITransformProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &MapControlAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ITransformProvider> for MapControlAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ITransformProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ITransformProvider> for &MapControlAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ITransformProvider> {
         ::core::convert::TryInto::<super::Provider::ITransformProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<MapControlAutomationPeer> for super::Provider::ITransformProvider2 {
     type Error = ::windows_core::Error;
     fn try_from(value: MapControlAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&MapControlAutomationPeer> for super::Provider::ITransformProvider2 {
     type Error = ::windows_core::Error;
     fn try_from(value: &MapControlAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ITransformProvider2> for MapControlAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ITransformProvider2> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ITransformProvider2> for &MapControlAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ITransformProvider2> {
         ::core::convert::TryInto::<super::Provider::ITransformProvider2>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -13715,14 +13715,14 @@ unsafe impl ::core::marker::Sync for MapControlAutomationPeer {}
 #[repr(transparent)]
 pub struct MediaElementAutomationPeer(::windows_core::IUnknown);
 impl MediaElementAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::MediaElement>>(owner: Param0) -> ::windows_core::Result<MediaElementAutomationPeer> {
         Self::IMediaElementAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<MediaElementAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::MediaElement>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<MediaElementAutomationPeer> {
         Self::IMediaElementAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -13870,14 +13870,14 @@ unsafe impl ::core::marker::Sync for MediaElementAutomationPeer {}
 #[repr(transparent)]
 pub struct MediaPlayerElementAutomationPeer(::windows_core::IUnknown);
 impl MediaPlayerElementAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::MediaPlayerElement>>(owner: Param0) -> ::windows_core::Result<MediaPlayerElementAutomationPeer> {
         Self::IMediaPlayerElementAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<MediaPlayerElementAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::MediaPlayerElement>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<MediaPlayerElementAutomationPeer> {
         Self::IMediaPlayerElementAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -14025,14 +14025,14 @@ unsafe impl ::core::marker::Sync for MediaPlayerElementAutomationPeer {}
 #[repr(transparent)]
 pub struct MediaTransportControlsAutomationPeer(::windows_core::IUnknown);
 impl MediaTransportControlsAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::MediaTransportControls>>(owner: Param0) -> ::windows_core::Result<MediaTransportControlsAutomationPeer> {
         Self::IMediaTransportControlsAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<MediaTransportControlsAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::MediaTransportControls>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<MediaTransportControlsAutomationPeer> {
         Self::IMediaTransportControlsAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -14180,14 +14180,14 @@ unsafe impl ::core::marker::Sync for MediaTransportControlsAutomationPeer {}
 #[repr(transparent)]
 pub struct MenuBarAutomationPeer(::windows_core::IUnknown);
 impl MenuBarAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstance<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::MenuBar>>(owner: Param0) -> ::windows_core::Result<MenuBarAutomationPeer> {
         Self::IMenuBarAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstance)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<MenuBarAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstance_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::MenuBar>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<MenuBarAutomationPeer> {
         Self::IMenuBarAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -14335,7 +14335,7 @@ unsafe impl ::core::marker::Sync for MenuBarAutomationPeer {}
 #[repr(transparent)]
 pub struct MenuBarItemAutomationPeer(::windows_core::IUnknown);
 impl MenuBarItemAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ExpandCollapseState(&self) -> ::windows_core::Result<super::ExpandCollapseState> {
         let this = &::windows_core::Interface::cast::<super::Provider::IExpandCollapseProvider>(self)?;
         unsafe {
@@ -14343,29 +14343,29 @@ impl MenuBarItemAutomationPeer {
             (::windows_core::Interface::vtable(this).ExpandCollapseState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::ExpandCollapseState>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Collapse(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IExpandCollapseProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Collapse)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Expand(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IExpandCollapseProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Expand)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Invoke(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IInvokeProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Invoke)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstance<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::MenuBarItem>>(owner: Param0) -> ::windows_core::Result<MenuBarItemAutomationPeer> {
         Self::IMenuBarItemAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstance)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<MenuBarItemAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstance_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::MenuBarItem>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<MenuBarItemAutomationPeer> {
         Self::IMenuBarItemAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -14448,53 +14448,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Men
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<MenuBarItemAutomationPeer> for super::Provider::IExpandCollapseProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: MenuBarItemAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&MenuBarItemAutomationPeer> for super::Provider::IExpandCollapseProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &MenuBarItemAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IExpandCollapseProvider> for MenuBarItemAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IExpandCollapseProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IExpandCollapseProvider> for &MenuBarItemAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IExpandCollapseProvider> {
         ::core::convert::TryInto::<super::Provider::IExpandCollapseProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<MenuBarItemAutomationPeer> for super::Provider::IInvokeProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: MenuBarItemAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&MenuBarItemAutomationPeer> for super::Provider::IInvokeProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &MenuBarItemAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IInvokeProvider> for MenuBarItemAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IInvokeProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IInvokeProvider> for &MenuBarItemAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IInvokeProvider> {
         ::core::convert::TryInto::<super::Provider::IInvokeProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -14565,19 +14565,19 @@ unsafe impl ::core::marker::Sync for MenuBarItemAutomationPeer {}
 #[repr(transparent)]
 pub struct MenuFlyoutItemAutomationPeer(::windows_core::IUnknown);
 impl MenuFlyoutItemAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Invoke(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IInvokeProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Invoke)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::MenuFlyoutItem>>(owner: Param0) -> ::windows_core::Result<MenuFlyoutItemAutomationPeer> {
         Self::IMenuFlyoutItemAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<MenuFlyoutItemAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::MenuFlyoutItem>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<MenuFlyoutItemAutomationPeer> {
         Self::IMenuFlyoutItemAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -14660,27 +14660,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Men
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<MenuFlyoutItemAutomationPeer> for super::Provider::IInvokeProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: MenuFlyoutItemAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&MenuFlyoutItemAutomationPeer> for super::Provider::IInvokeProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &MenuFlyoutItemAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IInvokeProvider> for MenuFlyoutItemAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IInvokeProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IInvokeProvider> for &MenuFlyoutItemAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IInvokeProvider> {
         ::core::convert::TryInto::<super::Provider::IInvokeProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -14751,14 +14751,14 @@ unsafe impl ::core::marker::Sync for MenuFlyoutItemAutomationPeer {}
 #[repr(transparent)]
 pub struct MenuFlyoutPresenterAutomationPeer(::windows_core::IUnknown);
 impl MenuFlyoutPresenterAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::MenuFlyoutPresenter>>(owner: Param0) -> ::windows_core::Result<MenuFlyoutPresenterAutomationPeer> {
         Self::IMenuFlyoutPresenterAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<MenuFlyoutPresenterAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::MenuFlyoutPresenter>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<MenuFlyoutPresenterAutomationPeer> {
         Self::IMenuFlyoutPresenterAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -14841,27 +14841,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Men
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<MenuFlyoutPresenterAutomationPeer> for super::Provider::IItemContainerProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: MenuFlyoutPresenterAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&MenuFlyoutPresenterAutomationPeer> for super::Provider::IItemContainerProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &MenuFlyoutPresenterAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IItemContainerProvider> for MenuFlyoutPresenterAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IItemContainerProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IItemContainerProvider> for &MenuFlyoutPresenterAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IItemContainerProvider> {
         ::core::convert::TryInto::<super::Provider::IItemContainerProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -14952,14 +14952,14 @@ unsafe impl ::core::marker::Sync for MenuFlyoutPresenterAutomationPeer {}
 #[repr(transparent)]
 pub struct NavigationViewItemAutomationPeer(::windows_core::IUnknown);
 impl NavigationViewItemAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::NavigationViewItem>>(owner: Param0) -> ::windows_core::Result<NavigationViewItemAutomationPeer> {
         Self::INavigationViewItemAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<NavigationViewItemAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::NavigationViewItem>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<NavigationViewItemAutomationPeer> {
         Self::INavigationViewItemAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -15127,14 +15127,14 @@ unsafe impl ::core::marker::Sync for NavigationViewItemAutomationPeer {}
 #[repr(transparent)]
 pub struct PasswordBoxAutomationPeer(::windows_core::IUnknown);
 impl PasswordBoxAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::PasswordBox>>(owner: Param0) -> ::windows_core::Result<PasswordBoxAutomationPeer> {
         Self::IPasswordBoxAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<PasswordBoxAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::PasswordBox>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<PasswordBoxAutomationPeer> {
         Self::IPasswordBoxAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -15347,14 +15347,14 @@ unsafe impl ::windows_core::RuntimeType for PatternInterface {
 #[repr(transparent)]
 pub struct PersonPictureAutomationPeer(::windows_core::IUnknown);
 impl PersonPictureAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::PersonPicture>>(owner: Param0) -> ::windows_core::Result<PersonPictureAutomationPeer> {
         Self::IPersonPictureAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<PersonPictureAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::PersonPicture>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<PersonPictureAutomationPeer> {
         Self::IPersonPictureAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -15637,14 +15637,14 @@ unsafe impl ::core::marker::Sync for PickerFlyoutPresenterAutomationPeer {}
 #[repr(transparent)]
 pub struct PivotAutomationPeer(::windows_core::IUnknown);
 impl PivotAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Pivot>>(owner: Param0) -> ::windows_core::Result<PivotAutomationPeer> {
         Self::IPivotAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), result__.as_mut_ptr()).from_abi::<PivotAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn HorizontallyScrollable(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe {
@@ -15652,7 +15652,7 @@ impl PivotAutomationPeer {
             (::windows_core::Interface::vtable(this).HorizontallyScrollable)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn HorizontalScrollPercent(&self) -> ::windows_core::Result<f64> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe {
@@ -15660,7 +15660,7 @@ impl PivotAutomationPeer {
             (::windows_core::Interface::vtable(this).HorizontalScrollPercent)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn HorizontalViewSize(&self) -> ::windows_core::Result<f64> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe {
@@ -15668,7 +15668,7 @@ impl PivotAutomationPeer {
             (::windows_core::Interface::vtable(this).HorizontalViewSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn VerticallyScrollable(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe {
@@ -15676,7 +15676,7 @@ impl PivotAutomationPeer {
             (::windows_core::Interface::vtable(this).VerticallyScrollable)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn VerticalScrollPercent(&self) -> ::windows_core::Result<f64> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe {
@@ -15684,7 +15684,7 @@ impl PivotAutomationPeer {
             (::windows_core::Interface::vtable(this).VerticalScrollPercent)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn VerticalViewSize(&self) -> ::windows_core::Result<f64> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe {
@@ -15692,17 +15692,17 @@ impl PivotAutomationPeer {
             (::windows_core::Interface::vtable(this).VerticalViewSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Scroll(&self, horizontalamount: super::ScrollAmount, verticalamount: super::ScrollAmount) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Scroll)(::windows_core::Interface::as_raw(this), horizontalamount, verticalamount).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetScrollPercent(&self, horizontalpercent: f64, verticalpercent: f64) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScrollPercent)(::windows_core::Interface::as_raw(this), horizontalpercent, verticalpercent).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CanSelectMultiple(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionProvider>(self)?;
         unsafe {
@@ -15710,7 +15710,7 @@ impl PivotAutomationPeer {
             (::windows_core::Interface::vtable(this).CanSelectMultiple)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn IsSelectionRequired(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionProvider>(self)?;
         unsafe {
@@ -15718,7 +15718,7 @@ impl PivotAutomationPeer {
             (::windows_core::Interface::vtable(this).IsSelectionRequired)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GetSelection(&self) -> ::windows_core::Result<::windows_core::Array<super::Provider::IRawElementProviderSimple>> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionProvider>(self)?;
         unsafe {
@@ -15801,79 +15801,79 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Piv
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<PivotAutomationPeer> for super::Provider::IItemContainerProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: PivotAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&PivotAutomationPeer> for super::Provider::IItemContainerProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &PivotAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IItemContainerProvider> for PivotAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IItemContainerProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IItemContainerProvider> for &PivotAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IItemContainerProvider> {
         ::core::convert::TryInto::<super::Provider::IItemContainerProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<PivotAutomationPeer> for super::Provider::IScrollProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: PivotAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&PivotAutomationPeer> for super::Provider::IScrollProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &PivotAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IScrollProvider> for PivotAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IScrollProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IScrollProvider> for &PivotAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IScrollProvider> {
         ::core::convert::TryInto::<super::Provider::IScrollProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<PivotAutomationPeer> for super::Provider::ISelectionProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: PivotAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&PivotAutomationPeer> for super::Provider::ISelectionProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &PivotAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionProvider> for PivotAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionProvider> for &PivotAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionProvider> {
         ::core::convert::TryInto::<super::Provider::ISelectionProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -15964,7 +15964,7 @@ unsafe impl ::core::marker::Sync for PivotAutomationPeer {}
 #[repr(transparent)]
 pub struct PivotItemAutomationPeer(::windows_core::IUnknown);
 impl PivotItemAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::PivotItem>>(owner: Param0) -> ::windows_core::Result<PivotItemAutomationPeer> {
         Self::IPivotItemAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -16117,12 +16117,12 @@ impl PivotItemDataAutomationPeer {
             (::windows_core::Interface::vtable(this).CreateInstanceWithParentAndItem)(::windows_core::Interface::as_raw(this), item.into_param().abi(), parent.into_param().abi(), result__.as_mut_ptr()).from_abi::<PivotItemDataAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ScrollIntoView(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollItemProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ScrollIntoView)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn IsSelected(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionItemProvider>(self)?;
         unsafe {
@@ -16130,7 +16130,7 @@ impl PivotItemDataAutomationPeer {
             (::windows_core::Interface::vtable(this).IsSelected)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SelectionContainer(&self) -> ::windows_core::Result<super::Provider::IRawElementProviderSimple> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionItemProvider>(self)?;
         unsafe {
@@ -16138,22 +16138,22 @@ impl PivotItemDataAutomationPeer {
             (::windows_core::Interface::vtable(this).SelectionContainer)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Provider::IRawElementProviderSimple>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn AddToSelection(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionItemProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).AddToSelection)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn RemoveFromSelection(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionItemProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveFromSelection)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Select(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionItemProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Select)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Realize(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IVirtualizedItemProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Realize)(::windows_core::Interface::as_raw(this)).ok() }
@@ -16233,79 +16233,79 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Piv
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<PivotItemDataAutomationPeer> for super::Provider::IScrollItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: PivotItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&PivotItemDataAutomationPeer> for super::Provider::IScrollItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &PivotItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IScrollItemProvider> for PivotItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IScrollItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IScrollItemProvider> for &PivotItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IScrollItemProvider> {
         ::core::convert::TryInto::<super::Provider::IScrollItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<PivotItemDataAutomationPeer> for super::Provider::ISelectionItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: PivotItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&PivotItemDataAutomationPeer> for super::Provider::ISelectionItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &PivotItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionItemProvider> for PivotItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionItemProvider> for &PivotItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionItemProvider> {
         ::core::convert::TryInto::<super::Provider::ISelectionItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<PivotItemDataAutomationPeer> for super::Provider::IVirtualizedItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: PivotItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&PivotItemDataAutomationPeer> for super::Provider::IVirtualizedItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &PivotItemDataAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IVirtualizedItemProvider> for PivotItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IVirtualizedItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IVirtualizedItemProvider> for &PivotItemDataAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IVirtualizedItemProvider> {
         ::core::convert::TryInto::<super::Provider::IVirtualizedItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -16376,14 +16376,14 @@ unsafe impl ::core::marker::Sync for PivotItemDataAutomationPeer {}
 #[repr(transparent)]
 pub struct ProgressBarAutomationPeer(::windows_core::IUnknown);
 impl ProgressBarAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ProgressBar>>(owner: Param0) -> ::windows_core::Result<ProgressBarAutomationPeer> {
         Self::IProgressBarAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<ProgressBarAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ProgressBar>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<ProgressBarAutomationPeer> {
         Self::IProgressBarAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -16466,27 +16466,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Pro
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ProgressBarAutomationPeer> for super::Provider::IRangeValueProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ProgressBarAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ProgressBarAutomationPeer> for super::Provider::IRangeValueProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ProgressBarAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IRangeValueProvider> for ProgressBarAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IRangeValueProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IRangeValueProvider> for &ProgressBarAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IRangeValueProvider> {
         ::core::convert::TryInto::<super::Provider::IRangeValueProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -16577,14 +16577,14 @@ unsafe impl ::core::marker::Sync for ProgressBarAutomationPeer {}
 #[repr(transparent)]
 pub struct ProgressRingAutomationPeer(::windows_core::IUnknown);
 impl ProgressRingAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ProgressRing>>(owner: Param0) -> ::windows_core::Result<ProgressRingAutomationPeer> {
         Self::IProgressRingAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<ProgressRingAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ProgressRing>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<ProgressRingAutomationPeer> {
         Self::IProgressRingAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -16732,14 +16732,14 @@ unsafe impl ::core::marker::Sync for ProgressRingAutomationPeer {}
 #[repr(transparent)]
 pub struct RadioButtonAutomationPeer(::windows_core::IUnknown);
 impl RadioButtonAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::RadioButton>>(owner: Param0) -> ::windows_core::Result<RadioButtonAutomationPeer> {
         Self::IRadioButtonAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<RadioButtonAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::RadioButton>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<RadioButtonAutomationPeer> {
         Self::IRadioButtonAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -16747,7 +16747,7 @@ impl RadioButtonAutomationPeer {
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::mem::transmute_copy(&derived__), base__ as *mut _ as _, result__.as_mut_ptr()).from_abi::<RadioButtonAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn IsSelected(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionItemProvider>(self)?;
         unsafe {
@@ -16755,7 +16755,7 @@ impl RadioButtonAutomationPeer {
             (::windows_core::Interface::vtable(this).IsSelected)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SelectionContainer(&self) -> ::windows_core::Result<super::Provider::IRawElementProviderSimple> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionItemProvider>(self)?;
         unsafe {
@@ -16763,17 +16763,17 @@ impl RadioButtonAutomationPeer {
             (::windows_core::Interface::vtable(this).SelectionContainer)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Provider::IRawElementProviderSimple>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn AddToSelection(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionItemProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).AddToSelection)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn RemoveFromSelection(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionItemProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveFromSelection)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Select(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionItemProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Select)(::windows_core::Interface::as_raw(this)).ok() }
@@ -16853,53 +16853,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Rad
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<RadioButtonAutomationPeer> for super::Provider::ISelectionItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: RadioButtonAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&RadioButtonAutomationPeer> for super::Provider::ISelectionItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &RadioButtonAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionItemProvider> for RadioButtonAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionItemProvider> for &RadioButtonAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionItemProvider> {
         ::core::convert::TryInto::<super::Provider::ISelectionItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<RadioButtonAutomationPeer> for super::Provider::IToggleProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: RadioButtonAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&RadioButtonAutomationPeer> for super::Provider::IToggleProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &RadioButtonAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IToggleProvider> for RadioButtonAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IToggleProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IToggleProvider> for &RadioButtonAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IToggleProvider> {
         ::core::convert::TryInto::<super::Provider::IToggleProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -17010,14 +17010,14 @@ unsafe impl ::core::marker::Sync for RadioButtonAutomationPeer {}
 #[repr(transparent)]
 pub struct RangeBaseAutomationPeer(::windows_core::IUnknown);
 impl RangeBaseAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Primitives::RangeBase>>(owner: Param0) -> ::windows_core::Result<RangeBaseAutomationPeer> {
         Self::IRangeBaseAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<RangeBaseAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Primitives::RangeBase>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<RangeBaseAutomationPeer> {
         Self::IRangeBaseAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -17025,7 +17025,7 @@ impl RangeBaseAutomationPeer {
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::mem::transmute_copy(&derived__), base__ as *mut _ as _, result__.as_mut_ptr()).from_abi::<RangeBaseAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn IsReadOnly(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::IRangeValueProvider>(self)?;
         unsafe {
@@ -17033,7 +17033,7 @@ impl RangeBaseAutomationPeer {
             (::windows_core::Interface::vtable(this).IsReadOnly)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn LargeChange(&self) -> ::windows_core::Result<f64> {
         let this = &::windows_core::Interface::cast::<super::Provider::IRangeValueProvider>(self)?;
         unsafe {
@@ -17041,7 +17041,7 @@ impl RangeBaseAutomationPeer {
             (::windows_core::Interface::vtable(this).LargeChange)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Maximum(&self) -> ::windows_core::Result<f64> {
         let this = &::windows_core::Interface::cast::<super::Provider::IRangeValueProvider>(self)?;
         unsafe {
@@ -17049,7 +17049,7 @@ impl RangeBaseAutomationPeer {
             (::windows_core::Interface::vtable(this).Maximum)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Minimum(&self) -> ::windows_core::Result<f64> {
         let this = &::windows_core::Interface::cast::<super::Provider::IRangeValueProvider>(self)?;
         unsafe {
@@ -17057,7 +17057,7 @@ impl RangeBaseAutomationPeer {
             (::windows_core::Interface::vtable(this).Minimum)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SmallChange(&self) -> ::windows_core::Result<f64> {
         let this = &::windows_core::Interface::cast::<super::Provider::IRangeValueProvider>(self)?;
         unsafe {
@@ -17065,7 +17065,7 @@ impl RangeBaseAutomationPeer {
             (::windows_core::Interface::vtable(this).SmallChange)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Value(&self) -> ::windows_core::Result<f64> {
         let this = &::windows_core::Interface::cast::<super::Provider::IRangeValueProvider>(self)?;
         unsafe {
@@ -17073,7 +17073,7 @@ impl RangeBaseAutomationPeer {
             (::windows_core::Interface::vtable(this).Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetValue(&self, value: f64) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IRangeValueProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetValue)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -17153,27 +17153,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ran
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<RangeBaseAutomationPeer> for super::Provider::IRangeValueProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: RangeBaseAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&RangeBaseAutomationPeer> for super::Provider::IRangeValueProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &RangeBaseAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IRangeValueProvider> for RangeBaseAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IRangeValueProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IRangeValueProvider> for &RangeBaseAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IRangeValueProvider> {
         ::core::convert::TryInto::<super::Provider::IRangeValueProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -17244,14 +17244,14 @@ unsafe impl ::core::marker::Sync for RangeBaseAutomationPeer {}
 #[repr(transparent)]
 pub struct RatingControlAutomationPeer(::windows_core::IUnknown);
 impl RatingControlAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::RatingControl>>(owner: Param0) -> ::windows_core::Result<RatingControlAutomationPeer> {
         Self::IRatingControlAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<RatingControlAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::RatingControl>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<RatingControlAutomationPeer> {
         Self::IRatingControlAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -17436,19 +17436,19 @@ impl ::core::default::Default for RawElementProviderRuntimeId {
 #[repr(transparent)]
 pub struct RepeatButtonAutomationPeer(::windows_core::IUnknown);
 impl RepeatButtonAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Invoke(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IInvokeProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Invoke)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Primitives::RepeatButton>>(owner: Param0) -> ::windows_core::Result<RepeatButtonAutomationPeer> {
         Self::IRepeatButtonAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<RepeatButtonAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Primitives::RepeatButton>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<RepeatButtonAutomationPeer> {
         Self::IRepeatButtonAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -17531,27 +17531,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Rep
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<RepeatButtonAutomationPeer> for super::Provider::IInvokeProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: RepeatButtonAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&RepeatButtonAutomationPeer> for super::Provider::IInvokeProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &RepeatButtonAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IInvokeProvider> for RepeatButtonAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IInvokeProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IInvokeProvider> for &RepeatButtonAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IInvokeProvider> {
         ::core::convert::TryInto::<super::Provider::IInvokeProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -17642,14 +17642,14 @@ unsafe impl ::core::marker::Sync for RepeatButtonAutomationPeer {}
 #[repr(transparent)]
 pub struct RichEditBoxAutomationPeer(::windows_core::IUnknown);
 impl RichEditBoxAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::RichEditBox>>(owner: Param0) -> ::windows_core::Result<RichEditBoxAutomationPeer> {
         Self::IRichEditBoxAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<RichEditBoxAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::RichEditBox>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<RichEditBoxAutomationPeer> {
         Self::IRichEditBoxAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -17797,14 +17797,14 @@ unsafe impl ::core::marker::Sync for RichEditBoxAutomationPeer {}
 #[repr(transparent)]
 pub struct RichTextBlockAutomationPeer(::windows_core::IUnknown);
 impl RichTextBlockAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::RichTextBlock>>(owner: Param0) -> ::windows_core::Result<RichTextBlockAutomationPeer> {
         Self::IRichTextBlockAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<RichTextBlockAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::RichTextBlock>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<RichTextBlockAutomationPeer> {
         Self::IRichTextBlockAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -17952,14 +17952,14 @@ unsafe impl ::core::marker::Sync for RichTextBlockAutomationPeer {}
 #[repr(transparent)]
 pub struct RichTextBlockOverflowAutomationPeer(::windows_core::IUnknown);
 impl RichTextBlockOverflowAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::RichTextBlockOverflow>>(owner: Param0) -> ::windows_core::Result<RichTextBlockOverflowAutomationPeer> {
         Self::IRichTextBlockOverflowAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<RichTextBlockOverflowAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::RichTextBlockOverflow>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<RichTextBlockOverflowAutomationPeer> {
         Self::IRichTextBlockOverflowAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -18107,14 +18107,14 @@ unsafe impl ::core::marker::Sync for RichTextBlockOverflowAutomationPeer {}
 #[repr(transparent)]
 pub struct ScrollBarAutomationPeer(::windows_core::IUnknown);
 impl ScrollBarAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Primitives::ScrollBar>>(owner: Param0) -> ::windows_core::Result<ScrollBarAutomationPeer> {
         Self::IScrollBarAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<ScrollBarAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Primitives::ScrollBar>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<ScrollBarAutomationPeer> {
         Self::IScrollBarAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -18197,27 +18197,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Scr
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ScrollBarAutomationPeer> for super::Provider::IRangeValueProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ScrollBarAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ScrollBarAutomationPeer> for super::Provider::IRangeValueProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ScrollBarAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IRangeValueProvider> for ScrollBarAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IRangeValueProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IRangeValueProvider> for &ScrollBarAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IRangeValueProvider> {
         ::core::convert::TryInto::<super::Provider::IRangeValueProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -18308,7 +18308,7 @@ unsafe impl ::core::marker::Sync for ScrollBarAutomationPeer {}
 #[repr(transparent)]
 pub struct ScrollViewerAutomationPeer(::windows_core::IUnknown);
 impl ScrollViewerAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn HorizontallyScrollable(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe {
@@ -18316,7 +18316,7 @@ impl ScrollViewerAutomationPeer {
             (::windows_core::Interface::vtable(this).HorizontallyScrollable)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn HorizontalScrollPercent(&self) -> ::windows_core::Result<f64> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe {
@@ -18324,7 +18324,7 @@ impl ScrollViewerAutomationPeer {
             (::windows_core::Interface::vtable(this).HorizontalScrollPercent)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn HorizontalViewSize(&self) -> ::windows_core::Result<f64> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe {
@@ -18332,7 +18332,7 @@ impl ScrollViewerAutomationPeer {
             (::windows_core::Interface::vtable(this).HorizontalViewSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn VerticallyScrollable(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe {
@@ -18340,7 +18340,7 @@ impl ScrollViewerAutomationPeer {
             (::windows_core::Interface::vtable(this).VerticallyScrollable)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn VerticalScrollPercent(&self) -> ::windows_core::Result<f64> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe {
@@ -18348,7 +18348,7 @@ impl ScrollViewerAutomationPeer {
             (::windows_core::Interface::vtable(this).VerticalScrollPercent)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn VerticalViewSize(&self) -> ::windows_core::Result<f64> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe {
@@ -18356,24 +18356,24 @@ impl ScrollViewerAutomationPeer {
             (::windows_core::Interface::vtable(this).VerticalViewSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Scroll(&self, horizontalamount: super::ScrollAmount, verticalamount: super::ScrollAmount) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Scroll)(::windows_core::Interface::as_raw(this), horizontalamount, verticalamount).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetScrollPercent(&self, horizontalpercent: f64, verticalpercent: f64) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IScrollProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetScrollPercent)(::windows_core::Interface::as_raw(this), horizontalpercent, verticalpercent).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ScrollViewer>>(owner: Param0) -> ::windows_core::Result<ScrollViewerAutomationPeer> {
         Self::IScrollViewerAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<ScrollViewerAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ScrollViewer>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<ScrollViewerAutomationPeer> {
         Self::IScrollViewerAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -18456,27 +18456,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Scr
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ScrollViewerAutomationPeer> for super::Provider::IScrollProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ScrollViewerAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ScrollViewerAutomationPeer> for super::Provider::IScrollProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ScrollViewerAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IScrollProvider> for ScrollViewerAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IScrollProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IScrollProvider> for &ScrollViewerAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IScrollProvider> {
         ::core::convert::TryInto::<super::Provider::IScrollProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -18547,14 +18547,14 @@ unsafe impl ::core::marker::Sync for ScrollViewerAutomationPeer {}
 #[repr(transparent)]
 pub struct SearchBoxAutomationPeer(::windows_core::IUnknown);
 impl SearchBoxAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::SearchBox>>(owner: Param0) -> ::windows_core::Result<SearchBoxAutomationPeer> {
         Self::ISearchBoxAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<SearchBoxAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::SearchBox>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<SearchBoxAutomationPeer> {
         Self::ISearchBoxAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -18702,7 +18702,7 @@ unsafe impl ::core::marker::Sync for SearchBoxAutomationPeer {}
 #[repr(transparent)]
 pub struct SelectorAutomationPeer(::windows_core::IUnknown);
 impl SelectorAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CanSelectMultiple(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionProvider>(self)?;
         unsafe {
@@ -18710,7 +18710,7 @@ impl SelectorAutomationPeer {
             (::windows_core::Interface::vtable(this).CanSelectMultiple)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn IsSelectionRequired(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionProvider>(self)?;
         unsafe {
@@ -18718,7 +18718,7 @@ impl SelectorAutomationPeer {
             (::windows_core::Interface::vtable(this).IsSelectionRequired)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GetSelection(&self) -> ::windows_core::Result<::windows_core::Array<super::Provider::IRawElementProviderSimple>> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionProvider>(self)?;
         unsafe {
@@ -18726,14 +18726,14 @@ impl SelectorAutomationPeer {
             (::windows_core::Interface::vtable(this).GetSelection)(::windows_core::Interface::as_raw(this), ::windows_core::Array::<super::Provider::IRawElementProviderSimple>::set_abi_len(result__.assume_init_mut()), result__.as_mut_ptr() as *mut _ as _).and_then(|| result__.assume_init())
         }
     }
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Primitives::Selector>>(owner: Param0) -> ::windows_core::Result<SelectorAutomationPeer> {
         Self::ISelectorAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<SelectorAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Primitives::Selector>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<SelectorAutomationPeer> {
         Self::ISelectorAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -18816,53 +18816,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Sel
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<SelectorAutomationPeer> for super::Provider::IItemContainerProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: SelectorAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&SelectorAutomationPeer> for super::Provider::IItemContainerProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &SelectorAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IItemContainerProvider> for SelectorAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IItemContainerProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IItemContainerProvider> for &SelectorAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IItemContainerProvider> {
         ::core::convert::TryInto::<super::Provider::IItemContainerProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<SelectorAutomationPeer> for super::Provider::ISelectionProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: SelectorAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&SelectorAutomationPeer> for super::Provider::ISelectionProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &SelectorAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionProvider> for SelectorAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionProvider> for &SelectorAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionProvider> {
         ::core::convert::TryInto::<super::Provider::ISelectionProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -18953,7 +18953,7 @@ unsafe impl ::core::marker::Sync for SelectorAutomationPeer {}
 #[repr(transparent)]
 pub struct SelectorItemAutomationPeer(::windows_core::IUnknown);
 impl SelectorItemAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn IsSelected(&self) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionItemProvider>(self)?;
         unsafe {
@@ -18961,7 +18961,7 @@ impl SelectorItemAutomationPeer {
             (::windows_core::Interface::vtable(this).IsSelected)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SelectionContainer(&self) -> ::windows_core::Result<super::Provider::IRawElementProviderSimple> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionItemProvider>(self)?;
         unsafe {
@@ -18969,17 +18969,17 @@ impl SelectorItemAutomationPeer {
             (::windows_core::Interface::vtable(this).SelectionContainer)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Provider::IRawElementProviderSimple>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn AddToSelection(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionItemProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).AddToSelection)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn RemoveFromSelection(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionItemProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveFromSelection)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Select(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::ISelectionItemProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Select)(::windows_core::Interface::as_raw(this)).ok() }
@@ -19072,53 +19072,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Sel
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<SelectorItemAutomationPeer> for super::Provider::ISelectionItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: SelectorItemAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&SelectorItemAutomationPeer> for super::Provider::ISelectionItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &SelectorItemAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionItemProvider> for SelectorItemAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionItemProvider> for &SelectorItemAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionItemProvider> {
         ::core::convert::TryInto::<super::Provider::ISelectionItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<SelectorItemAutomationPeer> for super::Provider::IVirtualizedItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: SelectorItemAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&SelectorItemAutomationPeer> for super::Provider::IVirtualizedItemProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &SelectorItemAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IVirtualizedItemProvider> for SelectorItemAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IVirtualizedItemProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IVirtualizedItemProvider> for &SelectorItemAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IVirtualizedItemProvider> {
         ::core::convert::TryInto::<super::Provider::IVirtualizedItemProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -19189,14 +19189,14 @@ unsafe impl ::core::marker::Sync for SelectorItemAutomationPeer {}
 #[repr(transparent)]
 pub struct SemanticZoomAutomationPeer(::windows_core::IUnknown);
 impl SemanticZoomAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::SemanticZoom>>(owner: Param0) -> ::windows_core::Result<SemanticZoomAutomationPeer> {
         Self::ISemanticZoomAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<SemanticZoomAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::SemanticZoom>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<SemanticZoomAutomationPeer> {
         Self::ISemanticZoomAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -19204,7 +19204,7 @@ impl SemanticZoomAutomationPeer {
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::mem::transmute_copy(&derived__), base__ as *mut _ as _, result__.as_mut_ptr()).from_abi::<SemanticZoomAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ToggleState(&self) -> ::windows_core::Result<super::ToggleState> {
         let this = &::windows_core::Interface::cast::<super::Provider::IToggleProvider>(self)?;
         unsafe {
@@ -19212,7 +19212,7 @@ impl SemanticZoomAutomationPeer {
             (::windows_core::Interface::vtable(this).ToggleState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::ToggleState>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Toggle(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IToggleProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Toggle)(::windows_core::Interface::as_raw(this)).ok() }
@@ -19292,27 +19292,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Sem
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<SemanticZoomAutomationPeer> for super::Provider::IToggleProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: SemanticZoomAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&SemanticZoomAutomationPeer> for super::Provider::IToggleProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &SemanticZoomAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IToggleProvider> for SemanticZoomAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IToggleProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IToggleProvider> for &SemanticZoomAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IToggleProvider> {
         ::core::convert::TryInto::<super::Provider::IToggleProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -19383,14 +19383,14 @@ unsafe impl ::core::marker::Sync for SemanticZoomAutomationPeer {}
 #[repr(transparent)]
 pub struct SettingsFlyoutAutomationPeer(::windows_core::IUnknown);
 impl SettingsFlyoutAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::SettingsFlyout>>(owner: Param0) -> ::windows_core::Result<SettingsFlyoutAutomationPeer> {
         Self::ISettingsFlyoutAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<SettingsFlyoutAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::SettingsFlyout>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<SettingsFlyoutAutomationPeer> {
         Self::ISettingsFlyoutAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -19538,14 +19538,14 @@ unsafe impl ::core::marker::Sync for SettingsFlyoutAutomationPeer {}
 #[repr(transparent)]
 pub struct SliderAutomationPeer(::windows_core::IUnknown);
 impl SliderAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Slider>>(owner: Param0) -> ::windows_core::Result<SliderAutomationPeer> {
         Self::ISliderAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<SliderAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Slider>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<SliderAutomationPeer> {
         Self::ISliderAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -19628,27 +19628,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Sli
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<SliderAutomationPeer> for super::Provider::IRangeValueProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: SliderAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&SliderAutomationPeer> for super::Provider::IRangeValueProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &SliderAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IRangeValueProvider> for SliderAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IRangeValueProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IRangeValueProvider> for &SliderAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IRangeValueProvider> {
         ::core::convert::TryInto::<super::Provider::IRangeValueProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -19739,14 +19739,14 @@ unsafe impl ::core::marker::Sync for SliderAutomationPeer {}
 #[repr(transparent)]
 pub struct TextBlockAutomationPeer(::windows_core::IUnknown);
 impl TextBlockAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::TextBlock>>(owner: Param0) -> ::windows_core::Result<TextBlockAutomationPeer> {
         Self::ITextBlockAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<TextBlockAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::TextBlock>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<TextBlockAutomationPeer> {
         Self::ITextBlockAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -19894,14 +19894,14 @@ unsafe impl ::core::marker::Sync for TextBlockAutomationPeer {}
 #[repr(transparent)]
 pub struct TextBoxAutomationPeer(::windows_core::IUnknown);
 impl TextBoxAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::TextBox>>(owner: Param0) -> ::windows_core::Result<TextBoxAutomationPeer> {
         Self::ITextBoxAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<TextBoxAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::TextBox>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<TextBoxAutomationPeer> {
         Self::ITextBoxAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -20049,14 +20049,14 @@ unsafe impl ::core::marker::Sync for TextBoxAutomationPeer {}
 #[repr(transparent)]
 pub struct ThumbAutomationPeer(::windows_core::IUnknown);
 impl ThumbAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Primitives::Thumb>>(owner: Param0) -> ::windows_core::Result<ThumbAutomationPeer> {
         Self::IThumbAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<ThumbAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Primitives::Thumb>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<ThumbAutomationPeer> {
         Self::IThumbAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -20204,14 +20204,14 @@ unsafe impl ::core::marker::Sync for ThumbAutomationPeer {}
 #[repr(transparent)]
 pub struct TimePickerAutomationPeer(::windows_core::IUnknown);
 impl TimePickerAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::TimePicker>>(owner: Param0) -> ::windows_core::Result<TimePickerAutomationPeer> {
         Self::ITimePickerAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<TimePickerAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::TimePicker>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<TimePickerAutomationPeer> {
         Self::ITimePickerAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -20494,14 +20494,14 @@ unsafe impl ::core::marker::Sync for TimePickerFlyoutPresenterAutomationPeer {}
 #[repr(transparent)]
 pub struct ToggleButtonAutomationPeer(::windows_core::IUnknown);
 impl ToggleButtonAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Primitives::ToggleButton>>(owner: Param0) -> ::windows_core::Result<ToggleButtonAutomationPeer> {
         Self::IToggleButtonAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<ToggleButtonAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::Primitives::ToggleButton>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<ToggleButtonAutomationPeer> {
         Self::IToggleButtonAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -20509,7 +20509,7 @@ impl ToggleButtonAutomationPeer {
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::mem::transmute_copy(&derived__), base__ as *mut _ as _, result__.as_mut_ptr()).from_abi::<ToggleButtonAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ToggleState(&self) -> ::windows_core::Result<super::ToggleState> {
         let this = &::windows_core::Interface::cast::<super::Provider::IToggleProvider>(self)?;
         unsafe {
@@ -20517,7 +20517,7 @@ impl ToggleButtonAutomationPeer {
             (::windows_core::Interface::vtable(this).ToggleState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::ToggleState>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Toggle(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IToggleProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Toggle)(::windows_core::Interface::as_raw(this)).ok() }
@@ -20597,27 +20597,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Tog
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ToggleButtonAutomationPeer> for super::Provider::IToggleProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ToggleButtonAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ToggleButtonAutomationPeer> for super::Provider::IToggleProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ToggleButtonAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IToggleProvider> for ToggleButtonAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IToggleProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IToggleProvider> for &ToggleButtonAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IToggleProvider> {
         ::core::convert::TryInto::<super::Provider::IToggleProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -20708,14 +20708,14 @@ unsafe impl ::core::marker::Sync for ToggleButtonAutomationPeer {}
 #[repr(transparent)]
 pub struct ToggleMenuFlyoutItemAutomationPeer(::windows_core::IUnknown);
 impl ToggleMenuFlyoutItemAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ToggleMenuFlyoutItem>>(owner: Param0) -> ::windows_core::Result<ToggleMenuFlyoutItemAutomationPeer> {
         Self::IToggleMenuFlyoutItemAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<ToggleMenuFlyoutItemAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ToggleMenuFlyoutItem>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<ToggleMenuFlyoutItemAutomationPeer> {
         Self::IToggleMenuFlyoutItemAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -20723,7 +20723,7 @@ impl ToggleMenuFlyoutItemAutomationPeer {
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::mem::transmute_copy(&derived__), base__ as *mut _ as _, result__.as_mut_ptr()).from_abi::<ToggleMenuFlyoutItemAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ToggleState(&self) -> ::windows_core::Result<super::ToggleState> {
         let this = &::windows_core::Interface::cast::<super::Provider::IToggleProvider>(self)?;
         unsafe {
@@ -20731,7 +20731,7 @@ impl ToggleMenuFlyoutItemAutomationPeer {
             (::windows_core::Interface::vtable(this).ToggleState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::ToggleState>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Toggle(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IToggleProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Toggle)(::windows_core::Interface::as_raw(this)).ok() }
@@ -20811,27 +20811,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Tog
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ToggleMenuFlyoutItemAutomationPeer> for super::Provider::IToggleProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ToggleMenuFlyoutItemAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ToggleMenuFlyoutItemAutomationPeer> for super::Provider::IToggleProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ToggleMenuFlyoutItemAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IToggleProvider> for ToggleMenuFlyoutItemAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IToggleProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IToggleProvider> for &ToggleMenuFlyoutItemAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IToggleProvider> {
         ::core::convert::TryInto::<super::Provider::IToggleProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -20902,7 +20902,7 @@ unsafe impl ::core::marker::Sync for ToggleMenuFlyoutItemAutomationPeer {}
 #[repr(transparent)]
 pub struct ToggleSwitchAutomationPeer(::windows_core::IUnknown);
 impl ToggleSwitchAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ToggleState(&self) -> ::windows_core::Result<super::ToggleState> {
         let this = &::windows_core::Interface::cast::<super::Provider::IToggleProvider>(self)?;
         unsafe {
@@ -20910,19 +20910,19 @@ impl ToggleSwitchAutomationPeer {
             (::windows_core::Interface::vtable(this).ToggleState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::ToggleState>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Toggle(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IToggleProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Toggle)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ToggleSwitch>>(owner: Param0) -> ::windows_core::Result<ToggleSwitchAutomationPeer> {
         Self::IToggleSwitchAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<ToggleSwitchAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::ToggleSwitch>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<ToggleSwitchAutomationPeer> {
         Self::IToggleSwitchAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -21005,27 +21005,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Tog
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<ToggleSwitchAutomationPeer> for super::Provider::IToggleProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: ToggleSwitchAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&ToggleSwitchAutomationPeer> for super::Provider::IToggleProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &ToggleSwitchAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IToggleProvider> for ToggleSwitchAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IToggleProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IToggleProvider> for &ToggleSwitchAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IToggleProvider> {
         ::core::convert::TryInto::<super::Provider::IToggleProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -21096,7 +21096,7 @@ unsafe impl ::core::marker::Sync for ToggleSwitchAutomationPeer {}
 #[repr(transparent)]
 pub struct TreeViewItemAutomationPeer(::windows_core::IUnknown);
 impl TreeViewItemAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ExpandCollapseState(&self) -> ::windows_core::Result<super::ExpandCollapseState> {
         let this = &::windows_core::Interface::cast::<super::Provider::IExpandCollapseProvider>(self)?;
         unsafe {
@@ -21104,24 +21104,24 @@ impl TreeViewItemAutomationPeer {
             (::windows_core::Interface::vtable(this).ExpandCollapseState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::ExpandCollapseState>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Collapse(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IExpandCollapseProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Collapse)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Expand(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<super::Provider::IExpandCollapseProvider>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Expand)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::TreeViewItem>>(owner: Param0) -> ::windows_core::Result<TreeViewItemAutomationPeer> {
         Self::ITreeViewItemAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<TreeViewItemAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::TreeViewItem>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<TreeViewItemAutomationPeer> {
         Self::ITreeViewItemAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -21204,27 +21204,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Tre
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<TreeViewItemAutomationPeer> for super::Provider::IExpandCollapseProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: TreeViewItemAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&TreeViewItemAutomationPeer> for super::Provider::IExpandCollapseProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &TreeViewItemAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IExpandCollapseProvider> for TreeViewItemAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IExpandCollapseProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IExpandCollapseProvider> for &TreeViewItemAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IExpandCollapseProvider> {
         ::core::convert::TryInto::<super::Provider::IExpandCollapseProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -21315,14 +21315,14 @@ unsafe impl ::core::marker::Sync for TreeViewItemAutomationPeer {}
 #[repr(transparent)]
 pub struct TreeViewListAutomationPeer(::windows_core::IUnknown);
 impl TreeViewListAutomationPeer {
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::TreeViewList>>(owner: Param0) -> ::windows_core::Result<TreeViewListAutomationPeer> {
         Self::ITreeViewListAutomationPeerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithOwner)(::windows_core::Interface::as_raw(this), owner.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<TreeViewListAutomationPeer>(result__)
         })
     }
-    #[cfg(feature = "UI_Xaml_Controls")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateInstanceWithOwner_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::TreeViewList>, T: ::windows_core::Compose>(owner: Param0, compose: T) -> ::windows_core::Result<TreeViewListAutomationPeer> {
         Self::ITreeViewListAutomationPeerFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
@@ -21405,53 +21405,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Tre
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<TreeViewListAutomationPeer> for super::Provider::IItemContainerProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: TreeViewListAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&TreeViewListAutomationPeer> for super::Provider::IItemContainerProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &TreeViewListAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IItemContainerProvider> for TreeViewListAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IItemContainerProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::IItemContainerProvider> for &TreeViewListAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::IItemContainerProvider> {
         ::core::convert::TryInto::<super::Provider::IItemContainerProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<TreeViewListAutomationPeer> for super::Provider::ISelectionProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: TreeViewListAutomationPeer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&TreeViewListAutomationPeer> for super::Provider::ISelectionProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &TreeViewListAutomationPeer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionProvider> for TreeViewListAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Xaml_Automation_Provider")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::Provider::ISelectionProvider> for &TreeViewListAutomationPeer {
     fn into_param(self) -> ::windows_core::Param<'a, super::Provider::ISelectionProvider> {
         ::core::convert::TryInto::<super::Provider::ISelectionProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)

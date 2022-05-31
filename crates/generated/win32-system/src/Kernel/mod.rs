@@ -104,44 +104,44 @@ impl ::core::fmt::Debug for EXCEPTION_DISPOSITION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 pub struct EXCEPTION_REGISTRATION_RECORD {
     pub Next: *mut EXCEPTION_REGISTRATION_RECORD,
     pub Handler: EXCEPTION_ROUTINE,
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for EXCEPTION_REGISTRATION_RECORD {}
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for EXCEPTION_REGISTRATION_RECORD {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::fmt::Debug for EXCEPTION_REGISTRATION_RECORD {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("EXCEPTION_REGISTRATION_RECORD").field("Next", &self.Next).field("Handler", &self.Handler.map(|f| f as usize)).finish()
     }
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for EXCEPTION_REGISTRATION_RECORD {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for EXCEPTION_REGISTRATION_RECORD {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EXCEPTION_REGISTRATION_RECORD>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for EXCEPTION_REGISTRATION_RECORD {}
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for EXCEPTION_REGISTRATION_RECORD {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 pub type EXCEPTION_ROUTINE = ::core::option::Option<unsafe extern "system" fn(exceptionrecord: *mut super::Diagnostics::Debug::EXCEPTION_RECORD, establisherframe: *const ::core::ffi::c_void, contextrecord: *mut super::Diagnostics::Debug::CONTEXT, dispatchercontext: *const ::core::ffi::c_void) -> EXCEPTION_DISPOSITION>;
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -352,7 +352,7 @@ impl ::core::fmt::Debug for NT_PRODUCT_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 pub struct NT_TIB {
     pub ExceptionList: *mut EXCEPTION_REGISTRATION_RECORD,
     pub StackBase: *mut ::core::ffi::c_void,
@@ -362,59 +362,59 @@ pub struct NT_TIB {
     pub ArbitraryUserPointer: *mut ::core::ffi::c_void,
     pub Self_: *mut NT_TIB,
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for NT_TIB {}
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for NT_TIB {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for NT_TIB {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for NT_TIB {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NT_TIB>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for NT_TIB {}
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for NT_TIB {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 pub union NT_TIB_0 {
     pub FiberData: *mut ::core::ffi::c_void,
     pub Version: u32,
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::marker::Copy for NT_TIB_0 {}
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::clone::Clone for NT_TIB_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 unsafe impl ::windows_core::Abi for NT_TIB_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::PartialEq for NT_TIB_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NT_TIB_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::cmp::Eq for NT_TIB_0 {}
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system")]
 impl ::core::default::Default for NT_TIB_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

@@ -208,7 +208,7 @@ pub struct ISysStorageProviderHandlerFactory_Vtbl {
 #[repr(transparent)]
 pub struct ISysStorageProviderHttpRequestProvider(::windows_core::IUnknown);
 impl ISysStorageProviderHttpRequestProvider {
-    #[cfg(feature = "Web_Http")]
+    #[cfg(feature = "winrt-web")]
     pub fn SendRequestAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_web::Http::HttpRequestMessage>>(&self, request: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_web::Http::HttpResponseMessage>> {
         let this = self;
         unsafe {
@@ -288,9 +288,9 @@ unsafe impl ::windows_core::Interface for ISysStorageProviderHttpRequestProvider
 #[doc(hidden)]
 pub struct ISysStorageProviderHttpRequestProvider_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Web_Http")]
+    #[cfg(feature = "winrt-web")]
     pub SendRequestAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, request: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Web_Http"))]
+    #[cfg(not(feature = "winrt-web"))]
     SendRequestAsync: usize,
 }
 #[repr(transparent)]

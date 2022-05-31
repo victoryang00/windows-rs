@@ -207,12 +207,12 @@ impl<'a> ::windows_core::IntoParam<'a, super::DependencyObject> for &Block {
 }
 unsafe impl ::core::marker::Send for Block {}
 unsafe impl ::core::marker::Sync for Block {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 #[repr(transparent)]
 pub struct BlockCollection(::windows_core::IUnknown);
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl BlockCollection {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<Block>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<Block>>(self)?;
         unsafe {
@@ -220,7 +220,7 @@ impl BlockCollection {
             (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<Block>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetAt(&self, index: u32) -> ::windows_core::Result<Block> {
         let this = self;
         unsafe {
@@ -228,7 +228,7 @@ impl BlockCollection {
             (::windows_core::Interface::vtable(this).GetAt)(::windows_core::Interface::as_raw(this), index, result__.as_mut_ptr()).from_abi::<Block>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -236,7 +236,7 @@ impl BlockCollection {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<Block>> {
         let this = self;
         unsafe {
@@ -244,7 +244,7 @@ impl BlockCollection {
             (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<Block>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn IndexOf<'a, Param0: ::windows_core::IntoParam<'a, Block>>(&self, value: Param0, index: &mut u32) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
@@ -252,37 +252,37 @@ impl BlockCollection {
             (::windows_core::Interface::vtable(this).IndexOf)(::windows_core::Interface::as_raw(this), value.into_param().abi(), index, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAt<'a, Param1: ::windows_core::IntoParam<'a, Block>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertAt<'a, Param1: ::windows_core::IntoParam<'a, Block>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAt(&self, index: u32) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAt)(::windows_core::Interface::as_raw(this), index).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Append<'a, Param0: ::windows_core::IntoParam<'a, Block>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Append)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAtEnd(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAtEnd)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Clear(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Clear)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetMany(&self, startindex: u32, items: &mut [::core::option::Option<Block>]) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -290,33 +290,33 @@ impl BlockCollection {
             (::windows_core::Interface::vtable(this).GetMany)(::windows_core::Interface::as_raw(this), startindex, items.len() as u32, ::core::mem::transmute_copy(&items), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ReplaceAll(&self, items: &[::core::option::Option<Block>]) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ReplaceAll)(::windows_core::Interface::as_raw(this), items.len() as u32, ::core::mem::transmute(items.as_ptr())).ok() }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::clone::Clone for BlockCollection {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::PartialEq for BlockCollection {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::Eq for BlockCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::fmt::Debug for BlockCollection {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("BlockCollection").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::RuntimeType for BlockCollection {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Xaml.Documents.BlockCollection;pinterface({913337e9-11a1-4345-a3a2-4e7f956e222d};rc(Windows.UI.Xaml.Documents.Block;{4bce0016-dd47-4350-8cb0-e171600ac896})))");
     type DefaultType = ::core::option::Option<Self>;
@@ -324,16 +324,16 @@ unsafe impl ::windows_core::RuntimeType for BlockCollection {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::Interface for BlockCollection {
     type Vtable = ::winrt_foundation::Collections::IVector_Vtbl<Block>;
     const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IVector<Block> as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::windows_core::RuntimeName for BlockCollection {
     const NAME: &'static str = "Windows.UI.Xaml.Documents.BlockCollection";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for BlockCollection {
     type Item = Block;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -341,7 +341,7 @@ impl ::core::iter::IntoIterator for BlockCollection {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &BlockCollection {
     type Item = Block;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -349,109 +349,109 @@ impl ::core::iter::IntoIterator for &BlockCollection {
         ::winrt_foundation::Collections::VectorIterator::new(::core::convert::TryInto::try_into(self).ok())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<BlockCollection> for ::windows_core::IUnknown {
     fn from(value: BlockCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&BlockCollection> for ::windows_core::IUnknown {
     fn from(value: &BlockCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for BlockCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a BlockCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<BlockCollection> for ::windows_core::IInspectable {
     fn from(value: BlockCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&BlockCollection> for ::windows_core::IInspectable {
     fn from(value: &BlockCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for BlockCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a BlockCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<BlockCollection> for ::winrt_foundation::Collections::IIterable<Block> {
     type Error = ::windows_core::Error;
     fn try_from(value: BlockCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&BlockCollection> for ::winrt_foundation::Collections::IIterable<Block> {
     type Error = ::windows_core::Error;
     fn try_from(value: &BlockCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<Block>> for BlockCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<Block>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<Block>> for &BlockCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<Block>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<Block>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<BlockCollection> for ::winrt_foundation::Collections::IVector<Block> {
     type Error = ::windows_core::Error;
     fn try_from(value: BlockCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&BlockCollection> for ::winrt_foundation::Collections::IVector<Block> {
     type Error = ::windows_core::Error;
     fn try_from(value: &BlockCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<Block>> for BlockCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<Block>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<Block>> for &BlockCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<Block>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IVector<Block>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Send for BlockCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Sync for BlockCollection {}
 #[repr(transparent)]
 pub struct Bold(::windows_core::IUnknown);
@@ -749,7 +749,7 @@ impl ContentLink {
         static mut SHARED: ::windows_core::FactoryCache<ContentLink, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Info(&self) -> ::windows_core::Result<super::super::Text::ContentLinkInfo> {
         let this = self;
         unsafe {
@@ -757,12 +757,12 @@ impl ContentLink {
             (::windows_core::Interface::vtable(this).Info)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Text::ContentLinkInfo>(result__)
         }
     }
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Text::ContentLinkInfo>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetInfo)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Background(&self) -> ::windows_core::Result<super::Media::Brush> {
         let this = self;
         unsafe {
@@ -770,12 +770,12 @@ impl ContentLink {
             (::windows_core::Interface::vtable(this).Background)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetBackground<'a, Param0: ::windows_core::IntoParam<'a, super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetBackground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Cursor(&self) -> ::windows_core::Result<super::super::Core::CoreCursorType> {
         let this = self;
         unsafe {
@@ -783,7 +783,7 @@ impl ContentLink {
             (::windows_core::Interface::vtable(this).Cursor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Core::CoreCursorType>(result__)
         }
     }
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetCursor(&self, value: super::super::Core::CoreCursorType) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCursor)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -850,7 +850,7 @@ impl ContentLink {
             (::windows_core::Interface::vtable(this).FocusState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::FocusState>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn XYFocusUpNavigationStrategy(&self) -> ::windows_core::Result<super::Input::XYFocusNavigationStrategy> {
         let this = self;
         unsafe {
@@ -858,12 +858,12 @@ impl ContentLink {
             (::windows_core::Interface::vtable(this).XYFocusUpNavigationStrategy)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Input::XYFocusNavigationStrategy>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetXYFocusUpNavigationStrategy(&self, value: super::Input::XYFocusNavigationStrategy) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetXYFocusUpNavigationStrategy)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn XYFocusDownNavigationStrategy(&self) -> ::windows_core::Result<super::Input::XYFocusNavigationStrategy> {
         let this = self;
         unsafe {
@@ -871,12 +871,12 @@ impl ContentLink {
             (::windows_core::Interface::vtable(this).XYFocusDownNavigationStrategy)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Input::XYFocusNavigationStrategy>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetXYFocusDownNavigationStrategy(&self, value: super::Input::XYFocusNavigationStrategy) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetXYFocusDownNavigationStrategy)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn XYFocusLeftNavigationStrategy(&self) -> ::windows_core::Result<super::Input::XYFocusNavigationStrategy> {
         let this = self;
         unsafe {
@@ -884,12 +884,12 @@ impl ContentLink {
             (::windows_core::Interface::vtable(this).XYFocusLeftNavigationStrategy)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Input::XYFocusNavigationStrategy>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetXYFocusLeftNavigationStrategy(&self, value: super::Input::XYFocusNavigationStrategy) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetXYFocusLeftNavigationStrategy)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn XYFocusRightNavigationStrategy(&self) -> ::windows_core::Result<super::Input::XYFocusNavigationStrategy> {
         let this = self;
         unsafe {
@@ -897,7 +897,7 @@ impl ContentLink {
             (::windows_core::Interface::vtable(this).XYFocusRightNavigationStrategy)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Input::XYFocusNavigationStrategy>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetXYFocusRightNavigationStrategy(&self, value: super::Input::XYFocusNavigationStrategy) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetXYFocusRightNavigationStrategy)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -1188,7 +1188,7 @@ unsafe impl ::core::marker::Sync for ContentLink {}
 #[repr(transparent)]
 pub struct ContentLinkInvokedEventArgs(::windows_core::IUnknown);
 impl ContentLinkInvokedEventArgs {
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ContentLinkInfo(&self) -> ::windows_core::Result<super::super::Text::ContentLinkInfo> {
         let this = self;
         unsafe {
@@ -1385,7 +1385,7 @@ impl ContentLinkProviderCollection {
         static mut SHARED: ::windows_core::FactoryCache<ContentLinkProviderCollection, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<ContentLinkProvider>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<ContentLinkProvider>>(self)?;
         unsafe {
@@ -1393,7 +1393,7 @@ impl ContentLinkProviderCollection {
             (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<ContentLinkProvider>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetAt(&self, index: u32) -> ::windows_core::Result<ContentLinkProvider> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>(self)?;
         unsafe {
@@ -1401,7 +1401,7 @@ impl ContentLinkProviderCollection {
             (::windows_core::Interface::vtable(this).GetAt)(::windows_core::Interface::as_raw(this), index, result__.as_mut_ptr()).from_abi::<ContentLinkProvider>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>(self)?;
         unsafe {
@@ -1409,7 +1409,7 @@ impl ContentLinkProviderCollection {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ContentLinkProvider>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>(self)?;
         unsafe {
@@ -1417,7 +1417,7 @@ impl ContentLinkProviderCollection {
             (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<ContentLinkProvider>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn IndexOf<'a, Param0: ::windows_core::IntoParam<'a, ContentLinkProvider>>(&self, value: Param0, index: &mut u32) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>(self)?;
         unsafe {
@@ -1425,37 +1425,37 @@ impl ContentLinkProviderCollection {
             (::windows_core::Interface::vtable(this).IndexOf)(::windows_core::Interface::as_raw(this), value.into_param().abi(), index, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAt<'a, Param1: ::windows_core::IntoParam<'a, ContentLinkProvider>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertAt<'a, Param1: ::windows_core::IntoParam<'a, ContentLinkProvider>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).InsertAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAt(&self, index: u32) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAt)(::windows_core::Interface::as_raw(this), index).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Append<'a, Param0: ::windows_core::IntoParam<'a, ContentLinkProvider>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Append)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAtEnd(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAtEnd)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Clear(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Clear)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetMany(&self, startindex: u32, items: &mut [::core::option::Option<ContentLinkProvider>]) -> ::windows_core::Result<u32> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>(self)?;
         unsafe {
@@ -1463,7 +1463,7 @@ impl ContentLinkProviderCollection {
             (::windows_core::Interface::vtable(this).GetMany)(::windows_core::Interface::as_raw(this), startindex, items.len() as u32, ::core::mem::transmute_copy(&items), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ReplaceAll(&self, items: &[::core::option::Option<ContentLinkProvider>]) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ReplaceAll)(::windows_core::Interface::as_raw(this), items.len() as u32, ::core::mem::transmute(items.as_ptr())).ok() }
@@ -1499,7 +1499,7 @@ unsafe impl ::windows_core::Interface for ContentLinkProviderCollection {
 impl ::windows_core::RuntimeName for ContentLinkProviderCollection {
     const NAME: &'static str = "Windows.UI.Xaml.Documents.ContentLinkProviderCollection";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for ContentLinkProviderCollection {
     type Item = ContentLinkProvider;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -1507,7 +1507,7 @@ impl ::core::iter::IntoIterator for ContentLinkProviderCollection {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &ContentLinkProviderCollection {
     type Item = ContentLinkProvider;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -1555,53 +1555,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Con
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<ContentLinkProviderCollection> for ::winrt_foundation::Collections::IIterable<ContentLinkProvider> {
     type Error = ::windows_core::Error;
     fn try_from(value: ContentLinkProviderCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&ContentLinkProviderCollection> for ::winrt_foundation::Collections::IIterable<ContentLinkProvider> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ContentLinkProviderCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<ContentLinkProvider>> for ContentLinkProviderCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<ContentLinkProvider>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<ContentLinkProvider>> for &ContentLinkProviderCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<ContentLinkProvider>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<ContentLinkProvider>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<ContentLinkProviderCollection> for ::winrt_foundation::Collections::IVector<ContentLinkProvider> {
     type Error = ::windows_core::Error;
     fn try_from(value: ContentLinkProviderCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&ContentLinkProviderCollection> for ::winrt_foundation::Collections::IVector<ContentLinkProvider> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ContentLinkProviderCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<ContentLinkProvider>> for ContentLinkProviderCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<ContentLinkProvider>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<ContentLinkProvider>> for &ContentLinkProviderCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<ContentLinkProvider>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -1652,7 +1652,7 @@ impl Glyphs {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFontUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn StyleSimulations(&self) -> ::windows_core::Result<super::Media::StyleSimulations> {
         let this = self;
         unsafe {
@@ -1660,7 +1660,7 @@ impl Glyphs {
             (::windows_core::Interface::vtable(this).StyleSimulations)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Media::StyleSimulations>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetStyleSimulations(&self, value: super::Media::StyleSimulations) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetStyleSimulations)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -1698,7 +1698,7 @@ impl Glyphs {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetOriginY)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Fill(&self) -> ::windows_core::Result<super::Media::Brush> {
         let this = self;
         unsafe {
@@ -1706,7 +1706,7 @@ impl Glyphs {
             (::windows_core::Interface::vtable(this).Fill)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetFill<'a, Param0: ::windows_core::IntoParam<'a, super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFill)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -1872,53 +1872,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Gly
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<Glyphs> for super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: Glyphs) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&Glyphs> for super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &Glyphs) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IAnimationObject> for Glyphs {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IAnimationObject> for &Glyphs {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<Glyphs> for super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: Glyphs) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&Glyphs> for super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &Glyphs) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IVisualElement> for Glyphs {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IVisualElement> for &Glyphs {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -2091,7 +2091,7 @@ impl Hyperlink {
             (::windows_core::Interface::vtable(this).FocusState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::FocusState>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn XYFocusUpNavigationStrategy(&self) -> ::windows_core::Result<super::Input::XYFocusNavigationStrategy> {
         let this = &::windows_core::Interface::cast::<IHyperlink4>(self)?;
         unsafe {
@@ -2099,12 +2099,12 @@ impl Hyperlink {
             (::windows_core::Interface::vtable(this).XYFocusUpNavigationStrategy)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Input::XYFocusNavigationStrategy>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetXYFocusUpNavigationStrategy(&self, value: super::Input::XYFocusNavigationStrategy) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IHyperlink4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetXYFocusUpNavigationStrategy)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn XYFocusDownNavigationStrategy(&self) -> ::windows_core::Result<super::Input::XYFocusNavigationStrategy> {
         let this = &::windows_core::Interface::cast::<IHyperlink4>(self)?;
         unsafe {
@@ -2112,12 +2112,12 @@ impl Hyperlink {
             (::windows_core::Interface::vtable(this).XYFocusDownNavigationStrategy)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Input::XYFocusNavigationStrategy>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetXYFocusDownNavigationStrategy(&self, value: super::Input::XYFocusNavigationStrategy) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IHyperlink4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetXYFocusDownNavigationStrategy)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn XYFocusLeftNavigationStrategy(&self) -> ::windows_core::Result<super::Input::XYFocusNavigationStrategy> {
         let this = &::windows_core::Interface::cast::<IHyperlink4>(self)?;
         unsafe {
@@ -2125,12 +2125,12 @@ impl Hyperlink {
             (::windows_core::Interface::vtable(this).XYFocusLeftNavigationStrategy)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Input::XYFocusNavigationStrategy>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetXYFocusLeftNavigationStrategy(&self, value: super::Input::XYFocusNavigationStrategy) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IHyperlink4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetXYFocusLeftNavigationStrategy)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn XYFocusRightNavigationStrategy(&self) -> ::windows_core::Result<super::Input::XYFocusNavigationStrategy> {
         let this = &::windows_core::Interface::cast::<IHyperlink4>(self)?;
         unsafe {
@@ -2138,7 +2138,7 @@ impl Hyperlink {
             (::windows_core::Interface::vtable(this).XYFocusRightNavigationStrategy)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Input::XYFocusNavigationStrategy>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetXYFocusRightNavigationStrategy(&self, value: super::Input::XYFocusNavigationStrategy) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IHyperlink4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetXYFocusRightNavigationStrategy)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -2657,29 +2657,29 @@ unsafe impl ::windows_core::Interface for IContentLink {
 #[doc(hidden)]
 pub struct IContentLink_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub Info: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Text"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Info: usize,
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub SetInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Text"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetInfo: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub Background: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Background: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetBackground: usize,
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub Cursor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Core::CoreCursorType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Core"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Cursor: usize,
-    #[cfg(feature = "UI_Core")]
+    #[cfg(feature = "winrt-ui")]
     pub SetCursor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Core::CoreCursorType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Core"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetCursor: usize,
     pub XYFocusLeft: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetXYFocusLeft: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -2692,37 +2692,37 @@ pub struct IContentLink_Vtbl {
     pub ElementSoundMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::ElementSoundMode) -> ::windows_core::HRESULT,
     pub SetElementSoundMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::ElementSoundMode) -> ::windows_core::HRESULT,
     pub FocusState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::FocusState) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub XYFocusUpNavigationStrategy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Input::XYFocusNavigationStrategy) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     XYFocusUpNavigationStrategy: usize,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub SetXYFocusUpNavigationStrategy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Input::XYFocusNavigationStrategy) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetXYFocusUpNavigationStrategy: usize,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub XYFocusDownNavigationStrategy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Input::XYFocusNavigationStrategy) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     XYFocusDownNavigationStrategy: usize,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub SetXYFocusDownNavigationStrategy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Input::XYFocusNavigationStrategy) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetXYFocusDownNavigationStrategy: usize,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub XYFocusLeftNavigationStrategy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Input::XYFocusNavigationStrategy) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     XYFocusLeftNavigationStrategy: usize,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub SetXYFocusLeftNavigationStrategy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Input::XYFocusNavigationStrategy) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetXYFocusLeftNavigationStrategy: usize,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub XYFocusRightNavigationStrategy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Input::XYFocusNavigationStrategy) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     XYFocusRightNavigationStrategy: usize,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub SetXYFocusRightNavigationStrategy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Input::XYFocusNavigationStrategy) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetXYFocusRightNavigationStrategy: usize,
     pub IsTabStop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetIsTabStop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -2747,9 +2747,9 @@ unsafe impl ::windows_core::Interface for IContentLinkInvokedEventArgs {
 #[doc(hidden)]
 pub struct IContentLinkInvokedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub ContentLinkInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Text"))]
+    #[cfg(not(feature = "winrt-ui"))]
     ContentLinkInfo: usize,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -2834,13 +2834,13 @@ pub struct IGlyphs_Vtbl {
     pub SetIndices: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub FontUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetFontUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub StyleSimulations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Media::StyleSimulations) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     StyleSimulations: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetStyleSimulations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Media::StyleSimulations) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetStyleSimulations: usize,
     pub FontRenderingEmSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetFontRenderingEmSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
@@ -2848,13 +2848,13 @@ pub struct IGlyphs_Vtbl {
     pub SetOriginX: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
     pub OriginY: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetOriginY: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub Fill: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Fill: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetFill: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetFill: usize,
 }
 #[doc(hidden)]
@@ -2971,37 +2971,37 @@ unsafe impl ::windows_core::Interface for IHyperlink4 {
 pub struct IHyperlink4_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub FocusState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::FocusState) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub XYFocusUpNavigationStrategy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Input::XYFocusNavigationStrategy) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     XYFocusUpNavigationStrategy: usize,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub SetXYFocusUpNavigationStrategy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Input::XYFocusNavigationStrategy) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetXYFocusUpNavigationStrategy: usize,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub XYFocusDownNavigationStrategy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Input::XYFocusNavigationStrategy) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     XYFocusDownNavigationStrategy: usize,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub SetXYFocusDownNavigationStrategy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Input::XYFocusNavigationStrategy) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetXYFocusDownNavigationStrategy: usize,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub XYFocusLeftNavigationStrategy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Input::XYFocusNavigationStrategy) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     XYFocusLeftNavigationStrategy: usize,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub SetXYFocusLeftNavigationStrategy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Input::XYFocusNavigationStrategy) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetXYFocusLeftNavigationStrategy: usize,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub XYFocusRightNavigationStrategy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Input::XYFocusNavigationStrategy) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     XYFocusRightNavigationStrategy: usize,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub SetXYFocusRightNavigationStrategy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Input::XYFocusNavigationStrategy) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetXYFocusRightNavigationStrategy: usize,
     pub GotFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveGotFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -3185,9 +3185,9 @@ unsafe impl ::windows_core::Interface for IParagraph {
 #[doc(hidden)]
 pub struct IParagraph_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Inlines: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Inlines: usize,
     pub TextIndent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetTextIndent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
@@ -3257,13 +3257,13 @@ unsafe impl ::windows_core::Interface for ISpan {
 #[doc(hidden)]
 pub struct ISpan_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Inlines: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Inlines: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetInlines: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetInlines: usize,
 }
 #[doc(hidden)]
@@ -3293,47 +3293,47 @@ pub struct ITextElement_Vtbl {
     pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub FontSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetFontSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub FontFamily: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     FontFamily: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetFontFamily: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetFontFamily: usize,
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub FontWeight: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Text::FontWeight) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Text"))]
+    #[cfg(not(feature = "winrt-ui"))]
     FontWeight: usize,
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub SetFontWeight: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Text::FontWeight) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Text"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetFontWeight: usize,
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub FontStyle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Text::FontStyle) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Text"))]
+    #[cfg(not(feature = "winrt-ui"))]
     FontStyle: usize,
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub SetFontStyle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Text::FontStyle) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Text"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetFontStyle: usize,
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub FontStretch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Text::FontStretch) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Text"))]
+    #[cfg(not(feature = "winrt-ui"))]
     FontStretch: usize,
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub SetFontStretch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Text::FontStretch) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Text"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetFontStretch: usize,
     pub CharacterSpacing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
     pub SetCharacterSpacing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub Foreground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Foreground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetForeground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetForeground: usize,
     pub Language: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetLanguage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -3386,43 +3386,43 @@ unsafe impl ::windows_core::Interface for ITextElement4 {
 #[doc(hidden)]
 pub struct ITextElement4_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub TextDecorations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Text::TextDecorations) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Text"))]
+    #[cfg(not(feature = "winrt-ui"))]
     TextDecorations: usize,
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub SetTextDecorations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Text::TextDecorations) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Text"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetTextDecorations: usize,
     pub IsAccessKeyScope: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetIsAccessKeyScope: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub AccessKeyScopeOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetAccessKeyScopeOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub KeyTipPlacementMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Input::KeyTipPlacementMode) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     KeyTipPlacementMode: usize,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub SetKeyTipPlacementMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Input::KeyTipPlacementMode) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetKeyTipPlacementMode: usize,
     pub KeyTipHorizontalOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetKeyTipHorizontalOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
     pub KeyTipVerticalOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetKeyTipVerticalOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub AccessKeyDisplayRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     AccessKeyDisplayRequested: usize,
     pub RemoveAccessKeyDisplayRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub AccessKeyDisplayDismissed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     AccessKeyDisplayDismissed: usize,
     pub RemoveAccessKeyDisplayDismissed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub AccessKeyInvoked: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Input"))]
+    #[cfg(not(feature = "winrt-ui"))]
     AccessKeyInvoked: usize,
     pub RemoveAccessKeyInvoked: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
@@ -3542,25 +3542,25 @@ unsafe impl ::windows_core::Interface for ITextHighlighter {
 #[doc(hidden)]
 pub struct ITextHighlighter_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Ranges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Ranges: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub Foreground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Foreground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetForeground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetForeground: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub Background: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Background: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetBackground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetBackground: usize,
 }
 #[doc(hidden)]
@@ -3912,12 +3912,12 @@ impl<'a> ::windows_core::IntoParam<'a, super::DependencyObject> for &Inline {
 }
 unsafe impl ::core::marker::Send for Inline {}
 unsafe impl ::core::marker::Sync for Inline {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 #[repr(transparent)]
 pub struct InlineCollection(::windows_core::IUnknown);
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl InlineCollection {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<Inline>> {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<Inline>>(self)?;
         unsafe {
@@ -3925,7 +3925,7 @@ impl InlineCollection {
             (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<Inline>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetAt(&self, index: u32) -> ::windows_core::Result<Inline> {
         let this = self;
         unsafe {
@@ -3933,7 +3933,7 @@ impl InlineCollection {
             (::windows_core::Interface::vtable(this).GetAt)(::windows_core::Interface::as_raw(this), index, result__.as_mut_ptr()).from_abi::<Inline>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -3941,7 +3941,7 @@ impl InlineCollection {
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<Inline>> {
         let this = self;
         unsafe {
@@ -3949,7 +3949,7 @@ impl InlineCollection {
             (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<Inline>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn IndexOf<'a, Param0: ::windows_core::IntoParam<'a, Inline>>(&self, value: Param0, index: &mut u32) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
@@ -3957,37 +3957,37 @@ impl InlineCollection {
             (::windows_core::Interface::vtable(this).IndexOf)(::windows_core::Interface::as_raw(this), value.into_param().abi(), index, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetAt<'a, Param1: ::windows_core::IntoParam<'a, Inline>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InsertAt<'a, Param1: ::windows_core::IntoParam<'a, Inline>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InsertAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAt(&self, index: u32) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAt)(::windows_core::Interface::as_raw(this), index).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Append<'a, Param0: ::windows_core::IntoParam<'a, Inline>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Append)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RemoveAtEnd(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAtEnd)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Clear(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Clear)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetMany(&self, startindex: u32, items: &mut [::core::option::Option<Inline>]) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -3995,33 +3995,33 @@ impl InlineCollection {
             (::windows_core::Interface::vtable(this).GetMany)(::windows_core::Interface::as_raw(this), startindex, items.len() as u32, ::core::mem::transmute_copy(&items), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn ReplaceAll(&self, items: &[::core::option::Option<Inline>]) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ReplaceAll)(::windows_core::Interface::as_raw(this), items.len() as u32, ::core::mem::transmute(items.as_ptr())).ok() }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::clone::Clone for InlineCollection {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::PartialEq for InlineCollection {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::cmp::Eq for InlineCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::fmt::Debug for InlineCollection {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("InlineCollection").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::RuntimeType for InlineCollection {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Xaml.Documents.InlineCollection;pinterface({913337e9-11a1-4345-a3a2-4e7f956e222d};rc(Windows.UI.Xaml.Documents.Inline;{0c92712d-1bc9-4931-8cb1-1aeadf1cc685})))");
     type DefaultType = ::core::option::Option<Self>;
@@ -4029,16 +4029,16 @@ unsafe impl ::windows_core::RuntimeType for InlineCollection {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::windows_core::Interface for InlineCollection {
     type Vtable = ::winrt_foundation::Collections::IVector_Vtbl<Inline>;
     const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IVector<Inline> as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::windows_core::RuntimeName for InlineCollection {
     const NAME: &'static str = "Windows.UI.Xaml.Documents.InlineCollection";
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for InlineCollection {
     type Item = Inline;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -4046,7 +4046,7 @@ impl ::core::iter::IntoIterator for InlineCollection {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::iter::IntoIterator for &InlineCollection {
     type Item = Inline;
     type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
@@ -4054,109 +4054,109 @@ impl ::core::iter::IntoIterator for &InlineCollection {
         ::winrt_foundation::Collections::VectorIterator::new(::core::convert::TryInto::try_into(self).ok())
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<InlineCollection> for ::windows_core::IUnknown {
     fn from(value: InlineCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&InlineCollection> for ::windows_core::IUnknown {
     fn from(value: &InlineCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for InlineCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a InlineCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<InlineCollection> for ::windows_core::IInspectable {
     fn from(value: InlineCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::From<&InlineCollection> for ::windows_core::IInspectable {
     fn from(value: &InlineCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for InlineCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a InlineCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<InlineCollection> for ::winrt_foundation::Collections::IIterable<Inline> {
     type Error = ::windows_core::Error;
     fn try_from(value: InlineCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&InlineCollection> for ::winrt_foundation::Collections::IIterable<Inline> {
     type Error = ::windows_core::Error;
     fn try_from(value: &InlineCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<Inline>> for InlineCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<Inline>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<Inline>> for &InlineCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<Inline>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<Inline>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<InlineCollection> for ::winrt_foundation::Collections::IVector<Inline> {
     type Error = ::windows_core::Error;
     fn try_from(value: InlineCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl ::core::convert::TryFrom<&InlineCollection> for ::winrt_foundation::Collections::IVector<Inline> {
     type Error = ::windows_core::Error;
     fn try_from(value: &InlineCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<Inline>> for InlineCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<Inline>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<Inline>> for &InlineCollection {
     fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<Inline>> {
         ::core::convert::TryInto::<::winrt_foundation::Collections::IVector<Inline>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Send for InlineCollection {}
-#[cfg(feature = "Foundation_Collections")]
+#[cfg(feature = "winrt-foundation")]
 unsafe impl ::core::marker::Sync for InlineCollection {}
 #[repr(transparent)]
 pub struct InlineUIContainer(::windows_core::IUnknown);
@@ -4661,7 +4661,7 @@ impl Paragraph {
         static mut SHARED: ::windows_core::FactoryCache<Paragraph, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Inlines(&self) -> ::windows_core::Result<InlineCollection> {
         let this = self;
         unsafe {
@@ -5124,7 +5124,7 @@ unsafe impl ::core::marker::Sync for Run {}
 #[repr(transparent)]
 pub struct Span(::windows_core::IUnknown);
 impl Span {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Inlines(&self) -> ::windows_core::Result<InlineCollection> {
         let this = self;
         unsafe {
@@ -5132,7 +5132,7 @@ impl Span {
             (::windows_core::Interface::vtable(this).Inlines)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InlineCollection>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetInlines<'a, Param0: ::windows_core::IntoParam<'a, InlineCollection>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetInlines)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -5308,7 +5308,7 @@ impl TextElement {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFontSize)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn FontFamily(&self) -> ::windows_core::Result<super::Media::FontFamily> {
         let this = self;
         unsafe {
@@ -5316,12 +5316,12 @@ impl TextElement {
             (::windows_core::Interface::vtable(this).FontFamily)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Media::FontFamily>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetFontFamily<'a, Param0: ::windows_core::IntoParam<'a, super::Media::FontFamily>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFontFamily)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub fn FontWeight(&self) -> ::windows_core::Result<super::super::Text::FontWeight> {
         let this = self;
         unsafe {
@@ -5329,12 +5329,12 @@ impl TextElement {
             (::windows_core::Interface::vtable(this).FontWeight)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Text::FontWeight>(result__)
         }
     }
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetFontWeight<'a, Param0: ::windows_core::IntoParam<'a, super::super::Text::FontWeight>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFontWeight)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub fn FontStyle(&self) -> ::windows_core::Result<super::super::Text::FontStyle> {
         let this = self;
         unsafe {
@@ -5342,12 +5342,12 @@ impl TextElement {
             (::windows_core::Interface::vtable(this).FontStyle)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Text::FontStyle>(result__)
         }
     }
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetFontStyle(&self, value: super::super::Text::FontStyle) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFontStyle)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub fn FontStretch(&self) -> ::windows_core::Result<super::super::Text::FontStretch> {
         let this = self;
         unsafe {
@@ -5355,7 +5355,7 @@ impl TextElement {
             (::windows_core::Interface::vtable(this).FontStretch)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Text::FontStretch>(result__)
         }
     }
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetFontStretch(&self, value: super::super::Text::FontStretch) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFontStretch)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -5371,7 +5371,7 @@ impl TextElement {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCharacterSpacing)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Foreground(&self) -> ::windows_core::Result<super::Media::Brush> {
         let this = self;
         unsafe {
@@ -5379,7 +5379,7 @@ impl TextElement {
             (::windows_core::Interface::vtable(this).Foreground)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetForeground<'a, Param0: ::windows_core::IntoParam<'a, super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetForeground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -5474,7 +5474,7 @@ impl TextElement {
         let this = &::windows_core::Interface::cast::<ITextElement3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetExitDisplayModeOnAccessKeyInvoked)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub fn TextDecorations(&self) -> ::windows_core::Result<super::super::Text::TextDecorations> {
         let this = &::windows_core::Interface::cast::<ITextElement4>(self)?;
         unsafe {
@@ -5482,7 +5482,7 @@ impl TextElement {
             (::windows_core::Interface::vtable(this).TextDecorations)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Text::TextDecorations>(result__)
         }
     }
-    #[cfg(feature = "UI_Text")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetTextDecorations(&self, value: super::super::Text::TextDecorations) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ITextElement4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTextDecorations)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -5509,7 +5509,7 @@ impl TextElement {
         let this = &::windows_core::Interface::cast::<ITextElement4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetAccessKeyScopeOwner)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn KeyTipPlacementMode(&self) -> ::windows_core::Result<super::Input::KeyTipPlacementMode> {
         let this = &::windows_core::Interface::cast::<ITextElement4>(self)?;
         unsafe {
@@ -5517,7 +5517,7 @@ impl TextElement {
             (::windows_core::Interface::vtable(this).KeyTipPlacementMode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Input::KeyTipPlacementMode>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetKeyTipPlacementMode(&self, value: super::Input::KeyTipPlacementMode) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ITextElement4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetKeyTipPlacementMode)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -5544,7 +5544,7 @@ impl TextElement {
         let this = &::windows_core::Interface::cast::<ITextElement4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetKeyTipVerticalOffset)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn AccessKeyDisplayRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<TextElement, super::Input::AccessKeyDisplayRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<ITextElement4>(self)?;
         unsafe {
@@ -5556,7 +5556,7 @@ impl TextElement {
         let this = &::windows_core::Interface::cast::<ITextElement4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAccessKeyDisplayRequested)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn AccessKeyDisplayDismissed<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<TextElement, super::Input::AccessKeyDisplayDismissedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<ITextElement4>(self)?;
         unsafe {
@@ -5568,7 +5568,7 @@ impl TextElement {
         let this = &::windows_core::Interface::cast::<ITextElement4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAccessKeyDisplayDismissed)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Input")]
+    #[cfg(feature = "winrt-ui")]
     pub fn AccessKeyInvoked<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<TextElement, super::Input::AccessKeyInvokedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<ITextElement4>(self)?;
         unsafe {
@@ -5811,7 +5811,7 @@ unsafe impl ::core::marker::Sync for TextElement {}
 #[repr(transparent)]
 pub struct TextHighlighter(::windows_core::IUnknown);
 impl TextHighlighter {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Ranges(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<TextRange>> {
         let this = self;
         unsafe {
@@ -5819,7 +5819,7 @@ impl TextHighlighter {
             (::windows_core::Interface::vtable(this).Ranges)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<TextRange>>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Foreground(&self) -> ::windows_core::Result<super::Media::Brush> {
         let this = self;
         unsafe {
@@ -5827,12 +5827,12 @@ impl TextHighlighter {
             (::windows_core::Interface::vtable(this).Foreground)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetForeground<'a, Param0: ::windows_core::IntoParam<'a, super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetForeground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Background(&self) -> ::windows_core::Result<super::Media::Brush> {
         let this = self;
         unsafe {
@@ -5840,7 +5840,7 @@ impl TextHighlighter {
             (::windows_core::Interface::vtable(this).Background)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetBackground<'a, Param0: ::windows_core::IntoParam<'a, super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetBackground)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }

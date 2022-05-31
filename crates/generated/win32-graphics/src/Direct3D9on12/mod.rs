@@ -36,7 +36,7 @@ impl ::core::default::Default for D3D9ON12_ARGS {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Graphics_Direct3D9")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn Direct3DCreate9On12(sdkversion: u32, poverridelist: *mut D3D9ON12_ARGS, numoverrideentries: u32) -> ::core::option::Option<super::Direct3D9::IDirect3D9> {
     #[cfg(windows)]
@@ -50,7 +50,7 @@ pub unsafe fn Direct3DCreate9On12(sdkversion: u32, poverridelist: *mut D3D9ON12_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Graphics_Direct3D9")]
+#[cfg(feature = "win32-graphics")]
 #[inline]
 pub unsafe fn Direct3DCreate9On12Ex(sdkversion: u32, poverridelist: *mut D3D9ON12_ARGS, numoverrideentries: u32, ppoutputinterface: *mut ::core::option::Option<super::Direct3D9::IDirect3D9Ex>) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -70,11 +70,11 @@ impl IDirect3DDevice9On12 {
     pub unsafe fn GetD3D12Device(&self, riid: *const ::windows_core::GUID, ppvdevice: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetD3D12Device)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(riid), ::core::mem::transmute(ppvdevice)).ok()
     }
-    #[cfg(all(feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Direct3D9"))]
+    #[cfg(all(feature = "win32-graphics", feature = "win32-graphics"))]
     pub unsafe fn UnwrapUnderlyingResource<'a, Param0: ::windows_core::IntoParam<'a, super::Direct3D9::IDirect3DResource9>, Param1: ::windows_core::IntoParam<'a, super::Direct3D12::ID3D12CommandQueue>>(&self, presource: Param0, pcommandqueue: Param1, riid: *const ::windows_core::GUID, ppvresource12: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).UnwrapUnderlyingResource)(::windows_core::Interface::as_raw(self), presource.into_param().abi(), pcommandqueue.into_param().abi(), ::core::mem::transmute(riid), ::core::mem::transmute(ppvresource12)).ok()
     }
-    #[cfg(all(feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Direct3D9"))]
+    #[cfg(all(feature = "win32-graphics", feature = "win32-graphics"))]
     pub unsafe fn ReturnUnderlyingResource<'a, Param0: ::windows_core::IntoParam<'a, super::Direct3D9::IDirect3DResource9>>(&self, presource: Param0, numsync: u32, psignalvalues: *mut u64, ppfences: *mut ::core::option::Option<super::Direct3D12::ID3D12Fence>) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ReturnUnderlyingResource)(::windows_core::Interface::as_raw(self), presource.into_param().abi(), ::core::mem::transmute(numsync), ::core::mem::transmute(psignalvalues), ::core::mem::transmute(ppfences)).ok()
     }
@@ -124,17 +124,17 @@ unsafe impl ::windows_core::Interface for IDirect3DDevice9On12 {
 pub struct IDirect3DDevice9On12_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetD3D12Device: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, riid: *const ::windows_core::GUID, ppvdevice: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Direct3D9"))]
+    #[cfg(all(feature = "win32-graphics", feature = "win32-graphics"))]
     pub UnwrapUnderlyingResource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, presource: ::windows_core::RawPtr, pcommandqueue: ::windows_core::RawPtr, riid: *const ::windows_core::GUID, ppvresource12: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Direct3D9")))]
+    #[cfg(not(all(feature = "win32-graphics", feature = "win32-graphics")))]
     UnwrapUnderlyingResource: usize,
-    #[cfg(all(feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Direct3D9"))]
+    #[cfg(all(feature = "win32-graphics", feature = "win32-graphics"))]
     pub ReturnUnderlyingResource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, presource: ::windows_core::RawPtr, numsync: u32, psignalvalues: *mut u64, ppfences: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Direct3D9")))]
+    #[cfg(not(all(feature = "win32-graphics", feature = "win32-graphics")))]
     ReturnUnderlyingResource: usize,
 }
 pub const MAX_D3D9ON12_QUEUES: u32 = 2u32;
-#[cfg(feature = "Win32_Graphics_Direct3D9")]
+#[cfg(feature = "win32-graphics")]
 pub type PFN_Direct3DCreate9On12 = ::core::option::Option<unsafe extern "system" fn(sdkversion: u32, poverridelist: *mut D3D9ON12_ARGS, numoverrideentries: u32) -> ::core::option::Option<super::Direct3D9::IDirect3D9>>;
-#[cfg(feature = "Win32_Graphics_Direct3D9")]
+#[cfg(feature = "win32-graphics")]
 pub type PFN_Direct3DCreate9On12Ex = ::core::option::Option<unsafe extern "system" fn(sdkversion: u32, poverridelist: *mut D3D9ON12_ARGS, numoverrideentries: u32, ppoutputinterface: *mut ::core::option::Option<super::Direct3D9::IDirect3D9Ex>) -> ::windows_core::HRESULT>;

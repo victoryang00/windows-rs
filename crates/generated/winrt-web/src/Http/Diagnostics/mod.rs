@@ -42,7 +42,7 @@ impl HttpDiagnosticProvider {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveRequestResponseCompleted)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "System_Diagnostics")]
+    #[cfg(feature = "winrt-system")]
     pub fn CreateFromProcessDiagnosticInfo<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::Diagnostics::ProcessDiagnosticInfo>>(processdiagnosticinfo: Param0) -> ::windows_core::Result<HttpDiagnosticProvider> {
         Self::IHttpDiagnosticProviderStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -171,7 +171,7 @@ impl HttpDiagnosticProviderRequestResponseCompletedEventArgs {
             (::windows_core::Interface::vtable(this).Initiator)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<HttpDiagnosticRequestInitiator>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SourceLocations(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<HttpDiagnosticSourceLocation>> {
         let this = self;
         unsafe {
@@ -436,7 +436,7 @@ impl HttpDiagnosticProviderRequestSentEventArgs {
             (::windows_core::Interface::vtable(this).Initiator)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<HttpDiagnosticRequestInitiator>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SourceLocations(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<HttpDiagnosticSourceLocation>> {
         let this = self;
         unsafe {
@@ -792,9 +792,9 @@ pub struct IHttpDiagnosticProviderRequestResponseCompletedEventArgs_Vtbl {
     pub ProcessId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub ThreadId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub Initiator: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut HttpDiagnosticRequestInitiator) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SourceLocations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SourceLocations: usize,
 }
 #[doc(hidden)]
@@ -835,9 +835,9 @@ pub struct IHttpDiagnosticProviderRequestSentEventArgs_Vtbl {
     pub ProcessId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub ThreadId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub Initiator: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut HttpDiagnosticRequestInitiator) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SourceLocations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SourceLocations: usize,
 }
 #[doc(hidden)]
@@ -866,9 +866,9 @@ unsafe impl ::windows_core::Interface for IHttpDiagnosticProviderStatics {
 #[doc(hidden)]
 pub struct IHttpDiagnosticProviderStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "System_Diagnostics")]
+    #[cfg(feature = "winrt-system")]
     pub CreateFromProcessDiagnosticInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, processdiagnosticinfo: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "System_Diagnostics"))]
+    #[cfg(not(feature = "winrt-system"))]
     CreateFromProcessDiagnosticInfo: usize,
 }
 #[doc(hidden)]

@@ -484,7 +484,7 @@ pub unsafe fn SrpDisablePermissiveModeFileEncryption() -> ::windows_core::Result
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Storage_Packaging_Appx")]
+#[cfg(feature = "win32-storage")]
 #[inline]
 pub unsafe fn SrpDoesPolicyAllowAppExecution(packageid: *const ::win32_storage::Packaging::Appx::PACKAGE_ID) -> ::windows_core::Result<::win32_foundation::BOOL> {
     #[cfg(windows)]

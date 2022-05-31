@@ -212,7 +212,7 @@ impl AdcController {
             (::windows_core::Interface::vtable(this).OpenChannel)(::windows_core::Interface::as_raw(this), channelnumber, result__.as_mut_ptr()).from_abi::<AdcChannel>(result__)
         }
     }
-    #[cfg(all(feature = "Devices_Adc_Provider", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-foundation"))]
     pub fn GetControllersAsync<'a, Param0: ::windows_core::IntoParam<'a, Provider::IAdcProvider>>(provider: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<AdcController>>> {
         Self::IAdcControllerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -352,9 +352,9 @@ unsafe impl ::windows_core::Interface for IAdcControllerStatics {
 #[doc(hidden)]
 pub struct IAdcControllerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Devices_Adc_Provider", feature = "Foundation_Collections"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-foundation"))]
     pub GetControllersAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, provider: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Adc_Provider", feature = "Foundation_Collections")))]
+    #[cfg(not(all(feature = "winrt-devices", feature = "winrt-foundation")))]
     GetControllersAsync: usize,
 }
 #[doc(hidden)]

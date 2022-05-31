@@ -2,21 +2,21 @@ pub type PFNMSGECALLBACK = ::core::option::Option<unsafe extern "system" fn(bver
 pub type PWLX_ASSIGN_SHELL_PROTECTION = ::core::option::Option<unsafe extern "system" fn(hwlx: ::win32_foundation_sys::HANDLE, htoken: ::win32_foundation_sys::HANDLE, hprocess: ::win32_foundation_sys::HANDLE, hthread: ::win32_foundation_sys::HANDLE) -> i32>;
 pub type PWLX_CHANGE_PASSWORD_NOTIFY = ::core::option::Option<unsafe extern "system" fn(hwlx: ::win32_foundation_sys::HANDLE, pmprinfo: *mut WLX_MPR_NOTIFY_INFO, dwchangeinfo: u32) -> i32>;
 pub type PWLX_CHANGE_PASSWORD_NOTIFY_EX = ::core::option::Option<unsafe extern "system" fn(hwlx: ::win32_foundation_sys::HANDLE, pmprinfo: *mut WLX_MPR_NOTIFY_INFO, dwchangeinfo: u32, providername: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> i32>;
-#[cfg(feature = "Win32_System_StationsAndDesktops")]
+#[cfg(feature = "win32-system-sys")]
 pub type PWLX_CLOSE_USER_DESKTOP = ::core::option::Option<unsafe extern "system" fn(hwlx: ::win32_foundation_sys::HANDLE, pdesktop: *mut WLX_DESKTOP, htoken: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL>;
-#[cfg(feature = "Win32_System_StationsAndDesktops")]
+#[cfg(feature = "win32-system-sys")]
 pub type PWLX_CREATE_USER_DESKTOP = ::core::option::Option<unsafe extern "system" fn(hwlx: ::win32_foundation_sys::HANDLE, htoken: ::win32_foundation_sys::HANDLE, flags: u32, pszdesktopname: ::windows_core_sys::PCWSTR, ppdesktop: *mut *mut WLX_DESKTOP) -> ::win32_foundation_sys::BOOL>;
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub type PWLX_DIALOG_BOX = ::core::option::Option<unsafe extern "system" fn(hwlx: ::win32_foundation_sys::HANDLE, hinst: ::win32_foundation_sys::HANDLE, lpsztemplate: ::windows_core_sys::PCWSTR, hwndowner: ::win32_foundation_sys::HWND, dlgprc: ::win32_ui_sys::WindowsAndMessaging::DLGPROC) -> i32>;
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub type PWLX_DIALOG_BOX_INDIRECT = ::core::option::Option<unsafe extern "system" fn(hwlx: ::win32_foundation_sys::HANDLE, hinst: ::win32_foundation_sys::HANDLE, hdialogtemplate: *mut ::win32_ui_sys::WindowsAndMessaging::DLGTEMPLATE, hwndowner: ::win32_foundation_sys::HWND, dlgprc: ::win32_ui_sys::WindowsAndMessaging::DLGPROC) -> i32>;
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub type PWLX_DIALOG_BOX_INDIRECT_PARAM = ::core::option::Option<unsafe extern "system" fn(hwlx: ::win32_foundation_sys::HANDLE, hinst: ::win32_foundation_sys::HANDLE, hdialogtemplate: *mut ::win32_ui_sys::WindowsAndMessaging::DLGTEMPLATE, hwndowner: ::win32_foundation_sys::HWND, dlgprc: ::win32_ui_sys::WindowsAndMessaging::DLGPROC, dwinitparam: ::win32_foundation_sys::LPARAM) -> i32>;
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub type PWLX_DIALOG_BOX_PARAM = ::core::option::Option<unsafe extern "system" fn(hwlx: ::win32_foundation_sys::HANDLE, hinst: ::win32_foundation_sys::HANDLE, lpsztemplate: ::windows_core_sys::PCWSTR, hwndowner: ::win32_foundation_sys::HWND, dlgprc: ::win32_ui_sys::WindowsAndMessaging::DLGPROC, dwinitparam: ::win32_foundation_sys::LPARAM) -> i32>;
 pub type PWLX_DISCONNECT = ::core::option::Option<unsafe extern "system" fn() -> ::win32_foundation_sys::BOOL>;
 pub type PWLX_GET_OPTION = ::core::option::Option<unsafe extern "system" fn(hwlx: ::win32_foundation_sys::HANDLE, option: u32, value: *mut usize) -> ::win32_foundation_sys::BOOL>;
-#[cfg(feature = "Win32_System_StationsAndDesktops")]
+#[cfg(feature = "win32-system-sys")]
 pub type PWLX_GET_SOURCE_DESKTOP = ::core::option::Option<unsafe extern "system" fn(hwlx: ::win32_foundation_sys::HANDLE, ppdesktop: *mut *mut WLX_DESKTOP) -> ::win32_foundation_sys::BOOL>;
 pub type PWLX_MESSAGE_BOX = ::core::option::Option<unsafe extern "system" fn(hwlx: ::win32_foundation_sys::HANDLE, hwndowner: ::win32_foundation_sys::HWND, lpsztext: ::windows_core_sys::PCWSTR, lpsztitle: ::windows_core_sys::PCWSTR, fustyle: u32) -> i32>;
 pub type PWLX_QUERY_CLIENT_CREDENTIALS = ::core::option::Option<unsafe extern "system" fn(pcred: *mut WLX_CLIENT_CREDENTIALS_INFO_V1_0) -> ::win32_foundation_sys::BOOL>;
@@ -27,7 +27,7 @@ pub type PWLX_QUERY_TS_LOGON_CREDENTIALS = ::core::option::Option<unsafe extern 
 pub type PWLX_SAS_NOTIFY = ::core::option::Option<unsafe extern "system" fn(hwlx: ::win32_foundation_sys::HANDLE, dwsastype: u32)>;
 pub type PWLX_SET_CONTEXT_POINTER = ::core::option::Option<unsafe extern "system" fn(hwlx: ::win32_foundation_sys::HANDLE, pwlxcontext: *mut ::core::ffi::c_void)>;
 pub type PWLX_SET_OPTION = ::core::option::Option<unsafe extern "system" fn(hwlx: ::win32_foundation_sys::HANDLE, option: u32, value: usize, oldvalue: *mut usize) -> ::win32_foundation_sys::BOOL>;
-#[cfg(feature = "Win32_System_StationsAndDesktops")]
+#[cfg(feature = "win32-system-sys")]
 pub type PWLX_SET_RETURN_DESKTOP = ::core::option::Option<unsafe extern "system" fn(hwlx: ::win32_foundation_sys::HANDLE, pdesktop: *mut WLX_DESKTOP) -> ::win32_foundation_sys::BOOL>;
 pub type PWLX_SET_TIMEOUT = ::core::option::Option<unsafe extern "system" fn(hwlx: ::win32_foundation_sys::HANDLE, timeout: u32) -> ::win32_foundation_sys::BOOL>;
 pub type PWLX_SWITCH_DESKTOP_TO_USER = ::core::option::Option<unsafe extern "system" fn(hwlx: ::win32_foundation_sys::HANDLE) -> i32>;
@@ -108,16 +108,16 @@ pub const WLX_CREDENTIAL_TYPE_V1_0: u32 = 1u32;
 pub const WLX_CREDENTIAL_TYPE_V2_0: u32 = 2u32;
 pub const WLX_CURRENT_VERSION: u32 = 65540u32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_StationsAndDesktops")]
+#[cfg(feature = "win32-system-sys")]
 pub struct WLX_DESKTOP {
     pub Size: u32,
     pub Flags: u32,
     pub hDesktop: ::win32_system_sys::StationsAndDesktops::HDESK,
     pub pszDesktopName: ::windows_core_sys::PWSTR,
 }
-#[cfg(feature = "Win32_System_StationsAndDesktops")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for WLX_DESKTOP {}
-#[cfg(feature = "Win32_System_StationsAndDesktops")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for WLX_DESKTOP {
     fn clone(&self) -> Self {
         *self
@@ -127,7 +127,7 @@ pub const WLX_DESKTOP_HANDLE: u32 = 2u32;
 pub const WLX_DESKTOP_NAME: u32 = 1u32;
 pub const WLX_DIRECTORY_LENGTH: u32 = 256u32;
 #[repr(C)]
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 pub struct WLX_DISPATCH_VERSION_1_0 {
     pub WlxUseCtrlAltDel: PWLX_USE_CTRL_ALT_DEL,
     pub WlxSetContextPointer: PWLX_SET_CONTEXT_POINTER,
@@ -143,16 +143,16 @@ pub struct WLX_DISPATCH_VERSION_1_0 {
     pub WlxSwitchDesktopToWinlogon: PWLX_SWITCH_DESKTOP_TO_WINLOGON,
     pub WlxChangePasswordNotify: PWLX_CHANGE_PASSWORD_NOTIFY,
 }
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::marker::Copy for WLX_DISPATCH_VERSION_1_0 {}
-#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+#[cfg(feature = "win32-ui-sys")]
 impl ::core::clone::Clone for WLX_DISPATCH_VERSION_1_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_StationsAndDesktops", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-ui-sys"))]
 pub struct WLX_DISPATCH_VERSION_1_1 {
     pub WlxUseCtrlAltDel: PWLX_USE_CTRL_ALT_DEL,
     pub WlxSetContextPointer: PWLX_SET_CONTEXT_POINTER,
@@ -172,16 +172,16 @@ pub struct WLX_DISPATCH_VERSION_1_1 {
     pub WlxCreateUserDesktop: PWLX_CREATE_USER_DESKTOP,
     pub WlxChangePasswordNotifyEx: PWLX_CHANGE_PASSWORD_NOTIFY_EX,
 }
-#[cfg(all(feature = "Win32_System_StationsAndDesktops", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for WLX_DISPATCH_VERSION_1_1 {}
-#[cfg(all(feature = "Win32_System_StationsAndDesktops", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for WLX_DISPATCH_VERSION_1_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_StationsAndDesktops", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-ui-sys"))]
 pub struct WLX_DISPATCH_VERSION_1_2 {
     pub WlxUseCtrlAltDel: PWLX_USE_CTRL_ALT_DEL,
     pub WlxSetContextPointer: PWLX_SET_CONTEXT_POINTER,
@@ -202,16 +202,16 @@ pub struct WLX_DISPATCH_VERSION_1_2 {
     pub WlxChangePasswordNotifyEx: PWLX_CHANGE_PASSWORD_NOTIFY_EX,
     pub WlxCloseUserDesktop: PWLX_CLOSE_USER_DESKTOP,
 }
-#[cfg(all(feature = "Win32_System_StationsAndDesktops", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for WLX_DISPATCH_VERSION_1_2 {}
-#[cfg(all(feature = "Win32_System_StationsAndDesktops", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for WLX_DISPATCH_VERSION_1_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_StationsAndDesktops", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-ui-sys"))]
 pub struct WLX_DISPATCH_VERSION_1_3 {
     pub WlxUseCtrlAltDel: PWLX_USE_CTRL_ALT_DEL,
     pub WlxSetContextPointer: PWLX_SET_CONTEXT_POINTER,
@@ -239,16 +239,16 @@ pub struct WLX_DISPATCH_VERSION_1_3 {
     pub WlxDisconnect: PWLX_DISCONNECT,
     pub WlxQueryTerminalServicesData: PWLX_QUERY_TERMINAL_SERVICES_DATA,
 }
-#[cfg(all(feature = "Win32_System_StationsAndDesktops", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for WLX_DISPATCH_VERSION_1_3 {}
-#[cfg(all(feature = "Win32_System_StationsAndDesktops", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for WLX_DISPATCH_VERSION_1_3 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_System_StationsAndDesktops", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-ui-sys"))]
 pub struct WLX_DISPATCH_VERSION_1_4 {
     pub WlxUseCtrlAltDel: PWLX_USE_CTRL_ALT_DEL,
     pub WlxSetContextPointer: PWLX_SET_CONTEXT_POINTER,
@@ -278,9 +278,9 @@ pub struct WLX_DISPATCH_VERSION_1_4 {
     pub WlxQueryConsoleSwitchCredentials: PWLX_QUERY_CONSOLESWITCH_CREDENTIALS,
     pub WlxQueryTsLogonCredentials: PWLX_QUERY_TS_LOGON_CREDENTIALS,
 }
-#[cfg(all(feature = "Win32_System_StationsAndDesktops", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-ui-sys"))]
 impl ::core::marker::Copy for WLX_DISPATCH_VERSION_1_4 {}
-#[cfg(all(feature = "Win32_System_StationsAndDesktops", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-ui-sys"))]
 impl ::core::clone::Clone for WLX_DISPATCH_VERSION_1_4 {
     fn clone(&self) -> Self {
         *self
@@ -305,7 +305,7 @@ impl ::core::clone::Clone for WLX_MPR_NOTIFY_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_StationsAndDesktops")]
+#[cfg(feature = "win32-system-sys")]
 pub struct WLX_NOTIFICATION_INFO {
     pub Size: u32,
     pub Flags: u32,
@@ -316,9 +316,9 @@ pub struct WLX_NOTIFICATION_INFO {
     pub hDesktop: ::win32_system_sys::StationsAndDesktops::HDESK,
     pub pStatusCallback: PFNMSGECALLBACK,
 }
-#[cfg(feature = "Win32_System_StationsAndDesktops")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for WLX_NOTIFICATION_INFO {}
-#[cfg(feature = "Win32_System_StationsAndDesktops")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for WLX_NOTIFICATION_INFO {
     fn clone(&self) -> Self {
         *self

@@ -32,20 +32,20 @@ pub const ExceptionContinueSearch: EXCEPTION_DISPOSITION = 1i32;
 pub const ExceptionNestedException: EXCEPTION_DISPOSITION = 2i32;
 pub const ExceptionCollidedUnwind: EXCEPTION_DISPOSITION = 3i32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system-sys")]
 pub struct EXCEPTION_REGISTRATION_RECORD {
     pub Next: *mut EXCEPTION_REGISTRATION_RECORD,
     pub Handler: EXCEPTION_ROUTINE,
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for EXCEPTION_REGISTRATION_RECORD {}
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for EXCEPTION_REGISTRATION_RECORD {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system-sys")]
 pub type EXCEPTION_ROUTINE = ::core::option::Option<unsafe extern "system" fn(exceptionrecord: *mut super::Diagnostics::Debug::EXCEPTION_RECORD, establisherframe: *const ::core::ffi::c_void, contextrecord: *mut super::Diagnostics::Debug::CONTEXT, dispatchercontext: *const ::core::ffi::c_void) -> EXCEPTION_DISPOSITION>;
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -130,7 +130,7 @@ pub const NtProductWinNt: NT_PRODUCT_TYPE = 1i32;
 pub const NtProductLanManNt: NT_PRODUCT_TYPE = 2i32;
 pub const NtProductServer: NT_PRODUCT_TYPE = 3i32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system-sys")]
 pub struct NT_TIB {
     pub ExceptionList: *mut EXCEPTION_REGISTRATION_RECORD,
     pub StackBase: *mut ::core::ffi::c_void,
@@ -140,23 +140,23 @@ pub struct NT_TIB {
     pub ArbitraryUserPointer: *mut ::core::ffi::c_void,
     pub Self_: *mut NT_TIB,
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for NT_TIB {}
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for NT_TIB {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system-sys")]
 pub union NT_TIB_0 {
     pub FiberData: *mut ::core::ffi::c_void,
     pub Version: u32,
 }
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for NT_TIB_0 {}
-#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for NT_TIB_0 {
     fn clone(&self) -> Self {
         *self

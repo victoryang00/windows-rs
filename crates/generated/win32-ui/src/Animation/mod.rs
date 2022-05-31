@@ -2008,11 +2008,11 @@ impl IUIAnimationVariable2 {
     pub unsafe fn GetVectorValue(&self, value: &mut [f64]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetVectorValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(value)), value.len() as _).ok()
     }
-    #[cfg(feature = "Win32_Graphics_DirectComposition")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetCurve<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::DirectComposition::IDCompositionAnimation>>(&self, animation: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetCurve)(::windows_core::Interface::as_raw(self), animation.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Graphics_DirectComposition")]
+    #[cfg(feature = "win32-graphics")]
     pub unsafe fn GetVectorCurve(&self, animation: &[::core::option::Option<::win32_graphics::DirectComposition::IDCompositionAnimation>]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetVectorCurve)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(animation)), animation.len() as _).ok()
     }
@@ -2133,13 +2133,13 @@ pub struct IUIAnimationVariable2_Vtbl {
     pub GetDimension: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dimension: *mut u32) -> ::windows_core::HRESULT,
     pub GetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut f64) -> ::windows_core::HRESULT,
     pub GetVectorValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut f64, cdimension: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Graphics_DirectComposition")]
+    #[cfg(feature = "win32-graphics")]
     pub GetCurve: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_DirectComposition"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetCurve: usize,
-    #[cfg(feature = "Win32_Graphics_DirectComposition")]
+    #[cfg(feature = "win32-graphics")]
     pub GetVectorCurve: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, animation: *const ::windows_core::RawPtr, cdimension: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Graphics_DirectComposition"))]
+    #[cfg(not(feature = "win32-graphics"))]
     GetVectorCurve: usize,
     pub GetFinalValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, finalvalue: *mut f64) -> ::windows_core::HRESULT,
     pub GetFinalVectorValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, finalvalue: *mut f64, cdimension: u32) -> ::windows_core::HRESULT,

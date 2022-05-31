@@ -11,14 +11,14 @@ unsafe impl ::windows_core::Interface for IInputActivationListenerPreviewStatics
 #[doc(hidden)]
 pub struct IInputActivationListenerPreviewStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_WindowManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub CreateForApplicationWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, window: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_WindowManagement"))]
+    #[cfg(not(feature = "winrt-ui"))]
     CreateForApplicationWindow: usize,
 }
 pub struct InputActivationListenerPreview;
 impl InputActivationListenerPreview {
-    #[cfg(feature = "UI_WindowManagement")]
+    #[cfg(feature = "winrt-ui")]
     pub fn CreateForApplicationWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::WindowManagement::AppWindow>>(window: Param0) -> ::windows_core::Result<super::InputActivationListener> {
         Self::IInputActivationListenerPreviewStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();

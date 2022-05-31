@@ -24,7 +24,7 @@ pub unsafe fn CallNamedPipeW<'a, Param0: ::windows_core::IntoParam<'a, ::windows
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_IO")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn ConnectNamedPipe<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hnamedpipe: Param0, lpoverlapped: *mut super::IO::OVERLAPPED) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -38,7 +38,7 @@ pub unsafe fn ConnectNamedPipe<'a, Param0: ::windows_core::IntoParam<'a, ::win32
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Security", feature = "Win32_Storage_FileSystem"))]
+#[cfg(all(feature = "win32-security", feature = "win32-storage"))]
 #[inline]
 pub unsafe fn CreateNamedPipeA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpname: Param0, dwopenmode: ::win32_storage::FileSystem::FILE_FLAGS_AND_ATTRIBUTES, dwpipemode: NAMED_PIPE_MODE, nmaxinstances: u32, noutbuffersize: u32, ninbuffersize: u32, ndefaulttimeout: u32, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
@@ -53,7 +53,7 @@ pub unsafe fn CreateNamedPipeA<'a, Param0: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Security", feature = "Win32_Storage_FileSystem"))]
+#[cfg(all(feature = "win32-security", feature = "win32-storage"))]
 #[inline]
 pub unsafe fn CreateNamedPipeW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpname: Param0, dwopenmode: ::win32_storage::FileSystem::FILE_FLAGS_AND_ATTRIBUTES, dwpipemode: NAMED_PIPE_MODE, nmaxinstances: u32, noutbuffersize: u32, ninbuffersize: u32, ndefaulttimeout: u32, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::win32_foundation::HANDLE {
     #[cfg(windows)]
@@ -67,7 +67,7 @@ pub unsafe fn CreateNamedPipeW<'a, Param0: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security")]
 #[inline]
 pub unsafe fn CreatePipe(hreadpipe: *mut ::win32_foundation::HANDLE, hwritepipe: *mut ::win32_foundation::HANDLE, lppipeattributes: *const ::win32_security::SECURITY_ATTRIBUTES, nsize: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -314,7 +314,7 @@ pub unsafe fn SetNamedPipeHandleState<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_System_IO")]
+#[cfg(feature = "win32-system")]
 #[inline]
 pub unsafe fn TransactNamedPipe<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hnamedpipe: Param0, lpinbuffer: *const ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesread: *mut u32, lpoverlapped: *mut super::IO::OVERLAPPED) -> ::win32_foundation::BOOL {
     #[cfg(windows)]

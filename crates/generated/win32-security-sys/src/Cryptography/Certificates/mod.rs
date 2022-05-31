@@ -19,15 +19,15 @@ extern "system" {
     pub fn CertSrvRestoreRegisterW(hbc: *mut ::core::ffi::c_void, pwszcheckpointfilepath: ::windows_core_sys::PCWSTR, pwszlogpath: ::windows_core_sys::PCWSTR, rgrstmap: *mut CSEDB_RSTMAPW, crstmap: i32, pwszbackuplogpath: ::windows_core_sys::PCWSTR, genlow: u32, genhigh: u32) -> ::windows_core_sys::HRESULT;
     pub fn CertSrvServerControlW(pwszservername: ::windows_core_sys::PCWSTR, dwcontrolflags: u32, pcbout: *mut u32, ppbout: *mut *mut u8) -> ::windows_core_sys::HRESULT;
     pub fn PstAcquirePrivateKey(pcert: *const super::CERT_CONTEXT) -> ::win32_foundation_sys::NTSTATUS;
-    #[cfg(feature = "Win32_Security_Authentication_Identity")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn PstGetCertificateChain(pcert: *const super::CERT_CONTEXT, ptrustedissuers: *const super::super::Authentication::Identity::SecPkgContext_IssuerListInfoEx, ppcertchaincontext: *mut *mut super::CERT_CHAIN_CONTEXT) -> ::win32_foundation_sys::NTSTATUS;
     pub fn PstGetCertificates(ptargetname: *const ::win32_foundation_sys::UNICODE_STRING, ccriteria: u32, rgpcriteria: *const super::CERT_SELECT_CRITERIA, bisclient: ::win32_foundation_sys::BOOL, pdwcertchaincontextcount: *mut u32, ppcertchaincontexts: *mut *mut *mut super::CERT_CHAIN_CONTEXT) -> ::win32_foundation_sys::NTSTATUS;
-    #[cfg(feature = "Win32_Security_Authentication_Identity")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn PstGetTrustAnchors(ptargetname: *const ::win32_foundation_sys::UNICODE_STRING, ccriteria: u32, rgpcriteria: *const super::CERT_SELECT_CRITERIA, pptrustedissuers: *mut *mut super::super::Authentication::Identity::SecPkgContext_IssuerListInfoEx) -> ::win32_foundation_sys::NTSTATUS;
-    #[cfg(feature = "Win32_Security_Authentication_Identity")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn PstGetTrustAnchorsEx(ptargetname: *const ::win32_foundation_sys::UNICODE_STRING, ccriteria: u32, rgpcriteria: *const super::CERT_SELECT_CRITERIA, pcertcontext: *const super::CERT_CONTEXT, pptrustedissuers: *mut *mut super::super::Authentication::Identity::SecPkgContext_IssuerListInfoEx) -> ::win32_foundation_sys::NTSTATUS;
     pub fn PstGetUserNameForCertificate(pcertcontext: *const super::CERT_CONTEXT, username: *mut ::win32_foundation_sys::UNICODE_STRING) -> ::win32_foundation_sys::NTSTATUS;
-    #[cfg(feature = "Win32_Security_Authentication_Identity")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn PstMapCertificate(pcert: *const super::CERT_CONTEXT, ptokeninformationtype: *mut super::super::Authentication::Identity::LSA_TOKEN_INFORMATION_TYPE, pptokeninformation: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS;
     pub fn PstValidate(ptargetname: *const ::win32_foundation_sys::UNICODE_STRING, bisclient: ::win32_foundation_sys::BOOL, prequestedissuancepolicy: *const super::CERT_USAGE_MATCH, phadditionalcertstore: *const super::HCERTSTORE, pcert: *const super::CERT_CONTEXT, pprovguid: *mut ::windows_core_sys::GUID) -> ::win32_foundation_sys::NTSTATUS;
 }

@@ -79,53 +79,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ell
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<Ellipse> for super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: Ellipse) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&Ellipse> for super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &Ellipse) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IAnimationObject> for Ellipse {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IAnimationObject> for &Ellipse {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<Ellipse> for super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: Ellipse) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&Ellipse> for super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &Ellipse) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IVisualElement> for Ellipse {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IVisualElement> for &Ellipse {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -272,13 +272,13 @@ unsafe impl ::windows_core::Interface for IPath {
 #[doc(hidden)]
 pub struct IPath_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub Data: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Data: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetData: usize,
 }
 #[doc(hidden)]
@@ -318,21 +318,21 @@ unsafe impl ::windows_core::Interface for IPolygon {
 #[doc(hidden)]
 pub struct IPolygon_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub FillRule: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Media::FillRule) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     FillRule: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetFillRule: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Media::FillRule) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetFillRule: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub Points: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-ui")))]
     Points: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub SetPoints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-ui")))]
     SetPoints: usize,
 }
 #[doc(hidden)]
@@ -360,21 +360,21 @@ unsafe impl ::windows_core::Interface for IPolyline {
 #[doc(hidden)]
 pub struct IPolyline_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub FillRule: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Media::FillRule) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     FillRule: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetFillRule: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Media::FillRule) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetFillRule: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub Points: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-ui")))]
     Points: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub SetPoints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-ui")))]
     SetPoints: usize,
 }
 #[doc(hidden)]
@@ -432,79 +432,79 @@ unsafe impl ::windows_core::Interface for IShape {
 #[doc(hidden)]
 pub struct IShape_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub Fill: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Fill: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetFill: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetFill: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub Stroke: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Stroke: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetStroke: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetStroke: usize,
     pub StrokeMiterLimit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetStrokeMiterLimit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
     pub StrokeThickness: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetStrokeThickness: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub StrokeStartLineCap: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Media::PenLineCap) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     StrokeStartLineCap: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetStrokeStartLineCap: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Media::PenLineCap) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetStrokeStartLineCap: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub StrokeEndLineCap: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Media::PenLineCap) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     StrokeEndLineCap: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetStrokeEndLineCap: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Media::PenLineCap) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetStrokeEndLineCap: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub StrokeLineJoin: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Media::PenLineJoin) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     StrokeLineJoin: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetStrokeLineJoin: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Media::PenLineJoin) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetStrokeLineJoin: usize,
     pub StrokeDashOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetStrokeDashOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub StrokeDashCap: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Media::PenLineCap) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     StrokeDashCap: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetStrokeDashCap: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Media::PenLineCap) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetStrokeDashCap: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub StrokeDashArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-ui")))]
     StrokeDashArray: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub SetStrokeDashArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-ui")))]
     SetStrokeDashArray: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub Stretch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Media::Stretch) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     Stretch: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetStretch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Media::Stretch) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetStretch: usize,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub GeometryTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     GeometryTransform: usize,
 }
 #[doc(hidden)]
@@ -518,9 +518,9 @@ unsafe impl ::windows_core::Interface for IShape2 {
 #[doc(hidden)]
 pub struct IShape2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub GetAlphaMask: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Composition"))]
+    #[cfg(not(feature = "winrt-ui"))]
     GetAlphaMask: usize,
 }
 #[doc(hidden)]
@@ -712,53 +712,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Lin
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<Line> for super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: Line) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&Line> for super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &Line) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IAnimationObject> for Line {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IAnimationObject> for &Line {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<Line> for super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: Line) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&Line> for super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &Line) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IVisualElement> for Line {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IVisualElement> for &Line {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -849,7 +849,7 @@ unsafe impl ::core::marker::Sync for Line {}
 #[repr(transparent)]
 pub struct Path(::windows_core::IUnknown);
 impl Path {
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Data(&self) -> ::windows_core::Result<super::Media::Geometry> {
         let this = self;
         unsafe {
@@ -857,7 +857,7 @@ impl Path {
             (::windows_core::Interface::vtable(this).Data)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Media::Geometry>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetData<'a, Param0: ::windows_core::IntoParam<'a, super::Media::Geometry>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetData)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -960,53 +960,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Pat
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<Path> for super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: Path) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&Path> for super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &Path) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IAnimationObject> for Path {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IAnimationObject> for &Path {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<Path> for super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: Path) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&Path> for super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &Path) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IVisualElement> for Path {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IVisualElement> for &Path {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -1104,7 +1104,7 @@ impl Polygon {
         static mut SHARED: ::windows_core::FactoryCache<Polygon, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn FillRule(&self) -> ::windows_core::Result<super::Media::FillRule> {
         let this = self;
         unsafe {
@@ -1112,12 +1112,12 @@ impl Polygon {
             (::windows_core::Interface::vtable(this).FillRule)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Media::FillRule>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetFillRule(&self, value: super::Media::FillRule) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFillRule)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub fn Points(&self) -> ::windows_core::Result<super::Media::PointCollection> {
         let this = self;
         unsafe {
@@ -1125,7 +1125,7 @@ impl Polygon {
             (::windows_core::Interface::vtable(this).Points)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Media::PointCollection>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub fn SetPoints<'a, Param0: ::windows_core::IntoParam<'a, super::Media::PointCollection>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPoints)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -1217,53 +1217,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Pol
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<Polygon> for super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: Polygon) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&Polygon> for super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &Polygon) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IAnimationObject> for Polygon {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IAnimationObject> for &Polygon {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<Polygon> for super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: Polygon) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&Polygon> for super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &Polygon) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IVisualElement> for Polygon {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IVisualElement> for &Polygon {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -1361,7 +1361,7 @@ impl Polyline {
         static mut SHARED: ::windows_core::FactoryCache<Polyline, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn FillRule(&self) -> ::windows_core::Result<super::Media::FillRule> {
         let this = self;
         unsafe {
@@ -1369,12 +1369,12 @@ impl Polyline {
             (::windows_core::Interface::vtable(this).FillRule)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Media::FillRule>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetFillRule(&self, value: super::Media::FillRule) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFillRule)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub fn Points(&self) -> ::windows_core::Result<super::Media::PointCollection> {
         let this = self;
         unsafe {
@@ -1382,7 +1382,7 @@ impl Polyline {
             (::windows_core::Interface::vtable(this).Points)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Media::PointCollection>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub fn SetPoints<'a, Param0: ::windows_core::IntoParam<'a, super::Media::PointCollection>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPoints)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -1474,53 +1474,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Pol
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<Polyline> for super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: Polyline) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&Polyline> for super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &Polyline) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IAnimationObject> for Polyline {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IAnimationObject> for &Polyline {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<Polyline> for super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: Polyline) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&Polyline> for super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &Polyline) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IVisualElement> for Polyline {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IVisualElement> for &Polyline {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -1727,53 +1727,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Rec
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<Rectangle> for super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: Rectangle) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&Rectangle> for super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &Rectangle) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IAnimationObject> for Rectangle {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IAnimationObject> for &Rectangle {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<Rectangle> for super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: Rectangle) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&Rectangle> for super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &Rectangle) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IVisualElement> for Rectangle {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IVisualElement> for &Rectangle {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -1864,7 +1864,7 @@ unsafe impl ::core::marker::Sync for Rectangle {}
 #[repr(transparent)]
 pub struct Shape(::windows_core::IUnknown);
 impl Shape {
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Fill(&self) -> ::windows_core::Result<super::Media::Brush> {
         let this = self;
         unsafe {
@@ -1872,12 +1872,12 @@ impl Shape {
             (::windows_core::Interface::vtable(this).Fill)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetFill<'a, Param0: ::windows_core::IntoParam<'a, super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFill)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Stroke(&self) -> ::windows_core::Result<super::Media::Brush> {
         let this = self;
         unsafe {
@@ -1885,7 +1885,7 @@ impl Shape {
             (::windows_core::Interface::vtable(this).Stroke)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Media::Brush>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetStroke<'a, Param0: ::windows_core::IntoParam<'a, super::Media::Brush>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetStroke)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -1912,7 +1912,7 @@ impl Shape {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetStrokeThickness)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn StrokeStartLineCap(&self) -> ::windows_core::Result<super::Media::PenLineCap> {
         let this = self;
         unsafe {
@@ -1920,12 +1920,12 @@ impl Shape {
             (::windows_core::Interface::vtable(this).StrokeStartLineCap)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Media::PenLineCap>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetStrokeStartLineCap(&self, value: super::Media::PenLineCap) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetStrokeStartLineCap)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn StrokeEndLineCap(&self) -> ::windows_core::Result<super::Media::PenLineCap> {
         let this = self;
         unsafe {
@@ -1933,12 +1933,12 @@ impl Shape {
             (::windows_core::Interface::vtable(this).StrokeEndLineCap)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Media::PenLineCap>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetStrokeEndLineCap(&self, value: super::Media::PenLineCap) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetStrokeEndLineCap)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn StrokeLineJoin(&self) -> ::windows_core::Result<super::Media::PenLineJoin> {
         let this = self;
         unsafe {
@@ -1946,7 +1946,7 @@ impl Shape {
             (::windows_core::Interface::vtable(this).StrokeLineJoin)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Media::PenLineJoin>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetStrokeLineJoin(&self, value: super::Media::PenLineJoin) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetStrokeLineJoin)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -1962,7 +1962,7 @@ impl Shape {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetStrokeDashOffset)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn StrokeDashCap(&self) -> ::windows_core::Result<super::Media::PenLineCap> {
         let this = self;
         unsafe {
@@ -1970,12 +1970,12 @@ impl Shape {
             (::windows_core::Interface::vtable(this).StrokeDashCap)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Media::PenLineCap>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetStrokeDashCap(&self, value: super::Media::PenLineCap) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetStrokeDashCap)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub fn StrokeDashArray(&self) -> ::windows_core::Result<super::Media::DoubleCollection> {
         let this = self;
         unsafe {
@@ -1983,12 +1983,12 @@ impl Shape {
             (::windows_core::Interface::vtable(this).StrokeDashArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Media::DoubleCollection>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Xaml_Media"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-ui"))]
     pub fn SetStrokeDashArray<'a, Param0: ::windows_core::IntoParam<'a, super::Media::DoubleCollection>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetStrokeDashArray)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn Stretch(&self) -> ::windows_core::Result<super::Media::Stretch> {
         let this = self;
         unsafe {
@@ -1996,12 +1996,12 @@ impl Shape {
             (::windows_core::Interface::vtable(this).Stretch)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Media::Stretch>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetStretch(&self, value: super::Media::Stretch) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetStretch)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GeometryTransform(&self) -> ::windows_core::Result<super::Media::Transform> {
         let this = self;
         unsafe {
@@ -2009,7 +2009,7 @@ impl Shape {
             (::windows_core::Interface::vtable(this).GeometryTransform)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Media::Transform>(result__)
         }
     }
-    #[cfg(feature = "UI_Composition")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GetAlphaMask(&self) -> ::windows_core::Result<super::super::Composition::CompositionBrush> {
         let this = &::windows_core::Interface::cast::<IShape2>(self)?;
         unsafe {
@@ -2158,53 +2158,53 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Sha
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<Shape> for super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: Shape) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&Shape> for super::super::Composition::IAnimationObject {
     type Error = ::windows_core::Error;
     fn try_from(value: &Shape) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IAnimationObject> for Shape {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IAnimationObject> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IAnimationObject> for &Shape {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IAnimationObject> {
         ::core::convert::TryInto::<super::super::Composition::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<Shape> for super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: Shape) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl ::core::convert::TryFrom<&Shape> for super::super::Composition::IVisualElement {
     type Error = ::windows_core::Error;
     fn try_from(value: &Shape) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IVisualElement> for Shape {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IVisualElement> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "winrt-ui")]
 impl<'a> ::windows_core::IntoParam<'a, super::super::Composition::IVisualElement> for &Shape {
     fn into_param(self) -> ::windows_core::Param<'a, super::super::Composition::IVisualElement> {
         ::core::convert::TryInto::<super::super::Composition::IVisualElement>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)

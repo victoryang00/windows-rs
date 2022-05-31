@@ -1,42 +1,42 @@
 #[link(name = "windows")]
 extern "system" {
     pub fn DevCloseObjectQuery(hdevquery: *const HDEVQUERY__);
-    #[cfg(feature = "Win32_Devices_Properties")]
+    #[cfg(feature = "win32-devices-sys")]
     pub fn DevCreateObjectQuery(objecttype: DEV_OBJECT_TYPE, queryflags: u32, crequestedproperties: u32, prequestedproperties: *const super::Properties::DEVPROPCOMPKEY, cfilterexpressioncount: u32, pfilter: *const DEVPROP_FILTER_EXPRESSION, pcallback: PDEV_QUERY_RESULT_CALLBACK, pcontext: *const ::core::ffi::c_void, phdevquery: *mut *mut HDEVQUERY__) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Devices_Properties")]
+    #[cfg(feature = "win32-devices-sys")]
     pub fn DevCreateObjectQueryEx(objecttype: DEV_OBJECT_TYPE, queryflags: u32, crequestedproperties: u32, prequestedproperties: *const super::Properties::DEVPROPCOMPKEY, cfilterexpressioncount: u32, pfilter: *const DEVPROP_FILTER_EXPRESSION, cextendedparametercount: u32, pextendedparameters: *const DEV_QUERY_PARAMETER, pcallback: PDEV_QUERY_RESULT_CALLBACK, pcontext: *const ::core::ffi::c_void, phdevquery: *mut *mut HDEVQUERY__) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Devices_Properties")]
+    #[cfg(feature = "win32-devices-sys")]
     pub fn DevCreateObjectQueryFromId(objecttype: DEV_OBJECT_TYPE, pszobjectid: ::windows_core_sys::PCWSTR, queryflags: u32, crequestedproperties: u32, prequestedproperties: *const super::Properties::DEVPROPCOMPKEY, cfilterexpressioncount: u32, pfilter: *const DEVPROP_FILTER_EXPRESSION, pcallback: PDEV_QUERY_RESULT_CALLBACK, pcontext: *const ::core::ffi::c_void, phdevquery: *mut *mut HDEVQUERY__) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Devices_Properties")]
+    #[cfg(feature = "win32-devices-sys")]
     pub fn DevCreateObjectQueryFromIdEx(objecttype: DEV_OBJECT_TYPE, pszobjectid: ::windows_core_sys::PCWSTR, queryflags: u32, crequestedproperties: u32, prequestedproperties: *const super::Properties::DEVPROPCOMPKEY, cfilterexpressioncount: u32, pfilter: *const DEVPROP_FILTER_EXPRESSION, cextendedparametercount: u32, pextendedparameters: *const DEV_QUERY_PARAMETER, pcallback: PDEV_QUERY_RESULT_CALLBACK, pcontext: *const ::core::ffi::c_void, phdevquery: *mut *mut HDEVQUERY__) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Devices_Properties")]
+    #[cfg(feature = "win32-devices-sys")]
     pub fn DevCreateObjectQueryFromIds(objecttype: DEV_OBJECT_TYPE, pszzobjectids: ::windows_core_sys::PCWSTR, queryflags: u32, crequestedproperties: u32, prequestedproperties: *const super::Properties::DEVPROPCOMPKEY, cfilterexpressioncount: u32, pfilter: *const DEVPROP_FILTER_EXPRESSION, pcallback: PDEV_QUERY_RESULT_CALLBACK, pcontext: *const ::core::ffi::c_void, phdevquery: *mut *mut HDEVQUERY__) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Devices_Properties")]
+    #[cfg(feature = "win32-devices-sys")]
     pub fn DevCreateObjectQueryFromIdsEx(objecttype: DEV_OBJECT_TYPE, pszzobjectids: ::windows_core_sys::PCWSTR, queryflags: u32, crequestedproperties: u32, prequestedproperties: *const super::Properties::DEVPROPCOMPKEY, cfilterexpressioncount: u32, pfilter: *const DEVPROP_FILTER_EXPRESSION, cextendedparametercount: u32, pextendedparameters: *const DEV_QUERY_PARAMETER, pcallback: PDEV_QUERY_RESULT_CALLBACK, pcontext: *const ::core::ffi::c_void, phdevquery: *mut *mut HDEVQUERY__) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Devices_Properties")]
+    #[cfg(feature = "win32-devices-sys")]
     pub fn DevFindProperty(pkey: *const super::Properties::DEVPROPKEY, store: super::Properties::DEVPROPSTORE, pszlocalename: ::windows_core_sys::PCWSTR, cproperties: u32, pproperties: *const super::Properties::DEVPROPERTY) -> *mut super::Properties::DEVPROPERTY;
-    #[cfg(feature = "Win32_Devices_Properties")]
+    #[cfg(feature = "win32-devices-sys")]
     pub fn DevFreeObjectProperties(cpropertycount: u32, pproperties: *const super::Properties::DEVPROPERTY);
-    #[cfg(feature = "Win32_Devices_Properties")]
+    #[cfg(feature = "win32-devices-sys")]
     pub fn DevFreeObjects(cobjectcount: u32, pobjects: *const DEV_OBJECT);
-    #[cfg(feature = "Win32_Devices_Properties")]
+    #[cfg(feature = "win32-devices-sys")]
     pub fn DevGetObjectProperties(objecttype: DEV_OBJECT_TYPE, pszobjectid: ::windows_core_sys::PCWSTR, queryflags: u32, crequestedproperties: u32, prequestedproperties: *const super::Properties::DEVPROPCOMPKEY, pcpropertycount: *mut u32, ppproperties: *mut *mut super::Properties::DEVPROPERTY) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Devices_Properties")]
+    #[cfg(feature = "win32-devices-sys")]
     pub fn DevGetObjectPropertiesEx(objecttype: DEV_OBJECT_TYPE, pszobjectid: ::windows_core_sys::PCWSTR, queryflags: u32, crequestedproperties: u32, prequestedproperties: *const super::Properties::DEVPROPCOMPKEY, cextendedparametercount: u32, pextendedparameters: *const DEV_QUERY_PARAMETER, pcpropertycount: *mut u32, ppproperties: *mut *mut super::Properties::DEVPROPERTY) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Devices_Properties")]
+    #[cfg(feature = "win32-devices-sys")]
     pub fn DevGetObjects(objecttype: DEV_OBJECT_TYPE, queryflags: u32, crequestedproperties: u32, prequestedproperties: *const super::Properties::DEVPROPCOMPKEY, cfilterexpressioncount: u32, pfilter: *const DEVPROP_FILTER_EXPRESSION, pcobjectcount: *mut u32, ppobjects: *mut *mut DEV_OBJECT) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Devices_Properties")]
+    #[cfg(feature = "win32-devices-sys")]
     pub fn DevGetObjectsEx(objecttype: DEV_OBJECT_TYPE, queryflags: u32, crequestedproperties: u32, prequestedproperties: *const super::Properties::DEVPROPCOMPKEY, cfilterexpressioncount: u32, pfilter: *const DEVPROP_FILTER_EXPRESSION, cextendedparametercount: u32, pextendedparameters: *const DEV_QUERY_PARAMETER, pcobjectcount: *mut u32, ppobjects: *mut *mut DEV_OBJECT) -> ::windows_core_sys::HRESULT;
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices-sys")]
 pub struct DEVPROP_FILTER_EXPRESSION {
     pub Operator: DEVPROP_OPERATOR,
     pub Property: super::Properties::DEVPROPERTY,
 }
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices-sys")]
 impl ::core::marker::Copy for DEVPROP_FILTER_EXPRESSION {}
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices-sys")]
 impl ::core::clone::Clone for DEVPROP_FILTER_EXPRESSION {
     fn clone(&self) -> Self {
         *self
@@ -86,16 +86,16 @@ pub const DEVPROP_OPERATOR_MASK_NOT_LOGICAL: DEVPROP_OPERATOR = 4027580415u32;
 pub const DEVPROP_OPERATOR_MASK_LOGICAL: DEVPROP_OPERATOR = 267386880u32;
 pub const DEVPROP_OPERATOR_MASK_ARRAY: DEVPROP_OPERATOR = 4026531840u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices-sys")]
 pub struct DEV_OBJECT {
     pub ObjectType: DEV_OBJECT_TYPE,
     pub pszObjectId: ::windows_core_sys::PCWSTR,
     pub cPropertyCount: u32,
     pub pProperties: *const super::Properties::DEVPROPERTY,
 }
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices-sys")]
 impl ::core::marker::Copy for DEV_OBJECT {}
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices-sys")]
 impl ::core::clone::Clone for DEV_OBJECT {
     fn clone(&self) -> Self {
         *self
@@ -121,16 +121,16 @@ pub const DevQueryFlagAllProperties: DEV_QUERY_FLAGS = 2i32;
 pub const DevQueryFlagLocalize: DEV_QUERY_FLAGS = 4i32;
 pub const DevQueryFlagAsyncClose: DEV_QUERY_FLAGS = 8i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices-sys")]
 pub struct DEV_QUERY_PARAMETER {
     pub Key: super::Properties::DEVPROPKEY,
     pub Type: u32,
     pub BufferSize: u32,
     pub Buffer: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices-sys")]
 impl ::core::marker::Copy for DEV_QUERY_PARAMETER {}
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices-sys")]
 impl ::core::clone::Clone for DEV_QUERY_PARAMETER {
     fn clone(&self) -> Self {
         *self
@@ -142,28 +142,28 @@ pub const DevQueryResultAdd: DEV_QUERY_RESULT_ACTION = 1i32;
 pub const DevQueryResultUpdate: DEV_QUERY_RESULT_ACTION = 2i32;
 pub const DevQueryResultRemove: DEV_QUERY_RESULT_ACTION = 3i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices-sys")]
 pub struct DEV_QUERY_RESULT_ACTION_DATA {
     pub Action: DEV_QUERY_RESULT_ACTION,
     pub Data: DEV_QUERY_RESULT_ACTION_DATA_0,
 }
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices-sys")]
 impl ::core::marker::Copy for DEV_QUERY_RESULT_ACTION_DATA {}
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices-sys")]
 impl ::core::clone::Clone for DEV_QUERY_RESULT_ACTION_DATA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices-sys")]
 pub union DEV_QUERY_RESULT_ACTION_DATA_0 {
     pub State: DEV_QUERY_STATE,
     pub DeviceObject: DEV_OBJECT,
 }
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices-sys")]
 impl ::core::marker::Copy for DEV_QUERY_RESULT_ACTION_DATA_0 {}
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices-sys")]
 impl ::core::clone::Clone for DEV_QUERY_RESULT_ACTION_DATA_0 {
     fn clone(&self) -> Self {
         *self
@@ -184,5 +184,5 @@ impl ::core::clone::Clone for HDEVQUERY__ {
         *self
     }
 }
-#[cfg(feature = "Win32_Devices_Properties")]
+#[cfg(feature = "win32-devices-sys")]
 pub type PDEV_QUERY_RESULT_CALLBACK = ::core::option::Option<unsafe extern "system" fn(hdevquery: *const HDEVQUERY__, pcontext: *const ::core::ffi::c_void, pactiondata: *const DEV_QUERY_RESULT_ACTION_DATA)>;

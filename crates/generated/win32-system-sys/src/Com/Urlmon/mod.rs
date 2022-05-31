@@ -21,9 +21,9 @@ extern "system" {
     pub fn CoInternetSetFeatureEnabled(featureentry: INTERNETFEATURELIST, dwflags: u32, fenable: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn CompareSecurityIds(pbsecurityid1: *const u8, dwlen1: u32, pbsecurityid2: *const u8, dwlen2: u32, dwreserved: u32) -> ::windows_core_sys::HRESULT;
     pub fn CompatFlagsFromClsid(pclsid: *const ::windows_core_sys::GUID, pdwcompatflags: *mut u32, pdwmiscstatusflags: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security", feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys", feature = "win32-system-sys"))]
     pub fn CopyBindInfo(pcbisrc: *const super::BINDINFO, pbidest: *mut super::BINDINFO) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(all(feature = "win32-graphics-sys", feature = "win32-system-sys"))]
     pub fn CopyStgMedium(pcstgmedsrc: *const super::STGMEDIUM, pstgmeddest: *mut super::STGMEDIUM) -> ::windows_core_sys::HRESULT;
     pub fn CreateAsyncBindCtx(reserved: u32, pbscb: super::IBindStatusCallback, pefetc: super::IEnumFORMATETC, ppbc: *mut super::IBindCtx) -> ::windows_core_sys::HRESULT;
     pub fn CreateAsyncBindCtxEx(pbc: super::IBindCtx, dwoptions: u32, pbscb: super::IBindStatusCallback, penum: super::IEnumFORMATETC, ppbc: *mut super::IBindCtx, reserved: u32) -> ::windows_core_sys::HRESULT;
@@ -57,7 +57,7 @@ extern "system" {
     pub fn RegisterFormatEnumerator(pbc: super::IBindCtx, pefetc: super::IEnumFORMATETC, reserved: u32) -> ::windows_core_sys::HRESULT;
     pub fn RegisterMediaTypeClass(pbc: super::IBindCtx, ctypes: u32, rgsztypes: *const ::windows_core_sys::PSTR, rgclsid: *const ::windows_core_sys::GUID, reserved: u32) -> ::windows_core_sys::HRESULT;
     pub fn RegisterMediaTypes(ctypes: u32, rgsztypes: *const ::windows_core_sys::PSTR, rgcftypes: *mut u16) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security", feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(all(feature = "win32-graphics-sys", feature = "win32-security-sys", feature = "win32-system-sys"))]
     pub fn ReleaseBindInfo(pbindinfo: *mut super::BINDINFO);
     pub fn RevokeBindStatusCallback(pbc: super::IBindCtx, pbscb: super::IBindStatusCallback) -> ::windows_core_sys::HRESULT;
     pub fn RevokeFormatEnumerator(pbc: super::IBindCtx, pefetc: super::IEnumFORMATETC) -> ::windows_core_sys::HRESULT;

@@ -292,7 +292,7 @@ extern "system" {
     pub fn CryptSetHashParam(hhash: usize, dwparam: CRYPT_SET_HASH_PARAM, pbdata: *const u8, dwflags: u32) -> ::win32_foundation_sys::BOOL;
     pub fn CryptSetKeyIdentifierProperty(pkeyidentifier: *const CRYPTOAPI_BLOB, dwpropid: u32, dwflags: u32, pwszcomputername: ::windows_core_sys::PCWSTR, pvreserved: *mut ::core::ffi::c_void, pvdata: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn CryptSetKeyParam(hkey: usize, dwparam: CRYPT_KEY_PARAM_ID, pbdata: *const u8, dwflags: u32) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_Registry")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn CryptSetOIDFunctionValue(dwencodingtype: u32, pszfuncname: ::windows_core_sys::PCSTR, pszoid: ::windows_core_sys::PCSTR, pwszvaluename: ::windows_core_sys::PCWSTR, dwvaluetype: ::win32_system_sys::Registry::REG_VALUE_TYPE, pbvaluedata: *const u8, cbvaluedata: u32) -> ::win32_foundation_sys::BOOL;
     pub fn CryptSetProvParam(hprov: usize, dwparam: CRYPT_SET_PROV_PARAM_ID, pbdata: *const u8, dwflags: u32) -> ::win32_foundation_sys::BOOL;
     pub fn CryptSetProviderA(pszprovname: ::windows_core_sys::PCSTR, dwprovtype: u32) -> ::win32_foundation_sys::BOOL;
@@ -2734,14 +2734,14 @@ pub const CERT_RDN_FORCE_UTF8_UNICODE_FLAG: u32 = 268435456u32;
 pub const CERT_RDN_TYPE_MASK: u32 = 255u32;
 pub const CERT_REGISTRY_STORE_CLIENT_GPT_FLAG: u32 = 2147483648u32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 pub struct CERT_REGISTRY_STORE_CLIENT_GPT_PARA {
     pub hKeyBase: ::win32_system_sys::Registry::HKEY,
     pub pwszRegPath: ::windows_core_sys::PWSTR,
 }
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for CERT_REGISTRY_STORE_CLIENT_GPT_PARA {}
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for CERT_REGISTRY_STORE_CLIENT_GPT_PARA {
     fn clone(&self) -> Self {
         *self
@@ -2753,14 +2753,14 @@ pub const CERT_REGISTRY_STORE_MY_IE_DIRTY_FLAG: u32 = 524288u32;
 pub const CERT_REGISTRY_STORE_REMOTE_FLAG: u32 = 65536u32;
 pub const CERT_REGISTRY_STORE_ROAMING_FLAG: u32 = 262144u32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 pub struct CERT_REGISTRY_STORE_ROAMING_PARA {
     pub hKey: ::win32_system_sys::Registry::HKEY,
     pub pwszStoreDirectory: ::windows_core_sys::PWSTR,
 }
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for CERT_REGISTRY_STORE_ROAMING_PARA {}
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for CERT_REGISTRY_STORE_ROAMING_PARA {
     fn clone(&self) -> Self {
         *self
@@ -3239,43 +3239,43 @@ pub const CERT_SYSTEM_STORE_LOCAL_MACHINE_WCOS_ID: u32 = 10u32;
 pub const CERT_SYSTEM_STORE_LOCATION_SHIFT: u32 = 16u32;
 pub const CERT_SYSTEM_STORE_MASK: u32 = 4294901760u32;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 pub struct CERT_SYSTEM_STORE_RELOCATE_PARA {
     pub Anonymous1: CERT_SYSTEM_STORE_RELOCATE_PARA_0,
     pub Anonymous2: CERT_SYSTEM_STORE_RELOCATE_PARA_1,
 }
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for CERT_SYSTEM_STORE_RELOCATE_PARA {}
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for CERT_SYSTEM_STORE_RELOCATE_PARA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 pub union CERT_SYSTEM_STORE_RELOCATE_PARA_0 {
     pub hKeyBase: ::win32_system_sys::Registry::HKEY,
     pub pvBase: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for CERT_SYSTEM_STORE_RELOCATE_PARA_0 {}
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for CERT_SYSTEM_STORE_RELOCATE_PARA_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 pub union CERT_SYSTEM_STORE_RELOCATE_PARA_1 {
     pub pvSystemStore: *mut ::core::ffi::c_void,
     pub pszSystemStore: ::windows_core_sys::PCSTR,
     pub pwszSystemStore: ::windows_core_sys::PCWSTR,
 }
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for CERT_SYSTEM_STORE_RELOCATE_PARA_1 {}
-#[cfg(feature = "Win32_System_Registry")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for CERT_SYSTEM_STORE_RELOCATE_PARA_1 {
     fn clone(&self) -> Self {
         *self

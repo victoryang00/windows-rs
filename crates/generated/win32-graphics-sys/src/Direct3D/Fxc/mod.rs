@@ -5,13 +5,13 @@ extern "system" {
     pub fn D3DCompileFromFile(pfilename: ::windows_core_sys::PCWSTR, pdefines: *const super::D3D_SHADER_MACRO, pinclude: super::ID3DInclude, pentrypoint: ::windows_core_sys::PCSTR, ptarget: ::windows_core_sys::PCSTR, flags1: u32, flags2: u32, ppcode: *mut super::ID3DBlob, pperrormsgs: *mut super::ID3DBlob) -> ::windows_core_sys::HRESULT;
     pub fn D3DCompressShaders(unumshaders: u32, pshaderdata: *const D3D_SHADER_DATA, uflags: u32, ppcompresseddata: *mut super::ID3DBlob) -> ::windows_core_sys::HRESULT;
     pub fn D3DCreateBlob(size: usize, ppblob: *mut super::ID3DBlob) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Direct3D11")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn D3DCreateFunctionLinkingGraph(uflags: u32, ppfunctionlinkinggraph: *mut super::super::Direct3D11::ID3D11FunctionLinkingGraph) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Direct3D11")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn D3DCreateLinker(pplinker: *mut super::super::Direct3D11::ID3D11Linker) -> ::windows_core_sys::HRESULT;
     pub fn D3DDecompressShaders(psrcdata: *const ::core::ffi::c_void, srcdatasize: usize, unumshaders: u32, ustartindex: u32, pindices: *const u32, uflags: u32, ppshaders: *mut super::ID3DBlob, ptotalshaders: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn D3DDisassemble(psrcdata: *const ::core::ffi::c_void, srcdatasize: usize, flags: u32, szcomments: ::windows_core_sys::PCSTR, ppdisassembly: *mut super::ID3DBlob) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Direct3D10")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn D3DDisassemble10Effect(peffect: super::super::Direct3D10::ID3D10Effect, flags: u32, ppdisassembly: *mut super::ID3DBlob) -> ::windows_core_sys::HRESULT;
     pub fn D3DDisassembleRegion(psrcdata: *const ::core::ffi::c_void, srcdatasize: usize, flags: u32, szcomments: ::windows_core_sys::PCSTR, startbyteoffset: usize, numinsts: usize, pfinishbyteoffset: *mut usize, ppdisassembly: *mut super::ID3DBlob) -> ::windows_core_sys::HRESULT;
     pub fn D3DGetBlobPart(psrcdata: *const ::core::ffi::c_void, srcdatasize: usize, part: D3D_BLOB_PART, flags: u32, pppart: *mut super::ID3DBlob) -> ::windows_core_sys::HRESULT;
@@ -20,7 +20,7 @@ extern "system" {
     pub fn D3DGetInputSignatureBlob(psrcdata: *const ::core::ffi::c_void, srcdatasize: usize, ppsignatureblob: *mut super::ID3DBlob) -> ::windows_core_sys::HRESULT;
     pub fn D3DGetOutputSignatureBlob(psrcdata: *const ::core::ffi::c_void, srcdatasize: usize, ppsignatureblob: *mut super::ID3DBlob) -> ::windows_core_sys::HRESULT;
     pub fn D3DGetTraceInstructionOffsets(psrcdata: *const ::core::ffi::c_void, srcdatasize: usize, flags: u32, startinstindex: usize, numinsts: usize, poffsets: *mut usize, ptotalinsts: *mut usize) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Direct3D11")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn D3DLoadModule(psrcdata: *const ::core::ffi::c_void, cbsrcdatasize: usize, ppmodule: *mut super::super::Direct3D11::ID3D11Module) -> ::windows_core_sys::HRESULT;
     pub fn D3DPreprocess(psrcdata: *const ::core::ffi::c_void, srcdatasize: usize, psourcename: ::windows_core_sys::PCSTR, pdefines: *const super::D3D_SHADER_MACRO, pinclude: super::ID3DInclude, ppcodetext: *mut super::ID3DBlob, pperrormsgs: *mut super::ID3DBlob) -> ::windows_core_sys::HRESULT;
     pub fn D3DReadFileToBlob(pfilename: ::windows_core_sys::PCWSTR, ppcontents: *mut super::ID3DBlob) -> ::windows_core_sys::HRESULT;

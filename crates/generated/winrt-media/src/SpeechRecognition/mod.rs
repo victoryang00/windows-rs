@@ -195,9 +195,9 @@ unsafe impl ::windows_core::Interface for ISpeechRecognitionGrammarFileConstrain
 #[doc(hidden)]
 pub struct ISpeechRecognitionGrammarFileConstraint_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub GrammarFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     GrammarFile: usize,
 }
 #[doc(hidden)]
@@ -211,13 +211,13 @@ unsafe impl ::windows_core::Interface for ISpeechRecognitionGrammarFileConstrain
 #[doc(hidden)]
 pub struct ISpeechRecognitionGrammarFileConstraintFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     Create: usize,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateWithTag: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, tag: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateWithTag: usize,
 }
 #[doc(hidden)]
@@ -257,9 +257,9 @@ unsafe impl ::windows_core::Interface for ISpeechRecognitionListConstraint {
 #[doc(hidden)]
 pub struct ISpeechRecognitionListConstraint_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Commands: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Commands: usize,
 }
 #[doc(hidden)]
@@ -273,13 +273,13 @@ unsafe impl ::windows_core::Interface for ISpeechRecognitionListConstraintFactor
 #[doc(hidden)]
 pub struct ISpeechRecognitionListConstraintFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, commands: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Create: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub CreateWithTag: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, commands: ::windows_core::RawPtr, tag: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     CreateWithTag: usize,
 }
 #[doc(hidden)]
@@ -310,14 +310,14 @@ pub struct ISpeechRecognitionResult_Vtbl {
     pub Text: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Confidence: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SpeechRecognitionConfidence) -> ::windows_core::HRESULT,
     pub SemanticInterpretation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub GetAlternates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, maxalternates: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     GetAlternates: usize,
     pub Constraint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub RulePath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     RulePath: usize,
     pub RawConfidence: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
 }
@@ -346,9 +346,9 @@ unsafe impl ::windows_core::Interface for ISpeechRecognitionSemanticInterpretati
 #[doc(hidden)]
 pub struct ISpeechRecognitionSemanticInterpretation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Properties: usize,
 }
 #[doc(hidden)]
@@ -402,13 +402,13 @@ unsafe impl ::windows_core::Interface for ISpeechRecognizer {
 #[doc(hidden)]
 pub struct ISpeechRecognizer_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Globalization")]
+    #[cfg(feature = "winrt-globalization")]
     pub CurrentLanguage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Globalization"))]
+    #[cfg(not(feature = "winrt-globalization"))]
     CurrentLanguage: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Constraints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Constraints: usize,
     pub Timeouts: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub UIOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -448,9 +448,9 @@ unsafe impl ::windows_core::Interface for ISpeechRecognizerFactory {
 #[doc(hidden)]
 pub struct ISpeechRecognizerFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Globalization")]
+    #[cfg(feature = "winrt-globalization")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, language: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Globalization"))]
+    #[cfg(not(feature = "winrt-globalization"))]
     Create: usize,
 }
 #[doc(hidden)]
@@ -477,17 +477,17 @@ unsafe impl ::windows_core::Interface for ISpeechRecognizerStatics {
 #[doc(hidden)]
 pub struct ISpeechRecognizerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Globalization")]
+    #[cfg(feature = "winrt-globalization")]
     pub SystemSpeechLanguage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Globalization"))]
+    #[cfg(not(feature = "winrt-globalization"))]
     SystemSpeechLanguage: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Globalization"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-globalization"))]
     pub SupportedTopicLanguages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Globalization")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-globalization")))]
     SupportedTopicLanguages: usize,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Globalization"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-globalization"))]
     pub SupportedGrammarLanguages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Globalization")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-globalization")))]
     SupportedGrammarLanguages: usize,
 }
 #[doc(hidden)]
@@ -501,9 +501,9 @@ unsafe impl ::windows_core::Interface for ISpeechRecognizerStatics2 {
 #[doc(hidden)]
 pub struct ISpeechRecognizerStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Globalization")]
+    #[cfg(feature = "winrt-globalization")]
     pub TrySetSystemSpeechLanguageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, speechlanguage: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Globalization"))]
+    #[cfg(not(feature = "winrt-globalization"))]
     TrySetSystemSpeechLanguageAsync: usize,
 }
 #[doc(hidden)]
@@ -555,13 +555,13 @@ unsafe impl ::windows_core::Interface for IVoiceCommandManager {
 #[doc(hidden)]
 pub struct IVoiceCommandManager_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub InstallCommandSetsFromStorageFileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     InstallCommandSetsFromStorageFileAsync: usize,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub InstalledCommandSets: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     InstalledCommandSets: usize,
 }
 #[doc(hidden)]
@@ -577,9 +577,9 @@ pub struct IVoiceCommandSet_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Language: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetPhraseListAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phraselistname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, phraselist: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetPhraseListAsync: usize,
 }
 #[repr(transparent)]
@@ -1197,7 +1197,7 @@ impl SpeechRecognitionGrammarFileConstraint {
         let this = &::windows_core::Interface::cast::<ISpeechRecognitionConstraint>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetProbability)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn GrammarFile(&self) -> ::windows_core::Result<::winrt_storage::StorageFile> {
         let this = self;
         unsafe {
@@ -1205,14 +1205,14 @@ impl SpeechRecognitionGrammarFileConstraint {
             (::windows_core::Interface::vtable(this).GrammarFile)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::StorageFile>(result__)
         }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::StorageFile>>(file: Param0) -> ::windows_core::Result<SpeechRecognitionGrammarFileConstraint> {
         Self::ISpeechRecognitionGrammarFileConstraintFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<SpeechRecognitionGrammarFileConstraint>(result__)
         })
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateWithTag<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::StorageFile>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(file: Param0, tag: Param1) -> ::windows_core::Result<SpeechRecognitionGrammarFileConstraint> {
         Self::ISpeechRecognitionGrammarFileConstraintFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1527,7 +1527,7 @@ impl SpeechRecognitionListConstraint {
         let this = &::windows_core::Interface::cast::<ISpeechRecognitionConstraint>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetProbability)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Commands(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -1535,14 +1535,14 @@ impl SpeechRecognitionListConstraint {
             (::windows_core::Interface::vtable(this).Commands)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(commands: Param0) -> ::windows_core::Result<SpeechRecognitionListConstraint> {
         Self::ISpeechRecognitionListConstraintFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), commands.into_param().abi(), result__.as_mut_ptr()).from_abi::<SpeechRecognitionListConstraint>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn CreateWithTag<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(commands: Param0, tag: Param1) -> ::windows_core::Result<SpeechRecognitionListConstraint> {
         Self::ISpeechRecognitionListConstraintFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1762,7 +1762,7 @@ impl SpeechRecognitionResult {
             (::windows_core::Interface::vtable(this).SemanticInterpretation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SpeechRecognitionSemanticInterpretation>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn GetAlternates(&self, maxalternates: u32) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<SpeechRecognitionResult>> {
         let this = self;
         unsafe {
@@ -1777,7 +1777,7 @@ impl SpeechRecognitionResult {
             (::windows_core::Interface::vtable(this).Constraint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ISpeechRecognitionConstraint>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn RulePath(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
@@ -1958,7 +1958,7 @@ unsafe impl ::windows_core::RuntimeType for SpeechRecognitionScenario {
 #[repr(transparent)]
 pub struct SpeechRecognitionSemanticInterpretation(::windows_core::IUnknown);
 impl SpeechRecognitionSemanticInterpretation {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>> {
         let this = self;
         unsafe {
@@ -2359,7 +2359,7 @@ impl SpeechRecognizer {
         let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Globalization")]
+    #[cfg(feature = "winrt-globalization")]
     pub fn CurrentLanguage(&self) -> ::windows_core::Result<::winrt_globalization::Language> {
         let this = self;
         unsafe {
@@ -2367,7 +2367,7 @@ impl SpeechRecognizer {
             (::windows_core::Interface::vtable(this).CurrentLanguage)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_globalization::Language>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Constraints(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<ISpeechRecognitionConstraint>> {
         let this = self;
         unsafe {
@@ -2464,35 +2464,35 @@ impl SpeechRecognizer {
         let this = &::windows_core::Interface::cast::<ISpeechRecognizer2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveHypothesisGenerated)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Globalization")]
+    #[cfg(feature = "winrt-globalization")]
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_globalization::Language>>(language: Param0) -> ::windows_core::Result<SpeechRecognizer> {
         Self::ISpeechRecognizerFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), language.into_param().abi(), result__.as_mut_ptr()).from_abi::<SpeechRecognizer>(result__)
         })
     }
-    #[cfg(feature = "Globalization")]
+    #[cfg(feature = "winrt-globalization")]
     pub fn SystemSpeechLanguage() -> ::windows_core::Result<::winrt_globalization::Language> {
         Self::ISpeechRecognizerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).SystemSpeechLanguage)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_globalization::Language>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Globalization"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-globalization"))]
     pub fn SupportedTopicLanguages() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_globalization::Language>> {
         Self::ISpeechRecognizerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).SupportedTopicLanguages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_globalization::Language>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Globalization"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-globalization"))]
     pub fn SupportedGrammarLanguages() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_globalization::Language>> {
         Self::ISpeechRecognizerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).SupportedGrammarLanguages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_globalization::Language>>(result__)
         })
     }
-    #[cfg(feature = "Globalization")]
+    #[cfg(feature = "winrt-globalization")]
     pub fn TrySetSystemSpeechLanguageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_globalization::Language>>(speechlanguage: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::ISpeechRecognizerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -2958,14 +2958,14 @@ unsafe impl ::core::marker::Send for SpeechRecognizerUIOptions {}
 unsafe impl ::core::marker::Sync for SpeechRecognizerUIOptions {}
 pub struct VoiceCommandManager;
 impl VoiceCommandManager {
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn InstallCommandSetsFromStorageFileAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::StorageFile>>(file: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IVoiceCommandManager(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).InstallCommandSetsFromStorageFileAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn InstalledCommandSets() -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, VoiceCommandSet>> {
         Self::IVoiceCommandManager(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -2997,7 +2997,7 @@ impl VoiceCommandSet {
             (::windows_core::Interface::vtable(this).Name)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetPhraseListAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, phraselistname: Param0, phraselist: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {

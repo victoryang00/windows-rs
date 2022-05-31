@@ -52,7 +52,7 @@ pub const E_PRINTCAPABILITIES_FORMAT: u32 = 2147745796u32;
 pub const E_PRINTDEVICECAPABILITIES_FORMAT: u32 = 2147745798u32;
 pub const E_PRINTTICKET_FORMAT: u32 = 2147745795u32;
 pub const PRINTTICKET_ISTREAM_APIS: u32 = 1u32;
-#[cfg(feature = "Win32_Storage_Xps")]
+#[cfg(feature = "win32-storage")]
 #[inline]
 pub unsafe fn PTCloseProvider<'a, Param0: ::windows_core::IntoParam<'a, ::win32_storage::Xps::HPTPROVIDER>>(hprovider: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -66,7 +66,7 @@ pub unsafe fn PTCloseProvider<'a, Param0: ::windows_core::IntoParam<'a, ::win32_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Storage_Xps", feature = "Win32_System_Com"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-storage", feature = "win32-system"))]
 #[inline]
 pub unsafe fn PTConvertDevModeToPrintTicket<'a, Param0: ::windows_core::IntoParam<'a, ::win32_storage::Xps::HPTPROVIDER>, Param4: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(hprovider: Param0, cbdevmode: u32, pdevmode: *const super::super::Gdi::DEVMODEA, scope: EPrintTicketScope, pprintticket: Param4) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -80,7 +80,7 @@ pub unsafe fn PTConvertDevModeToPrintTicket<'a, Param0: ::windows_core::IntoPara
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Storage_Xps", feature = "Win32_System_Com"))]
+#[cfg(all(feature = "win32-graphics", feature = "win32-storage", feature = "win32-system"))]
 #[inline]
 pub unsafe fn PTConvertPrintTicketToDevMode<'a, Param0: ::windows_core::IntoParam<'a, ::win32_storage::Xps::HPTPROVIDER>, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(hprovider: Param0, pprintticket: Param1, basedevmodetype: EDefaultDevmodeType, scope: EPrintTicketScope, pcbdevmode: *mut u32, ppdevmode: *mut *mut super::super::Gdi::DEVMODEA, pbstrerrormessage: *mut ::win32_foundation::BSTR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -94,7 +94,7 @@ pub unsafe fn PTConvertPrintTicketToDevMode<'a, Param0: ::windows_core::IntoPara
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Storage_Xps", feature = "Win32_System_Com"))]
+#[cfg(all(feature = "win32-storage", feature = "win32-system"))]
 #[inline]
 pub unsafe fn PTGetPrintCapabilities<'a, Param0: ::windows_core::IntoParam<'a, ::win32_storage::Xps::HPTPROVIDER>, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param2: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(hprovider: Param0, pprintticket: Param1, pcapabilities: Param2) -> ::windows_core::Result<::win32_foundation::BSTR> {
     #[cfg(windows)]
@@ -109,7 +109,7 @@ pub unsafe fn PTGetPrintCapabilities<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Storage_Xps", feature = "Win32_System_Com"))]
+#[cfg(all(feature = "win32-storage", feature = "win32-system"))]
 #[inline]
 pub unsafe fn PTGetPrintDeviceCapabilities<'a, Param0: ::windows_core::IntoParam<'a, ::win32_storage::Xps::HPTPROVIDER>, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param2: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(hprovider: Param0, pprintticket: Param1, pdevicecapabilities: Param2) -> ::windows_core::Result<::win32_foundation::BSTR> {
     #[cfg(windows)]
@@ -124,7 +124,7 @@ pub unsafe fn PTGetPrintDeviceCapabilities<'a, Param0: ::windows_core::IntoParam
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Storage_Xps", feature = "Win32_System_Com"))]
+#[cfg(all(feature = "win32-storage", feature = "win32-system"))]
 #[inline]
 pub unsafe fn PTGetPrintDeviceResources<'a, Param0: ::windows_core::IntoParam<'a, ::win32_storage::Xps::HPTPROVIDER>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param3: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(hprovider: Param0, pszlocalename: Param1, pprintticket: Param2, pdeviceresources: Param3) -> ::windows_core::Result<::win32_foundation::BSTR> {
     #[cfg(windows)]
@@ -139,7 +139,7 @@ pub unsafe fn PTGetPrintDeviceResources<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Storage_Xps", feature = "Win32_System_Com"))]
+#[cfg(all(feature = "win32-storage", feature = "win32-system"))]
 #[inline]
 pub unsafe fn PTMergeAndValidatePrintTicket<'a, Param0: ::windows_core::IntoParam<'a, ::win32_storage::Xps::HPTPROVIDER>, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param2: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param4: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(hprovider: Param0, pbaseticket: Param1, pdeltaticket: Param2, scope: EPrintTicketScope, presultticket: Param4) -> ::windows_core::Result<::win32_foundation::BSTR> {
     #[cfg(windows)]
@@ -154,7 +154,7 @@ pub unsafe fn PTMergeAndValidatePrintTicket<'a, Param0: ::windows_core::IntoPara
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Storage_Xps")]
+#[cfg(feature = "win32-storage")]
 #[inline]
 pub unsafe fn PTOpenProvider<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszprintername: Param0, dwversion: u32) -> ::windows_core::Result<::win32_storage::Xps::HPTPROVIDER> {
     #[cfg(windows)]
@@ -169,7 +169,7 @@ pub unsafe fn PTOpenProvider<'a, Param0: ::windows_core::IntoParam<'a, ::windows
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Storage_Xps")]
+#[cfg(feature = "win32-storage")]
 #[inline]
 pub unsafe fn PTOpenProviderEx<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszprintername: Param0, dwmaxversion: u32, dwprefversion: u32, phprovider: *mut ::win32_storage::Xps::HPTPROVIDER, pusedversion: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]

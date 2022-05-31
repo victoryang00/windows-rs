@@ -28,13 +28,13 @@ pub struct IXamlDirect_Vtbl {
     pub SetDurationProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, value: super::super::Duration) -> ::windows_core::HRESULT,
     pub SetGridLengthProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, value: super::super::GridLength) -> ::windows_core::HRESULT,
     pub SetThicknessProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, value: super::super::Thickness) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub SetMatrixProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, value: super::super::Media::Matrix) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetMatrixProperty: usize,
-    #[cfg(feature = "UI_Xaml_Media_Media3D")]
+    #[cfg(feature = "winrt-ui")]
     pub SetMatrix3DProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, value: super::super::Media::Media3D::Matrix3D) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media_Media3D"))]
+    #[cfg(not(feature = "winrt-ui"))]
     SetMatrix3DProperty: usize,
     pub SetEnumProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, value: u32) -> ::windows_core::HRESULT,
     pub GetObjectProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -53,13 +53,13 @@ pub struct IXamlDirect_Vtbl {
     pub GetDurationProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut super::super::Duration) -> ::windows_core::HRESULT,
     pub GetGridLengthProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut super::super::GridLength) -> ::windows_core::HRESULT,
     pub GetThicknessProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut super::super::Thickness) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub GetMatrixProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut super::super::Media::Matrix) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media"))]
+    #[cfg(not(feature = "winrt-ui"))]
     GetMatrixProperty: usize,
-    #[cfg(feature = "UI_Xaml_Media_Media3D")]
+    #[cfg(feature = "winrt-ui")]
     pub GetMatrix3DProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut super::super::Media::Media3D::Matrix3D) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Media_Media3D"))]
+    #[cfg(not(feature = "winrt-ui"))]
     GetMatrix3DProperty: usize,
     pub GetEnumProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut u32) -> ::windows_core::HRESULT,
     pub ClearProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex) -> ::windows_core::HRESULT,
@@ -250,12 +250,12 @@ impl XamlDirect {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetThicknessProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetMatrixProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>, Param2: ::windows_core::IntoParam<'a, super::super::Media::Matrix>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex, value: Param2) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrixProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "UI_Xaml_Media_Media3D")]
+    #[cfg(feature = "winrt-ui")]
     pub fn SetMatrix3DProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>, Param2: ::windows_core::IntoParam<'a, super::super::Media::Media3D::Matrix3D>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex, value: Param2) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix3DProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, value.into_param().abi()).ok() }
@@ -376,7 +376,7 @@ impl XamlDirect {
             (::windows_core::Interface::vtable(this).GetThicknessProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, result__.as_mut_ptr()).from_abi::<super::super::Thickness>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GetMatrixProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex) -> ::windows_core::Result<super::super::Media::Matrix> {
         let this = self;
         unsafe {
@@ -384,7 +384,7 @@ impl XamlDirect {
             (::windows_core::Interface::vtable(this).GetMatrixProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, result__.as_mut_ptr()).from_abi::<super::super::Media::Matrix>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Media_Media3D")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GetMatrix3DProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex) -> ::windows_core::Result<super::super::Media::Media3D::Matrix3D> {
         let this = self;
         unsafe {

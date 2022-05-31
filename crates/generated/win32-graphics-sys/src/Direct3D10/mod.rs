@@ -1,38 +1,38 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn D3D10CompileEffectFromMemory(pdata: *const ::core::ffi::c_void, datalength: usize, psrcfilename: ::windows_core_sys::PCSTR, pdefines: *const super::Direct3D::D3D_SHADER_MACRO, pinclude: super::Direct3D::ID3DInclude, hlslflags: u32, fxflags: u32, ppcompiledeffect: *mut super::Direct3D::ID3DBlob, pperrors: *mut super::Direct3D::ID3DBlob) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn D3D10CompileShader(psrcdata: ::windows_core_sys::PCSTR, srcdatasize: usize, pfilename: ::windows_core_sys::PCSTR, pdefines: *const super::Direct3D::D3D_SHADER_MACRO, pinclude: super::Direct3D::ID3DInclude, pfunctionname: ::windows_core_sys::PCSTR, pprofile: ::windows_core_sys::PCSTR, flags: u32, ppshader: *mut super::Direct3D::ID3DBlob, pperrormsgs: *mut super::Direct3D::ID3DBlob) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn D3D10CreateBlob(numbytes: usize, ppbuffer: *mut super::Direct3D::ID3DBlob) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Dxgi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn D3D10CreateDevice(padapter: super::Dxgi::IDXGIAdapter, drivertype: D3D10_DRIVER_TYPE, software: ::win32_foundation_sys::HINSTANCE, flags: u32, sdkversion: u32, ppdevice: *mut ID3D10Device) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Dxgi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn D3D10CreateDevice1(padapter: super::Dxgi::IDXGIAdapter, drivertype: D3D10_DRIVER_TYPE, software: ::win32_foundation_sys::HINSTANCE, flags: u32, hardwarelevel: D3D10_FEATURE_LEVEL1, sdkversion: u32, ppdevice: *mut ID3D10Device1) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn D3D10CreateDeviceAndSwapChain(padapter: super::Dxgi::IDXGIAdapter, drivertype: D3D10_DRIVER_TYPE, software: ::win32_foundation_sys::HINSTANCE, flags: u32, sdkversion: u32, pswapchaindesc: *const super::Dxgi::DXGI_SWAP_CHAIN_DESC, ppswapchain: *mut super::Dxgi::IDXGISwapChain, ppdevice: *mut ID3D10Device) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn D3D10CreateDeviceAndSwapChain1(padapter: super::Dxgi::IDXGIAdapter, drivertype: D3D10_DRIVER_TYPE, software: ::win32_foundation_sys::HINSTANCE, flags: u32, hardwarelevel: D3D10_FEATURE_LEVEL1, sdkversion: u32, pswapchaindesc: *const super::Dxgi::DXGI_SWAP_CHAIN_DESC, ppswapchain: *mut super::Dxgi::IDXGISwapChain, ppdevice: *mut ID3D10Device1) -> ::windows_core_sys::HRESULT;
     pub fn D3D10CreateEffectFromMemory(pdata: *const ::core::ffi::c_void, datalength: usize, fxflags: u32, pdevice: ID3D10Device, peffectpool: ID3D10EffectPool, ppeffect: *mut ID3D10Effect) -> ::windows_core_sys::HRESULT;
     pub fn D3D10CreateEffectPoolFromMemory(pdata: *const ::core::ffi::c_void, datalength: usize, fxflags: u32, pdevice: ID3D10Device, ppeffectpool: *mut ID3D10EffectPool) -> ::windows_core_sys::HRESULT;
     pub fn D3D10CreateStateBlock(pdevice: ID3D10Device, pstateblockmask: *const D3D10_STATE_BLOCK_MASK, ppstateblock: *mut ID3D10StateBlock) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn D3D10DisassembleEffect(peffect: ID3D10Effect, enablecolorcode: ::win32_foundation_sys::BOOL, ppdisassembly: *mut super::Direct3D::ID3DBlob) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn D3D10DisassembleShader(pshader: *const ::core::ffi::c_void, bytecodelength: usize, enablecolorcode: ::win32_foundation_sys::BOOL, pcomments: ::windows_core_sys::PCSTR, ppdisassembly: *mut super::Direct3D::ID3DBlob) -> ::windows_core_sys::HRESULT;
     pub fn D3D10GetGeometryShaderProfile(pdevice: ID3D10Device) -> ::windows_core_sys::PSTR;
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn D3D10GetInputAndOutputSignatureBlob(pshaderbytecode: *const ::core::ffi::c_void, bytecodelength: usize, ppsignatureblob: *mut super::Direct3D::ID3DBlob) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn D3D10GetInputSignatureBlob(pshaderbytecode: *const ::core::ffi::c_void, bytecodelength: usize, ppsignatureblob: *mut super::Direct3D::ID3DBlob) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn D3D10GetOutputSignatureBlob(pshaderbytecode: *const ::core::ffi::c_void, bytecodelength: usize, ppsignatureblob: *mut super::Direct3D::ID3DBlob) -> ::windows_core_sys::HRESULT;
     pub fn D3D10GetPixelShaderProfile(pdevice: ID3D10Device) -> ::windows_core_sys::PSTR;
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn D3D10GetShaderDebugInfo(pshaderbytecode: *const ::core::ffi::c_void, bytecodelength: usize, ppdebuginfo: *mut super::Direct3D::ID3DBlob) -> ::windows_core_sys::HRESULT;
     pub fn D3D10GetVertexShaderProfile(pdevice: ID3D10Device) -> ::windows_core_sys::PSTR;
-    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn D3D10PreprocessShader(psrcdata: ::windows_core_sys::PCSTR, srcdatasize: usize, pfilename: ::windows_core_sys::PCSTR, pdefines: *const super::Direct3D::D3D_SHADER_MACRO, pinclude: super::Direct3D::ID3DInclude, ppshadertext: *mut super::Direct3D::ID3DBlob, pperrormsgs: *mut super::Direct3D::ID3DBlob) -> ::windows_core_sys::HRESULT;
     pub fn D3D10ReflectShader(pshaderbytecode: *const ::core::ffi::c_void, bytecodelength: usize, ppreflector: *mut ID3D10ShaderReflection) -> ::windows_core_sys::HRESULT;
     pub fn D3D10StateBlockMaskDifference(pa: *const D3D10_STATE_BLOCK_MASK, pb: *const D3D10_STATE_BLOCK_MASK, presult: *mut D3D10_STATE_BLOCK_MASK) -> ::windows_core_sys::HRESULT;
@@ -417,22 +417,22 @@ impl ::core::clone::Clone for D3D10_DEPTH_STENCIL_DESC {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct D3D10_DEPTH_STENCIL_VIEW_DESC {
     pub Format: super::Dxgi::Common::DXGI_FORMAT,
     pub ViewDimension: D3D10_DSV_DIMENSION,
     pub Anonymous: D3D10_DEPTH_STENCIL_VIEW_DESC_0,
 }
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for D3D10_DEPTH_STENCIL_VIEW_DESC {}
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for D3D10_DEPTH_STENCIL_VIEW_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 pub union D3D10_DEPTH_STENCIL_VIEW_DESC_0 {
     pub Texture1D: D3D10_TEX1D_DSV,
     pub Texture1DArray: D3D10_TEX1D_ARRAY_DSV,
@@ -441,9 +441,9 @@ pub union D3D10_DEPTH_STENCIL_VIEW_DESC_0 {
     pub Texture2DMS: D3D10_TEX2DMS_DSV,
     pub Texture2DMSArray: D3D10_TEX2DMS_ARRAY_DSV,
 }
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for D3D10_DEPTH_STENCIL_VIEW_DESC_0 {}
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for D3D10_DEPTH_STENCIL_VIEW_DESC_0 {
     fn clone(&self) -> Self {
         *self
@@ -526,7 +526,7 @@ impl ::core::clone::Clone for D3D10_EFFECT_SHADER_DESC {
 }
 pub const D3D10_EFFECT_SINGLE_THREADED: u32 = 8u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct D3D10_EFFECT_TYPE_DESC {
     pub TypeName: ::windows_core_sys::PCSTR,
     pub Class: super::Direct3D::D3D_SHADER_VARIABLE_CLASS,
@@ -539,9 +539,9 @@ pub struct D3D10_EFFECT_TYPE_DESC {
     pub UnpackedSize: u32,
     pub Stride: u32,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for D3D10_EFFECT_TYPE_DESC {}
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for D3D10_EFFECT_TYPE_DESC {
     fn clone(&self) -> Self {
         *self
@@ -697,7 +697,7 @@ pub type D3D10_INPUT_CLASSIFICATION = i32;
 pub const D3D10_INPUT_PER_VERTEX_DATA: D3D10_INPUT_CLASSIFICATION = 0i32;
 pub const D3D10_INPUT_PER_INSTANCE_DATA: D3D10_INPUT_CLASSIFICATION = 1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct D3D10_INPUT_ELEMENT_DESC {
     pub SemanticName: ::windows_core_sys::PCSTR,
     pub SemanticIndex: u32,
@@ -707,9 +707,9 @@ pub struct D3D10_INPUT_ELEMENT_DESC {
     pub InputSlotClass: D3D10_INPUT_CLASSIFICATION,
     pub InstanceDataStepRate: u32,
 }
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for D3D10_INPUT_ELEMENT_DESC {}
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for D3D10_INPUT_ELEMENT_DESC {
     fn clone(&self) -> Self {
         *self
@@ -1458,22 +1458,22 @@ impl ::core::clone::Clone for D3D10_RENDER_TARGET_BLEND_DESC1 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct D3D10_RENDER_TARGET_VIEW_DESC {
     pub Format: super::Dxgi::Common::DXGI_FORMAT,
     pub ViewDimension: D3D10_RTV_DIMENSION,
     pub Anonymous: D3D10_RENDER_TARGET_VIEW_DESC_0,
 }
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for D3D10_RENDER_TARGET_VIEW_DESC {}
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for D3D10_RENDER_TARGET_VIEW_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 pub union D3D10_RENDER_TARGET_VIEW_DESC_0 {
     pub Buffer: D3D10_BUFFER_RTV,
     pub Texture1D: D3D10_TEX1D_RTV,
@@ -1484,9 +1484,9 @@ pub union D3D10_RENDER_TARGET_VIEW_DESC_0 {
     pub Texture2DMSArray: D3D10_TEX2DMS_ARRAY_RTV,
     pub Texture3D: D3D10_TEX3D_RTV,
 }
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for D3D10_RENDER_TARGET_VIEW_DESC_0 {}
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for D3D10_RENDER_TARGET_VIEW_DESC_0 {
     fn clone(&self) -> Self {
         *self
@@ -1561,7 +1561,7 @@ pub const D3D10_SDK_LAYERS_VERSION: u32 = 11u32;
 pub const D3D10_SDK_VERSION: u32 = 29u32;
 pub const D3D10_SHADER_AVOID_FLOW_CONTROL: u32 = 512u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct D3D10_SHADER_BUFFER_DESC {
     pub Name: ::windows_core_sys::PCSTR,
     pub Type: super::Direct3D::D3D_CBUFFER_TYPE,
@@ -1569,9 +1569,9 @@ pub struct D3D10_SHADER_BUFFER_DESC {
     pub Size: u32,
     pub uFlags: u32,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for D3D10_SHADER_BUFFER_DESC {}
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for D3D10_SHADER_BUFFER_DESC {
     fn clone(&self) -> Self {
         *self
@@ -1717,7 +1717,7 @@ pub const D3D10_SHADER_DEBUG_SCOPE_NAMESPACE: D3D10_SHADER_DEBUG_SCOPETYPE = 6i3
 pub const D3D10_SHADER_DEBUG_SCOPE_ANNOTATION: D3D10_SHADER_DEBUG_SCOPETYPE = 7i32;
 pub const D3D10_SHADER_DEBUG_SCOPE_FORCE_DWORD: D3D10_SHADER_DEBUG_SCOPETYPE = 2147483647i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct D3D10_SHADER_DEBUG_SCOPEVAR_INFO {
     pub TokenId: u32,
     pub VarType: D3D10_SHADER_DEBUG_VARTYPE,
@@ -1731,9 +1731,9 @@ pub struct D3D10_SHADER_DEBUG_SCOPEVAR_INFO {
     pub uVariables: u32,
     pub uFirstVariable: u32,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for D3D10_SHADER_DEBUG_SCOPEVAR_INFO {}
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for D3D10_SHADER_DEBUG_SCOPEVAR_INFO {
     fn clone(&self) -> Self {
         *self
@@ -1772,7 +1772,7 @@ pub const D3D10_SHADER_DEBUG_VAR_VARIABLE: D3D10_SHADER_DEBUG_VARTYPE = 0i32;
 pub const D3D10_SHADER_DEBUG_VAR_FUNCTION: D3D10_SHADER_DEBUG_VARTYPE = 1i32;
 pub const D3D10_SHADER_DEBUG_VAR_FORCE_DWORD: D3D10_SHADER_DEBUG_VARTYPE = 2147483647i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct D3D10_SHADER_DEBUG_VAR_INFO {
     pub TokenId: u32,
     pub Type: super::Direct3D::D3D_SHADER_VARIABLE_TYPE,
@@ -1781,16 +1781,16 @@ pub struct D3D10_SHADER_DEBUG_VAR_INFO {
     pub ScopeVar: u32,
     pub ScopeVarOffset: u32,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for D3D10_SHADER_DEBUG_VAR_INFO {}
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for D3D10_SHADER_DEBUG_VAR_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct D3D10_SHADER_DESC {
     pub Version: u32,
     pub Creator: ::windows_core_sys::PCSTR,
@@ -1821,9 +1821,9 @@ pub struct D3D10_SHADER_DESC {
     pub GSOutputTopology: super::Direct3D::D3D_PRIMITIVE_TOPOLOGY,
     pub GSMaxOutputVertexCount: u32,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for D3D10_SHADER_DESC {}
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for D3D10_SHADER_DESC {
     fn clone(&self) -> Self {
         *self
@@ -1838,7 +1838,7 @@ pub const D3D10_SHADER_FORCE_PS_SOFTWARE_NO_OPT: u32 = 128u32;
 pub const D3D10_SHADER_FORCE_VS_SOFTWARE_NO_OPT: u32 = 64u32;
 pub const D3D10_SHADER_IEEE_STRICTNESS: u32 = 8192u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct D3D10_SHADER_INPUT_BIND_DESC {
     pub Name: ::windows_core_sys::PCSTR,
     pub Type: super::Direct3D::D3D_SHADER_INPUT_TYPE,
@@ -1849,9 +1849,9 @@ pub struct D3D10_SHADER_INPUT_BIND_DESC {
     pub Dimension: super::Direct3D::D3D_SRV_DIMENSION,
     pub NumSamples: u32,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for D3D10_SHADER_INPUT_BIND_DESC {}
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for D3D10_SHADER_INPUT_BIND_DESC {
     fn clone(&self) -> Self {
         *self
@@ -1869,22 +1869,22 @@ pub const D3D10_SHADER_PARTIAL_PRECISION: u32 = 32u32;
 pub const D3D10_SHADER_PREFER_FLOW_CONTROL: u32 = 1024u32;
 pub const D3D10_SHADER_RESOURCES_MAY_ALIAS: u32 = 524288u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Direct3D", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
 pub struct D3D10_SHADER_RESOURCE_VIEW_DESC {
     pub Format: super::Dxgi::Common::DXGI_FORMAT,
     pub ViewDimension: super::Direct3D::D3D_SRV_DIMENSION,
     pub Anonymous: D3D10_SHADER_RESOURCE_VIEW_DESC_0,
 }
-#[cfg(all(feature = "Win32_Graphics_Direct3D", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
 impl ::core::marker::Copy for D3D10_SHADER_RESOURCE_VIEW_DESC {}
-#[cfg(all(feature = "Win32_Graphics_Direct3D", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
 impl ::core::clone::Clone for D3D10_SHADER_RESOURCE_VIEW_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Direct3D", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
 pub union D3D10_SHADER_RESOURCE_VIEW_DESC_0 {
     pub Buffer: D3D10_BUFFER_SRV,
     pub Texture1D: D3D10_TEX1D_SRV,
@@ -1896,31 +1896,31 @@ pub union D3D10_SHADER_RESOURCE_VIEW_DESC_0 {
     pub Texture3D: D3D10_TEX3D_SRV,
     pub TextureCube: D3D10_TEXCUBE_SRV,
 }
-#[cfg(all(feature = "Win32_Graphics_Direct3D", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
 impl ::core::marker::Copy for D3D10_SHADER_RESOURCE_VIEW_DESC_0 {}
-#[cfg(all(feature = "Win32_Graphics_Direct3D", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
 impl ::core::clone::Clone for D3D10_SHADER_RESOURCE_VIEW_DESC_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Direct3D", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
 pub struct D3D10_SHADER_RESOURCE_VIEW_DESC1 {
     pub Format: super::Dxgi::Common::DXGI_FORMAT,
     pub ViewDimension: super::Direct3D::D3D_SRV_DIMENSION,
     pub Anonymous: D3D10_SHADER_RESOURCE_VIEW_DESC1_0,
 }
-#[cfg(all(feature = "Win32_Graphics_Direct3D", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
 impl ::core::marker::Copy for D3D10_SHADER_RESOURCE_VIEW_DESC1 {}
-#[cfg(all(feature = "Win32_Graphics_Direct3D", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
 impl ::core::clone::Clone for D3D10_SHADER_RESOURCE_VIEW_DESC1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Graphics_Direct3D", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
 pub union D3D10_SHADER_RESOURCE_VIEW_DESC1_0 {
     pub Buffer: D3D10_BUFFER_SRV,
     pub Texture1D: D3D10_TEX1D_SRV,
@@ -1933,9 +1933,9 @@ pub union D3D10_SHADER_RESOURCE_VIEW_DESC1_0 {
     pub TextureCube: D3D10_TEXCUBE_SRV,
     pub TextureCubeArray: D3D10_TEXCUBE_ARRAY_SRV1,
 }
-#[cfg(all(feature = "Win32_Graphics_Direct3D", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
 impl ::core::marker::Copy for D3D10_SHADER_RESOURCE_VIEW_DESC1_0 {}
-#[cfg(all(feature = "Win32_Graphics_Direct3D", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
 impl ::core::clone::Clone for D3D10_SHADER_RESOURCE_VIEW_DESC1_0 {
     fn clone(&self) -> Self {
         *self
@@ -1944,7 +1944,7 @@ impl ::core::clone::Clone for D3D10_SHADER_RESOURCE_VIEW_DESC1_0 {
 pub const D3D10_SHADER_SKIP_OPTIMIZATION: u32 = 4u32;
 pub const D3D10_SHADER_SKIP_VALIDATION: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct D3D10_SHADER_TYPE_DESC {
     pub Class: super::Direct3D::D3D_SHADER_VARIABLE_CLASS,
     pub Type: super::Direct3D::D3D_SHADER_VARIABLE_TYPE,
@@ -1954,9 +1954,9 @@ pub struct D3D10_SHADER_TYPE_DESC {
     pub Members: u32,
     pub Offset: u32,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for D3D10_SHADER_TYPE_DESC {}
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for D3D10_SHADER_TYPE_DESC {
     fn clone(&self) -> Self {
         *self
@@ -1980,7 +1980,7 @@ pub const D3D10_SHADER_WARNINGS_ARE_ERRORS: u32 = 262144u32;
 pub const D3D10_SHIFT_INSTRUCTION_PAD_VALUE: u32 = 0u32;
 pub const D3D10_SHIFT_INSTRUCTION_SHIFT_VALUE_BIT_COUNT: u32 = 5u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct D3D10_SIGNATURE_PARAMETER_DESC {
     pub SemanticName: ::windows_core_sys::PCSTR,
     pub SemanticIndex: u32,
@@ -1990,9 +1990,9 @@ pub struct D3D10_SIGNATURE_PARAMETER_DESC {
     pub Mask: u8,
     pub ReadWriteMask: u8,
 }
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for D3D10_SIGNATURE_PARAMETER_DESC {}
-#[cfg(feature = "Win32_Graphics_Direct3D")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for D3D10_SIGNATURE_PARAMETER_DESC {
     fn clone(&self) -> Self {
         *self
@@ -2353,7 +2353,7 @@ impl ::core::clone::Clone for D3D10_TEXCUBE_SRV {
 }
 pub const D3D10_TEXEL_ADDRESS_RANGE_BIT_COUNT: u32 = 18u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct D3D10_TEXTURE1D_DESC {
     pub Width: u32,
     pub MipLevels: u32,
@@ -2364,16 +2364,16 @@ pub struct D3D10_TEXTURE1D_DESC {
     pub CPUAccessFlags: u32,
     pub MiscFlags: u32,
 }
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for D3D10_TEXTURE1D_DESC {}
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for D3D10_TEXTURE1D_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct D3D10_TEXTURE2D_DESC {
     pub Width: u32,
     pub Height: u32,
@@ -2386,16 +2386,16 @@ pub struct D3D10_TEXTURE2D_DESC {
     pub CPUAccessFlags: u32,
     pub MiscFlags: u32,
 }
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for D3D10_TEXTURE2D_DESC {}
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for D3D10_TEXTURE2D_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct D3D10_TEXTURE3D_DESC {
     pub Width: u32,
     pub Height: u32,
@@ -2407,9 +2407,9 @@ pub struct D3D10_TEXTURE3D_DESC {
     pub CPUAccessFlags: u32,
     pub MiscFlags: u32,
 }
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for D3D10_TEXTURE3D_DESC {}
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for D3D10_TEXTURE3D_DESC {
     fn clone(&self) -> Self {
         *self
@@ -2529,8 +2529,8 @@ pub type ID3D10Texture2D = *mut ::core::ffi::c_void;
 pub type ID3D10Texture3D = *mut ::core::ffi::c_void;
 pub type ID3D10VertexShader = *mut ::core::ffi::c_void;
 pub type ID3D10View = *mut ::core::ffi::c_void;
-#[cfg(feature = "Win32_Graphics_Dxgi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub type PFN_D3D10_CREATE_DEVICE1 = ::core::option::Option<unsafe extern "system" fn(param0: super::Dxgi::IDXGIAdapter, param1: D3D10_DRIVER_TYPE, param2: ::win32_foundation_sys::HINSTANCE, param3: u32, param4: D3D10_FEATURE_LEVEL1, param5: u32, param6: *mut ID3D10Device1) -> ::windows_core_sys::HRESULT>;
-#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+#[cfg(feature = "win32-graphics-sys")]
 pub type PFN_D3D10_CREATE_DEVICE_AND_SWAP_CHAIN1 = ::core::option::Option<unsafe extern "system" fn(param0: super::Dxgi::IDXGIAdapter, param1: D3D10_DRIVER_TYPE, param2: ::win32_foundation_sys::HINSTANCE, param3: u32, param4: D3D10_FEATURE_LEVEL1, param5: u32, param6: *mut super::Dxgi::DXGI_SWAP_CHAIN_DESC, param7: *mut super::Dxgi::IDXGISwapChain, param8: *mut ID3D10Device1) -> ::windows_core_sys::HRESULT>;
 pub const _FACD3D10: u32 = 2169u32;

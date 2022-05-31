@@ -1,18 +1,18 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_System_WindowsProgramming")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn FhServiceBlockBackup(pipe: ::win32_system_sys::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_WindowsProgramming")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn FhServiceClosePipe(pipe: ::win32_system_sys::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_WindowsProgramming")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn FhServiceOpenPipe(startserviceifstopped: ::win32_foundation_sys::BOOL, pipe: *mut ::win32_system_sys::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_WindowsProgramming")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn FhServiceReloadConfiguration(pipe: ::win32_system_sys::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_WindowsProgramming")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn FhServiceStartBackup(pipe: ::win32_system_sys::WindowsProgramming::FH_SERVICE_PIPE_HANDLE, lowpriorityio: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_WindowsProgramming")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn FhServiceStopBackup(pipe: ::win32_system_sys::WindowsProgramming::FH_SERVICE_PIPE_HANDLE, stoptracking: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_WindowsProgramming")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn FhServiceUnblockBackup(pipe: ::win32_system_sys::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core_sys::HRESULT;
 }
 pub const FHCFG_E_CONFIGURATION_PREVIOUSLY_LOADED: ::windows_core_sys::HRESULT = -2147220731i32;

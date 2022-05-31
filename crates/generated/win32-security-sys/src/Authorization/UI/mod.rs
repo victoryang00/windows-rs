@@ -1,6 +1,6 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_UI_Controls")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn CreateSecurityPage(psi: ISecurityInformation) -> ::win32_ui_sys::Controls::HPROPSHEETPAGE;
     pub fn EditSecurity(hwndowner: ::win32_foundation_sys::HWND, psi: ISecurityInformation) -> ::win32_foundation_sys::BOOL;
     pub fn EditSecurityAdvanced(hwndowner: ::win32_foundation_sys::HWND, psi: ISecurityInformation, usipage: SI_PAGE_TYPE) -> ::windows_core_sys::HRESULT;

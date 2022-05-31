@@ -310,9 +310,9 @@ unsafe impl ::windows_core::Interface for IXamlBinaryWriterStatics {
 #[doc(hidden)]
 pub struct IXamlBinaryWriterStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub Write: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, inputstreams: ::windows_core::RawPtr, outputstreams: ::windows_core::RawPtr, xamlmetadataprovider: ::windows_core::RawPtr, result__: *mut XamlBinaryWriterErrorInformation) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage_Streams")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-storage")))]
     Write: usize,
 }
 #[repr(transparent)]
@@ -424,9 +424,9 @@ pub struct IXamlBindingHelperStatics_Vtbl {
     pub SetDataTemplateComponent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SuspendRendering: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, target: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ResumeRendering: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, target: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub ConvertValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: ::core::mem::ManuallyDrop<super::Interop::TypeName>, value: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Interop"))]
+    #[cfg(not(feature = "winrt-ui"))]
     ConvertValue: usize,
     pub SetPropertyFromString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dependencyobject: *mut ::core::ffi::c_void, propertytoset: ::windows_core::RawPtr, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetPropertyFromBoolean: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dependencyobject: *mut ::core::ffi::c_void, propertytoset: ::windows_core::RawPtr, value: bool) -> ::windows_core::HRESULT,
@@ -611,7 +611,7 @@ pub struct IXamlMember_Vtbl {
 #[repr(transparent)]
 pub struct IXamlMetadataProvider(::windows_core::IUnknown);
 impl IXamlMetadataProvider {
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub fn GetXamlType<'a, Param0: ::windows_core::IntoParam<'a, super::Interop::TypeName>>(&self, r#type: Param0) -> ::windows_core::Result<IXamlType> {
         let this = self;
         unsafe {
@@ -705,9 +705,9 @@ unsafe impl ::windows_core::Interface for IXamlMetadataProvider {
 #[doc(hidden)]
 pub struct IXamlMetadataProvider_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub GetXamlType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: ::core::mem::ManuallyDrop<super::Interop::TypeName>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Interop"))]
+    #[cfg(not(feature = "winrt-ui"))]
     GetXamlType: usize,
     pub GetXamlTypeByFullName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fullname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetXmlnsDefinitions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result_size__: *mut u32, result__: *mut *mut ::core::mem::ManuallyDrop<XmlnsDefinition>) -> ::windows_core::HRESULT,
@@ -818,7 +818,7 @@ impl IXamlType {
             (::windows_core::Interface::vtable(this).KeyType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IXamlType>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub fn UnderlyingType(&self) -> ::windows_core::Result<super::Interop::TypeName> {
         let this = self;
         unsafe {
@@ -942,9 +942,9 @@ pub struct IXamlType_Vtbl {
     pub IsBindable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub ItemType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub KeyType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub UnderlyingType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<super::Interop::TypeName>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "UI_Xaml_Interop"))]
+    #[cfg(not(feature = "winrt-ui"))]
     UnderlyingType: usize,
     pub ActivateInstance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub CreateFromString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -1040,7 +1040,7 @@ impl IXamlType2 {
             (::windows_core::Interface::vtable(this).KeyType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IXamlType>(result__)
         }
     }
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub fn UnderlyingType(&self) -> ::windows_core::Result<super::Interop::TypeName> {
         let this = &::windows_core::Interface::cast::<IXamlType>(self)?;
         unsafe {
@@ -1273,7 +1273,7 @@ unsafe impl ::core::marker::Sync for MarkupExtension {}
 #[repr(transparent)]
 pub struct XamlBinaryWriter(::windows_core::IUnknown);
 impl XamlBinaryWriter {
-    #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-storage"))]
     pub fn Write<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<::winrt_storage::Streams::IRandomAccessStream>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<::winrt_storage::Streams::IRandomAccessStream>>, Param2: ::windows_core::IntoParam<'a, IXamlMetadataProvider>>(inputstreams: Param0, outputstreams: Param1, xamlmetadataprovider: Param2) -> ::windows_core::Result<XamlBinaryWriterErrorInformation> {
         Self::IXamlBinaryWriterStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<XamlBinaryWriterErrorInformation>::zeroed();
@@ -1419,7 +1419,7 @@ impl XamlBindingHelper {
     pub fn ResumeRendering<'a, Param0: ::windows_core::IntoParam<'a, super::UIElement>>(target: Param0) -> ::windows_core::Result<()> {
         Self::IXamlBindingHelperStatics(|this| unsafe { (::windows_core::Interface::vtable(this).ResumeRendering)(::windows_core::Interface::as_raw(this), target.into_param().abi()).ok() })
     }
-    #[cfg(feature = "UI_Xaml_Interop")]
+    #[cfg(feature = "winrt-ui")]
     pub fn ConvertValue<'a, Param0: ::windows_core::IntoParam<'a, super::Interop::TypeName>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>>(r#type: Param0, value: Param1) -> ::windows_core::Result<::windows_core::IInspectable> {
         Self::IXamlBindingHelperStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();

@@ -1,16 +1,16 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn CreateXmlReader(riid: *const ::windows_core_sys::GUID, ppvobject: *mut *mut ::core::ffi::c_void, pmalloc: ::win32_system_sys::Com::IMalloc) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn CreateXmlReaderInputWithEncodingCodePage(pinputstream: ::windows_core_sys::IUnknown, pmalloc: ::win32_system_sys::Com::IMalloc, nencodingcodepage: u32, fencodinghint: ::win32_foundation_sys::BOOL, pwszbaseuri: ::windows_core_sys::PCWSTR, ppinput: *mut ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn CreateXmlReaderInputWithEncodingName(pinputstream: ::windows_core_sys::IUnknown, pmalloc: ::win32_system_sys::Com::IMalloc, pwszencodingname: ::windows_core_sys::PCWSTR, fencodinghint: ::win32_foundation_sys::BOOL, pwszbaseuri: ::windows_core_sys::PCWSTR, ppinput: *mut ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn CreateXmlWriter(riid: *const ::windows_core_sys::GUID, ppvobject: *mut *mut ::core::ffi::c_void, pmalloc: ::win32_system_sys::Com::IMalloc) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn CreateXmlWriterOutputWithEncodingCodePage(poutputstream: ::windows_core_sys::IUnknown, pmalloc: ::win32_system_sys::Com::IMalloc, nencodingcodepage: u32, ppoutput: *mut ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn CreateXmlWriterOutputWithEncodingName(poutputstream: ::windows_core_sys::IUnknown, pmalloc: ::win32_system_sys::Com::IMalloc, pwszencodingname: ::windows_core_sys::PCWSTR, ppoutput: *mut ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
 }
 pub type DtdProcessing = i32;

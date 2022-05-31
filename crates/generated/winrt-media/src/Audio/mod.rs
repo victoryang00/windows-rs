@@ -1,7 +1,7 @@
 #[repr(transparent)]
 pub struct AudioDeviceInputNode(::windows_core::IUnknown);
 impl AudioDeviceInputNode {
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Device(&self) -> ::windows_core::Result<::winrt_devices::Enumeration::DeviceInformation> {
         let this = self;
         unsafe {
@@ -9,7 +9,7 @@ impl AudioDeviceInputNode {
             (::windows_core::Interface::vtable(this).Device)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Enumeration::DeviceInformation>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn OutgoingConnections(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<AudioGraphConnection>> {
         let this = &::windows_core::Interface::cast::<IAudioInputNode>(self)?;
         unsafe {
@@ -36,7 +36,7 @@ impl AudioDeviceInputNode {
             (::windows_core::Interface::vtable(this).Emitter)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AudioNodeEmitter>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub fn EffectDefinitions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::Effects::IAudioEffectDefinition>> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe {
@@ -55,7 +55,7 @@ impl AudioDeviceInputNode {
             (::windows_core::Interface::vtable(this).OutgoingGain)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn EncodingProperties(&self) -> ::windows_core::Result<super::MediaProperties::AudioEncodingProperties> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe {
@@ -86,12 +86,12 @@ impl AudioDeviceInputNode {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Reset)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn DisableEffectsByDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition>>(&self, definition: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).DisableEffectsByDefinition)(::windows_core::Interface::as_raw(this), definition.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn EnableEffectsByDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition>>(&self, definition: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).EnableEffectsByDefinition)(::windows_core::Interface::as_raw(this), definition.into_param().abi()).ok() }
@@ -300,7 +300,7 @@ unsafe impl ::windows_core::RuntimeType for AudioDeviceNodeCreationStatus {
 #[repr(transparent)]
 pub struct AudioDeviceOutputNode(::windows_core::IUnknown);
 impl AudioDeviceOutputNode {
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub fn Device(&self) -> ::windows_core::Result<::winrt_devices::Enumeration::DeviceInformation> {
         let this = self;
         unsafe {
@@ -308,7 +308,7 @@ impl AudioDeviceOutputNode {
             (::windows_core::Interface::vtable(this).Device)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Enumeration::DeviceInformation>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub fn EffectDefinitions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::Effects::IAudioEffectDefinition>> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe {
@@ -327,7 +327,7 @@ impl AudioDeviceOutputNode {
             (::windows_core::Interface::vtable(this).OutgoingGain)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn EncodingProperties(&self) -> ::windows_core::Result<super::MediaProperties::AudioEncodingProperties> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe {
@@ -358,12 +358,12 @@ impl AudioDeviceOutputNode {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Reset)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn DisableEffectsByDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition>>(&self, definition: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).DisableEffectsByDefinition)(::windows_core::Interface::as_raw(this), definition.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn EnableEffectsByDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition>>(&self, definition: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).EnableEffectsByDefinition)(::windows_core::Interface::as_raw(this), definition.into_param().abi()).ok() }
@@ -587,7 +587,7 @@ impl AudioFileInputNode {
             (::windows_core::Interface::vtable(this).Duration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn SourceFile(&self) -> ::windows_core::Result<::winrt_storage::StorageFile> {
         let this = self;
         unsafe {
@@ -606,7 +606,7 @@ impl AudioFileInputNode {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveFileCompleted)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn OutgoingConnections(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<AudioGraphConnection>> {
         let this = &::windows_core::Interface::cast::<IAudioInputNode>(self)?;
         unsafe {
@@ -633,7 +633,7 @@ impl AudioFileInputNode {
             (::windows_core::Interface::vtable(this).Emitter)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AudioNodeEmitter>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub fn EffectDefinitions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::Effects::IAudioEffectDefinition>> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe {
@@ -652,7 +652,7 @@ impl AudioFileInputNode {
             (::windows_core::Interface::vtable(this).OutgoingGain)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn EncodingProperties(&self) -> ::windows_core::Result<super::MediaProperties::AudioEncodingProperties> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe {
@@ -683,12 +683,12 @@ impl AudioFileInputNode {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Reset)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn DisableEffectsByDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition>>(&self, definition: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).DisableEffectsByDefinition)(::windows_core::Interface::as_raw(this), definition.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn EnableEffectsByDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition>>(&self, definition: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).EnableEffectsByDefinition)(::windows_core::Interface::as_raw(this), definition.into_param().abi()).ok() }
@@ -897,7 +897,7 @@ unsafe impl ::windows_core::RuntimeType for AudioFileNodeCreationStatus {
 #[repr(transparent)]
 pub struct AudioFileOutputNode(::windows_core::IUnknown);
 impl AudioFileOutputNode {
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn File(&self) -> ::windows_core::Result<::winrt_storage::IStorageFile> {
         let this = self;
         unsafe {
@@ -905,7 +905,7 @@ impl AudioFileOutputNode {
             (::windows_core::Interface::vtable(this).File)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::IStorageFile>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn FileEncodingProfile(&self) -> ::windows_core::Result<super::MediaProperties::MediaEncodingProfile> {
         let this = self;
         unsafe {
@@ -913,7 +913,7 @@ impl AudioFileOutputNode {
             (::windows_core::Interface::vtable(this).FileEncodingProfile)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::MediaProperties::MediaEncodingProfile>(result__)
         }
     }
-    #[cfg(feature = "Media_Transcoding")]
+    #[cfg(feature = "winrt-media")]
     pub fn FinalizeAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::Transcoding::TranscodeFailureReason>> {
         let this = self;
         unsafe {
@@ -921,7 +921,7 @@ impl AudioFileOutputNode {
             (::windows_core::Interface::vtable(this).FinalizeAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::Transcoding::TranscodeFailureReason>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub fn EffectDefinitions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::Effects::IAudioEffectDefinition>> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe {
@@ -940,7 +940,7 @@ impl AudioFileOutputNode {
             (::windows_core::Interface::vtable(this).OutgoingGain)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn EncodingProperties(&self) -> ::windows_core::Result<super::MediaProperties::AudioEncodingProperties> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe {
@@ -971,12 +971,12 @@ impl AudioFileOutputNode {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Reset)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn DisableEffectsByDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition>>(&self, definition: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).DisableEffectsByDefinition)(::windows_core::Interface::as_raw(this), definition.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn EnableEffectsByDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition>>(&self, definition: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).EnableEffectsByDefinition)(::windows_core::Interface::as_raw(this), definition.into_param().abi()).ok() }
@@ -1236,7 +1236,7 @@ impl AudioFrameInputNode {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveQuantumStarted)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn OutgoingConnections(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<AudioGraphConnection>> {
         let this = &::windows_core::Interface::cast::<IAudioInputNode>(self)?;
         unsafe {
@@ -1263,7 +1263,7 @@ impl AudioFrameInputNode {
             (::windows_core::Interface::vtable(this).Emitter)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AudioNodeEmitter>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub fn EffectDefinitions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::Effects::IAudioEffectDefinition>> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe {
@@ -1282,7 +1282,7 @@ impl AudioFrameInputNode {
             (::windows_core::Interface::vtable(this).OutgoingGain)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn EncodingProperties(&self) -> ::windows_core::Result<super::MediaProperties::AudioEncodingProperties> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe {
@@ -1313,12 +1313,12 @@ impl AudioFrameInputNode {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Reset)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn DisableEffectsByDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition>>(&self, definition: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).DisableEffectsByDefinition)(::windows_core::Interface::as_raw(this), definition.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn EnableEffectsByDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition>>(&self, definition: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).EnableEffectsByDefinition)(::windows_core::Interface::as_raw(this), definition.into_param().abi()).ok() }
@@ -1498,7 +1498,7 @@ impl AudioFrameOutputNode {
             (::windows_core::Interface::vtable(this).GetFrame)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::AudioFrame>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub fn EffectDefinitions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::Effects::IAudioEffectDefinition>> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe {
@@ -1517,7 +1517,7 @@ impl AudioFrameOutputNode {
             (::windows_core::Interface::vtable(this).OutgoingGain)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn EncodingProperties(&self) -> ::windows_core::Result<super::MediaProperties::AudioEncodingProperties> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe {
@@ -1548,12 +1548,12 @@ impl AudioFrameOutputNode {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Reset)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn DisableEffectsByDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition>>(&self, definition: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).DisableEffectsByDefinition)(::windows_core::Interface::as_raw(this), definition.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn EnableEffectsByDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition>>(&self, definition: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).EnableEffectsByDefinition)(::windows_core::Interface::as_raw(this), definition.into_param().abi()).ok() }
@@ -1689,7 +1689,7 @@ impl AudioGraph {
             (::windows_core::Interface::vtable(this).CreateFrameInputNode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AudioFrameInputNode>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn CreateFrameInputNodeWithFormat<'a, Param0: ::windows_core::IntoParam<'a, super::MediaProperties::AudioEncodingProperties>>(&self, encodingproperties: Param0) -> ::windows_core::Result<AudioFrameInputNode> {
         let this = self;
         unsafe {
@@ -1697,7 +1697,7 @@ impl AudioGraph {
             (::windows_core::Interface::vtable(this).CreateFrameInputNodeWithFormat)(::windows_core::Interface::as_raw(this), encodingproperties.into_param().abi(), result__.as_mut_ptr()).from_abi::<AudioFrameInputNode>(result__)
         }
     }
-    #[cfg(feature = "Media_Capture")]
+    #[cfg(feature = "winrt-media")]
     pub fn CreateDeviceInputNodeAsync(&self, category: super::Capture::MediaCategory) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<CreateAudioDeviceInputNodeResult>> {
         let this = self;
         unsafe {
@@ -1705,7 +1705,7 @@ impl AudioGraph {
             (::windows_core::Interface::vtable(this).CreateDeviceInputNodeAsync)(::windows_core::Interface::as_raw(this), category, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<CreateAudioDeviceInputNodeResult>>(result__)
         }
     }
-    #[cfg(all(feature = "Media_Capture", feature = "Media_MediaProperties"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-media"))]
     pub fn CreateDeviceInputNodeWithFormatAsync<'a, Param1: ::windows_core::IntoParam<'a, super::MediaProperties::AudioEncodingProperties>>(&self, category: super::Capture::MediaCategory, encodingproperties: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<CreateAudioDeviceInputNodeResult>> {
         let this = self;
         unsafe {
@@ -1713,7 +1713,7 @@ impl AudioGraph {
             (::windows_core::Interface::vtable(this).CreateDeviceInputNodeWithFormatAsync)(::windows_core::Interface::as_raw(this), category, encodingproperties.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<CreateAudioDeviceInputNodeResult>>(result__)
         }
     }
-    #[cfg(all(feature = "Devices_Enumeration", feature = "Media_Capture", feature = "Media_MediaProperties"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-media", feature = "winrt-media"))]
     pub fn CreateDeviceInputNodeWithFormatOnDeviceAsync<'a, Param1: ::windows_core::IntoParam<'a, super::MediaProperties::AudioEncodingProperties>, Param2: ::windows_core::IntoParam<'a, ::winrt_devices::Enumeration::DeviceInformation>>(&self, category: super::Capture::MediaCategory, encodingproperties: Param1, device: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<CreateAudioDeviceInputNodeResult>> {
         let this = self;
         unsafe {
@@ -1728,7 +1728,7 @@ impl AudioGraph {
             (::windows_core::Interface::vtable(this).CreateFrameOutputNode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AudioFrameOutputNode>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn CreateFrameOutputNodeWithFormat<'a, Param0: ::windows_core::IntoParam<'a, super::MediaProperties::AudioEncodingProperties>>(&self, encodingproperties: Param0) -> ::windows_core::Result<AudioFrameOutputNode> {
         let this = self;
         unsafe {
@@ -1743,7 +1743,7 @@ impl AudioGraph {
             (::windows_core::Interface::vtable(this).CreateDeviceOutputNodeAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<CreateAudioDeviceOutputNodeResult>>(result__)
         }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFileInputNodeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(&self, file: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<CreateAudioFileInputNodeResult>> {
         let this = self;
         unsafe {
@@ -1751,7 +1751,7 @@ impl AudioGraph {
             (::windows_core::Interface::vtable(this).CreateFileInputNodeAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<CreateAudioFileInputNodeResult>>(result__)
         }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFileOutputNodeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(&self, file: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<CreateAudioFileOutputNodeResult>> {
         let this = self;
         unsafe {
@@ -1759,7 +1759,7 @@ impl AudioGraph {
             (::windows_core::Interface::vtable(this).CreateFileOutputNodeAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<CreateAudioFileOutputNodeResult>>(result__)
         }
     }
-    #[cfg(all(feature = "Media_MediaProperties", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-storage"))]
     pub fn CreateFileOutputNodeWithFileProfileAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>, Param1: ::windows_core::IntoParam<'a, super::MediaProperties::MediaEncodingProfile>>(&self, file: Param0, fileencodingprofile: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<CreateAudioFileOutputNodeResult>> {
         let this = self;
         unsafe {
@@ -1774,7 +1774,7 @@ impl AudioGraph {
             (::windows_core::Interface::vtable(this).CreateSubmixNode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AudioSubmixNode>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn CreateSubmixNodeWithFormat<'a, Param0: ::windows_core::IntoParam<'a, super::MediaProperties::AudioEncodingProperties>>(&self, encodingproperties: Param0) -> ::windows_core::Result<AudioSubmixNode> {
         let this = self;
         unsafe {
@@ -1834,7 +1834,7 @@ impl AudioGraph {
             (::windows_core::Interface::vtable(this).CompletedQuantumCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u64>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn EncodingProperties(&self) -> ::windows_core::Result<super::MediaProperties::AudioEncodingProperties> {
         let this = self;
         unsafe {
@@ -1849,7 +1849,7 @@ impl AudioGraph {
             (::windows_core::Interface::vtable(this).LatencyInSamples)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub fn PrimaryRenderDevice(&self) -> ::windows_core::Result<::winrt_devices::Enumeration::DeviceInformation> {
         let this = self;
         unsafe {
@@ -1871,7 +1871,7 @@ impl AudioGraph {
             (::windows_core::Interface::vtable(this).SamplesPerQuantum)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn CreateFrameInputNodeWithFormatAndEmitter<'a, Param0: ::windows_core::IntoParam<'a, super::MediaProperties::AudioEncodingProperties>, Param1: ::windows_core::IntoParam<'a, AudioNodeEmitter>>(&self, encodingproperties: Param0, emitter: Param1) -> ::windows_core::Result<AudioFrameInputNode> {
         let this = &::windows_core::Interface::cast::<IAudioGraph2>(self)?;
         unsafe {
@@ -1879,7 +1879,7 @@ impl AudioGraph {
             (::windows_core::Interface::vtable(this).CreateFrameInputNodeWithFormatAndEmitter)(::windows_core::Interface::as_raw(this), encodingproperties.into_param().abi(), emitter.into_param().abi(), result__.as_mut_ptr()).from_abi::<AudioFrameInputNode>(result__)
         }
     }
-    #[cfg(all(feature = "Devices_Enumeration", feature = "Media_Capture", feature = "Media_MediaProperties"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-media", feature = "winrt-media"))]
     pub fn CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync<'a, Param1: ::windows_core::IntoParam<'a, super::MediaProperties::AudioEncodingProperties>, Param2: ::windows_core::IntoParam<'a, ::winrt_devices::Enumeration::DeviceInformation>, Param3: ::windows_core::IntoParam<'a, AudioNodeEmitter>>(&self, category: super::Capture::MediaCategory, encodingproperties: Param1, device: Param2, emitter: Param3) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<CreateAudioDeviceInputNodeResult>> {
         let this = &::windows_core::Interface::cast::<IAudioGraph2>(self)?;
         unsafe {
@@ -1887,7 +1887,7 @@ impl AudioGraph {
             (::windows_core::Interface::vtable(this).CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync)(::windows_core::Interface::as_raw(this), category, encodingproperties.into_param().abi(), device.into_param().abi(), emitter.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<CreateAudioDeviceInputNodeResult>>(result__)
         }
     }
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub fn CreateFileInputNodeWithEmitterAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>, Param1: ::windows_core::IntoParam<'a, AudioNodeEmitter>>(&self, file: Param0, emitter: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<CreateAudioFileInputNodeResult>> {
         let this = &::windows_core::Interface::cast::<IAudioGraph2>(self)?;
         unsafe {
@@ -1895,7 +1895,7 @@ impl AudioGraph {
             (::windows_core::Interface::vtable(this).CreateFileInputNodeWithEmitterAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), emitter.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<CreateAudioFileInputNodeResult>>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn CreateSubmixNodeWithFormatAndEmitter<'a, Param0: ::windows_core::IntoParam<'a, super::MediaProperties::AudioEncodingProperties>, Param1: ::windows_core::IntoParam<'a, AudioNodeEmitter>>(&self, encodingproperties: Param0, emitter: Param1) -> ::windows_core::Result<AudioSubmixNode> {
         let this = &::windows_core::Interface::cast::<IAudioGraph2>(self)?;
         unsafe {
@@ -1910,7 +1910,7 @@ impl AudioGraph {
             (::windows_core::Interface::vtable(this).CreateBatchUpdater)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AudioGraphBatchUpdater>(result__)
         }
     }
-    #[cfg(feature = "Media_Core")]
+    #[cfg(feature = "winrt-media")]
     pub fn CreateMediaSourceAudioInputNodeAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Core::MediaSource>>(&self, mediasource: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<CreateMediaSourceAudioInputNodeResult>> {
         let this = &::windows_core::Interface::cast::<IAudioGraph3>(self)?;
         unsafe {
@@ -1918,7 +1918,7 @@ impl AudioGraph {
             (::windows_core::Interface::vtable(this).CreateMediaSourceAudioInputNodeAsync)(::windows_core::Interface::as_raw(this), mediasource.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<CreateMediaSourceAudioInputNodeResult>>(result__)
         }
     }
-    #[cfg(feature = "Media_Core")]
+    #[cfg(feature = "winrt-media")]
     pub fn CreateMediaSourceAudioInputNodeWithEmitterAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Core::MediaSource>, Param1: ::windows_core::IntoParam<'a, AudioNodeEmitter>>(&self, mediasource: Param0, emitter: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<CreateMediaSourceAudioInputNodeResult>> {
         let this = &::windows_core::Interface::cast::<IAudioGraph3>(self)?;
         unsafe {
@@ -2269,7 +2269,7 @@ unsafe impl ::windows_core::RuntimeType for AudioGraphCreationStatus {
 #[repr(transparent)]
 pub struct AudioGraphSettings(::windows_core::IUnknown);
 impl AudioGraphSettings {
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn EncodingProperties(&self) -> ::windows_core::Result<super::MediaProperties::AudioEncodingProperties> {
         let this = self;
         unsafe {
@@ -2277,12 +2277,12 @@ impl AudioGraphSettings {
             (::windows_core::Interface::vtable(this).EncodingProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::MediaProperties::AudioEncodingProperties>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn SetEncodingProperties<'a, Param0: ::windows_core::IntoParam<'a, super::MediaProperties::AudioEncodingProperties>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetEncodingProperties)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub fn PrimaryRenderDevice(&self) -> ::windows_core::Result<::winrt_devices::Enumeration::DeviceInformation> {
         let this = self;
         unsafe {
@@ -2290,7 +2290,7 @@ impl AudioGraphSettings {
             (::windows_core::Interface::vtable(this).PrimaryRenderDevice)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Enumeration::DeviceInformation>(result__)
         }
     }
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub fn SetPrimaryRenderDevice<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Enumeration::DeviceInformation>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPrimaryRenderDevice)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -2317,7 +2317,7 @@ impl AudioGraphSettings {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDesiredSamplesPerQuantum)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Media_Render")]
+    #[cfg(feature = "winrt-media")]
     pub fn AudioRenderCategory(&self) -> ::windows_core::Result<super::Render::AudioRenderCategory> {
         let this = self;
         unsafe {
@@ -2325,7 +2325,7 @@ impl AudioGraphSettings {
             (::windows_core::Interface::vtable(this).AudioRenderCategory)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Render::AudioRenderCategory>(result__)
         }
     }
-    #[cfg(feature = "Media_Render")]
+    #[cfg(feature = "winrt-media")]
     pub fn SetAudioRenderCategory(&self, value: super::Render::AudioRenderCategory) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetAudioRenderCategory)(::windows_core::Interface::as_raw(this), value).ok() }
@@ -2352,7 +2352,7 @@ impl AudioGraphSettings {
             (::windows_core::Interface::vtable(this).MaxPlaybackSpeedFactor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "Media_Render")]
+    #[cfg(feature = "winrt-media")]
     pub fn Create(audiorendercategory: super::Render::AudioRenderCategory) -> ::windows_core::Result<AudioGraphSettings> {
         Self::IAudioGraphSettingsFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -2564,7 +2564,7 @@ impl AudioNodeEmitter {
         static mut SHARED: ::windows_core::FactoryCache<AudioNodeEmitter, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -2572,12 +2572,12 @@ impl AudioNodeEmitter {
             (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetPosition<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPosition)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Direction(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -2585,7 +2585,7 @@ impl AudioNodeEmitter {
             (::windows_core::Interface::vtable(this).Direction)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetDirection<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDirection)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -2637,7 +2637,7 @@ impl AudioNodeEmitter {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDopplerScale)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn DopplerVelocity(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -2645,7 +2645,7 @@ impl AudioNodeEmitter {
             (::windows_core::Interface::vtable(this).DopplerVelocity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetDopplerVelocity<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDopplerVelocity)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -3301,7 +3301,7 @@ impl AudioNodeListener {
         static mut SHARED: ::windows_core::FactoryCache<AudioNodeListener, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -3309,12 +3309,12 @@ impl AudioNodeListener {
             (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetPosition<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPosition)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Orientation(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Quaternion> {
         let this = self;
         unsafe {
@@ -3322,7 +3322,7 @@ impl AudioNodeListener {
             (::windows_core::Interface::vtable(this).Orientation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Quaternion>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetOrientation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetOrientation)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -3338,7 +3338,7 @@ impl AudioNodeListener {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSpeedOfSound)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn DopplerVelocity(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
@@ -3346,7 +3346,7 @@ impl AudioNodeListener {
             (::windows_core::Interface::vtable(this).DopplerVelocity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn SetDopplerVelocity<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDopplerVelocity)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
@@ -3777,21 +3777,21 @@ impl AudioStateMonitor {
             (::windows_core::Interface::vtable(this).CreateForRenderMonitoring)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AudioStateMonitor>(result__)
         })
     }
-    #[cfg(feature = "Media_Render")]
+    #[cfg(feature = "winrt-media")]
     pub fn CreateForRenderMonitoringWithCategory(category: super::Render::AudioRenderCategory) -> ::windows_core::Result<AudioStateMonitor> {
         Self::IAudioStateMonitorStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateForRenderMonitoringWithCategory)(::windows_core::Interface::as_raw(this), category, result__.as_mut_ptr()).from_abi::<AudioStateMonitor>(result__)
         })
     }
-    #[cfg(all(feature = "Media_Devices", feature = "Media_Render"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-media"))]
     pub fn CreateForRenderMonitoringWithCategoryAndDeviceRole(category: super::Render::AudioRenderCategory, role: super::Devices::AudioDeviceRole) -> ::windows_core::Result<AudioStateMonitor> {
         Self::IAudioStateMonitorStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateForRenderMonitoringWithCategoryAndDeviceRole)(::windows_core::Interface::as_raw(this), category, role, result__.as_mut_ptr()).from_abi::<AudioStateMonitor>(result__)
         })
     }
-    #[cfg(feature = "Media_Render")]
+    #[cfg(feature = "winrt-media")]
     pub fn CreateForRenderMonitoringWithCategoryAndDeviceId<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(category: super::Render::AudioRenderCategory, deviceid: Param1) -> ::windows_core::Result<AudioStateMonitor> {
         Self::IAudioStateMonitorStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -3804,21 +3804,21 @@ impl AudioStateMonitor {
             (::windows_core::Interface::vtable(this).CreateForCaptureMonitoring)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AudioStateMonitor>(result__)
         })
     }
-    #[cfg(feature = "Media_Capture")]
+    #[cfg(feature = "winrt-media")]
     pub fn CreateForCaptureMonitoringWithCategory(category: super::Capture::MediaCategory) -> ::windows_core::Result<AudioStateMonitor> {
         Self::IAudioStateMonitorStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateForCaptureMonitoringWithCategory)(::windows_core::Interface::as_raw(this), category, result__.as_mut_ptr()).from_abi::<AudioStateMonitor>(result__)
         })
     }
-    #[cfg(all(feature = "Media_Capture", feature = "Media_Devices"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-media"))]
     pub fn CreateForCaptureMonitoringWithCategoryAndDeviceRole(category: super::Capture::MediaCategory, role: super::Devices::AudioDeviceRole) -> ::windows_core::Result<AudioStateMonitor> {
         Self::IAudioStateMonitorStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateForCaptureMonitoringWithCategoryAndDeviceRole)(::windows_core::Interface::as_raw(this), category, role, result__.as_mut_ptr()).from_abi::<AudioStateMonitor>(result__)
         })
     }
-    #[cfg(feature = "Media_Capture")]
+    #[cfg(feature = "winrt-media")]
     pub fn CreateForCaptureMonitoringWithCategoryAndDeviceId<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(category: super::Capture::MediaCategory, deviceid: Param1) -> ::windows_core::Result<AudioStateMonitor> {
         Self::IAudioStateMonitorStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -3905,7 +3905,7 @@ unsafe impl ::core::marker::Sync for AudioStateMonitor {}
 #[repr(transparent)]
 pub struct AudioSubmixNode(::windows_core::IUnknown);
 impl AudioSubmixNode {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn OutgoingConnections(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<AudioGraphConnection>> {
         let this = self;
         unsafe {
@@ -3932,7 +3932,7 @@ impl AudioSubmixNode {
             (::windows_core::Interface::vtable(this).Emitter)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AudioNodeEmitter>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub fn EffectDefinitions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::Effects::IAudioEffectDefinition>> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe {
@@ -3951,7 +3951,7 @@ impl AudioSubmixNode {
             (::windows_core::Interface::vtable(this).OutgoingGain)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn EncodingProperties(&self) -> ::windows_core::Result<super::MediaProperties::AudioEncodingProperties> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe {
@@ -3982,12 +3982,12 @@ impl AudioSubmixNode {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Reset)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn DisableEffectsByDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition>>(&self, definition: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).DisableEffectsByDefinition)(::windows_core::Interface::as_raw(this), definition.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn EnableEffectsByDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition>>(&self, definition: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).EnableEffectsByDefinition)(::windows_core::Interface::as_raw(this), definition.into_param().abi()).ok() }
@@ -4742,7 +4742,7 @@ unsafe impl ::core::marker::Sync for CreateMediaSourceAudioInputNodeResult {}
 #[repr(transparent)]
 pub struct EchoEffectDefinition(::windows_core::IUnknown);
 impl EchoEffectDefinition {
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn ActivatableClassId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = &::windows_core::Interface::cast::<super::Effects::IAudioEffectDefinition>(self)?;
         unsafe {
@@ -4750,7 +4750,7 @@ impl EchoEffectDefinition {
             (::windows_core::Interface::vtable(this).ActivatableClassId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IPropertySet> {
         let this = &::windows_core::Interface::cast::<super::Effects::IAudioEffectDefinition>(self)?;
         unsafe {
@@ -4872,27 +4872,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ech
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::TryFrom<EchoEffectDefinition> for super::Effects::IAudioEffectDefinition {
     type Error = ::windows_core::Error;
     fn try_from(value: EchoEffectDefinition) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::TryFrom<&EchoEffectDefinition> for super::Effects::IAudioEffectDefinition {
     type Error = ::windows_core::Error;
     fn try_from(value: &EchoEffectDefinition) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition> for EchoEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, super::Effects::IAudioEffectDefinition> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition> for &EchoEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, super::Effects::IAudioEffectDefinition> {
         ::core::convert::TryInto::<super::Effects::IAudioEffectDefinition>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -5012,7 +5012,7 @@ unsafe impl ::core::marker::Sync for EqualizerBand {}
 #[repr(transparent)]
 pub struct EqualizerEffectDefinition(::windows_core::IUnknown);
 impl EqualizerEffectDefinition {
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn ActivatableClassId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = &::windows_core::Interface::cast::<super::Effects::IAudioEffectDefinition>(self)?;
         unsafe {
@@ -5020,7 +5020,7 @@ impl EqualizerEffectDefinition {
             (::windows_core::Interface::vtable(this).ActivatableClassId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IPropertySet> {
         let this = &::windows_core::Interface::cast::<super::Effects::IAudioEffectDefinition>(self)?;
         unsafe {
@@ -5028,7 +5028,7 @@ impl EqualizerEffectDefinition {
             (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IPropertySet>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn Bands(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<EqualizerBand>> {
         let this = self;
         unsafe {
@@ -5117,27 +5117,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Equ
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::TryFrom<EqualizerEffectDefinition> for super::Effects::IAudioEffectDefinition {
     type Error = ::windows_core::Error;
     fn try_from(value: EqualizerEffectDefinition) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::TryFrom<&EqualizerEffectDefinition> for super::Effects::IAudioEffectDefinition {
     type Error = ::windows_core::Error;
     fn try_from(value: &EqualizerEffectDefinition) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition> for EqualizerEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, super::Effects::IAudioEffectDefinition> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition> for &EqualizerEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, super::Effects::IAudioEffectDefinition> {
         ::core::convert::TryInto::<super::Effects::IAudioEffectDefinition>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -5239,9 +5239,9 @@ unsafe impl ::windows_core::Interface for IAudioDeviceInputNode {
 #[doc(hidden)]
 pub struct IAudioDeviceInputNode_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub Device: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Enumeration"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Device: usize,
 }
 #[doc(hidden)]
@@ -5255,9 +5255,9 @@ unsafe impl ::windows_core::Interface for IAudioDeviceOutputNode {
 #[doc(hidden)]
 pub struct IAudioDeviceOutputNode_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub Device: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Enumeration"))]
+    #[cfg(not(feature = "winrt-devices"))]
     Device: usize,
 }
 #[doc(hidden)]
@@ -5282,9 +5282,9 @@ pub struct IAudioFileInputNode_Vtbl {
     pub LoopCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetLoopCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Duration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub SourceFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     SourceFile: usize,
     pub FileCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveFileCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -5300,17 +5300,17 @@ unsafe impl ::windows_core::Interface for IAudioFileOutputNode {
 #[doc(hidden)]
 pub struct IAudioFileOutputNode_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub File: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     File: usize,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub FileEncodingProfile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     FileEncodingProfile: usize,
-    #[cfg(feature = "Media_Transcoding")]
+    #[cfg(feature = "winrt-media")]
     pub FinalizeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Transcoding"))]
+    #[cfg(not(feature = "winrt-media"))]
     FinalizeAsync: usize,
 }
 #[doc(hidden)]
@@ -5372,44 +5372,44 @@ unsafe impl ::windows_core::Interface for IAudioGraph {
 pub struct IAudioGraph_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub CreateFrameInputNode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub CreateFrameInputNodeWithFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, encodingproperties: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     CreateFrameInputNodeWithFormat: usize,
-    #[cfg(feature = "Media_Capture")]
+    #[cfg(feature = "winrt-media")]
     pub CreateDeviceInputNodeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, category: super::Capture::MediaCategory, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Capture"))]
+    #[cfg(not(feature = "winrt-media"))]
     CreateDeviceInputNodeAsync: usize,
-    #[cfg(all(feature = "Media_Capture", feature = "Media_MediaProperties"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-media"))]
     pub CreateDeviceInputNodeWithFormatAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, category: super::Capture::MediaCategory, encodingproperties: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Media_Capture", feature = "Media_MediaProperties")))]
+    #[cfg(not(all(feature = "winrt-media", feature = "winrt-media")))]
     CreateDeviceInputNodeWithFormatAsync: usize,
-    #[cfg(all(feature = "Devices_Enumeration", feature = "Media_Capture", feature = "Media_MediaProperties"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-media", feature = "winrt-media"))]
     pub CreateDeviceInputNodeWithFormatOnDeviceAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, category: super::Capture::MediaCategory, encodingproperties: ::windows_core::RawPtr, device: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Enumeration", feature = "Media_Capture", feature = "Media_MediaProperties")))]
+    #[cfg(not(all(feature = "winrt-devices", feature = "winrt-media", feature = "winrt-media")))]
     CreateDeviceInputNodeWithFormatOnDeviceAsync: usize,
     pub CreateFrameOutputNode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub CreateFrameOutputNodeWithFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, encodingproperties: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     CreateFrameOutputNodeWithFormat: usize,
     pub CreateDeviceOutputNodeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateFileInputNodeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateFileInputNodeAsync: usize,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateFileOutputNodeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateFileOutputNodeAsync: usize,
-    #[cfg(all(feature = "Media_MediaProperties", feature = "Storage"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-storage"))]
     pub CreateFileOutputNodeWithFileProfileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, fileencodingprofile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Media_MediaProperties", feature = "Storage")))]
+    #[cfg(not(all(feature = "winrt-media", feature = "winrt-storage")))]
     CreateFileOutputNodeWithFileProfileAsync: usize,
     pub CreateSubmixNode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub CreateSubmixNodeWithFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, encodingproperties: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     CreateSubmixNodeWithFormat: usize,
     pub Start: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -5421,14 +5421,14 @@ pub struct IAudioGraph_Vtbl {
     pub UnrecoverableErrorOccurred: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveUnrecoverableErrorOccurred: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub CompletedQuantumCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub EncodingProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     EncodingProperties: usize,
     pub LatencyInSamples: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub PrimaryRenderDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Enumeration"))]
+    #[cfg(not(feature = "winrt-devices"))]
     PrimaryRenderDevice: usize,
     pub RenderDeviceAudioProcessing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::AudioProcessing) -> ::windows_core::HRESULT,
     pub SamplesPerQuantum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
@@ -5444,21 +5444,21 @@ unsafe impl ::windows_core::Interface for IAudioGraph2 {
 #[doc(hidden)]
 pub struct IAudioGraph2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub CreateFrameInputNodeWithFormatAndEmitter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, encodingproperties: ::windows_core::RawPtr, emitter: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     CreateFrameInputNodeWithFormatAndEmitter: usize,
-    #[cfg(all(feature = "Devices_Enumeration", feature = "Media_Capture", feature = "Media_MediaProperties"))]
+    #[cfg(all(feature = "winrt-devices", feature = "winrt-media", feature = "winrt-media"))]
     pub CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, category: super::Capture::MediaCategory, encodingproperties: ::windows_core::RawPtr, device: ::windows_core::RawPtr, emitter: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Enumeration", feature = "Media_Capture", feature = "Media_MediaProperties")))]
+    #[cfg(not(all(feature = "winrt-devices", feature = "winrt-media", feature = "winrt-media")))]
     CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync: usize,
-    #[cfg(feature = "Storage")]
+    #[cfg(feature = "winrt-storage")]
     pub CreateFileInputNodeWithEmitterAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, emitter: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Storage"))]
+    #[cfg(not(feature = "winrt-storage"))]
     CreateFileInputNodeWithEmitterAsync: usize,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub CreateSubmixNodeWithFormatAndEmitter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, encodingproperties: ::windows_core::RawPtr, emitter: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     CreateSubmixNodeWithFormatAndEmitter: usize,
     pub CreateBatchUpdater: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -5473,13 +5473,13 @@ unsafe impl ::windows_core::Interface for IAudioGraph3 {
 #[doc(hidden)]
 pub struct IAudioGraph3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Media_Core")]
+    #[cfg(feature = "winrt-media")]
     pub CreateMediaSourceAudioInputNodeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mediasource: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Core"))]
+    #[cfg(not(feature = "winrt-media"))]
     CreateMediaSourceAudioInputNodeAsync: usize,
-    #[cfg(feature = "Media_Core")]
+    #[cfg(feature = "winrt-media")]
     pub CreateMediaSourceAudioInputNodeWithEmitterAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mediasource: ::windows_core::RawPtr, emitter: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Core"))]
+    #[cfg(not(feature = "winrt-media"))]
     CreateMediaSourceAudioInputNodeWithEmitterAsync: usize,
 }
 #[doc(hidden)]
@@ -5508,33 +5508,33 @@ unsafe impl ::windows_core::Interface for IAudioGraphSettings {
 #[doc(hidden)]
 pub struct IAudioGraphSettings_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub EncodingProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     EncodingProperties: usize,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub SetEncodingProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     SetEncodingProperties: usize,
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub PrimaryRenderDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Enumeration"))]
+    #[cfg(not(feature = "winrt-devices"))]
     PrimaryRenderDevice: usize,
-    #[cfg(feature = "Devices_Enumeration")]
+    #[cfg(feature = "winrt-devices")]
     pub SetPrimaryRenderDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Devices_Enumeration"))]
+    #[cfg(not(feature = "winrt-devices"))]
     SetPrimaryRenderDevice: usize,
     pub QuantumSizeSelectionMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut QuantumSizeSelectionMode) -> ::windows_core::HRESULT,
     pub SetQuantumSizeSelectionMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: QuantumSizeSelectionMode) -> ::windows_core::HRESULT,
     pub DesiredSamplesPerQuantum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
     pub SetDesiredSamplesPerQuantum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_Render")]
+    #[cfg(feature = "winrt-media")]
     pub AudioRenderCategory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Render::AudioRenderCategory) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Render"))]
+    #[cfg(not(feature = "winrt-media"))]
     AudioRenderCategory: usize,
-    #[cfg(feature = "Media_Render")]
+    #[cfg(feature = "winrt-media")]
     pub SetAudioRenderCategory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Render::AudioRenderCategory) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Render"))]
+    #[cfg(not(feature = "winrt-media"))]
     SetAudioRenderCategory: usize,
     pub DesiredRenderDeviceAudioProcessing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::AudioProcessing) -> ::windows_core::HRESULT,
     pub SetDesiredRenderDeviceAudioProcessing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::AudioProcessing) -> ::windows_core::HRESULT,
@@ -5564,9 +5564,9 @@ unsafe impl ::windows_core::Interface for IAudioGraphSettingsFactory {
 #[doc(hidden)]
 pub struct IAudioGraphSettingsFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Media_Render")]
+    #[cfg(feature = "winrt-media")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, audiorendercategory: super::Render::AudioRenderCategory, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Render"))]
+    #[cfg(not(feature = "winrt-media"))]
     Create: usize,
 }
 #[doc(hidden)]
@@ -5598,7 +5598,7 @@ pub struct IAudioGraphUnrecoverableErrorOccurredEventArgs_Vtbl {
 #[repr(transparent)]
 pub struct IAudioInputNode(::windows_core::IUnknown);
 impl IAudioInputNode {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn OutgoingConnections(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<AudioGraphConnection>> {
         let this = self;
         unsafe {
@@ -5618,7 +5618,7 @@ impl IAudioInputNode {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveOutgoingConnection)(::windows_core::Interface::as_raw(this), destination.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub fn EffectDefinitions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::Effects::IAudioEffectDefinition>> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe {
@@ -5637,7 +5637,7 @@ impl IAudioInputNode {
             (::windows_core::Interface::vtable(this).OutgoingGain)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn EncodingProperties(&self) -> ::windows_core::Result<super::MediaProperties::AudioEncodingProperties> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe {
@@ -5668,12 +5668,12 @@ impl IAudioInputNode {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Reset)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn DisableEffectsByDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition>>(&self, definition: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).DisableEffectsByDefinition)(::windows_core::Interface::as_raw(this), definition.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn EnableEffectsByDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition>>(&self, definition: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).EnableEffectsByDefinition)(::windows_core::Interface::as_raw(this), definition.into_param().abi()).ok() }
@@ -5798,9 +5798,9 @@ unsafe impl ::windows_core::Interface for IAudioInputNode {
 #[doc(hidden)]
 pub struct IAudioInputNode_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub OutgoingConnections: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     OutgoingConnections: usize,
     pub AddOutgoingConnection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, destination: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub AddOutgoingConnectionWithGain: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, destination: ::windows_core::RawPtr, gain: f64) -> ::windows_core::HRESULT,
@@ -5816,7 +5816,7 @@ impl IAudioInputNode2 {
             (::windows_core::Interface::vtable(this).Emitter)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AudioNodeEmitter>(result__)
         }
     }
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn OutgoingConnections(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<AudioGraphConnection>> {
         let this = &::windows_core::Interface::cast::<IAudioInputNode>(self)?;
         unsafe {
@@ -5836,7 +5836,7 @@ impl IAudioInputNode2 {
         let this = &::windows_core::Interface::cast::<IAudioInputNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveOutgoingConnection)(::windows_core::Interface::as_raw(this), destination.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub fn EffectDefinitions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::Effects::IAudioEffectDefinition>> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe {
@@ -5855,7 +5855,7 @@ impl IAudioInputNode2 {
             (::windows_core::Interface::vtable(this).OutgoingGain)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn EncodingProperties(&self) -> ::windows_core::Result<super::MediaProperties::AudioEncodingProperties> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe {
@@ -5886,12 +5886,12 @@ impl IAudioInputNode2 {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Reset)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn DisableEffectsByDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition>>(&self, definition: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).DisableEffectsByDefinition)(::windows_core::Interface::as_raw(this), definition.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn EnableEffectsByDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition>>(&self, definition: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).EnableEffectsByDefinition)(::windows_core::Interface::as_raw(this), definition.into_param().abi()).ok() }
@@ -6043,7 +6043,7 @@ pub struct IAudioInputNode2_Vtbl {
 #[repr(transparent)]
 pub struct IAudioNode(::windows_core::IUnknown);
 impl IAudioNode {
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub fn EffectDefinitions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::Effects::IAudioEffectDefinition>> {
         let this = self;
         unsafe {
@@ -6062,7 +6062,7 @@ impl IAudioNode {
             (::windows_core::Interface::vtable(this).OutgoingGain)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn EncodingProperties(&self) -> ::windows_core::Result<super::MediaProperties::AudioEncodingProperties> {
         let this = self;
         unsafe {
@@ -6093,12 +6093,12 @@ impl IAudioNode {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Reset)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn DisableEffectsByDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition>>(&self, definition: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).DisableEffectsByDefinition)(::windows_core::Interface::as_raw(this), definition.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn EnableEffectsByDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition>>(&self, definition: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).EnableEffectsByDefinition)(::windows_core::Interface::as_raw(this), definition.into_param().abi()).ok() }
@@ -6201,28 +6201,28 @@ unsafe impl ::windows_core::Interface for IAudioNode {
 #[doc(hidden)]
 pub struct IAudioNode_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub EffectDefinitions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation_Collections", feature = "Media_Effects")))]
+    #[cfg(not(all(feature = "winrt-foundation", feature = "winrt-media")))]
     EffectDefinitions: usize,
     pub SetOutgoingGain: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
     pub OutgoingGain: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub EncodingProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_MediaProperties"))]
+    #[cfg(not(feature = "winrt-media"))]
     EncodingProperties: usize,
     pub ConsumeInput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetConsumeInput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub Start: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub DisableEffectsByDefinition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, definition: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Effects"))]
+    #[cfg(not(feature = "winrt-media"))]
     DisableEffectsByDefinition: usize,
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub EnableEffectsByDefinition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, definition: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Effects"))]
+    #[cfg(not(feature = "winrt-media"))]
     EnableEffectsByDefinition: usize,
 }
 #[doc(hidden)]
@@ -6236,21 +6236,21 @@ unsafe impl ::windows_core::Interface for IAudioNodeEmitter {
 #[doc(hidden)]
 pub struct IAudioNodeEmitter_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Position: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetPosition: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Direction: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Direction: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetDirection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetDirection: usize,
     pub Shape: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub DecayModel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -6260,13 +6260,13 @@ pub struct IAudioNodeEmitter_Vtbl {
     pub SetDistanceScale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
     pub DopplerScale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetDopplerScale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub DopplerVelocity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     DopplerVelocity: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetDopplerVelocity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetDopplerVelocity: usize,
     pub IsDopplerDisabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
 }
@@ -6395,31 +6395,31 @@ unsafe impl ::windows_core::Interface for IAudioNodeListener {
 #[doc(hidden)]
 pub struct IAudioNodeListener_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Position: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetPosition: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub Orientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Quaternion) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Orientation: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetOrientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Quaternion) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetOrientation: usize,
     pub SpeedOfSound: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetSpeedOfSound: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub DopplerVelocity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     DopplerVelocity: usize,
-    #[cfg(feature = "Foundation_Numerics")]
+    #[cfg(feature = "winrt-foundation")]
     pub SetDopplerVelocity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Numerics"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     SetDopplerVelocity: usize,
 }
 #[repr(transparent)]
@@ -6436,7 +6436,7 @@ impl IAudioNodeWithListener {
             (::windows_core::Interface::vtable(this).Listener)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AudioNodeListener>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub fn EffectDefinitions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::Effects::IAudioEffectDefinition>> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe {
@@ -6455,7 +6455,7 @@ impl IAudioNodeWithListener {
             (::windows_core::Interface::vtable(this).OutgoingGain)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn EncodingProperties(&self) -> ::windows_core::Result<super::MediaProperties::AudioEncodingProperties> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe {
@@ -6486,12 +6486,12 @@ impl IAudioNodeWithListener {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Reset)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn DisableEffectsByDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition>>(&self, definition: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).DisableEffectsByDefinition)(::windows_core::Interface::as_raw(this), definition.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn EnableEffectsByDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition>>(&self, definition: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).EnableEffectsByDefinition)(::windows_core::Interface::as_raw(this), definition.into_param().abi()).ok() }
@@ -6694,30 +6694,30 @@ unsafe impl ::windows_core::Interface for IAudioStateMonitorStatics {
 pub struct IAudioStateMonitorStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub CreateForRenderMonitoring: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_Render")]
+    #[cfg(feature = "winrt-media")]
     pub CreateForRenderMonitoringWithCategory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, category: super::Render::AudioRenderCategory, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Render"))]
+    #[cfg(not(feature = "winrt-media"))]
     CreateForRenderMonitoringWithCategory: usize,
-    #[cfg(all(feature = "Media_Devices", feature = "Media_Render"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-media"))]
     pub CreateForRenderMonitoringWithCategoryAndDeviceRole: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, category: super::Render::AudioRenderCategory, role: super::Devices::AudioDeviceRole, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Media_Devices", feature = "Media_Render")))]
+    #[cfg(not(all(feature = "winrt-media", feature = "winrt-media")))]
     CreateForRenderMonitoringWithCategoryAndDeviceRole: usize,
-    #[cfg(feature = "Media_Render")]
+    #[cfg(feature = "winrt-media")]
     pub CreateForRenderMonitoringWithCategoryAndDeviceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, category: super::Render::AudioRenderCategory, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Render"))]
+    #[cfg(not(feature = "winrt-media"))]
     CreateForRenderMonitoringWithCategoryAndDeviceId: usize,
     pub CreateForCaptureMonitoring: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_Capture")]
+    #[cfg(feature = "winrt-media")]
     pub CreateForCaptureMonitoringWithCategory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, category: super::Capture::MediaCategory, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Capture"))]
+    #[cfg(not(feature = "winrt-media"))]
     CreateForCaptureMonitoringWithCategory: usize,
-    #[cfg(all(feature = "Media_Capture", feature = "Media_Devices"))]
+    #[cfg(all(feature = "winrt-media", feature = "winrt-media"))]
     pub CreateForCaptureMonitoringWithCategoryAndDeviceRole: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, category: super::Capture::MediaCategory, role: super::Devices::AudioDeviceRole, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Media_Capture", feature = "Media_Devices")))]
+    #[cfg(not(all(feature = "winrt-media", feature = "winrt-media")))]
     CreateForCaptureMonitoringWithCategoryAndDeviceRole: usize,
-    #[cfg(feature = "Media_Capture")]
+    #[cfg(feature = "winrt-media")]
     pub CreateForCaptureMonitoringWithCategoryAndDeviceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, category: super::Capture::MediaCategory, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Capture"))]
+    #[cfg(not(feature = "winrt-media"))]
     CreateForCaptureMonitoringWithCategoryAndDeviceId: usize,
 }
 #[doc(hidden)]
@@ -6942,9 +6942,9 @@ unsafe impl ::windows_core::Interface for IEqualizerEffectDefinition {
 #[doc(hidden)]
 pub struct IEqualizerEffectDefinition_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub Bands: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation_Collections"))]
+    #[cfg(not(feature = "winrt-foundation"))]
     Bands: usize,
 }
 #[doc(hidden)]
@@ -7024,9 +7024,9 @@ pub struct IMediaSourceAudioInputNode_Vtbl {
     pub LoopCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetLoopCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Duration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Media_Core")]
+    #[cfg(feature = "winrt-media")]
     pub MediaSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Media_Core"))]
+    #[cfg(not(feature = "winrt-media"))]
     MediaSource: usize,
     pub MediaSourceCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub RemoveMediaSourceCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
@@ -7211,7 +7211,7 @@ pub struct ISpatialAudioFormatSubtypeStatics2_Vtbl {
 #[repr(transparent)]
 pub struct LimiterEffectDefinition(::windows_core::IUnknown);
 impl LimiterEffectDefinition {
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn ActivatableClassId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = &::windows_core::Interface::cast::<super::Effects::IAudioEffectDefinition>(self)?;
         unsafe {
@@ -7219,7 +7219,7 @@ impl LimiterEffectDefinition {
             (::windows_core::Interface::vtable(this).ActivatableClassId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IPropertySet> {
         let this = &::windows_core::Interface::cast::<super::Effects::IAudioEffectDefinition>(self)?;
         unsafe {
@@ -7330,27 +7330,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Lim
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::TryFrom<LimiterEffectDefinition> for super::Effects::IAudioEffectDefinition {
     type Error = ::windows_core::Error;
     fn try_from(value: LimiterEffectDefinition) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::TryFrom<&LimiterEffectDefinition> for super::Effects::IAudioEffectDefinition {
     type Error = ::windows_core::Error;
     fn try_from(value: &LimiterEffectDefinition) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition> for LimiterEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, super::Effects::IAudioEffectDefinition> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition> for &LimiterEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, super::Effects::IAudioEffectDefinition> {
         ::core::convert::TryInto::<super::Effects::IAudioEffectDefinition>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
@@ -7361,7 +7361,7 @@ unsafe impl ::core::marker::Sync for LimiterEffectDefinition {}
 #[repr(transparent)]
 pub struct MediaSourceAudioInputNode(::windows_core::IUnknown);
 impl MediaSourceAudioInputNode {
-    #[cfg(feature = "Foundation_Collections")]
+    #[cfg(feature = "winrt-foundation")]
     pub fn OutgoingConnections(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<AudioGraphConnection>> {
         let this = &::windows_core::Interface::cast::<IAudioInputNode>(self)?;
         unsafe {
@@ -7388,7 +7388,7 @@ impl MediaSourceAudioInputNode {
             (::windows_core::Interface::vtable(this).Emitter)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AudioNodeEmitter>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub fn EffectDefinitions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::Effects::IAudioEffectDefinition>> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe {
@@ -7407,7 +7407,7 @@ impl MediaSourceAudioInputNode {
             (::windows_core::Interface::vtable(this).OutgoingGain)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "Media_MediaProperties")]
+    #[cfg(feature = "winrt-media")]
     pub fn EncodingProperties(&self) -> ::windows_core::Result<super::MediaProperties::AudioEncodingProperties> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe {
@@ -7438,12 +7438,12 @@ impl MediaSourceAudioInputNode {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Reset)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn DisableEffectsByDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition>>(&self, definition: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).DisableEffectsByDefinition)(::windows_core::Interface::as_raw(this), definition.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn EnableEffectsByDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition>>(&self, definition: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAudioNode>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).EnableEffectsByDefinition)(::windows_core::Interface::as_raw(this), definition.into_param().abi()).ok() }
@@ -7514,7 +7514,7 @@ impl MediaSourceAudioInputNode {
             (::windows_core::Interface::vtable(this).Duration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Media_Core")]
+    #[cfg(feature = "winrt-media")]
     pub fn MediaSource(&self) -> ::windows_core::Result<super::Core::MediaSource> {
         let this = self;
         unsafe {
@@ -7799,7 +7799,7 @@ unsafe impl ::windows_core::RuntimeType for QuantumSizeSelectionMode {
 #[repr(transparent)]
 pub struct ReverbEffectDefinition(::windows_core::IUnknown);
 impl ReverbEffectDefinition {
-    #[cfg(feature = "Media_Effects")]
+    #[cfg(feature = "winrt-media")]
     pub fn ActivatableClassId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = &::windows_core::Interface::cast::<super::Effects::IAudioEffectDefinition>(self)?;
         unsafe {
@@ -7807,7 +7807,7 @@ impl ReverbEffectDefinition {
             (::windows_core::Interface::vtable(this).ActivatableClassId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation_Collections", feature = "Media_Effects"))]
+    #[cfg(all(feature = "winrt-foundation", feature = "winrt-media"))]
     pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IPropertySet> {
         let this = &::windows_core::Interface::cast::<super::Effects::IAudioEffectDefinition>(self)?;
         unsafe {
@@ -8149,27 +8149,27 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Rev
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::TryFrom<ReverbEffectDefinition> for super::Effects::IAudioEffectDefinition {
     type Error = ::windows_core::Error;
     fn try_from(value: ReverbEffectDefinition) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl ::core::convert::TryFrom<&ReverbEffectDefinition> for super::Effects::IAudioEffectDefinition {
     type Error = ::windows_core::Error;
     fn try_from(value: &ReverbEffectDefinition) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition> for ReverbEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, super::Effects::IAudioEffectDefinition> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Media_Effects")]
+#[cfg(feature = "winrt-media")]
 impl<'a> ::windows_core::IntoParam<'a, super::Effects::IAudioEffectDefinition> for &ReverbEffectDefinition {
     fn into_param(self) -> ::windows_core::Param<'a, super::Effects::IAudioEffectDefinition> {
         ::core::convert::TryInto::<super::Effects::IAudioEffectDefinition>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)

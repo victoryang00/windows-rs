@@ -2,7 +2,7 @@
 extern "system" {
     pub fn CoCreateActivity(piunknown: ::windows_core_sys::IUnknown, riid: *const ::windows_core_sys::GUID, ppobj: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn CoEnterServiceDomain(pconfigobject: ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn CoGetDefaultContext(apttype: super::Com::APTTYPE, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn CoLeaveServiceDomain(punkstatus: ::windows_core_sys::IUnknown);
     pub fn GetDispenserManager(param0: *mut IDispenserManager) -> ::windows_core_sys::HRESULT;
@@ -559,15 +559,15 @@ impl ::core::clone::Clone for ComponentSummary {
 pub type ContextInfo = *mut ::core::ffi::c_void;
 pub type ContextInfo2 = *mut ::core::ffi::c_void;
 #[repr(C)]
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub struct CrmLogRecordRead {
     pub dwCrmFlags: u32,
     pub dwSequenceNumber: u32,
     pub blobUserData: super::Com::BLOB,
 }
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for CrmLogRecordRead {}
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for CrmLogRecordRead {
     fn clone(&self) -> Self {
         *self

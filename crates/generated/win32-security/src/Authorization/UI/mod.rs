@@ -1,5 +1,5 @@
 pub const CFSTR_ACLUI_SID_INFO_LIST: &str = "CFSTR_ACLUI_SID_INFO_LIST";
-#[cfg(feature = "Win32_UI_Controls")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn CreateSecurityPage<'a, Param0: ::windows_core::IntoParam<'a, ISecurityInformation>>(psi: Param0) -> ::windows_core::Result<::win32_ui::Controls::HPROPSHEETPAGE> {
     #[cfg(windows)]
@@ -253,7 +253,7 @@ impl ISecurityInformation {
     pub unsafe fn GetInheritTypes(&self, ppinherittypes: *mut *mut SI_INHERIT_TYPE, pcinherittypes: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetInheritTypes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppinherittypes), ::core::mem::transmute(pcinherittypes)).ok()
     }
-    #[cfg(feature = "Win32_UI_Controls")]
+    #[cfg(feature = "win32-ui")]
     pub unsafe fn PropertySheetPageCallback<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, hwnd: Param0, umsg: ::win32_ui::Controls::PSPCB_MESSAGE, upage: SI_PAGE_TYPE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).PropertySheetPageCallback)(::windows_core::Interface::as_raw(self), hwnd.into_param().abi(), ::core::mem::transmute(umsg), ::core::mem::transmute(upage)).ok()
     }
@@ -308,9 +308,9 @@ pub struct ISecurityInformation_Vtbl {
     pub GetAccessRights: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidobjecttype: *const ::windows_core::GUID, dwflags: SECURITY_INFO_PAGE_FLAGS, ppaccess: *mut *mut SI_ACCESS, pcaccesses: *mut u32, pidefaultaccess: *mut u32) -> ::windows_core::HRESULT,
     pub MapGeneric: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidobjecttype: *const ::windows_core::GUID, paceflags: *mut u8, pmask: *mut u32) -> ::windows_core::HRESULT,
     pub GetInheritTypes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppinherittypes: *mut *mut SI_INHERIT_TYPE, pcinherittypes: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_UI_Controls")]
+    #[cfg(feature = "win32-ui")]
     pub PropertySheetPageCallback: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: ::win32_foundation::HWND, umsg: ::win32_ui::Controls::PSPCB_MESSAGE, upage: SI_PAGE_TYPE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_UI_Controls"))]
+    #[cfg(not(feature = "win32-ui"))]
     PropertySheetPageCallback: usize,
 }
 #[repr(transparent)]
@@ -319,7 +319,7 @@ impl ISecurityInformation2 {
     pub unsafe fn IsDaclCanonical(&self, pdacl: *mut super::super::ACL) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).IsDaclCanonical)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdacl)))
     }
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub unsafe fn LookupSids(&self, csids: u32, rgpsids: *mut ::win32_foundation::PSID, ppdo: *mut ::core::option::Option<::win32_system::Com::IDataObject>) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).LookupSids)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(csids), ::core::mem::transmute(rgpsids), ::core::mem::transmute(ppdo)).ok()
     }
@@ -369,9 +369,9 @@ unsafe impl ::windows_core::Interface for ISecurityInformation2 {
 pub struct ISecurityInformation2_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub IsDaclCanonical: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdacl: *mut super::super::ACL) -> ::win32_foundation::BOOL,
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system")]
     pub LookupSids: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, csids: u32, rgpsids: *mut ::win32_foundation::PSID, ppdo: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_System_Com"))]
+    #[cfg(not(feature = "win32-system"))]
     LookupSids: usize,
 }
 #[repr(transparent)]

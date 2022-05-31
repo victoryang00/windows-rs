@@ -5,6 +5,6 @@ pub type IWebApplicationNavigationEvents = *mut ::core::ffi::c_void;
 pub type IWebApplicationScriptEvents = *mut ::core::ffi::c_void;
 pub type IWebApplicationUIEvents = *mut ::core::ffi::c_void;
 pub type IWebApplicationUpdateEvents = *mut ::core::ffi::c_void;
-#[cfg(feature = "Win32_System_Com")]
+#[cfg(feature = "win32-system-sys")]
 pub type RegisterAuthoringClientFunctionType = ::core::option::Option<unsafe extern "system" fn(authoringmodeobject: IWebApplicationAuthoringMode, host: IWebApplicationHost) -> ::windows_core_sys::HRESULT>;
 pub type UnregisterAuthoringClientFunctionType = ::core::option::Option<unsafe extern "system" fn(host: IWebApplicationHost) -> ::windows_core_sys::HRESULT>;

@@ -33,10 +33,10 @@ extern "system" {
     pub fn CoDecodeProxy(dwclientpid: u32, ui64proxyaddress: u64, pserverinformation: *mut ServerInformation) -> ::windows_core_sys::HRESULT;
     pub fn CreateControlInput(riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn CreateControlInputEx(pcorewindow: ::windows_core_sys::IUnknown, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "System")]
+    #[cfg(feature = "winrt-system-sys")]
     pub fn CreateDispatcherQueueController(options: DispatcherQueueOptions, dispatcherqueuecontroller: *mut ::winrt_system_sys::DispatcherQueueController) -> ::windows_core_sys::HRESULT;
     pub fn CreateRandomAccessStreamOnFile(filepath: ::windows_core_sys::PCWSTR, accessmode: u32, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn CreateRandomAccessStreamOverStream(stream: super::Com::IStream, options: BSOS_OPTIONS, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn CreateStreamOverRandomAccessStream(randomaccessstream: ::windows_core_sys::IUnknown, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn GetRestrictedErrorInfo(pprestrictederrorinfo: *mut IRestrictedErrorInfo) -> ::windows_core_sys::HRESULT;
@@ -58,7 +58,7 @@ extern "system" {
     pub fn RoGetActivationFactory(activatableclassid: ::windows_core_sys::HSTRING, iid: *const ::windows_core_sys::GUID, factory: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn RoGetAgileReference(options: AgileReferenceOptions, riid: *const ::windows_core_sys::GUID, punk: ::windows_core_sys::IUnknown, ppagilereference: *mut IAgileReference) -> ::windows_core_sys::HRESULT;
     pub fn RoGetApartmentIdentifier(apartmentidentifier: *mut u64) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com_Marshal")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RoGetBufferMarshaler(buffermarshaler: *mut super::Com::Marshal::IMarshal) -> ::windows_core_sys::HRESULT;
     pub fn RoGetErrorReportingFlags(pflags: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn RoGetMatchingRestrictedErrorInfo(hrin: ::windows_core_sys::HRESULT, pprestrictederrorinfo: *mut IRestrictedErrorInfo) -> ::windows_core_sys::HRESULT;

@@ -10,30 +10,30 @@ extern "system" {
     pub fn CloseINFEngine(hinf: *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn ConvertAuxiliaryCounterToPerformanceCounter(ullauxiliarycountervalue: u64, lpperformancecountervalue: *mut u64, lpconversionerror: *mut u64) -> ::windows_core_sys::HRESULT;
     pub fn ConvertPerformanceCounterToAuxiliaryCounter(ullperformancecountervalue: u64, lpauxiliarycountervalue: *mut u64, lpconversionerror: *mut u64) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateWaitableTimerA(lptimerattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, bmanualreset: ::win32_foundation_sys::BOOL, lptimername: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::HANDLE;
-    #[cfg(feature = "Win32_Security")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn CreateWaitableTimerExA(lptimerattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, lptimername: ::windows_core_sys::PCSTR, dwflags: u32, dwdesiredaccess: u32) -> ::win32_foundation_sys::HANDLE;
     pub fn DCIBeginAccess(pdci: *mut DCISURFACEINFO, x: i32, y: i32, dx: i32, dy: i32) -> i32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DCICloseProvider(hdc: ::win32_graphics_sys::Gdi::HDC);
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DCICreateOffscreen(hdc: ::win32_graphics_sys::Gdi::HDC, dwcompression: u32, dwredmask: u32, dwgreenmask: u32, dwbluemask: u32, dwwidth: u32, dwheight: u32, dwdcicaps: u32, dwbitcount: u32, lplpsurface: *mut *mut DCIOFFSCREEN) -> i32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DCICreateOverlay(hdc: ::win32_graphics_sys::Gdi::HDC, lpoffscreensurf: *mut ::core::ffi::c_void, lplpsurface: *mut *mut DCIOVERLAY) -> i32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DCICreatePrimary(hdc: ::win32_graphics_sys::Gdi::HDC, lplpsurface: *mut *mut DCISURFACEINFO) -> i32;
     pub fn DCIDestroy(pdci: *mut DCISURFACEINFO);
     pub fn DCIDraw(pdci: *mut DCIOFFSCREEN) -> i32;
     pub fn DCIEndAccess(pdci: *mut DCISURFACEINFO);
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DCIEnum(hdc: ::win32_graphics_sys::Gdi::HDC, lprdst: *mut ::win32_foundation_sys::RECT, lprsrc: *mut ::win32_foundation_sys::RECT, lpfncallback: *mut ::core::ffi::c_void, lpcontext: *mut ::core::ffi::c_void) -> i32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DCIOpenProvider() -> ::win32_graphics_sys::Gdi::HDC;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DCISetClipList(pdci: *mut DCIOFFSCREEN, prd: *mut ::win32_graphics_sys::Gdi::RGNDATA) -> i32;
     pub fn DCISetDestination(pdci: *mut DCIOFFSCREEN, dst: *mut ::win32_foundation_sys::RECT, src: *mut ::win32_foundation_sys::RECT) -> i32;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DCISetSrcDestClip(pdci: *mut DCIOFFSCREEN, srcrc: *mut ::win32_foundation_sys::RECT, destrc: *mut ::win32_foundation_sys::RECT, prd: *mut ::win32_graphics_sys::Gdi::RGNDATA) -> i32;
     pub fn DelNodeA(pszfileordirname: ::windows_core_sys::PCSTR, dwflags: u32) -> ::windows_core_sys::HRESULT;
     pub fn DelNodeRunDLL32W(hwnd: ::win32_foundation_sys::HWND, hinstance: ::win32_foundation_sys::HINSTANCE, pszparms: ::windows_core_sys::PWSTR, nshow: i32) -> ::windows_core_sys::HRESULT;
@@ -58,7 +58,7 @@ extern "system" {
     pub fn GetComputerNameW(lpbuffer: ::windows_core_sys::PWSTR, nsize: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn GetCurrentHwProfileA(lphwprofileinfo: *mut HW_PROFILE_INFOA) -> ::win32_foundation_sys::BOOL;
     pub fn GetCurrentHwProfileW(lphwprofileinfo: *mut HW_PROFILE_INFOW) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetDCRegionData(hdc: ::win32_graphics_sys::Gdi::HDC, size: u32, prd: *mut ::win32_graphics_sys::Gdi::RGNDATA) -> u32;
     pub fn GetFeatureEnabledState(featureid: u32, changetime: FEATURE_CHANGE_TIME) -> FEATURE_ENABLED_STATE;
     pub fn GetFeatureVariant(featureid: u32, changetime: FEATURE_CHANGE_TIME, payloadid: *mut u32, hasnotification: *mut ::win32_foundation_sys::BOOL) -> u32;
@@ -91,7 +91,7 @@ extern "system" {
     pub fn GetVersionFromFileExA(lpszfilename: ::windows_core_sys::PCSTR, pdwmsver: *mut u32, pdwlsver: *mut u32, bversion: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn GetVersionFromFileExW(lpszfilename: ::windows_core_sys::PCWSTR, pdwmsver: *mut u32, pdwlsver: *mut u32, bversion: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn GetVersionFromFileW(lpszfilename: ::windows_core_sys::PCWSTR, pdwmsver: *mut u32, pdwlsver: *mut u32, bversion: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn GetWindowRegionData(hwnd: ::win32_foundation_sys::HWND, size: u32, prd: *mut ::win32_graphics_sys::Gdi::RGNDATA) -> u32;
     pub fn GlobalCompact(dwminfree: u32) -> usize;
     pub fn GlobalFix(hmem: isize);
@@ -150,46 +150,46 @@ extern "system" {
     pub fn RecordFeatureUsage(featureid: u32, kind: u32, addend: u32, originname: ::windows_core_sys::PCSTR);
     pub fn RegInstallA(hmod: ::win32_foundation_sys::HINSTANCE, pszsection: ::windows_core_sys::PCSTR, psttable: *const STRTABLEA) -> ::windows_core_sys::HRESULT;
     pub fn RegInstallW(hmod: ::win32_foundation_sys::HINSTANCE, pszsection: ::windows_core_sys::PCWSTR, psttable: *const STRTABLEW) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Registry")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RegRestoreAllA(hwnd: ::win32_foundation_sys::HWND, psztitlestring: ::windows_core_sys::PCSTR, hkbckupkey: super::Registry::HKEY) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Registry")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RegRestoreAllW(hwnd: ::win32_foundation_sys::HWND, psztitlestring: ::windows_core_sys::PCWSTR, hkbckupkey: super::Registry::HKEY) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Registry")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RegSaveRestoreA(hwnd: ::win32_foundation_sys::HWND, psztitlestring: ::windows_core_sys::PCSTR, hkbckupkey: super::Registry::HKEY, pcszrootkey: ::windows_core_sys::PCSTR, pcszsubkey: ::windows_core_sys::PCSTR, pcszvaluename: ::windows_core_sys::PCSTR, dwflags: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Registry")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RegSaveRestoreOnINFA(hwnd: ::win32_foundation_sys::HWND, psztitle: ::windows_core_sys::PCSTR, pszinf: ::windows_core_sys::PCSTR, pszsection: ::windows_core_sys::PCSTR, hhklmbackkey: super::Registry::HKEY, hhkcubackkey: super::Registry::HKEY, dwflags: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Registry")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RegSaveRestoreOnINFW(hwnd: ::win32_foundation_sys::HWND, psztitle: ::windows_core_sys::PCWSTR, pszinf: ::windows_core_sys::PCWSTR, pszsection: ::windows_core_sys::PCWSTR, hhklmbackkey: super::Registry::HKEY, hhkcubackkey: super::Registry::HKEY, dwflags: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Registry")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RegSaveRestoreW(hwnd: ::win32_foundation_sys::HWND, psztitlestring: ::windows_core_sys::PCWSTR, hkbckupkey: super::Registry::HKEY, pcszrootkey: ::windows_core_sys::PCWSTR, pcszsubkey: ::windows_core_sys::PCWSTR, pcszvaluename: ::windows_core_sys::PCWSTR, dwflags: u32) -> ::windows_core_sys::HRESULT;
     pub fn ReplacePartitionUnit(targetpartition: ::windows_core_sys::PCWSTR, sparepartition: ::windows_core_sys::PCWSTR, flags: u32) -> ::win32_foundation_sys::BOOL;
     pub fn RequestDeviceWakeup(hdevice: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RtlAnsiStringToUnicodeString(destinationstring: *mut ::win32_foundation_sys::UNICODE_STRING, sourcestring: *mut super::Kernel::STRING, allocatedestinationstring: ::win32_foundation_sys::BOOLEAN) -> ::win32_foundation_sys::NTSTATUS;
     pub fn RtlCharToInteger(string: *mut i8, base: u32, value: *mut u32) -> ::win32_foundation_sys::NTSTATUS;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RtlFreeAnsiString(ansistring: *mut super::Kernel::STRING);
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RtlFreeOemString(oemstring: *mut super::Kernel::STRING);
     pub fn RtlFreeUnicodeString(unicodestring: *mut ::win32_foundation_sys::UNICODE_STRING);
     pub fn RtlGetReturnAddressHijackTarget() -> usize;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RtlInitAnsiString(destinationstring: *mut super::Kernel::STRING, sourcestring: *mut i8);
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RtlInitAnsiStringEx(destinationstring: *mut super::Kernel::STRING, sourcestring: *mut i8) -> ::win32_foundation_sys::NTSTATUS;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RtlInitString(destinationstring: *mut super::Kernel::STRING, sourcestring: *mut i8);
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RtlInitStringEx(destinationstring: *mut super::Kernel::STRING, sourcestring: *mut i8) -> ::win32_foundation_sys::NTSTATUS;
     pub fn RtlInitUnicodeString(destinationstring: *mut ::win32_foundation_sys::UNICODE_STRING, sourcestring: ::windows_core_sys::PCWSTR);
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RtlIsNameLegalDOS8Dot3(name: *mut ::win32_foundation_sys::UNICODE_STRING, oemname: *mut super::Kernel::STRING, namecontainsspaces: *mut ::win32_foundation_sys::BOOLEAN) -> ::win32_foundation_sys::BOOLEAN;
     pub fn RtlLocalTimeToSystemTime(localtime: *mut i64, systemtime: *mut i64) -> ::win32_foundation_sys::NTSTATUS;
     pub fn RtlRaiseCustomSystemEventTrigger(triggerconfig: *const CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG) -> u32;
     pub fn RtlTimeToSecondsSince1970(time: *mut i64, elapsedseconds: *mut u32) -> ::win32_foundation_sys::BOOLEAN;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RtlUnicodeStringToAnsiString(destinationstring: *mut super::Kernel::STRING, sourcestring: *mut ::win32_foundation_sys::UNICODE_STRING, allocatedestinationstring: ::win32_foundation_sys::BOOLEAN) -> ::win32_foundation_sys::NTSTATUS;
-    #[cfg(feature = "Win32_System_Kernel")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn RtlUnicodeStringToOemString(destinationstring: *mut super::Kernel::STRING, sourcestring: *mut ::win32_foundation_sys::UNICODE_STRING, allocatedestinationstring: ::win32_foundation_sys::BOOLEAN) -> ::win32_foundation_sys::NTSTATUS;
     pub fn RtlUnicodeToMultiByteSize(bytesinmultibytestring: *mut u32, unicodestring: ::windows_core_sys::PCWSTR, bytesinunicodestring: u32) -> ::win32_foundation_sys::NTSTATUS;
     pub fn RtlUniform(seed: *mut u32) -> u32;
@@ -222,7 +222,7 @@ extern "system" {
     pub fn WINNLSGetIMEHotkey(param0: ::win32_foundation_sys::HWND) -> u32;
     pub fn WinWatchClose(hww: HWINWATCH);
     pub fn WinWatchDidStatusChange(hww: HWINWATCH) -> ::win32_foundation_sys::BOOL;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn WinWatchGetClipList(hww: HWINWATCH, prc: *mut ::win32_foundation_sys::RECT, size: u32, prd: *mut ::win32_graphics_sys::Gdi::RGNDATA) -> u32;
     pub fn WinWatchNotify(hww: HWINWATCH, notifycallback: WINWATCHNOTIFYPROC, notifyparam: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::BOOL;
     pub fn WinWatchOpen(hwnd: ::win32_foundation_sys::HWND) -> HWINWATCH;
@@ -1330,7 +1330,7 @@ impl ::core::clone::Clone for KEY_VALUE_ENTRY {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub struct LDR_DATA_TABLE_ENTRY {
     pub Reserved1: [*mut ::core::ffi::c_void; 2],
     pub InMemoryOrderLinks: super::Kernel::LIST_ENTRY,
@@ -1343,23 +1343,23 @@ pub struct LDR_DATA_TABLE_ENTRY {
     pub Anonymous: LDR_DATA_TABLE_ENTRY_0,
     pub TimeDateStamp: u32,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LDR_DATA_TABLE_ENTRY {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LDR_DATA_TABLE_ENTRY {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 pub union LDR_DATA_TABLE_ENTRY_0 {
     pub CheckSum: u32,
     pub Reserved6: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::marker::Copy for LDR_DATA_TABLE_ENTRY_0 {}
-#[cfg(feature = "Win32_System_Kernel")]
+#[cfg(feature = "win32-system-sys")]
 impl ::core::clone::Clone for LDR_DATA_TABLE_ENTRY_0 {
     fn clone(&self) -> Self {
         *self

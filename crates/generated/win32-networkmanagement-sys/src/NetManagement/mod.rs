@@ -34,9 +34,9 @@ extern "system" {
     pub fn NetErrorLogClear(uncservername: ::windows_core_sys::PCWSTR, backupfile: ::windows_core_sys::PCWSTR, reserved: *const u8) -> u32;
     pub fn NetErrorLogRead(uncservername: ::windows_core_sys::PCWSTR, reserved1: ::windows_core_sys::PCWSTR, errorloghandle: *const HLOG, offset: u32, reserved2: *const u32, reserved3: u32, offsetflag: u32, bufptr: *mut *mut u8, prefmaxsize: u32, bytesread: *mut u32, totalavailable: *mut u32) -> u32;
     pub fn NetErrorLogWrite(reserved1: *const u8, code: u32, component: ::windows_core_sys::PCWSTR, buffer: *const u8, numbytes: u32, msgbuf: *const u8, strcount: u32, reserved2: *const u8) -> u32;
-    #[cfg(feature = "Win32_Security_Cryptography")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn NetFreeAadJoinInformation(pjoininfo: *const DSREG_JOIN_INFO);
-    #[cfg(feature = "Win32_Security_Cryptography")]
+    #[cfg(feature = "win32-security-sys")]
     pub fn NetGetAadJoinInformation(pcsztenantid: ::windows_core_sys::PCWSTR, ppjoininfo: *mut *mut DSREG_JOIN_INFO) -> ::windows_core_sys::HRESULT;
     pub fn NetGetAnyDCName(servername: ::windows_core_sys::PCWSTR, domainname: ::windows_core_sys::PCWSTR, buffer: *mut *mut u8) -> u32;
     pub fn NetGetDCName(servername: ::windows_core_sys::PCWSTR, domainname: ::windows_core_sys::PCWSTR, buffer: *mut *mut u8) -> u32;
@@ -747,7 +747,7 @@ pub const DFS_WARN_METADATA_LINK_INFO_INVALID: i32 = -2147469106i32;
 pub const DFS_WARN_METADATA_LINK_TYPE_INCORRECT: i32 = -2147469107i32;
 pub const DNLEN: u32 = 15u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 pub struct DSREG_JOIN_INFO {
     pub joinType: DSREG_JOIN_TYPE,
     pub pJoinCertificate: *const ::win32_security_sys::Cryptography::CERT_CONTEXT,
@@ -762,9 +762,9 @@ pub struct DSREG_JOIN_INFO {
     pub pszUserSettingSyncUrl: ::windows_core_sys::PWSTR,
     pub pUserInfo: *mut DSREG_USER_INFO,
 }
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for DSREG_JOIN_INFO {}
-#[cfg(feature = "Win32_Security_Cryptography")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for DSREG_JOIN_INFO {
     fn clone(&self) -> Self {
         *self
@@ -1552,30 +1552,30 @@ impl ::core::clone::Clone for LOCALGROUP_MEMBERS_INFO_0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct LOCALGROUP_MEMBERS_INFO_1 {
     pub lgrmi1_sid: ::win32_foundation_sys::PSID,
     pub lgrmi1_sidusage: ::win32_security_sys::SID_NAME_USE,
     pub lgrmi1_name: ::windows_core_sys::PWSTR,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for LOCALGROUP_MEMBERS_INFO_1 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for LOCALGROUP_MEMBERS_INFO_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 pub struct LOCALGROUP_MEMBERS_INFO_2 {
     pub lgrmi2_sid: ::win32_foundation_sys::PSID,
     pub lgrmi2_sidusage: ::win32_security_sys::SID_NAME_USE,
     pub lgrmi2_domainandname: ::windows_core_sys::PWSTR,
 }
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::marker::Copy for LOCALGROUP_MEMBERS_INFO_2 {}
-#[cfg(feature = "Win32_Security")]
+#[cfg(feature = "win32-security-sys")]
 impl ::core::clone::Clone for LOCALGROUP_MEMBERS_INFO_2 {
     fn clone(&self) -> Self {
         *self

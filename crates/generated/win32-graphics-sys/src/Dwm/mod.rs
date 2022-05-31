@@ -3,11 +3,11 @@ extern "system" {
     pub fn DwmAttachMilContent(hwnd: ::win32_foundation_sys::HWND) -> ::windows_core_sys::HRESULT;
     pub fn DwmDefWindowProc(hwnd: ::win32_foundation_sys::HWND, msg: u32, wparam: ::win32_foundation_sys::WPARAM, lparam: ::win32_foundation_sys::LPARAM, plresult: *mut ::win32_foundation_sys::LRESULT) -> ::win32_foundation_sys::BOOL;
     pub fn DwmDetachMilContent(hwnd: ::win32_foundation_sys::HWND) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DwmEnableBlurBehindWindow(hwnd: ::win32_foundation_sys::HWND, pblurbehind: *const DWM_BLURBEHIND) -> ::windows_core_sys::HRESULT;
     pub fn DwmEnableComposition(ucompositionaction: u32) -> ::windows_core_sys::HRESULT;
     pub fn DwmEnableMMCSS(fenablemmcss: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_UI_Controls")]
+    #[cfg(feature = "win32-ui-sys")]
     pub fn DwmExtendFrameIntoClientArea(hwnd: ::win32_foundation_sys::HWND, pmarinset: *const ::win32_ui_sys::Controls::MARGINS) -> ::windows_core_sys::HRESULT;
     pub fn DwmFlush() -> ::windows_core_sys::HRESULT;
     pub fn DwmGetColorizationColor(pcrcolorization: *mut u32, pfopaqueblend: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
@@ -24,9 +24,9 @@ extern "system" {
     pub fn DwmRegisterThumbnail(hwnddestination: ::win32_foundation_sys::HWND, hwndsource: ::win32_foundation_sys::HWND, phthumbnailid: *mut isize) -> ::windows_core_sys::HRESULT;
     pub fn DwmRenderGesture(gt: GESTURE_TYPE, ccontacts: u32, pdwpointerid: *const u32, ppoints: *const ::win32_foundation_sys::POINT) -> ::windows_core_sys::HRESULT;
     pub fn DwmSetDxFrameDuration(hwnd: ::win32_foundation_sys::HWND, crefreshes: i32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DwmSetIconicLivePreviewBitmap(hwnd: ::win32_foundation_sys::HWND, hbmp: super::Gdi::HBITMAP, pptclient: *const ::win32_foundation_sys::POINT, dwsitflags: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DwmSetIconicThumbnail(hwnd: ::win32_foundation_sys::HWND, hbmp: super::Gdi::HBITMAP, dwsitflags: u32) -> ::windows_core_sys::HRESULT;
     pub fn DwmSetPresentParameters(hwnd: ::win32_foundation_sys::HWND, ppresentparams: *mut DWM_PRESENT_PARAMETERS) -> ::windows_core_sys::HRESULT;
     pub fn DwmSetWindowAttribute(hwnd: ::win32_foundation_sys::HWND, dwattribute: DWMWINDOWATTRIBUTE, pvattribute: *const ::core::ffi::c_void, cbattribute: u32) -> ::windows_core_sys::HRESULT;
@@ -80,16 +80,16 @@ pub const DWM_BB_BLURREGION: u32 = 2u32;
 pub const DWM_BB_ENABLE: u32 = 1u32;
 pub const DWM_BB_TRANSITIONONMAXIMIZED: u32 = 4u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct DWM_BLURBEHIND {
     pub dwFlags: u32,
     pub fEnable: ::win32_foundation_sys::BOOL,
     pub hRgnBlur: super::Gdi::HRGN,
     pub fTransitionOnMaximized: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for DWM_BLURBEHIND {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for DWM_BLURBEHIND {
     fn clone(&self) -> Self {
         *self

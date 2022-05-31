@@ -1,15 +1,15 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn ComputeInvCMAP(prgbcolors: *const ::win32_graphics_sys::Gdi::RGBQUAD, ncolors: u32, pinvtable: *mut u8, cbtable: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Graphics_DirectDraw", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(all(feature = "win32-graphics-sys", feature = "win32-graphics-sys"))]
     pub fn CreateDDrawSurfaceOnDIB(hbmdib: ::win32_graphics_sys::Gdi::HBITMAP, ppsurface: *mut ::win32_graphics_sys::DirectDraw::IDirectDrawSurface) -> ::windows_core_sys::HRESULT;
     pub fn CreateMIMEMap(ppmap: *mut IMapMIMEToCLSID) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn DecodeImage(pstream: ::win32_system_sys::Com::IStream, pmap: IMapMIMEToCLSID, peventsink: ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn DecodeImageEx(pstream: ::win32_system_sys::Com::IStream, pmap: IMapMIMEToCLSID, peventsink: ::windows_core_sys::IUnknown, pszmimetypeparam: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Graphics_Gdi")]
+    #[cfg(feature = "win32-graphics-sys")]
     pub fn DitherTo8(pdestbits: *mut u8, ndestpitch: i32, psrcbits: *mut u8, nsrcpitch: i32, bfidsrc: *const ::windows_core_sys::GUID, prgbdestcolors: *mut ::win32_graphics_sys::Gdi::RGBQUAD, prgbsrccolors: *mut ::win32_graphics_sys::Gdi::RGBQUAD, pbdestinvmap: *mut u8, x: i32, y: i32, cx: i32, cy: i32, ldesttrans: i32, lsrctrans: i32) -> ::windows_core_sys::HRESULT;
     pub fn DoPrivacyDlg(hwndowner: ::win32_foundation_sys::HWND, pszurl: ::windows_core_sys::PCWSTR, pprivacyenum: IEnumPrivacyRecords, freportallsites: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn GetMaxMIMEIDBytes(pnmaxbytes: *mut u32) -> ::windows_core_sys::HRESULT;
@@ -33,7 +33,7 @@ extern "system" {
     pub fn RatingObtainQueryW(psztargeturl: ::windows_core_sys::PCWSTR, dwuserdata: u32, fcallback: isize, phratingobtainquery: *mut ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
     pub fn RatingSetupUI(hdlg: ::win32_foundation_sys::HWND, pszusername: ::windows_core_sys::PCSTR) -> ::windows_core_sys::HRESULT;
     pub fn RatingSetupUIW(hdlg: ::win32_foundation_sys::HWND, pszusername: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn SniffStream(pinstream: ::win32_system_sys::Com::IStream, pnformat: *mut u32, ppoutstream: *mut ::win32_system_sys::Com::IStream) -> ::windows_core_sys::HRESULT;
 }
 pub const ADDRESSBAND: u32 = 2u32;
@@ -7119,15 +7119,15 @@ pub const HTMLPAINT_DRAW_UPDATEREGION: HTML_PAINT_DRAW_FLAGS = 1i32;
 pub const HTMLPAINT_DRAW_USE_XFORM: HTML_PAINT_DRAW_FLAGS = 2i32;
 pub const HTML_PAINT_DRAW_FLAGS_Max: HTML_PAINT_DRAW_FLAGS = 2147483647i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 pub struct HTML_PAINT_DRAW_INFO {
     pub rcViewport: ::win32_foundation_sys::RECT,
     pub hrgnUpdate: ::win32_graphics_sys::Gdi::HRGN,
     pub xform: HTML_PAINT_XFORM,
 }
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::marker::Copy for HTML_PAINT_DRAW_INFO {}
-#[cfg(feature = "Win32_Graphics_Gdi")]
+#[cfg(feature = "win32-graphics-sys")]
 impl ::core::clone::Clone for HTML_PAINT_DRAW_INFO {
     fn clone(&self) -> Self {
         *self
@@ -8638,11 +8638,11 @@ pub const SELECTION_TYPE_Caret: SELECTION_TYPE = 1i32;
 pub const SELECTION_TYPE_Text: SELECTION_TYPE = 2i32;
 pub const SELECTION_TYPE_Control: SELECTION_TYPE = 3i32;
 pub const SELECTION_TYPE_Max: SELECTION_TYPE = 2147483647i32;
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub type SHOWHTMLDIALOGEXFN = ::core::option::Option<unsafe extern "system" fn(hwndparent: ::win32_foundation_sys::HWND, pmk: ::win32_system_sys::Com::IMoniker, dwdialogflags: u32, pvarargin: *mut ::win32_system_sys::Com::VARIANT, pchoptions: ::windows_core_sys::PCWSTR, pvargout: *mut ::win32_system_sys::Com::VARIANT) -> ::windows_core_sys::HRESULT>;
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub type SHOWHTMLDIALOGFN = ::core::option::Option<unsafe extern "system" fn(hwndparent: ::win32_foundation_sys::HWND, pmk: ::win32_system_sys::Com::IMoniker, pvarargin: *mut ::win32_system_sys::Com::VARIANT, pchoptions: ::windows_core_sys::PCWSTR, pvargout: *mut ::win32_system_sys::Com::VARIANT) -> ::windows_core_sys::HRESULT>;
-#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "win32-system-sys", feature = "win32-system-sys"))]
 pub type SHOWMODELESSHTMLDIALOGFN = ::core::option::Option<unsafe extern "system" fn(hwndparent: ::win32_foundation_sys::HWND, pmk: ::win32_system_sys::Com::IMoniker, pvarargin: *mut ::win32_system_sys::Com::VARIANT, pvaroptions: *mut ::win32_system_sys::Com::VARIANT, ppwindow: *mut IHTMLWindow2) -> ::windows_core_sys::HRESULT>;
 pub const SID_SEditCommandTarget: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 810611893, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 pub const SID_SHTMLEditHost: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 810612384, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };

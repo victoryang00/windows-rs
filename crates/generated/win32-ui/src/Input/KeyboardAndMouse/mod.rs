@@ -30,7 +30,7 @@ impl ::core::fmt::Debug for ACTIVATE_KEYBOARD_LAYOUT_FLAGS {
 }
 pub const ACUTE: u32 = 769u32;
 pub const AX_KBD_DESKTOP_TYPE: u32 = 1u32;
-#[cfg(feature = "Win32_UI_TextServices")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn ActivateKeyboardLayout<'a, Param0: ::windows_core::IntoParam<'a, super::super::TextServices::HKL>>(hkl: Param0, flags: ACTIVATE_KEYBOARD_LAYOUT_FLAGS) -> ::windows_core::Result<super::super::TextServices::HKL> {
     #[cfg(windows)]
@@ -276,7 +276,7 @@ pub unsafe fn GetKeyState(nvirtkey: i32) -> i16 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_TextServices")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn GetKeyboardLayout(idthread: u32) -> super::super::TextServices::HKL {
     #[cfg(windows)]
@@ -290,7 +290,7 @@ pub unsafe fn GetKeyboardLayout(idthread: u32) -> super::super::TextServices::HK
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_TextServices")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn GetKeyboardLayoutList(lplist: &mut [super::super::TextServices::HKL]) -> i32 {
     #[cfg(windows)]
@@ -964,7 +964,7 @@ impl ::core::default::Default for LIGATURE5 {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_UI_TextServices")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn LoadKeyboardLayoutA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pwszklid: Param0, flags: ACTIVATE_KEYBOARD_LAYOUT_FLAGS) -> ::windows_core::Result<super::super::TextServices::HKL> {
     #[cfg(windows)]
@@ -979,7 +979,7 @@ pub unsafe fn LoadKeyboardLayoutA<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_TextServices")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn LoadKeyboardLayoutW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pwszklid: Param0, flags: ACTIVATE_KEYBOARD_LAYOUT_FLAGS) -> ::windows_core::Result<super::super::TextServices::HKL> {
     #[cfg(windows)]
@@ -1179,7 +1179,7 @@ pub unsafe fn MapVirtualKeyA(ucode: u32, umaptype: u32) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_TextServices")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn MapVirtualKeyExA<'a, Param2: ::windows_core::IntoParam<'a, super::super::TextServices::HKL>>(ucode: u32, umaptype: u32, dwhkl: Param2) -> u32 {
     #[cfg(windows)]
@@ -1193,7 +1193,7 @@ pub unsafe fn MapVirtualKeyExA<'a, Param2: ::windows_core::IntoParam<'a, super::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_TextServices")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn MapVirtualKeyExW<'a, Param2: ::windows_core::IntoParam<'a, super::super::TextServices::HKL>>(ucode: u32, umaptype: u32, dwhkl: Param2) -> u32 {
     #[cfg(windows)]
@@ -1486,7 +1486,7 @@ pub unsafe fn ToAscii(uvirtkey: u32, uscancode: u32, lpkeystate: &[u8; 256], lpc
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_TextServices")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn ToAsciiEx<'a, Param5: ::windows_core::IntoParam<'a, super::super::TextServices::HKL>>(uvirtkey: u32, uscancode: u32, lpkeystate: &[u8; 256], lpchar: *mut u16, uflags: u32, dwhkl: Param5) -> i32 {
     #[cfg(windows)]
@@ -1513,7 +1513,7 @@ pub unsafe fn ToUnicode(wvirtkey: u32, wscancode: u32, lpkeystate: &[u8; 256], p
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_TextServices")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn ToUnicodeEx<'a, Param6: ::windows_core::IntoParam<'a, super::super::TextServices::HKL>>(wvirtkey: u32, wscancode: u32, lpkeystate: &[u8; 256], pwszbuff: &mut [u16], wflags: u32, dwhkl: Param6) -> i32 {
     #[cfg(windows)]
@@ -1541,7 +1541,7 @@ pub unsafe fn TrackMouseEvent(lpeventtrack: *mut TRACKMOUSEEVENT) -> ::win32_fou
     unimplemented!("Unsupported target OS");
 }
 pub const UMLAUT: u32 = 776u32;
-#[cfg(feature = "Win32_UI_TextServices")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn UnloadKeyboardLayout<'a, Param0: ::windows_core::IntoParam<'a, super::super::TextServices::HKL>>(hkl: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
@@ -2311,7 +2311,7 @@ pub unsafe fn VkKeyScanA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_found
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_TextServices")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn VkKeyScanExA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::CHAR>, Param1: ::windows_core::IntoParam<'a, super::super::TextServices::HKL>>(ch: Param0, dwhkl: Param1) -> i16 {
     #[cfg(windows)]
@@ -2325,7 +2325,7 @@ pub unsafe fn VkKeyScanExA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_fou
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_UI_TextServices")]
+#[cfg(feature = "win32-ui")]
 #[inline]
 pub unsafe fn VkKeyScanExW<'a, Param1: ::windows_core::IntoParam<'a, super::super::TextServices::HKL>>(ch: u16, dwhkl: Param1) -> i16 {
     #[cfg(windows)]

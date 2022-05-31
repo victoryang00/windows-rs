@@ -1,6 +1,6 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_System_Com")]
+    #[cfg(feature = "win32-system-sys")]
     pub fn StartXpsPrintJob(printername: ::windows_core_sys::PCWSTR, jobname: ::windows_core_sys::PCWSTR, outputfilename: ::windows_core_sys::PCWSTR, progressevent: ::win32_foundation_sys::HANDLE, completionevent: ::win32_foundation_sys::HANDLE, printablepageson: *const u8, printablepagesoncount: u32, xpsprintjob: *mut IXpsPrintJob, documentstream: *mut IXpsPrintJobStream, printticketstream: *mut IXpsPrintJobStream) -> ::windows_core_sys::HRESULT;
     pub fn StartXpsPrintJob1(printername: ::windows_core_sys::PCWSTR, jobname: ::windows_core_sys::PCWSTR, outputfilename: ::windows_core_sys::PCWSTR, progressevent: ::win32_foundation_sys::HANDLE, completionevent: ::win32_foundation_sys::HANDLE, xpsprintjob: *mut IXpsPrintJob, printcontentreceiver: *mut super::IXpsOMPackageTarget) -> ::windows_core_sys::HRESULT;
 }

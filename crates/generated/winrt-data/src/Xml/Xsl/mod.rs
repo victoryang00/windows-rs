@@ -9,9 +9,9 @@ unsafe impl ::windows_core::Interface for IXsltProcessor {
 #[doc(hidden)]
 pub struct IXsltProcessor_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub TransformToString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, inputnode: ::windows_core::RawPtr, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     TransformToString: usize,
 }
 #[doc(hidden)]
@@ -25,9 +25,9 @@ unsafe impl ::windows_core::Interface for IXsltProcessor2 {
 #[doc(hidden)]
 pub struct IXsltProcessor2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub TransformToDocument: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, inputnode: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     TransformToDocument: usize,
 }
 #[doc(hidden)]
@@ -41,15 +41,15 @@ unsafe impl ::windows_core::Interface for IXsltProcessorFactory {
 #[doc(hidden)]
 pub struct IXsltProcessorFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub CreateInstance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, document: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Data_Xml_Dom"))]
+    #[cfg(not(feature = "winrt-data"))]
     CreateInstance: usize,
 }
 #[repr(transparent)]
 pub struct XsltProcessor(::windows_core::IUnknown);
 impl XsltProcessor {
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn TransformToString<'a, Param0: ::windows_core::IntoParam<'a, super::Dom::IXmlNode>>(&self, inputnode: Param0) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
@@ -57,7 +57,7 @@ impl XsltProcessor {
             (::windows_core::Interface::vtable(this).TransformToString)(::windows_core::Interface::as_raw(this), inputnode.into_param().abi(), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn TransformToDocument<'a, Param0: ::windows_core::IntoParam<'a, super::Dom::IXmlNode>>(&self, inputnode: Param0) -> ::windows_core::Result<super::Dom::XmlDocument> {
         let this = &::windows_core::Interface::cast::<IXsltProcessor2>(self)?;
         unsafe {
@@ -65,7 +65,7 @@ impl XsltProcessor {
             (::windows_core::Interface::vtable(this).TransformToDocument)(::windows_core::Interface::as_raw(this), inputnode.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Dom::XmlDocument>(result__)
         }
     }
-    #[cfg(feature = "Data_Xml_Dom")]
+    #[cfg(feature = "winrt-data")]
     pub fn CreateInstance<'a, Param0: ::windows_core::IntoParam<'a, super::Dom::XmlDocument>>(document: Param0) -> ::windows_core::Result<XsltProcessor> {
         Self::IXsltProcessorFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
