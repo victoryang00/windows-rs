@@ -46,7 +46,7 @@ windows_x86_64_gnu = { path = "../../targets/x86_64_gnu", version = "0.37.0" }
 windows_x86_64_gnu = { path = "../../targets/x86_64_gnu", version = "0.37.0" }
 
 [dependencies]
-windows-sys-core = { path = "../windows-sys-core",  version = "0.37.0" }
+windows-core-sys = { path = "../windows-core-sys",  version = "0.37.0" }
 
 [features]
 default = []
