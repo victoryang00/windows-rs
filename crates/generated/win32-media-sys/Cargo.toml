@@ -13,6 +13,11 @@ rust-version = "1.46"
 [dependencies]
 windows-core-sys = { path = "../../libs/windows-core-sys",  version = "0.37.0" }
 win32-foundation-sys = { path = "../win32-foundation-sys",  version = "0.37.0", optional = true }
+win32-data-sys = { path = "../win32-data-sys",  version = "0.37.0", optional = true, features = ["xml-msxml" }
+win32-devices-sys = { path = "../win32-devices-sys",  version = "0.37.0", optional = true, features = ["properties" }
+win32-graphics-sys = { path = "../win32-graphics-sys",  version = "0.37.0", optional = true, features = ["direct3d", "direct3d12", "direct3d9", "directdraw", "dxgi-common", "gdi" }
+win32-system-sys = { path = "../win32-system-sys",  version = "0.37.0", optional = true, features = ["com", "com-structuredstorage", "com-urlmon", "diagnostics-etw", "io", "ole", "registry" }
+win32-ui-sys = { path = "../win32-ui-sys",  version = "0.37.0", optional = true, features = ["controls", "controls-dialogs", "shell-propertiessystem", "windowsandmessaging" }
 
 [features]
 deprecated = []

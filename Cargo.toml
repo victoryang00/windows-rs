@@ -1,8 +1,8 @@
 [workspace]
 members = [
-    "crates/generated/*",
+    #"crates/generated/*",
     "crates/libs/*",
-    "crates/samples/*",
+    #"crates/samples/*",
     "crates/targets/*",
     "crates/tests/*",
     "crates/tools/*",

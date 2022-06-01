@@ -1,6 +1,7 @@
 use metadata::reader::*;
 use rayon::prelude::*;
 use std::io::Write;
+use std::collections::*;
 
 fn main() {
     let files = vec![File::new("crates/libs/metadata/default/Windows.winmd").unwrap(), File::new("crates/libs/metadata/default/Windows.Win32.winmd").unwrap(), File::new("crates/libs/metadata/default/Windows.Win32.Interop.winmd").unwrap()];
@@ -17,18 +18,57 @@ fn main() {
             trees.push(tree);
         }
     }
-    trees
-   .par_iter()
-    .for_each(|tree| build(reader, tree));
-   // build(reader, &root.nested["Foundation"]);
+//     trees
+//    .par_iter()
+//     .for_each(|tree| build(reader, tree));
+    build(reader, &root.nested["Win32"].nested["Media"]);
 }
 
 fn build(reader: &Reader, tree: &Tree) {
-    build_kind(reader, tree, true);
-    build_kind(reader, tree, false);
+    let mut dependencies = BTreeMap::new();
+    add_dependencies(reader, tree, tree.namespace, &mut dependencies);
+    //dbg!(dependencies);
+    build_kind(reader, tree, true, &dependencies);
+    //build_kind(reader, tree, false, &dependencies);
 }
 
-fn build_kind(reader: &Reader, tree: &Tree, sys: bool) {
+fn add_dependencies(reader: &Reader, tree: &Tree, root: &str, dependencies: &mut BTreeMap::<String, BTreeSet<String>>) {
+    if let Some(types) = reader.namespace_types(tree.namespace) {
+        for def in types {
+            for namespace in reader.type_def_cfg_crate(def, &[]).types.keys() {
+                if !namespace.starts_with(root) && !namespace.is_empty() && namespace != "Windows.Foundation" && namespace != "Windows.Win32.Foundation" {
+                    let win32 = namespace.starts_with("Windows.Win32");
+                    let mut namespace = namespace.split('.').peekable();
+                    namespace.next(); // Windows
+                    if win32 {
+                        namespace.next();
+                    }
+                    if let Some(next) = namespace.next() {
+                        let name = if win32 {
+                            format!("win32-{}", next.to_lowercase())
+                        } else {
+                            format!("winrt-{}", next.to_lowercase())
+                        };
+                        let mut feature = String::new();
+                        for name in namespace {
+                            feature.push_str(&name.to_lowercase());
+                            feature.push_str("-");
+                        }
+                        if feature.ends_with('-') {
+                            feature.truncate(feature.len() - 1);
+                        }
+                        dependencies.entry(name).or_default().insert(feature);
+                    }
+                }
+            }
+        }
+    }
+        for nested in tree.nested.values() {
+            add_dependencies(reader, nested, root, dependencies);
+        }
+}
+
+fn build_kind(reader: &Reader, tree: &Tree, sys: bool, dependencies: &BTreeMap::<String, BTreeSet<String>>) {
     let win32 = tree.namespace.starts_with("Windows.Win32");
     let mut name = if win32 {
         tree.namespace[8..].to_lowercase().replace(".", "-")
@@ -89,6 +129,29 @@ rust-version = "1.46"
 
     if name != foundation {
         writeln!(file, r#"{foundation} = {{ path = "../{foundation}",  version = "0.37.0", optional = true }}"#).unwrap();
+    }
+
+    for (name, features) in dependencies {
+        let name = if sys {
+            format!("{name}-sys")
+        } else {
+            name.to_string()
+        };
+
+        let mut list = String::new();
+
+        if !features.is_empty() {
+            list.push_str(", features = [");
+            for feature in features {
+                list.push('"');
+                list.push_str(feature);
+                list.push('"');
+                list.push_str(", ");
+            }
+            list.truncate(list.len() - 2);
+        }
+
+        writeln!(file, r#"{name} = {{ path = "../{name}",  version = "0.37.0", optional = true{list} }}"#).unwrap();
     }
 
     write!(
